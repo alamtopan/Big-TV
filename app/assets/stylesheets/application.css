@@ -9,5 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require plugins/bootstrap/css/bootstrap.min
+ *= require plugins/font-awesome/css/font-awesome.min
+ *= require fonts/style
+ *= require css/main
+ *= require css/main-responsive
+ *= require plugins/iCheck/skins/all
+ *= require plugins/perfect-scrollbar/src/perfect-scrollbar
+ *= require css/theme_light
+ *= require plugins/fullcalendar/fullcalendar/fullcalendar
  */

@@ -1,0 +1,87 @@
+<div class="navbar-content">
+	<!-- start: SIDEBAR -->
+	<div class="main-navigation navbar-collapse collapse">
+		<!-- start: MAIN MENU TOGGLER BUTTON -->
+		<div class="navigation-toggler">
+			<i class="clip-chevron-left"></i>
+			<i class="clip-chevron-right"></i>
+		</div>
+		<!-- end: MAIN MENU TOGGLER BUTTON -->
+		<!-- start: MAIN NAVIGATION MENU -->
+		<ul class="main-navigation-menu">
+			<li class="active open">
+				<a href="index.html"><i class="clip-home-3"></i>
+					<span class="title"> DASHBOARD </span><span class="selected"></span>
+				</a>
+			</li>
+			<li class="">
+				<a href="javascript:void(0)"><i class="clip-checkbox"></i>
+					<span class="title"> SUBSCRIPTIONS </span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu" style="display: none;">
+					<li>
+						<%= link_to "<span class='title'> Create New </span>".html_safe, form_path %>
+					</li>
+					<li>
+						<%= link_to "<span class='title'> List </span>".html_safe, list_path %>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="clip-user-4"></i>
+					<span class="title"> USERS </span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="table_static.html">
+							<span class="title">Create New</span>
+						</a>
+					</li>
+					<li>
+						<a href="table_responsive.html">
+							<span class="title">List</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="clip-star-6"></i>
+					<span class="title"> MEMBERSHIP </span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="form_elements.html">
+							<span class="title">Create New</span>
+						</a>
+					</li>
+					<li>
+						<a href="form_wizard.html">
+							<span class="title">List</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="clip-grid-5"></i>
+					<span class="title">CHANNELS</span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<a href="login_example1.html">
+							<span class="title">Create New</span>
+						</a>
+					</li>
+					<li>
+						<a href="login_example2.html">
+							<span class="title">List</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
