@@ -1,0 +1,10 @@
+<%= label_tag :name %>
+<%= @group_item.name %>
+<br/>
+<%= label_tag :colour %>
+<div style="background:<%= @group_item.colour %>" >Colour</div>
+<br/>
+<div>
+  <%= link_to 'Back', group_items_path %>
+  <%= link_to 'Edit', edit_group_item_path(@group_item) %>
+</div>

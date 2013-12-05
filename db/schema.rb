@@ -11,7 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205165028) do
+ActiveRecord::Schema.define(:version => 20131205165031) do
+
+  create_table "group_items", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "colour"
+    t.datetime "deleted_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "membership_items", :force => true do |t|
+    t.integer  "unit_item_id"
+    t.integer  "membership_id"
+    t.boolean  "unlimited",                                     :default => false
+    t.decimal  "quantity_limit", :precision => 10, :scale => 0, :default => 0
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
+  end
+
+  create_table "unit_items", :force => true do |t|
+    t.integer  "group_item_id"
+    t.string   "name",                                                                :null => false
+    t.string   "item_key",                                                            :null => false
+    t.string   "unit_name"
+    t.text     "description"
+    t.boolean  "unlimited",                                        :default => false
+    t.decimal  "quantity_limit",    :precision => 10, :scale => 0, :default => 0
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                                          :null => false
+    t.datetime "updated_at",                                                          :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  add_index "unit_items", ["item_key", "unit_name"], :name => "index_unit_items_on_item_key_and_unit_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

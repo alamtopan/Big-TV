@@ -1,0 +1,22 @@
+<h1>List Group Items</h1>
+<%= link_to "Add Group Item", new_group_item_path %>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Colour</th>
+    <th>Actions</th>
+  </tr>
+  <% @group_items.each_with_index do |group,index| %>
+    <tr>
+      <th><%= index+1 %></th>
+      <th><%= group.name %></th>
+      <th><div style="background:<%= group.colour %>">Colour</div></th>
+      <th>
+        <%= link_to 'Show', group_item_path(group) %>
+        <%= link_to 'Edit', edit_group_item_path(group) %>
+        <%= link_to 'Delete', group_item_path(group), method: 'delete', data: { confirm: "Are you sure?" } %>
+      </th>
+    </tr>  
+  <% end %>
+</table>

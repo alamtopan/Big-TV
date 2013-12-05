@@ -8,7 +8,7 @@
 
 User.create({
 	username: "admin",
-	email: "admin@big_tv.com",
+	email: "admin@bigtv.com",
 	password: "12345678",
 	password_confirmation: "12345678",
 	})

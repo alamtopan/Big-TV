@@ -1,0 +1,22 @@
+<h1>List Unit Items</h1>
+<%= link_to "Add Item", new_unit_item_path %>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Group Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @unit_items.each_with_index do |item,index| %>
+    <tr>
+      <th><%= index+1 %></th>
+      <th><%= item.name %></th>
+      <th><%= item.group_item.name if item.group_item %></th>
+      <th>
+        <%= link_to 'Show', unit_item_path(item) %>
+        <%= link_to 'Edit', edit_unit_item_path(item) %>
+        <%= link_to 'Delete', unit_item_path(item), method: 'delete', data: { confirm: "Are you sure?" } %>
+      </th>
+    </tr>  
+  <% end %>
+</table>

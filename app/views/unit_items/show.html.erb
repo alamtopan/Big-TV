@@ -1,0 +1,19 @@
+<%= label_tag :name %>
+<%= @unit_item.name %>
+<br/>
+<%= label_tag :description %>
+<%= @unit_item.description %>
+<br/>
+<%= label_tag :logo %>
+<%= image_tag @unit_item.logo.url(:medium) %>
+<br/>
+<%= label_tag :unlimited %>
+<%= @unit_item.unlimited  %>
+<br/>
+<%= label_tag :group_item_id %>
+<%= @unit_item.group_item.name if @unit_item.group_item %>
+<br/>
+<div>
+  <%= link_to 'Back', unit_items_path %>
+  <%= link_to 'Edit', edit_unit_item_path(@unit_item) %>
+</div>

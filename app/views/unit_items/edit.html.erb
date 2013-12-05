@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-pencil"></i>
+        <a href="#">
+          <%= link_to "Dashboard", root_path %>
+        </a>
+      </li>
+      <li class="active">
+        Edit Unit Item
+      </li>
+      <li class="search-box">
+        <form class="sidebar-search">
+          <div class="form-group">
+            <input type="text" placeholder="Start Searching..." data-default="130">
+            <button class="submit">
+              <i class="clip-search-3"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>Edit Unit Item</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Text Fields
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-close" href="#">
+            <i class="icon-remove"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= form_for @unit_item, method: 'put', html: {class: "form-horizontal"} do |f| %>
+          <%= render partial: 'form', locals: {f: f} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

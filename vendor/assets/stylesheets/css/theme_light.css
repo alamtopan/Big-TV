@@ -2,7 +2,6 @@ body, .main-container, .footer, .main-navigation, ul.main-navigation-menu > li >
 	background-color: #F6F6F6 !important;
 }
 .breadcrumb{
-	background-color: #ed2024!important;
 	border: none!important;
 }
 
@@ -121,13 +120,13 @@ ul.main-navigation-menu li > ul.sub-menu > li.open > a, ul.main-navigation-menu 
 	background: #D9D9D9 !important;
 }
 .breadcrumb i {
-	color: #fff!important;
+	color: #ED2024!important;
 }
 .breadcrumb a {
-	color: #f68b1f;
+	color: #ED2024;
 }
 .breadcrumb>.active {
-	color: #fff;
+	color: #999;
 }
 .footer-fixed .footer {
 	background: rgba(255, 255, 255, 0.9) !important;
