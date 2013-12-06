@@ -12,5 +12,3 @@ class UsersController < InheritedResources::Base
     end
   end
 end
-
-

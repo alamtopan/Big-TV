@@ -1,0 +1,61 @@
+<div class="form-group">
+  <%= f.label :name, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :description, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :publish_on, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <div class="input-group">
+      <%= f.text_field :publish_on, class: "form-control datepicker", data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"} %>
+      <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :expire_on, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <div class="input-group">
+      <%= f.text_field :expire_on, class: "form-control datepicker", data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"} %>
+      <span class="input-group-addon"> <i class="icon-calendar"></i> </span>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :version, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :version, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :position, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :position, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :is_published, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.check_box :is_published %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :is_featured, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.check_box :is_featured %>
+  </div>
+</div>
+<br/>
+<div class="form-group">
+  <div class="col-sm-9">
+    <%= f.submit 'Save', class: "btn btn-bricky" %>
+    <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, memberships_path, class: "btn btn-dark-grey" %>
+  </div>
+</div>

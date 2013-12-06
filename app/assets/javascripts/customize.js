@@ -3,4 +3,6 @@ $(document).ready(function(){
     $('li').removeClass('active');
     $(this).closest('li').addClass('active');
   })
+  $('.datepicker').datepicker();
+  $('.colorpicker').colorpicker();
 })

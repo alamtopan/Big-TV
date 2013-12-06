@@ -27,12 +27,12 @@
 //= require plugins/jquery-easy-pie-chart/jquery.easy-pie-chart
 //= require plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min
 //= require plugins/fullcalendar/fullcalendar/fullcalendar
+
+//= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
+//= require plugins/bootstrap-colorpicker/js/bootstrap-colorpicker
+
 //= require js/index
 //= require customize
 
-jQuery(document).ready(function() {
-	Main.init();
-	Index.init();
-});
 
 
