@@ -1,4 +1,17 @@
 <%= f.fields_for(:profile_attributes, user_profile) do |profile| %>
+	<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-block alert-danger fade in ">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Warning!</strong> <%= pluralize(@user.errors.count, "error") %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <diV>
+          <%= msg %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+	 <% end %>
 	<div class="form-group">
 		<label class="col-sm-2 control-label" for="form-field-8">
 			Username

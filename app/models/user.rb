@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   has_one :profile, :foreign_key => "user_id", :dependent => :destroy
 
   accepts_nested_attributes_for :profile, :reject_if => :all_blank, allow_destroy: true
+
+  validates :username, :uniqueness => true
+  validates :username, :presence => true
 end
