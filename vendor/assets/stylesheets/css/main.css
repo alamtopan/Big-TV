@@ -1,4 +1,5 @@
-/* ---------------------------------------------------------------------- */
+
+float: left;/* ---------------------------------------------------------------------- */
 /*	Import fonts
  /* ---------------------------------------------------------------------- */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
@@ -19,6 +20,7 @@ body {
 .br{
 	margin-bottom: 10px;
 	width: 100%;
+	float: left;
 }
 body.bg_style_1 {
 	background: url("../images/bg.png") rgba(0, 0, 0, 0) !important;
