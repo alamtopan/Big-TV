@@ -10,9 +10,7 @@
 		<!-- start: MAIN NAVIGATION MENU -->
 		<ul class="main-navigation-menu">
 			<li class="active open">
-				<a href="index.html"><i class="clip-home-3"></i>
-					<span class="title"> DASHBOARD </span><span class="selected"></span>
-				</a>
+				<%= link_to '<span class="title"> DASHBOARD </span><span class="selected"></span>'.html_safe, root_path %>
 			</li>
 			<li class="">
 				<a href="javascript:void(0)"><i class="clip-checkbox"></i>
@@ -35,12 +33,12 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="table_static.html">
+						<a href="">
 							<span class="title">Create New</span>
 						</a>
 					</li>
 					<li>
-						<a href="table_responsive.html">
+						<a href="">
 							<span class="title">List</span>
 						</a>
 					</li>
@@ -53,14 +51,42 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="form_elements.html">
+						<a href="">
 							<span class="title">Create New</span>
 						</a>
 					</li>
 					<li>
-						<a href="form_wizard.html">
+						<a href="">
 							<span class="title">List</span>
 						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="clip-stack"></i>
+					<span class="title"> UNIT ITEM </span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<%= link_to '<span class="title">Create New</span>'.html_safe, new_unit_item_path %>
+					</li>
+					<li>
+						<%= link_to '<span class="title">List</span>'.html_safe, unit_items_path %>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="clip-folder"></i>
+					<span class="title"> GROUP ITEM </span><i class="icon-arrow"></i>
+					<span class="selected"></span>
+				</a>
+				<ul class="sub-menu">
+					<li>
+						<%= link_to '<span class="title">Create New</span>'.html_safe, new_group_item_path %>
+					</li>
+					<li>
+						<%= link_to '<span class="title">List</span>'.html_safe, group_items_path %>
 					</li>
 				</ul>
 			</li>
@@ -71,12 +97,12 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="login_example1.html">
+						<a href="">
 							<span class="title">Create New</span>
 						</a>
 					</li>
 					<li>
-						<a href="login_example2.html">
+						<a href="">
 							<span class="title">List</span>
 						</a>
 					</li>

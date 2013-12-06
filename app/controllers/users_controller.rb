@@ -1,6 +1,4 @@
 class UsersController < InheritedResources::Base
-  layout :devise
-  load_and_authorize_resource
   before_filter :auth, only: :update
 
   def index

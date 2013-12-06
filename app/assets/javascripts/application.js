@@ -28,6 +28,7 @@
 //= require plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min
 //= require plugins/fullcalendar/fullcalendar/fullcalendar
 //= require js/index
+//= require customize
 
 jQuery(document).ready(function() {
 	Main.init();

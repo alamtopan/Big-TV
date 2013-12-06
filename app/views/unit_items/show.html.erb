@@ -1,19 +1,87 @@
-<%= label_tag :name %>
-<%= @unit_item.name %>
-<br/>
-<%= label_tag :description %>
-<%= @unit_item.description %>
-<br/>
-<%= label_tag :logo %>
-<%= image_tag @unit_item.logo.url(:medium) %>
-<br/>
-<%= label_tag :unlimited %>
-<%= @unit_item.unlimited  %>
-<br/>
-<%= label_tag :group_item_id %>
-<%= @unit_item.group_item.name if @unit_item.group_item %>
-<br/>
-<div>
-  <%= link_to 'Back', unit_items_path %>
-  <%= link_to 'Edit', edit_unit_item_path(@unit_item) %>
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <%= link_to "Dashboard", root_path %>
+      </li>
+      <li class="active">
+        Unit Item
+      </li>
+      <li class="search-box">
+        <form class="sidebar-search">
+          <div class="form-group">
+            <input type="text" placeholder="Start Searching..." data-default="130">
+            <button class="submit">
+              <i class="clip-search-3"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>Show Unit Items</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Unit Item
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        
+        <div class="form-group">
+          <%= label_tag :name, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @unit_item.name %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :description, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @unit_item.description %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :unlimited, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @unit_item.unlimited %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :group_item_id, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @unit_item.group_item.name if @unit_item.group_item %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :logo, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= image_tag @unit_item.logo.url(:medium) %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <div class="pull-right">
+            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, unit_items_path, class: "btn btn-dark-grey" %>
+            <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_unit_item_path(@unit_item), class: "btn btn-purple" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
