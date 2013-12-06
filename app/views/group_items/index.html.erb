@@ -50,7 +50,7 @@
               <th>No</th>
               <th>Name</th>
               <th>Colour</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -60,16 +60,18 @@
                 <td><%= group.name %></td>
                 <td><div style="background:<%= group.colour %>"><%= group.colour %></div></td>
                 <td>
-                  <div class="visible-md visible-lg hidden-sm hidden-xs">
-                    <%= link_to '<i class="icon-share"></i>'.html_safe, group_item_path(group), class: "btn btn-green tooltips",data: { placement: 'top', 'original-title' => 'Show' } %>
-                    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_group_item_path(group), class: "btn btn-teal tooltips",data: { placement: 'top', 'original-title' => 'Edit' } %>
-                    <%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, group_item_path(group), method: 'delete',class: "btn btn-bricky tooltips" ,data: { confirm: "Are you sure?", placement: 'top', 'original-title' => 'Remove' } %>
+                  <div class="visible-md visible-lg hidden-sm hidden-xs pull-right">
+                    <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_group_item_path(group), class: "btn btn-teal" %>
+                    <%= link_to '<i class="icon-remove"></i> Delete'.html_safe, group_item_path(group), method: 'delete',class: "btn btn-bricky" ,data: { confirm: "Are you sure?" } %>
                   </div>
                 </td>
               </tr>  
             <% end %>
           </tbody>
         </table>
+        <div>
+          <%= paginate @group_items %>
+        </div>
       </div>
     </div>
   </div>

@@ -55,16 +55,16 @@
 				</ul>
 			</li>
 			<li>
-				<a href="javascript:void(0)"><i class="clip-stack"></i>
-					<span class="title"> UNIT ITEM </span><i class="icon-arrow"></i>
+				<a href="javascript:void(0)"><i class="icon-dollar"></i>
+					<span class="title"> MEMBERSHIP PRICE </span><i class="icon-arrow"></i>
 					<span class="selected"></span>
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<%= link_to '<span class="title">Create New</span>'.html_safe, new_unit_item_path %>
+						<%= link_to '<span class="title">Create New</span>'.html_safe, new_membership_price_path %>
 					</li>
 					<li>
-						<%= link_to '<span class="title">List</span>'.html_safe, unit_items_path %>
+						<%= link_to '<span class="title">List</span>'.html_safe, membership_prices_path %>
 					</li>
 				</ul>
 			</li>
@@ -89,14 +89,10 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="">
-							<span class="title">Create New</span>
-						</a>
+						<%= link_to '<span class="title">Create New</span>'.html_safe, new_unit_item_path %>
 					</li>
 					<li>
-						<a href="">
-							<span class="title">List</span>
-						</a>
+						<%= link_to '<span class="title">List</span>'.html_safe, unit_items_path %>
 					</li>
 				</ul>
 			</li>

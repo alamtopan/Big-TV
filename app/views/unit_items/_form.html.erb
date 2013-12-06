@@ -5,12 +5,6 @@
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :description, class: "col-sm-2 control-label" %>
-  <div class="col-sm-9">
-    <%= f.text_area :description, class: "form-control"  %>
-  </div>
-</div>
-<div class="form-group">
   <%= f.label :logo, class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
     <%= image_tag @unit_item.logo.url(:medium) %>
@@ -18,23 +12,13 @@
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :unlimited, class: "col-sm-2 control-label" %>
-  <div class="col-sm-9">
-    <label class="checkbox-inline">
-      <%= f.check_box :unlimited %>
-    </label>
-  </div>
-</div>
-<div class="form-group">
   <%= f.label :group_item_id, class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
-    <%= f.select :group_item_id, options_from_collection_for_select(@group_id, :id, :name), {prompt: "--Please Select Group Id--"}, class: "form-control" %>
+    <%= f.select :group_item_id, options_from_collection_for_select(@group_id, :id, :name), {prompt: "--Please Select Group--"}, class: "form-control" %>
   </div>
 </div>
-<div class="form-group">
-  <div class="col-sm-9">
-    <%= f.submit 'Save', class: "btn btn-bricky" %>
-    <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, group_items_path, class: "btn btn-dark-grey" %>
-  </div>
+<div class="pull-right">
+  <%= f.submit 'Save', class: "btn btn-bricky" %>
+  <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, group_items_path, class: "btn btn-dark-grey" %>
 </div>
 

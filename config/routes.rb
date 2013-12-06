@@ -6,6 +6,7 @@ BigTv::Application.routes.draw do
   end
   resources :unit_items
   resources :group_items
+  resources :membership_prices
   resources :memberships
 
   root :to => 'home#dashboard'

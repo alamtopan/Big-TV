@@ -6,7 +6,7 @@
         <%= link_to "Dashboard", root_path %>
       </li>
       <li class="active">
-        Unit Item
+        Membership Price
       </li>
       <li class="search-box">
         <form class="sidebar-search">
@@ -21,9 +21,9 @@
     </ol>
     <div class="page-header">
       <h1>
-        List Unit Items
-        <div class="pull-right"> 
-          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_unit_item_path, class: "btn btn-primary" %>
+        List Membership Price 
+        <div class="pull-right">
+          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_membership_price_path, class: "btn btn-primary" %>
         </div>
       </h1>
     </div>
@@ -34,7 +34,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <i class="icon-external-link-sign"></i>
-        Unit Item
+        Membership Price
         <div class="panel-tools">
           <a class="btn btn-xs btn-link panel-expand" href="#">
             <i class="icon-resize-full"></i>
@@ -48,31 +48,31 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Logo</th>
-              <th>Name</th>
-              <th>Group Name</th>
+              <th>Name Membership</th>
+              <th>Price</th>
+              <th>Periode</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <% @unit_items.each_with_index do |item,index| %>
+            <% @membership_prices.each_with_index do |m_price,index| %>
               <tr>
-                <th><%= index+1 %></th>
-                <th><%= image_tag(item.logo.url(:thumb)) %></th>
-                <th><%= item.name %></th>
-                <th><%= item.group_item.name if item.group_item %></th>
-                <th>
+                <td><%= index+1 %></td>
+                <td><%= m_price.membership.name %></td>
+                <td><%= m_price.price %></td>
+                <td><%= m_price.periode_time %></td>
+                <td>
                   <div class="visible-md visible-lg hidden-sm hidden-xs pull-right">
-                    <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_unit_item_path(item), class: "btn btn-teal" %>
-                    <%= link_to '<i class="icon-remove"></i> Delete'.html_safe, unit_item_path(item), method: 'delete',class: "btn btn-bricky" ,data: { confirm: "Are you sure?" } %>
+                    <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_membership_price_path(m_price), class: "btn btn-teal" %>
+                    <%= link_to '<i class="icon-remove"></i> Delete'.html_safe, membership_price_path(m_price), method: 'delete',class: "btn btn-bricky" ,data: { confirm: "Are you sure?" } %>
                   </div>
-                </th>
+                </td>
               </tr>  
             <% end %>
-         </tbody>
+          </tbody>
         </table>
         <div>
-          <%= paginate @unit_items %>
+          <%= paginate @membership_prices %>
         </div>
       </div>
     </div>

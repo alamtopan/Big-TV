@@ -34,5 +34,6 @@
 //= require js/index
 //= require customize
 
-
-
+jQuery(document).ready(function() {
+ Main.init();
+});

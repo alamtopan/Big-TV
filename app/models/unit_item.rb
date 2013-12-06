@@ -1,7 +1,6 @@
 class UnitItem < ActiveRecord::Base
   
-  attr_accessible :group_item_id, :name, :item_key, :unit_name, 
-                  :description, :logo, :unlimited
+  attr_accessible :group_item_id, :name, :logo
   has_attached_file :logo, styles:  { 
                                       :medium => "300x300>", 
                                       :thumb => "100x100>" 
@@ -9,9 +8,7 @@ class UnitItem < ActiveRecord::Base
                                     :default_url => "/assets/no-image.png"
 
   validates_presence_of   :name
-  validates_presence_of   :item_key
   validates_uniqueness_of :name
-  validates_uniqueness_of :item_key
 
   belongs_to :group_item
 
