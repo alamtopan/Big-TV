@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-sm-12">
+		<ol class="breadcrumb">
+			<li>
+				<i class="clip-user-4"></i>
+				<a href="#">
+					User
+				</a>
+			</li>
+			<li class="active">
+				New User
+			</li>
+			<li class="search-box">
+				<form class="sidebar-search">
+					<div class="form-group">
+						<input type="text" placeholder="Start Searching..." data-default="130">
+						<button class="submit">
+							<i class="clip-search-3"></i>
+						</button>
+					</div>
+				</form>
+			</li>
+		</ol>
+		<div class="page-header">
+			<h1>New User</h1>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<!-- start: TEXT FIELDS PANEL -->
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="icon-external-link-sign"></i>
+				Form New User
+				<div class="panel-tools">
+					<a class="btn btn-xs btn-link panel-expand" href="#">
+						<i class="icon-resize-full"></i>
+					</a>
+					<a class="btn btn-xs btn-link panel-close" href="#">
+						<i class="icon-remove"></i>
+					</a>
+					<a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+					</a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<%= form_for(:user, url: users_path, method: "post", html: {class: "form-horizontal"}) do |f| %>
+		      <%= render partial:"form", locals: {f: f, user_profile: {}} %>
+		    <% end %>
+			</div>
+		</div>
+	</div>
+</div>

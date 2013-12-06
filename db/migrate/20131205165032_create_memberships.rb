@@ -15,7 +15,7 @@ class CreateMemberships < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :memberships, ["title", "version"]
+    add_index :memberships, ["name", "version"]
     add_index :memberships, :slug, unique: true
   end
 

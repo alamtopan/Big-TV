@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205165031) do
+ActiveRecord::Schema.define(:version => 20131206141608) do
 
   create_table "group_items", :force => true do |t|
     t.string   "name",       :null => false
@@ -30,6 +30,90 @@ ActiveRecord::Schema.define(:version => 20131205165031) do
     t.datetime "created_at",                                                       :null => false
     t.datetime "updated_at",                                                       :null => false
   end
+
+  create_table "membership_prices", :force => true do |t|
+    t.integer  "membership_id"
+    t.decimal  "price",         :precision => 10, :scale => 0, :default => 0
+    t.integer  "total_period",                                 :default => 0
+    t.string   "periode_name",                                 :default => "day", :null => false
+    t.boolean  "free",                                         :default => false
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+  end
+
+  add_index "membership_prices", ["membership_id"], :name => "index_membership_prices_on_membership_id"
+
+  create_table "memberships", :force => true do |t|
+    t.string   "name",                            :null => false
+    t.string   "slug"
+    t.text     "description"
+    t.date     "publish_on"
+    t.date     "expire_on"
+    t.integer  "version",      :default => 0
+    t.integer  "position",     :default => 0
+    t.boolean  "is_published", :default => false
+    t.boolean  "is_featured",  :default => false
+    t.datetime "published_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "memberships", ["name", "version"], :name => "index_memberships_on_name_and_version"
+  add_index "memberships", ["slug"], :name => "index_memberships_on_slug", :unique => true
+
+  create_table "profiles", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "no_phone"
+    t.integer  "no_hp"
+    t.text     "address"
+    t.string   "city"
+    t.string   "province"
+    t.string   "codepos"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "subscription_transactions", :force => true do |t|
+    t.integer  "subscription_id"
+    t.decimal  "amount",              :precision => 10, :scale => 0
+    t.decimal  "fee",                 :precision => 10, :scale => 0
+    t.decimal  "tax",                 :precision => 10, :scale => 0
+    t.decimal  "discount",            :precision => 10, :scale => 0
+    t.string   "status"
+    t.string   "payment_gateway"
+    t.text     "logs"
+    t.string   "request_ip_address"
+    t.string   "response_ip_address"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+  end
+
+  add_index "subscription_transactions", ["subscription_id"], :name => "index_subscription_transactions_on_subscription_id"
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "subscriber_id"
+    t.integer  "membership_id"
+    t.integer  "membership_price_id"
+    t.integer  "previous_membership_id"
+    t.integer  "previous_membership_price_id"
+    t.datetime "activated_at"
+    t.datetime "next_bill_at"
+    t.datetime "billed_at"
+    t.datetime "canceled_at"
+    t.string   "cancel_reason"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "subscriptions", ["membership_id"], :name => "index_subscriptions_on_membership_id"
+  add_index "subscriptions", ["membership_price_id"], :name => "index_subscriptions_on_membership_price_id"
+  add_index "subscriptions", ["subscriber_id"], :name => "index_subscriptions_on_subscriber_id"
 
   create_table "unit_items", :force => true do |t|
     t.integer  "group_item_id"

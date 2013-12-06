@@ -1,6 +1,9 @@
 BigTv::Application.routes.draw do
   devise_for :users
 
+  resources :users do
+  	resources :profiles
+  end
   resources :unit_items
   resources :group_items
 

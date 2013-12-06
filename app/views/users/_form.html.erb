@@ -1,0 +1,89 @@
+<%= f.fields_for(:profile_attributes, user_profile) do |profile| %>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-8">
+			Username
+		</label>
+		<div class="col-sm-4">
+			<%= f.text_field :username, class: 'form-control',placeholder:'Username' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-8">
+			Email
+		</label>
+		<div class="col-sm-4">
+			<%= f.text_field :email, class: 'form-control',placeholder:'Email' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-8">
+			Password
+		</label>
+		<div class="col-sm-4">
+			<%= f.password_field :password, class: 'form-control',placeholder:'Password' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-8">
+			Password Confirmation
+		</label>
+		<div class="col-sm-4">
+			<%= f.password_field :password_confirmation, class: 'form-control',placeholder:'Password Confirmation' %>
+		</div>
+	</div>
+	<div class="br"></div><div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Full Name
+		</label>
+		<div class="col-sm-3">
+			<%= profile.text_field :first_name, class: 'form-control',placeholder:'First Name' %>
+		</div>
+		<div class="col-sm-4">
+			<%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-12">
+			Address
+		</label>
+		<div class="col-sm-9">
+			<%= profile.text_field :address, class: 'form-control input-lg',placeholder:'Address' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="form-field-13">
+		</label>
+		<div class="col-sm-3">
+			<%= profile.text_field :city, class: 'form-control',placeholder:'City' %>
+		</div>
+		<div class="col-sm-3">
+			<%= profile.text_field :province, class: 'form-control',placeholder:'Province' %>
+		</div>
+		<div class="col-sm-3">
+			<%= profile.text_field :codepos, class: 'form-control',placeholder:'Poscode' %>
+		</div>
+	</div>
+	<div class="br"></div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">
+			Contact
+		</label>
+		<div class="col-sm-3">
+			<%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone' %>
+		</div>
+		<div class="col-sm-3">
+			<%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone' %>
+		</div>
+	</div>
+
+	<div class="pull-right">
+		<%= f.submit 'Save', class: "btn btn-bricky" %>
+	  <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, users_path, class: "btn btn-dark-grey" %>
+	</div>
+<% end %>

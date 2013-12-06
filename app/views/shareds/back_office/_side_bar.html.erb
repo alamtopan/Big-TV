@@ -35,14 +35,10 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="table_static.html">
-							<span class="title">Create New</span>
-						</a>
+						<%= link_to "<span class='title'>Create New</span>".html_safe, new_user_path %>
 					</li>
 					<li>
-						<a href="table_responsive.html">
-							<span class="title">List</span>
-						</a>
+						<%= link_to "<span class='title'>List</span>".html_safe, users_path %>
 					</li>
 				</ul>
 			</li>
