@@ -6,7 +6,7 @@
         <%= link_to "Dashboard", root_path %>
       </li>
       <li class="active">
-        Group Item
+        Memberships
       </li>
       <li class="search-box">
         <form class="sidebar-search">
@@ -21,9 +21,9 @@
     </ol>
     <div class="page-header">
       <h1>
-        List Group Items 
+        List Memberships 
         <div class="pull-right">
-          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_group_item_path, class: "btn btn-primary" %>
+          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_membership_path, class: "btn btn-primary" %>
         </div>
       </h1>
     </div>
@@ -34,7 +34,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <i class="icon-external-link-sign"></i>
-        Group Item
+        Membership
         <div class="panel-tools">
           <a class="btn btn-xs btn-link panel-expand" href="#">
             <i class="icon-resize-full"></i>
@@ -49,21 +49,25 @@
             <tr>
               <th>No</th>
               <th>Name</th>
-              <th>Colour</th>
+              <th>Publish on</th>
+              <th>Published</th>
+              <th>Featured</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <% @group_items.each_with_index do |group,index| %>
+            <% @memberships.each_with_index do |member,index| %>
               <tr>
                 <td><%= index+1 %></td>
-                <td><%= group.name %></td>
-                <td><div style="background:<%= group.colour %>"><%= group.colour %></div></td>
+                <td><%= member.name %></td>
+                <td><%= member.publish_on %></td>
+                <td><%= member.is_published %></td>
+                <td><%= member.is_featured %></td>
                 <td>
                   <div class="visible-md visible-lg hidden-sm hidden-xs">
-                    <%= link_to '<i class="icon-share"></i>'.html_safe, group_item_path(group), class: "btn btn-green tooltips",data: { placement: 'top', 'original-title' => 'Show' } %>
-                    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_group_item_path(group), class: "btn btn-teal tooltips",data: { placement: 'top', 'original-title' => 'Edit' } %>
-                    <%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, group_item_path(group), method: 'delete',class: "btn btn-bricky tooltips" ,data: { confirm: "Are you sure?", placement: 'top', 'original-title' => 'Remove' } %>
+                    <%= link_to '<i class="icon-share"></i>'.html_safe, membership_path(member), class: "btn btn-green tooltips",data: { placement: 'top', 'original-title' => 'Show' } %>
+                    <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_membership_path(member), class: "btn btn-teal tooltips",data: { placement: 'top', 'original-title' => 'Edit' } %>
+                    <%= link_to '<i class="icon-remove icon-white"></i>'.html_safe, membership_path(member), method: 'delete',class: "btn btn-bricky tooltips" ,data: { confirm: "Are you sure?", placement: 'top', 'original-title' => 'Remove' } %>
                   </div>
                 </td>
               </tr>  

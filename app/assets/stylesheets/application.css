@@ -18,4 +18,9 @@
  *= require plugins/perfect-scrollbar/src/perfect-scrollbar
  *= require css/theme_light
  *= require plugins/fullcalendar/fullcalendar/fullcalendar
+ 
+ *= require plugins/datepicker/css/datepicker
+ *= require plugins/bootstrap-colorpicker/css/bootstrap-colorpicker
+
+
  */

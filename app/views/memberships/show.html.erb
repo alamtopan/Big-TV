@@ -6,7 +6,7 @@
         <%= link_to "Dashboard", root_path %>
       </li>
       <li class="active">
-        Unit Item
+        Membership
       </li>
       <li class="search-box">
         <form class="sidebar-search">
@@ -20,7 +20,7 @@
       </li>
     </ol>
     <div class="page-header">
-      <h1>Show Unit Items</h1>
+      <h1>Show Membership</h1>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <i class="icon-external-link-sign"></i>
-        Unit Item
+        Membership
         <div class="panel-tools">
           <a class="btn btn-xs btn-link panel-expand" href="#">
             <i class="icon-resize-full"></i>
@@ -39,46 +39,65 @@
         </div>
       </div>
       <div class="panel-body">
-        
         <div class="form-group">
           <%= label_tag :name, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @unit_item.name %>
+            <%= @membership.name %>
           </div>
         </div>
         <br/>
         <div class="form-group">
           <%= label_tag :description, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @unit_item.description %>
+            <%= @membership.description %>
           </div>
         </div>
         <br/>
         <div class="form-group">
-          <%= label_tag :unlimited, nil, class: "col-sm-2 control-label" %>
+          <%= label_tag :publish_on, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @unit_item.unlimited %>
+            <%= @membership.publish_on %>
           </div>
         </div>
         <br/>
         <div class="form-group">
-          <%= label_tag :group_item_id, nil, class: "col-sm-2 control-label" %>
+          <%= label_tag :expire_on, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @unit_item.group_item.name if @unit_item.group_item %>
+            <%= @membership.expire_on %>
           </div>
         </div>
         <br/>
         <div class="form-group">
-          <%= label_tag :logo, nil, class: "col-sm-2 control-label" %>
+          <%= label_tag :version, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= image_tag @unit_item.logo.url(:medium) %>
+            <%= @membership.version %>
           </div>
         </div>
         <br/>
+        <div class="form-group">
+          <%= label_tag :position, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @membership.position %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :is_published, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @membership.is_published %>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <%= label_tag :is_featured, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @membership.is_featured %>
+          </div>
+        </div>
         <div class="form-group">
           <div class="pull-right">
-            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, unit_items_path, class: "btn btn-dark-grey" %>
-            <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_unit_item_path(@unit_item), class: "btn btn-purple" %>
+            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, memberships_path, class: "btn btn-dark-grey" %>
+            <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_membership_path(@membership), class: "btn btn-purple" %>
           </div>
         </div>
       </div>

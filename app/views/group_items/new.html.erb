@@ -2,10 +2,8 @@
   <div class="col-sm-12">
     <ol class="breadcrumb">
       <li>
-        <i class="clip-pencil"></i>
-        <a href="#">
-          <%= link_to "Dashboard", root_path %>
-        </a>
+        <i class="clip-home-3"></i>
+        <%= link_to "Dashboard", root_path %>
       </li>
       <li class="active">
         Add Group Item
@@ -44,7 +42,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <%= form_for @group_item, html: {class: "form-horizontal"}do |f| %>
+        <%= form_for @group_item, html: {class: "form-horizontal"} do |f| %>
           <%= render partial: 'form', locals: {f: f} %>
         <% end %>
       </div>
