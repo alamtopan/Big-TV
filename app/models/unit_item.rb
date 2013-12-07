@@ -12,12 +12,5 @@ class UnitItem < ActiveRecord::Base
 
   belongs_to :group_item
 
-  before_validation :generate_item_key
-
-  private
-    def generate_item_key
-      return '' if self.item_key.present?
-      self.item_key = self.name.downcase
-    end
 
 end

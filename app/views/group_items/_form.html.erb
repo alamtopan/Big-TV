@@ -14,7 +14,7 @@
 <div class="form-group">
   <%= f.label "Unit Item", class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
-    <% @unit_item.each do |item| %>
+    <% @unit_items.each do |item| %>
       <label class="checkbox-inline">
         <%= f.check_box :unit_item_ids, { :multiple => true } ,item.id, nil %>
         <%= item.name %>

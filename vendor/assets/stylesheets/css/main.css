@@ -23,19 +23,19 @@ body {
 	float: left;
 }
 body.bg_style_1 {
-	background: url("../images/bg.png") rgba(0, 0, 0, 0) !important;
+	background: url("bg.png") rgba(0, 0, 0, 0) !important;
 }
 body.bg_style_2 {
-	background: url("../images/bg_2.png") rgba(0, 0, 0, 0) !important;
+	background: url("bg_2.png") rgba(0, 0, 0, 0) !important;
 }
 body.bg_style_3 {
-	background: url("../images/bg_3.png") rgba(0, 0, 0, 0) !important;
+	background: url("bg_3.png") rgba(0, 0, 0, 0) !important;
 }
 body.bg_style_4 {
-	background: url("../images/bg_4.png") rgba(0, 0, 0, 0) !important;
+	background: url("bg_4.png") rgba(0, 0, 0, 0) !important;
 }
 body.bg_style_5 {
-	background: url("../images/bg_5.png") rgba(0, 0, 0, 0) !important;
+	background: url("bg_5.png") rgba(0, 0, 0, 0) !important;
 }
 a, a:focus, a:hover, a:active {
 	outline: 0 !important;
@@ -588,9 +588,9 @@ li.dropdown.current-user .dropdown-menu li a {
 /* ---------------------------------------------------------------------- */
 /*	Buttons
  /* ---------------------------------------------------------------------- */
-.btn {
+/*.btn {
 	font-family: 'Open Sans';
-}
+}*/
 .btn-teal {
 	background-color: #569099;
 	border-color: #4d8189;
@@ -2728,11 +2728,11 @@ body.login {
 	color: #7F7F7F;
 }
 body.login.example1 {
-	background-image: url("../images/bg.png");
+	background-image: url("bg.png");
 	background-color: rgba(0, 0, 0, 0);
 }
 body.login.example2 {
-	background-image: url("../images/bg_2.png");
+	background-image: url("bg_2.png");
 	background-color: rgba(255, 255, 255, 0);
 }
 body.login .main-login {
@@ -2745,7 +2745,7 @@ body.login .logo {
 body.login .box-login, body.login .box-forgot, body.login .box-register {
 	background: #FFFFFF;
 	border-radius: 5px;
-	box-shadow: -30px 30px 50px rgba(0, 0, 0, 0.32);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 	overflow: hidden;
 	padding: 15px;
 }
@@ -3569,7 +3569,7 @@ div.timeline_element.purple div.timeline_title {
 	background-color: #ffffff !important;
 }
 .timer-area {
-	background-image: url("../images/bg.png");
+	background-image: url("bg.png");
 	background-color: rgba(0, 0, 0, 0);
 	margin-bottom: 4em;
 	padding-top: 2em;
@@ -3585,7 +3585,7 @@ ul#countdown {
 }
 ul#countdown li {
 	display: inline-block;
-	background: transparent url('../images/timer-piece.png') no-repeat left top;
+	background: transparent url('timer-piece.png') no-repeat left top;
 	width: 104px;
 	margin-bottom: 4em;
 	text-align: center;
@@ -3803,7 +3803,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
  /* ---------------------------------------------------------------------- */
 body.lock-screen {
 	color: #7F7F7F;
-	background-image: url("../images/bg.png");
+	background-image: url("bg.png");
 	background-color: rgba(0, 0, 0, 0);
 }
 .main-ls {

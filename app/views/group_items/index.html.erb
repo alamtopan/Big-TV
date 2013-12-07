@@ -1,78 +1,32 @@
-<div class="row">
-  <div class="col-sm-12">
-    <ol class="breadcrumb">
-      <li>
-        <i class="clip-home-3"></i>
-        <%= link_to "Dashboard", root_path %>
-      </li>
-      <li class="active">
-        Group Item
-      </li>
-      <li class="search-box">
-        <form class="sidebar-search">
-          <div class="form-group">
-            <input type="text" placeholder="Start Searching..." data-default="130">
-            <button class="submit">
-              <i class="clip-search-3"></i>
-            </button>
-          </div>
-        </form>
-      </li>
-    </ol>
-    <div class="page-header">
-      <h1>
-        List Group Items 
-        <div class="pull-right">
-          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_group_item_path, class: "btn btn-primary" %>
-        </div>
-      </h1>
-    </div>
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Channel Categories', 
+                     button_name: 'Category'
+                   } do %>
+  <table class="table table-hover" id="sample-table-1">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Colour</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @group_items.each_with_index do |group,index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= group.name %></td>
+          <td><div style="background:<%= group.colour %>"><%= group.colour %></div></td>
+          <td>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: group, confirmation: "#{group.name} will be deleted, are you sure ?"} %>
+            </div>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @group_items %>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-external-link-sign"></i>
-        Group Item
-        <div class="panel-tools">
-          <a class="btn btn-xs btn-link panel-expand" href="#">
-            <i class="icon-resize-full"></i>
-          </a>
-          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-          </a>
-        </div>
-      </div>
-      <div class="panel-body">
-        <table class="table table-hover" id="sample-table-1">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Colour</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @group_items.each_with_index do |group,index| %>
-              <tr>
-                <td><%= index+1 %></td>
-                <td><%= group.name %></td>
-                <td><div style="background:<%= group.colour %>"><%= group.colour %></div></td>
-                <td>
-                  <div class="visible-md visible-lg hidden-sm hidden-xs pull-right">
-                    <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_group_item_path(group), class: "btn btn-teal" %>
-                    <%= link_to '<i class="icon-remove"></i> Delete'.html_safe, group_item_path(group), method: 'delete',class: "btn btn-bricky" ,data: { confirm: "Are you sure?" } %>
-                  </div>
-                </td>
-              </tr>  
-            <% end %>
-          </tbody>
-        </table>
-        <div>
-          <%= paginate @group_items %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% end %>

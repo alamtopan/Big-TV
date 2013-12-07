@@ -12,9 +12,9 @@
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :group_item_id, class: "col-sm-2 control-label" %>
+  <%= f.label 'Channel Category', class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
-    <%= f.select :group_item_id, options_from_collection_for_select(@group_id, :id, :name), {prompt: "--Please Select Group--"}, class: "form-control" %>
+    <%= f.select :group_item_id, options_from_collection_for_select(@group_items, :id, :name), {prompt: "Select Channel Category"}, class: "form-control" %>
   </div>
 </div>
 <div class="pull-right">

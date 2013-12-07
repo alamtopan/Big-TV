@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'clip-font';
-	src:url('fonts/clip-font.eot');
-	src:url('fonts/clip-font.eot@#iefix') format('embedded-opentype'),
-		url('fonts/clip-font.woff') format('woff'),
-		url('fonts/clip-font.ttf') format('truetype'),
-		url('fonts/clip-font.svg#clip-font') format('svg');
+	src:url('/assets/fonts/fonts/clip-font.eot');
+	src:url('/assets/fonts/fonts/clip-font.eot@#iefix') format('embedded-opentype'),
+		url('/assets/fonts/fonts/clip-font.woff') format('woff'),
+		url('/assets/fonts/fonts/clip-font.ttf') format('truetype'),
+		url('/assets/fonts/fonts/clip-font.svg#clip-font') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

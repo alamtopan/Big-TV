@@ -1,14 +1,10 @@
-class UsersController < InheritedResources::Base
-  before_filter :auth, only: :update
+class UsersController < ResourcesController
+  prepend_before_filter :draw_password, only: :update
 
-  def index
-    @users = User.where("id != ?", current_user.id).order("id DESC").page(params[:page]).per(1)
-  end
-
-  def auth
-    if params[:user] && params[:user][:password].blank?
-      params[:user].delete("password")
-      params[:user].delete("password_confirmation")
+  private
+    def draw_password
+      %w(password password_confirmation).each do |attr|
+        params[:user].delete(attr)
+      end if params[:user] && params[:user][:password].blank?
     end
-  end
 end

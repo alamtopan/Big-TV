@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :profile_attributes
   # attr_accessible :title, :body
 
-  has_one :profile, :foreign_key => "user_id", :dependent => :destroy
+  has_one :profile, dependent: :destroy
 
-  accepts_nested_attributes_for :profile, :reject_if => :all_blank, allow_destroy: true
-
-  validates :username, :uniqueness => true
-  validates :username, :presence => true
+  accepts_nested_attributes_for :profile, reject_if: :all_blank
+  
+  validates :username, uniqueness: true
+  validates :username, presence: true
 end

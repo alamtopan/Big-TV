@@ -1,7 +1,3 @@
-class MembershipsController < InheritedResources::Base
-
-  def index  
-    @memberships = Membership.page()  
-  end
+class MembershipsController < ResourcesController
 
 end

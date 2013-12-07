@@ -1,7 +1,8 @@
-<div class="alert alert-success">
-	<button data-dismiss="alert" class="close">
-		×
-	</button>
-	<i class="icon-ok-sign"></i>
-	<strong>Well done!</strong> You successfully login in administrator
-</div>
+<% flash.each do |name, msg| %>
+  <% if msg.present? && msg.is_a?(String) %>
+    <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+    </div>
+  <% end %>
+<% end %>

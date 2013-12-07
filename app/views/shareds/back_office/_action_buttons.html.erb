@@ -1,0 +1,27 @@
+<div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+  <%= link_to edit_resource_path(resource), class: 'btn btn-default' do %>
+    <i class="icon-edit"></i> Edit
+  <% end %>
+  <%= link_to resource_path(resource), class: 'btn btn-default', method: :delete, data: { confirm: confirmation } do %>
+    <i class="icon-remove"></i> Delete
+  <% end %>
+</div>
+<div class="visible-xs visible-sm hidden-md hidden-lg">
+  <div class="btn-group">
+    <a class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" href="#">
+      <i class="icon-cog"></i> <span class="caret"></span>
+    </a>
+    <ul role="menu" class="dropdown-menu pull-right">
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="#">
+          <i class="icon-edit"></i> Edit
+        </a>
+      </li>
+      <li role="presentation">
+        <a role="menuitem" tabindex="-1" href="#">
+          <i class="icon-remove"></i> Remove
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

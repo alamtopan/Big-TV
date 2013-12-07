@@ -16,6 +16,8 @@ gem 'rails', '3.2.13'
   gem 'devise'                          # authentication
   gem 'cancan'                          # role management system
   gem 'inherited_resources'             # DRY for CRUD methods in controller
+  gem 'enumerize'                       # Enumerated attributes with I18n
+  gem 'cocoon'                          # Dynamic nested forms using jQuery
 # end
 
 
@@ -36,22 +38,7 @@ group :assets do
   gem 'jquery-rails'
 end
 
-group :development do
+group :development, :test do
   gem 'letter_opener'
   gem 'debugger'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'

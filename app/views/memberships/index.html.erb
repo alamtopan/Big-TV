@@ -1,83 +1,36 @@
-<div class="row">
-  <div class="col-sm-12">
-    <ol class="breadcrumb">
-      <li>
-        <i class="clip-home-3"></i>
-        <%= link_to "Dashboard", root_path %>
-      </li>
-      <li class="active">
-        Memberships
-      </li>
-      <li class="search-box">
-        <form class="sidebar-search">
-          <div class="form-group">
-            <input type="text" placeholder="Start Searching..." data-default="130">
-            <button class="submit">
-              <i class="clip-search-3"></i>
-            </button>
-          </div>
-        </form>
-      </li>
-    </ol>
-    <div class="page-header">
-      <h1>
-        List Memberships 
-        <div class="pull-right">
-          <%= link_to '<i class="icon-plus"></i>Add Item'.html_safe, new_membership_path, class: "btn btn-primary" %>
-        </div>
-      </h1>
-    </div>
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Memberships', 
+                     button_name: 'Membership'
+                   } do %>
+  <table class="table table-hover" id="sample-table-1">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Publish on</th>
+        <th>Published</th>
+        <th>Featured</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @memberships.each_with_index do |member,index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= member.name %></td>
+          <td><%= member.publish_on %></td>
+          <td><%= member.is_published %></td>
+          <td><%= member.is_featured %></td>
+          <td>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: member, confirmation: "#{member.name} will be deleted, are you sure ?"} %>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @memberships %>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <i class="icon-external-link-sign"></i>
-        Membership
-        <div class="panel-tools">
-          <a class="btn btn-xs btn-link panel-expand" href="#">
-            <i class="icon-resize-full"></i>
-          </a>
-          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-          </a>
-        </div>
-      </div>
-      <div class="panel-body">
-        <table class="table table-hover" id="sample-table-1">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Publish on</th>
-              <th>Published</th>
-              <th>Featured</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @memberships.each_with_index do |member,index| %>
-              <tr>
-                <td><%= index+1 %></td>
-                <td><%= member.name %></td>
-                <td><%= member.publish_on %></td>
-                <td><%= member.is_published %></td>
-                <td><%= member.is_featured %></td>
-                <td>
-                  <div class="visible-md visible-lg hidden-sm hidden-xs pull-right">
-                    <%= link_to '<i class="icon-share"></i> Show'.html_safe, membership_path(member), class: "btn btn-green" %>
-                    <%= link_to '<i class="icon-edit"></i> Edit'.html_safe, edit_membership_path(member), class: "btn btn-teal"%>
-                    <%= link_to '<i class="icon-remove"></i> Delete'.html_safe, membership_path(member), method: 'delete',class: "btn btn-bricky" ,data: { confirm: "Are you sure?" } %>
-                  </div>
-                </td>
-              </tr>  
-            <% end %>
-          </tbody>
-        </table>
-        <div>
-          <%= paginate @memberships %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      
+<% end %>

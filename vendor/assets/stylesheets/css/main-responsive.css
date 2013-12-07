@@ -78,7 +78,7 @@
 		left: 35px;
 		top: -1px;
 		width: 14px;
-		background: url(../images/menu-white-arrow.png) left center no-repeat;
+		background: url(menu-white-arrow.png) left center no-repeat;
 	}
 	ul.main-navigation-menu > li:first-child > a > .selected {
 		display: none !important;
@@ -445,7 +445,7 @@
 		left: 35px;
 		top: -1px;
 		width: 14px;
-		background: url(../images/menu-white-arrow.png) left center no-repeat;
+		background: url(menu-white-arrow.png) left center no-repeat;
 	}
 	.navigation-small ul.main-navigation-menu > li:hover > a .title {
 		padding-left: 30px;

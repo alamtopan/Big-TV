@@ -4,9 +4,8 @@ BigTv::Application.routes.draw do
   resources :users do
   	resources :profiles
   end
-  resources :unit_items
-  resources :group_items
-  resources :membership_prices
+  resources :unit_items,  path: 'channels'
+  resources :group_items, path: 'channel_categories'
   resources :memberships
 
   root :to => 'home#dashboard'

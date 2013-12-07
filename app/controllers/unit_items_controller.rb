@@ -1,19 +1,8 @@
-class UnitItemsController < InheritedResources::Base
+class UnitItemsController < ResourcesController
   before_filter :prepare_select, only: [:new, :edit]
-
-  def index  
-    @unit_items = UnitItem.page()  
-  end
-
-  def create  
-    create! { unit_items_path }  
-  end  
-
-  def update  
-    update! { unit_items_path }  
-  end  
-
-  def prepare_select
-    @group_id = GroupItem.all
-  end
+  
+  private
+    def prepare_select
+      @group_items = GroupItem.all
+    end
 end
