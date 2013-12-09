@@ -1,4 +1,4 @@
-class HomeController < InheritedResources::Base
+class HomeController < ResourcesController
 	
 	def dashboard
 

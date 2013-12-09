@@ -1,0 +1,19 @@
+<% @group_items.each_with_index do |group, g_index| %>
+  <tr <%= colour_group(group) %>>
+    <td width="3%"><%= check_box_tag "","",false,{class: "checkbox_item",data: {index: g_index} } %></td>
+    <td><%= group.name %></td>
+  </tr>
+  <% group.unit_items.each_with_index do |item, i_index| %>
+    <% attr_id = (g_index) + 1 * (i_index + 1) %>
+    <tr>
+      <td>
+        <% selected_item = @membership.items.select{|i| i.unit_item_id == item.id}.first %>
+        <%= check_box_tag "membership[unit_item_ids][]", item.id, selected_item.present?,{ class: "unit_item_id_#{g_index} checkbox_unit" } %>
+      </td>
+      <td>
+        <%= image_tag item.logo.url(:thumb) if item.logo %>
+        <%= item.name %>
+      </td>
+    </tr>
+  <% end %>
+<% end if @group_items %>

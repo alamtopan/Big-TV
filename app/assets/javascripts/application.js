@@ -26,6 +26,9 @@
 //= require plugins/jquery.sparkline/jquery.sparkline
 //= require plugins/jquery-easy-pie-chart/jquery.easy-pie-chart
 //= require plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min
+
+//= require cocoon
+
 //= require plugins/fullcalendar/fullcalendar/fullcalendar
 
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
