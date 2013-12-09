@@ -7,6 +7,7 @@ BigTv::Application.routes.draw do
   resources :unit_items,  path: 'channels'
   resources :group_items, path: 'channel_categories'
   resources :memberships
+  resources :categories
 
   root :to => 'home#dashboard'
 
