@@ -6,24 +6,26 @@
 			</button>
 			<%= link_to "#{image_tag 'bigtv.png', height: '50px'}".html_safe, root_path %>
 		</div>
-		<div class="navbar-tools">
-			<ul class="nav navbar-right">
-				<li class="dropdown current-user">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-						<img src="/assets/avatar-1-small.jpg" class="circle-img" alt="">
-						<span class="username"><%= current_user.username %></span>
-						<i class="clip-chevron-down"></i>
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_user_path(current_user.id) %>
-						</li>
-						<li>
-							<%= link_to "<i class='clip-exit'></i>SignOut".html_safe, destroy_user_session_path, :method => :delete %>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<% if current_user %>
+			<div class="navbar-tools">
+				<ul class="nav navbar-right">
+					<li class="dropdown current-user">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							<img src="/assets/avatar-1-small.jpg" class="circle-img" alt="">
+							<span class="username"><%= current_user.username if current_user %></span>
+							<i class="clip-chevron-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_user_path(current_user) %>
+							</li>
+							<li>
+								<%= link_to "<i class='clip-exit'></i>SignOut".html_safe, destroy_user_session_path, :method => :delete %>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		<% end %>
 	</div>
 </div>

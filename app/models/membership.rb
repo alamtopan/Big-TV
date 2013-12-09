@@ -1,10 +1,12 @@
 class Membership < ActiveRecord::Base
   attr_accessible :name, :description, :publish_on, :expire_on, :version,
-                  :position, :is_published, :is_featured
+                  :position, :is_published, :is_featured, :prices_attributes, 
+                  :unit_item_ids, :category_id
 
-  has_many    :memberhsip_prices, dependent: :destroy
-  # has_many    :memberhsip_item
-  # belongs_to  :category
+  has_many    :prices, class_name: "MembershipPrice", dependent: :destroy
+  has_many    :items, class_name: "MembershipItem", dependent: :destroy
+  has_many    :unit_items, through: :items
+  belongs_to  :category
 
-  accepts_nested_attributes_for :memberhsip_prices, reject_if: :all_blank, allow_destroy: true
-end
+  accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
+end 

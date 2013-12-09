@@ -6,7 +6,7 @@
         <%= link_to "Dashboard", root_path %>
       </li>
       <li class="active">
-        <%= "#{action_name} #{form_name}" %>
+        Category
       </li>
       <li class="search-box">
         <form class="sidebar-search">
@@ -20,16 +20,16 @@
       </li>
     </ol>
     <div class="page-header">
-      <h1><%= "#{action_name} #{form_name}" %></h1>
+      <h1>Show Category</h1>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
         <i class="icon-external-link-sign"></i>
-        <%= "#{form_name}" %>
+        Category
         <div class="panel-tools">
           <a class="btn btn-xs btn-link panel-expand" href="#">
             <i class="icon-resize-full"></i>
@@ -39,9 +39,18 @@
         </div>
       </div>
       <div class="panel-body">
-        <%= form_for resource, method: form_method, html: {class: "form-horizontal"} do |f| %>
-          <%= render partial: 'form', locals: {f: f} %>
-        <% end %>
+        <div class="form-group">
+          <%= label_tag :name, nil, class: "col-sm-2 control-label" %>
+          <div class="col-sm-9">
+            <%= @category.name %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="pull-right">
+            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, categories_path, class: "btn btn-dark-grey" %>
+            <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_category_path(@category), class: "btn btn-purple" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

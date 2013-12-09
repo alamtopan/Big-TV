@@ -6,7 +6,7 @@ class MembershipPrice < ActiveRecord::Base
   
   with_options(presence: true) do |presence|
     presence.validates :periode_name
-    presence.validates :membership_id
+    # presence.validates :membership_id
     presence.with_options(numericality: {integer: true}) do |numericality|
       numericality.validates :total_period
     end
