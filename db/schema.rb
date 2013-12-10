@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206141608) do
+ActiveRecord::Schema.define(:version => 20131210064444) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "deleted_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "group_items", :force => true do |t|
     t.string   "name",       :null => false
@@ -56,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20131206141608) do
     t.datetime "deleted_at"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+    t.integer  "category_id"
   end
 
   add_index "memberships", ["name", "version"], :name => "index_memberships_on_name_and_version"
@@ -115,14 +123,15 @@ ActiveRecord::Schema.define(:version => 20131206141608) do
 
   create_table "unit_items", :force => true do |t|
     t.integer  "group_item_id"
-    t.string   "name",              :null => false
+    t.string   "name",                                 :null => false
     t.datetime "deleted_at"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.boolean  "status_hd",         :default => false
   end
 
   add_index "unit_items", ["name"], :name => "index_unit_items_on_name"

@@ -1,0 +1,461 @@
+group:
+  - group_0:
+      name: 'General Entertainment'
+      colour: '#5d96d7'
+      items:
+      - item_0:
+          name: 'Berita Satu World'
+          hd:   false
+          logo: 'Berita_Satu_CA.png'
+      - item_1:
+          name: 'Starworld'
+          hd:   true
+          logo: 'Star_World_HD.png'
+      - item_2:
+          name: 'Tru Tv'
+          hd:   false
+          logo: 'Tru_TV.png'
+      - item_3:
+          name: 'AXN'
+          hd:   true
+          logo: 'AXN.png'
+      - item_4:
+          name: 'Animax'
+          hd:   false
+          logo: 'Animax.png'
+      - item_5:
+          name: 'Aniplus'
+          hd:   false
+          logo: 'AniPlus.png'
+      - item_6:
+          name: 'Be Tv'
+          hd:   false
+          logo: 'beTV.png'
+      - item_7:
+          name: 'FOX'
+          hd:   true
+          logo: 'FOX.png'
+      - item_8:
+          name: 'FX'
+          hd:   false
+          logo: 'FX.png'
+      - item_9:
+          name: 'Syfy'
+          hd:   false
+          logo: 'Syfy.png'
+      - item_10:
+          name: 'Universal'
+          hd:   false
+          logo: 'Universal.png'
+      - item_11:
+          name: 'FOX Crime'
+          hd:   false
+          logo: 'FOX_Crime.png'
+      - item_12:
+          name: 'Big Show'
+          hd:   false
+          logo: ''
+      - item_13:
+          name: 'DIVA'
+          hd:   false
+          logo: 'Diva.png'
+      - item_14:
+          name: 'M Channel'
+          hd:   false
+          logo: 'M_Channel.png'
+      - item_15:
+          name: 'SET'
+          hd:   false
+          logo: 'SET.png'
+      - item_16:
+          name: 'Net'
+          hd:   true
+          logo: 'NET_TV.png'
+  - group_1:
+      name: 'Lifestyle'
+      colour: '#ed3d78'
+      items:
+      - item_0:
+          name: 'Hi!'
+          hd:   true
+          logo: 'Hi_HD.png'
+      - item_1:
+          name: 'Discovery Turbo'
+          hd:   false
+          logo: 'Discovery_Turbo.png'
+      - item_2:
+          name: 'TLC'
+          hd:   false
+          logo: 'TLC.png'
+      - item_3:
+          name: 'Home & Health'
+          hd:   false
+          logo: 'Discovery_Home_and_Health.png'
+      - item_4:
+          name: 'Asian Food Channel'
+          hd:   false
+          logo: 'Asian_Food_Channel.png'
+      - item_5:
+          name: 'E! Entertainment'
+          hd:   false
+          logo: 'E!_Entertainment.png'
+      - item_6:
+          name: 'Li TV'
+          hd:   false
+          logo: 'Li_TV.png'
+      - item_7:
+          name: 'Ginx'
+          hd:   false
+          logo: 'Ginx.png'
+      - item_8:
+          name: 'Fashion One'
+          hd:   false
+          logo: 'Fashion_One.png'
+  - group_2:
+      name: 'Education'
+      colour: '#48cf94'
+      items:
+      - item_0:
+          name: 'Discovery Channel'
+          hd:   false
+          logo: 'Discovery_Channel.png'
+      - item_1:
+          name: 'Discovery Science'
+          hd:   false
+          logo: 'National_Graphic_Channel.png'
+      - item_2:
+          name: 'Animal Planet'
+          hd:   false
+          logo: 'Animal_Planet.png'
+      - item_3:
+          name: 'Nat Geo Channel'
+          hd:   true
+          logo: 'National_Geographic_Channel.png'
+      - item_4:
+          name: 'Nat Geo Adventure'
+          hd:   false
+          logo: 'National_Geographic_Adventure.png'
+      - item_5:
+          name: 'Nat Geo Wild'
+          hd:   true
+          logo: 'National_Geographic_Wild.png'
+      - item_6:
+          name: 'Outdoor Channel'
+          hd:   false
+          logo: 'Outdoor_Channel.png'
+      - item_7:
+          name: 'History'
+          hd:   true
+          logo: 'History_HD.png'
+      - item_8:
+          name: 'Biography'
+          hd:   false
+          logo: 'Biography.png'
+      - item_9:
+          name: 'Crime Investigation'
+          hd:   false
+          logo: 'Crime_and_Investigation_Channel.png'
+      - item_10:
+          name: 'Lifetime'
+          hd:   false
+          logo: 'Lifetime.png'
+  - group_3:
+      name: 'Kids'
+      colour: '#fabc00'
+      items:
+      - item_0:
+          name: 'Disney Channel'
+          hd:   false
+          logo: 'Disney_Channel_HD.png'
+      - item_1:
+          name: 'Nickelodeon'
+          hd:   false
+          logo: 'Nickelodeon.png'
+      - item_2:
+          name: 'Cartoon Network'
+          hd:   true
+          logo: 'Cartoon_Network_HD.png'
+      - item_3:
+          name: 'Discovery Kids'
+          hd:   false
+          logo: 'Discovery_Kids.png'
+      - item_4:
+          name: 'Disney Junior'
+          hd:   false
+          logo: 'Disney_Junior.png'
+      - item_5:
+          name: 'Jim Jam'
+          hd:   false
+          logo: 'Jim_Jam.png'
+      - item_6:
+          name: 'Toonami'
+          hd:   false
+          logo: 'Toonami.png'
+      - item_7:
+          name: 'Cartoonito'
+          hd:   false
+          logo: 'Cartoonito.png'
+  - group_4:
+      name: 'Sports'
+      colour: '#634590'
+      items:
+      - item_0:
+          name: 'beIN Sports 1'
+          hd:   true
+          logo: 'Bein_Sport_1_HD.png'
+      - item_1:
+          name: 'beIN Sports 2'
+          hd:   true
+          logo: 'Bein_Sport_2_HD.png'
+      - item_2:
+          name: 'Fight Sports'
+          hd:   false
+          logo: 'Fight.png'
+      - item_3:
+          name: 'Berita Satu Sports'
+          hd:   false
+          logo: 'Berita_Satu_Sport.png'
+      - item_4:
+          name: 'Motorvision TV'
+          hd:   false
+          logo: 'Motorvision.png'
+      - item_5:
+          name: 'FOX Sports Plus'
+          hd:   true
+          logo: 'Fox_Sports_Plus_HD.png'
+      - item_6:
+          name: 'STAR Sports'
+          hd:   false
+          logo: 'STAR_Sports.png'
+  - group_5:
+      name: 'Musics'
+      colour: '#5b6063'
+      items:
+      - item_0:
+          name: 'MIX'
+          hd:   false
+          logo: 'Mix.png'
+      - item_1:
+          name: 'MTV Asia'
+          hd:   false
+          logo: 'MTV_Asia.png'
+      - item_2:
+          name: 'Dangdutz'
+          hd:   false
+          logo: 'Dangdutz.png'
+      - item_3:
+          name: 'MTV Live'
+          hd:   false
+          logo: 'MTV_Live_HD.png'
+  - group_6:
+      name: 'News / International'
+      colour: '#7ecae9'
+      items:
+      - item_0:
+          name: 'Berita Satu News'
+          hd:   true
+          logo: 'Berita_Satu_World_HD.png'
+      - item_1:
+          name: 'Jakarta Globe TV'
+          hd:   false
+          logo: 'Jakarta_Globe_TV.png'
+      - item_2:
+          name: 'TV Parlemen'
+          hd:   false
+          logo: 'TV_Parlement.png'
+      - item_3:
+          name: 'France 24 English'
+          hd:   false
+          logo: 'France_24_English.png'
+      - item_4:
+          name: 'CNC'
+          hd:   false
+          logo: ''
+      - item_5:
+          name: 'CCTV 4'
+          hd:   false
+          logo: 'CCTV_4.png'
+      - item_6:
+          name: 'CCTV 9'
+          hd:   false
+          logo: 'CCTV_9.png'
+      - item_7:
+          name: "Al'Jazeera Intl"
+          hd:   false
+          logo: 'Al_Jazeera.png'
+      - item_8:
+          name: 'Bloomberg TV'
+          hd:   false
+          logo: 'Bloomberg_TV_Indonesia.png'
+      - item_9:
+          name: 'Channel News Asia'
+          hd:   false
+          logo: 'Channel_News_Asia.png'
+      - item_10:
+          name: 'NDTV 24 x 7'
+          hd:   false
+          logo: 'NDTV_24_x_7.png'
+      - item_11:
+          name: 'Euro News'
+          hd:   false
+          logo: 'Euronews.png'
+      - item_12:
+          name: 'Russia Today'
+          hd:   false
+          logo: 'Russia_Today.png'
+      - item_13:
+          name: 'BBC World'
+          hd:   false
+          logo: 'BBC_World.png'
+      - item_14:
+          name: 'Fox News'
+          hd:   false
+          logo: 'Fox_News.png'
+      - item_15:
+          name: 'CNN International'
+          hd:   false
+          logo: 'CNN_International.png'
+      - item_16:
+          name: 'CNN Headline News'
+          hd:   false
+          logo: 'CNN_Headline_News.png'
+      - item_17:
+          name: 'RAI Italia'
+          hd:   false
+          logo: 'Rai_Italia.png'
+      - item_18:
+          name: 'CNBC Asia'
+          hd:   false
+          logo: 'CNBC.png'
+      - item_19:
+          name: 'SKY News'
+          hd:   false
+          logo: 'Sky_News.png'
+  - group_7:
+      name: 'Movies'
+      colour: '#7ecae9'
+      items:
+      - item_0:
+          name: "J'go"
+          hd:   true
+          logo: 'J_Go_HD.png'
+      - item_1:
+          name: 'HBO'
+          hd:   true
+          logo: 'HBO_HD.png'
+      - item_2:
+          name: 'Fox Movies Premium'
+          hd:   true
+          logo: 'Fox_Movies_Premium__HD.png'
+      - item_3:
+          name: 'HBO Hits'
+          hd:   false
+          logo: 'HBO_Hits.png'
+      - item_4:
+          name: 'Fox Action Movies'
+          hd:   false
+          logo: 'FOX_Action_Movies.png'
+      - item_5:
+          name: 'CineMAX'
+          hd:   false
+          logo: 'Cinemax.png'
+      - item_6:
+          name: 'Fox Family Movies'
+          hd:   false
+          logo: 'Fox_Family_Movies.png'
+      - item_7:
+          name: "HBO Family"
+          hd:   false
+          logo: 'HBO_Family.png'
+      - item_8:
+          name: 'HBO Signature'
+          hd:   false
+          logo: 'HBO_Signature.png'
+      - item_9:
+          name: 'MGM'
+          hd:   false
+          logo: 'MGM.png'
+  - group_8:
+      name: 'Chinese'
+      colour: '#7ecae9'
+      items:
+      - item_0:
+          name: "TVB 8"
+          hd:   false
+          logo: 'TVB_8.png'
+      - item_1:
+          name: 'TVB S Asia'
+          hd:   false
+          logo: 'TVB_S_Asia.png'
+      - item_2:
+          name: 'TVB Xing He'
+          hd:   false
+          logo: 'TVB_XingHe.png'
+      - item_3:
+          name: 'TVB Jade'
+          hd:   false
+          logo: 'TVB_Jade.png'
+      - item_4:
+          name: 'TVB S News'
+          hd:   false
+          logo: 'TVB_S_News.png'
+      - item_5:
+          name: 'Star Chinese Movies'
+          hd:   false
+          logo: 'Star_Chinese_Movies.png'
+      - item_6:
+          name: 'Phoenix Info'
+          hd:   false
+          logo: 'Phoenix_Info.png'
+      - item_7:
+          name: "Phoenix News"
+          hd:   false
+          logo: 'Phoenix_News.png'
+      - item_8:
+          name: 'Xing Kong'
+          hd:   false
+          logo: 'Xing_Kong.png'
+  - group_9:
+      name: 'Special Tiering'
+      colour: '#7ecae9'
+      items:
+      - item_0:
+          name: "KBS"
+          hd:   false
+          logo: 'KBS_World.png'
+      - item_1:
+          name: 'Star Plus'
+          hd:   false
+          logo: 'Star_Plus.png'
+      - item_2:
+          name: 'Arirang'
+          hd:   false
+          logo: 'Arirang.png'
+      - item_3:
+          name: 'Star Gold'
+          hd:   false
+          logo: 'Star_Gold.png'
+      - item_4:
+          name: 'Australia Network'
+          hd:   false
+          logo: 'Australia_Network.png'
+      - item_5:
+          name: 'Sony'
+          hd:   false
+          logo: 'Sony.png'
+      - item_6:
+          name: 'DW-TV Asia+'
+          hd:   false
+          logo: 'DW-TV_Asia+.png'
+      - item_7:
+          name: "MAX"
+          hd:   false
+          logo: 'MAX.png'
+      - item_8:
+          name: 'TV 5 Monde Asia'
+          hd:   false
+          logo: 'TV5_Monde.png'
+      - item_9:
+          name: 'NHK World'
+          hd:   false
+          logo: 'NHK_World.png'
