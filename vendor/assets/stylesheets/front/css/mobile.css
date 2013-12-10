@@ -1,6 +1,4 @@
-@media only screen
-and (max-width: 720px)
-{
+@media only screen and (max-width: 720px){
 	html, body
 	{
 		max-width: 720px;
@@ -23,8 +21,7 @@ and (max-width: 720px)
 	
 	.slide-main, #sequence
 	{
-		height: auto;
-		width: 570px;
+		
 	}
 	.slider_p1,*.slider_p2,*.slider_p3
 	{
@@ -34,7 +31,7 @@ and (max-width: 720px)
 	{
 		width: 40px;
 		height: 36px;
-		background-color: #5d6d7e;
+		background-color: #e74c3c;
 		border-radius: 2px;
 		float: right;
 		position: absolute;
@@ -79,7 +76,7 @@ and (max-width: 720px)
 	{
 		float: none;
 		list-style: none;
-		background-color: #5d6d7e;
+		background-color: #e74c3c;
 		margin-top: 3px;
 		height: 60px;
 		text-align: center;
@@ -416,7 +413,7 @@ and (max-width: 720px)
 			width: 100%;
 		}
 		.cont{
-			height: 492px;
+
 		}
 		.slider_main_image_1{
 			width: 75%;

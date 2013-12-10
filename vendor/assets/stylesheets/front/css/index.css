@@ -15,6 +15,38 @@ h1,h2,h3,h4,h5, p, ul
     padding: 0;
     margin: 0;
 }
+.table-bordered td{
+	width: 20%;
+}
+.head_pack{
+	color: #fff;
+	padding: 10px 0px;
+	float: left;
+	width: 100%;
+}
+.head_pack.blue{
+	background: #5d96d7;
+}
+.head_pack.pink{
+	background: #ed3d78;
+}
+.head_pack.green{
+	background: #48cf94;
+}
+.head_pack.yellow{
+	background: #fabc00;
+}
+.head_pack.old_blue{
+	background: #634590;
+}
+.head_pack.gray{
+	background: #5b6063;
+}
+.head_pack.blue_new{
+	background: #7ecae9;
+}
+
+
 .gray{
 	color: #ccc!important;
 }
@@ -24,8 +56,7 @@ h1,h2,h3,h4,h5, p, ul
 .wraper
 {
 	width: 100%;
-	background-color: #1a1818;	
-
+	background-color: #1a1818;
 }
 .wraper.head
 {
@@ -121,7 +152,6 @@ ul.menu li a.selected, ul.menu li a:hover
 {
 	margin: auto;
 	max-width: 100%;
-	height: 642px;
 	position: relative;
 }
 #slider-info
@@ -345,7 +375,7 @@ h3 span
 .packs-cont
 {
 	max-width: 1100px;
-	height: 330px;
+	min-height: 330px;
 	margin: auto;
 	text-align: center;
 }
@@ -1283,12 +1313,10 @@ input.s_form1
 	opacity: 1;
 }
 .info, .animate-out .info {
-    top: 70px;
 	opacity: 0;
 	z-index: 100;
 }
 .animate-in .info{
-    top: 70px;
 	opacity: 1;
 	z-index: 99;
 }
@@ -1950,7 +1978,7 @@ width: 220px;
 {
 	position: relative;
 	background: #fdb109;
-	padding-top: 80px;
+	padding-top: 50px;
 }
 
 
@@ -1964,7 +1992,7 @@ width: 220px;
 }
 
 .hi-icon:hover {
-	background: rgba(255,255,255,1);
+	background: #f68b1f;
 	color: #702fa8;
 	box-shadow: 0 0 0 8px #e74c3c;
 }
@@ -2151,5 +2179,116 @@ ul.menu li:nth-child(1){
 	overflow: hidden;
 }
 
+input[type="checkbox"] {
 
+}
+
+input[type="checkbox"] + label span {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	background: url("../../check_radio_sheet.png") left top no-repeat;
+	cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+background: url("../../check_radio_sheet.png") -19px top no-repeat;
+}
+
+.small_image{
+	height: 30px;
+	float: right;
+	margin-left: 5px;
+}
+
+.name_channel{
+	float: right;
+	width: 100px;
+}
+.hd{
+	background: #fdb109;
+	float: left;
+	padding: 2px 5px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border: 0px solid #000000;
+}
+
+
+
+
+/* CHECKBOX */
+
+input[type="checkbox"]{
+	display: none;
+}
+
+.roundedOne {
+	width: 23px;
+	height: 23px;
+	background: #fcfcfc;
+	margin:auto;
+	margin-top: 10px;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+}
+
+.roundedOne label {
+	cursor: pointer;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	left: 4px;
+	top: 4px;
+
+	background: #e8e8e8;
+}
+
+.roundedOne label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 11px;
+	background: #00bf00;
+
+	background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -o-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: -ms-linear-gradient(top, #00bf00 0%, #009400 100%);
+	background: linear-gradient(top, #00bf00 0%, #009400 100%);
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	top: 2px;
+	left: 2px;
+}
+
+.roundedOne label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.roundedOne input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
 
