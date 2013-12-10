@@ -16,9 +16,18 @@ module SeedGroup
         item = UnitItem.find_or_initialize_by_name(i_item['name'])
         item.group_item_id = group.id
         item.status_hd = i_item['hd']
-        # item.logo = File.open("#{Rails.root}/public/logo/#{i_item['logo']}",'rb')
+        if i_item['logo'].present?
+          item.logo = File.new("#{Rails.root}/public/logo/#{i_item['logo']}")
+        end
         item.save
       end
+    end
+    puts 'Other Channel'
+    items_nm = ['Start Cricket','Star Chinese Channel','K-TV','Setanta Sports']
+    items_nm.each do |item_nm|
+      item_other = UnitItem.find_or_initialize_by_name(item_nm)
+      item_other.status_hd = false
+      item_other.save!
     end
   end
 end

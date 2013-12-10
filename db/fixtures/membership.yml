@@ -729,3 +729,261 @@ membership:
           name: 'Fox Family Movies'
       - item_38:
           name: 'MGM' 
+  - membership_5:
+      name:         'Big BPL'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    10000
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'beIN Sports 1'
+      - item_1:
+          name: 'beIN Sports 2' 
+  - membership_6:
+      name:         'Big Ultimate Sports'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'beIN Sports 1'
+      - item_1:
+          name: 'beIN Sports 2'
+      - item_2:
+          name: 'Fight Sports'
+      - item_3:
+          name: 'Fox Sports Plus'
+      - item_4:
+          name: 'Star Sports' 
+  - membership_7:
+      name:         'Big Kids'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    24999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Cartoon Network'
+      - item_1:
+          name: 'Jim Jam'
+      - item_2:
+          name: 'Discovery Kids'
+      - item_3:
+          name: 'Cartoonito'
+      - item_4:
+          name: 'Nickelodeon'
+      - item_5:
+          name: 'Toonami' 
+  - membership_8:
+      name:         'Big England'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    150000
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'beIN Sports 1'
+  - membership_9:
+      name:         'Big Hong Kong'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'TVB 8'
+      - item_1:
+          name: 'TVB S Asia'
+      - item_2:
+          name: 'TVB Xing He'
+      - item_3:
+          name: 'TVB Jade'
+      - item_4:
+          name: 'TVB S News'
+  - membership_10:
+      name:         'Big China'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Star Chinese Movies'
+      - item_1:
+          name: 'Star Chinese Channel'
+      - item_2:
+          name: 'Phoenix Info'
+      - item_3:
+          name: 'Phoenix News'
+      - item_4:
+          name: 'Xing Kong'
+  - membership_11:
+      name:         'Big Box Office'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'Extra'
+      prices:
+        - price_0:
+            price:    99999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Fox Movies Premium'
+      - item_1:
+          name: 'Fox Action Movies'
+      - item_2:
+          name: 'Fox Family Movies'
+      - item_3:
+          name: 'MGM'
+      - item_4:
+          name: 'HBO'
+      - item_5:
+          name: 'HBO Hits'
+      - item_6:
+          name: 'CineMAX'
+      - item_7:
+          name: 'HBO Signature'
+      - item_8:
+          name: 'HBO Family'
+  - membership_12:
+        name:         'Big HBO Movies'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    69999
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'HBO'
+        - item_1:
+            name: 'HBO Hits'
+        - item_2:
+            name: 'CineMAX'
+        - item_3:
+            name: 'HBO Signature'
+        - item_4:
+            name: 'HBO Family'
+  - membership_13:
+        name:         'Big HBO Movies'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    69999
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'HBO'
+        - item_1:
+            name: 'HBO Hits'
+        - item_2:
+            name: 'CineMAX'
+        - item_3:
+            name: 'HBO Signature'
+        - item_4:
+            name: 'HBO Family'
+  - membership_14:
+        name:         'Big Aussie'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    120000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'Setanta Sports'
+        - item_1:
+            name: 'Australia Network'
+  - membership_15:
+        name:         'Big Korea'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    120000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'K-TV'
+  - membership_16:
+        name:         'Big Japan'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    50000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'NHK World'
+  - membership_17:
+        name:         'Big India'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    50000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'Sony'
+        - item_1:
+            name: 'MAX'
+        - item_2:
+            name: 'Star Plus'
+        - item_3:
+            name: 'Star Gold'
