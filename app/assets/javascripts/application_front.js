@@ -12,3 +12,13 @@
 //= require front/js/jquery.counters.min
 //= require front/js/hover
 //= require front/js/init
+
+	$(document).ready(function(){
+		$(window).resize(function(){
+			var imgHeight = $('.info img').height();
+			$('.cont, .slide-main, .wraper2 , #sequence').css('height', imgHeight+'px');
+
+			var hdHeight = $('.wraper.head').height();
+			$('.head_bander').css('height', hdHeight+'px');
+		}).resize();
+	});
