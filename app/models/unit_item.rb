@@ -11,6 +11,7 @@ class UnitItem < ActiveRecord::Base
   validates_uniqueness_of :name
 
   belongs_to :group_item
-
+  has_many   :membership_items
+  has_many   :memberships, through: :membership_items
 
 end

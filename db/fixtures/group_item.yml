@@ -333,7 +333,7 @@ group:
           logo: 'Sky_News.png'
   - group_7:
       name: 'Movies'
-      colour: '#7ecae9'
+      colour: '#dc4b4e'
       items:
       - item_0:
           name: "J'go"
@@ -377,7 +377,7 @@ group:
           logo: 'MGM.png'
   - group_8:
       name: 'Chinese'
-      colour: '#7ecae9'
+      colour: '#d1b234'
       items:
       - item_0:
           name: "TVB 8"
@@ -417,7 +417,7 @@ group:
           logo: 'Xing_Kong.png'
   - group_9:
       name: 'Special Tiering'
-      colour: '#7ecae9'
+      colour: '#b2b2b1'
       items:
       - item_0:
           name: "KBS"

@@ -5,78 +5,27 @@
                 
 	<article class="packs-cont cbp-so-scroller">
 		<div class="mbl-packs-cont cbp-so-section">
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					BiG
-				</div>
-				<header class="pack-h">Personal Pack</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
+			<% @memberships.each do |membership| %>
+				<div class="pack cbp-so-side cbp-so-side-left" >
+					<div class="pack-price">
+						BiG
 					</div>
-				</div>
-				<div class="pack-order">order now</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					BiG
-				</div>
-				<header class="pack-h">Personal Pack</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
+					<header class="pack-h"><%= membership.name %></header>
+					<div class="pack-info">
+						<div class="pack-i-line">
+							Rp.
+							<span class="prc">
+								<%= number_to_currency(membership.price_month,{unit: '', precision: 3}) %>
+							</span>
+						</div>
 					</div>
+					<div class="pack-order">order now</div>
+					<div class="mbl-pack-mask"></div>
 				</div>
-				<div class="pack-order">order now</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					BiG
-				</div>
-				<header class="pack-h">Personal Pack</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="pack-order">order now</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					BiG
-				</div>
-				<header class="pack-h">Personal Pack</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="pack-order">order now</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					BiG
-				</div>
-				<header class="pack-h">Personal Pack</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="pack-order">order now</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
+			<% end %>
 		</div>
 
-		<%= render partial: "shareds/front/table_packages" %>
+		<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
   </article>
   <br><br>
 	<div class="polosochka"></div>
