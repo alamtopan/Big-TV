@@ -8,7 +8,7 @@ BigTv::Application.routes.draw do
   resources :group_items, path: 'channel_categories'
   resources :memberships
   resources :categories
-
+  resource  :cart
   root :to => 'publics#home'
 
   get   '/dashboard',       to: 'home#dashboard',  as: 'dashboard'
