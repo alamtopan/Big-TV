@@ -5,16 +5,20 @@
                 
 	<article class="packs-cont cbp-so-scroller">
 		<div class="mbl-packs-cont cbp-so-section">
+			<% @memberships.each do |membership| %>
 			<div class="pack cbp-so-side cbp-so-side-left" >
 				<div class="pack-price">
 					<div class="big-counter">BiG</div>
-					<span class="small-counter2">UNIVERSE 142</span>
+					<span class="small-counter2"><%= membership.name %></span>
 				</div>
 				<header class="pack-h">
 				</header>
 				<div class="pack-info">
 					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
+						Rp.
+						<span class="prc">
+							<%= number_to_currency(membership.price_month,{unit: '', precision: 3}) %>
+						</span>
 					</div>
 				</div>
 				<div class="promo_banner">
@@ -22,87 +26,9 @@
 				<div class="pack-order margn">SUBSCRIBE</div>
 				<div class="mbl-pack-mask"></div>
 			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					<div class="big-counter">BiG</div>
-					<span class="small-counter2">START 117</span>
-				</div>
-				<header class="pack-h">
-					<span class="rp_small">Rp.</span> <span class="promo">440.000</span>
-				</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="promo_banner">
-					<span>Disc.<b>40%</b></span>
-				</div>
-				<div class="pack-order margn">SUBSCRIBE</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					<div class="big-counter">BiG</div>
-					<span class="small-counter2">SUN 94</span>
-				</div>
-				<header class="pack-h">
-					<span class="rp_small">Rp.</span> <span class="promo">440.000</span>
-				</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="promo_banner">
-					<span>Disc.<b>40%</b></span>
-				</div>
-				<div class="pack-order margn">SUBSCRIBE</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					<div class="big-counter">BiG</div>
-					<span class="small-counter2">FUN 79</span>
-				</div>
-				<header class="pack-h">
-					<span class="rp_small">Rp.</span> <span class="promo">440.000</span>
-				</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="promo_banner">
-					<span>Disc.<b>40%</b></span>
-				</div>
-				<div class="pack-order margn">SUBSCRIBE</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
-
-			<div class="pack cbp-so-side cbp-so-side-left" >
-				<div class="pack-price">
-					<div class="big-counter">BiG</div>
-					<span class="small-counter2">DEAL 70</span>
-				</div>
-				<header class="pack-h">
-				</header>
-				<div class="pack-info">
-					<div class="pack-i-line">
-						Rp.<span class="prc">488.000</span>
-					</div>
-				</div>
-				<div class="promo_banner">
-				</div>
-				<div class="pack-order margn">SUBSCRIBE</div>
-				<div class="mbl-pack-mask"></div>
-			</div>
+			<% end %>
 		</div>
-
-		<%= render partial: "shareds/front/table_packages" %>
+		<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
   </article>
   <br><br>
 	<div class="polosochka"></div>

@@ -18,7 +18,10 @@ gem 'rails', '3.2.13'
   gem 'inherited_resources'             # DRY for CRUD methods in controller
   gem 'enumerize'                       # Enumerated attributes with I18n
   gem 'cocoon'                          # Dynamic nested forms using jQuery
-# end
+  gem 'delayed_job_active_record'       # Background Job Tools
+  gem 'daemons'                         # Daemon for Background Job
+  gem 'delayed_job_web'                 # Delayed Job Monitoring System
+  #end
 
 
 # Gems used only for assets and not required
