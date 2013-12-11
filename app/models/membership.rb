@@ -19,4 +19,10 @@ class Membership < ActiveRecord::Base
       Membership.joins(:category).where('categories.name = ?', pack)
     end
   end
+  
+  def default_price
+    pricing = prices.where({periode_name: 'month', total_period: 1}).first
+    return pricing.price if pricing
+    0
+  end
 end 
