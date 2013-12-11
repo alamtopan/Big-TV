@@ -1,6 +1,6 @@
 class UnitItem < ActiveRecord::Base
   
-  attr_accessible :group_item_id, :name, :logo
+  attr_accessible :group_item_id, :name, :logo,:status_hd
   has_attached_file :logo, styles:  { 
                                       :medium => "300x300>", 
                                       :thumb => "100x100>" 
