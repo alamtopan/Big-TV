@@ -11,14 +11,33 @@
 //= require front/js/niceScroll
 //= require front/js/jquery.counters.min
 //= require front/js/hover
+//= require js/imagesloaded
 //= require front/js/init
+//= require_self
 
 	$(document).ready(function(){
-		$(window).resize(function(){
-			var imgHeight = $('.info img').height();
-			$('.cont, .slide-main, .wraper2 , #sequence').css('height', imgHeight+'px');
+		$('#sequence').imagesLoaded(function(img){
+			$(window).resize(function(){
+				var imgHeight = $('.info img').height();
+				$('.cont, .slide-main, .wraper2 , #sequence').css('height', imgHeight+'px');
 
-			var hdHeight = $('.wraper.head').height();
-			$('.head_bander').css('height', hdHeight+'px');
-		}).resize();
+				var imgHeight = $('.info img').height();
+				$('.cont, .slide-main, .wraper2 , #sequence').css('height', imgHeight+'px');
+			}).resize();
+		})
+		//$(window).on('resize', function(){
+			// $.each($('.info img'), function(){
+			// 	$.image = $(this)
+			// 	console.log($.image)
+			// 	$.image.on('load', function(){
+			// 		console.log(imgHeight)
+   //        var imgHeight = $(this).height();
+          
+			// 		$('.cont, .slide-main, .wraper2 , #sequence').css('height',  imgHeight +'px');
+			// 		var hdHeight = $('.wraper.head').height();
+			// 		$('.head_bander').css('height', hdHeight+'px');
+			// 	})
+			// })
+			
+	//	}).resize();
 	});
