@@ -13,6 +13,8 @@ BigTv::Application.routes.draw do
 
   get   '/dashboard',       to: 'home#dashboard',  as: 'dashboard'
   get   '/home',       to: 'publics#home',  as: 'home'
+  get   '/order',       to: 'publics#order',  as: 'order'
+  get   '/extra',       to: 'publics#extra',  as: 'extra'
   get   '/form',       to: 'home#form',  as: 'form'
   get   '/list',       to: 'home#list', as: 'list'
 

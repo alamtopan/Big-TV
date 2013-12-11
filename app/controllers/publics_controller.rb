@@ -5,4 +5,10 @@ class PublicsController < ApplicationController
 
 	end
 
+	def order
+	end
+
+	def extra
+	end
+
 end

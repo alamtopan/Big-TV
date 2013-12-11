@@ -514,12 +514,15 @@ h3 span
 {
 	color: white;
 }
+.margn{
+	margin-left: 10px!important;
+	margin-right: 10px!important;
+}
 .pack-order
 {
 	background-color: #e74c3c;
 	height: 40px;
 	line-height: 40px;
-	width: 180px;
 	margin: auto;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -529,6 +532,9 @@ h3 span
 	-moz-border-radius: 3px 3px 3px 3px;
 	-webkit-border-radius: 3px 3px 3px 3px;
 	border: 0px solid #000000;
+}
+.pack-order:hover{
+	background-color: #fdb414!important;
 }
 .pack.selected .pack-order
 {
@@ -854,7 +860,7 @@ footer.wraper
 
 .map
 {
-		height: 790px;
+		height: 900px;
 		position: relative
 }
 .map h1
@@ -1174,6 +1180,13 @@ input.s_form1
 	top: 30%;
 	left: 30%;	
 }
+.float-left{
+	float: left;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 4px 20px;
+	margin-bottom: 4px;
+}
 .mask
 {
 	display: none;
@@ -1183,10 +1196,11 @@ input.s_form1
 	position: fixed;
 	z-index: 150;
 }
-
+.map{
+	background: #fff;
+}
 .map-mask
 {
-	background-color: rgba(220, 220, 220, 0.8);
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -1497,6 +1511,11 @@ input.s_form1
 .br{
 	width: 100%;
 	height: 20px;
+}
+.br2{
+	width: 100%;
+	height: 20px;
+	float: left;
 }
 .icon_cont{
 	margin-top: 15px;
@@ -2199,10 +2218,9 @@ feedback-as:nth-child(8){
 	transition: transform 1.0s, opacity 1.0s;
 }
 .map1{
-	min-width: 960px; 
 	height: 100%;
 	margin: auto; 
-	-webkit-filter: grayscale(1);
+
 }
 iframe{
 	width: 100%; 
@@ -2345,3 +2363,51 @@ input[type="checkbox"]{
 	opacity: 1;
 }
 
+.order_summary{
+	background: #ed2024;
+	min-height: 300px!important;
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border: 0px solid #000000;
+	color: #fff;
+	padding-top: 20px;
+}
+
+.title_ord{
+	font-weight: bold;
+	font-size: 16px;
+	color: yellow;
+}
+.title_ord_big{
+	font-weight: bold;
+	font-size: 18px;
+}
+.tbl_order{
+	width: 100%;
+}
+
+.hr{
+	width: 100%;
+	border-top: solid 1px #ccc;
+	height: 10px;
+	margin-top: 20px;
+}
+.nominal{
+	float: right;
+}
+
+.submit {
+	background-color: #fdb414;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: white;
+	cursor: pointer;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border: 0px solid #000000;
+	padding: 0px 20px;
+}
