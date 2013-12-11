@@ -4,6 +4,9 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	.float-left{
+		width: 90%;
+	}
 	.wraper.head
 	{
 		min-width: 0;

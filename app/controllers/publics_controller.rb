@@ -10,4 +10,7 @@ class PublicsController < ApplicationController
     @memberships = Membership.package('extra')
   end
 
+	def order
+	end
+
 end

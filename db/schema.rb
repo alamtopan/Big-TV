@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131210064444) do
+ActiveRecord::Schema.define(:version => 20131210085335) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -68,6 +68,32 @@ ActiveRecord::Schema.define(:version => 20131210064444) do
 
   add_index "memberships", ["name", "version"], :name => "index_memberships_on_name_and_version"
   add_index "memberships", ["slug"], :name => "index_memberships_on_slug", :unique => true
+
+  create_table "order_items", :force => true do |t|
+    t.integer  "membership_id"
+    t.string   "title"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.integer  "price"
+    t.integer  "subtotal"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "total"
+    t.string   "session_id"
+    t.string   "code_prefix"
+    t.integer  "position"
+    t.string   "code"
+    t.integer  "orderable_id"
+    t.string   "orderable_type"
+    t.string   "status"
+    t.integer  "period"
+    t.string   "period_name"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
