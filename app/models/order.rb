@@ -28,15 +28,33 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def remove_cart
+    if time.now < updated_at.since(1.hour)
+      destroy
+    else
+      check_activity      
+    end if session_id.present?
+  end
+
+  def check_activity
+    delay(run_at: 1.hours.from_now).remove_cart if session_id.present?
+  end
+
+  def is_order?
+    orderable.present? && session_id.blank?
+  end
+
   def add_item(params)
-    return if params[:membership_id].blank?
-    item = items.find_or_initialize_by_membership_id(params[:membership_id])
-    current_product = item.membership
-    return unless current_product
-    item.quantity = (item.quantity||1).to_i + params[:quantity].to_i
-    item.price = current_product.default_price
-    item.title = current_product.name
-    item.save
+    return if params[:membership_ids].blank?
+    params[:membership_ids].each do |membership_id|
+      item = items.find_or_initialize_by_membership_id(membership_id)
+      current_product = item.membership
+      return unless current_product
+      item.quantity = (item.quantity||1).to_i + params[:quantity].to_i
+      item.price = current_product.default_price
+      item.title = current_product.name
+      item.save
+    end
     self.save
   end
 

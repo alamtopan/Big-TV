@@ -6,11 +6,4 @@ class PublicsController < ApplicationController
     @groups = GroupItem.all
 	end
 
-  def extra
-    @memberships = Membership.package('extra')
-  end
-
-	def order
-	end
-
 end
