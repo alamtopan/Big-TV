@@ -6,25 +6,28 @@
 	<article class="packs-cont cbp-so-scroller">
 		<div class="mbl-packs-cont cbp-so-section">
 			<% @memberships.each do |membership| %>
-				<div class="pack cbp-so-side cbp-so-side-left" >
-					<div class="pack-price">
-						BiG
-					</div>
-					<header class="pack-h"><%= membership.name %></header>
-					<div class="pack-info">
-						<div class="pack-i-line">
-							Rp.
-							<span class="prc">
-								<%= number_to_currency(membership.price_month,{unit: '', precision: 3}) %>
-							</span>
-						</div>
-					</div>
-					<div class="pack-order">order now</div>
-					<div class="mbl-pack-mask"></div>
+			<div class="pack cbp-so-side cbp-so-side-left" >
+				<div class="pack-price">
+					<div class="big-counter">BiG</div>
+					<span class="small-counter2"><%= membership.name %></span>
 				</div>
-			<% end %>
+				<header class="pack-h">
+				</header>
+				<div class="pack-info">
+					<div class="pack-i-line">
+						Rp.
+						<span class="prc">
+							<%= number_to_currency(membership.price_month,{unit: '', precision: 3}) %>
+						</span>
+					</div>
+				</div>
+				<div class="promo_banner">
+				</div>
+				<div class="pack-order">SUBSCRIBE</div>
+				<div class="mbl-pack-mask"></div>
+			</div>
 		</div>
-
+		<% end %>
 		<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
   </article>
   <br><br>
