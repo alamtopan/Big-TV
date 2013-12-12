@@ -3,14 +3,17 @@ class CartsController < ApplicationController
 
   def extra
     @memberships = Membership.package('extra')
+    @order = order
   end
 
   def preview
     redirect_to root_path if order.total.blank?
-    decoder = Membership.joins(:category).where('categories.name LIKE ?','%other%').first
-    if decoder
-      decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
-      order.add_item(decoder) if decoder_item.new_record?
+    if validate_membership(session_cart)
+      decoder = Membership.joins(:category).where('categories.name LIKE ?','%other%').first
+      if decoder
+        decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
+        order.add_item(decoder) if decoder_item.new_record?
+      end
     end
     @order = order
   end
@@ -36,7 +39,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    order.add_item(params)
+    order.add_item(params) if validate_membership(session_cart)
     redirect_to preview_path if order.valid?
   end
 
@@ -59,6 +62,16 @@ class CartsController < ApplicationController
 
     def product
       @product ||= Membership.find(params[:id])
+    end
+
+    def validate_membership(session)
+      valid_order = Order.find_by_session_id(session)
+      if valid_order 
+        valid_order.items.each do |item|
+          return false if item.membership_category == 'Premium'
+        end
+      end
+      true
     end
 
 end
