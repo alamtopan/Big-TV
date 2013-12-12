@@ -521,7 +521,7 @@ h3 span
 }
 .pack-order
 {
-	background-color: #e74c3c;
+	background-color: #ed2024!important;
 	height: 40px;
 	line-height: 40px;
 	margin: auto;
@@ -732,7 +732,7 @@ footer.wraper
 .form2
 {
   width: 75px;
-  background-color: #e74c3c;
+  background-color: #ed2024;
   color: white;
   text-transform: uppercase;
   padding-left: 0px;
@@ -2385,6 +2385,7 @@ input[type="checkbox"]{
 	background: #fcfcfc;
 	margin:auto;
 	margin-top: 10px;
+	margin-bottom: 20px;
 	position: relative;
 }
 
@@ -2590,7 +2591,7 @@ div.grid_packages_footer{
 	color: #fdb414;
 }
 ul.gallery_footer{
-	width: 100%;
+	display:table; margin-left:auto; margin-right:auto;
 }
 ul.gallery_footer li{
 	width: 50px;

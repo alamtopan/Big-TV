@@ -8,8 +8,11 @@ BigTv::Application.routes.draw do
   resources :group_items, path: 'channel_categories'
   resources :memberships
   resources :categories
-  resources :carts, except: [:show]
-
+  resources :carts, except: [:show] do
+    collection do
+      post '/subcribtions', to: 'carts#subcribtions'
+    end
+  end
 
   get   '/extra/:membership_id', to: 'carts#extra',    as: 'extra'
   get   '/preview',              to: 'carts#preview',  as: 'preview'

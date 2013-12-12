@@ -13,3 +13,7 @@
 .no_underscore{
   text-decoration:none;
 }
+.add_padding{
+  width: auto;
+  padding: 2px;
+}
