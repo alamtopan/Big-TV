@@ -23,6 +23,7 @@ h1,h2,h3,h4,h5, p, ul
 	padding: 10px 0px;
 	float: left;
 	width: 100%;
+	text-align: center;
 }
 .head_pack.blue{
 	background: #5d96d7;
@@ -1186,6 +1187,20 @@ input.s_form1
 	margin-left: 2px;
 	padding: 4px 20px;
 	margin-bottom: 4px;
+}
+.float-right{
+	float: right;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 0px 30px;
+	margin-bottom: 1px;
+}
+.float-right-fixed{
+	float: right;
+	margin-right: 2px;
+	margin-left: 2px;
+	padding: 0px 30px;
+	margin-bottom: 1px;
 }
 .mask
 {
@@ -2411,3 +2426,70 @@ input[type="checkbox"]{
 	border: 0px solid #000000;
 	padding: 0px 20px;
 }
+
+
+.extra_packages{
+	background: #fff!important;
+}
+
+.extra_banner{
+	background: #f7f7f7;
+	float: left;
+	width: 100%;
+	font-style: italic;
+}
+.own_extra{
+	padding: 1%;
+	float: left;
+	width: 98%;
+}
+
+.extra_info{
+	padding-top: 10px!important;
+	padding-bottom: 5px!important;
+	float: left;
+}
+
+.head_pack.red{
+	background: #ed2024;
+	border-bottom: 2px solid #de0b0f;
+	float: left;
+}
+
+table.padding0 tbody tr td{
+	padding: 0px!important;
+	padding-bottom: 4px!important;
+	padding-top: 4px!important;
+	border-right: none!important;
+	border-left: none!important;
+}
+.italic{
+	font-style: italic;
+}
+.versi2{
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.head_pack.red.vers{
+	text-align: left!important;
+}
+
+
+div.grd_masonry{
+    -moz-column-count: 5;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 10px;
+    column-count: 5;
+    column-gap: 10px;
+    width: 100%;
+    margin-top: 60px;
+ 	}
+
+div.grid_packages{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+  }
