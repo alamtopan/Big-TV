@@ -19,5 +19,5 @@ BigTv::Application.routes.draw do
   get   '/list',       to: 'home#list', as: 'list'
   # get   '/home',       to: 'home#home',  as: 'home'
   
-  root to: 'home#show'
+  root to: 'publics#show'
 end

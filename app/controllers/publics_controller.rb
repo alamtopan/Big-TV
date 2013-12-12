@@ -1,7 +1,7 @@
 class PublicsController < ApplicationController
 	layout "public"
 
-	def home
+	def show
     @memberships = Membership.package('premium')
     @groups = GroupItem.all
 	end
