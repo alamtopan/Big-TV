@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131210085335) do
+ActiveRecord::Schema.define(:version => 20131212070600) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(:version => 20131210085335) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0, :null => false
+    t.integer  "attempts",   :default => 0, :null => false
+    t.text     "handler",                   :null => false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "group_items", :force => true do |t|
     t.string   "name",       :null => false
@@ -104,10 +120,25 @@ ActiveRecord::Schema.define(:version => 20131210085335) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+    t.string   "jenis_kelamin"
+    t.date     "tanggal_lahir"
+    t.string   "referal"
+    t.string   "tipe_identitas"
+    t.string   "no_identitas"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "user_id"
   end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "subscription_transactions", :force => true do |t|
     t.integer  "subscription_id"

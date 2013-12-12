@@ -2432,13 +2432,14 @@ input[type="checkbox"]{
 
 .order_summary{
 	background: #ed2024;
-	min-height: 300px!important;
 	border-radius: 4px 4px 4px 4px;
 	-moz-border-radius: 4px 4px 4px 4px;
 	-webkit-border-radius: 4px 4px 4px 4px;
 	border: 0px solid #000000;
 	color: #fff;
 	padding-top: 20px;
+	float: right;
+	width: 100%;
 }
 
 .title_ord{
