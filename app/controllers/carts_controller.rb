@@ -22,17 +22,21 @@ class CartsController < ApplicationController
   #   order
   # end
 
-  def subcribtions
+  def subcribe
     if params[:user].blank?
       flash[:errors] = "Please Fill The Form"
       redirect_to preview_path
     else
-      user = User.new(params[:user])
+      user = Customer.find_or_initialize_by_email(params[:user][:email])
+      user.update_attributes(params[:user])
       if user.save
         flash[:success] = 'success'
+        delete_session
+        CustomerMailer.thanks_email(user).deliver
+        redirect_to thanks_path
         # do subscribe
       else
-        flash[:errors] = user.errors
+        flash[:errors] = user.errors.full_messages
         redirect_to preview_path
       end
     end
@@ -72,6 +76,13 @@ class CartsController < ApplicationController
         end
       end
       true
+    end
+
+    def delete_session
+      cart = cookies[:cart_id]
+      session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
+      session.delete if session.present?
+      cookies.delete :cart_id
     end
 
 end

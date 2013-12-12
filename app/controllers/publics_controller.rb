@@ -6,4 +6,8 @@ class PublicsController < ApplicationController
     @groups = GroupItem.all
 	end
 
+  def thanks
+    
+  end
+
 end

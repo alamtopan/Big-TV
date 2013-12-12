@@ -12,6 +12,4 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
   
-  validates :username, uniqueness: true
-  validates :username, presence: true
 end

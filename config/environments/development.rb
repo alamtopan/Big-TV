@@ -34,4 +34,10 @@ BigTv::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.asset_host = 'http://localhost:3000'
+  config.action_mailer.default_url_options = {host: 'http://localhost:3000'}
+  config.action_mailer.delivery_method = :letter_opener
+
+
 end

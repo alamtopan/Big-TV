@@ -3,7 +3,7 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-		<%= form_for :user, url: subcribtions_carts_path, method: 'post' do |f| %>
+		<%= form_for :user, url: subcribe_carts_path, method: 'post' do |f| %>
 			<%= f.fields_for(:profile_attributes) do |profile| %>
 	    <div class="panel-body">
 				<!-- <form action="#" role="form" id="form" novalidate="novalidate"> -->
@@ -23,43 +23,43 @@
 							<label class="control-label">
 								Nama
 							</label>
-							<%= f.text_field :username, {class: 'form-control', placeholder: 'Name'} %>
+							<%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Jenis Kelamin
 							</label>
-							<%= profile.text_field :jenis_kelamin, {class: 'form-control', placeholder: 'Jenis Kelamin'} %>
+							<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Tanggal Lahir
 							</label>
-							<%= profile.text_field :tanggal_lahir, {class: 'form-control', placeholder: 'Tanggal Lahir'} %>
+							<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Email
 							</label>
-							<%= f.text_field :email, {class: 'form-control', placeholder: 'Email'} %>
+							<%= f.text_field :email, {class: 'form-control', placeholder: 'Email', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Referal
 							</label>
-							<%= profile.text_field :referal, {class: 'form-control', placeholder: 'Referal'} %>
+							<%= profile.text_field :referal, {class: 'form-control', placeholder: 'Referal', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Tipe Identitas
 							</label>
-							<%= profile.text_field :tipe_identitas, {class: 'form-control', placeholder: 'Tipe Identitas'} %>
+							<%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{}, {class: 'form-control', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Nomor Identitas
 							</label>
-							<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas'} %>
+							<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas', required: true} %>
 						</div>
 					</div>
 
@@ -68,37 +68,37 @@
 							<label class="control-label">
 								Telepon
 							</label>
-							<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon'} %>
+							<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Handphone
 							</label>
-							<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone'} %>
+							<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Alamat
 							</label>
-							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;"} %>
+							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Kota
 							</label>
-							<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota'} %>
+							<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Provinsi
 							</label>
-							<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi'} %>
+							<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi', required: true} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Kodepos
 							</label>
-							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos'} %>
+							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos', required: true} %>
 						</div>
 					</div>
 				</div>
@@ -147,7 +147,9 @@
 										<tbody>
 											<tr>
 												<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
-												<td><div class="nominal">Rp.<b><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></b></div></td>
+												<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total %>"><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></span></b></div>
+													<%= hidden_field_tag 'total', @order.total, id: 'hidden_total' %>
+												</td>
 											</tr>
 										<tbody>
 									</table>

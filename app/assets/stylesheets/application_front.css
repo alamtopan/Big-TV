@@ -10,5 +10,8 @@
  *= require front/css/jQuery.Opie.PortfolioGallery
  *= require front/css/component
  *= require front/bootstrap
+ *= require plugins/datepicker/css/datepicker
+
+
 
  */

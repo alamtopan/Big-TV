@@ -1,5 +1,5 @@
 class Customer < User
-  before_validate :before_validation
+  before_validation :before_validation
 
   private
     def before_validation

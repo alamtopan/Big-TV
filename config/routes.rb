@@ -10,12 +10,14 @@ BigTv::Application.routes.draw do
   resources :categories
   resources :carts, except: [:show] do
     collection do
-      post '/subcribtions', to: 'carts#subcribtions'
+      post '/subcribe', to: 'carts#subcribe'
     end
   end
 
   get   '/extra/:membership_id', to: 'carts#extra',    as: 'extra'
   get   '/preview',              to: 'carts#preview',  as: 'preview'
+  
+  get   '/thanks',              to: 'publics#thanks',  as: 'thanks'
   
   get   '/dashboard',  to: 'home#dashboard',as: 'dashboard'
   get   '/form',       to: 'home#form',  as: 'form'

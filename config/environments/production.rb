@@ -64,4 +64,17 @@ BigTv::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.action_mailer.asset_host = 'http://bigtv.co.id'
+  config.action_mailer.default_url_options = {host: 'bigtv.co.id'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'bigtv.co.id',
+    user_name:            'devifr',
+    password:             'reyhan edogawa3',
+    authentication:       'plain',
+    enable_starttls_auto: true  
+  }
 end
