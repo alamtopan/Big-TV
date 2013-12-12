@@ -4,8 +4,33 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	div.grd_masonry{
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+    width: 100%;
+    margin-top: 60px;
+ 	}
+
+	div.grid_packages{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+  }
 	.float-left{
 		width: 90%;
+	}
+	.float-right {
+		width: 90%;
+		text-align: center;
+	}
+
+	.grid_packages{
+		width: 48%;
+		padding: 2px;
 	}
 	.wraper.head
 	{
