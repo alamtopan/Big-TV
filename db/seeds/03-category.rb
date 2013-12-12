@@ -1,6 +1,6 @@
 module SeedCategory
   def self.seed
-    categories = ['Premium','Extra']
+    categories = ['Premium','Extra','Other']
     categories.each do |cat|
       category = Category.find_or_create_by_name(cat)
     end

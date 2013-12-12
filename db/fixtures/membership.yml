@@ -987,3 +987,15 @@ membership:
             name: 'Star Plus'
         - item_3:
             name: 'Star Gold'
+  - membership_18:
+        name:         'Rental Recorder'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Other'
+        prices:
+          - price_0:
+              price:    20000
+              total:    1
+              periode:  'month'
+        items: 

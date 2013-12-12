@@ -30,7 +30,7 @@ module SeedMembership
         item.membership_id = membership.id
         item.unit_item_id = UnitItem.find_by_name(i_item['name']).id
         item.save
-      end
+      end if items.present?
     end
   end
 end

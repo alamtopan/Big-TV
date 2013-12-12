@@ -44,18 +44,26 @@ class Order < ActiveRecord::Base
     orderable.present? && session_id.blank?
   end
 
-  def add_item(params)
-    return if params[:membership_ids].blank?
-    params[:membership_ids].each do |membership_id|
-      item = items.find_or_initialize_by_membership_id(membership_id)
-      current_product = item.membership
-      return unless current_product
-      item.quantity = (item.quantity||1).to_i + params[:quantity].to_i
-      item.price = current_product.default_price
-      item.title = current_product.name
-      item.save
+  def add_item(item)
+    if item.is_a?(Membership)
+      populate_order_item(1, item.id)
+    else
+      return if item[:membership_ids].blank?
+      item[:membership_ids].each do |membership_id|
+        populate_order_item(item[:quantity], membership_id)
+      end
     end
     self.save
+  end
+
+  def populate_order_item(qty, membership_id)
+    item = items.find_or_initialize_by_membership_id(membership_id)
+    current_product = item.membership
+    return unless current_product
+    item.quantity = (item.quantity||1).to_i + qty.to_i
+    item.price = current_product.default_price
+    item.title = current_product.name
+    item.save
   end
 
   private

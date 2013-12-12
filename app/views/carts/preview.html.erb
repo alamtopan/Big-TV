@@ -3,30 +3,33 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
+		<%= form_for :user, url: subcribtions_carts_path, method: 'post' do %>
 	    <div class="panel-body">
-				<form action="#" role="form" id="form" novalidate="novalidate">
+				<!-- <form action="#" role="form" id="form" novalidate="novalidate"> -->
 					<div class="row">
 						<div class="col-md-12">
-							<div class="errorHandler alert alert-danger no-display">
-								<i class="icon-remove-sign"></i> You have some form errors. Please check below.
-							</div>
-							<div class="successHandler alert alert-success no-display">
+							<% if flash[:errors].present? %>
+								<div class="errorHandler alert alert-danger no-display">
+									<i class="icon-remove-sign"></i> <%= flash[:errors] %>
+								</div>
+							<% end %>
+							<!-- <div class="successHandler alert alert-success no-display">
 								<i class="icon-ok"></i> Your form validation is successful!
-							</div>
+							</div> -->
 						</div>
-
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class="control-label">
 									Nama
 								</label>
-								<input type="text" placeholder="Nama" class="form-control" name="firstname">
+								<input type="text" placeholder="Nama" class="form-control" name="user[username]">
+								<input type="text" placeholder="Nama" class="form-control" name="user[username]">
 							</div>
 							<div class="form-group">
 								<label class="control-label">
 									Jenis Kelamin
 								</label>
-								<input type="text" placeholder="Jenis Kelamin" class="form-control" name="firstname">
+								<input type="text" placeholder="Jenis Kelamin" class="form-control" name="user[profile_attributes]firstname">
 							</div>
 							<div class="form-group">
 								<label class="control-label">
@@ -110,18 +113,33 @@
 										<div class="br"></div>
 										<% membership_category = '' %>
 										<% @order.items.each do |item| %>
-											<% if item.membership_category != membership_category %>
-												<span class="title_ord"><%= item.membership_category %></span>
+											<% if item.membership_category != 'Other' %>
+												<% if item.membership_category != membership_category %>
+													<span class="title_ord"><%= item.membership_category %></span>
+												<% end %>
+												<table class="tbl_order">
+													<tbody>
+														<tr>
+															<td><%= item.title %></td>
+															<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+														</tr>
+													<tbody>
+												</table>
+												<% membership_category = item.membership_category %>
 											<% end %>
-											<table class="tbl_order">
-												<tbody>
-													<tr>
-														<td><%= item.title %></td>
-														<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
-													</tr>
-												<tbody>
-											</table>
-											<% membership_category = item.membership_category %>
+										<% end %>
+										<% @order.items.each do |item| %>
+											<% if item.membership_category == 'Other' %>
+											<div class="br"></div>
+												<table class="tbl_order">
+													<tbody>
+														<tr>
+															<td><%= item.title %></td>
+															<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+														</tr>
+													<tbody>
+												</table>
+											<% end %>
 										<% end %>
 										<div class="br"></div>
 										<div class="hr"></div>
@@ -167,5 +185,6 @@
 					</div>
 				</form>
 			</div>
+		<% end %>
 	</article>
 </section>
