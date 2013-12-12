@@ -108,45 +108,28 @@
 									<div class="form-group">
 										<span class="title_ord_big">ORDER SUMMARY</span>
 										<div class="br"></div>
-
-										<span class="title_ord">PAKET PREMIUM</span>
-										<table class="tbl_order">
-											<tbody>
-												<tr>
-													<td>Big UNiverse 142</td>
-													<td><div class="nominal">Rp.<b>250.000</b></div></td>
-												</tr>
-											<tbody>
-										</table>
+										<% membership_category = '' %>
+										<% @order.items.each do |item| %>
+											<% if item.membership_category != membership_category %>
+												<span class="title_ord"><%= item.membership_category %></span>
+											<% end %>
+											<table class="tbl_order">
+												<tbody>
+													<tr>
+														<td><%= item.title %></td>
+														<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+													</tr>
+												<tbody>
+											</table>
+											<% membership_category = item.membership_category %>
+										<% end %>
 										<div class="br"></div>
-										<span class="title_ord">PAKET EXTRA</span>
-										<table class="tbl_order">
-											<tbody>
-												<tr>
-													<td>Big UNiverse 142</td>
-													<td><div class="nominal">Rp.<b>250.000</b></div></td>
-												</tr>
-												<tr>
-													<td>Big UNiverse 142</td>
-													<td><div class="nominal">Rp.<b>250.000</b></div></td>
-												</tr>
-											<tbody>
-										</table>
-										<div class="br"></div>
-										<table class="tbl_order">
-											<tbody>
-												<tr>
-													<td>Rental Recorder (Rp 2000/month)</td>
-													<td><div class="nominal">Rp.<b>250.000</b></div></td>
-												</tr>
-											<tbody>
-										</table>
 										<div class="hr"></div>
 										<table class="tbl_order">
 											<tbody>
 												<tr>
 													<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
-													<td><div class="nominal">Rp.<b>650.000</b></div></td>
+													<td><div class="nominal">Rp.<b><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></b></div></td>
 												</tr>
 											<tbody>
 										</table>
@@ -162,15 +145,15 @@
 										Pilih Pembayaran
 										<div class="br"></div>
 										<select name="mm" id="mm" class="form-control">
-											<option value="01">1 Bulan</option>
-											<option value="02">2 Bulan</option>
-											<option value="03">3 Bulan</option>
-											<option value="04">4 Bulan</option>
-											<option value="05">5 Bulan</option>
-											<option value="06">6 Bulan</option>
-											<option value="07">7 Bulan</option>
-											<option value="08">8 Bulan</option>
-											<option value="09">9 Bulan</option>
+											<option value="1">1 Bulan</option>
+											<option value="2">2 Bulan</option>
+											<option value="3">3 Bulan</option>
+											<option value="4">4 Bulan</option>
+											<option value="5">5 Bulan</option>
+											<option value="6">6 Bulan</option>
+											<option value="7">7 Bulan</option>
+											<option value="8">8 Bulan</option>
+											<option value="9">9 Bulan</option>
 											<option value="10">10 Bulan</option>
 											<option value="11">11 Bulan</option>
 											<option value="12">12 Bulan</option>

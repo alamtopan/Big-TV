@@ -1,13 +1,21 @@
 class CartsController < ApplicationController
-  layout "single"
+  layout "public"
 
-  def show
-    order
+  def extra
+    @memberships = Membership.package('extra')
   end
+
+  def preview
+    @order = order
+  end
+
+  # def index
+  #   order
+  # end
 
   def create
     order.add_item(params)
-    redirect_to carts_path if order.valid?
+    redirect_to preview_path if order.valid?
   end
 
   def update
@@ -30,4 +38,5 @@ class CartsController < ApplicationController
     def product
       @product ||= Membership.find(params[:id])
     end
+
 end

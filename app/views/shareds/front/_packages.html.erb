@@ -17,13 +17,13 @@
 					<div class="pack-i-line">
 						Rp.
 						<span class="prc">
-							<%= number_to_currency(membership.price_month,{unit: '', precision: 3}) %>
+							<%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
 						</span>
 					</div>
 				</div>
 				<div class="promo_banner">
 				</div>
-				<div class="pack-order margn">SUBSCRIBE</div>
+				<%= link_to "<div class='pack-order'>SUBSCRIBE</div>".html_safe, extra_path(membership.id),{class: 'no_underscore'} %>
 				<div class="mbl-pack-mask"></div>
 			</div>
 			<% end %>

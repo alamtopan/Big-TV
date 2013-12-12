@@ -11,9 +11,14 @@ class OrderItem < ActiveRecord::Base
   before_save   :before_saving
   after_destroy :after_destroy
 
+
+  def membership_category
+    self.membership.category.name
+  end
+  
   private
     def before_saving
-      self.subtotal = self.membership.price.to_i * self.quantity.to_i
+      self.subtotal = self.price.to_i * self.quantity.to_i
       self.title = self.membership.name
     end
 

@@ -13,7 +13,7 @@
               <td>
                 <% checked = item.memberships.map(&:id).include?(memberships[i+1]) %>
                 <div class="roundedOne">
-                  <%= check_box_tag 'check', '', checked, {id: "member_#{index}_#{i}"} %>
+                  <%= check_box_tag 'check', '', checked, {id: "member"} %>
                   <label for="<%= "member_#{index}_#{i}" %>"></label>
                 </div>
               </td>

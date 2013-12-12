@@ -8,14 +8,16 @@ BigTv::Application.routes.draw do
   resources :group_items, path: 'channel_categories'
   resources :memberships
   resources :categories
-  resource  :cart
-  root :to => 'publics#home'
+  resources :carts, except: [:show]
 
-  get   '/dashboard',       to: 'home#dashboard',  as: 'dashboard'
-  get   '/home',       to: 'publics#home',  as: 'home'
-  get   '/order',       to: 'publics#order',  as: 'order'
-  get   '/extra',       to: 'publics#extra',  as: 'extra'
+
+  get   '/extra/:membership_id', to: 'carts#extra',    as: 'extra'
+  get   '/preview',              to: 'carts#preview',  as: 'preview'
+  
+  get   '/dashboard',  to: 'home#dashboard',as: 'dashboard'
   get   '/form',       to: 'home#form',  as: 'form'
   get   '/list',       to: 'home#list', as: 'list'
-
+  # get   '/home',       to: 'home#home',  as: 'home'
+  
+  root to: 'publics#show'
 end

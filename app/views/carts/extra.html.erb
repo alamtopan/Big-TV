@@ -1,0 +1,29 @@
+<%= form_tag(carts_path, method: "post") do %>
+<div style="margin-top:100px"></div>
+  <%= button_tag 'Subscribe' %>
+  <%= hidden_field_tag 'membership_ids[]', params[:membership_id] %>
+  <% @memberships.each do |membership| %>
+    <div class="checkbox">
+        <label>
+          <%= check_box_tag 'membership_ids[]', membership.id %>
+          <%= membership.name %>
+        </label>
+      </div>
+    <div class="pack-i-line">
+      Rp.
+      <span class="prc">
+        <%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
+      </span>
+    </div>
+    <table class="table-bordered">
+      <tr>
+        <td><%= membership.name %></td>
+      </tr>
+      <% membership.unit_items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+<% end %>
