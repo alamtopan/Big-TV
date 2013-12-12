@@ -4,6 +4,10 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	#map_section{
+		height: 400px;
+		width: 100%;
+	}
 	div.grd_masonry{
     -moz-column-count: 2;
     -moz-column-gap: 10px;
@@ -273,10 +277,7 @@ div.grid_packages_footer{
 		opacity:0.85;
 		filter:alpha(opacity=85); /* For IE8 and earlier */
 	}
-	.map
-	{
-		height: 660px;
-	}
+
 	.address
 	{
 		margin: 0;

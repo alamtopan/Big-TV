@@ -13,6 +13,8 @@
 //= require front/js/hover
 //= require js/imagesloaded
 //= require front/js/init
+//= require map/gmap3.min
+//= require map/map
 //= require_self
 
 	$(document).ready(function(){

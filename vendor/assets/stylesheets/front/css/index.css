@@ -862,7 +862,6 @@ footer.wraper
 
 .map
 {
-		height: 900px;
 		position: relative
 }
 .map h1
@@ -2601,3 +2600,33 @@ ul.gallery_footer li{
 	margin: 2px;
 	list-style: none;
 }
+
+.infowindow{
+	width: 180px;
+	min-height: 80px;
+	padding: 7px;
+	word-wrap: break-word;
+	}
+
+	.infowindow h2{
+		font-size: 14px;
+		margin: 0;
+		margin: 0 0 5px 0;
+	}
+
+	.infowindow p{
+		line-height: 20px;
+		font-size: 13px;
+		margin: 5px 0;
+	}
+
+	.infowindow i{
+		font-style: normal;
+		margin-top: 10px;
+		display: block;
+	}
+
+	#map_section{
+		height: 800px;
+		width: 100%;
+	}
