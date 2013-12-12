@@ -9,7 +9,7 @@
           <div class="own_extra">
             <span class="extra_info">Please fill the checkboxes to subscribe Our Extra Packages</span>
             <%= hidden_field_tag 'membership_ids[]', params[:membership_id] %>
-            <div class="pack-order float-right-fixed margn"><%= button_tag 'Subscribe' %></div>
+            <input class="pack-order float-right-fixed margn" type="submit" value="Subscribe">
           </div>
         </div>
         <br>
@@ -17,7 +17,7 @@
           <% @memberships.each_with_index do |membership,index| %>
             <div class="grid_packages">
               <div class="head_pack red vers add_padding">
-                <div class="roundedOne versi2">
+                <div class="roundedOne2 versi2">
                   <% checked = @order.items.map(&:membership_id).include?(membership.id) %>
                   <%= check_box_tag 'membership_ids[]', membership.id, checked, id: "member_#{index}" %>
                   <label for="member_<%= index %>"></label>

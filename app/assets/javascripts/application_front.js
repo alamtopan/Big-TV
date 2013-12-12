@@ -13,11 +13,13 @@
 //= require front/js/hover
 //= require js/imagesloaded
 //= require front/js/init
-
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
 
 //= require customize_front
+//= require map/gmap3.min
+//= require map/map
+
 //= require_self
 
 	$(document).ready(function(){
