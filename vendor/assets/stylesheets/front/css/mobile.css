@@ -20,6 +20,22 @@
     width: 100%; 
     margin-bottom: 10px;
   }
+  div.grd_masonry_footer{
+    -moz-column-count: 1;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 10px;
+    column-count: 1;
+    column-gap: 10px;
+    width: 100%;
+    margin-top: 60px;
+ 	}
+
+div.grid_packages_footer{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+  }
 	.float-left{
 		width: 90%;
 	}
