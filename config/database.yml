@@ -2,18 +2,17 @@ development:
   adapter: mysql2
   database: big_tv_dev
   username: root
-  password: 
+  password: edogawa3
   pool: 5
   timeout: 5000
-  socket: /opt/lampp/var/mysql/mysql.sock
+
 test:
   adapter: mysql2
   database: big_tv_test
   username: root
-  password: 
+  password: edogawa3
   pool: 5
   timeout: 5000
-  socket: /opt/lampp/var/mysql/mysql.sock
 
 production:
   adapter: mysql2
