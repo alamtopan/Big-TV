@@ -8,13 +8,12 @@ class CartsController < ApplicationController
 
   def preview
     redirect_to root_path if order.total.blank?
-    if validate_membership(session_cart)
-      decoder = Membership.joins(:category).where('categories.name LIKE ?','%other%').first
-      if decoder
-        decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
-        order.add_item(decoder) if decoder_item.new_record?
-      end
+    decoder = Membership.joins(:category).where('categories.name LIKE ?','%other%').first
+    if decoder
+      decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
+      order.add_item(decoder,session_cart) if decoder_item.new_record?
     end
+
     @order = order
   end
 
@@ -30,11 +29,12 @@ class CartsController < ApplicationController
       user = Customer.find_or_initialize_by_email(params[:user][:email])
       user.update_attributes(params[:user])
       if user.save
+        order_data = save_order(user)
         flash[:success] = 'success'
         delete_session
-        CustomerMailer.thanks_email(user).deliver
-        redirect_to thanks_path
+        CustomerMailer.thanks_email(order_data).deliver
         # do subscribe
+        redirect_to thanks_path
       else
         flash[:errors] = user.errors.full_messages
         redirect_to preview_path
@@ -43,7 +43,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    order.add_item(params) if validate_membership(session_cart)
+    order.add_item(params,session_cart)
     redirect_to preview_path if order.valid?
   end
 
@@ -68,21 +68,22 @@ class CartsController < ApplicationController
       @product ||= Membership.find(params[:id])
     end
 
-    def validate_membership(session)
-      valid_order = Order.find_by_session_id(session)
-      if valid_order 
-        valid_order.items.each do |item|
-          return false if item.membership_category == 'Premium'
-        end
-      end
-      true
-    end
-
     def delete_session
       cart = cookies[:cart_id]
       session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
       session.delete if session.present?
       cookies.delete :cart_id
+    end
+
+    def save_order(user)
+      period = params[:order][:period].to_i
+      order.orderable = user
+      order.session_id = nil
+      order.period = period
+      order.period_name = 'month'
+      order.total = order.total * period
+      order.save
+      order
     end
 
 end

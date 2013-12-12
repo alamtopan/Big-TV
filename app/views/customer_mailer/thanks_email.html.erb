@@ -88,18 +88,25 @@
 
                                   <div align="left" style="font-size:13px;line-height:18px;color:#444444;margin-top:0px;margin-bottom:18px;font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif">
                                     <p style="margin-bottom:15px">
-                                      We look forward to bringing you news of the second Australian Ruby conference (aka RubyConf Australia or RubyConf AU for short) over the coming months as we prep for the conference at Luna Park, Sydney during <span class="aBn" data-term="goog_1596539430" tabindex="0"><span class="aQJ">19-21 February 2014</span></span>.</p>
+                                     Terima kasih atas kepercayaan Anda untuk berlangganan dengan kami. Berikut summary dari paket yang Anda pilih: <span class="aBn" data-term="goog_1596539430" tabindex="0"><span class="aQJ"></span></span>.</p>
 
                                       <p style="margin-bottom:15px">
-                                        We'll be in touch soon with more announcements.</p>
-                                        <p style="margin-bottom:15px">
-                                          Meanwhile, you may also wish to follow&nbsp;<a href="http://rubyaustralia.createsend4.com/t/j-l-mluukh-huqhhuur-hj/" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">@rubyconf_au</a>&nbsp;for quick news updates.</p>
+                                        ID Pelanggan: <%= @user.profile.first_name %> <br/>
+                                        Alamat: <%= @user.profile.address %> <br/>
+                                        Paket: 
+                                        <ul>
+                                          <% @order.items.each do |item| %>
+                                            <li><%= item.title %> (<%= "Rp. #{number_to_currency(item.subtotal,{precision: 0, unit: ''})}" %>)</li>
+                                          <% end %>
+                                        </ul>
+                                        Total: Rp. <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %> <br/>
+                                        Periode: <%= "#{@order.period} #{@order.period_name}" %>
 
+                                       </p>
                                           <p style="margin-bottom:15px">
-                                            Cheers,<br style="line-height:100%">
-                                            Josh Price, Steve Giles, Jason Crane, Georgina Robilliard and Elle Meredith<br style="line-height:100%">
-                                            On behalf of the RubyConf AU team.<br style="line-height:100%">
-                                            <a href="http://rubyaustralia.createsend4.com/t/j-l-mluukh-huqhhuur-ht/" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">http://rubyconf.org.au</a></p>
+                                            alam waktu 1X24 jam, teknisi kami akan tiba di kediaman Anda dan siap melakukan proses instalasi.<br style="line-height:100%">
+                                            Selamat menikmati tayangan-tayangan menarik channel lokal maupun mancanegara hanya di Big TV! <br style="line-height:100%">
+                                            <a href="http://bigtv.co.id" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">bigtv.co.id</a></p>
                                             <p style="margin-bottom:15px">
                                               &nbsp;</p>
                                             </div>
@@ -125,8 +132,8 @@
                                     <td width="30" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse"></td>
                                     <td width="360" valign="top" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse">
                                   </td>
-                                  <td width="60" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse"></td>
-                                  <td width="160" valign="top" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse">
+                                  <td width="60%" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse"></td>
+                                  <td width="60%" valign="top" style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse">
                                     <p align="right" style="font-size:11px;line-height:16px;margin-top:0px;margin-bottom:15px;color:#d9fffd;white-space:normal"><span>BigTv</span><br style="line-height:100%">
                                       <span>Email : customer.service@bigtv.co.id</span><br style="line-height:100%">
                                       <span>Telp: 0804 1 222 222</span><br style="line-height:100%">

@@ -98,7 +98,7 @@
 							<label class="control-label">
 								Kodepos
 							</label>
-							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos', required: true} %>
+							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos'} %>
 						</div>
 					</div>
 				</div>
@@ -130,6 +130,7 @@
 									<% end %>
 									<% @order.items.each do |item| %>
 										<% if item.membership_category == 'Other' %>
+										<% if item.title.present? %>	
 										<div class="br"></div>
 											<table class="tbl_order">
 												<tbody>
@@ -140,6 +141,7 @@
 												<tbody>
 											</table>
 										<% end %>
+										<% end %>
 									<% end %>
 									<div class="br"></div>
 									<div class="hr"></div>
@@ -148,7 +150,6 @@
 											<tr>
 												<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
 												<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total %>"><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></span></b></div>
-													<%= hidden_field_tag 'total', @order.total, id: 'hidden_total' %>
 												</td>
 											</tr>
 										<tbody>
@@ -164,7 +165,7 @@
 									<div class="br"></div>
 									Pilih Pembayaran
 									<div class="br"></div>
-									<select name="mm" id="mm" class="form-control">
+									<select name="order[period]" id="mm" class="form-control">
 										<option value="1">1 Bulan</option>
 										<option value="2">2 Bulan</option>
 										<option value="3">3 Bulan</option>
