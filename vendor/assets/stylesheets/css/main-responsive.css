@@ -145,15 +145,9 @@
 		margin-top: 95px;
 	}
 
-	
-	 Main content
-
 	.main-content {
 		padding: 0px !important;
 	}
-
-	
-	 Dropdown and dropdown elements.
 
 	.nav > li > .dropdown-menu.notifications {
 		left: -91px !important;
@@ -169,14 +163,10 @@
 		right: 0 !important;
 		left: auto;
 	}
-	
-	 Hide navigation toggler
 
 	.navigation-toggler {
 		display: none;
 	}
-	
-	 Main title small text
 
 	.page-header small {
 		display: block;
@@ -299,8 +289,6 @@
 		position: relative;
 	}
 	
-	 Footer
-
 	.footer {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -311,8 +299,6 @@
 
 @media (max-width: 480px) {
 	
-	 Dropdown and dropdown elements.
-
 	.nav > li.current-user > .dropdown-menu:after, .nav > li.current-user > .dropdown-menu:before {
 		margin-right: 0px;
 	}
@@ -349,8 +335,6 @@
 
 @media (max-width: 979px) {
 	
-	 general body settings
-
 	body {
 		margin: 0px !important;
 	}
@@ -358,8 +342,6 @@
 		z-index: 9999;
 	}
 	
-	 Main content
-
 	.main-content {
 		min-height: 760px;
 	}
@@ -393,8 +375,6 @@
 		font-size: 24px;
 	}
 	
-	 Set style for small navigation menu
-
 	.navigation-small .main-content {
 		margin-left: 35px !important;
 	}
