@@ -25,4 +25,9 @@ BigTv::Application.routes.draw do
   # get   '/home',       to: 'home#home',  as: 'home'
   
   root to: 'publics#show'
+
+
+  # # payment gateway
+  # post '/gatepay/notify', to: 'gatepay#notify'
+  # post '/gatepay/redirect', to: 'gatepay#redirect'
 end
