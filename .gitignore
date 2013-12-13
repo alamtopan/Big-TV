@@ -8,8 +8,8 @@
 /.bundle
 /config/database.yml
 config/database.yml
-public/*
-/public/*
+#public/*
+/public/system/*
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
