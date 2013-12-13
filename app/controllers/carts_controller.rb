@@ -29,10 +29,10 @@ class CartsController < ApplicationController
       user = Customer.find_or_initialize_by_email(params[:user][:email])
       user.update_attributes(params[:user])
       if user.save
-        order_data = save_order(user)
+        save_order(user)
         flash[:success] = 'success'
+        CustomerMailer.thanks_email(order).deliver
         delete_session
-        CustomerMailer.thanks_email(order_data).deliver
         # do subscribe
         redirect_to thanks_path
       else
@@ -81,9 +81,7 @@ class CartsController < ApplicationController
       order.session_id = nil
       order.period = period
       order.period_name = 'month'
-      order.total = order.total * period
       order.save
-      order
     end
 
 end
