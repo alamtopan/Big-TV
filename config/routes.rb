@@ -3,6 +3,7 @@ BigTv::Application.routes.draw do
 
   resources :users do
   	resources :profiles
+    get :sign_out
   end
   resources :unit_items,  path: 'channels'
   resources :group_items, path: 'channel_categories'

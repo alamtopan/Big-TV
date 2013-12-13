@@ -25,4 +25,5 @@ $(document).ready(function(){
       $(child_checkbox).removeAttr('checked');
     }
   })
+
 })

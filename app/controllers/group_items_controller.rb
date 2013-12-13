@@ -3,6 +3,6 @@ class GroupItemsController < ResourcesController
 
   private
     def prepare_select
-      @unit_items = UnitItem.all
+      @unit_items = UnitItem.where('free = ?', false)
     end
 end

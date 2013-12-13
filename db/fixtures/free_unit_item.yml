@@ -1,0 +1,176 @@
+items:
+  - item_0:
+      name:   'Aceh TV'
+      hd:     false
+      free:   true
+      logo:   'Aceh_TV.png'
+  - item_1:
+      name:   'ANTV'
+      hd:     false
+      free:   true
+      logo:   'anteve.png'
+  - item_2:
+      name:   'Arjuna TV'
+      hd:     false
+      free:   true
+      logo:   'Arjuna_TV.png'
+  - item_3:
+      name:   'Bali TV'
+      hd:     false
+      free:   true
+      logo:   'Bali_TV.png'
+  - item_4:
+      name:   'Bandung TV'
+      hd:     false
+      free:   true
+      logo:   'Bandung_TV.png'
+  - item_5:
+      name:   'Daai TV'
+      hd:     false
+      free:   true
+      logo:   'DAAI_TV.png'
+  - item_6:
+      name:   'Indosiar'
+      hd:     false
+      free:   true
+      logo:   'Indosiar.png'
+  - item_7:
+      name:   'Insan TV'
+      hd:     false
+      free:   true
+      logo:   'Insan_TV.png'
+  - item_8:
+      name:   'Jak TV'
+      hd:     false
+      free:   true
+      logo:   'Jak_TV.png'
+  - item_9:
+      name:   'Jogja TV'
+      hd:     false
+      free:   true
+      logo:   'Jogja_TV.png'
+  - item_10:
+      name:   'Kompas TV'
+      hd:     false
+      free:   true
+      logo:   'Kompas_TV.png'
+  - item_11:
+      name:   'Malang TV'
+      hd:     false
+      free:   true
+      logo:   'Malang_TV.png'
+  - item_12:
+      name:   'Metro TV'
+      hd:     false
+      free:   true
+      logo:   'Metro_TV.png'
+  - item_13:
+      name:   'TVRI'
+      hd:     false
+      free:   true
+      logo:   'TVRI.png'
+  - item_14:
+      name:   'TV One'
+      hd:     false
+      free:   true
+      logo:   'TV_One.png'
+  - item_15:
+      name:   'Trans 7'
+      hd:     false
+      free:   true
+      logo:   'Trans_7.png'
+  - item_16:
+      name:   'Trans TV'
+      hd:     false
+      free:   true
+      logo:   'Trans_TV.png'
+  - item_17:
+      name:   'Televisi_Edukasi'
+      hd:     false
+      free:   true
+      logo:   'Televisi_Edukasi.png'
+  - item_18:
+      name:   'Surabaya TV'
+      hd:     false
+      free:   true
+      logo:   'Surabaya_TV.png'
+  - item_19:
+      name:   'Sriwijaya TV'
+      hd:     false
+      free:   true
+      logo:   'Sriwijaya_TV.png'
+  - item_20:
+      name:   'Semarang TV'
+      hd:     false
+      free:   true
+      logo:   'Semarang_TV.png'
+  - item_21:
+      name:   'SCTV'
+      hd:     false
+      free:   true
+      logo:   'SCTV.png'
+  - item_22:
+      name:   'Rodja TV'
+      hd:     false
+      free:   true
+      logo:   'Rodja_TV.png'
+  - item_23:
+      name:   'Papua Barat TV'
+      hd:     false
+      free:   true
+      logo:   'Papua_Barat_TV.png'
+  - item_24:
+      name:   'TV Timor Leste'
+      hd:     false
+      free:   true
+      logo:   'TV_Timor_Leste.png'
+  - item_25:
+      name:   'Papua Barat TV'
+      hd:     false
+      free:   true
+      logo:   'TV_One.png'
+  - item_26:
+      name:   'TVRI Sumbar'
+      hd:     false
+      free:   true
+      logo:   'TVRI_Sumbar.png'
+  - item_27:
+      name:   'TVRI Papua'
+      hd:     false
+      free:   true
+      logo:   'TVRI_Papua.png'
+  - item_28:
+      name:   'TVRI Kaltim'
+      hd:     false
+      free:   true
+      logo:   'TVRI_Kaltim.png'
+  - item_29:
+      name:   'TVRI Kalteng'
+      hd:     false
+      free:   true
+      logo:   'TVRI_Kalteng.png'
+  - item_30:
+      name:   'TVRI Kalbar'
+      hd:     false
+      free:   true
+      logo:   'TVRI_Kalbar.png'
+  - item_31:
+      name:   'TV Edukasi Siswa'
+      hd:     false
+      free:   true
+      logo:   'TV_Edukasi_1_Siswa.png'
+  - item_32:
+      name:   'TV Edukasi Guru'
+      hd:     false
+      free:   true
+      logo:   'TV_Edukasi_2_Guru.png'
+  - item_33:
+      name:   'Top TV Papua'
+      hd:     false
+      free:   true
+      logo:   'Top_TV_Papua.png'
+  - item_34:
+      name:   'Televisi Mandiri Papua'
+      hd:     false
+      free:   true
+      logo:   'Televisi_Mandiri_Papua.png'

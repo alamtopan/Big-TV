@@ -11,6 +11,7 @@
         <th>Logo</th>
         <th>Name</th>
         <th>HD</th>
+        <th>Free</th>
         <th>Group Name</th>
         <th></th>
       </tr>
@@ -22,6 +23,7 @@
           <th><%= image_tag(item.logo.url(:thumb)) %></th>
           <th><%= item.name %></th>
           <th><%= item.status_hd %></th>
+          <th><%= item.free %></th>
           <th><%= item.group_item.name if item.group_item %></th>
           <th>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: item, confirmation: "#{item.name} will be deleted, are you sure ?"} %>

@@ -20,4 +20,21 @@ $(document).ready(function(){
 
  // date picker
  $('.datepicker').datepicker();
+
+
+ // channel
+  var limit = $('#team_members_channel').data('limit');
+  $(".channel_member").each(function( index, el ) {
+    if (index > (limit - 2)){
+      $(el).addClass('hide');
+    }
+  })
+  if($('.channel_member').length < limit){
+    $('#view-more-channel').addClass('hide');
+  }
+
+  $('#view-more-channel').on('click',function(){
+    $('.channel_member').removeClass('hide');
+    $(this).addClass('hide');
+  })
 })

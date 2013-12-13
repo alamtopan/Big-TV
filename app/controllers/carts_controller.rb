@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   layout "public"
 
   def extra
-    @memberships = Membership.package('extra')
+    @memberships = Membership.packages_by_category('extra')
     @order = order
   end
 

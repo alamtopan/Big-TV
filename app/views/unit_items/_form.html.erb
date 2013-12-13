@@ -24,6 +24,12 @@
   </div>
 </div>
 <div class="form-group">
+  <%= f.label :free, 'Free Channel', class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.check_box :free %>
+  </div>
+</div>
+<div class="form-group">
   <%= f.label :logo, class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
     <%= image_tag @unit_item.logo.url(:medium) %>

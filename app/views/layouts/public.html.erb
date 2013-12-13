@@ -8,7 +8,9 @@
 		<%= stylesheet_link_tag    "application_front", :media => "all" %>
 	</head>
 	<body>
-		<%= render partial: "shareds/front/header" %>
+		<div class="top_banner">
+			<div>TELEVISI SATELIT BERBAYAR <span class="white">TERBESAR</span> DI INDONESIA</div>
+		</div>
 		<div class="cbp-fbscroller">
 			<%= yield %>
 			<%= render partial: "shareds/front/footer" %>
