@@ -31,7 +31,7 @@ BigTv::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+   config.log_level = :debug
 
   # Prepend all log lines with the following tags
   # config.log_tags = [ :subdomain, :uuid ]
@@ -49,7 +49,7 @@ BigTv::Application.configure do
   config.assets.precompile += %w( application_front.js application.js application_front.css application.css )
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
   # config.threadsafe!
@@ -72,8 +72,8 @@ BigTv::Application.configure do
     address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'bigtv.co.id',
-    user_name:            'devifr',
-    password:             'reyhan edogawa3',
+    user_name:            'domikado',
+    password:             'domikado12345eskado',
     authentication:       'plain',
     enable_starttls_auto: true  
   }
