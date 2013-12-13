@@ -15,8 +15,8 @@ class Membership < ActiveRecord::Base
   end
 
   class << self
-    def packages_by_category(_pack)
-      joins(:category).where('categories.name = ?', _pack)
+    def packages_by_category(_package)
+      includes(:category).where(['categories.name = ?', _package])
     end
   end
   
