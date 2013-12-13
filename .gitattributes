@@ -1,0 +1,3 @@
+config/database.yml merge=ours
+public/assets/* merge=ours
+public/system/* merge=ours

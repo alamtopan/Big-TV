@@ -29,7 +29,7 @@
         <% (memberships.count).times do |i| %>
           <td>
             <div class="br"></div>
-            <div class="pack-order">SUBSCRIBE</div>
+            <%= link_to "<div class='pack-order version2'>SUBSCRIBE</div>".html_safe, extra_path(memberships[i]),{class: 'no_underscore'} %>
             <div class="br"></div>
           </td>
         <% end %>

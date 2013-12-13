@@ -1,23 +1,23 @@
-/* ---------------------------------------------------------------------- */
-/*	From Medium Devices Up To Larger Devices
- /* ---------------------------------------------------------------------- */
+
+
+
 @media (min-width: 980px) and (max-width: 1199px) {
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 940px !important;
 	}
 }
-/* ---------------------------------------------------------------------- */
-/*	Only larger Devices
- /* ---------------------------------------------------------------------- */
+
+
+
 @media (min-width: 1200px) {
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 1000px !important;
 	}
 }
 
-/* ---------------------------------------------------------------------- */
-/*	From Small Devices Up To Medium Devices
- /* ---------------------------------------------------------------------- */
+
+
+
 @media (min-width: 768px) and (max-width: 979px) {
 	.layout-boxed > .navbar, .layout-boxed .main-container, .layout-boxed > .footer {
 		max-width: 750px !important;
@@ -127,9 +127,9 @@
 	}
 
 }
-/* ---------------------------------------------------------------------- */
-/*	Extra Small Devices Only
-/* ---------------------------------------------------------------------- */
+
+
+
 @media (max-width: 767px) {
 	.main-navigation {
 		max-height: 340px !important;
@@ -145,16 +145,10 @@
 		margin-top: 95px;
 	}
 
-	/***
-	 Main content
-	 ***/
 	.main-content {
 		padding: 0px !important;
 	}
 
-	/***
-	 Dropdown and dropdown elements.
-	 ***/
 	.nav > li > .dropdown-menu.notifications {
 		left: -91px !important;
 	}
@@ -169,15 +163,11 @@
 		right: 0 !important;
 		left: auto;
 	}
-	/***
-	 Hide navigation toggler
-	 ***/
+
 	.navigation-toggler {
 		display: none;
 	}
-	/***
-	 Main title small text
-	 ***/
+
 	.page-header small {
 		display: block;
 		clear: both;
@@ -219,7 +209,7 @@
 		margin-top: 0px !important;
 	}
 	.main-content > .container {
-		/*padding:0;*/
+		
 	}
 	.sidebar-search input {
 		display: none;
@@ -242,7 +232,7 @@
 	div.timeline_element {
 		margin: 20px auto !important;
 	}	
-	/*Messages*/
+	
 	.messages-list {
 		display: block;
 		float: none !important;
@@ -259,7 +249,7 @@
 		right: 0 !important;
 		top: 0 !important;
 	}
-	/* Tabs Left*/
+	
 	.tabs-left .nav-tabs li.active a, .tabs-left .nav-tabs li.active a:hover, .tabs-left .nav-tabs li.active a:focus {
 		border-right-color: #dddddd;
 	}
@@ -269,7 +259,7 @@
 	.tabs-left .tab-content {
 		border-top: none;
 	}
-	/*Lock Screen*/
+	
 	.main-ls {
 		height: auto;
 		left: 0;
@@ -291,28 +281,24 @@
 		width: auto !important;
 	}
 
-	/*Chart*/
+	
 	#placeholder2 {
 		margin-right: 0 !important;
 	}
 	.flot-container #choices {
 		position: relative;
 	}
-	/***
-	 Footer
-	 ***/
+	
 	.footer {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
 }
-/* ---------------------------------------------------------------------- */
-/*	Extra Small Devices Only
-/* ---------------------------------------------------------------------- */
+
+
+
 @media (max-width: 480px) {
-	/***
-	 Dropdown and dropdown elements.
-	 ***/
+	
 	.nav > li.current-user > .dropdown-menu:after, .nav > li.current-user > .dropdown-menu:before {
 		margin-right: 0px;
 	}
@@ -344,30 +330,26 @@
 		display: none !important;
 	}
 }
-/* ---------------------------------------------------------------------- */
-/*	Up To Medium Devices
-/* ---------------------------------------------------------------------- */
+
+
+
 @media (max-width: 979px) {
-	/***
-	 general body settings
-	 ***/
+	
 	body {
 		margin: 0px !important;
 	}
 	.main-navigation {
 		z-index: 9999;
 	}
-	/***
-	 Main content
-	 ***/
+	
 	.main-content {
 		min-height: 760px;
 	}
 
 }
-/* ---------------------------------------------------------------------- */
-/*	Up To Medium Devices
-/* ---------------------------------------------------------------------- */
+
+
+
 @media (min-width: 768px) {
 	.main-navigation {
 		position: absolute;
@@ -392,9 +374,7 @@
 		line-height: 41px;
 		font-size: 24px;
 	}
-	/***
-	 Set style for small navigation menu
-	 ***/
+	
 	.navigation-small .main-content {
 		margin-left: 35px !important;
 	}

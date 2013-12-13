@@ -360,7 +360,7 @@ section.paging .dot.selected, section.paging .dot:hover
 }
 .wraper_bg-bright
 {       
-        background: #fcfcfc url("../img/bg2.png") repeat;
+        background: #fcfcfc url("/assets/img/bg2.png") repeat;
         color: #37353a;
         text-align: center;
         position: relative;
@@ -918,7 +918,7 @@ footer.wraper
 {
 	width: 32px;
 	height: 57px;
-	background: url("../img/location.png") no-repeat;
+	background: url("/assets/img/location.png") no-repeat;
 	position: absolute;
 	top: 45%;
 	right: 45%;
@@ -1083,7 +1083,7 @@ input.s_form1
 .com
 {
 	color: #919191;
-	background: white url("../img/arrow_bottom.html") no-repeat top 55% right 10%;
+	background: white url("/assets/img/arrow_bottom.html") no-repeat top 55% right 10%;
 	text-align: center;
 	height: 60px;
 	width: 75px;
@@ -1218,7 +1218,7 @@ input.s_form1
 .mask
 {
 	display: none;
-	background: url("../img/mask-pixel.png");
+	background: url("/assets/img/mask-pixel.png");
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -1482,7 +1482,7 @@ input.s_form1
 }
 .dots .element
 {
-	background: url('../img/dot_inactive.png') center center no-repeat;
+	background: url('/assets/img/dot_inactive.png') center center no-repeat;
 	width: 9px;
 	height: 9px;
 	padding-left: 5px;
@@ -1491,7 +1491,7 @@ input.s_form1
 	cursor: pointer;
 }
 .dots .element.current{
-	background: url('../img/dot_active.png') center center no-repeat;
+	background: url('/assets/img/dot_active.png') center center no-repeat;
 }
 .slide-main h1
 {
@@ -1738,10 +1738,10 @@ margin: auto;
 	height: 23px;
 	width: 11px;
 	margin-top: -11px;
-	background: url('../img/triangle.png') no-repeat;
+	background: url('/assets/img/triangle.png') no-repeat;
 }
 .blog_cont_right .blog_post .triangle3{
-	background: url('../img/triangle-reverse.png') no-repeat;
+	background: url('/assets/img/triangle-reverse.png') no-repeat;
 	left: -11px;
 }
 .blog_post_info

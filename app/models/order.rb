@@ -16,12 +16,14 @@ class Order < ActiveRecord::Base
   end
 
   def calculate_total(autosave=:false)
-    total_amount = items.sum(:subtotal)
+    total_amount = items.sum(:subtotal) * (self.period||1)
 
     if [:conditional, :true].include?(autosave)
       if total_amount.to_i != total || autosave == :true
-        self.total = total_amount
-        self.save
+        unless self.total.to_f == total_amount.to_f
+          self.total = total_amount
+          self.save
+        end
       end
     else
       self.total = total_amount
