@@ -1,12 +1,12 @@
 
 /* ---------------------------------------------------------------------- */
-/*	Import fonts
+/*	Import fonts */
  /* ---------------------------------------------------------------------- */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700,800,900);
 
 /* ---------------------------------------------------------------------- */
-/*	Basic Elements & Classes
+/*	Basic Elements & Classes */
  /* ---------------------------------------------------------------------- */
 body {
 	color: #000000;
@@ -45,7 +45,7 @@ h1, h2, h3 {
 	font-family: 'Raleway', sans-serif;
 }
 /* ---------------------------------------------------------------------- */
-/*	Forms
+/*	Forms */
  /* ---------------------------------------------------------------------- */
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
 	background-color: #FFFFFF;
@@ -280,7 +280,7 @@ textarea.autosize {
 	margin-top: 7px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Generic Classes
+/*	Generic Classes */
  /* ---------------------------------------------------------------------- */
 .no-padding {
 	padding: 0 !important;
@@ -364,7 +364,7 @@ a.bricky:hover {
 	text-align: center;
 }
 /* ---------------------------------------------------------------------- */
-/*  Navbar and navbar elements
+/*  Navbar and navbar elements */
  /* ---------------------------------------------------------------------- */
 .navbar {
 	margin: 0 !important;
@@ -527,7 +527,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	font-size: 16px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Search Box
+/*	Search Box */
  /* ---------------------------------------------------------------------- */
 .search-box:before {
 	content: " " !important;
@@ -586,7 +586,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	color: #999999;
 }
 /* ---------------------------------------------------------------------- */
-/*	Buttons
+/*	Buttons */
  /* ---------------------------------------------------------------------- */
 /*.btn {
 	font-family: 'Open Sans';
@@ -852,7 +852,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	margin-bottom: 0;
 }
 /* ---------------------------------------------------------------------- */
-/*	Panel Tools
+/*	Panel Tools */
  /* ---------------------------------------------------------------------- */
 .panel-tools {
 	position: absolute;
@@ -916,7 +916,7 @@ li.dropdown.current-user .dropdown-menu li a {
 }
 
 /* ---------------------------------------------------------------------- */
-/*	Panels and panel elements
+/*	Panels and panel elements */
  /* ---------------------------------------------------------------------- */
 .panel-heading {
 	background-color: #F5F4F9;
@@ -966,7 +966,7 @@ li.dropdown.current-user .dropdown-menu li a {
 	overflow: hidden;
 }
 /* ---------------------------------------------------------------------- */
-/*	Pagination
+/*	Pagination */
  /* ---------------------------------------------------------------------- */
 .pagination li a {
 	cursor: pointer;
@@ -1134,7 +1134,7 @@ color: #AAAAAA !important;
 	opacity: 0.5;
 }
 /* ---------------------------------------------------------------------- */
-/*	ToDo List
+/*	ToDo List */
  /* ---------------------------------------------------------------------- */
 .todo {
 	list-style: none;
@@ -1170,7 +1170,7 @@ color: #AAAAAA !important;
 }
 
 /* ---------------------------------------------------------------------- */
-/*	Main Container and main content elements
+/*	Main Container and main content elements */
  /* ---------------------------------------------------------------------- */
 .main-container {
 	margin-top: 50px;
@@ -1187,7 +1187,7 @@ color: #AAAAAA !important;
 	max-width: none !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	Main Navigation
+/*	Main Navigation */
  /* ---------------------------------------------------------------------- */
 .main-navigation {
 	padding: 0;
@@ -1304,7 +1304,7 @@ ul.main-navigation-menu > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu
 	text-align: center;
 }
 /* ---------------------------------------------------------------------- */
-/*	Footer and footer elemnts
+/*	Footer and footer elemnts */
  /* ---------------------------------------------------------------------- */
 .footer {
 	font-size: 12px;
@@ -1327,7 +1327,7 @@ ul.main-navigation-menu > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu
 }
 
 /* ---------------------------------------------------------------------- */
-/*	Breadcrumb
+/*	Breadcrumb */
  /* ---------------------------------------------------------------------- */
 .breadcrumb {
 	margin: 0 -15px;
@@ -1343,7 +1343,7 @@ ul.main-navigation-menu > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu
 }
 
 /* ---------------------------------------------------------------------- */
-/*	Rating
+/*	Rating */
  /* ---------------------------------------------------------------------- */
 .rating {
 	direction: rtl;
@@ -1370,7 +1370,7 @@ span.star:before {
 	content: "\f005";
 }
 /* ---------------------------------------------------------------------- */
-/*	Dropdown elements
+/*	Dropdown elements */
  /* ---------------------------------------------------------------------- */
 .dropdown-checkboxes {
 	padding: 5px;
@@ -1381,7 +1381,7 @@ span.star:before {
 	line-height: 20px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Labels and Badges
+/*	Labels and Badges */
  /* ---------------------------------------------------------------------- */
 .badge-success {
 	background-color: #5CB85C;
@@ -1415,7 +1415,7 @@ span.star:before {
 	background-color: #555555;
 }
 /* ---------------------------------------------------------------------- */
-/*	Progress bar
+/*	Progress bar */
  /* ---------------------------------------------------------------------- */
 .progress.progress-xs {
 	height: 7px;
@@ -1424,7 +1424,7 @@ span.star:before {
 	height: 12px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Modal elements
+/*	Modal elements */
  /* ---------------------------------------------------------------------- */
 
 .modal-footer {
@@ -1432,7 +1432,7 @@ span.star:before {
 	border-radius: 0 0 6px 6px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Tabs
+/*	Tabs */
  /* ---------------------------------------------------------------------- */
 .tabbable {
 	margin-bottom: 15px;
@@ -2003,7 +2003,7 @@ span.star:before {
 	padding: 0;
 }
 /* ---------------------------------------------------------------------- */
-/*	Page Header
+/*	Page Header */
  /* ---------------------------------------------------------------------- */
 .page-header {
 	margin: 20px 0 20px;
@@ -2024,7 +2024,7 @@ span.star:before {
 	letter-spacing: 0;
 }
 /* ---------------------------------------------------------------------- */
-/*	Accordion
+/*	Accordion */
  /* ---------------------------------------------------------------------- */
 .accordion-custom .panel {
 	background-color: #FFFFFF;
@@ -2086,7 +2086,7 @@ span.star:before {
 	border-left: none;
 }
 /* ---------------------------------------------------------------------- */
-/*	Social Icons
+/*	Social Icons */
  /* ---------------------------------------------------------------------- */
 .social-icons li a, a.social-icon {
 	background-position: 0 0;
@@ -2097,7 +2097,7 @@ span.star:before {
 	width: 28px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Sliders
+/*	Sliders */
  /* ---------------------------------------------------------------------- */
 
 [class^="slider-"] .ui-rangeSlider-bar {
@@ -2273,7 +2273,7 @@ span.star:before {
 	color: #2D4259;
 }
 /* ---------------------------------------------------------------------- */
-/*	Nestable List
+/*	Nestable List */
  /* ---------------------------------------------------------------------- */
 .dd {
 	position: relative;
@@ -2503,7 +2503,7 @@ span.star:before {
 	background: #ddd;
 }
 /* ---------------------------------------------------------------------- */
-/*	Icons
+/*	Icons */
  /* ---------------------------------------------------------------------- */
 .icons > section {
 	margin-top: 20px;
@@ -2518,7 +2518,7 @@ span.star:before {
 	font-size: 26px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Backdrop
+/*	Backdrop */
  /* ---------------------------------------------------------------------- */
 .full-white-backdrop {
 	background-color: #FFFFFF;
@@ -2531,7 +2531,7 @@ span.star:before {
 	z-index: 9999;
 }
 /* ---------------------------------------------------------------------- */
-/*	Table and table elements
+/*	Table and table elements */
  /* ---------------------------------------------------------------------- */
 th.center, td.center {
 	text-align: center;
@@ -2558,7 +2558,7 @@ td.center .dropdown-menu {
 	display: inline;
 }
 /* ---------------------------------------------------------------------- */
-/*	Timepicker
+/*	Timepicker */
  /* ---------------------------------------------------------------------- */
 .bootstrap-timepicker-widget table td input {
 	width: 32px !important;
@@ -2568,7 +2568,7 @@ td.center .dropdown-menu {
 	width: auto !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	FileUpload
+/*	FileUpload */
  /* ---------------------------------------------------------------------- */
 .fileupload .uneditable-input {
 	white-space: nowrap;
@@ -2579,7 +2579,7 @@ td.center .dropdown-menu {
 	border-radius: 0 3px 3px 0 !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	WYSIWYG
+/*	WYSIWYG */
  /* ---------------------------------------------------------------------- */
 .wysiwyg {
 	padding: 5px 0;
@@ -2614,7 +2614,7 @@ td.center .dropdown-menu {
 	text-shadow: none !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	Form Wizard
+/*	Form Wizard */
  /* ---------------------------------------------------------------------- */
 .swMain > ul {
 	display: table;
@@ -2722,7 +2722,7 @@ td.center .dropdown-menu {
 	display: none;
 }
 /* ---------------------------------------------------------------------- */
-/*	Login
+/*	Login */
  /* ---------------------------------------------------------------------- */
 body.login {
 	color: #7F7F7F;
@@ -2800,7 +2800,7 @@ body.login .new-account {
 	display: block;
 }
 /* ---------------------------------------------------------------------- */
-/*	404 and 500 errors
+/*	404 and 500 errors */
  /* ---------------------------------------------------------------------- */
 body.error-full-page {
 	background: #ffffff !important;
@@ -2862,7 +2862,7 @@ body.error-full-page {
 	margin-top: 5%;
 }
 /* ---------------------------------------------------------------------- */
-/*	Inline Editor
+/*	Inline Editor  */
  /* ---------------------------------------------------------------------- */
 }
 #inline-container [contenteditable="true"] {
@@ -2956,7 +2956,7 @@ body.error-full-page {
 	margin: 0 0 0 20px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Crop Image
+/*	Crop Image */
  /* ---------------------------------------------------------------------- */
 .crop-image form {
 	margin: 1.5em 0;
@@ -2986,7 +2986,7 @@ body.error-full-page {
 	overflow: hidden;
 }
 /* ---------------------------------------------------------------------- */
-/*	Timeline
+/*	Timeline */
  /* ---------------------------------------------------------------------- */
 div.timeline {
 	font-family: Arial;
@@ -3238,7 +3238,7 @@ div.timeline_element.purple div.timeline_title {
 	color: #EEEEEE;
 }
 /* ---------------------------------------------------------------------- */
-/*	Messages
+/*	Messages */
  /* ---------------------------------------------------------------------- */
 .panel-body.messages {
 	padding: 0;
@@ -3422,7 +3422,7 @@ div.timeline_element.purple div.timeline_title {
 	padding: 10px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Pricing Tables
+/*	Pricing Tables */
  /* ---------------------------------------------------------------------- */
 #pricing_table_example1 .pricing-table {
 	background: none repeat scroll 0 0 #FFFFFF;
@@ -3562,7 +3562,7 @@ div.timeline_element.purple div.timeline_title {
 	font: 500 14px/1 Helvetica, Verdana, sans-serif;
 }
 /* ---------------------------------------------------------------------- */
-/*	Coming Soon
+/*	Coming Soon */
  /* ---------------------------------------------------------------------- */
 .coming-soon {
 	text-align: center;
@@ -3625,7 +3625,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 	font-size: 1.2em;
 }
 /* ---------------------------------------------------------------------- */
-/*	Flot Chart
+/*	Flot Chart */
  /* ---------------------------------------------------------------------- */
 .flot-container {
 	box-sizing: border-box;
@@ -3659,7 +3659,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 	height: 360px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Maps
+/*	Maps */
  /* ---------------------------------------------------------------------- */
 .map {
 	display: block;
@@ -3670,7 +3670,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 	height: 500px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Overlay
+/*	Overlay */
  /* ---------------------------------------------------------------------- */
 .overlay {
 	display: block;
@@ -3706,7 +3706,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 	border-bottom: 16px solid #336699;
 }
 /* ---------------------------------------------------------------------- */
-/*	Calendar
+/*	Calendar */
  /* ---------------------------------------------------------------------- */
 #calendar{
 	position: relative;
@@ -3799,7 +3799,7 @@ ul#countdown li p.timeRefDays, ul#countdown li p.timeRefHours, ul#countdown li p
 	border-color: #3D9400 !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	Lock Screen
+/*	Lock Screen */
  /* ---------------------------------------------------------------------- */
 body.lock-screen {
 	color: #7F7F7F;
@@ -3855,13 +3855,13 @@ body.lock-screen .user-info > span em {
 	color: #333333;
 }
 /* ---------------------------------------------------------------------- */
-/*	daterangepicker
+/*	daterangepicker */
  /* ---------------------------------------------------------------------- */
 .daterangepicker{
 	margin-top: 51px !important;
 }
 /* ---------------------------------------------------------------------- */
-/*	Style Selector
+/*	Style Selector */
  /* ---------------------------------------------------------------------- */
 #style_selector {
 	background: none repeat scroll 0 0 #FFFFFF;
@@ -3985,7 +3985,7 @@ border-radius: 100% 100% 100% 100%;
 	border-right-style: solid;
 }
 /* ---------------------------------------------------------------------- */
-/*	Home elements
+/*	Home elements */
  /* ---------------------------------------------------------------------- */
 .circle-icon {
 	background-color: #333333;
@@ -4129,7 +4129,7 @@ border-radius: 100% 100% 100% 100%;
 }
 
 /* ---------------------------------------------------------------------- */
-/*	Sparklines
+/*	Sparklines */
  /* ---------------------------------------------------------------------- */
 .mini-stats {
 	border-left: 1px solid #DDDDDD;
@@ -4184,7 +4184,7 @@ border-radius: 100% 100% 100% 100%;
 	border-radius: 3px;
 }
 /* ---------------------------------------------------------------------- */
-/*	Easy Pie Chart
+/*	Easy Pie Chart */
  /* ---------------------------------------------------------------------- */
 .easy-pie-chart {
 	position: relative;
