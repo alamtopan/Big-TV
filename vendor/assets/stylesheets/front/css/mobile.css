@@ -55,7 +55,7 @@ div.grid_packages_location{
     width: 100%; 
     margin-bottom: 10px;
     height: 140px;
-    background-image:url("../../map-marker.png");
+    background-image:url("map-marker.png");
     background-repeat: no-repeat;
     padding-left:50px;
     padding-top: 10px;
