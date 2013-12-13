@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BigTV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=0">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <%= stylesheet_link_tag    "application_front", :media => "all" %>
+  </head>
+  <body>
+    <%= render partial: "shareds/front/header_detail" %>
+    <div class="top_banner">
+      <div>TELEVISI SATELIT BERBAYAR <span class="white">TERBESAR</span> DI INDONESIA</div>
+    </div>
+    <div class="cbp-fbscroller">
+      <%= yield %>
+      <%= render partial: "shareds/front/footer" %>
+    </div>
+    <%= javascript_include_tag "application_front" %>
+  </body>
+</html>

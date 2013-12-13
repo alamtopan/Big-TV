@@ -1,5 +1,5 @@
 class PublicsController < ApplicationController
-	layout "public"
+  layout "public"
 
 	def show
     @memberships = Membership.packages_by_category('premium')
@@ -8,7 +8,7 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    
+  render layout: "detail"  
   end
 
 end

@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  layout "public"
+  layout "detail"
 
   def extra
     @memberships = Membership.packages_by_category('extra')
