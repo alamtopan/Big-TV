@@ -10,8 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
 //= require js/jquery.min
 //= require plugins/jquery-ui/jquery-ui-1.10.2.custom.min
 //= require plugins/bootstrap/js/bootstrap.min
