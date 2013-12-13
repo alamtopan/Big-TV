@@ -43,6 +43,7 @@ class CartsController < ApplicationController
   end
 
   def create
+    check_order(order,params[:membership_ids])
     order.add_item(params,session_cart)
     redirect_to preview_path if order.valid?
   end
@@ -83,5 +84,52 @@ class CartsController < ApplicationController
       order.period_name = 'month'
       order.save
     end
+
+    def check_order(order,params_membership)
+      order.items.each do |item|
+        unless params_membership.include?(item.membership_id)
+          item.delete
+        end
+      end
+    end
+
+    # def save_gatepay(order)
+    #   gatepay = Gatepay.find_or_initialize_by_transid(order.code)
+    #   gatepay.trxstatus = 'Pending'
+    #   gatepay.save
+    # end
+    
+    # def params_doku(order)
+    #   total = order.total.round(2)
+    #   params << params[:MALLID] = 958
+    #   params << params[:CHAINMERCHANT] = 'NA'
+    #   params << params[:AMOUNT] = order.total
+    #   params << params[:PURCHASEAMOUNT] = order.total
+    #   params << params[:TRANSIDMERCHANT] = order.code
+    #   params << params[:WORDS] = generate_word(total,order.code)
+    #   params << params[:REQUESTDATETIME] = DateTime.now.strftime('%Y%m%d%H%I%S') #datetime, YYYYMMDDHHMMSS
+    #   params << params[:CURRENCY] = 360
+    #   params << params[:PURCHASECURRENCY] = 360
+    #   params << params[:SESSIONID] = #blmtau
+    #   params << params[:NAME] = order.orderable.profile.first_name
+    #   params << params[:EMAIL] = order.orderable.email
+    #   params << params[:PAYMENTCHANNEL] = '04'
+    #   params << params[:BASKET] = generate_basket(order)
+    #   params
+    # end
+
+    # def generate_word(total,code)
+    #   Digest::SHA1.hexdigest(total + 958 + '75Pi0aDrFBc0' + code)
+    # end
+
+    # def generate_basket(order)
+    #   basket = ''
+    #   order.items.each_with_index do |item,index|
+    #     total = item.subtotal * order.periode
+    #     basket += "#{item.title},#{item.subtotal},#{order.period},#{total}"
+    #     basket += ";" if index != (order.items.count - 1)
+    #   end
+    #   basket
+    # end
 
 end

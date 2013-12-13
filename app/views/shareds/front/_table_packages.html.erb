@@ -6,8 +6,12 @@
         <% group.unit_items.each_with_index do |item,index| %>
           <tr>
             <td>
+
               <%= image_tag item.logo.url(:thumb),class: "small_image" ;%>
               <span class="name_channel"><%= item.name %> </span>
+              <% if item.status_hd %>
+                <span class="hd">HD</span>
+              <% end %>
             </td>
             <% (memberships.count - 1).times do |i| %>
               <td>
