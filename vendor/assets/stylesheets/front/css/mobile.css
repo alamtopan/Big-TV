@@ -4,10 +4,64 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	.top_banner{
+		background: #ed2024;
+		color: #fff100;
+		font-size: 20px;
+		padding: 20px;
+		float: left;
+		text-align: center;
+		width: 100%;
+		font-weight: bold;
+	}
+	.top_banner div{
+		width: 80%;
+	}
+	.f_search
+	{
+		width: 90%;
+	}
+	.search1
+	{
+  	width: 40%;
+	}
 	#map_section{
 		height: 400px;
 		width: 100%;
 	}
+	div.grd_masonry_news{
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+    width: 100%;
+    float: left;
+ 	}
+	div.grd_masonry_location{
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+    width: 100%;
+    float: left;
+ 	}
+
+div.grid_packages_location{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+    height: 140px;
+    background-image:url("../../map-marker.png");
+    background-repeat: no-repeat;
+    padding-left:50px;
+    padding-top: 10px;
+    text-align:left;
+
+  }
 	div.grd_masonry{
     -moz-column-count: 2;
     -moz-column-gap: 10px;
@@ -190,7 +244,6 @@ div.grid_packages_footer{
 	.packs-cont
 	{
 		max-width: 720px;
-		overflow: hidden;
 	}
 	.mbl-packs-cont
 	{

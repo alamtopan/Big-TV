@@ -19,8 +19,10 @@
 //= require customize_front
 //= require map/gmap3.min
 //= require map/map
+//= require scrolltofixed-min
 
 //= require_self
+  $('#nav').scrollToFixed({ marginTop: 0});
 
 	$(document).ready(function(){
 		$('#sequence').imagesLoaded(function(img){
