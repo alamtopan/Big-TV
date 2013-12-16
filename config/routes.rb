@@ -1,5 +1,5 @@
 BigTv::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :customers
 
   resources :users do
   	resources :profiles
@@ -8,14 +8,18 @@ BigTv::Application.routes.draw do
   resources :unit_items,  path: 'channels'
   resources :group_items, path: 'channel_categories'
   resources :memberships
+  resources :orders, path: 'subcriptions'
   resources :categories
+  resources :customers, only: [:new, :create]
   resources :carts, except: [:show] do
     collection do
       post '/subcribe', to: 'carts#subcribe'
     end
   end
 
-  get   '/extra/:membership_id', to: 'carts#extra',    as: 'extra'
+
+  get   '/extra',   to: 'carts#extra',    as: 'extra'
+  get   '/premium', to: 'carts#premium',  as: 'premium'
   get   '/preview',              to: 'carts#preview',  as: 'preview'
   
   get   '/thanks',              to: 'publics#thanks',  as: 'thanks'

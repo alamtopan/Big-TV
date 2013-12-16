@@ -1,0 +1,37 @@
+<section class="wraper_bg-bright special_line_rotated_righ" id="plan">
+  <h1><span>PACKAGES</span> & <span>CHANNELS</span></h1>
+  <div class="polosochka2"></div>
+  <h3>Tersedia beragam macam paket berlangganan sesuai dengan keinginan Anda.<br> Dengan perpaduan channel yang seimbang, tunggu apa lagi, ayo berlangganan segera!</h3>
+                
+  <article class="packs-cont cbp-so-scroller">
+    <div class="mbl-packs-cont cbp-so-section">
+      <% @memberships.each do |membership| %>
+      <div class="pack cbp-so-side cbp-so-side-left" >
+        <div class="pack-price">
+          <div class="big-counter">BiG</div>
+          <span class="small-counter2"><%= membership.name %></span>
+        </div>
+        <header class="pack-h">
+        </header>
+        <div class="pack-info">
+          <div class="pack-i-line">
+            Rp.
+            <span class="prc">
+              <%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
+            </span>
+          </div>
+        </div>
+        <div class="promo_banner">
+        </div>
+        <%= link_to extra_path(membership_id: membership.id),{class: 'no_underscore'} do %>
+          <div class='pack-order version2'>SUBSCRIBE</div>
+        <% end %>
+        <div class="mbl-pack-mask"></div>
+      </div>
+      <% end %>
+    </div>
+    <%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
+  </article>
+  <br><br>
+  <div class="polosochka"></div>
+</section>  

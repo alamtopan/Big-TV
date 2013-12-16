@@ -23,25 +23,25 @@
 							<label class="control-label">
 								Nama
 							</label>
-							<%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true} %>
+							<%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true, value: current_customer.profile.first_name} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Jenis Kelamin
 							</label>
-							<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true} %>
+							<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true, value: current_customer.profile.jenis_kelamin} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Tanggal Lahir
 							</label>
-							<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true} %>
+							<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true, value: current_customer.profile.tanggal_lahir} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Email
 							</label>
-							<%= f.text_field :email, {class: 'form-control', placeholder: 'Email', required: true} %>
+							<%= f.text_field :email, {class: 'form-control', placeholder: 'Email', required: true, value: current_customer.email} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
@@ -68,37 +68,37 @@
 							<label class="control-label">
 								Telepon
 							</label>
-							<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true} %>
+							<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true, value: current_customer.profile.no_phone} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Handphone
 							</label>
-							<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true} %>
+							<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true, value: current_customer.profile.no_hp} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Alamat
 							</label>
-							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true} %>
+							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Kota
 							</label>
-							<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota', required: true} %>
+							<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota', required: true, value: current_customer.profile.city} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Provinsi
 							</label>
-							<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi', required: true} %>
+							<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi', required: true, value: current_customer.profile.province} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
 								Kodepos
 							</label>
-							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos'} %>
+							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos', value: current_customer.profile.codepos} %>
 						</div>
 					</div>
 				</div>

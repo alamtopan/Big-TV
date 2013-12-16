@@ -10,7 +10,9 @@
 		<!-- start: MAIN NAVIGATION MENU -->
 		<ul class="main-navigation-menu">
 			<li class="active open">
-				<%= link_to '<i class="clip-home-3"></i><span class="title"> Dashboard</span><span class="selected"></span>'.html_safe, root_path %>
+				<%= link_to root_path do %>
+					<i class="clip-home-3"></i><span class="title"> Dashboard</span><span class="selected"></span>
+				<% end %>
 			</li>
 			<li class="">
 				<a href="javascript:void(0)"><i class="clip-checkbox"></i>
@@ -19,10 +21,14 @@
 				</a>
 				<ul class="sub-menu" style="display: none;">
 					<li>
-						<%= link_to "<span class='title'> Create New </span>".html_safe, form_path %>
+						<%= link_to new_order_path do %>
+							<span class='title'> Create New </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to "<span class='title'> List </span>".html_safe, list_path %>
+						<%= link_to orders_path do %>
+							<span class='title'> List </span>
+						<% end %>
 					</li>
 				</ul>
 			</li>
@@ -33,10 +39,14 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<%= link_to "<span class='title'>Create New</span>".html_safe, new_user_path %>
+						<%= link_to new_user_path do %>
+							<span class='title'> Create New </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to "<span class='title'>List</span>".html_safe, users_path %>
+						<%= link_to users_path do %>
+							<span class='title'> List </span>
+						<% end %>
 					</li>
 				</ul>
 			</li>
@@ -47,13 +57,19 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<%= link_to '<span class="title">Create New</span>'.html_safe, new_membership_path %>
+						<%= link_to new_membership_path do %>
+							<span class='title'> Create New </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to '<span class="title">List</span>'.html_safe, memberships_path %>
+						<%= link_to memberships_path do %>
+							<span class='title'> List </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to '<span class="title">Categories</span>'.html_safe, categories_path %>
+						<%= link_to categories_path do %>
+							<span class='title'> Categories </span>
+						<% end %>
 					</li>
 				</ul>
 			</li>
@@ -64,13 +80,19 @@
 				</a>
 				<ul class="sub-menu">
 					<li>
-						<%= link_to '<span class="title">Create New</span>'.html_safe, new_unit_item_path %>
+						<%= link_to new_unit_item_path do %>
+							<span class='title'> Create New </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to '<span class="title">List</span>'.html_safe, unit_items_path %>
+						<%= link_to unit_items_path do %>
+							<span class='title'> List </span>
+						<% end %>
 					</li>
 					<li>
-						<%= link_to '<span class="title">Channel Group</span>'.html_safe, group_items_path %>
+						<%= link_to group_items_path do %>
+							<span class="title">Channel Group</span>
+						<% end %>
 					</li>
 				</ul>
 			</li>

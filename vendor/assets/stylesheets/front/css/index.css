@@ -1359,15 +1359,15 @@ input.s_form1
 	list-style: none;
 }
 .info, .slider_main_header, .slider_p1, .slider_p2, .slider_p3 {
-    -webkit-transition-duration: .8s;
-    -moz-transition-duration: .8s;
-    -o-transition-duration: .8s;
-    -ms-transition-duration: .8s;
-    transition-duration: .8s;
+    -webkit-transition-duration: 2.8s;
+    -moz-transition-duration: 2.8s;
+    -o-transition-duration: 2.8s;
+    -ms-transition-duration: 2.8s;
+    transition-duration: 2.8s;
 }
 .slider_main_header{
-	transition-delay: .1s;
-	-webkit-transition-delay: .1s;
+	transition-delay: 2.1s;
+	-webkit-transition-delay: 2.1s;
 }
 .slider_p1{
 	transition-delay: .2s;
@@ -2313,11 +2313,11 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
 	width: 100px;
 }
 .hd{
-	background: #fdb109;
+	background: #FF0321;
 	float: left;
 	padding: 2px 5px;
 	color: #fff;
-	font-size: 12px;
+	font-size: 17px;
 	font-weight: bold;
 	border-radius: 4px 4px 4px 4px;
 	-moz-border-radius: 4px 4px 4px 4px;

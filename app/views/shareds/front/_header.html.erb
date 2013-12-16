@@ -14,7 +14,11 @@
 				<li><a href="#map">dealer locator</a></li>
 				<li><a href="#blog">news</a></li>
 			</ul>
-			<div class="login">DAFTAR SEKARANG</div>
+			<% unless current_customer %>
+				<%= link_to new_customer_path do %>
+					<div class="login">DAFTAR SEKARANG</div>
+				<% end %>
+			<% end %>
 			<div class="mbl-menu" id="mbl-button">
 				<div class="mbl_menu_el"></div>
 				<div class="mbl_menu_el"></div>
@@ -29,24 +33,6 @@
 					<li><a href="#blog">news</a></li>
 			</ul>
 			<div class="clear"></div>
-			
-			<div class="login_form">
-			<div class="triangle"></div>
-			<h1> User <span>Panel</span> </h1>
-			 <form class="l_form" action="http://pixeful.com/flatweb/fw_red_2/receiver.php" method="POST"> 
-				 <input class="l_form1" type="text" name="name" placeholder="Enter Your E-mail">
-				 <input class="l_form2" type="text" name="email" placeholder="Password">
-				 <div class="l_checkbox">
-				  <div class="checbox-img checked" onclick="">
-				  	<%= image_tag "img/form/check.png", alt: "img" %>
-				  </div>
-				  <p class="remember">Remember me</p>
-				  <div class="forgot"><a href="#">Forgot pass?</a></div>
-				 </div>
-				 <input class="l_form3" type="submit" name="ready" value="Ready to go!">
-				 <div class="clear"></div>
-				</form>
-			</div>
-		</section>
+					</section>
 	</header>
 </div>

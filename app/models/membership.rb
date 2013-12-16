@@ -18,6 +18,10 @@ class Membership < ActiveRecord::Base
     def packages_by_category(_package)
       includes(:category).where(['categories.name = ?', _package])
     end
+    
+    def other_packages
+      joins(:category).where('categories.name LIKE ?','%other%')
+    end
   end
   
   def default_price

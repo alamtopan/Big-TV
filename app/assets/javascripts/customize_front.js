@@ -36,5 +36,12 @@ $(document).ready(function(){
   $('#view-more-channel').on('click',function(){
     $('.channel_member').removeClass('hide');
     $(this).addClass('hide');
-  })
+  });
+
+  if($("#sequence").length){
+    var options = {
+        autoPlay: true
+    }
+    var sequence = $("#sequence").sequence(options).data("sequence");
+  }
 })

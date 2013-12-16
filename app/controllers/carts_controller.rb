@@ -1,25 +1,30 @@
 class CartsController < ApplicationController
   layout "detail"
+  before_filter :authorize_customer
 
   def extra
-    @memberships = Membership.packages_by_category('extra')
-    @order = order
+    if session[:current_premium_id].blank?
+      flash[:alert] = 'Please subscribe any premium package!'
+    redirect_to premium_path
+    else
+      @memberships = Membership.packages_by_category('extra')
+      @order = order
+    end
+  end
+
+  def premium
+    @memberships = Membership.packages_by_category('premium')
+    @groups = GroupItem.all
   end
 
   def preview
-    redirect_to root_path if order.total.blank?
-    decoder = Membership.joins(:category).where('categories.name LIKE ?','%other%').first
-    if decoder
+    if order.total.to_i < 1
+      redirect_to root_path
+    elsif decoder = Membership.other_packages.first
       decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
       order.add_item(decoder,session_cart) if decoder_item.new_record?
     end
-
-    @order = order
   end
-
-  # def index
-  #   order
-  # end
 
   def subcribe
     if params[:user].blank?
@@ -27,6 +32,7 @@ class CartsController < ApplicationController
       redirect_to preview_path
     else
       user = Customer.find_or_initialize_by_email(params[:user][:email])
+      debugger
       user.update_attributes(params[:user])
       if user.save
         save_order(user)
@@ -43,9 +49,15 @@ class CartsController < ApplicationController
   end
 
   def create
-    check_order(order,params[:membership_ids])
+    check_order(order,params[:membership_ids].unshift(session[:current_premium_id]).compact.uniq)
     order.add_item(params,session_cart)
-    redirect_to preview_path if order.valid?
+    if order.errors.blank? 
+      session.delete(:current_premium_id)
+      redirect_to preview_path
+    else
+      # @memberships = Membership.packages_by_category('extra')
+      render action: :extra
+    end
   end
 
   def update
@@ -73,6 +85,7 @@ class CartsController < ApplicationController
       cart = cookies[:cart_id]
       session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
       session.delete if session.present?
+      sign_out(:customer)
       cookies.delete :cart_id
     end
 
@@ -92,6 +105,18 @@ class CartsController < ApplicationController
         end
       end
     end
+
+    def authorize_customer
+      unless current_customer
+        session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
+        redirect_to new_customer_path
+      end
+    end
+
+    # def authenticate_customer!(opts={})
+    #   opts[:scope] = :customer
+    #   warden.authenticate!(opts)
+    # end
 
     # def save_gatepay(order)
     #   gatepay = Gatepay.find_or_initialize_by_transid(order.code)
@@ -131,5 +156,6 @@ class CartsController < ApplicationController
     #   end
     #   basket
     # end
+
 
 end
