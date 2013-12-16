@@ -35,7 +35,6 @@ class GatepayController
       else
         return 'STOP'
       end
-    end
     'CONTINUE'
   end
 
