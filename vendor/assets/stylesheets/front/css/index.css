@@ -431,7 +431,6 @@ h3 span
 }
 .prc{
 	font-size: 25px!important;
-	color: #333!important;
 	font-weight: bold;
 }
 .rp_small{
@@ -471,13 +470,14 @@ h3 span
 	height: 55px;
 	line-height: 55px;
 }
+
 .pack-price
 {
 	font-size: 38px;
-	color: #e74c3c;
-	border-top: 1px #dfdfdf solid;
+	color: #fff!important;
+	border-top: 1px #e74c3c solid;
 	border-bottom: 1px #dfdfdf solid;
-	background-color: #fff;
+	background: #e74c3c!important;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -486,6 +486,7 @@ h3 span
 	width: 100%;
 	font-style:normal!important;
 	font-weight: normal;
+	text-transform: uppercase;
 }
 .big-counter{
 	top: -10px;
@@ -494,9 +495,8 @@ h3 span
 .pack.selected .pack-price
 {
 	color: white;
-	background-color: #37353a;
-	border-top: 1px #37353a solid;
-	border-bottom: 1px #37353a solid;
+	background: #fdb414!important;
+	border:none!important;
 	
 }
 .pack-price sup
@@ -556,7 +556,7 @@ h3 span
 }
 .pack.selected .pack-order
 {
-	background-color: #37353a;
+	background-color: #fdb414!important;
 	
 }
 .profits
@@ -2179,6 +2179,7 @@ width: 220px;
 	font-size: 59px;
 	line-height: 50px;
 	color: #fff200;
+	font-weight: bold;
 }
 .counter_item.last
 {
@@ -2733,8 +2734,8 @@ div.grid_packages_location{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     width: 100%; 
     margin-bottom: 10px;
-    height: 140px;
-    background-image:url("map-marker.png");
+    height: 160px;
+    background-image:url("../../map-marker.png");
     background-repeat: no-repeat;
     padding-left:50px;
     padding-top: 10px;
@@ -2812,4 +2813,20 @@ div.grid_packages_news{
 	width: 100%;
 	height: 170px;
 	border-bottom:solid 1px #f4f4f4;
+}
+
+.icon_channel{
+	height: 40px!important;
+}
+.symbol_category{
+	background: #eaeaea;
+	padding: 4px 10px;
+	float: left;
+	font-size: 12px;
+	margin-bottom: 4px;
+	font-weight: bold;
+	border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border: 0px solid #000000;
 }
