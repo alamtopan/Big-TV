@@ -3,6 +3,12 @@
 		$("#map_section").gmap3({
 		  map:{
 		    options:{
+		    	scrollwheel: false,
+			    navigationControl: false,
+			    mapTypeControl: false,
+			    scaleControl: false,
+			    draggable: false,
+			    disableDoubleClickZoom: true,
 		      center: [0.307616,104.084473,12.21538,21.643066],
 		      zoom: 6
 		    }
