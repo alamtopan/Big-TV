@@ -1,8 +1,8 @@
-module SeedFreeUnitItem
+module SeedChannel
   def self.seed
     fixture_path = "#{Rails.root}/db/fixtures"
 
-    yaml_item = YAML.load_file("#{fixture_path}/free_unit_item.yml")
+    yaml_item = YAML.load_file("#{fixture_path}/channel.yml")
     items = yaml_item['items']
 
     items.each_with_index do |itm,n|

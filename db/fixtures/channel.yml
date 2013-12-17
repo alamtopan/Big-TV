@@ -174,3 +174,58 @@ items:
       hd:     false
       free:   true
       logo:   'Televisi_Mandiri_Papua.png'
+  - item_35:
+      name:   'beIN Sports 1'
+      free:   false
+      hd:     false
+      logo:   'Bein_Sport_1.png'
+  - item_36:
+      name: 'beIN Sports 2'
+      hd:   false
+      free: false
+      logo: 'Bein_Sport_2.png'
+  - item_37:
+      name:   'Fox Sports Plus'
+      hd:     false
+      free:   false
+      logo:   'Fox_Sports_Plus.png'
+  - item_38:
+      name:   'Eurosports HD'
+      hd:     true
+      free:   false
+      logo:   'Eurosport_HD.png'
+  - item_39:
+      name:   'Eurosports'
+      hd:     false
+      free:   false
+      logo:   'Eurosport.png'
+  - item_40:
+      name:   'ASN HD'
+      hd:     true
+      free:   false
+      logo:   'ASN_HD.png'
+  - item_41:
+      name:   'ASN'
+      hd:     false
+      free:   false
+      logo:   'ASN.png'
+  - item_42:
+      name:   'Star Cricket'
+      hd:     false
+      free:   false
+      logo:   ''
+  - item_43:
+      name:   'Star Chinese Channel'
+      hd:     false
+      free:   false
+      logo:   'Star_Chinese_Channel.png'
+  - item_44:
+      name:   'K-TV'
+      hd:     false
+      free:   false
+      logo:   'KTV.png'
+  - item_45:
+      name:   'Setanta Sports'
+      hd:     false
+      free:   false
+      logo:   'Setanta_Sports.png'

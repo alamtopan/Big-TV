@@ -10,8 +10,4 @@ class Customer < User
       end
       self.username = "#{rand(Time.now.to_i)}" unless self.username
     end
-
-    def after_creation
-      UserMailer.welcome_email(self).deliver
-    end
 end

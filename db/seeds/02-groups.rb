@@ -22,12 +22,5 @@ module SeedGroup
         item.save
       end
     end
-    puts 'Other Channel'
-    items_nm = ['Start Cricket','Star Chinese Channel','K-TV','Setanta Sports']
-    items_nm.each do |item_nm|
-      item_other = UnitItem.find_or_initialize_by_name(item_nm)
-      item_other.status_hd = false
-      item_other.save!
-    end
   end
 end

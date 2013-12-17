@@ -74,7 +74,7 @@ membership:
       - item_30:
           name: 'Nat Geo Wild'
       - item_31:
-          name: 'Outdoor Channel'
+          name: 'Ginx'
       - item_32:
           name: 'History'
       - item_33:
@@ -219,8 +219,6 @@ membership:
           name: 'TV 5 Monde Asia'
       - item_103:
           name: 'NHK World'
-      - item_104:
-          name: 'Ginx'
   - membership_1:
       name:         'Big Star 117'
       description:  ''
@@ -290,7 +288,7 @@ membership:
       - item_27:
           name: 'Nat Geo Wild'
       - item_28:
-          name: 'Outdoor Channel'
+          name: 'NHK World'
       - item_29:
           name: 'History'
       - item_30:
@@ -395,8 +393,6 @@ membership:
           name: 'DW-TV Asia+'
       - item_80:
           name: 'TV 5 Monde Asia'
-      - item_81:
-          name: 'NHK World'
   - membership_2:
       name:         'Big Sun 94'
       description:  ''
@@ -456,7 +452,7 @@ membership:
       - item_22:
           name: 'Nat Geo Wild'
       - item_23:
-          name: 'Outdoor Channel'
+          name: 'TV 5 Monde Asia'
       - item_24:
           name: 'History'
       - item_25:
@@ -531,8 +527,6 @@ membership:
           name: 'Australia Network'
       - item_60:
           name: 'DW-TV Asia+'
-      - item_61:
-          name: 'TV 5 Monde Asia'
   - membership_3:
       name:         'Big Sun 79'
       description:  ''
@@ -582,7 +576,7 @@ membership:
       - item_17:
           name: 'Nat Geo Wild'
       - item_18:
-          name: 'Outdoor Channel'
+          name: 'TV 5 Monde Asia'
       - item_19:
           name: 'History'
       - item_20:
@@ -637,8 +631,6 @@ membership:
           name: 'Australia Network'
       - item_45:
           name: 'DW-TV Asia+'
-      - item_46:
-          name: 'TV 5 Monde Asia'
   - membership_4:
       name:         'Big Deal 70'
       description:  ''
@@ -988,6 +980,42 @@ membership:
         - item_3:
             name: 'Star Gold'
   - membership_18:
+        name:         'Big MAX Sport'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Extra'
+        prices:
+          - price_0:
+              price:    200000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'beIN Sports 1 HD'
+        - item_1:
+            name: 'beIN Sports 1'
+        - item_2:
+            name: 'beIN Sports 2 HD'
+        - item_3:
+            name: 'beIN Sports 2'
+        - item_4:
+            name: 'Fight Sports'
+        - item_5:
+            name: 'Fox Sports Plus HD'
+        - item_6:
+            name: 'Fox Sports Plus'
+        - item_7:
+            name: 'STAR Sports'
+        - item_8:
+            name: 'Eurosports HD'
+        - item_9:
+            name: 'Eurosports'
+        - item_10:
+            name: 'ASN HD'
+        - item_11:
+            name: 'ASN'
+  - membership_19:
         name:         'Rental Recorder'
         description:  ''
         published:    true

@@ -140,22 +140,18 @@ group:
           hd:   true
           logo: 'National_Geographic_Wild.png'
       - item_6:
-          name: 'Outdoor Channel'
-          hd:   false
-          logo: 'Outdoor_Channel.png'
-      - item_7:
           name: 'History'
           hd:   true
           logo: 'History_HD.png'
-      - item_8:
+      - item_7:
           name: 'Biography'
           hd:   false
           logo: 'Biography.png'
-      - item_9:
+      - item_8:
           name: 'Crime Investigation'
           hd:   false
           logo: 'Crime_and_Investigation_Channel.png'
-      - item_10:
+      - item_9:
           name: 'Lifetime'
           hd:   false
           logo: 'Lifetime.png'
@@ -200,11 +196,11 @@ group:
       colour: '#634590'
       items:
       - item_0:
-          name: 'beIN Sports 1'
+          name: 'beIN Sports 1 HD'
           hd:   true
           logo: 'Bein_Sport_1_HD.png'
       - item_1:
-          name: 'beIN Sports 2'
+          name: 'beIN Sports 2 HD'
           hd:   true
           logo: 'Bein_Sport_2_HD.png'
       - item_2:
@@ -220,7 +216,7 @@ group:
           hd:   false
           logo: 'Motorvision.png'
       - item_5:
-          name: 'FOX Sports Plus'
+          name: 'FOX Sports Plus HD'
           hd:   true
           logo: 'Fox_Sports_Plus_HD.png'
       - item_6:
@@ -380,42 +376,22 @@ group:
       colour: '#d1b234'
       items:
       - item_0:
-          name: "TVB 8"
-          hd:   false
-          logo: 'TVB_8.png'
-      - item_1:
-          name: 'TVB S Asia'
-          hd:   false
-          logo: 'TVB_S_Asia.png'
-      - item_2:
-          name: 'TVB Xing He'
-          hd:   false
-          logo: 'TVB_XingHe.png'
-      - item_3:
-          name: 'TVB Jade'
-          hd:   false
-          logo: 'TVB_Jade.png'
-      - item_4:
-          name: 'TVB S News'
-          hd:   false
-          logo: 'TVB_S_News.png'
-      - item_5:
           name: 'Star Chinese Movies'
           hd:   false
           logo: 'Star_Chinese_Movies.png'
-      - item_6:
+      - item_1:
           name: 'Phoenix Info'
           hd:   false
           logo: 'Phoenix_Info.png'
-      - item_7:
+      - item_2:
           name: "Phoenix News"
           hd:   false
           logo: 'Phoenix_News.png'
-      - item_8:
+      - item_3:
           name: 'Xing Kong'
           hd:   false
           logo: 'Xing_Kong.png'
-  - group_9:
+  - group_9:  
       name: 'Special Tiering'
       colour: '#b2b2b1'
       items:
