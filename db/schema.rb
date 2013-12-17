@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212070600) do
+ActiveRecord::Schema.define(:version => 20131213084653) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -189,6 +189,7 @@ ActiveRecord::Schema.define(:version => 20131212070600) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.boolean  "status_hd",         :default => false
+    t.boolean  "free",              :default => false
   end
 
   add_index "unit_items", ["name"], :name => "index_unit_items_on_name"
