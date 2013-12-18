@@ -29,21 +29,32 @@ class CartsController < ApplicationController
   def subcribe
     if params[:user].blank?
       flash[:errors] = "Please Fill The Form"
-      redirect_to preview_path
+      if request.xhr?
+        render json: {error: 'Invalid Parameters', redirect_url: preview_path}, status: :unprocessable_entity
+      else
+        redirect_to preview_path
+      end
     else
-      user = Customer.find_or_initialize_by_email(params[:user][:email])
-      debugger
-      user.update_attributes(params[:user])
-      if user.save
-        save_order(user)
+      #user = Customer.find_or_initialize_by_email(params[:user][:email])
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+      params[:user].delete(:username)
+
+      if current_customer.update_attributes(params[:user])
+        save_order(current_customer)
         flash[:success] = 'success'
         CustomerMailer.thanks_email(order).deliver
+        @customer = current_customer
         delete_session
-        # do subscribe
-        redirect_to thanks_path
+        @words = Digest::SHA1.hexdigest("#{@order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
+        unless request.xhr?
+          redirect_to thanks_path
+        end
       else
-        flash[:errors] = user.errors.full_messages
-        redirect_to preview_path
+        flash[:errors] = current_customer.errors.full_messages
+        unless request.xhr?
+          redirect_to preview_path
+        end
       end
     end
   end
@@ -109,7 +120,11 @@ class CartsController < ApplicationController
     def authorize_customer
       unless current_customer
         session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
-        redirect_to new_customer_path
+        if request.xhr?
+          render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
+        else
+          redirect_to new_customer_path
+        end
       end
     end
 

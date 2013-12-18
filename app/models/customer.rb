@@ -1,6 +1,5 @@
 class Customer < User
   before_validation :before_validation
-  after_create :after_creation
 
   private
     def before_validation

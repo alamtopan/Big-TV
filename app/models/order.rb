@@ -68,7 +68,16 @@ class Order < ActiveRecord::Base
     item.title = current_product.name
     item.save
   end
-
+  
+  def basket
+    items.map{|item| 
+      [item.title, 
+       period*item.quantity, 
+       "%.2f" % item.price, 
+       "%.2f" % (period*item.quantity*item.price)
+      ].join(',')
+    }.join(';')
+  end
   private
   def after_modification
     check_activity

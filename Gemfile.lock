@@ -81,6 +81,9 @@ GEM
       activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     haml (4.0.4)
       tilt
     has_scope (0.6.0.rc)
@@ -214,6 +217,7 @@ DEPENDENCIES
   delayed_job_web
   devise
   enumerize
+  figaro
   inherited_resources
   jquery-rails
   kaminari

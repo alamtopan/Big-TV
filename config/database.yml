@@ -20,7 +20,7 @@ production:
   adapter: mysql2
   host: localhost
   database: big_tv_pro
-  username: deploydb
-  password: 1+1=deploydb
+  username: root
+  password: 
   pool: 5
   timeout: 5000
