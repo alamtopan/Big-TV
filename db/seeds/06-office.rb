@@ -24,8 +24,8 @@ module SeedOffice
           office.regional_id = regional.id
           office.category_office_id = category.id
           office.save
-        end
-      end
+        end if offices.present?
+      end if categories.present?
     end
   end
 end

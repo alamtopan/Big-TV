@@ -185,7 +185,7 @@ items:
       free: false
       logo: 'Bein_Sport_2.png'
   - item_37:
-      name:   'Fox Sports Plus'
+      name:   'FOX Sports Plus'
       hd:     false
       free:   false
       logo:   'Fox_Sports_Plus.png'
@@ -229,3 +229,33 @@ items:
       hd:     false
       free:   false
       logo:   'Setanta_Sports.png'
+  - item_46:
+      name:   'TVB 8'
+      hd:     false
+      free:   false
+      logo:   'TVB_8.png'
+  - item_47:
+      name:   'Star Cricket'
+      hd:     false
+      free:   false
+      logo:   ''
+  - item_48:
+      name:   'TVB S Asia'
+      hd:     false
+      free:   false
+      logo:   'TVB_S_Asia.png'
+  - item_49:
+      name:   'TVB Xing He'
+      hd:     false
+      free:   false
+      logo:   'TVB_XingHe.png'
+  - item_50:
+      name:   'TVB Jade'
+      hd:     false
+      free:   false
+      logo:   'TVB_Jade.png'
+  - item_51:
+      name:   'TVB S News'
+      hd:     false
+      free:   false
+      logo:   'TVB_S_News.png'

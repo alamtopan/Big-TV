@@ -182,42 +182,32 @@ membership:
       - item_84:
           name: 'MGM'
       - item_85:
-          name: "TVB 8"
-      - item_86:
-          name: 'TVB S Asia'
-      - item_87:
-          name: 'TVB Xing He'
-      - item_88:
-          name: 'TVB Jade'
-      - item_89:
-          name: 'TVB S News'
-      - item_90:
           name: 'Star Chinese Movies'
-      - item_91:
+      - item_86:
           name: 'Phoenix Info'
-      - item_92:
+      - item_87:
           name: "Phoenix News"
-      - item_93:
+      - item_88:
           name: 'Xing Kong'
-      - item_94:
+      - item_89:
           name: "KBS"
-      - item_95:
+      - item_90:
           name: 'Star Plus'
-      - item_96:
+      - item_91:
           name: 'Arirang'
-      - item_97:
+      - item_92:
           name: 'Star Gold'
-      - item_98:
+      - item_93:
           name: 'Australia Network'
-      - item_99:
+      - item_94:
           name: 'Sony'
-      - item_100:
+      - item_95:
           name: 'DW-TV Asia+'
-      - item_101:
+      - item_96:
           name: "MAX"
-      - item_102:
+      - item_97:
           name: 'TV 5 Monde Asia'
-      - item_103:
+      - item_98:
           name: 'NHK World'
   - membership_1:
       name:         'Big Star 117'

@@ -1432,3 +1432,294 @@ office:
                     fax:  '0274562631'
                     latitude:  ''
                     longitude:  ''
+    - regional_2:
+        name: 'Kalimantan'
+        categories:
+    - regional_3:
+        name: 'Sulawesi'
+        categories:
+          - category_0:
+              name: 'Hypermart'
+              offices:
+                - office_0:
+                    name: 'HPM Panakukang'
+                    address: 'Mall Panakukang, Jl. Bulevar Mall Panakukang Mas , Ged. C, Panakukang, Makasar'
+                    area:   '0411'
+                    phone:  '4662021 4662036'
+                    fax:    '8881465'
+                    latitude:  '-5.158095'
+                    longitude: '119.448091'
+                - office_1:
+                    name: 'HPM GTC Makassar'
+                    address: 'GTC MALL MAKASSAR Jl. Metro Tanjung Bunga Makassar 90224'
+                    area:   '0411'
+                    phone:  '8114180 8114182 8114084'
+                    fax:    '8819489'
+                    latitude:  '-5.16909'
+                    longitude: '119.392569'
+                - office_2:
+                    name: 'HPM Manado'
+                    address: 'Manado Town Square, Pierre Tendean Boulevard, Manado'
+                    area:   '0431'
+                    phone:  '8881488 8881482'
+                    fax:    ''
+                    latitude:  '1.473679'
+                    longitude: '124.840393'
+                - office_3:
+                    name: 'HPM MTC Manado'
+                    address: 'MTC Manado, Kawasan Mega Mas Boulevard, Jl. Pierre Tendean'
+                    area:   '0431'
+                    phone:  '8819488 8819489'
+                    fax:    ''
+                    latitude:  '1.482045'
+                    longitude: '124.848032'
+                - office_4:
+                    name: 'HPM Gorontalo'
+                    address: 'HPM Gorontalo, Jl. Sultan Batutihe No. 8, Gorontalo'
+                    area:   '0435'
+                    phone:  '822242'
+                    fax:    ''
+                    latitude:  '0.540961'
+                    longitude: '123.079748'
+                - office_5:
+                    name: 'HPM Kendari'
+                    address: 'HPM Kendari, Jl. MT Haryono No.61-63, RT.23/RT.05, Eks. Gedung Pramuka Kel. Bende, Kec. Kadia, Kendari, Sulawesi Tenggara'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-3.996637'
+                    longitude: '122.517772'
+                - office_6:
+                    name: 'HPM Palopo'
+                    address: 'City Market Palopo, Jl. Sam Ratulangi, Palopo, Sulawesi Tengah'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-2.99447'
+                    longitude: '120.180688'
+          - category_1:
+              name: 'Mall'
+              offices:
+                - office_0:
+                    name: 'ALippo Plaza Kendari'
+                    address: 'Jl. MT. Haryono No. 61 - 63, Bende, Kadia, Kendari'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-3.996102'
+                    longitude: '122.515647'
+          - category_2:
+              name: 'Dealer'
+              offices:
+                - office_0:
+                    name: 'MAUPA LINTAS CAKRAWALA'
+                    address: 'Jl. Jend Achmad Yani No.35 Blok T-U Makasar'
+                    area:   '0411'
+                    phone:  '3619943'
+                    fax:    ''
+                    latitude:  '-5.13574'
+                    longitude: '119.419327'
+                - office_1:
+                    name: 'PT.Maupa Lintas Cakrawala'
+                    address: ''
+                    area:   ''
+                    phone:  '04113619943/04113619957'
+                    fax:    ''
+                    latitude:  ''
+                    longitude: ''
+                - office_2:
+                    name: 'CV Sonyta'
+                    address: ''
+                    area:   ''
+                    phone:  '04113616776'
+                    fax:    ''
+                    latitude:  ''
+                    longitude: ''
+                - office_3:
+                    name: 'CV. Bintang Anugerah'
+                    address: ''
+                    area:   ''
+                    phone:  '0431-3317557, 0431-862636'
+                    fax:    '0431-852545'
+                    latitude:  ''
+                    longitude: ''
+                - office_4:
+                    name: 'National'
+                    address: ''
+                    area:   ''
+                    phone:  '0471-21421'
+                    fax:    '0471-21464'
+                    latitude:  ''
+                    longitude: ''
+    - regional_4:
+        name: 'Bali'
+        categories:
+          - category_0:
+              name: 'Hypermart'
+              offices:
+                - office_0:
+                    name: 'HPM Bali'
+                    address: 'Mal Bali Galeria Jl. By Pass Ngurah Rai, Simpang Siur Kuta - Bali 80361'
+                    area:   '0361'
+                    phone:  '767056 767059 481070'
+                    fax:    '758211'
+                    latitude:  '-8.730278'
+                    longitude: '115.19989'
+                - office_1:
+                    name: 'HPM Bali'
+                    address: 'Kuta Icon Jl. Dewi Sartika, Kartika Plaza'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-8.733332'
+                    longitude: '115.17663'
+          - category_1:
+              name: 'Mall'
+              offices:
+                - office_0:
+                    name: 'Lippo Plaza Sunset'
+                    address: 'Jl. Sunset Road, Lingkungan Abian Base, Kuta - Badung, Bali'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-8.702111'
+                    longitude: '115.185556'
+                - office_1:
+                    name: 'Mall GTC Makassar'
+                    address: 'Jl. Metro Tanjung Bunga, Makassar 90134'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-5.169336'
+                    longitude: '119.394372'
+          - category_2:
+              name: 'Dealer'
+              offices:
+                - office_0:
+                    name: 'ARJUNA PARABOLA C/o TOKO PELITA JAYA'
+                    address: 'Jl. Mahendra Data No 28 - Depan Apartemen Ganidha Gunung Soputen Denpasar - Bali'
+                    area:   '0361'
+                    phone:  '490057'
+                    fax:    ''
+                    latitude:  '-8.670082'
+                    longitude: '115.197144'
+                - office_1:
+                    name: 'Arjuna Parabola'
+                    address: ''
+                    area:   ''
+                    phone:  '490057'
+                    fax:    ''
+                    latitude:  ''
+                    longitude: ''
+    - regional_5:
+        name: 'Nusa Tenggara'
+        categories:
+          - category_0:
+              name: 'Hypermart'
+              offices:
+                - office_0:
+                    name: 'HPM Kupang'
+                    address: 'Hypermart Kupang Jl. L Tari 2 Bundaran PU Kupang, Nusa Tenggara Timur'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-10.205124'
+                    longitude: '123.6549'
+          - category_1:
+              name: 'Mall'
+              offices:
+          - category_2:
+              name: 'Dealer'
+              offices:
+                - office_0:
+                    name: 'CV.ASFA'
+                    address: 'Jl.Eltari 2 (samping Gereja Menara Kesaksian) Walikota Kupang, Kupang'
+                    area:   '0380'
+                    phone:  '8555026'
+                    fax:    ''
+                    latitude:  '-10.146367'
+                    longitude: '123.664985'
+                - office_1:
+                    name: 'UD. WIJAYA MANDIRI'
+                    address: 'Jl. Adi Sucipto RT13 RW06 Kec Langke Rembong, Ruteng, Flores'
+                    area:   '0385'
+                    phone:  '22444'
+                    fax:    ''
+                    latitude:  '-10.146367'
+                    longitude: '123.664985'
+                - office_2:
+                    name: 'CV Asfa'
+                    address: ''
+                    area:   ''
+                    phone:  '03808555026, 0380890309'
+                    fax:    '03808555026'
+                    latitude:  ''
+                    longitude: ''
+    - regional_6:
+        name: 'Maluku + Papua'
+        categories:
+          - category_0:
+              name: 'Hypermart'
+              offices:
+                - office_0:
+                    name: 'HPM Jayapura'
+                    address: 'HPM Jayapura, Jl. Sam Ratulangi APO jayapura No.47, Kel. Bhayangkara, District Jayapura Utara, Jayapura'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-2.535726'
+                    longitude: '140.704951'
+                - office_1:
+                    name: 'HPM Ambon'
+                    address: 'Ambon City Centre, Jl. Wolter Mongisidi, Kel. Paso, Kec. Baguwala, Ambon'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-3.652024'
+                    longitude: '128.196716'
+                - office_2:
+                    name: 'HPM Ambon'
+                    address: 'Maluku CITY MALL Jl. Jend. Sudirman Hative Kecil RT 005/05, Kec. Sirimau'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-3.698448'
+                    longitude: '128.215084'
+          - category_1:
+              name: 'Mall'
+              offices:
+          - category_2:
+              name: 'Dealer'
+              offices:
+                - office_0:
+                    name: 'CV. PUTRA ARFINDO JAYA'
+                    address: 'Jl. Jend Sudirman No.37 Papua Barat - Sorong'
+                    area:   '0951'
+                    phone:  '332255'
+                    fax:    ''
+                    latitude:  '-0.942378'
+                    longitude: '131.31546'
+                - office_1:
+                    name: 'JAYA ELEKTRONIK'
+                    address: 'Jl. Kelapa Dua Entrop jayapura Jayapura'
+                    area:   '0967'
+                    phone:  '550765'
+                    fax:    ''
+                    latitude:  '-0.942378'
+                    longitude: '131.31546'
+                - office_2:
+                    name: 'Jaya Elektronik'
+                    address: ''
+                    area:   ''
+                    phone:  '0967-550765'
+                    fax:    ''
+                    latitude:  ''
+                    longitude: ''
+                - office_3:
+                    name: 'Putra Arfindo Jaya'
+                    address: ''
+                    area:   ''
+                    phone:  '0986213368'
+                    fax:    '0986213311'
+                    latitude:  ''
+                    longitude: ''
