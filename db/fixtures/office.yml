@@ -1435,6 +1435,95 @@ office:
     - regional_2:
         name: 'Kalimantan'
         categories:
+          - category_0:
+              name: 'Hypermart'
+              offices:
+                - office_0:
+                    name: 'HPM Pontianak'
+                    address: 'A Yani Megamall Jl. Ahmad Yani, Pontianak 78122'
+                    area:   '0561'
+                    phone:  '4762111 762211 762002'
+                    fax:    ''
+                    latitude:  '-0.05373'
+                    longitude: '109.356451'
+                - office_1:
+                    name: 'HPM Banjarmasin'
+                    address: 'Duta Mall Banjarmasin, Jl. Ahmad Yani Km. 2, Kalimantan Selatan'
+                    area:   '0511'
+                    phone:  '4364014 7758765'
+                    fax:    ''
+                    latitude:  '-3.323859'
+                    longitude: '114.606242'
+                - office_2:
+                    name: 'HPM Balikpapan'
+                    address: 'Mall Balikpapan, Jl. Jend Sudirman No. 1 Klandasan Ilir , Balikpapan Kaltim 76113'
+                    area:   '0542'
+                    phone:  '7589901 7224342'
+                    fax:    ''
+                    latitude:  '-1.278385'
+                    longitude: '116.845694'
+                - office_3:
+                    name: 'HPM Samarinda'
+                    address: 'Hypermart Plaza Samarinda Jl. Bhayangkara No. 58 Samping gedung KORPRI Samarinda, Kalimantan Timur'
+                    area:   '0541'
+                    phone:  '7770799 7770800'
+                    fax:    ''
+                    latitude:  '-0.492469'
+                    longitude: '117.147346'
+                - office_4:
+                    name: 'HPM Banjarbaru'
+                    address: 'Gedung Mawar Square Jl. A. Yani KM 36,8 Kel. Sungai Ulin, Kec. Banjarbaru Utara Banjar Baru, Kalimantan Selatan'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-3.444669'
+                    longitude: '114.879184'
+                - office_5:
+                    name: 'HPM Palangkaraya'
+                    address: 'Hypermart Palangkaraya Jl. Yos Sudarso No.47 Belakang Mega Top Trade Center Palangkaraya'
+                    area:   ''
+                    phone:  ''
+                    fax:    ''
+                    latitude:  '-2.212766'
+                    longitude: '113.907162'
+          - category_1:
+              name: 'Mall'
+              offices:
+          - category_2:
+              name: 'Dealer'
+              offices:
+                - office_0:
+                    name: 'WACANA BARU ASIA'
+                    address: 'Jl. Nusa Indah Baru H No. H6-7 Pontianak - Kalimantan Barat'
+                    area:   '0561'
+                    phone:  '749309'
+                    fax:    ''
+                    latitude:  '-2.212766'
+                    longitude: '113.907162'
+                - office_1:
+                    name: 'LUX SARANA'
+                    address: 'Jl. DI Panjaitan No.49 Gn Guntur Balikpapan - Kalimantan timur'
+                    area:   '0542'
+                    phone:  '416942'
+                    fax:    ''
+                    latitude:  '-1.238709'
+                    longitude: '116.851058'
+                - office_2:
+                    name: 'CV Lux Sarana Utama'
+                    address: ''
+                    area:   ''
+                    phone:  '05427021195'
+                    fax:    '0542412607'
+                    latitude:  ''
+                    longitude: ''
+                - office_3:
+                    name: 'PT.Wacana Baru Asia'
+                    address: ''
+                    area:   ''
+                    phone:  '0561749309'
+                    fax:    '0561733528'
+                    latitude:  ''
+                    longitude: ''
     - regional_3:
         name: 'Sulawesi'
         categories:

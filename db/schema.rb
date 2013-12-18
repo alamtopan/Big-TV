@@ -11,13 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131213084653) do
+ActiveRecord::Schema.define(:version => 20131217034352) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "deleted_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "category_offices", :force => true do |t|
+    t.string "name"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -85,6 +89,18 @@ ActiveRecord::Schema.define(:version => 20131213084653) do
   add_index "memberships", ["name", "version"], :name => "index_memberships_on_name_and_version"
   add_index "memberships", ["slug"], :name => "index_memberships_on_slug", :unique => true
 
+  create_table "offices", :force => true do |t|
+    t.integer "category_office_id"
+    t.integer "regional_id"
+    t.string  "name"
+    t.string  "address"
+    t.string  "phone_area"
+    t.text    "no_phone"
+    t.text    "no_fax"
+    t.string  "longitude"
+    t.string  "latitude"
+  end
+
   create_table "order_items", :force => true do |t|
     t.integer  "membership_id"
     t.string   "title"
@@ -128,6 +144,10 @@ ActiveRecord::Schema.define(:version => 20131213084653) do
     t.string   "referal"
     t.string   "tipe_identitas"
     t.string   "no_identitas"
+  end
+
+  create_table "regionals", :force => true do |t|
+    t.string "name"
   end
 
   create_table "sessions", :force => true do |t|

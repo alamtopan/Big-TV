@@ -2720,47 +2720,40 @@ ul.gallery_footer li{
 
 
 div.grd_masonry_location{
-    -moz-column-count: 4;
-    -moz-column-gap: 10px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 10px;
-    column-count: 4;
-    column-gap: 10px;
     width: 100%;
     float: left;
  	}
 
 div.grid_packages_location{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
-    width: 100%; 
     margin-bottom: 10px;
-    height: 160px;
+    height: 180px;
+    width: 21%;
     background-image:url("../../map-marker.png");
     background-repeat: no-repeat;
-    padding-left:50px;
+    padding-left:35px;
     padding-top: 10px;
     text-align:left;
-
+    float: left;
   }
 div.grid_packages_location div{
-	height: 20px;
 	float: left;
-	width: 100%;
+	width: 90%;
 	color: #333;
 	font-size: 13px;
 }
 
 div.grid_packages_location div.title_loc{
 	font-weight: bold;
-	height: 30px;
 	float: left;
 	width: 100%;
 	font-size:19px;
+	margin-bottom: 10px;
 }
 
 div.grid_packages_location div.phone{
 	float: left;
-	width: 100%;
+	width: 90%;
 	margin-top:10px;
 }
 .uppercase{
@@ -2819,6 +2812,7 @@ div.grid_packages_news{
 	height: 40px!important;
 }
 .symbol_category{
+	text-transform: uppercase;
 	background: #eaeaea;
 	padding: 4px 10px;
 	float: left;

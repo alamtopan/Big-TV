@@ -4,4 +4,14 @@ class Office < ActiveRecord::Base
   belongs_to :category_office
   belongs_to :regional
 
+  class << self
+    def packages_by_regional(_package,_package2)
+      includes(:regional,:category_office).where(['regionals.name = ? and category_offices.name = ?', _package,_package2])
+    end
+    
+    def other_packages
+      joins(:regional).where('regionals.name LIKE ? and category_offices.name LIKE ?','%other%')
+    end
+  end
+
 end
