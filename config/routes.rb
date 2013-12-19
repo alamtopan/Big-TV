@@ -33,6 +33,6 @@ BigTv::Application.routes.draw do
 
 
   # # payment gateway
-  # post '/gatepay/notify', to: 'gatepay#notify'
-  # post '/gatepay/redirect', to: 'gatepay#redirect'
+  match '/gatepay/notify',   to: "gatepay#notify", via: [:get, :post]
+  match '/gatepay/redirect', to: "gatepay#redirect", via: [:get, :post]
 end

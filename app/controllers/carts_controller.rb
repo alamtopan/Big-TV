@@ -46,7 +46,7 @@ class CartsController < ApplicationController
         CustomerMailer.thanks_email(order).deliver
         @customer = current_customer
         delete_session
-        @words = Digest::SHA1.hexdigest("#{@order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
+        @words = Digest::SHA1.hexdigest("#{"%.2d" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
         unless request.xhr?
           redirect_to thanks_path
         end
