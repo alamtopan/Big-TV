@@ -1,0 +1,45 @@
+
+	$(function(){
+		$("#map_section").gmap3({
+		  map:{
+		    options:{
+
+		      center: [<%= @locations_google.first.latitude %>,<%= @locations_google.first.longitude %>],
+		      zoom: 6
+		    }
+		  },
+		  marker:{
+		    values:[
+		    <% @locations_google.each do |location| %>
+		      {latLng: [<%= location.latitude %>,<%= location.longitude %>], data:'<div class="infowindow"><h2><%= location.name %><br/></h2><p><%= location.address %><br/><i><%= location.phone_area %> <%= location.no_phone %></i></p></div>', options:{icon: "/assets/map-marker.png"}},
+		    <% end %>
+		    ],
+		    options:{
+		      draggable: false
+		    },
+		    events:{
+		      mouseover: function(marker, event, context){
+		        var map = $(this).gmap3("get"),
+		          infowindow = $(this).gmap3({get:{name:"infowindow"}});
+		        if (infowindow){
+		          infowindow.open(map, marker);
+		          infowindow.setContent(context.data);
+		        } else {
+		          $(this).gmap3({
+		            infowindow:{
+		              anchor:marker, 
+		              options:{content: context.data}
+		            }
+		          });
+		        }
+		      },
+		      mouseout: function(){
+		        var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+		        if (infowindow){
+		          infowindow.close();
+		        }
+		      }
+		    }
+		  }
+		});
+	});

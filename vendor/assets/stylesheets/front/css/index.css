@@ -557,6 +557,7 @@ h3 span
 .pack-order a{
 	color: #fff;
 	text-decoration: none;
+	padding: 4px 20px;
 }
 .pack.selected .pack-order
 {
@@ -1206,7 +1207,6 @@ input.s_form1
 	float: left;
 	margin-right: 2px;
 	margin-left: 2px;
-	padding: 4px 20px;
 	margin-bottom: 4px;
 }
 .float-right{

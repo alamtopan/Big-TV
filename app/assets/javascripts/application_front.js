@@ -19,11 +19,12 @@
 //= require customize_front
 //= require map/gmap3.min
 //= require scrolltofixed-min
+//= require jquery.filtertable
 
 //= require_self
-  
 
 	$(document).ready(function(){
+		$('table').filterTable();
 		jQuery('#nav').scrollToFixed({ marginTop: 0});
 		$('#sequence').imagesLoaded(function(img){
 			$(window).resize(function(){

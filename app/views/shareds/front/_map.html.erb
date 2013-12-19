@@ -8,12 +8,12 @@
 		<div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
 			<div style="display:table; margin-left:auto; margin-right:auto">
 				<div class="pack-order float-left"><a href="?regional=Sumatra&#map">SUMATRA</a></div>
-				<div class="pack-order float-left"><a href="?regional=Jawa + Madura&#map">JAWA + MADURA</a></div>
+				<div class="pack-order float-left"><a href="?regional=Jawa Madura&#map">JAWA + MADURA</a></div>
 				<div class="pack-order float-left"><a href="?regional=Kalimantan&#map">KALIMANTAN</a></div>
 				<div class="pack-order float-left"><a href="?regional=Sulawesi&#map">SULAWESI</a></div>
 				<div class="pack-order float-left"><a href="?regional=Bali&#map">BALI</a></div>
 				<div class="pack-order float-left"><a href="?regional=Nusa Tenggara&#map">NUSA TENGGARA</a></div>
-				<div class="pack-order float-left"><a href="?regional=Maluku + Papua&#map">MALUKU + PAPUA</a></div>
+				<div class="pack-order float-left"><a href="?regional=Maluku Papua&#map">MALUKU + PAPUA</a></div>
 			</div>
 		</div>
 		<div class="br2"></div>
@@ -35,12 +35,12 @@
 	<div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
 		<div style="display:table; margin-left:auto; margin-right:auto">
 			<div class="pack-order float-left"><a href="?regional=Sumatra&#map">SUMATRA</a></div>
-			<div class="pack-order float-left"><a href="?regional=Jawa + Madura&#map">JAWA + MADURA</a></div>
+			<div class="pack-order float-left"><a href="?regional=Jawa Madura&#map">JAWA + MADURA</a></div>
 			<div class="pack-order float-left"><a href="?regional=Kalimantan&#map">KALIMANTAN</a></div>
 			<div class="pack-order float-left"><a href="?regional=Sulawesi&#map">SULAWESI</a></div>
 			<div class="pack-order float-left"><a href="?regional=Bali&#map">BALI</a></div>
 			<div class="pack-order float-left"><a href="?regional=Nusa Tenggara&#map">NUSA TENGGARA</a></div>
-			<div class="pack-order float-left"><a href="?regional=Maluku + Papua&#map">MALUKU + PAPUA</a></div>
+			<div class="pack-order float-left"><a href="?regional=Maluku Papua&#map">MALUKU + PAPUA</a></div>
 		</div>
 	</div>
 	<div class="br2"></div>
@@ -48,47 +48,59 @@
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
 		<div class="panel-body">
 			<div class="category_location">HYPERMART</div>
-			<div class="grd_masonry_location">
-				<% @locations_hypermart.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		     
-		  </div>
+			<table width="100%">
+				<thead>
+					<tr>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @locations_hypermart.each do |location| %>
+						<tr>
+							<td>
+								<div class="grid_packages_location">
+						    	<div class="title_loc"><%= location.name %></div>
+						    	<span class="symbol_category"><%= location.category_office.name %></span>
+						    	<div><%= location.address %></div>
+						    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
+						    </div>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
-		<div class="br"></div>
-		<div class="trial"><a>VIEW MORE</a></div>
-		<hr>
-		<div class="panel-body">
-			<div class="category_location">MALL</div>
-			<div class="grd_masonry_location">
-		    <% @locations_mall.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		  </div>
-		</div>
-		<hr>
-		<div class="panel-body">
-			<div class="category_location">DEALER</div>
-			<div class="grd_masonry_location">
-		    <% @locations_dealer.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		  </div>
-		</div>
+		<% if @locations_mall.present? %>
+			<hr>
+			<div class="panel-body">
+				<div class="category_location">MALL</div>
+				<div class="grd_masonry_location">
+			    <% @locations_mall.each do |location| %>
+				    <div class="grid_packages_location">
+				    	<div class="title_loc"><%= location.name %></div>
+				    	<span class="symbol_category"><%= location.category_office.name %></span>
+				    	<div><%= location.address %></div>
+				    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
+				    </div>
+			    <% end %>
+			  </div>
+			</div>
+		<% end %>
+		<% if @locations_dealer.present? %>
+			<hr>
+			<div class="panel-body">
+				<div class="category_location">DEALER</div>
+				<div class="grd_masonry_location">
+			    <% @locations_dealer.each do |location| %>
+				    <div class="grid_packages_location">
+				    	<div class="title_loc"><%= location.name %></div>
+				    	<span class="symbol_category"><%= location.category_office.name %></span>
+				    	<div><%= location.address %></div>
+				    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
+				    </div>
+			    <% end %>
+			  </div>
+			</div>
+		<% end %>
 	</article>
 </section>
