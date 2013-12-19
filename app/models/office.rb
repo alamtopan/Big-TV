@@ -5,6 +5,10 @@ class Office < ActiveRecord::Base
   belongs_to :regional
 
   class << self
+    def packages_by_map(_package)
+      includes(:regional).where(['regionals.name = ?', _package])
+    end
+
     def packages_by_regional(_package,_package2)
       includes(:regional,:category_office).where(['regionals.name = ? and category_offices.name = ?', _package,_package2])
     end

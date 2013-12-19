@@ -18,7 +18,6 @@
 
 //= require customize_front
 //= require map/gmap3.min
-//= require map/map
 //= require scrolltofixed-min
 
 //= require_self

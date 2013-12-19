@@ -554,6 +554,10 @@ h3 span
 .pack-order:hover{
 	background-color: #fdb414!important;
 }
+.pack-order a{
+	color: #fff;
+	text-decoration: none;
+}
 .pack.selected .pack-order
 {
 	background-color: #fdb414!important;

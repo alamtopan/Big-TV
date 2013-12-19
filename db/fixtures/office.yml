@@ -397,7 +397,7 @@ office:
                     latitude:  ''
                     longitude:  ''
     - regional_1:
-        name: 'Jawa + Madura'
+        name: 'Jawa Madura'
         categories:
           - category_0:
               name: 'Hypermart'
@@ -1745,7 +1745,7 @@ office:
                     latitude:  ''
                     longitude: ''
     - regional_6:
-        name: 'Maluku + Papua'
+        name: 'Maluku Papua'
         categories:
           - category_0:
               name: 'Hypermart'
