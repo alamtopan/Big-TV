@@ -25,7 +25,7 @@
 		<div class="f_search" style="width:80%">
 			<span class="font_search">Search Dealer</span>
 		  <form class="search_form" action="#" method="POST"> 
-			  <input class="search1" type="text" name="email" placeholder="Dealer Locations">
+			  <input class="search1" type="search" name="email" placeholder="Dealer Locations">
 			  <input class="search2" type="submit" name="subscribe" value="Go Search">
 		  </form>
 		  <div class="clear"></div>
@@ -56,14 +56,12 @@
 				</thead>
 				<tbody>
 					<% @locations_hypermart.each do |location| %>
-						<tr>
+						<tr class="grid_packages_location">
 							<td>
-								<div class="grid_packages_location">
-						    	<div class="title_loc"><%= location.name %></div>
-						    	<span class="symbol_category"><%= location.category_office.name %></span>
-						    	<div><%= location.address %></div>
-						    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-						    </div>
+					    	<div class="title_loc"><%= location.name %></div>
+					    	<span class="symbol_category"><%= location.category_office.name %></span>
+					    	<div><%= location.address %></div>
+					    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
 							</td>
 						</tr>
 					<% end %>

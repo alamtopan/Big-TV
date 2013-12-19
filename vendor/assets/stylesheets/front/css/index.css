@@ -15,6 +15,9 @@ h1,h2,h3,h4,h5, p, ul
     padding: 0;
     margin: 0;
 }
+#intro{
+	top:-20px;
+}
 .top_banner{
 	background: #ed2024;
 	color: #fff100;
@@ -2723,12 +2726,12 @@ ul.gallery_footer li{
 }
 
 
-div.grd_masonry_location{
+.grd_masonry_location{
     width: 100%;
     float: left;
  	}
 
-div.grid_packages_location{
+.grid_packages_location{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     margin-bottom: 10px;
     height: 180px;
@@ -2740,14 +2743,14 @@ div.grid_packages_location{
     text-align:left;
     float: left;
   }
-div.grid_packages_location div{
+.grid_packages_location div{
 	float: left;
 	width: 90%;
 	color: #333;
 	font-size: 13px;
 }
 
-div.grid_packages_location div.title_loc{
+.grid_packages_location div.title_loc{
 	font-weight: bold;
 	float: left;
 	width: 100%;
@@ -2755,7 +2758,7 @@ div.grid_packages_location div.title_loc{
 	margin-bottom: 10px;
 }
 
-div.grid_packages_location div.phone{
+.grid_packages_location div.phone{
 	float: left;
 	width: 90%;
 	margin-top:10px;

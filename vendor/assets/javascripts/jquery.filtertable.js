@@ -33,7 +33,7 @@
 				inputType:         'search',            // tag name of the filter input tag
 				label:             'Filter:',           // text to precede the filter input tag
 				minRows:           8,                   // don't show the filter on tables with less than this number of rows
-				placeholder:       'search this table', // HTML5 placeholder text for the filter field
+				placeholder:       'Cari Lokasi', // HTML5 placeholder text for the filter field
 				quickList:         [],                  // list of phrases to quick fill the search
 				quickListClass:    'quick',             // class of each quick list item
 				quickListGroupTag: '',                  // tag surrounding quick list items (e.g., ul)
