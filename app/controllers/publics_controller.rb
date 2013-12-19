@@ -8,9 +8,9 @@ class PublicsController < ApplicationController
 			regional = "Sumatra"	
 		end
 		@locations_google= Office.packages_by_map(regional)
-		@locations_hypermart= Office.packages_by_regional('Sumatra','Hypermart')
-		@locations_mall= Office.packages_by_regional('Sumatra','Mall')
-		@locations_dealer= Office.packages_by_regional('Sumatra','Dealer')
+		@locations_hypermart= Office.packages_by_regional(regional,'Hypermart')
+		@locations_mall= Office.packages_by_regional(regional,'Mall')
+		@locations_dealer= Office.packages_by_regional(regional,'Dealer')
 		
     @memberships = Membership.packages_by_category('premium')
     @groups = GroupItem.all
