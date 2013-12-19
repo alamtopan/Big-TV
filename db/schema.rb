@@ -130,8 +130,8 @@ ActiveRecord::Schema.define(:version => 20131217034352) do
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "no_phone"
-    t.integer  "no_hp"
+    t.string   "no_phone"
+    t.string   "no_hp"
     t.text     "address"
     t.string   "city"
     t.string   "province"

@@ -16,7 +16,7 @@ class CustomersController < ApplicationController
       end
     else
       flash[:errors] = customer.errors.full_messages.uniq.join(', ')
-      redirect_to new_customer
+      redirect_to new_customer_path
     end
   end
 

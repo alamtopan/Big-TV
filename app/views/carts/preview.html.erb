@@ -3,17 +3,15 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-		<%= form_for :user, url: subcribe_carts_path, method: 'post' do |f| %>
+    <%= form_for :user, url: subcribe_carts_path, method: 'post', html: {remote: true, class: 'form-subscribe'} do |f| %>
 			<%= f.fields_for(:profile_attributes) do |profile| %>
 	    <div class="panel-body">
 				<!-- <form action="#" role="form" id="form" novalidate="novalidate"> -->
 				<div class="row">
 					<div class="col-md-12">
-						<% if flash[:errors].present? %>
-							<div class="errorHandler alert alert-danger no-display">
-								<i class="icon-remove-sign"></i> <%= flash[:errors] %>
+					  <div class="errorHandler alert alert-danger no-display" style="display:none;">
+              <i class="icon-remove-sign"></i> <span class='error-message'></span>
 							</div>
-						<% end %>
 						<!-- <div class="successHandler alert alert-success no-display">
 							<i class="icon-ok"></i> Your form validation is successful!
 						</div> -->
@@ -191,3 +189,4 @@
 		<% end %>
 	</article>
 </section>
+<div class="ipay" style="display:none"></div>

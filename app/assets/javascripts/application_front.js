@@ -1,4 +1,5 @@
 //= require front/js/jquery-1.9.1
+//= require jquery_ujs
 //= require front/js/jquery-migrate-1.2.1.min
 //= require front/js/jquery-ui
 //= require front/js/jQuery.easing.min
@@ -35,6 +36,23 @@
 				$('.cont, .slide-main, .wraper2 , #sequence').css('height', imgHeight+'px');
 			}).resize();
 		});
+
+    $('form.form-subscribe').on('ajax:beforeSend', function(evt, xhr, settings){
+      $.submit_btn = $('form.form-subscribe input[type="submit"]');
+      $.submit_btn.val('HARAP TUNGGU');
+      $.submit_btn.attr('disabled', 'disabled');
+    }).
+    on('ajax:error', function(xhr, status, error){
+      //location.reload();
+      console.log(xhr)
+      console.log(status)
+      console.log(error)
+    }).
+    on('ajax:complete', function(xhr, status){
+      $.submit_btn = $('form.form-subscribe input[type="submit"]');
+      $.submit_btn.val('LANJUT KE PEMBAYARAN');
+      $.submit_btn.removeAttr('disabled');
+    })
 
 		// $(window).scroll(function(){
 		//   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){

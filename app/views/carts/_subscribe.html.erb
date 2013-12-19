@@ -1,0 +1,22 @@
+<%= form_tag ENV['API_URL'], method: 'POST' do %>
+  <%= hidden_field_tag 'MALLID', ENV['MALL_ID'] %>
+  <%= hidden_field_tag 'CHAINMERCHANT', 'NA' %>
+  <%= hidden_field_tag 'AMOUNT', "%.2f" % @order.total %>
+  <%= hidden_field_tag 'PURCHASEAMOUNT', "%.2f" % @order.total %>
+  <%= hidden_field_tag 'TRANSIDMERCHANT', @order.id %>
+  <%= hidden_field_tag 'WORDS', @words %>
+  <%= hidden_field_tag 'REQUESTDATETIME', "#{Time.now.strftime("%Y%M%d%H%M%S")}" %>
+  <%= hidden_field_tag 'CURRENCY', '360' %>
+  <%= hidden_field_tag 'PURCHASECURRENCY', '360' %>
+  <%= hidden_field_tag 'NAME', @customer.profile.full_name %>
+  <%= hidden_field_tag 'EMAIL', @customer.email %>
+  <%= hidden_field_tag 'PAYMENTCHANNEL', 'CC' %>
+  <%= hidden_field_tag 'CC_NAME', @customer.profile.full_name %>
+  <%= hidden_field_tag 'ADDRESS', @customer.profile.address.to_s.gsub(/\W/,' ') %>
+  <%= hidden_field_tag 'CITY', @customer.profile.city %>
+  <%= hidden_field_tag 'STATE', @customer.profile.province %>
+  <%= hidden_field_tag 'ZIPCODE', @customer.profile.codepos %>
+  <%= hidden_field_tag 'HOMEPHONE', @customer.profile.no_phone %>
+  <%= hidden_field_tag 'MOBILEPHONE', @customer.profile.no_hp %>
+  <%= hidden_field_tag 'BASKET', @order.basket %>
+<% end %>

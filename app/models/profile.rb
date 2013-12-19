@@ -4,4 +4,8 @@ class Profile < ActiveRecord::Base
                   :referal, :tipe_identitas, :no_identitas ,:user_id
 	
 	belongs_to :user
+
+  def full_name
+    [first_name, last_name].select(&:'present?').join(' ')
+  end
 end
