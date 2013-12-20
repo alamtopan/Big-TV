@@ -1,13 +1,14 @@
 <div class="table-responsive">
   <% @groups.each do |group| %>
-    <div class="parrent_table" data-color="<%= group.colour %>">
+    <div class="parrent_table">
       <div class="head_pack side_table">
         <% group.name.each_char do |a| %>
+          <span class="alfa">
           <%= a %> 
-          <br/><br/>
+          </span>
         <% end %> 
       </div>
-      <table class="table table-bordered side_table_right">
+      <table class="table table-bordered side_table_right" data-color="<%= group.colour %>">
         <tbody>
           <% group.unit_items.each_with_index do |item,index| %>
             <tr>

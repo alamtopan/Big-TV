@@ -25,11 +25,11 @@
 //= require_self
 
 	$(document).ready(function(){
-		$.each($(".parrent_table"),function( index, value ){
-		var color = $(value).data('color')
-		var hg = $(value).height()
-		var total_hg = hg - 50
-		$(value).find(".head_pack").attr("style","height: "+total_hg+"px;background:"+color+"")
+		$.each($(".side_table_right"),function( index, value ){
+			var color = $(value).data('color');
+			var hg = $(value).height();
+			var total_hg = hg - 50;
+			$(value).parent('.parrent_table').find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
 		})
 		
 		jQuery('#nav').scrollToFixed({ marginTop: 0});
