@@ -149,6 +149,7 @@ ul.menu
 	padding: 0;
 	float: left;
 	margin-top: 30px;
+	margin-left: 30px;
 }
 ul.menu li
 {
@@ -170,7 +171,7 @@ ul.menu li a
 }
 ul.menu li a.selected, ul.menu li a:hover
 {
-	color: #e74c3c;
+	color: #ed2024;
 }
 .login
 {
@@ -183,10 +184,10 @@ ul.menu li a.selected, ul.menu li a:hover
 	border-radius: 3px;
 	font-size: 13px;
 	color: white;
-	background-color: #e74c3c;
+	background-color: #ed2024;
 	text-align: center;
 	cursor: pointer;
-	border: solid 1px #e74c3c;
+	border: solid 1px #ed2024;
 	font-weight: bold;
 	margin-top: 20px;
 }
@@ -275,7 +276,7 @@ ul.intro_buttons li
 {
         display: inline-block;
         text-transform: uppercase;
-		background-color: #e74c3c;
+		background-color: #ed2024;
         list-style: none;
         margin: 0px 15px;  
 		border: 0;
@@ -372,7 +373,7 @@ section.paging .dot
 }
 section.paging .dot.selected, section.paging .dot:hover
 {
-	background-color: #e74c3c;	
+	background-color: #ed2024;	
 }
 .dot-cont
 {
@@ -404,7 +405,7 @@ section.paging .dot.selected, section.paging .dot:hover
 h1 span
 {
 	font-weight: bold;
-	color: #e74c3c;
+	color: #ed2024;
 }
 .wraper_bg-bright h3
 {
@@ -416,11 +417,11 @@ h1 span
 }
 h3 span
 {
-	color: #e74c3c;
+	color: #ed2024;
 }
 .wraper_bg-bright h3 span
 {
-	color: #e74c3c;
+	color: #ed2024;
 }
 .packs-cont
 {
@@ -441,7 +442,7 @@ h3 span
 }
 .pack.selected
 {
-	background-color: #e74c3c;
+	background-color: #ed2024;
 	height: 265px;
 	margin: 0;
 }
@@ -464,7 +465,7 @@ h3 span
 	height: 20px;
 	line-height: 20px;
 	width: 100%;
-	color: #e74c3c!important;
+	color: #ed2024!important;
 	text-transform: none!important;
 	font-size: 14px!important;
 	margin-bottom: 20px;
@@ -495,9 +496,9 @@ h3 span
 {
 	font-size: 38px;
 	color: #fff!important;
-	border-top: 1px #e74c3c solid;
+	border-top: 1px #ed2024 solid;
 	border-bottom: 1px #dfdfdf solid;
-	background: #e74c3c!important;
+	background: #ed2024!important;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -601,7 +602,7 @@ h3 span
 .profits-block h2
 {
 	font-size: 14px;
-	color: #e74c3c;
+	color: #ed2024;
 	line-height: 50px;
 	font-family: 'Lato', serif;
 	text-transform: uppercase;
@@ -627,7 +628,7 @@ h3 span
 }
 .p_bottom span
 {
-	color:#e74c3c;
+	color:#ed2024;
 }
 .wraper.bg-raw
 {
@@ -705,7 +706,7 @@ aside.feedback-as.feedback-as-l
 
 .wraper_bg-blue
 {
-        background-color: #e74c3c;
+        background-color: #ed2024;
         color: white;
         position: relative;
 		overflow: hidden;
@@ -866,7 +867,7 @@ footer.wraper
 }
 .dicl-info h2
 {
-		color:  #e74c3c;
+		color:  #ed2024;
 		font-size: 18px;
 		font-family: 'Belgrano', serif;
 		font-weight: normal;
@@ -972,7 +973,7 @@ footer.wraper
 }
 .map_icon:hover
 {
-	background-color: #e74c3c;
+	background-color: #ed2024;
 }
 .map_icon img
 {
@@ -1085,7 +1086,7 @@ input.s_form1
 .s_form2
 {
   width: 340px;
-  background-color: #e74c3c;
+  background-color: #ed2024;
   color: white;
   text-transform: uppercase;
   padding-left: 0px;
@@ -1153,7 +1154,7 @@ input.s_form1
 }
 .comsub:hover
 {
-	background-color: #e74c3c;
+	background-color: #ed2024;
 }
 .com img
 {
@@ -1194,7 +1195,7 @@ input.s_form1
 {
 	position:relative;
 	margin: -40px auto 0px;
-	background: #e74c3c;
+	background: #ed2024;
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
@@ -1314,7 +1315,7 @@ input.s_form1
 {
 	font-size: 13px;
 	line-height: 30px;
-	color: #e74c3c;
+	color: #ed2024;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -1604,7 +1605,7 @@ input.s_form1
 	width: 157px;
 	height: 157px;
 	background-color: white;
-	border: 2px #e74c3c solid;
+	border: 2px #ed2024 solid;
 	border-radius: 80px;
 	margin-bottom: 20px;
 	overflow: hidden;
@@ -1673,7 +1674,7 @@ input.s_form1
 {
 	width: 62px;
 	height: 62px;
-	border: 2px #e74c3c solid;
+	border: 2px #ed2024 solid;
 	background-color: white;
 	border-radius: 32px;
 	float: left;
@@ -1831,7 +1832,7 @@ margin: auto;
 	width: 22px;
 	height: 22px;
 	margin: -10px 0 0 0;
-	border: 2px solid #e74c3c;
+	border: 2px solid #ed2024;
 	border-radius: 15px;
 	z-index: 3;
 	background-color: white;
@@ -2127,7 +2128,7 @@ width: 220px;
 .hi-icon:hover {
 	background: red;
 	color: #702fa8;
-	box-shadow: 0 0 0 8px #e74c3c;
+	box-shadow: 0 0 0 8px #ed2024;
 }
 .hi-icon1 {
 	overflow: hidden;
@@ -2139,7 +2140,7 @@ width: 220px;
 .hi-icon1:hover {
 	background: rgba(255,255,255,1);
 	color: #702fa8;
-	box-shadow: 0 0 0 8px #e74c3c;
+	box-shadow: 0 0 0 8px #ed2024;
 }
 
 .hi-icon:hover img{
@@ -2784,7 +2785,7 @@ ul.gallery_footer li{
 	text-transform: uppercase;
 }
 .category_location{
-	color: #e74c3c;
+	color: #ed2024;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 28px;
@@ -2814,7 +2815,7 @@ div.grid_packages_news{
     border: 1px solid #f4f4f4;
   }
 .title_news_catalog{
-	color: #e74c3c;
+	color: #ed2024;
 	text-transform: uppercase;
 	font-size: 18px;
 	float: left;
