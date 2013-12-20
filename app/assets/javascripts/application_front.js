@@ -32,6 +32,8 @@
 			$(value).parent('.parrent_table').find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
 		})
 		
+		// $('table.grd_masonry_location').filterTable();
+
 		jQuery('#nav').scrollToFixed({ marginTop: 0});
 		$('#sequence').imagesLoaded(function(img){
 			$(window).resize(function(){

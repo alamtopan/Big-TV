@@ -3,16 +3,15 @@
 		$("#map_section").gmap3({
 		  map:{
 		    options:{
-
 		      center: [<%= @locations_google.first.latitude %>,<%= @locations_google.first.longitude %>],
 		      zoom: 6
 		    }
 		  },
 		  marker:{
 		    values:[
-		    <% @locations_google.each do |location| %>
-		      {latLng: [<%= location.latitude %>,<%= location.longitude %>], data:'<div class="infowindow"><h2><%= location.name %><br/></h2><p><%= location.address %><br/><i><%= location.phone_area %> <%= location.no_phone %></i></p></div>', options:{icon: "/assets/map-marker.png"}},
-		    <% end %>
+		    	$.each($(".map_location_js"), function( index, value ) {
+		      	{latLng: [$(value).data('longitude'),$(value).data('latitude')], data:'<div class="infowindow"><h2><%= location.name %><br/></h2><p><%= location.address %><br/><i><%= location.phone_area %> <%= location.no_phone %></i></p></div>', options:{icon: "/assets/map-marker.png"}},
+		    	})
 		    ],
 		    options:{
 		      draggable: false
