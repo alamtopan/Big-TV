@@ -44,4 +44,40 @@ $(document).ready(function(){
     }
     var sequence = $("#sequence").sequence(options).data("sequence");
   }
+
+  if($(".map_location_js").length){
+    $(".js_button_map").on('click',function(){
+      var province = $(this).data('value');
+      $(".map_location_js").closest('tr').addClass('hide');
+      $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
+      return false;
+    });
+  }
+
+  if($("#search_location").length){
+    $("#search_location").on("change",function(){
+      $(".map_location_js").closest('tr').addClass('hide');
+      $(".map_location_js:contains('"+$(this).val()+"')").closest('tr').removeClass('hide');
+      return false;
+    });
+  }
+  if($("div.trial").length){
+    $.each($("div.trial"), function( index, div ) {
+      var val = $(this).data('value');
+      $.each($("."+val), function( n, locat ) {
+        if(n < 12){
+          if($(locat).hasClass('hide')){
+            $(locat).removeClass('hide');
+          }
+        }else{
+          $(locat).addClass('hide');
+        }
+      });
+      $(div).on('click',function(){
+        $("."+val).removeClass('hide');
+        $(this).addClass('hide');
+      })
+    })
+  }
+
 })

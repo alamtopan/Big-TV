@@ -25,7 +25,7 @@
 //= require_self
 
 	$(document).ready(function(){
-		$('table').filterTable();
+		// $('table.grd_masonry_location').filterTable();
 		jQuery('#nav').scrollToFixed({ marginTop: 0});
 		$('#sequence').imagesLoaded(function(img){
 			$(window).resize(function(){

@@ -7,10 +7,8 @@ class PublicsController < ApplicationController
 		else 
 			regional = "Sumatra"	
 		end
-		@locations_google= Office.packages_by_map(regional)
-		@locations_hypermart= Office.packages_by_regional(regional,'Hypermart')
-		@locations_mall= Office.packages_by_regional(regional,'Mall')
-		@locations_dealer= Office.packages_by_regional(regional,'Dealer')
+    @categories= CategoryOffice.all
+    @regionals= Regional.all
 		
     @memberships = Membership.packages_by_category('premium')
     @groups = GroupItem.all
@@ -18,7 +16,12 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-  render layout: "detail"  
+    render layout: "detail"  
   end
-
+  def render_map
+    return unless params[:regional]
+    regional = params[:regional]
+    @locations_google= Office.packages_by_map(regional)
+    render partial: 'map'
+  end
 end
