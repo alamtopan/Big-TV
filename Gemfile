@@ -22,7 +22,7 @@ gem 'rails', '3.2.13'
   gem 'daemons'                         # Daemon for Background Job
   gem 'delayed_job_web'                 # Delayed Job Monitoring System
   gem 'figaro'
-  gem "galetahub-simple_captcha", :require => "simple_captcha"
+  gem "recaptcha", :require => "recaptcha/rails"
 #end
 
 

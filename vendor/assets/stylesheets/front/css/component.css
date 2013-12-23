@@ -52,4 +52,8 @@
 	opacity: 1;
 }
 
-
+#recaptcha_widget_div, .customer-actions input[type=submit]{display: inline-block;}
+.customer-actions input[type=submit]{
+	position: relative;
+  top: -20px;
+}
