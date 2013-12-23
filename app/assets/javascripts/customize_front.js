@@ -114,7 +114,7 @@ function restore(){
   $("#map_section").gmap3({
     map:{
       options:{
-        center: [$(".map_location_js").data('latitude'),$(".map_location_js").data('longitude')],
+        center: [$(".map_location_js:not(.hide)").first().data('latitude'),$(".map_location_js:not(.hide)").first().data('longitude')],
         zoom: 6
       }
     },
