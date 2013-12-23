@@ -117,6 +117,9 @@ h1,h2,h3,h4,h5, p, ul
 	background-color: #fff;	
 	min-width: 960px;
 	border-bottom: solid 1px #ddd;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
 }
 .wraper p
 {
@@ -543,8 +546,6 @@ h3 span
 {
 	color: #95a0ab;
 	font-size: 14px;
-	font-family: "Calibri";
-	
 	line-height: 30px;
 }
 .pack-i-line span

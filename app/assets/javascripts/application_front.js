@@ -23,9 +23,11 @@
 //= require jquery.lazyload
 
 //= require_self
-	$("section").lazyload({
-    effect : "fadeIn"
-});
+	$(function() {
+     $("img").lazyload({
+         effect : "fadeIn"
+     });
+  });
 
 	$(document).ready(function(){
 		$.each($(".side_table_right"),function( index, value ){
