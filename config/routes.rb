@@ -32,6 +32,8 @@ BigTv::Application.routes.draw do
   
   root to: 'publics#show'
 
+  # SAMPLE DECODER
+   get   '/decoder',  to: 'publics#decoder',as: 'decoder'
 
   # # payment gateway
   match '/gatepay/notify',   to: "gatepay#notify", via: [:get, :post]

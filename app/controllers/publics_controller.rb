@@ -24,4 +24,8 @@ class PublicsController < ApplicationController
     @locations_google= Office.packages_by_map(regional)
     render partial: 'map'
   end
+
+  def decoder
+  end
+  
 end
