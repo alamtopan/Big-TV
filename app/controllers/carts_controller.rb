@@ -5,7 +5,7 @@ class CartsController < ApplicationController
   def extra
     if session[:current_premium_id].blank?
       flash[:alert] = 'Please subscribe any premium package!'
-    redirect_to premium_path
+      redirect_to premium_path
     else
       @memberships = Membership.packages_by_category('extra')
       @order = order
@@ -18,12 +18,20 @@ class CartsController < ApplicationController
   end
 
   def preview
+    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
+                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
+                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'] ];
     if order.total.to_i < 1
       redirect_to root_path
-    elsif decoder = Membership.other_packages.first
-      decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
-      order.add_item(decoder,session_cart) if decoder_item.new_record?
+    # elsif decoder = Membership.other_packages.first
+    #   decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
+    #   order.add_item(decoder,session_cart) if decoder_item.new_record?
     end
+  end
+
+  def rental_box
+    @memberships = Membership.packages_by_category('other')
+    @order = order
   end
 
   def subcribe
@@ -60,15 +68,34 @@ class CartsController < ApplicationController
   end
 
   def create
-    check_order(order,params[:membership_ids].unshift(session[:current_premium_id]).compact.uniq)
-    order.add_item(params,session_cart)
+    return check_decoder_membership(params[:membership_id]) if params[:membership_id].present?
+    if params[:membership_ids].present?
+      check_order(order,params[:membership_ids].unshift(session[:current_premium_id]).compact.uniq)
+      path_redirect = rental_path
+      package_created = params
+    else
+      check_order(order,params[:membership_id])
+      path_redirect = preview_path
+      package_created = Membership.find(params[:membership_id])
+    end
+    order.add_item(package_created,session_cart)
     if order.errors.blank? 
       session.delete(:current_premium_id)
-      redirect_to preview_path
+      redirect_to path_redirect
     else
-      # @memberships = Membership.packages_by_category('extra')
       render action: :extra
     end
+  end
+
+  def update_package
+    order.items.each do |item|
+      if item.membership_category == 'Premium'
+        item.delete
+      end
+    end
+    new_package = Membership.where("name LIKE ?", "%Star%").first
+    order.add_item(new_package,session_cart)
+    redirect_to rental_path
   end
 
   def update
@@ -110,16 +137,39 @@ class CartsController < ApplicationController
     end
 
     def check_order(order,params_membership)
-      order.items.each do |item|
-        unless params_membership.include?(item.membership_id)
-          item.delete
+        order.items.each do |item|
+        if params_membership.kind_of?(Array)
+          unless params_membership.include?(item.membership_id)
+            item.delete
+          end
+        else
+          if params_membership == item.membership_id
+            item.delete
+          end
         end
       end
     end
 
+    def check_decoder_membership(params_membership)
+      selected_decoder = Membership.find(params_membership)
+      minimum_package = Membership.where("name LIKE ?", "%Star%").first
+      order.items.each do |item|
+        if item.membership_category == "Premium"
+          if item.subtotal < minimum_package.price_month && selected_decoder.price_month > 50000
+            flash[:alert] = "Your Premium Package Must Be least Big Star Package, 
+                             Do You want To Get Big Star Package? 
+                             <a href='#{update_package_path}' >yes</a> | 
+                             <a href='#' data-dismiss='alert'>no</a>".html_safe
+            return redirect_to rental_path
+          end
+        end
+      end
+      return redirect_to preview_path
+    end
+
     def authorize_customer
+      session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
       unless current_customer
-        session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
         if request.xhr?
           render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
         else

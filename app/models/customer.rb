@@ -1,5 +1,7 @@
 class Customer < User
+  attr_accessible :captcha, :captcha_key
   before_validation :before_validation
+  apply_simple_captcha
 
   private
     def before_validation

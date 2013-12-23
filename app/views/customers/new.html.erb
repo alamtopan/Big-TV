@@ -1,5 +1,5 @@
 <section class="wraper_bg-bright extra_packages">
-  <h1>Registration</h1>
+  <h1><span>BASIC</span> INFO</h1>
   <div class="polosochka2"></div>
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
@@ -29,7 +29,13 @@
               <label class="control-label">
                 Email
               </label>
-              <%= f.text_field :email, {class: 'form-control', placeholder: 'Email', required: true} %>
+              <%= f.text_field :email, {class: 'form-control', placeholder: 'me@email.com', required: true} %>
+            </div>
+            <div class="form-group">
+              <label class="control-label">
+                Referal
+              </label>
+              <%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
             </div>
           </div>
             
@@ -45,6 +51,18 @@
                 Handphone
               </label>
               <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true} %>
+            </div>
+            <div class="form-group">
+              <label class="control-label">
+                SPG/Dealer ID
+              </label>
+              <%#= profile.text_field :dealer_id, {class: 'form-control', placeholder: 'To be field by BIG TV personnel only'} %>
+            </div>
+            <div class="form-group">
+              <label class="control-label">
+                Captcha
+              </label>
+              <%= f.simple_captcha :label => "", placeholder: "Enter Captcha.." %>
             </div>
             <div class="br"></div>
             <div class="pull-right">

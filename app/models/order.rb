@@ -49,7 +49,7 @@ class Order < ActiveRecord::Base
 
   def add_item(item,session)
     if item.is_a?(Membership)
-      populate_order_item(1, item.id,session)
+      populate_order_item(0, item.id,session)
     else
       return if item[:membership_ids].blank?
       item[:membership_ids].each do |membership_id|

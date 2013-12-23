@@ -23,7 +23,9 @@ BigTv::Application.routes.draw do
   get   '/preview', to: 'carts#preview',    as: 'preview'
   get   '/rental',  to: 'carts#rental_box', as: 'rental'
   
-  get   '/thanks',              to: 'publics#thanks',  as: 'thanks'
+  get   '/update_package',  to: 'carts#update_package', as: 'update_package'
+  
+  get   '/thanks',  to: 'publics#thanks',  as: 'thanks'
   
   get   '/dashboard',  to: 'home#dashboard',as: 'dashboard'
   get   '/form',       to: 'home#form',  as: 'form'

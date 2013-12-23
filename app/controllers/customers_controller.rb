@@ -2,7 +2,11 @@ class CustomersController < ApplicationController
   layout 'detail'
   
   def new
-    @customer = Customer.new  
+    @customer = Customer.new 
+    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
+                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
+                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'] ];
+
   end
 
   def create
