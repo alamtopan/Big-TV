@@ -46,6 +46,9 @@ h1,h2,h3,h4,h5, p, ul
 .table-bordered td{
 	width: 20%;
 }
+.padding_top40{
+	padding-top: 40px!important;
+}
 .head_pack{
 	text-transform: uppercase;
 	color: #fff;
@@ -55,7 +58,6 @@ h1,h2,h3,h4,h5, p, ul
 	text-align: center;
 	overflow: hidden;
 	font-weight: bold;
-	padding-top: 40px;
 	text-align: center;
 }
 .head_pack.blue{
@@ -114,6 +116,7 @@ h1,h2,h3,h4,h5, p, ul
 	height: 40px;
 	background-color: #fff;	
 	min-width: 960px;
+	border-bottom: solid 1px #ddd;
 }
 .wraper p
 {
@@ -2432,7 +2435,7 @@ input[type="checkbox"]{
 	background: #fcfcfc;
 	margin:auto;
 	margin-top: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	position: relative;
 }
 
@@ -2494,6 +2497,7 @@ input[type="checkbox"]{
 	font-weight: bold;
 	font-size: 16px;
 	color: yellow;
+	padding-right: 10px;
 }
 .title_ord_big{
 	font-weight: bold;
@@ -2555,6 +2559,7 @@ input[type="checkbox"]{
 	background: #ed2024;
 	border-bottom: 2px solid #de0b0f;
 	float: left;
+	width: 100%;
 }
 
 table.padding0 tbody tr td{
@@ -2569,8 +2574,8 @@ table.padding0 tbody tr td{
 }
 .versi2{
 	float: left;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .head_pack.red.vers{
