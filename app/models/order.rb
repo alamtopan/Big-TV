@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
 
   has_many   :items, class_name: "OrderItem", dependent: :destroy
   belongs_to :orderable, polymorphic: true
+  has_many   :payments
 
   after_update  :after_modification
   before_update :before_modification
@@ -34,7 +35,7 @@ class Order < ActiveRecord::Base
     if time.now < updated_at.since(1.hour)
       destroy
     else
-      check_activity      
+      check_activity
     end if session_id.present?
   end
 
@@ -48,7 +49,7 @@ class Order < ActiveRecord::Base
 
   def add_item(item,session)
     if item.is_a?(Membership)
-      populate_order_item(1, item.id,session)
+      populate_order_item(0, item.id,session)
     else
       return if item[:membership_ids].blank?
       item[:membership_ids].each do |membership_id|
@@ -63,7 +64,11 @@ class Order < ActiveRecord::Base
     item = items.find_or_initialize_by_membership_id(membership_id)
     current_product = item.membership
     return unless current_product
-    item.quantity = (item.quantity||1).to_i + qty.to_i
+
+    item.quantity = (item.quantity||1).to_i
+    if item.membership_category.to_s.downcase != 'other'
+      item.quantity += qty.to_i
+    end
     item.price = current_product.default_price
     item.title = current_product.name
     item.save
@@ -72,8 +77,8 @@ class Order < ActiveRecord::Base
   def basket
     items.map{|item| 
       [item.title, 
+       "%.2f" % item.price,  
        period*item.quantity, 
-       "%.2f" % item.price, 
        "%.2f" % (period*item.quantity*item.price)
       ].join(',')
     }.join(';')

@@ -1,0 +1,44 @@
+  $(function(){
+  	var isi = [];
+    $.each($(".map_location_js:not(.hide)"), function( index, loc ) {
+      var value = $(loc).data('value');
+    	isi.push({latLng: [$(loc).data('latitude'),$(loc).data('longitude')], data:'<div class="infowindow"><h2>'+value[0].name+'<br/></h2><p> '+value[0].address+' <br/><i> '+value[0].area+' '+value[0].phone+' </i></p></div>', options:{icon: "/assets/map-marker.png"}})
+    });
+    $("#map_section").gmap3({
+      map:{
+        options:{
+          center: [$(".map_location_js").data('latitude'),$(".map_location_js").data('longitude')],
+          zoom: 6
+        }
+      },
+      marker:{
+        values: isi,
+        options:{
+          draggable: false
+        },
+        events:{
+          mouseover: function(marker, event, context){
+            var map = $(this).gmap3("get"),
+              infowindow = $(this).gmap3({get:{name:"infowindow"}});
+            if (infowindow){
+              infowindow.open(map, marker);
+              infowindow.setContent(context.data);
+            } else {
+              $(this).gmap3({
+                infowindow:{
+                  anchor:marker, 
+                  options:{content: context.data}
+                }
+              });
+            }
+          },
+          mouseout: function(){
+            var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+            if (infowindow){
+              infowindow.close();
+            }
+          }
+        }
+      }
+    });
+  });

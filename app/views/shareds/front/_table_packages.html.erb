@@ -1,31 +1,39 @@
 <div class="table-responsive">
   <% @groups.each do |group| %>
-    <div class="head_pack" style="background: <%= group.colour %>"><%= group.name %></div>
-    <table class="table table-bordered">
-      <tbody>
-        <% group.unit_items.each_with_index do |item,index| %>
-          <tr>
-            <td>
-
-              <%= image_tag item.logo.url(:thumb),class: "small_image" ;%>
-              <span class="name_channel"><%= item.name %> </span>
-              <% if item.status_hd %>
-                <span class="hd">HD</span>
-              <% end %>
-            </td>
-            <% (memberships.count - 1).times do |i| %>
+    <div class="parrent_table">
+      <div class="head_pack side_table padding_top40">
+        <% group.name.each_char do |a| %>
+          <span class="alfa">
+          <%= a %> 
+          </span>
+        <% end %> 
+      </div>
+      <table class="table table-bordered side_table_right" data-color="<%= group.colour %>">
+        <tbody>
+          <% group.unit_items.each_with_index do |item,index| %>
+            <tr>
               <td>
-                <% checked = item.memberships.map(&:id).include?(memberships[i+1]) %>
-                <div class="roundedOne">
-                  <%= check_box_tag 'check', '', checked, {id: "member"} %>
-                  <label for="<%= "member_#{index}_#{i}" %>"></label>
-                </div>
+
+                <%= image_tag item.logo.url(:thumb),class: "small_image" ;%>
+                <span class="name_channel"><%= item.name %> </span>
+                <% if item.status_hd %>
+                  <span class="hd">HD</span>
+                <% end %>
               </td>
-            <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+              <% (memberships.count - 1).times do |i| %>
+                <td>
+                  <% checked = item.memberships.map(&:id).include?(memberships[i+1]) %>
+                  <div class="roundedOne">
+                    <%= check_box_tag 'check', '', checked, {id: "member"} %>
+                    <label for="<%= "member_#{index}_#{i}" %>"></label>
+                  </div>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
   <table class="table table-bordered">
     <tbody>

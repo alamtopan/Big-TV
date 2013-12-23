@@ -44,4 +44,110 @@ $(document).ready(function(){
     }
     var sequence = $("#sequence").sequence(options).data("sequence");
   }
+
+  if($(".map_location_js").length){
+    $(".js_button_map").on('click',function(){
+      var province = $(this).data('value');
+      $(".map_location_js").closest('tr').addClass('hide');
+      $(".map_location_js").addClass('hide');
+      $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
+      $(".map_location_js[data-province='" + province+ "']").removeClass('hide');
+      restore();
+      return false;
+    });
+  }
+
+  if($("#search_location").length){
+    $("#search_location").on("change",function(){
+      if($("#search_location").val().length > 0){
+        $(".map_location_js").closest('tr').addClass('hide');
+        $(".map_location_js").addClass('hide');
+        $(".map_location_js:contains('"+$(this).val()+"')").closest('tr').removeClass('hide');
+        $(".map_location_js:contains('"+$(this).val()+"')").removeClass('hide');
+        return false;
+      }else{
+        initilizeLocation()
+      }
+    });
+  }
+
+  if($("div.trial").length){
+    initilizeLocation();
+  }
+
+  function initilizeLocation(){
+    $.each($("div.trial"), function( index, div ) {
+      var val = $(this).data('value');
+      $.each($("."+val), function( n, locat ) {
+        if(n < 12){
+          if($(locat).hasClass('hide')){
+            $(locat).removeClass('hide');
+          }
+        }else{
+          $(locat).addClass('hide');
+        }
+      });
+      $(div).on('click',function(){
+        $("."+val).removeClass('hide');
+        $(this).addClass('hide');
+      })
+    })
+  }
+
+function restore(){
+
+  $('#map_section').gmap3({
+      action: 'destroy'
+  });
+
+  var container = $('#map_section').parent();
+  $('#map_section').remove();
+  container.append('<div id="map_section"></div>');
+
+  // create new gmap
+  var isi = [];
+  $.each($(".map_location_js:not(.hide)"), function( index, loc_new ) {
+    console.log(loc_new)
+    var value = $(loc_new).data('value');
+    isi.push({latLng: [$(loc_new).data('latitude'),$(loc_new).data('longitude')], data:'<div class="infowindow"><h2>'+value[0].name+'<br/></h2><p> '+value[0].address+' <br/><i> '+value[0].area+' '+value[0].phone+' </i></p></div>', options:{icon: "/assets/map-marker.png"}})
+  });
+  $("#map_section").gmap3({
+    map:{
+      options:{
+        center: [$(".map_location_js:not(.hide)").first().data('latitude'),$(".map_location_js:not(.hide)").first().data('longitude')],
+        zoom: 6
+      }
+    },
+    marker:{
+      values: isi,
+      options:{
+        draggable: false
+      },
+      events:{
+        mouseover: function(marker, event, context){
+          var map = $(this).gmap3("get"),
+            infowindow = $(this).gmap3({get:{name:"infowindow"}});
+          if (infowindow){
+            infowindow.open(map, marker);
+            infowindow.setContent(context.data);
+          } else {
+            $(this).gmap3({
+              infowindow:{
+                anchor:marker, 
+                options:{content: context.data}
+              }
+            });
+          }
+        },
+        mouseout: function(){
+          var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+          if (infowindow){
+            infowindow.close();
+          }
+        }
+      }
+    }
+  });
+}
+
 })

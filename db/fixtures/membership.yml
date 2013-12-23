@@ -1,6 +1,6 @@
 membership:
   - membership_0:
-      name:         'Big Universe 142'
+      name:         'Universe 142'
       description:  ''
       published:    true
       featured:     true
@@ -210,7 +210,7 @@ membership:
       - item_98:
           name: 'NHK World'
   - membership_1:
-      name:         'Big Star 117'
+      name:         'Star 117'
       description:  ''
       published:    true
       featured:     true
@@ -384,7 +384,7 @@ membership:
       - item_80:
           name: 'TV 5 Monde Asia'
   - membership_2:
-      name:         'Big Sun 94'
+      name:         'Sun 94'
       description:  ''
       published:    true
       featured:     true
@@ -518,7 +518,7 @@ membership:
       - item_60:
           name: 'DW-TV Asia+'
   - membership_3:
-      name:         'Big Sun 79'
+      name:         'Fun 79'
       description:  ''
       published:    true
       featured:     true
@@ -622,7 +622,7 @@ membership:
       - item_45:
           name: 'DW-TV Asia+'
   - membership_4:
-      name:         'Big Deal 70'
+      name:         'Deal 70'
       description:  ''
       published:    true
       featured:     true
@@ -712,7 +712,7 @@ membership:
       - item_38:
           name: 'MGM' 
   - membership_5:
-      name:         'Big BPL'
+      name:         'BPL'
       description:  ''
       published:    true
       featured:     true
@@ -728,7 +728,7 @@ membership:
       - item_1:
           name: 'beIN Sports 2' 
   - membership_6:
-      name:         'Big Ultimate Sports'
+      name:         'Ultimate Sports'
       description:  ''
       published:    true
       featured:     true
@@ -750,7 +750,7 @@ membership:
       - item_4:
           name: 'Star Sports' 
   - membership_7:
-      name:         'Big Kids'
+      name:         'Kids'
       description:  ''
       published:    true
       featured:     true
@@ -774,7 +774,7 @@ membership:
       - item_5:
           name: 'Toonami' 
   - membership_8:
-      name:         'Big England'
+      name:         'England'
       description:  ''
       published:    true
       featured:     true
@@ -788,7 +788,7 @@ membership:
       - item_0:
           name: 'beIN Sports 1'
   - membership_9:
-      name:         'Big Hong Kong'
+      name:         'Hong Kong'
       description:  ''
       published:    true
       featured:     true
@@ -810,7 +810,7 @@ membership:
       - item_4:
           name: 'TVB S News'
   - membership_10:
-      name:         'Big China'
+      name:         'China'
       description:  ''
       published:    true
       featured:     true
@@ -832,7 +832,7 @@ membership:
       - item_4:
           name: 'Xing Kong'
   - membership_11:
-      name:         'Big Box Office'
+      name:         'Box Office'
       description:  ''
       published:    true
       featured:     true
@@ -862,7 +862,7 @@ membership:
       - item_8:
           name: 'HBO Family'
   - membership_12:
-        name:         'Big HBO Movies'
+        name:         'HBO Movies'
         description:  ''
         published:    true
         featured:     true
@@ -884,7 +884,7 @@ membership:
         - item_4:
             name: 'HBO Family'
   - membership_13:
-        name:         'Big HBO Movies'
+        name:         'HBO Movies'
         description:  ''
         published:    true
         featured:     true
@@ -906,7 +906,7 @@ membership:
         - item_4:
             name: 'HBO Family'
   - membership_14:
-        name:         'Big Aussie'
+        name:         'Aussie'
         description:  ''
         published:    true
         featured:     true
@@ -922,7 +922,7 @@ membership:
         - item_1:
             name: 'Australia Network'
   - membership_15:
-        name:         'Big Korea'
+        name:         'Korea'
         description:  ''
         published:    true
         featured:     true
@@ -936,7 +936,7 @@ membership:
         - item_0:
             name: 'K-TV'
   - membership_16:
-        name:         'Big Japan'
+        name:         'Japan'
         description:  ''
         published:    true
         featured:     true
@@ -950,7 +950,7 @@ membership:
         - item_0:
             name: 'NHK World'
   - membership_17:
-        name:         'Big India'
+        name:         'India'
         description:  ''
         published:    true
         featured:     true
@@ -970,7 +970,7 @@ membership:
         - item_3:
             name: 'Star Gold'
   - membership_18:
-        name:         'Big MAX Sport'
+        name:         'MAX Sport'
         description:  ''
         published:    true
         featured:     true
@@ -1006,14 +1006,50 @@ membership:
         - item_11:
             name: 'ASN'
   - membership_19:
-        name:         'Rental Recorder'
+        name:         '1 DECODER'
         description:  ''
         published:    true
         featured:     true
         category:     'Other'
         prices:
           - price_0:
-              price:    20000
+              price:    50000
+              total:    1
+              periode:  'month'
+        items: 
+  - membership_20:
+        name:         '2 DECODERS'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Other'
+        prices:
+          - price_0:
+              price:    70000
+              total:    1
+              periode:  'month'
+        items: 
+  - membership_21:
+        name:         '3 DECODERS'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Other'
+        prices:
+          - price_0:
+              price:    90000
+              total:    1
+              periode:  'month'
+        items: 
+  - membership_22:
+        name:         '4 DECODERS'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'Other'
+        prices:
+          - price_0:
+              price:    110000
               total:    1
               periode:  'month'
         items: 

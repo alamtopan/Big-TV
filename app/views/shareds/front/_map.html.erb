@@ -1,94 +1,79 @@
 <section class="wraper_bg-bright map"  id="map">
-	<div class="map1">
-		<h1><span>DEALER LOCATOR</span></h1>
-		<div class="polosochka2"></div>
-		<h3>Kunjungi dealer-dealer kami yang tersebar di seluruh Indonesia. <br>Proses berlangganan tidak pernah semudah dan sesimpel ini!</h3>
-		<div class="br"></div>
-		<div class="br"></div>
-		<div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
-			<div style="display:table; margin-left:auto; margin-right:auto">
-				<div class="pack-order float-left"><a href="?regional=Sumatra&#map">SUMATRA</a></div>
-				<div class="pack-order float-left"><a href="?regional=Jawa + Madura&#map">JAWA + MADURA</a></div>
-				<div class="pack-order float-left"><a href="?regional=Kalimantan&#map">KALIMANTAN</a></div>
-				<div class="pack-order float-left"><a href="?regional=Sulawesi&#map">SULAWESI</a></div>
-				<div class="pack-order float-left"><a href="?regional=Bali&#map">BALI</a></div>
-				<div class="pack-order float-left"><a href="?regional=Nusa Tenggara&#map">NUSA TENGGARA</a></div>
-				<div class="pack-order float-left"><a href="?regional=Maluku + Papua&#map">MALUKU + PAPUA</a></div>
-			</div>
-		</div>
-		<div class="br2"></div>
-		<div class="br2"></div>
-		<div id="map_section">
-		</div>
-	</div>
-	<div class="bar_search">
-		<div class="f_search" style="width:80%">
-			<span class="font_search">Search Dealer</span>
-		  <form class="search_form" action="#" method="POST"> 
-			  <input class="search1" type="text" name="email" placeholder="Dealer Locations">
-			  <input class="search2" type="submit" name="subscribe" value="Go Search">
-		  </form>
-		  <div class="clear"></div>
-   	</div>
-	</div>
-	<div class="br"></div>
-	<div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
-		<div style="display:table; margin-left:auto; margin-right:auto">
-			<div class="pack-order float-left"><a href="?regional=Sumatra&#map">SUMATRA</a></div>
-			<div class="pack-order float-left"><a href="?regional=Jawa + Madura&#map">JAWA + MADURA</a></div>
-			<div class="pack-order float-left"><a href="?regional=Kalimantan&#map">KALIMANTAN</a></div>
-			<div class="pack-order float-left"><a href="?regional=Sulawesi&#map">SULAWESI</a></div>
-			<div class="pack-order float-left"><a href="?regional=Bali&#map">BALI</a></div>
-			<div class="pack-order float-left"><a href="?regional=Nusa Tenggara&#map">NUSA TENGGARA</a></div>
-			<div class="pack-order float-left"><a href="?regional=Maluku + Papua&#map">MALUKU + PAPUA</a></div>
-		</div>
-	</div>
-	<div class="br2"></div>
-	<div class="br2"></div>
-	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-		<div class="panel-body">
-			<div class="category_location">HYPERMART</div>
-			<div class="grd_masonry_location">
-				<% @locations_hypermart.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		     
-		  </div>
-		</div>
-		<div class="br"></div>
-		<div class="trial"><a>VIEW MORE</a></div>
-		<hr>
-		<div class="panel-body">
-			<div class="category_location">MALL</div>
-			<div class="grd_masonry_location">
-		    <% @locations_mall.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		  </div>
-		</div>
-		<hr>
-		<div class="panel-body">
-			<div class="category_location">DEALER</div>
-			<div class="grd_masonry_location">
-		    <% @locations_dealer.each do |location| %>
-			    <div class="grid_packages_location">
-			    	<div class="title_loc"><%= location.name %></div>
-			    	<span class="symbol_category"><%= location.category_office.name %></span>
-			    	<div><%= location.address %></div>
-			    	<div class="phone"><%= image_tag "phone.png" %> <%= location.phone_area %> <%= location.no_phone %></div>
-			    </div>
-		    <% end %>
-		  </div>
-		</div>
-	</article>
+  <div class="map1">
+    <h1><span>FIND US</span></h1>
+    <div class="polosochka2"></div>
+    <h3>Kunjungi dealer-dealer kami yang tersebar di seluruh Indonesia. <br>Proses berlangganan tidak pernah semudah dan sesimpel ini!</h3>
+    <div class="br"></div>
+    <div class="br"></div>
+    <div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
+      <div style="display:table; margin-left:auto; margin-right:auto">
+        <% @regionals.each do |reg| %>
+          <div class="js_button_map pack-order float-left" data-value="<%= reg.name %>">
+            <a href="#"><%= reg.name.upcase %></a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="br2"></div>
+    <div class="br2"></div>
+    <div id="map_section">
+    </div>
+  </div>
+  <div class="bar_search">
+    <div class="f_search" style="width:80%">
+      <span class="font_search">Search Dealer</span>
+      <form class="search_form" action="#" method="POST"> 
+        <input class="search1" type="text" name="search" id="search_location" placeholder="Dealer Locations">
+        <input class="search2" type="submit" name="subscribe" value="Go Search" onclick="return false;">
+      </form>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
+    <div style="display:table; margin-left:auto; margin-right:auto">
+      <% @regionals.each do |reg| %>
+        <div class="js_button_map pack-order float-left" data-value="<%= reg.name %>">
+          <a href="#"><%= reg.name.upcase %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="br2"></div>
+  <div class="br2"></div>
+  <article class="packs-cont cbp-so-scroller" style="text-align:left">
+    <div class="panel-body">
+      <% @categories.each do |cate| %>
+        <div class="category_location"><%= cate.name %></div>
+        <table class="grd_masonry_location">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% cate.offices.each do |office| %>
+              <tr class="grid_packages_location <%= cate.name.downcase %>" data-limit="12">
+                <td class="map_location_js" data-latitude="<%= office.latitude %>" 
+                		data-longitude="<%= office.longitude %>" data-province="<%= office.regional.name %>"
+                    data-value= "<%= [{name: office.name, area: office.phone_area,phone: office.no_phone,address: office.address}].to_json %>"
+                    >
+                    <div class="title_loc"><%= office.name %></div>
+                    <span class="symbol_category"><%= office.category_office.name %></span>
+                    <div><%= office.address %></div>
+                    <div class="phone"><%= image_tag "phone.png" %> <%= office.phone_area %> <%= office.no_phone %></div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div style="float:left; width:100%">
+          <div class="br"></div>
+          <div class="trial" data-value="<%= cate.name.downcase %>"><a>VIEW MORE</a></div>
+          <hr/>
+          <div class="br"></div>
+        </div>
+      <% end %>
+    </div>
+  </article>
 </section>

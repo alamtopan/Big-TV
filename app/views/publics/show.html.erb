@@ -1,17 +1,8 @@
-﻿<% content_for(:front_page) do %>
-  <%= render partial: "shareds/front/slider" %>
-  <%= render partial: "shareds/front/header" %>
-  <%= render partial: "shareds/front/features" %>
-  <%= render partial: "shareds/front/programmes" %>
-  <%= render partial: "shareds/front/channels" %>
-  <%= render partial: "shareds/front/packages" %>
-  <%= render partial: "shareds/front/map" %>
-  <%= render partial: "shareds/front/news" %>
-<% end %>
-<% if Rails.env.production? %>
-  <% cache("#{Time.now.midnight.to_i}") do %>
-    <%= content_for(:front_page) %>
-  <% end %>
-<% else %>
-  <%= content_for(:front_page) %>
-<% end %>
+﻿<%= render partial: "shareds/front/slider" %>
+<%= render partial: "shareds/front/header" %>
+<%= render partial: "shareds/front/features" %>
+<%= render partial: "shareds/front/programmes" %>
+<%= render partial: "shareds/front/channels" %>
+<%= render partial: "shareds/front/packages" %>
+<%= render partial: "shareds/front/map" %>
+<%= render partial: "shareds/front/news" %>
