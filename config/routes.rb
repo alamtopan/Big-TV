@@ -18,9 +18,10 @@ BigTv::Application.routes.draw do
   end
 
 
-  get   '/extra',   to: 'carts#extra',    as: 'extra'
-  get   '/premium', to: 'carts#premium',  as: 'premium'
-  get   '/preview',              to: 'carts#preview',  as: 'preview'
+  get   '/extra',   to: 'carts#extra',      as: 'extra'
+  get   '/premium', to: 'carts#premium',    as: 'premium'
+  get   '/preview', to: 'carts#preview',    as: 'preview'
+  get   '/rental',  to: 'carts#rental_box', as: 'rental'
   
   get   '/thanks',              to: 'publics#thanks',  as: 'thanks'
   
