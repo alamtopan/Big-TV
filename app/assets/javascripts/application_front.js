@@ -20,9 +20,12 @@
 //= require customize_front
 //= require map/gmap3.min
 //= require scrolltofixed-min
-// require jquery.filtertable
+//= require jquery.lazyload
 
 //= require_self
+	$("section").lazyload({
+    effect : "fadeIn"
+});
 
 	$(document).ready(function(){
 		$.each($(".side_table_right"),function( index, value ){
