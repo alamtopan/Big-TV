@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
       if session[:current_premium_id].present?
         redirect_to extra_path
       else 
-        redirect_to root_path
+        redirect_to premium_path
       end
     else
       flash[:errors] = @customer.errors.full_messages.uniq.join(', ')

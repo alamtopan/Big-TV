@@ -150,4 +150,12 @@ function restore(){
   });
 }
 
+  $("input[type='radio'][name='billing']").on('click',function(){
+    if($(this).val() == 'post'){
+      $("#user_profile_attributes_address_shipping").attr('required',false);
+    }else{
+      $("#user_profile_attributes_address_shipping").attr('required','required');  
+    }
+
+  })
 })

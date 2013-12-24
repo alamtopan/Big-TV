@@ -68,7 +68,11 @@ class CartsController < ApplicationController
   end
 
   def create
-    return check_decoder_membership(params[:membership_id]) if params[:membership_id].present?
+    if params[:membership_id].present?
+      unless check_decoder_membership(params[:membership_id])
+        return redirect_to rental_path
+      end
+    end
     if params[:membership_ids].present?
       check_order(order,params[:membership_ids].unshift(session[:current_premium_id]).compact.uniq)
       path_redirect = rental_path
@@ -160,11 +164,11 @@ class CartsController < ApplicationController
                              Do You want To Get Big Star Package? 
                              <a href='#{update_package_path}' >yes</a> | 
                              <a href='#' data-dismiss='alert'>no</a>".html_safe
-            return redirect_to rental_path
+            return false
           end
         end
       end
-      return redirect_to preview_path
+      # return redirect_to preview_path
     end
 
     def authorize_customer

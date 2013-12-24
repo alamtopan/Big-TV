@@ -52,7 +52,7 @@ class Order < ActiveRecord::Base
       populate_order_item(0, item.id,session)
     else
       return if item[:membership_ids].blank?
-      item[:membership_ids].each do |membership_id|
+      item[:membership_ids].compact.uniq.each do |membership_id|
         populate_order_item(item[:quantity], membership_id,session)
       end
     end
