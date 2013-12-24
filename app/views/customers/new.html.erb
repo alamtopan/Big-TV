@@ -23,19 +23,19 @@
               <label class="control-label">
                 Nama
               </label>
-              <%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true} %>
+              <%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Masukan nama lengkap sesuai identitas', required: true} %>
             </div>
             <div class="form-group">
               <label class="control-label">
                 Email
               </label>
-              <%= f.text_field :email, {class: 'form-control', placeholder: 'me@email.com', required: true} %>
+              <%= f.text_field :email, {class: 'form-control', placeholder: 'Masukan alamat email anda', required: true} %>
             </div>
             <div class="form-group">
               <label class="control-label">
                 Referal
               </label>
-              <%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
+              <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi'} %>
             </div>
           </div>
             
@@ -44,28 +44,23 @@
               <label class="control-label">
                 Telepon
               </label>
-              <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true} %>
+              <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
             </div>
             <div class="form-group">
               <label class="control-label">
                 Handphone
               </label>
-              <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true} %>
+              <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Masukan nomor telepon handphone', required: true} %>
             </div>
-            <div class="form-group">
+            <div class="form-group tf-dealer" style='display:none;'>
               <label class="control-label">
                 SPG/Dealer ID
               </label>
-              <%#= profile.text_field :dealer_id, {class: 'form-control', placeholder: 'To be field by BIG TV personnel only'} %>
-            </div>
-            <div class="form-group">
-              <label class="control-label">
-                Captcha
-              </label>
-              <%= f.simple_captcha :label => "", placeholder: "Enter Captcha.." %>
+              <%= profile.text_field :referal_id, {class: 'form-control', placeholder: 'Masukan nomor id atau nama referensi anda'} %>
             </div>
             <div class="br"></div>
-            <div class="pull-right">
+            <div class="pull-right customer-actions">
+              <%= recaptcha_tags %>
               <input type="submit" class="submit" value="LANJUT >>"> 
             </div>
           </div>

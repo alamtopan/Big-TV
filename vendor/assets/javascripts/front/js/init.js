@@ -95,9 +95,23 @@
 	/**
 	 * Initilize cbpScroller (fixed background)
 	 */
-	$('.cbp-so-scroller').each(function(){
-		new cbpScroller( this );
-	});
+	// $('.cbp-so-scroller').each(function(){
+	// 	new cbpScroller( this );
+	// });
+
+	var sequenceOptions = { 
+		autoPlay: true,
+		autoPlayDelay: 700,
+		pauseOnHover: true,
+		pagination: '.dots'
+	};
+
+	/**
+	 * Initialize paralax slider (Sequence)
+	 */
+	
+
+   $("#sequence").sequence(sequenceOptions).data("sequence");
 	
 	/**
 	 * Portfolio initialize
@@ -146,18 +160,6 @@
 	$('.mask').click(function(){
 		$('.feedback_popup').add('.login_form').add('.mask').fadeOut();
 	});
-	
-	/**
-	 * Initialize paralax slider (Sequence)
-	 */
-	var options = { 
-		autoPlay: true,
-		autoPlayDelay: 700,
-		pauseOnHover: true,
-		pagination: '.dots'
-	};
-	var mySequence = $("#sequence").sequence(options).data("sequence"); /* initiate Sequence */
-	
 	/**
 	 * Slider packs initialize
 	 */

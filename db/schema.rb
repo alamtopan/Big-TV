@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217034352) do
+ActiveRecord::Schema.define(:version => 20131223231836) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20131217034352) do
     t.string   "referal"
     t.string   "tipe_identitas"
     t.string   "no_identitas"
+    t.string   "referal_id"
   end
 
   create_table "regionals", :force => true do |t|
@@ -159,22 +160,6 @@ ActiveRecord::Schema.define(:version => 20131217034352) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
-
-  create_table "subscription_transactions", :force => true do |t|
-    t.integer  "subscription_id"
-    t.decimal  "amount",              :precision => 10, :scale => 0
-    t.decimal  "fee",                 :precision => 10, :scale => 0
-    t.decimal  "tax",                 :precision => 10, :scale => 0
-    t.decimal  "discount",            :precision => 10, :scale => 0
-    t.string   "status"
-    t.string   "payment_gateway"
-    t.text     "logs"
-    t.string   "request_ip_address"
-    t.string   "response_ip_address"
-    t.datetime "deleted_at"
-    t.datetime "created_at",                                         :null => false
-    t.datetime "updated_at",                                         :null => false
-  end
 
   add_index "subscription_transactions", ["subscription_id"], :name => "index_subscription_transactions_on_subscription_id"
 

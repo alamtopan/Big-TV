@@ -2,3 +2,4 @@ config/database.yml merge=ours
 public/assets/* merge=ours
 public/system/* merge=ours
 database.yml merge=ours
+/confog/database.yml merge=ours
