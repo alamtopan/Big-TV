@@ -24,7 +24,7 @@
 
 //= require_self
 	$(function() {
-     $("img").lazyload({
+     $("img.lazy").lazyload({
          effect : "fadeIn"
      });
   });
