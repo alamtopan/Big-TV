@@ -84,6 +84,7 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    galetahub-simple_captcha (0.1.5)
     haml (4.0.4)
       tilt
     has_scope (0.6.0.rc)
@@ -218,6 +219,7 @@ DEPENDENCIES
   devise
   enumerize
   figaro
+  galetahub-simple_captcha
   inherited_resources
   jquery-rails
   kaminari
