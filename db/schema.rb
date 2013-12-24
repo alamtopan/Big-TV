@@ -130,8 +130,8 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "no_phone"
-    t.string   "no_hp"
+    t.integer  "no_phone"
+    t.integer  "no_hp"
     t.text     "address"
     t.string   "city"
     t.string   "province"
@@ -160,6 +160,22 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "subscription_transactions", :force => true do |t|
+    t.integer  "subscription_id"
+    t.decimal  "amount",              :precision => 10, :scale => 0
+    t.decimal  "fee",                 :precision => 10, :scale => 0
+    t.decimal  "tax",                 :precision => 10, :scale => 0
+    t.decimal  "discount",            :precision => 10, :scale => 0
+    t.string   "status"
+    t.string   "payment_gateway"
+    t.text     "logs"
+    t.string   "request_ip_address"
+    t.string   "response_ip_address"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+  end
 
   add_index "subscription_transactions", ["subscription_id"], :name => "index_subscription_transactions_on_subscription_id"
 
