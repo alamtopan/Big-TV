@@ -127,11 +127,24 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "payments", :force => true do |t|
+    t.string   "transaction_no"
+    t.string   "status"
+    t.string   "bank_issuer"
+    t.string   "credit_card"
+    t.string   "order_id"
+    t.string   "bank"
+    t.text     "track_record"
+    t.text     "access_record"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "no_phone"
-    t.integer  "no_hp"
+    t.string   "no_phone"
+    t.string   "no_hp"
     t.text     "address"
     t.string   "city"
     t.string   "province"
