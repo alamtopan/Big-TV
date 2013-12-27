@@ -7,10 +7,17 @@
       <div class="panel-body">
         <div class="extra_banner">
           <div class="own_extra">
-            <span class="extra_info">Please fill the checkboxes to subscribe Our Extra Packages</span>
+            <span class="extra_info">Silahkan pilih paket extra yang akan diikutsertakan</span>
             <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
           </div>
         </div>
+        <% if(flash[:alert]) %>
+          <div id="error_explanation">
+            <div class="alert alert-block alert-danger fade in ">
+              <%= flash[:alert] %>
+            </div>
+          </div>
+        <% end %>
         <br>
         <div class="grd_masonry">
           <% @memberships.each_with_index do |membership,index| %>

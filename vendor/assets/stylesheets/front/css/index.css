@@ -43,9 +43,7 @@ h1,h2,h3,h4,h5, p, ul
 .side_table_right{
 	width: 95%!important;
 }
-.table-bordered td{
-	width: 20%;
-}
+
 .padding_top40{
 	padding-top: 40px!important;
 }
@@ -575,6 +573,7 @@ h3 span
 	-moz-border-radius: 3px 3px 3px 3px;
 	-webkit-border-radius: 3px 3px 3px 3px;
 	border: 0px solid #000000;
+	font-weight: bold;
 }
 .pack-order:hover{
 	background-color: #fdb414!important;
@@ -2922,9 +2921,9 @@ div.grid_packages_news{
 	-webkit-border-radius: 2px 2px 2px 2px;
 	border: 0px solid #000000;
 }
-
-
-
+.gray_packages{
+	background: #f8fafa;
+}
 div.grd_masonry_decode{
     -moz-column-count: 5;
     -moz-column-gap: 0px;
@@ -2937,6 +2936,11 @@ div.grd_masonry_decode{
  	}
 .big-decode{
 	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}
+.big-decode2{
+	font-size: 38px;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -2981,3 +2985,16 @@ div.grid_packages_decode{
     text-align:center;
     border: 1px solid #f4f4f4;
   }
+.additional-pack{
+	border-top: 1px solid orange;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+.additional-pack .prc{
+  font-size: 20px !important;
+}
+
+.grid_packages_decode .br{
+	height: 16px;
+}

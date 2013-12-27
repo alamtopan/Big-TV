@@ -4,6 +4,9 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	.pack {
+		width: 100%;
+	}
 	.top_banner{
 		background: #ed2024;
 		color: #fff100;

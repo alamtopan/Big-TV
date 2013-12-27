@@ -1,4 +1,4 @@
-class Payment < ActiveRecord:Base
+class Payment < ActiveRecord::Base
   belongs_to :order
 
   def self.track_payment(order, options, req_env)

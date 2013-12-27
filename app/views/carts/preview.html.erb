@@ -51,7 +51,7 @@
 							<label class="control-label">
 								SPG/Dealer ID
 							</label>
-							<%#= profile.text_field :dealer_id, {class: 'form-control', placeholder: "To be field by BIG TV personnel only"} %>
+							<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "To be field by BIG TV personnel only", 																			 value: current_customer.profile.referal_id} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
@@ -82,9 +82,15 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">
-								Alamat Pemasangan
+								Alamat
 							</label>
 							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address} %>
+						</div>
+						<div class="form-group">
+							<label class="control-label">
+								Alamat Pemasangan
+							</label>
+							<%= profile.text_area :address_shipping, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address_shipping} %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">
@@ -109,7 +115,7 @@
 								Pembayaran
 							</label>
 							<br/>
-							<%= radio_button_tag :billing, 'post' %> Kirim Lewat Pos
+							<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
 							<br/>
 							<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
 						</div>
