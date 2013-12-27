@@ -53,6 +53,7 @@ $(document).ready(function(){
       $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
       $(".map_location_js[data-province='" + province+ "']").removeClass('hide');
       restore();
+      $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
       return false;
     });
   }
@@ -115,7 +116,8 @@ function restore(){
     map:{
       options:{
         center: [$(".map_location_js:not(.hide)").first().data('latitude'),$(".map_location_js:not(.hide)").first().data('longitude')],
-        zoom: 6
+        zoom: 6,
+        scrollwheel: false
       }
     },
     marker:{
