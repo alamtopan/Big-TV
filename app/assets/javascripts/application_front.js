@@ -12,11 +12,10 @@
 //= require front/js/niceScroll
 //= require front/js/jquery.counters.min
 //= require front/js/hover
-//= require js/imagesloaded
 //= require front/js/init
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
-
+//= require js/imagesloaded
 //= require customize_front
 //= require map/gmap3.min
 //= require scrolltofixed-min
@@ -25,8 +24,9 @@
 //= require_self
 
 $(function() {
-  $("img").lazyload({
-    effect : "fadeIn"
+  $('.lazy-img').lazyload({
+    effect : "fadeIn",
+    threshold : 0
   });
 });
 
@@ -108,7 +108,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+  //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
   // $(window).scroll(function(){
   //   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){
