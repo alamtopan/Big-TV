@@ -2117,7 +2117,7 @@ width: 220px;
 {
 	position: relative;
 	background: #ed2024;
-	height: 480px;
+	padding-bottom: 40px;
 }
 
 
@@ -2975,6 +2975,15 @@ table.decode tbody tr td{
 table.decode2 tbody tr td{
 	padding: 20px!important;
 	padding-top: 15px!important;
+}
+.pck_decode_table:hover{
+	background: #e8e8e8;
+	cursor: pointer;
+}
+.pck_decode_table_active{
+	background: #e8e8e8;
+	cursor: pointer;
+	border: solid 1px red;
 }
 div.grid_packages_decode{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */

@@ -58,11 +58,11 @@
         </div>
         
         <% @memberships.each_with_index do |member, index| %>
-          <div class="grid_packages_decode">
+          <div class="grid_packages_decode pck_decode">
             <div class="head_pack red">
               <span class="small-counter2"><%= member.name %></span>
             </div>
-            <table class="table table-bordered padding0 decode">
+            <table class="table table-bordered padding0 decode pck_decode_table" data-index="<%= member.id %>">
               <tbody>
                 <tr>
                   <td>
@@ -91,10 +91,8 @@
         <% end %>
       </div>
 
-      <div>
-        <div class="own_extra">
-          <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
-        </div>
+      <div class="own_extra">
+        <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
       </div>
     </div>
   </article>
