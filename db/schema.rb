@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131223231836) do
+ActiveRecord::Schema.define(:version => 20131224070337) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -127,19 +127,6 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "payments", :force => true do |t|
-    t.string   "transaction_no"
-    t.string   "status"
-    t.string   "bank_issuer"
-    t.string   "credit_card"
-    t.string   "order_id"
-    t.string   "bank"
-    t.text     "track_record"
-    t.text     "access_record"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -149,8 +136,8 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
     t.date     "tanggal_lahir"
@@ -158,6 +145,7 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
     t.string   "tipe_identitas"
     t.string   "no_identitas"
     t.string   "referal_id"
+    t.text     "address_shipping"
   end
 
   create_table "regionals", :force => true do |t|
@@ -173,6 +161,15 @@ ActiveRecord::Schema.define(:version => 20131223231836) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "subscription_transactions", :force => true do |t|
     t.integer  "subscription_id"

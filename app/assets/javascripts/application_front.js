@@ -23,11 +23,12 @@
 //= require jquery.lazyload
 
 //= require_self
-	$(function() {
-     $("img.lazy").lazyload({
-         effect : "fadeIn"
-     });
+
+$(function() {
+  $("img").lazyload({
+    effect : "fadeIn"
   });
+});
 
 $(document).ready(function(){
   $.each($(".side_table_right"),function( index, value ){
@@ -97,7 +98,9 @@ $(document).ready(function(){
     }else{
       $('.tf-dealer').hide();
     }
-  })
+  });
+
+  $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
   // $(window).scroll(function(){
   //   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){

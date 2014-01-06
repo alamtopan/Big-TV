@@ -1,9 +1,9 @@
-<section class="wraper_bg-bright extra_packages">
-  <h1><span>DECODER RENTAL</span></h1>
+ <section class="wraper_bg-bright extra_packages">
+  <h1><span>SEWA DEKODER</span></h1>
   <div class="polosochka2"></div>
-  <h3>Lorem Ipsum is simply dummy text of the printing. <br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br> when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h3>
-
-
+  <h3>Kini anda dapat menimakti tayangan BigTV lebih dari 1 televisi 
+    <br>dengan menggunakan dekoder tambahan.
+    <br>minimal berlangganan BigStar 117.</h3>
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
     <div class="panel-body">
       <% if(flash[:alert]) %>
@@ -13,75 +13,90 @@
           </div>
         </div>
       <% end %>
-      <%= form_tag(carts_path, method: "post") do %>
-        <div class="grd_masonry_decode">
-          <div class="grid_packages_decode white46">
-            <div class="head_pack_gray">
-              <span class="gray_font">YOUR PACKAGES</span>
+      <div class="grd_masonry_decode">
+        <div class="grid_packages_decode white46">
+          <div class="head_pack_gray">
+            <span class="gray_font">PAKET YANG DIPESAN</span>
+          </div>
+          <table class="table table-bordered padding0 decode2">
+            <tbody>
+              <tr>
+                <td>
+                  <% other_package_id = 0 %>
+                  <% @order.items.each do |item| %>
+                    <% if item.membership_category == 'Premium' %>
+                      <div class="pack-info">
+                        <div class="big-decode font_red">BiG</div>
+                        <span class="small-decode font_red"><%= item.membership.name %></span>
+                        <div class="br-small"></div>
+                        <div class="pack-i-line">
+                          Rp.
+                          <span class="prc">
+                            <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
+                          </span>
+                        </div>
+                      </div>
+                    <% elsif item.membership_category == 'Extra' %>
+                      <div class="pack-info additional-pack">
+                        <span class="small-decode font_red"><%= item.membership.name %></span>
+                        <div class="br-small"></div>
+                        <div class="pack-i-line">
+                          Rp.
+                          <span class="prc">
+                            <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
+                          </span>
+                        </div>
+                      </div>
+                    <% else %>
+                      <% other_package_id = item.membership_id %>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <% @memberships.each_with_index do |member, index| %>
+          <div class="grid_packages_decode">
+            <div class="head_pack red">
+              <span class="small-counter2"><%= member.name %></span>
             </div>
-            <table class="table table-bordered padding0 decode2">
+            <table class="table table-bordered padding0 decode">
               <tbody>
                 <tr>
                   <td>
-                    <% @order.items.each do |item| %>
-                      <% if item.membership_category == 'Premium' %>
-                        <div class="pack-info">
-                          <div class="big-decode font_red">BiG</div>
-                          <span class="small-decode font_red"><%= item.membership.name %></span>
-                          <div class="br-small"></div>
-                          <div class="pack-i-line">
-                            Rp.
-                            <span class="prc">
-                              <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                            </span>
-                          </div>
-                      <% end %>
-                    <% end %>
+                    <div class="br"></div>
+                    <div class="pack-info">
+                      <div class="pack-i-line">
+                        Rp.
+                        <span class="prc">
+                          <%= number_to_currency(member.price_month,{precision: 0, unit: ''}) %>
+                        </span>
+                        <div>/month</div>
+                      </div>
+                    </div>
+                    <div class="roundedOne">
+                      <% is_selected = (other_package_id.to_i == member.id.to_i) %>
+                      <% up_channel = is_selected ? 'up_channel' : '' %>
+                      <%= radio_button_tag 'membership_id', member.id, is_selected, {id: "member_#{index}",class: "hide #{up_channel}"} %>
+                      <label for="member_2_1"></label>
+                    </div>
+                    <div class="br"></div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <% checked = true %>
-          <% up_channel = '' %>
-          <% @memberships.each_with_index do |member, index| %>
-            <% checked = false unless index == 0 %>
-            <% up_channel = 'up_channel' unless index == 0 %>
-            <div class="grid_packages_decode">
-              <div class="head_pack red">
-                <span class="small-counter2"><%= member.name %></span>
-              </div>
-              <table class="table table-bordered padding0 decode">
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="br"></div>
-                      <div class="pack-info">
-                        <div class="pack-i-line">
-                          Rp.
-                          <span class="prc">
-                            <%= number_to_currency(member.price_month,{precision: 0, unit: ''}) %>
-                          </span>
-                          <div>/month</div>
-                        </div>
-                      </div>
-                      <div class="roundedThree">
-                        <%= radio_button_tag 'membership_id', member.id, checked, {id: "member_#{index}",class: "hide #{up_channel}"} %>
-                        <label for="member_<%= index %>"></label>
-                      </div>
-                      <div class="br"></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          <% end %>
-        <div>
+        <% end %>
+      </div>
+
+      <div>
         <div class="own_extra">
           <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
         </div>
       </div>
-      <% end %>
     </div>
   </article>
 </section>
+
