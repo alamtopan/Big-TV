@@ -29,6 +29,17 @@
 	  e.preventDefault();
 	});
 
+
+function prepareMap() {
+  $.getScript("http://maps.google.com/maps/api/js?sensor=false&callback=afterMapInit");
+}
+
+window.afterMapInit = function(){
+  initGmap3();
+  prepareLocationMap(); 
+  $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+}
+
 	// Bind to scroll
 	$(window).scroll(function(){
 	  if (animating === false) {
@@ -44,11 +55,15 @@
 	   var id = cur && cur.length ? cur[0].id : "intro";
 	   if (lastId !== id) {
 		   lastId = id;
+    
 		   // Set/remove active class
 		   menuItems
 			 .removeClass("selected")
 			 .filter("[href=#"+id+"]").addClass("selected");
-	   }                   
+	    if(id == 'map' && !window.google){
+        prepareMap();
+      }
+     }                   
 	}});
  
 	/**
