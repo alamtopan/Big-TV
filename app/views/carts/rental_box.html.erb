@@ -45,15 +45,6 @@
                 </table>
               </div>
             <% end %>
-            <div class="row">
-
-            </div>
-            <div class="own_extra">
-              <%= form_tag(carts_path, method: "post") do %>
-                <%= hidden_field_tag 'membership_id', (default_decoder ? default_decoder.id : ''), class: 'membership-id-field' %>
-                <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
-              <% end %>
-            </div>
           </div>
           <div class="span3">
             <div class="grid_packages_decode white46">
@@ -103,6 +94,12 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="own_extra">
+        <%= form_tag(carts_path, method: "post") do %>
+          <%= hidden_field_tag 'membership_id', (default_decoder ? default_decoder.id : ''), class: 'membership-id-field' %>
+          <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
+        <% end %>
       </div>
     </div>
   </article>
