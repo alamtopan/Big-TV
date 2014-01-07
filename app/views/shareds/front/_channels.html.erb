@@ -1,11 +1,13 @@
 <section class="wraper_bg-bright bg-raw  fbscroll_item special_line_rotated_left" id="team">
-	<h1 class="gray"><span class="black">DAPATKAN GRATIS</span> <%= @free_channels.count %> PAKET CHANNEL</h1>
+	<h1 class="gray"><span class="black">DAPATKAN GRATIS</span> PAKET <%= @free_channels.count %> CHANNEL</h1>
 	<br>
 	<div class="cbp-so-scroller team_scroller_mobile_cont">
 		<div id="team_members_channel" class="team_members cbp-so-section" data-limit="24">
 			<% @free_channels.each do |channel| %>
 				<div class="member channel_member cbp-so-side cbp-so-side-top">
-					<div><%= image_tag channel.logo.url(:medium), class: "icon_channel"; %></div>
+          <div>
+            <%= image_tag 'img/transparent.png', 'data-original' => channel.logo.url(:medium), class: "icon_channel lazy-img"; %>
+          </div>
 				</div>
 			<% end %>
 		</div>

@@ -1,4 +1,4 @@
-  $(function(){
+window.prepareLocationMap = function(){
   	var isi = [];
     $.each($(".map_location_js:not(.hide)"), function( index, loc ) {
       var value = $(loc).data('value');
@@ -8,7 +8,8 @@
       map:{
         options:{
           center: [$(".map_location_js").data('latitude'),$(".map_location_js").data('longitude')],
-          zoom: 6
+          zoom: 6,
+          scrollwheel: false
         }
       },
       marker:{
@@ -41,4 +42,4 @@
         }
       }
     });
-  });
+  };

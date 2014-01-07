@@ -8,6 +8,7 @@ BigTv::Application.routes.draw do
   resources :unit_items,  path: 'channels'
   resources :group_items, path: 'channel_categories'
   resources :memberships
+  resources :blogs
   resources :orders, path: 'subcriptions'
   resources :categories
   resources :customers, only: [:new, :create]

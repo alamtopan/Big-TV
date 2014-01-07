@@ -13,8 +13,7 @@
           <% group.unit_items.each_with_index do |item,index| %>
             <tr>
               <td width="22%">
-
-                <%= image_tag item.logo.url(:thumb),class: "small_image" ;%>
+                <%= image_tag 'img/transparent.png', 'data-original' => item.logo.url(:thumb),class: "small_image lazy-img" %>
                 <span class="name_channel"><%= item.name %> </span>
                 <% if item.status_hd %>
                   <span class="hd">HD</span>

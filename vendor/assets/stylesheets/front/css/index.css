@@ -15,6 +15,23 @@ h1,h2,h3,h4,h5, p, ul
     padding: 0;
     margin: 0;
 }
+.span9{
+	width: 80%;
+	float: left;
+}
+.span3{
+	width: 18%;
+	float: left;
+}
+.alert_decoder{
+	border:solid 1px #ccc;
+	margin: 18px;
+	padding: 20px;
+	text-align: center;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: red;
+}
 .alfa{
 	height: 40px;
 	width: 100%;
@@ -2117,7 +2134,7 @@ width: 220px;
 {
 	position: relative;
 	background: #ed2024;
-	height: 480px;
+	padding-bottom: 40px;
 }
 
 
@@ -2934,6 +2951,16 @@ div.grd_masonry_decode{
     width: 100%;
     float: left;
  	}
+div.grd_masonry_decode2{
+    -moz-column-count: 4;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0px;
+    column-count: 4;
+    column-gap: 0px;
+    width: 100%;
+    float: left;
+ 	}
 .big-decode{
 	font-size: 30px;
 	font-weight: bold;
@@ -2957,11 +2984,10 @@ div.grd_masonry_decode{
 }
 .head_pack_gray{
 	background-color: #ddd;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 13px;
+	padding-bottom: 12px;
 }
 .white46{
-	padding-top: 46px;
 	background-color: #fff!important;
 	border: solid 1px #fff!important;
 }
@@ -2976,7 +3002,25 @@ table.decode2 tbody tr td{
 	padding: 20px!important;
 	padding-top: 15px!important;
 }
+.pck_decode_table:hover{
+	background: #e8e8e8;
+	cursor: pointer;
+}
+.pck_decode_table_active{
+	background: #e8e8e8;
+	cursor: pointer;
+	border: solid 1px red;
+}
 div.grid_packages_decode{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 99.99%; 
+    margin-bottom: 10px;
+    background-color: #ccc;
+    background-repeat: no-repeat;
+    text-align:center;
+    border: 1px solid #f4f4f4;
+  }
+div.grid_packages_decode2{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     width: 99.99%; 
     margin-bottom: 10px;

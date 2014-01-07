@@ -12,11 +12,10 @@
 //= require front/js/niceScroll
 //= require front/js/jquery.counters.min
 //= require front/js/hover
-//= require js/imagesloaded
 //= require front/js/init
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
-
+//= require js/imagesloaded
 //= require customize_front
 //= require map/gmap3.min
 //= require scrolltofixed-min
@@ -25,12 +24,30 @@
 //= require_self
 
 $(function() {
-  $("img").lazyload({
-    effect : "fadeIn"
+  $('.lazy-img').lazyload({
+    effect : "fadeIn",
+    threshold : 0
   });
 });
 
 $(document).ready(function(){
+  var decoders = $('.pck_decode_table');
+  var decoder_price = Number($(decoders[0]).attr('data-price'));
+  var total_decoder = 1;
+
+  $('.pck_decode_table').on('click',function(){
+    $('.pck_decode_table').removeClass('pck_decode_table_active');
+    
+    total_decoder = decoders.index($(this)) + 1;
+    $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
+    $('.membership-id-field').val($(this).attr('data-index'));
+
+    decoder_price = Number($(decoders[0]).attr('data-price'));
+    for (var z = 1; z < total_decoder; z++) {
+      decoder_price += Number($(decoders[z]).attr('data-price'));
+    }
+  })
+
   $.each($(".side_table_right"),function( index, value ){
     var color = $(value).data('color');
     var hg = $(value).height();
@@ -100,7 +117,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+  //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
   // $(window).scroll(function(){
   //   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){
