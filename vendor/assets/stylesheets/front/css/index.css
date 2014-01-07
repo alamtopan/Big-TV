@@ -15,6 +15,15 @@ h1,h2,h3,h4,h5, p, ul
     padding: 0;
     margin: 0;
 }
+.alert_decoder{
+	border:solid 1px #ccc;
+	margin: 18px;
+	padding: 20px;
+	text-align: center;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: red;
+}
 .alfa{
 	height: 40px;
 	width: 100%;
@@ -2957,11 +2966,10 @@ div.grd_masonry_decode{
 }
 .head_pack_gray{
 	background-color: #ddd;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 13px;
+	padding-bottom: 12px;
 }
 .white46{
-	padding-top: 46px;
 	background-color: #fff!important;
 	border: solid 1px #fff!important;
 }

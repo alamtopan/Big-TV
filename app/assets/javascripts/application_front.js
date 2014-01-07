@@ -31,9 +31,21 @@ $(function() {
 });
 
 $(document).ready(function(){
+  var decoders = $('.pck_decode_table');
+  var decoder_price = Number($(decoders[0]).attr('data-price'));
+  var total_decoder = 1;
+
   $('.pck_decode_table').on('click',function(){
     $('.pck_decode_table').removeClass('pck_decode_table_active');
-    $(this).addClass('pck_decode_table_active');
+    
+    total_decoder = decoders.index($(this)) + 1;
+    $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
+    $('.membership-id-field').val($(this).attr('data-index'));
+
+    decoder_price = Number($(decoders[0]).attr('data-price'));
+    for (var z = 1; z < total_decoder; z++) {
+      decoder_price += Number($(decoders[z]).attr('data-price'));
+    }
   })
 
   var pck_hg = $('.white46').height();

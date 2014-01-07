@@ -31,6 +31,7 @@ class CartsController < ApplicationController
 
   def rental_box
     @memberships = Membership.packages_by_category('other')
+    @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%').select('name,id')
     @order = order
   end
 
