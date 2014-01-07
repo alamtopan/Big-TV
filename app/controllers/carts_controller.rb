@@ -8,7 +8,8 @@ class CartsController < ApplicationController
       redirect_to premium_path
     else
       @memberships = Membership.packages_by_category('extra')
-      @order = order
+      item = Membership.find_by_id(session[:current_premium_id])
+      order.add_item(item, session_cart)
     end
   end
 
