@@ -1,0 +1,3 @@
+class BlogsController < ResourcesController
+end
+
