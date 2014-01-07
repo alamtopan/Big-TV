@@ -55,9 +55,21 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">
+								File Faktur
+							</label>
+							<%= profile.file_field :file_faktur, class: "file-input" %>
+						</div>
+						<div class="form-group">
+							<label class="control-label">
 								Tipe Identitas
 							</label>
 							<%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{}, {class: 'form-control', required: true} %>
+						</div>
+						<div class="form-group">
+							<label class="control-label">
+								File Identitas
+							</label>
+							<%= profile.file_field :file_ktp, class: "file-input" %>
 						</div>
 						<div class="form-group">
 							<label class="control-label">

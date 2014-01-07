@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require js/jquery.min
+//= require jquery_ujs
 //= require plugins/jquery-ui/jquery-ui-1.10.2.custom.min
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/blockUI/jquery.blockUI
@@ -26,15 +27,31 @@
 //= require plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min
 
 //= require cocoon
-
 //= require plugins/fullcalendar/fullcalendar/fullcalendar
 
+//= require plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min
+//= require plugins/autosize/jquery.autosize.min
+//= require plugins/select2/select2.min
+//= require plugins/jquery.maskedinput/src/jquery.maskedinput
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
+//= require plugins/bootstrap-timepicker/js/bootstrap-timepicker.min
+//= require plugins/bootstrap-daterangepicker/moment.min
+//= require plugins/bootstrap-daterangepicker/daterangepicker
 //= require plugins/bootstrap-colorpicker/js/bootstrap-colorpicker
+//= require plugins/bootstrap-colorpicker/js/commits
+//= require plugins/jQuery-Tags-Input/jquery.tagsinput
+//= require plugins/bootstrap-fileupload/bootstrap-fileupload.min
+//= require plugins/summernote/build/summernote.min
+//= require plugins/ckeditor/ckeditor
+//= require plugins/ckeditor/adapters/jquery
+//= require js/form-elements
 
 //= require js/index
 //= require customize
 
 jQuery(document).ready(function() {
  Main.init();
+ FormElements.init();
 });
+
+

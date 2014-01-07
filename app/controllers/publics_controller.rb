@@ -7,6 +7,7 @@ class PublicsController < ApplicationController
 		else 
 			regional = "Sumatra"	
 		end
+    @blogs = Blog.all
     @categories= CategoryOffice.all
     @regionals= Regional.all
 		

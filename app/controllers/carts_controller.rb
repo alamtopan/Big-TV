@@ -165,6 +165,7 @@ class CartsController < ApplicationController
                              Do You want To Get Big Star Package? 
                              <a href='#{update_package_path}' >yes</a> | 
                              <a href='#' data-dismiss='alert'>no</a>".html_safe
+            flash[:upgrade_channel] = true 
             return false
           end
         end

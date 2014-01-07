@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140106211519) do
+ActiveRecord::Schema.define(:version => 20140107211256) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -161,8 +161,8 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
     t.date     "tanggal_lahir"
@@ -171,6 +171,14 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "no_identitas"
     t.string   "referal_id"
     t.text     "address_shipping"
+    t.string   "file_ktp_file_name"
+    t.string   "file_ktp_content_type"
+    t.integer  "file_ktp_file_size"
+    t.datetime "file_ktp_updated_at"
+    t.string   "file_faktur_file_name"
+    t.string   "file_faktur_content_type"
+    t.integer  "file_faktur_file_size"
+    t.datetime "file_faktur_updated_at"
   end
 
   create_table "regionals", :force => true do |t|

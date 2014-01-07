@@ -4,6 +4,16 @@
 		max-width: 720px;
 		min-width: 570px;
 	}
+	div.grd_masonry_decode2{
+    -moz-column-count: 2;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    column-count: 2;
+    column-gap: 0px;
+    width: 100%;
+    float: left;
+ 	}
 	.pack {
 		width: 100%;
 	}
