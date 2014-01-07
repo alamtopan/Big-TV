@@ -48,9 +48,6 @@ $(document).ready(function(){
     }
   })
 
-  var pck_hg = $('.white46').height();
-  $('.pck_decode').css('margin-bottom', pck_hg-170+'px');
-
   $.each($(".side_table_right"),function( index, value ){
     var color = $(value).data('color');
     var hg = $(value).height();

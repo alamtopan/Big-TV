@@ -13,14 +13,13 @@
           </div>
         </div>
       <% end %>
-      <div class="grd_masonry_decode">
-        <div class="row-fluid">
-          <div class="span9">
+      <div class="row-fluid">
+        <div class="span9">
+          <div class="grd_masonry_decode2">
             <% default_decoder = @memberships.first %>
             <% @memberships.each_with_index do |member, index| %>
-              <% add_class = index == 0 ? 'pck_decode_table_active' : '' %>
-              
-              <div class="grid_packages_decode pck_decode">
+              <% add_class = index == 0 ? 'pck_decode_table_active' : '' %>      
+              <div class="grid_packages_decode pck_decode2">
                 <div class="head_pack red">
                   <span class="small-counter2"><%= member.name %></span>
                 </div>
@@ -46,52 +45,52 @@
               </div>
             <% end %>
           </div>
-          <div class="span3">
-            <div class="grid_packages_decode white46">
-              <div class="head_pack_gray">
-                <span class="gray_font">PAKET YANG DIPESAN</span>
-              </div>
-              <table class="table table-bordered padding0 decode2">
-                <tbody>
-                  <tr>
-                    <td>
-                      <% other_package_id = 0 %>
-                      <% @order.items.each do |item| %>
-                        <% if item.membership_category == 'Premium' %>
-                          <script>
-                             var current_package_name = '<%= item.membership.name %>';
-                          </script>
-                          <div class="pack-info">
-                            <div class="big-decode font_red">BiG</div>
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% elsif item.membership_category == 'Extra' %>
-                          <div class="pack-info additional-pack">
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% else %>
-                          <% other_package_id = item.membership_id %>
-                        <% end %>
-                      <% end %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        </div>
+        <div class="span3" style="margin-left:10px;">
+          <div class="grid_packages_decode2 white46">
+            <div class="head_pack_gray">
+              <span class="gray_font">PAKET YANG DIPESAN</span>
             </div>
+            <table class="table table-bordered padding0 decode2">
+              <tbody>
+                <tr>
+                  <td>
+                    <% other_package_id = 0 %>
+                    <% @order.items.each do |item| %>
+                      <% if item.membership_category == 'Premium' %>
+                        <script>
+                           var current_package_name = '<%= item.membership.name %>';
+                        </script>
+                        <div class="pack-info">
+                          <div class="big-decode font_red">BiG</div>
+                          <span class="small-decode font_red"><%= item.membership.name %></span>
+                          <div class="br-small"></div>
+                          <div class="pack-i-line">
+                            Rp.
+                            <span class="prc">
+                              <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
+                            </span>
+                          </div>
+                        </div>
+                      <% elsif item.membership_category == 'Extra' %>
+                        <div class="pack-info additional-pack">
+                          <span class="small-decode font_red"><%= item.membership.name %></span>
+                          <div class="br-small"></div>
+                          <div class="pack-i-line">
+                            Rp.
+                            <span class="prc">
+                              <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
+                            </span>
+                          </div>
+                        </div>
+                      <% else %>
+                        <% other_package_id = item.membership_id %>
+                      <% end %>
+                    <% end %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
