@@ -4,9 +4,26 @@
   <h3>Tersedia beragam macam paket berlangganan sesuai dengan keinginan Anda.<br> Dengan perpaduan channel yang seimbang, tunggu apa lagi, ayo berlangganan segera!</h3>
                 
 	<article class="packs-cont cbp-so-scroller">
-		<div class="grd_masonry_decode">
+		<div class="head_pack side_table padding_top40" style="background:#fdb414; padding-bottom:18px">
+      <span class="alfa">
+      P 
+      </span>
+      <span class="alfa">
+      A
+      </span>
+      <span class="alfa">
+      K 
+      </span>
+      <span class="alfa">
+      e 
+      </span>
+      <span class="alfa">
+      T
+      </span>
+  	</div>
+		<div class="grd_masonry_decode" style="width:95%;">
 			<% @memberships.each do |membership| %>
-				<div class="grid_packages_decode">
+				<div class="grid_packages_decode margin_bottom_no">
 	    		<div class="head_pack red">
 						<div class="big-decode2">BiG</div>
 						<span class="small-counter2"><%= membership.name %></span>
@@ -24,6 +41,7 @@
 											</span>
 										</div>
 									</div>
+									<div class="br"></div>
 									<div class="br"></div>
 									<%= link_to extra_path(membership_id: membership.id),{class: 'no_underscore'} do %>
 					          <div class='pack-order version2'>SUBSCRIBE</div>

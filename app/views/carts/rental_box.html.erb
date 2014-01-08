@@ -6,16 +6,16 @@
     <br>minimal berlangganan BigStar 117.</h3>
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
     <div class="panel-body">
-      <% if(flash[:alert]) %>
-        <div id="error_explanation">
-          <div class="alert alert-block alert-danger fade in ">
-            <%= flash[:alert] %>
-          </div>
-        </div>
-      <% end %>
       <div class="row-fluid">
         <div class="span9">
           <div class="section_decode">
+            <% if(flash[:alert]) %>
+              <div id="error_explanation">
+                <div class="alert alert-block alert-danger fade in ">
+                  <%= flash[:alert] %>
+                </div>
+              </div>
+            <% end %>
             <div class="grd_masonry_decode2">
               <% default_decoder = @memberships.first %>
               <% @memberships.each_with_index do |member, index| %>
@@ -44,6 +44,15 @@
                     </tbody>
                   </table>
                 </div>
+              <% end %>
+            </div>
+             <span class="warn">*) Untuk berlangganan paket wajib menyewa minimal 1 decoder</span>
+          </div>
+          <div class="section_decode">
+            <div class="own_extra full100">
+              <%= form_tag(carts_path, method: "post") do %>
+                <%= hidden_field_tag 'membership_id', (default_decoder ? default_decoder.id : ''), class: 'membership-id-field' %>
+                <input class="pack-order float-right-fixed margn full100" type="submit" value="Lanjut >>" >
               <% end %>
             </div>
           </div>
@@ -88,8 +97,8 @@
         </div>
         <div class="span3">
           <div class="grid_packages_decode2 white46">
-            <div class="head_pack_gray">
-              <span class="gray_font">PAKET YANG DIPESAN</span>
+            <div class="head_pack_gray radius_top">
+              <span>PAKET YANG DIPESAN</span>
             </div>
             <table class="table table-bordered padding0 decode2">
               <tbody>
@@ -133,12 +142,6 @@
             </table>
           </div>
         </div>
-      </div>
-      <div class="own_extra">
-        <%= form_tag(carts_path, method: "post") do %>
-          <%= hidden_field_tag 'membership_id', (default_decoder ? default_decoder.id : ''), class: 'membership-id-field' %>
-          <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
-        <% end %>
       </div>
     </div>
   </article>

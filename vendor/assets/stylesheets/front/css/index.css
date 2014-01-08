@@ -18,6 +18,12 @@ h1,h2,h3,h4,h5, p, ul
 p{
 	margin-bottom: 10px;
 }
+.full100{
+	width: 100%!important;
+}
+.margin_bottom_no{
+	margin-bottom: 0px!important;
+}
 .description{
 	font-size: 14px;
 	color: #555;
@@ -27,16 +33,17 @@ p{
 }
 .section_decode{
 	float:left; margin-bottom:10px;
-	width:100%;
+	padding-left:100px; padding-right:50px;
+	width: 80%;
 }
 .span9{
-	width: 80%;
+	width: 78%;
 	float: left;
 }
 .span3{
-	width: 18%;
+	width: 20%;
 	float: left;
-	margin-left:4px;
+	margin-left:20px;
 }
 .alert_decoder{
 	border:solid 1px #ccc;
@@ -2374,6 +2381,7 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
 	height: 30px;
 	float: right;
 	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .name_channel{
@@ -2637,7 +2645,7 @@ input[type="checkbox"]{
 }
 
 .extra_banner{
-	background: #f7f7f7;
+	background: #fef3b9;
 	float: left;
 	width: 100%;
 	font-style: italic;
@@ -2662,7 +2670,6 @@ input[type="checkbox"]{
 }
 
 table.padding0 tbody tr td{
-	padding: 0px!important;
 	padding-bottom: 4px!important;
 	padding-top: 4px!important;
 	border-right: none!important;
@@ -2683,12 +2690,12 @@ table.padding0 tbody tr td{
 
 
 div.grd_masonry{
-    -moz-column-count: 5;
-    -moz-column-gap: 10px;
-    -webkit-column-count: 5;
-    -webkit-column-gap: 10px;
-    column-count: 5;
-    column-gap: 10px;
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
     width: 100%;
     margin-top: 60px;
  	}
@@ -2967,12 +2974,12 @@ div.grd_masonry_decode{
     float: left;
  	}
 div.grd_masonry_decode2{
-    -moz-column-count: 4;
-    -moz-column-gap: 0px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 0px;
-    column-count: 4;
-    column-gap: 0px;
+    -moz-column-count: 2;
+    -moz-column-gap: 40px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 40px;
+    column-count: 2;
+    column-gap: 40px;
     width: 100%;
     float: left;
  	}
@@ -2998,14 +3005,23 @@ div.grd_masonry_decode2{
 	font-weight: bold;
 }
 .head_pack_gray{
-	background-color: #ddd;
-	padding-top: 13px;
-	padding-bottom: 12px;
+	background-color: #f3f3f3;
+	padding-top: 15px;
+	padding-bottom: 14px;
+	border: solid 1px #ddd!important;
+	border-bottom: none!important;
 }
 .white46{
 	background-color: #fff!important;
 	border: solid 1px #fff!important;
 }
+.radius_top{
+	border-radius: 4px 4px 0px 0px;
+	-moz-border-radius: 4px 4px 0px 0px;
+	-webkit-border-radius: 4px 4px 0px 0px;
+	border: 0px solid #000000;
+}
+2
 .align_center{
 	text-align: center!important;
 }
@@ -3029,7 +3045,7 @@ table.decode2 tbody tr td{
 div.grid_packages_decode{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     width: 99.99%; 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: #ccc;
     background-repeat: no-repeat;
     text-align:center;
@@ -3056,4 +3072,9 @@ div.grid_packages_decode2{
 
 .grid_packages_decode .br{
 	height: 16px;
+}
+
+.warn{
+	font-style:italic;
+	color: #555;
 }
