@@ -135,21 +135,12 @@ ActiveRecord::Schema.define(:version => 20140107211256) do
     t.string   "status"
     t.integer  "period"
     t.string   "period_name"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "payments", :force => true do |t|
-    t.string   "transaction_no"
-    t.string   "status"
-    t.string   "bank_issuer"
-    t.string   "credit_card"
-    t.string   "order_id"
-    t.string   "bank"
-    t.text     "track_record"
-    t.text     "access_record"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "file_faktur_file_name"
+    t.string   "file_faktur_content_type"
+    t.integer  "file_faktur_file_size"
+    t.datetime "file_faktur_updated_at"
   end
 
   create_table "profiles", :force => true do |t|
@@ -161,8 +152,8 @@ ActiveRecord::Schema.define(:version => 20140107211256) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
     t.date     "tanggal_lahir"
@@ -175,10 +166,6 @@ ActiveRecord::Schema.define(:version => 20140107211256) do
     t.string   "file_ktp_content_type"
     t.integer  "file_ktp_file_size"
     t.datetime "file_ktp_updated_at"
-    t.string   "file_faktur_file_name"
-    t.string   "file_faktur_content_type"
-    t.integer  "file_faktur_file_size"
-    t.datetime "file_faktur_updated_at"
   end
 
   create_table "regionals", :force => true do |t|
@@ -194,6 +181,15 @@ ActiveRecord::Schema.define(:version => 20140107211256) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "subscription_transactions", :force => true do |t|
     t.integer  "subscription_id"

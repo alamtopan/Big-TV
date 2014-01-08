@@ -4,20 +4,6 @@
     <div class="polosochka2"></div>
     <h3>Kunjungi dealer-dealer kami yang tersebar di seluruh Indonesia. <br>Proses berlangganan tidak pernah semudah dan sesimpel ini!</h3>
     <div class="br"></div>
-    <div class="br"></div>
-    <div class="team_members cbp-so-section cbp-so-init cbp-so-animate">
-      <div style="display:table; margin-left:auto; margin-right:auto">
-        <% @regionals.each do |reg| %>
-          <div class="js_button_map pack-order float-left" data-value="<%= reg.name %>">
-            <a href="#"><%= reg.name.upcase %></a>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="br2"></div>
-    <div class="br2"></div>
-    <div id="map_section">
-    </div>
   </div>
   <div class="bar_search">
     <div class="f_search" style="width:80%">
@@ -61,17 +47,17 @@
                     <div class="title_loc"><%= office.name %></div>
                     <span class="symbol_category"><%= office.category_office.name %></span>
                     <div><%= office.address %></div>
-                    <div class="phone"><%= image_tag "phone.png" %> <%= office.phone_area %> <%= office.no_phone %></div>
+                    <% if office.no_phone %>
+                      <div class="phone"><%= image_tag "phone.png" %> <%= office.phone_area %> <%= office.no_phone %></div>
+                    <% end %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
         <div style="float:left; width:100%">
-          <div class="br"></div>
           <div class="trial" data-value="<%= cate.name.downcase %>"><a>VIEW MORE</a></div>
           <hr/>
-          <div class="br"></div>
         </div>
       <% end %>
     </div>

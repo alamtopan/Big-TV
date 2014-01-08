@@ -1,8 +1,5 @@
 //= require front/js/jquery-1.9.1
 //= require jquery_ujs
-//= require front/js/jquery-migrate-1.2.1.min
-//= require front/js/jquery-ui
-//= require front/js/jQuery.easing.min
 //= require front/js/jQuery.Opie.PortfolioGallery.min
 //= require front/js/classie
 //= require front/js/modernizr.custom
@@ -17,7 +14,6 @@
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
 //= require js/imagesloaded
 //= require customize_front
-//= require map/gmap3.min
 //= require scrolltofixed-min
 //= require jquery.lazyload
 

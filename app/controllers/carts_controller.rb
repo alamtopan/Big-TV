@@ -22,7 +22,8 @@ class CartsController < ApplicationController
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
-                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'] ];
+                ['Koran', 'Koran'], ['Billboard', 'Billboard']
+               ];
     if order.total.to_i < 1
       redirect_to root_path
     # elsif decoder = Membership.other_packages.first
@@ -57,7 +58,7 @@ class CartsController < ApplicationController
         CustomerMailer.thanks_email(order).deliver
         @customer = current_customer
         delete_session
-        @words = Digest::SHA1.hexdigest("#{"%.2d" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
+        @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
         unless request.xhr?
           redirect_to thanks_path
         end
