@@ -192,6 +192,26 @@ group:
           hd:   false
           logo: 'Cartoonito.png'
   - group_4:
+      name: 'Musics'
+      colour: '#5b6063'
+      items:
+      - item_0:
+          name: 'MIX'
+          hd:   false
+          logo: 'Mix.png'
+      - item_1:
+          name: 'MTV Asia'
+          hd:   false
+          logo: 'MTV_Asia.png'
+      - item_2:
+          name: 'Dangdutz'
+          hd:   false
+          logo: 'Dangdutz.png'
+      - item_3:
+          name: 'MTV Live'
+          hd:   false
+          logo: 'MTV_Live_HD.png'
+  - group_5:
       name: 'Sports'
       colour: '#634590'
       items:
@@ -223,26 +243,6 @@ group:
           name: 'STAR Sports'
           hd:   false
           logo: 'STAR_Sports.png'
-  - group_5:
-      name: 'Musics'
-      colour: '#5b6063'
-      items:
-      - item_0:
-          name: 'MIX'
-          hd:   false
-          logo: 'Mix.png'
-      - item_1:
-          name: 'MTV Asia'
-          hd:   false
-          logo: 'MTV_Asia.png'
-      - item_2:
-          name: 'Dangdutz'
-          hd:   false
-          logo: 'Dangdutz.png'
-      - item_3:
-          name: 'MTV Live'
-          hd:   false
-          logo: 'MTV_Live_HD.png'
   - group_6:
       name: 'News / International'
       colour: '#7ecae9'

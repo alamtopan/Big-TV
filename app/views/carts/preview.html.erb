@@ -7,6 +7,17 @@
 			<%= f.fields_for(:profile_attributes) do |profile| %>
 		    <div class="panel-body">
 					<div class="span9">
+						<div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">
+                  Data nomor telepon dan alamat email diperlukan untuk proses verifikasi dalam proses registrasi berlangganan
+                </span>
+              </div>
+            </div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
 						<div class="row">
 							<div class="col-md-12">
 							  <div class="errorHandler alert alert-danger no-display" style="display:none;">
@@ -124,7 +135,7 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">
-										Pembayaran
+										Tagihan
 									</label>
 									<br/>
 									<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
@@ -259,16 +270,7 @@
 										<div class="br"></div>
 										<select name="order[period]" id="mm" class="form-control">
 											<option value="1">1 Bulan</option>
-											<option value="2">2 Bulan</option>
-											<option value="3">3 Bulan</option>
-											<option value="4">4 Bulan</option>
-											<option value="5">5 Bulan</option>
 											<option value="6">6 Bulan</option>
-											<option value="7">7 Bulan</option>
-											<option value="8">8 Bulan</option>
-											<option value="9">9 Bulan</option>
-											<option value="10">10 Bulan</option>
-											<option value="11">11 Bulan</option>
 											<option value="12">12 Bulan</option>
 										</select>
 										<div class="br"></div>

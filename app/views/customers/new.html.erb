@@ -7,6 +7,17 @@
       <%= f.fields_for(:profile_attributes) do |profile| %>
         <div class="panel-body">
           <div class="span9">
+            <div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">
+                  Data nomor telepon dan alamat email diperlukan untuk proses verifikasi dalam proses registrasi berlangganan
+                </span>
+              </div>
+            </div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
             <div class="row">
               <div class="col-md-12">
                 <% if flash[:errors].present? %>
@@ -66,7 +77,7 @@
             </div>
             <br><br>
             <div class="pull-right customer-actions">
-              <input type="submit" class="submit" value="LANJUT >>"> 
+              <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>"> 
             </div>
           </div>
           <div class="span3">

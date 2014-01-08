@@ -51,7 +51,7 @@ $(document).ready(function(){
   $.each($(".side_table_right"),function( index, value ){
     var color = $(value).data('color');
     var hg = $(value).height();
-    var total_hg = hg - 50;
+    var total_hg = hg;
     $(value).parent('.parrent_table').find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
   })
 

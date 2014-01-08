@@ -14,6 +14,12 @@
     width: 100%;
     float: left;
  	}
+ 	.side_paket{
+ 		display: none;
+ 	}
+ 	.different_width{
+ 		width: 100%!important;
+ 	}
  	.section_decode{
 			float:left; margin-bottom:10px;
 			padding-left:0px; padding-right:0px;

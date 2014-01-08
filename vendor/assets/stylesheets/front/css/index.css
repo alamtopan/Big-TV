@@ -18,6 +18,21 @@ h1,h2,h3,h4,h5, p, ul
 p{
 	margin-bottom: 10px;
 }
+.side_paket{
+	background:#fdb414; padding-bottom:43px!important;
+}
+.different_width{
+	width:95%!important; float:right; margin-bottom:40px;
+}
+.td_diff{
+	padding:0px!important; width:20%;
+}
+.margin_bottom_no{
+	margin-bottom: 0px;
+}
+.no_border{
+	border: none!important;
+}
 .full100{
 	width: 100%!important;
 }
@@ -60,8 +75,9 @@ p{
 	float: left;
 }
 .parrent_table{
-	float:left; width:100%; margin-bottom:10px;
+	float:left; width:100%;
 	background: #ddd;
+	overflow: hidden;
 }
 .top_banner{
 	background: #ed2024;

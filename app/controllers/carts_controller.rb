@@ -21,7 +21,8 @@ class CartsController < ApplicationController
   def preview
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
-                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'] ];
+                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
+                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'] ];
     if order.total.to_i < 1
       redirect_to root_path
     # elsif decoder = Membership.other_packages.first

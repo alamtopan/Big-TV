@@ -26,7 +26,8 @@ class CustomersController < ApplicationController
     def prepare_referal
       @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
-                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],['Others', 'Others'] ];
+                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
+                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'] ];
     end
 
 end

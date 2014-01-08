@@ -43,6 +43,9 @@
                       <% membership.unit_items.each do |item| %>
                         <tr>
                           <td>
+                            <% if item.status_hd %>
+                              <span class="hd">HD</span>
+                            <% end %>
                             <span class="name_channel"><%= item.name %></span>
                           </td>
                           <td>
