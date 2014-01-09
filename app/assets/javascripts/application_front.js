@@ -19,6 +19,30 @@
 
 //= require_self
 
+
+window.current_menu = 'intro';
+window.is_table_loaded = false;
+var    topMenu = $(".menu"),
+    // All list items
+    menuItems = topMenu.find("a").add($('.mbl-menu').find('a')),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+window.lazyImagesLoaded = function(){
+  if(!is_table_loaded && window.current_menu == 'plan'){
+    is_table_loaded = true;
+    $.each($(".side_table_right"),function( index, value ){
+      var color = $(value).data('color');
+      var _parent = $(value).parents('.parrent_table').first();
+      var total_hg = _parent.outerHeight();
+      _parent.find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
+    });
+  }
+}
+
 $(function() {
   $('.lazy-img').lazyload({
     effect : "fadeIn",
@@ -44,13 +68,6 @@ $(document).ready(function(){
     }
   })
 
-  $.each($(".side_table_right"),function( index, value ){
-    var color = $(value).data('color');
-    var hg = $(value).height();
-    var total_hg = hg;
-    $(value).parent('.parrent_table').find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
-  })
-
   // $('table.grd_masonry_location').filterTable();
   var isImageLoaded = function(img){
     if (!img.complete) { return false; }
@@ -72,7 +89,6 @@ $(document).ready(function(){
   }
 
   jQuery('#nav').scrollToFixed({ marginTop: 0});
- 
   
   $('#sequence .info').each(function(){
     if(!isImageLoaded($(this).find('img')[0])){
@@ -123,16 +139,19 @@ $(document).ready(function(){
 
   //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
-  // $(window).scroll(function(){
-  //   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){
-  //    $('.table-responsive .head_pack').show();
-  //     $('.table-responsive .head_pack').css('position','fixed').css('top','0');
-  //   } else if($(window).scrollTop() > 3024) {
-  //    $('.table-responsive .head_pack').fadeOut();
-  //     $('.table-responsive .head_pack').css('position','block');
-  //     $('#navigation').css('position','static');
-  //   }    
-  // });
+  $(window).scroll(function(){
+     var fromTop = $(this).scrollTop();
+     var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+     });
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "intro";
+     current_menu = id;
+     if (String(id) == 'plan') {
+       lazyImagesLoaded()
+     }                   
+  });
   //$(window).on('resize', function(){
   // $.each($('.info img'), function(){
   //  $.image = $(this)

@@ -1,5 +1,5 @@
 class GroupItemsController < ResourcesController
-  before_filter :prepare_select, only: [:new,:edit]
+  before_filter :prepare_select, only: [:new,:edit,:update,:create]
 
   private
     def prepare_select

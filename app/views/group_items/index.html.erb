@@ -8,6 +8,7 @@
       <tr>
         <th>No</th>
         <th>Name</th>
+        <th>Position</th>
         <th>Colour</th>
         <th></th>
       </tr>
@@ -17,6 +18,7 @@
         <tr>
           <td><%= index+1 %></td>
           <td><%= group.name %></td>
+          <td><%= group.position %></td>
           <td><div style="background:<%= group.colour %>"><%= group.colour %></div></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: group, confirmation: "#{group.name} will be deleted, are you sure ?"} %>

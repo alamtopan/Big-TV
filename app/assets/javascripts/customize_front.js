@@ -54,8 +54,8 @@ $(document).ready(function(){
       $(".map_location_js").addClass('hide');
       $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
       $(".map_location_js[data-province='" + province+ "']").removeClass('hide');
-      restore();
-      $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+      // restore();
+      // $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
       return false;
     });
   }
