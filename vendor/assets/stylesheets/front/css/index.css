@@ -18,11 +18,31 @@ h1,h2,h3,h4,h5, p, ul
 p{
 	margin-bottom: 10px;
 }
+.foo
+{
+	max-width: 1100px!important;
+}
+
+.img_blog{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.time_create{
+	color: #ccc;
+	font-style: italic;
+}
+.nav-tabs > li {
+  width: 19.89%;
+  border-bottom: solid 2px #b81418!important;
+}
 .why_us{
 	min-height: 200px;
-	background-color: #fff;
+	background-color: #f2f9f9;
 	width: 100%;
 	float: left;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 .side_paket{
 	background:#fdb414; padding-bottom:43px!important;
@@ -219,7 +239,7 @@ ul.menu
 ul.menu li
 {
 	margin-left: 12px;
-	
+	padding: 10px;
 	display: inline;
 	list-style: none;
 }
@@ -382,7 +402,7 @@ ul.intro_buttons li:hover
 		border: 0;
 		border-radius: 3px;
 		width: 220px;
-		margin-bottom: 60px;
+		margin-bottom: 10px;
 		margin-left: auto;
 		margin-right: auto;
 		font-weight: 400;
@@ -826,7 +846,7 @@ footer.wraper
 }
 .form1
 {
-  width: 125px;
+  width: 150px;
   padding-left: 20px;
   padding-right: 0px;
   font-size: 14px;
@@ -2960,6 +2980,11 @@ div.grid_packages_news{
 	margin: 15px;
 }
 
+.news_des a{
+	color: #ccc;
+	text-decoration: none;
+}
+
 .news_image{
 	width: 100%;
 	height: 170px;
@@ -3099,4 +3124,35 @@ div.grid_packages_decode2{
 .warn{
 	font-style:italic;
 	color: #555;
+}
+
+.why_section
+{
+	display: block;
+	width: 70%;
+	margin: auto;
+}
+.h1_why_us{
+	text-align:center;
+	padding-bottom: 20px;
+}
+
+.chan_section
+{
+	display: block;
+	width: 65%;
+	margin: auto;
+}
+
+.blog_section
+{
+	display: block;
+	width: 80%;
+	margin: auto;
+	text-align:justify;
+	text-justify:inter-word;
+
+}
+.blog_section_white{
+	background: #fff!important;
 }

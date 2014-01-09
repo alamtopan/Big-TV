@@ -9,7 +9,8 @@ class Membership < ActiveRecord::Base
   belongs_to  :category
 
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
-  
+  scope :by_position, order_by: ("position ASC")
+
   def price_month
     self.prices.first.price if self.prices
   end

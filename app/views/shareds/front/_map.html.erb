@@ -47,8 +47,11 @@
                     <div class="title_loc"><%= office.name %></div>
                     <span class="symbol_category"><%= office.category_office.name %></span>
                     <div><%= office.address %></div>
-                    <% if office.no_phone %>
-                      <div class="phone"><%= image_tag "phone.png" %> <%= office.phone_area %> <%= office.no_phone %></div>
+                    <% if office.no_phone.present? %>
+                      <div class="phone">
+                        <%= image_tag "phone.png" %> 
+                        <%= office.phone_area %> <%= office.no_phone %>
+                      </div>
                     <% end %>
                 </td>
               </tr>

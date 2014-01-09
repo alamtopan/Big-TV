@@ -28,5 +28,10 @@ class PublicsController < ApplicationController
 
   def decoder
   end
+
+  def show_blog
+    @blog = Blog.find_by_id(params[:id])
+    render layout: "detail"
+  end
   
 end
