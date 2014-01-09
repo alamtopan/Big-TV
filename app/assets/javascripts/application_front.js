@@ -113,6 +113,14 @@ $(document).ready(function(){
     }
   });
 
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=791578794202636";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
   //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
   // $(window).scroll(function(){
