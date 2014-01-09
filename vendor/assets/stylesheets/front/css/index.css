@@ -18,6 +18,12 @@ h1,h2,h3,h4,h5, p, ul
 p{
 	margin-bottom: 10px;
 }
+.why_us{
+	min-height: 200px;
+	background-color: #fff;
+	width: 100%;
+	float: left;
+}
 .side_paket{
 	background:#fdb414; padding-bottom:43px!important;
 }
