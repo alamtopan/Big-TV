@@ -21,4 +21,8 @@ class Profile < ActiveRecord::Base
   def full_name
     [first_name, last_name].select(&:'present?').join(' ')
   end
+
+  def regional
+    [city, province, codepos].select{|r| r.present?}.join(',')
+  end
 end

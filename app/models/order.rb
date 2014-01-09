@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
   has_many   :payments
 
   after_update  :after_modification
-  before_update :before_modification
+  before_create :before_creation
 
   class << self
     def latest_order(prefix)
@@ -56,6 +56,7 @@ class Order < ActiveRecord::Base
         populate_order_item(item[:quantity], membership_id,session)
       end
     end
+    self.send(:before_modification)
     self.save
   end
 
@@ -90,10 +91,14 @@ class Order < ActiveRecord::Base
       calculate_total(:conditional)
     end
 
-    def before_modification
-      if is_order? && code.blank?
-        set_code_prefix and set_order_position and set_code_sufix
+    def before_creation
+      if self.code.blank?
+        set_code_prefix 
+        set_order_position
+        set_code_sufix
       end
+
+      self.status = 'pending' if self.status.blank?
     end
 
     def set_code_prefix

@@ -10,7 +10,10 @@
 			    	<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
 			    	<div class="news_des">
 				    	<div class="title_news_catalog"><%= blog.title %></div>
-				    	<div><span class="description"><%= blog.description.html_safe %></span></div>
+				    	<div>
+				    		<span class="description"><%= truncate strip_tags(blog.description.to_s), length: 100 %></span>
+				    		<%= link_to "MORE", show_blog_path(blog.id) %>
+				    	</div>
 						</div>
 			    </div>
 		    <% end %>

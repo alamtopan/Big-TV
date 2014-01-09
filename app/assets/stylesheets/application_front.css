@@ -9,6 +9,7 @@
  *= require front/css/component
  *= require front/bootstrap
  *= require plugins/datepicker/css/datepicker
+ *= require front/css/invoice
  */
 
 .pack-order{
