@@ -1,8 +1,6 @@
 /*
  *= require_self
  *= require front/css
- *= require front/css2
- *= require front/css3
  *= require front/css/normalize
  *= require front/css/index
  *= require front/css/mobile-reset
@@ -12,3 +10,7 @@
  *= require front/bootstrap
  *= require plugins/datepicker/css/datepicker
  */
+
+iframe .pvs, iframe .pam{
+  display: none;
+}
