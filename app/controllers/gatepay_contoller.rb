@@ -2,7 +2,7 @@ class GatepayController < ApplicationController
   
   def notify
     if params[:RESULTMSG].to_s.upcase == 'SUCCESS'
-      order = Order.find_by_id(params[:TRANSIDMERCHANT]) rescue nil
+      order = Order.find_by_code(params[:TRANSIDMERCHANT])
     end
     response_text = 'STOP'
 
@@ -12,9 +12,12 @@ class GatepayController < ApplicationController
       end
     end if order
     render text: response_text
+  rescue
+    render text: 'STOP'
   end
 
   def redirect
+    order = Order.find_by_code(params[:TRANSIDMERCHANT]) 
     redirect_to thanks_path
   end
 end

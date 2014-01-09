@@ -3,12 +3,24 @@ class CartsController < ApplicationController
   before_filter :authorize_customer
 
   def extra
+    if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
+      redirect_to premium_path
+    end
     if session[:current_premium_id].blank?
       flash[:alert] = 'Please subscribe any premium package!'
       redirect_to premium_path
+    elsif request.xhr? && params[:extra_id].present?
+      order_item = order.items.find_by_membership_id(params[:extra_id])
+      if params[:add].to_s == 'true' && !order_item
+        extra_package = Membership.find_by_id(params[:extra_id])
+        order.add_item(extra_package,session_cart) if extra_package
+      else
+        order_item.delete
+      end
     else
+      current_premium_id = params[:membership_id].present? ? params[:membership_id] : session[:current_premium_id]
       @memberships = Membership.packages_by_category('extra')
-      item = Membership.find_by_id(session[:current_premium_id])
+      item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
     end
   end
@@ -16,9 +28,13 @@ class CartsController < ApplicationController
   def premium
     @memberships = Membership.packages_by_category('premium')
     @groups = GroupItem.all
+    order
   end
 
   def preview
+    if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
+      redirect_to premium_path
+    end
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
@@ -34,8 +50,12 @@ class CartsController < ApplicationController
 
   def rental_box
     @memberships = Membership.packages_by_category('other')
-    @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%').select('name,id')
-    @order = order
+    @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%')
+    
+    if order.items.where('membership_id IN (?)', @memberships.map(&:id)).blank?
+      single_decoder = @memberships.where('memberships.name LIKE ?','1 %').first
+      order.add_item(single_decoder, session_cart)
+    end
   end
 
   def subcribe
@@ -58,7 +78,7 @@ class CartsController < ApplicationController
         CustomerMailer.thanks_email(order).deliver
         @customer = current_customer
         delete_session
-        @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.id}")
+        @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
         unless request.xhr?
           redirect_to thanks_path
         end
@@ -146,14 +166,10 @@ class CartsController < ApplicationController
 
     def check_order(order,params_membership)
         order.items.each do |item|
-        if params_membership.kind_of?(Array)
-          unless params_membership.include?(item.membership_id)
-            item.delete
-          end
-        else
-          if params_membership == item.membership_id
-            item.delete
-          end
+        if params_membership.kind_of?(Array) && !params_membership.include?(item.membership_id)
+          item.delete
+        elsif params_membership == item.membership_id
+          item.delete
         end
       end
     end

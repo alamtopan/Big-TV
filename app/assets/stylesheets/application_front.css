@@ -11,6 +11,32 @@
  *= require plugins/datepicker/css/datepicker
  */
 
-iframe .pvs, iframe .pam{
-  display: none;
+.pack-order{
+  text-decoration: none;
+}
+
+.edit-pack{
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  text-decoration: none;
+  font-size: 11px;
+  color: #ed2024;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-cart-widget{
+  position: relative;
+}
+
+.pack-order.active, a:hover .pack-order.active{
+  background-color: #C48687 !important;
+  cursor: default;
+}
+
+.span6{
+  width: 48% !important;
+  float: left;
+  margin-right: 10px;
 }

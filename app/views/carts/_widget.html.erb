@@ -1,0 +1,53 @@
+<div class="grid_packages_decode white46">
+  <div class="head_pack_gray radius_top">
+    <span>PAKET YANG DIPESAN</span>
+  </div>
+  <table class="table table-bordered padding0 decode2 table-cart-widget">
+    <tbody>
+      <tr>
+        <td>
+          <% other_package_id = 0 %>
+          <% packages = @order.items.all %>
+          <% extra_packages = packages.select{|i| i.membership_category == 'Extra'} %>
+          <% packages = packages - extra_packages %>
+          <% premium_package = packages.select{|i| i.membership_category == 'Premium'}.first %>
+          <% packages = packages - [premium_package] %>
+          <% if premium_package %>
+            <script>
+               var current_package_name = '<%= premium_package.membership.name %>';
+            </script>
+            <div class="pack-info">
+              <%= link_to 'edit', premium_path, class: 'edit-pack' %>
+              <div class="big-decode font_red">BiG</div>
+              <span class="small-decode font_red"><%= premium_package.membership.name %></span>
+              <div class="br-small"></div>
+              <div class="pack-i-line">
+                Rp.
+                <span class="prc">
+                  <%= number_to_currency(premium_package.subtotal,{precision: 0, unit: ''}) %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+          <% (extra_packages + packages).each do |item| %>
+            <% if item.membership_category == 'Extra' %>
+              <%= render partial: 'carts/widget_item', locals: {item: item} %>
+            <% else %>
+              <%= render partial: 'carts/widget_item', locals: {item: item} %>
+            <% end if item.membership_category != 'Premium'  %>
+          <% end %>
+          <div class="pack-info additional-pack">
+            <span class="small-decode font_red">TOTAL</span>
+            <div class="br-small"></div>
+            <div class="pack-i-line">
+              Rp.
+              <span class="prc">
+                <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

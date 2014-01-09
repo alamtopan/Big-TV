@@ -145,52 +145,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="span3">
-            <div class="grid_packages_decode white46">
-              <div class="head_pack_gray radius_top">
-                <span>PAKET YANG DIPESAN</span>
-              </div>
-              <table class="table table-bordered padding0 decode2">
-                <tbody>
-                  <tr>
-                    <td>
-                      <% other_package_id = 0 %>
-                      <% @order.items.each do |item| %>
-                        <% if item.membership_category == 'Premium' %>
-                          <script>
-                             var current_package_name = '<%= item.membership.name %>';
-                          </script>
-                          <div class="pack-info">
-                            <div class="big-decode font_red">BiG</div>
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% elsif item.membership_category == 'Extra' %>
-                          <div class="pack-info additional-pack">
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% else %>
-                          <% other_package_id = item.membership_id %>
-                        <% end %>
-                      <% end %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+					<div class="span3 cart-widget-container">
+            <%= render 'carts/widget' %>
           </div>
 
 					<div class="br"></div>

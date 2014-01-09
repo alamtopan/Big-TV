@@ -60,15 +60,16 @@ class Order < ActiveRecord::Base
   end
 
   def populate_order_item(qty, membership_id,session)
-    return false if validate_membership(session,membership_id)
+    #return false if 
+    validate_membership(session,membership_id)
     item = items.find_or_initialize_by_membership_id(membership_id)
     current_product = item.membership
     return unless current_product
-
-    item.quantity = (item.quantity||1).to_i
-    if item.membership_category.to_s.downcase != 'other'
-      item.quantity += qty.to_i
-    end
+    item.quantity = 1
+    # item.quantity = (item.quantity||1).to_i
+    # if item.membership_category.to_s.downcase != 'other'
+    #   item.quantity += qty.to_i
+    # end
     item.price = current_product.default_price
     item.title = current_product.name
     item.save
@@ -84,41 +85,41 @@ class Order < ActiveRecord::Base
     }.join(';')
   end
   private
-  def after_modification
-    check_activity
-    calculate_total(:conditional)
-  end
-
-  def before_modification
-    if is_order? && code.blank?
-      set_code_prefix and set_order_position and set_code_sufix
+    def after_modification
+      check_activity
+      calculate_total(:conditional)
     end
-  end
 
-  def set_code_prefix
-    self.code_prefix = Date.today.strftime("%m%y") if self.code_prefix.blank?
-  end
-
-  def set_order_position
-    last_order = Order.latest_order(self.code_prefix)
-    self.position = last_order ? (last_order.position.to_i+1) : 1
-  end
-
-  def set_code_sufix
-    code_sufix = sprintf("%04d", self.position)
-    self.code = "#{self.code_prefix}-#{code_sufix}"
-  end
-
-  def validate_membership(session,membership_id)
-    valid_order = Order.find_by_session_id(session)
-    membership = Membership.find(membership_id)
-    if valid_order 
-      valid_order.items.each do |item|
-        if item.membership_category == 'Premium' && membership.category.name == 'Premium'
-          return true
-        end
+    def before_modification
+      if is_order? && code.blank?
+        set_code_prefix and set_order_position and set_code_sufix
       end
     end
-    return false
-  end
+
+    def set_code_prefix
+      self.code_prefix = Date.today.strftime("%m%y") if self.code_prefix.blank?
+    end
+
+    def set_order_position
+      last_order = Order.latest_order(self.code_prefix)
+      self.position = last_order ? (last_order.position.to_i+1) : 1
+    end
+
+    def set_code_sufix
+      code_sufix = "%.10d" % self.position
+      self.code = "#{self.code_prefix}#{code_sufix}"
+    end
+
+    def validate_membership(session,membership_id)
+      valid_order = Order.find_by_session_id(session)
+      membership = Membership.find(membership_id)
+      if valid_order && membership
+        membership_name = membership.category.name
+        if membership_name =~ /Premium|Other/i
+          selected_item = valid_order.items.select{|i| i.membership_category == membership_name}.first
+          selected_item.delete if selected_item
+        end
+      end
+      # return false
+    end
 end

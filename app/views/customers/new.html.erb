@@ -4,9 +4,9 @@
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
     <%= form_for @customer, method: 'post' do |f| %>
-      <%= f.fields_for(:profile_attributes) do |profile| %>
+      <%= f.fields_for(:profile) do |profile| %>
         <div class="panel-body">
-          <div class="span9">
+          <div class="span<%= @membership_order ? '9' : '12' %>">
             <div class="extra_banner">
               <div class="own_extra">
                 <span class="extra_info">
@@ -21,8 +21,10 @@
             <div class="row">
               <div class="col-md-12">
                 <% if flash[:errors].present? %>
-                  <div class="errorHandler alert alert-danger no-display">
-                    <i class="icon-remove-sign"></i> <%= flash[:errors] %>
+                  <div class="errorHandler alert no-display">
+                    <div class="alert-danger">
+                      <i class="icon-remove-sign"></i> <%= flash[:errors] %>
+                    </div>
                   </div>
                 <% end %>
                 <!-- <div class="successHandler alert alert-success no-display">
@@ -72,40 +74,41 @@
                 <div class="br"></div>
                 <div class="pull-right customer-actions">
                   <%= recaptcha_tags %>
+                  <div class="customer-actions">
+                    <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>"> 
+                  </div>
                 </div>
               </div>
             </div>
-            <br><br>
-            <div class="pull-right customer-actions">
-              <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>"> 
-            </div>
           </div>
-          <div class="span3">
-            <div class="grid_packages_decode white46">
-              <div class="head_pack_gray radius_top">
-                <span>PAKET YANG DIPESAN</span>
-              </div>
-              <table class="table table-bordered padding0 decode2">
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="pack-info">
-                        <div class="big-decode font_red">BiG</div>
-                        <span class="small-decode font_red"><%= @membership_order.name %></span>
-                        <div class="br-small"></div>
-                        <div class="pack-i-line">
-                          Rp.
-                          <span class="prc">
-                            <%= number_to_currency(@membership_order.prices.first.price,{precision: 0, unit: ''}) %>
-                          </span>
+          <% if @membership_order %>
+            <div class="span3">
+              <div class="grid_packages_decode white46">
+                <div class="head_pack_gray radius_top">
+                  <span>PAKET YANG DIPESAN</span>
+                </div>
+                <table class="table table-bordered padding0 decode2">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="pack-info">
+                          <div class="big-decode font_red">BiG</div>
+                          <span class="small-decode font_red"><%= @membership_order.name %></span>
+                          <div class="br-small"></div>
+                          <div class="pack-i-line">
+                            Rp.
+                            <span class="prc">
+                              <%= number_to_currency(@membership_order.prices.first.price,{precision: 0, unit: ''}) %>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>

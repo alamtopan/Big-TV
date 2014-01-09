@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
   
   def new
     @customer = Customer.new 
-    @membership_order = Membership.find(session[:current_premium_id])
+    @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
   end
 
   def create

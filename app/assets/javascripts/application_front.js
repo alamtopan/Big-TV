@@ -32,16 +32,26 @@ $(document).ready(function(){
   var total_decoder = 1;
 
   $('.pck_decode_table').on('click',function(){
-    $('.pck_decode_table').removeClass('pck_decode_table_active');
+    
     
     total_decoder = decoders.index($(this)) + 1;
-    $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
-    $('.membership-id-field').val($(this).attr('data-index'));
+    if(total_decoder > 1 && upgrade_packages.indexOf(current_package_name) < 0){
+      $('.upgrade-package-cont').show();
+      $('html, body').animate({
+          scrollTop: $('.upgrade-package-cont').offset().top
+      }, 2000);
+    }else{
+      $('.pck_decode_table').removeClass('pck_decode_table_active');
+      $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
+      $('.membership-id-field').val($(this).attr('data-index'));
 
-    decoder_price = Number($(decoders[0]).attr('data-price'));
-    for (var z = 1; z < total_decoder; z++) {
-      decoder_price += Number($(decoders[z]).attr('data-price'));
+      // decoder_price = Number($(decoders[0]).attr('data-price'));
+      // for (var z = 1; z < total_decoder; z++) {
+      //   decoder_price += Number($(decoders[z]).attr('data-price'));
+      // }
+      $.get('/extra.js?extra_id='+$(this).attr('data-index')+'&add=true')
     }
+    
   })
 
   $.each($(".side_table_right"),function( index, value ){
@@ -111,6 +121,10 @@ $(document).ready(function(){
     }else{
       $('.tf-dealer').hide();
     }
+  });
+
+  $('input[name="membership_ids[]"]').on('change', function(){
+    $.get('/extra.js?extra_id='+$(this).val()+'&add='+$(this).is(':checked'))
   });
 
   (function(d, s, id) {
