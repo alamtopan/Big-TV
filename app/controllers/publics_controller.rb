@@ -17,7 +17,7 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    @order = Order.find_by_session_id(session_cart)
+    @order = Order.find_by_code(session[params[:order_id]]) if session[params[:order_id]].present?
     # @order = Order.last
     if @order
       @customer = @order.orderable 

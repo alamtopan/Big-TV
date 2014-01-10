@@ -2,12 +2,20 @@
   <% @groups.each do |group| %>
     <div class="parrent_table">
       <div class="head_pack side_table">
-        <div class="padding_top40">
-          <% group.name.each_char do |a| %>
-            <span class="alfa">
-            <%= a %> 
-            </span>
-          <% end %> 
+        <div style="padding-top: <%= group.name =~ /music|news/i ? '0' : '40' %>px !important;">
+          <% if group.name =~ /music|news/i %>
+            <% group.name.each_char do |a| %>
+              <span class="alfa" style="height: <%= group.name =~ /news/i ? '20' : '16' %>px;">
+              <%= a %> 
+              </span>
+            <% end %>
+          <% else %>
+            <% group.name.each_char do |a| %>
+              <span class="alfa">
+              <%= a %> 
+              </span>
+            <% end %> 
+          <% end %>
         </div>
       </div>
       <table class="table table-bordered side_table_right" data-color="<%= group.colour %>">
@@ -42,7 +50,14 @@
         <% (memberships.count).times do |i| %>
           <td>
             <div class="br"></div>
-            <%= link_to "<div class='pack-order version2'>SUBSCRIBE</div>".html_safe, extra_path(memberships[i]),{class: 'no_underscore'} %>
+            <%= link_to extra_path(membership_id: memberships[i]),{class: 'no_underscore'} do %>
+              <div class='pack-order version2'>SUBSCRIBE</div>
+            <% end unless @selected_items.include?(memberships[i]) %>
+            <% if @selected_items.include?(memberships[i]) %>
+              <%= link_to 'javascript:void(0)',{class: 'no_underscore'} do %>
+                <div class='pack-order version2 active'>SUBSCRIBED</div>
+              <% end %>
+            <% end %>
             <div class="br"></div>
           </td>
         <% end %>

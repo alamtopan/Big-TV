@@ -33,7 +33,11 @@ class Order < ActiveRecord::Base
 
   def remove_cart
     if time.now < updated_at.since(1.hour)
-      destroy
+      if self.items.blank?
+        destroy
+      else
+        
+      end
     else
       check_activity
     end if session_id.present?
@@ -122,7 +126,7 @@ class Order < ActiveRecord::Base
         membership_name = membership.category.name
         if membership_name =~ /Premium|Other/i
           selected_item = valid_order.items.select{|i| i.membership_category == membership_name}.first
-          selected_item.delete if selected_item
+          selected_item.destroy if selected_item
         end
       end
       # return false

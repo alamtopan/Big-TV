@@ -9,7 +9,7 @@
 			    <div class="grid_packages_news">
 			    	<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
 			    	<div class="news_des">
-				    	<div class="title_news_catalog"><%= blog.title %></div>
+				    	<div class="title_news_catalog"><%= link_to blog.title, show_blog_path(blog.id), style: 'color: red;' %></div>
 				    	<div>
 				    		<span class="description"><%= truncate strip_tags(blog.description.to_s), length: 100 %></span>
 				    		<%= link_to "MORE", show_blog_path(blog.id) %>
