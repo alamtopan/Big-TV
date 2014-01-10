@@ -34,19 +34,19 @@
               <div class="col-md-5" style="margin-right:40px;">
                 <div class="form-group">
                   <label class="control-label">
-                    Nama
+                    * Nama
                   </label>
                   <%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Masukan nama lengkap sesuai identitas', required: true} %>
                 </div>
                 <div class="form-group">
                   <label class="control-label">
-                    Email
+                    * Email
                   </label>
                   <%= f.text_field :email, {class: 'form-control', placeholder: 'Masukan alamat email anda', required: true} %>
                 </div>
                 <div class="form-group">
                   <label class="control-label">
-                    Referal
+                    * Referal
                   </label>
                   <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi'} %>
                 </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="form-group">
                   <label class="control-label">
-                    Handphone
+                   * Handphone
                   </label>
                   <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Masukan nomor telepon handphone', required: true} %>
                 </div>
