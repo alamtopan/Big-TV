@@ -33,7 +33,11 @@ class Order < ActiveRecord::Base
 
   def remove_cart
     if time.now < updated_at.since(1.hour)
-      destroy
+      if self.items.blank?
+        destroy
+      else
+        
+      end
     else
       check_activity
     end if session_id.present?
