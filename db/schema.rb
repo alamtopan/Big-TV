@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140106211519) do
+ActiveRecord::Schema.define(:version => 20140110092429) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.datetime "deleted_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "position"
   end
 
   create_table "membership_items", :force => true do |t|
@@ -118,14 +119,14 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "title"
     t.integer  "order_id"
     t.integer  "quantity"
-    t.integer  "price"
-    t.integer  "subtotal"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.decimal  "price",         :precision => 10, :scale => 0
+    t.decimal  "subtotal",      :precision => 10, :scale => 0
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "orders", :force => true do |t|
-    t.integer  "total"
+    t.decimal  "total",                    :precision => 10, :scale => 0
     t.string   "session_id"
     t.string   "code_prefix"
     t.integer  "position"
@@ -135,8 +136,12 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "status"
     t.integer  "period"
     t.string   "period_name"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
+    t.string   "file_faktur_file_name"
+    t.string   "file_faktur_content_type"
+    t.integer  "file_faktur_file_size"
+    t.datetime "file_faktur_updated_at"
   end
 
   create_table "payments", :force => true do |t|
@@ -148,8 +153,9 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "bank"
     t.text     "track_record"
     t.text     "access_record"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.decimal  "total",          :precision => 10, :scale => 0
   end
 
   create_table "profiles", :force => true do |t|
@@ -161,8 +167,8 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
     t.date     "tanggal_lahir"
@@ -171,6 +177,10 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.string   "no_identitas"
     t.string   "referal_id"
     t.text     "address_shipping"
+    t.string   "file_ktp_file_name"
+    t.string   "file_ktp_content_type"
+    t.integer  "file_ktp_file_size"
+    t.datetime "file_ktp_updated_at"
   end
 
   create_table "regionals", :force => true do |t|
@@ -255,6 +265,7 @@ ActiveRecord::Schema.define(:version => 20140106211519) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "username"
+    t.string   "code"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

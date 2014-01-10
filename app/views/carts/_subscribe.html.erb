@@ -3,7 +3,7 @@
   <%= hidden_field_tag 'CHAINMERCHANT', 'NA' %>
   <%= hidden_field_tag 'AMOUNT', "%.2f" % @order.total %>
   <%= hidden_field_tag 'PURCHASEAMOUNT', "%.2f" % @order.total %>
-  <%= hidden_field_tag 'TRANSIDMERCHANT', @order.id %>
+  <%= hidden_field_tag 'TRANSIDMERCHANT', @order.code %>
   <%= hidden_field_tag 'WORDS', @words %>
   <%= hidden_field_tag 'REQUESTDATETIME', "#{Time.now.strftime("%Y%M%d%H%M%S")}" %>
   <%= hidden_field_tag 'CURRENCY', '360' %>
@@ -19,4 +19,5 @@
   <%= hidden_field_tag 'HOMEPHONE', @customer.profile.no_phone %>
   <%= hidden_field_tag 'MOBILEPHONE', @customer.profile.no_hp %>
   <%= hidden_field_tag 'BASKET', @order.basket %>
+  <%= hidden_field_tag 'SESSIONID', 'NA' %>
 <% end %>

@@ -4,6 +4,7 @@ class CustomersController < ApplicationController
   
   def new
     @customer = Customer.new 
+    @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
   end
 
   def create
@@ -25,7 +26,8 @@ class CustomersController < ApplicationController
     def prepare_referal
       @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
-                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],['Others', 'Others'] ];
+                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
+                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'] ];
     end
 
 end

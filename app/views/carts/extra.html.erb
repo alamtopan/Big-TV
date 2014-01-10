@@ -3,14 +3,13 @@
   <div class="polosochka2"></div>
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
-    <%= form_tag(carts_path, method: "post") do %>
       <div class="panel-body">
         <div class="row-fluid">
           <div class="span9">
             <div class="extra_banner">
               <div class="own_extra">
                 <span class="extra_info">Silahkan pilih paket extra yang akan diikutsertakan</span>
-                <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
+                <%= link_to 'Lanjut >>', rental_path, class: 'pack-order float-right-fixed margn' %>
               </div>
             </div>
              <div class="row-fluid">
@@ -43,6 +42,9 @@
                       <% membership.unit_items.each do |item| %>
                         <tr>
                           <td>
+                            <% if item.status_hd %>
+                              <span class="hd">HD</span>
+                            <% end %>
                             <span class="name_channel"><%= item.name %></span>
                           </td>
                           <td>
@@ -55,56 +57,17 @@
                 </div>
               <% end %>
             </div>
-          </div>
-          <div class="span3">
-            <div class="grid_packages_decode white46">
-              <div class="head_pack_gray">
-                <span class="gray_font">PAKET YANG DIPESAN</span>
+            <div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">Silahkan pilih paket extra yang akan diikutsertakan</span>
+                <%= link_to 'Lanjut >>', rental_path, class: 'pack-order float-right-fixed margn' %>
               </div>
-              <table class="table table-bordered padding0 decode2">
-                <tbody>
-                  <tr>
-                    <td>
-                      <% other_package_id = 0 %>
-                      <% @order.items.each do |item| %>
-                        <% if item.membership_category == 'Premium' %>
-                          <script>
-                             var current_package_name = '<%= item.membership.name %>';
-                          </script>
-                          <div class="pack-info">
-                            <div class="big-decode font_red">BiG</div>
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% elsif item.membership_category == 'Extra' %>
-                          <div class="pack-info additional-pack">
-                            <span class="small-decode font_red"><%= item.membership.name %></span>
-                            <div class="br-small"></div>
-                            <div class="pack-i-line">
-                              Rp.
-                              <span class="prc">
-                                <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                              </span>
-                            </div>
-                          </div>
-                        <% else %>
-                          <% other_package_id = item.membership_id %>
-                        <% end %>
-                      <% end %>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
+          </div>
+          <div class="span3 cart-widget-container">
+            <%= render 'widget' %>
           </div>
         </div>
       </div>
-    <% end %>
   </article>
 </section>

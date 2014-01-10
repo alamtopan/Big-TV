@@ -10,9 +10,16 @@ class Payment < ActiveRecord::Base
      payment.credit_card    = options[:MCN]
      payment.track_record   = "#{options}"
      payment.access_record  = "#{req_env}"
+     payment.total          = options[:AMOUNT].to_f
 
      order.status = options[:VERIFYSTATUS]
-     payment.save && order.save
+     if payment.save && order.save
+      CustomerMailer.delay.payment_email(order, payment).deliver
+      CustomerMailer.delay.email_order_to_admin(order).deliver
+      return true
+    else
+      return false
+    end
   end
 
 end

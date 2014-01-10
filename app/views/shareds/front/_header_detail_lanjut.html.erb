@@ -1,0 +1,14 @@
+<div class="head_bander">
+  <header class="wraper head" id="nav">
+    <div class="mask"></div>
+    <section class="head-els">
+      <div class="logo" onclick="$('.menu li a').first().click();">
+        <%= link_to "#{image_tag 'bigtv.png', height: '80px',class: "lazy"}".html_safe, root_path %>
+      </div>
+      <%= link_to new_customer_path do %>
+				<div class="login">LANJUT DAFTAR >></div>
+			<% end %>
+      <div class="clear"></div>
+    </section>
+  </header>
+</div>

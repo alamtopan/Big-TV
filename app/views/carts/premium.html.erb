@@ -4,37 +4,65 @@
   <h3>Tersedia beragam macam paket berlangganan sesuai dengan keinginan Anda.<br> Dengan perpaduan channel yang seimbang, tunggu apa lagi, ayo berlangganan segera!</h3>
                 
   <article class="packs-cont cbp-so-scroller">
-    <div class="grd_masonry_decode">
-      <% @memberships.each do |membership| %>
-        <div class="grid_packages_decode">
-          <div class="head_pack red">
-            <div class="big-decode2">BiG</div>
-            <span class="small-counter2"><%= membership.name %></span>
-          </div>
-          <table class="table table-bordered padding0 decode">
-            <tbody class="gray_packages">
-              <tr>
-                <td>
-                  <div class="br"></div>
-                  <div class="pack-info">
-                    <div class="pack-i-line">
-                      Rp.
-                      <span class="prc">
-                        <%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="br"></div>
-                  <%= link_to extra_path(membership_id: membership.id),{class: 'no_underscore'} do %>
-                    <div class='pack-order version2'>SUBSCRIBE</div>
-                  <% end %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      <% end %>
+    <div class="head_pack side_table padding_top40 side_paket" >
+      <span class="alfa">
+      P 
+      </span>
+      <span class="alfa">
+      A
+      </span>
+      <span class="alfa">
+      K 
+      </span>
+      <span class="alfa">
+      e 
+      </span>
+      <span class="alfa">
+      T
+      </span>
     </div>
+    <table class="table table-bordered different_width margin_bottom_no">
+      <tbody>
+        <tr>
+          <% @selected_items = @order ? @order.items.map(&:membership_id) : [] %>
+          <% @memberships.each do |membership| %>
+            <td class="td_diff">
+              <div class="head_pack red">
+                <div class="big-decode2">BiG</div>
+                <span class="small-counter2"><%= membership.name %></span>
+              </div>
+              <table class="table table-bordered padding0 decode no_border">
+                <tbody class="gray_packages">
+                  <tr>
+                    <td>
+                      <div class="br"></div>
+                      <div class="pack-info">
+                        <div class="pack-i-line">
+                          Rp.
+                          <span class="prc">
+                            <%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="br"></div>
+                      <div class="br"></div>
+                      <%= link_to extra_path(membership_id: membership.id),{class: 'no_underscore'} do %>
+                        <div class='pack-order version2'>SUBSCRIBE</div>
+                      <% end unless @selected_items.include?(membership.id) %>
+                      <% if @selected_items.include?(membership.id) %>
+                        <%= link_to 'javascript:void(0)',{class: 'no_underscore'} do %>
+                          <div class='pack-order version2 active'>SUBSCRIBED</div>
+                        <% end %>
+                      <% end %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>       
+            </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
     <%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
   </article>
   <br><br>

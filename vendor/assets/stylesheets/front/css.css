@@ -17,3 +17,17 @@
   width: auto;
   padding: 2px;
 }
+
+@font-face {
+  font-family: 'Belgrano';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Belgrano'), local('Belgrano-Regular'), url(9nICvxZmkDv7_ninPVYjofesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}

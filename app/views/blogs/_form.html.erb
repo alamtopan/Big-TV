@@ -21,14 +21,27 @@
   <%= f.label :picture, class: "col-sm-2 control-label" %>
   <br>
   <div class="col-sm-9">
-    <%= image_tag @blog.picture.url(:medium) %>
-    <%= f.file_field :picture %>
+    <div class="fileupload fileupload-new" data-provides="fileupload">
+      <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+        <%= image_tag @blog.picture.url(:medium) %>
+      </div>
+      <div>
+        <div class="btn btn-light-grey btn-file">
+          <span class="btn btn-file btn-light-grey">
+            <i class="icon-folder-open-alt"></i> 
+            <span class="fileupload-new">Select file</span>
+            <span class="fileupload-exists">Change</span>
+            <%= f.file_field :picture, class: "file-input" %>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="form-group">
   <%= f.label :description, class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
-    <%= f.text_area :description, class: "form-control" %>
+    <%= f.text_area :description, class: "ckeditor form-control" %>
   </div>
 </div>
 <div class="form-group">

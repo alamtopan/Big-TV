@@ -35,7 +35,9 @@ $(document).ready(function(){
 
   $('#view-more-channel').on('click',function(){
     $('.channel_member').removeClass('hide');
+    $('html,body').animate({scrollTop: $("#team_members_channel").offset().top},'slow');
     $(this).addClass('hide');
+    return false;
   });
 
   if($("#sequence").length){
@@ -52,8 +54,8 @@ $(document).ready(function(){
       $(".map_location_js").addClass('hide');
       $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
       $(".map_location_js[data-province='" + province+ "']").removeClass('hide');
-      restore();
-      $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+      // restore();
+      // $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
       return false;
     });
   }
@@ -160,4 +162,10 @@ function restore(){
     }
 
   })
+
 })
+
+  $("#support").click(function(){
+    alert("test");
+    window.location.href = "/support";
+  });

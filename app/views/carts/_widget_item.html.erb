@@ -1,0 +1,10 @@
+<div class="pack-info additional-pack">
+  <span class="small-decode font_red"><%= item.membership.name %></span>
+  <div class="br-small"></div>
+  <div class="pack-i-line">
+    Rp.
+    <span class="prc">
+      <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
+    </span>
+  </div>
+</div>

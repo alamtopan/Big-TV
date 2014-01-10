@@ -4,69 +4,112 @@
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
     <%= form_for @customer, method: 'post' do |f| %>
-      <%= f.fields_for(:profile_attributes) do |profile| %>
-      <div class="panel-body">
-        <!-- <form action="#" role="form" id="form" novalidate="novalidate"> -->
-        <div class="row">
-          <div class="col-md-12">
-            <% if flash[:errors].present? %>
-              <div class="errorHandler alert alert-danger no-display">
-                <i class="icon-remove-sign"></i> <%= flash[:errors] %>
+      <%= f.fields_for(:profile) do |profile| %>
+        <div class="panel-body">
+          <div class="span<%= @membership_order ? '9' : '12' %>">
+            <div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">
+                  Data nomor telepon dan alamat email diperlukan untuk proses verifikasi dalam proses registrasi berlangganan
+                </span>
               </div>
-            <% end %>
-            <!-- <div class="successHandler alert alert-success no-display">
-              <i class="icon-ok"></i> Your form validation is successful!
-            </div> -->
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">
-                Nama
-              </label>
-              <%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Masukan nama lengkap sesuai identitas', required: true} %>
-            </div>
-            <div class="form-group">
-              <label class="control-label">
-                Email
-              </label>
-              <%= f.text_field :email, {class: 'form-control', placeholder: 'Masukan alamat email anda', required: true} %>
-            </div>
-            <div class="form-group">
-              <label class="control-label">
-                Referal
-              </label>
-              <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi'} %>
-            </div>
-          </div>
-            
-          <div class="col-md-6">
-            <div class="form-group">
-              <label class="control-label">
-                Telepon
-              </label>
-              <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
-            </div>
-            <div class="form-group">
-              <label class="control-label">
-                Handphone
-              </label>
-              <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Masukan nomor telepon handphone', required: true} %>
-            </div>
-            <div class="form-group tf-dealer" style='display:none;'>
-              <label class="control-label">
-                SPG/Dealer ID
-              </label>
-              <%= profile.text_field :referal_id, {class: 'form-control', placeholder: 'Masukan nomor id atau nama referensi anda'} %>
             </div>
             <div class="br"></div>
-            <div class="pull-right customer-actions">
-              <%= recaptcha_tags %>
-              <input type="submit" class="submit" value="LANJUT >>"> 
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="row">
+              <div class="col-md-12">
+                <% if flash[:errors].present? %>
+                  <div class="errorHandler alert no-display">
+                    <div class="alert-danger">
+                      <i class="icon-remove-sign"></i> <%= flash[:errors] %>
+                    </div>
+                  </div>
+                <% end %>
+                <!-- <div class="successHandler alert alert-success no-display">
+                  <i class="icon-ok"></i> Your form validation is successful!
+                </div> -->
+              </div>
+              <div class="col-md-5" style="margin-right:40px;">
+                <div class="form-group">
+                  <label class="control-label">
+                    Nama
+                  </label>
+                  <%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Masukan nama lengkap sesuai identitas', required: true} %>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">
+                    Email
+                  </label>
+                  <%= f.text_field :email, {class: 'form-control', placeholder: 'Masukan alamat email anda', required: true} %>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">
+                    Referal
+                  </label>
+                  <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi'} %>
+                </div>
+              </div>
+                
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label class="control-label">
+                    Telepon
+                  </label>
+                  <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">
+                    Handphone
+                  </label>
+                  <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Masukan nomor telepon handphone', required: true} %>
+                </div>
+                <div class="form-group tf-dealer" style='display:none;'>
+                  <label class="control-label">
+                    SPG/Dealer ID
+                  </label>
+                  <%= profile.text_field :referal_id, {class: 'form-control', placeholder: 'Masukan nomor id atau nama referensi anda'} %>
+                </div>
+                <div class="br"></div>
+                <div class="pull-right customer-actions">
+                  <%= recaptcha_tags %>
+                  <div class="customer-actions">
+                    <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>"> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <% if @membership_order %>
+            <div class="span3">
+              <div class="grid_packages_decode white46">
+                <div class="head_pack_gray radius_top">
+                  <span>PAKET YANG DIPESAN</span>
+                </div>
+                <table class="table table-bordered padding0 decode2">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="pack-info">
+                          <div class="big-decode font_red">BiG</div>
+                          <span class="small-decode font_red"><%= @membership_order.name %></span>
+                          <div class="br-small"></div>
+                          <div class="pack-i-line">
+                            Rp.
+                            <span class="prc">
+                              <%= number_to_currency(@membership_order.prices.first.price,{precision: 0, unit: ''}) %>
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div>
-    </div>
       <% end %>
     <% end %>
   </article>

@@ -7,6 +7,7 @@ class PublicsController < ApplicationController
 		else 
 			regional = "Sumatra"	
 		end
+    @blogs = Blog.all
     @categories= CategoryOffice.all
     @regionals= Regional.all
 		
@@ -16,8 +17,17 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    render layout: "detail"  
+    @order = Order.find_by_code(session[params[:order_id]]) if session[params[:order_id]].present?
+    # @order = Order.last
+    if @order
+      @customer = @order.orderable 
+      @customer_profile = @customer.profile
+      render layout: "detail" 
+    else
+      redirect_to root_path
+    end
   end
+
   def render_map
     return unless params[:regional]
     regional = params[:regional]
@@ -26,6 +36,25 @@ class PublicsController < ApplicationController
   end
 
   def decoder
+  end
+
+  def lokasi
+    @categories= CategoryOffice.all
+    @regionals= Regional.all
+    render layout: "detail"
+  end
+
+  def cara_berlangganan
+    render layout: "detail_lanjut"
+  end
+
+  def support
+    render layout: "detail"
+  end
+
+  def show_blog
+    @blog = Blog.find_by_id(params[:id])
+    render layout: "detail"
   end
   
 end

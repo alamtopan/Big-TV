@@ -5,60 +5,18 @@
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
 		<div class="panel-body">
 			<div class="grd_masonry_news">
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/1.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">DISKON HYPERMART</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
+				<% @blogs.each do |blog| %>
+			    <div class="grid_packages_news">
+			    	<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
+			    	<div class="news_des">
+				    	<div class="title_news_catalog"><%= link_to blog.title, show_blog_path(blog.id), style: 'color: red;' %></div>
+				    	<div>
+				    		<span class="description"><%= truncate strip_tags(blog.description.to_s), length: 100 %></span>
+				    		<%= link_to "MORE", show_blog_path(blog.id) %>
+				    	</div>
 						</div>
-					</div>
-		    </div>
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/2.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">PELUNCURAN SATELIT</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
-						</div>
-					</div>
-		    </div>
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/3.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">APLIKASI SEPAKBOLA</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
-						</div>
-					</div>
-		    </div>
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/4.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">4 IN ONE CHANNEL</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
-						</div>
-					</div>
-		    </div>
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/4.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">LAUNCHING BIGTV</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
-						</div>
-					</div>
-		    </div>
-		    <div class="grid_packages_news">
-		    	<%= image_tag "news/4.png", class: "news_image lazy" %>
-		    	<div class="news_des">
-			    	<div class="title_news_catalog">CHANNEL INCREASE</div>
-			    	<div>Segera berlangganan BIGTV di Hypermart
-								dan dapatkan potongan harga sesuai
-						</div>
-					</div>
-		    </div>
+			    </div>
+		    <% end %>
 		  </div>
 		</div>
 	</div>

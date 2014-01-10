@@ -1,8 +1,5 @@
 //= require front/js/jquery-1.9.1
 //= require jquery_ujs
-//= require front/js/jquery-migrate-1.2.1.min
-//= require front/js/jquery-ui
-//= require front/js/jQuery.easing.min
 //= require front/js/jQuery.Opie.PortfolioGallery.min
 //= require front/js/classie
 //= require front/js/modernizr.custom
@@ -17,11 +14,34 @@
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
 //= require js/imagesloaded
 //= require customize_front
-//= require map/gmap3.min
 //= require scrolltofixed-min
 //= require jquery.lazyload
 
 //= require_self
+
+
+window.current_menu = 'intro';
+window.is_table_loaded = false;
+var    topMenu = $(".menu"),
+    // All list items
+    menuItems = topMenu.find("a").add($('.mbl-menu').find('a')),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+window.lazyImagesLoaded = function(){
+  if(!is_table_loaded && window.current_menu == 'plan'){
+    is_table_loaded = true;
+    $.each($(".side_table_right"),function( index, value ){
+      var color = $(value).data('color');
+      var _parent = $(value).parents('.parrent_table').first();
+      var total_hg = _parent.outerHeight();
+      _parent.find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
+    });
+  }
+}
 
 $(function() {
   $('.lazy-img').lazyload({
@@ -36,23 +56,26 @@ $(document).ready(function(){
   var total_decoder = 1;
 
   $('.pck_decode_table').on('click',function(){
-    $('.pck_decode_table').removeClass('pck_decode_table_active');
+    
     
     total_decoder = decoders.index($(this)) + 1;
-    $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
-    $('.membership-id-field').val($(this).attr('data-index'));
+    if(total_decoder > 1 && upgrade_packages.indexOf(current_package_name) < 0){
+      $('.upgrade-package-cont').show();
+      $('html, body').animate({
+          scrollTop: $('.upgrade-package-cont').offset().top
+      }, 2000);
+    }else{
+      $('.pck_decode_table').removeClass('pck_decode_table_active');
+      $('.pck_decode_table:lt('+total_decoder+')').addClass('pck_decode_table_active');
+      $('.membership-id-field').val($(this).attr('data-index'));
 
-    decoder_price = Number($(decoders[0]).attr('data-price'));
-    for (var z = 1; z < total_decoder; z++) {
-      decoder_price += Number($(decoders[z]).attr('data-price'));
+      // decoder_price = Number($(decoders[0]).attr('data-price'));
+      // for (var z = 1; z < total_decoder; z++) {
+      //   decoder_price += Number($(decoders[z]).attr('data-price'));
+      // }
+      $.get('/extra.js?extra_id='+$(this).attr('data-index')+'&add=true')
     }
-  })
-
-  $.each($(".side_table_right"),function( index, value ){
-    var color = $(value).data('color');
-    var hg = $(value).height();
-    var total_hg = hg - 50;
-    $(value).parent('.parrent_table').find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
+    
   })
 
   // $('table.grd_masonry_location').filterTable();
@@ -76,7 +99,6 @@ $(document).ready(function(){
   }
 
   jQuery('#nav').scrollToFixed({ marginTop: 0});
- 
   
   $('#sequence .info').each(function(){
     if(!isImageLoaded($(this).find('img')[0])){
@@ -117,18 +139,37 @@ $(document).ready(function(){
     }
   });
 
+  $('input[name="membership_ids[]"]').on('change', function(){
+    $.get('/extra.js?extra_id='+$(this).val()+'&add='+$(this).is(':checked'))
+  });
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=791578794202636";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // if($('.twitter-widget-box').length){
+  //   $('.twitter-widget-box').html(unescape("%3Cscript src='http://twitterforweb.com/twitterbox.js?username=BiGTiVi&settings=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699' type='text/javascript'%3E%3C/script%3E"));
+  // }
+
   //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
-  // $(window).scroll(function(){
-  //   if($(window).scrollTop() > $('.table-responsive .head_pack:first').offset().top){
-  //    $('.table-responsive .head_pack').show();
-  //     $('.table-responsive .head_pack').css('position','fixed').css('top','0');
-  //   } else if($(window).scrollTop() > 3024) {
-  //    $('.table-responsive .head_pack').fadeOut();
-  //     $('.table-responsive .head_pack').css('position','block');
-  //     $('#navigation').css('position','static');
-  //   }    
-  // });
+  $(window).scroll(function(){
+     var fromTop = $(this).scrollTop();
+     var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+     });
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : "intro";
+     current_menu = id;
+     if (String(id) == 'plan') {
+       lazyImagesLoaded()
+     }                   
+  });
   //$(window).on('resize', function(){
   // $.each($('.info img'), function(){
   //  $.image = $(this)

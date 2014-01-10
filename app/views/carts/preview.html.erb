@@ -5,221 +5,239 @@
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
     <%= form_for :user, url: subcribe_carts_path, method: 'post', html: {remote: true, class: 'form-subscribe'} do |f| %>
 			<%= f.fields_for(:profile_attributes) do |profile| %>
-	    <div class="panel-body">
-				<!-- <form action="#" role="form" id="form" novalidate="novalidate"> -->
-				<div class="row">
-					<div class="col-md-12">
-					  <div class="errorHandler alert alert-danger no-display" style="display:none;">
-              <i class="icon-remove-sign"></i> <span class='error-message'></span>
+		    <div class="panel-body">
+					<div class="span9">
+						<div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">
+                  Data nomor telepon dan alamat email diperlukan untuk proses verifikasi dalam proses registrasi berlangganan
+                </span>
+              </div>
+            </div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
+            <div class="br"></div>
+						<div class="row">
+							<div class="col-md-12">
+							  <div class="errorHandler alert alert-danger no-display" style="display:none;">
+		              <i class="icon-remove-sign"></i> <span class='error-message'></span>
+									</div>
+								<!-- <div class="successHandler alert alert-success no-display">
+									<i class="icon-ok"></i> Your form validation is successful!
+								</div> -->
 							</div>
-						<!-- <div class="successHandler alert alert-success no-display">
-							<i class="icon-ok"></i> Your form validation is successful!
-						</div> -->
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label class="control-label">
-								Nama
-							</label>
-							<%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true, value: current_customer.profile.first_name} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Jenis Kelamin
-							</label>
-							<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true, value: current_customer.profile.jenis_kelamin} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Tanggal Lahir
-							</label>
-							<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true, value: current_customer.profile.tanggal_lahir} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Email
-							</label>
-							<%= f.email_field :email, {class: 'form-control', placeholder: 'me@email.com', required: true, value: current_customer.email} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Referal
-							</label>
-							<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								SPG/Dealer ID
-							</label>
-							<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "To be field by BIG TV personnel only", 																			 value: current_customer.profile.referal_id} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Tipe Identitas
-							</label>
-							<%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{}, {class: 'form-control', required: true} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Nomor Identitas
-							</label>
-							<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas', required: true} %>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="form-group">
-							<label class="control-label">
-								Telepon
-							</label>
-							<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true, value: current_customer.profile.no_phone} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Handphone
-							</label>
-							<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true, value: current_customer.profile.no_hp} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Alamat
-							</label>
-							<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Alamat Pemasangan
-							</label>
-							<%= profile.text_area :address_shipping, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address_shipping} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Kota
-							</label>
-							<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota', required: true, value: current_customer.profile.city} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Provinsi
-							</label>
-							<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi', required: true, value: current_customer.profile.province} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Kodepos
-							</label>
-							<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos', value: current_customer.profile.codepos} %>
-						</div>
-						<div class="form-group">
-							<label class="control-label">
-								Pembayaran
-							</label>
-							<br/>
-							<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
-							<br/>
-							<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
-						</div>
-					</div>
-				</div>
-
-				<div class="br"></div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="order_summary">
-							<div class="col-md-6">
+							<div class="col-md-5" style="margin-right:40px;">
 								<div class="form-group">
-									<span class="title_ord_big">ORDER SUMMARY</span>
-									<div class="br"></div>
-									<% @order.items.each do |item| %>
-										<% if item.membership_category == 'Premium' %>
-											<span class="title_ord"><%= item.membership_category %></span>
-											<table class="tbl_order">
-												<tbody>
-													<tr>
-														<td><%= item.title %></td>
-														<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
-													</tr>
-												<tbody>
-											</table>
-										<% end %>
-									<% end %>
-									<% membership_category = '' %>
-									<% @order.items.each do |item| %>
-										<% if item.membership_category == 'Extra' %>
-											<% if item.membership_category != membership_category %>
-												<span class="title_ord"><%= item.membership_category %></span>
-											<% end %>
-											<table class="tbl_order">
-												<tbody>
-													<tr>
-														<td><%= item.title %></td>
-														<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
-													</tr>
-												<tbody>
-											</table>
-											<% membership_category = item.membership_category %>
-										<% end %>
-									<% end %>
-									<% @order.items.each do |item| %>
-										<% if item.membership_category == 'Other' %>
-										<% if item.title.present? %>	
+									<label class="control-label">
+										Nama
+									</label>
+									<%= profile.text_field :first_name, {class: 'form-control', placeholder: 'Name', required: true, value: current_customer.profile.first_name} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Jenis Kelamin
+									</label>
+									<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true, value: current_customer.profile.jenis_kelamin} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Tanggal Lahir
+									</label>
+									<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true, value: current_customer.profile.tanggal_lahir} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Email
+									</label>
+									<%= f.email_field :email, {class: 'form-control', placeholder: 'me@email.com', required: true, value: current_customer.email} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Referal
+									</label>
+									<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										SPG/Dealer ID
+									</label>
+									<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "To be field by BIG TV personnel only", 																			 value: current_customer.profile.referal_id} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										File Faktur
+									</label>
+									<%= profile.file_field :file_faktur, class: "file-input" %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Tipe Identitas
+									</label>
+									<%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{}, {class: 'form-control', required: true} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										File Identitas
+									</label>
+									<%= profile.file_field :file_ktp, class: "file-input" %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Nomor Identitas
+									</label>
+									<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas', required: true} %>
+								</div>
+							</div>
+
+							<div class="col-md-5">
+								<div class="form-group">
+									<label class="control-label">
+										Telepon
+									</label>
+									<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true, value: current_customer.profile.no_phone} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Handphone
+									</label>
+									<%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Handphone', required: true, value: current_customer.profile.no_hp} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Alamat
+									</label>
+									<%= profile.text_area :address, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Alamat Pemasangan
+									</label>
+									<%= profile.text_area :address_shipping, {class: 'autosize form-control', style: "overflow: hidden; word-wrap: break-word; resize: horizontal; height: 69px;", required: true, value: current_customer.profile.address_shipping} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Kota
+									</label>
+									<%= profile.text_field :city, {class: 'form-control', placeholder: 'Kota', required: true, value: current_customer.profile.city} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Provinsi
+									</label>
+									<%= profile.text_field :province, {class: 'form-control', placeholder: 'Provinsi', required: true, value: current_customer.profile.province} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Kodepos
+									</label>
+									<%= profile.text_field :codepos, {class: 'form-control', placeholder: 'Kode Pos', value: current_customer.profile.codepos} %>
+								</div>
+								<div class="form-group">
+									<label class="control-label">
+										Tagihan
+									</label>
+									<br/>
+									<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
+									<br/>
+									<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="span3 cart-widget-container">
+            <%= render 'carts/widget' %>
+          </div>
+
+					<div class="br"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="order_summary">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="title_ord_big">ORDER SUMMARY</span>
 										<div class="br"></div>
-											<table class="tbl_order">
-												<tbody>
-													<tr>
-														<td><%= item.title %></td>
-														<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
-													</tr>
-												<tbody>
-											</table>
+										<% @order.items.each do |item| %>
+											<% if item.membership_category == 'Premium' %>
+												<span class="title_ord"><%= item.membership_category %></span>
+												<table class="tbl_order">
+													<tbody>
+														<tr>
+															<td><%= item.title %></td>
+															<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+														</tr>
+													<tbody>
+												</table>
+											<% end %>
 										<% end %>
+										<% membership_category = '' %>
+										<% @order.items.each do |item| %>
+											<% if item.membership_category == 'Extra' %>
+												<% if item.membership_category != membership_category %>
+													<span class="title_ord"><%= item.membership_category %></span>
+												<% end %>
+												<table class="tbl_order">
+													<tbody>
+														<tr>
+															<td><%= item.title %></td>
+															<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+														</tr>
+													<tbody>
+												</table>
+												<% membership_category = item.membership_category %>
+											<% end %>
 										<% end %>
-									<% end %>
-									<div class="br"></div>
-									<div class="hr"></div>
-									<table class="tbl_order">
-										<tbody>
-											<tr>
-												<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
-												<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total %>"><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></span></b></div>
-												</td>
-											</tr>
-										<tbody>
-									</table>
+										<% @order.items.each do |item| %>
+											<% if item.membership_category == 'Other' %>
+											<% if item.title.present? %>	
+											<div class="br"></div>
+												<table class="tbl_order">
+													<tbody>
+														<tr>
+															<td><%= item.title %></td>
+															<td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+														</tr>
+													<tbody>
+												</table>
+											<% end %>
+											<% end %>
+										<% end %>
+										<div class="br"></div>
+										<div class="hr"></div>
+										<table class="tbl_order">
+											<tbody>
+												<tr>
+													<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
+													<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total %>"><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></span></b></div>
+													</td>
+												</tr>
+											<tbody>
+										</table>
+									</div>
 								</div>
-							</div>
 
-							<div class="col-md-6">
-								<div class="form-group">
-									<div class="br"></div>
-									<div class="br"></div>
-                  <%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%><%= image_tag "atm.png", style: 'height:33px' %><%= image_tag "doku_wallet.png", style: 'height: 33px' %>
-									<div class="br"></div>
-									Pilih Pembayaran
-									<div class="br"></div>
-									<select name="order[period]" id="mm" class="form-control">
-										<option value="1">1 Bulan</option>
-										<option value="2">2 Bulan</option>
-										<option value="3">3 Bulan</option>
-										<option value="4">4 Bulan</option>
-										<option value="5">5 Bulan</option>
-										<option value="6">6 Bulan</option>
-										<option value="7">7 Bulan</option>
-										<option value="8">8 Bulan</option>
-										<option value="9">9 Bulan</option>
-										<option value="10">10 Bulan</option>
-										<option value="11">11 Bulan</option>
-										<option value="12">12 Bulan</option>
-									</select>
-									<div class="br"></div>
-									<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN"> 
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="br"></div>
+										<div class="br"></div>
+	                  <%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%><%= image_tag "atm.png", style: 'height:33px' %><%= image_tag "doku_wallet.png", style: 'height: 33px' %>
+										<div class="br"></div>
+										Pilih Pembayaran
+										<div class="br"></div>
+										<select name="order[period]" id="mm" class="form-control">
+											<option value="1">1 Bulan</option>
+											<option value="6">6 Bulan</option>
+											<option value="12">12 Bulan</option>
+										</select>
+										<div class="br"></div>
+										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN"> 
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		<% end %>
+			<% end %>
 		<% end %>
 	</article>
 </section>

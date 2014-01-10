@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_initialize :after_initialized
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :profile_attributes
   # attr_accessible :title, :body
@@ -12,4 +14,9 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
   
+
+  protected
+    def after_initialized
+      self.profile = Profile.new if self.profile.blank?
+    end
 end

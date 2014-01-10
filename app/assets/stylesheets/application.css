@@ -1,26 +1,33 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require plugins/bootstrap/css/bootstrap.min
- *= require plugins/font-awesome/css/font-awesome.min
- *= require fonts/style
- *= require css/main
- *= require css/main-responsive
- *= require plugins/iCheck/skins/all
- *= require plugins/perfect-scrollbar/src/perfect-scrollbar
- *= require css/theme_light
- *= require plugins/fullcalendar/fullcalendar/fullcalendar
- 
- *= require plugins/datepicker/css/datepicker
- *= require plugins/bootstrap-colorpicker/css/bootstrap-colorpicker
+	* This is a manifest file that'll be compiled into application.css, which will include all the files
+	* listed below.
+	*
+	* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+	* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+	*
+	* You're free to add application-wide styles to this file and they'll appear at the top of the
+	* compiled file, but it's generally better to create a new file per style scope.
+	*
+	*= require_self
+	*= require plugins/bootstrap/css/bootstrap.min
+	*= require plugins/font-awesome/css/font-awesome.min
+	*= require fonts/style
+	*= require css/main
+	*= require css/main-responsive
+	*= require plugins/iCheck/skins/all
+	*= require plugins/perfect-scrollbar/src/perfect-scrollbar
+	*= require css/theme_light
+	*= require plugins/fullcalendar/fullcalendar/fullcalendar
+
+	*= require plugins/select2/select2
+	*= require plugins/datepicker/css/datepicker
+	*= require plugins/bootstrap-timepicker/css/bootstrap-timepicker.min
+	*= require plugins/bootstrap-daterangepicker/daterangepicker-bs3
+	*= require plugins/bootstrap-colorpicker/css/bootstrap-colorpicker
+	*= require plugins/jQuery-Tags-Input/jquery.tagsinput
+	*= require plugins/bootstrap-fileupload/bootstrap-fileupload.min
+	*= require plugins/summernote/build/summernote
+	*= require plugins/ckeditor/contents
 
 
  */

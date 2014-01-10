@@ -3,107 +3,70 @@
   <div class="polosochka2"></div>
   <h3>Kini anda dapat menimakti tayangan BigTV lebih dari 1 televisi 
     <br>dengan menggunakan dekoder tambahan.
-    <br>minimal berlangganan BigStar 117.</h3>
+    <br>minimal berlangganan Paket BigStar 117.</h3>
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
     <div class="panel-body">
-      <% if(flash[:alert]) %>
-        <div id="error_explanation">
-          <div class="alert alert-block alert-danger fade in ">
-            <%= flash[:alert] %>
-          </div>
-        </div>
-      <% end %>
       <div class="row-fluid">
         <div class="span9">
-          <div class="grd_masonry_decode2">
-            <% default_decoder = @memberships.first %>
-            <% @memberships.each_with_index do |member, index| %>
-              <% add_class = index == 0 ? 'pck_decode_table_active' : '' %>      
-              <div class="grid_packages_decode pck_decode2">
-                <div class="head_pack red">
-                  <span class="small-counter2"><%= member.name %></span>
+          <div class="section_decode">
+            <% if(flash[:alert]) %>
+              <div id="error_explanation">
+                <div class="alert alert-block alert-danger fade in ">
+                  <%= flash[:alert] %>
                 </div>
-                <table class="table table-bordered padding0 decode pck_decode_table <%= add_class %>" data-index="<%= member.id %>" data-price="<%= member.price_month %>">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="br"></div>
-                        <div class="pack-info">
-                          <div class="pack-i-line">
-                            Rp.
-                            <span class="prc">
-                              <%= number_to_currency(member.price_month,{precision: 0, unit: ''}) %>
-                            </span>
-                            <div>/month</div>
-                          </div>
-                        </div>
-                        <div class="br"></div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             <% end %>
-          </div>
-        </div>
-        <div class="span3" style="margin-left:10px;">
-          <div class="grid_packages_decode2 white46">
-            <div class="head_pack_gray">
-              <span class="gray_font">PAKET YANG DIPESAN</span>
+            <div class="span12">
+              <% default_decoder = @memberships.first %>
+              <% @memberships.each_with_index do |member, index| %>
+                <% add_class = index == 0 ? 'pck_decode_table_active' : '' %>      
+                <div class="grid_packages_decode pck_decode span6">
+                  <div class="head_pack red">
+                    <span class="small-counter2"><%= member.name %></span>
+                  </div>
+                  <table class="table table-bordered padding0 decode pck_decode_table <%= add_class %>" data-index="<%= member.id %>" data-price="<%= member.price_month %>">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="br"></div>
+                          <div class="pack-info">
+                            <div class="pack-i-line">
+                              Rp.
+                              <span class="prc">
+                                <%= number_to_currency(member.price_month,{precision: 0, unit: ''}) %>
+                              </span>
+                              <div>/month</div>
+                            </div>
+                          </div>
+                          <div class="br"></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              <% end %>
             </div>
-            <table class="table table-bordered padding0 decode2">
-              <tbody>
-                <tr>
-                  <td>
-                    <% other_package_id = 0 %>
-                    <% @order.items.each do |item| %>
-                      <% if item.membership_category == 'Premium' %>
-                        <script>
-                           var current_package_name = '<%= item.membership.name %>';
-                        </script>
-                        <div class="pack-info">
-                          <div class="big-decode font_red">BiG</div>
-                          <span class="small-decode font_red"><%= item.membership.name %></span>
-                          <div class="br-small"></div>
-                          <div class="pack-i-line">
-                            Rp.
-                            <span class="prc">
-                              <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                            </span>
-                          </div>
-                        </div>
-                      <% elsif item.membership_category == 'Extra' %>
-                        <div class="pack-info additional-pack">
-                          <span class="small-decode font_red"><%= item.membership.name %></span>
-                          <div class="br-small"></div>
-                          <div class="pack-i-line">
-                            Rp.
-                            <span class="prc">
-                              <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
-                            </span>
-                          </div>
-                        </div>
-                      <% else %>
-                        <% other_package_id = item.membership_id %>
-                      <% end %>
-                    <% end %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+             <span class="warn">*) Untuk berlangganan paket wajib menyewa minimal 1 decoder</span>
+          </div>
+          <div class="section_decode upgrade-package-cont" style="display:<%= flash[:upgrade_channel] ? 'block' : 'none' %>;">
+            <div class="alert alert-danger" style="margin-top: 10px;">
+              <%= render 'carts/upgrade_premium' %>
+            </div>
+          </div>
+          <div class="section_decode">
+            <div class="own_extra full100">
+              <%= link_to 'Lanjut >>', preview_path, class: 'pack-order float-right-fixed margn full100', style: 'text-align: center' %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="own_extra">
-        <%= form_tag(carts_path, method: "post") do %>
-          <%= hidden_field_tag 'membership_id', (default_decoder ? default_decoder.id : ''), class: 'membership-id-field' %>
-          <input class="pack-order float-right-fixed margn" type="submit" value="Lanjut >>">
-        <% end %>
+        <div class="span3 cart-widget-container">
+          <%= render 'carts/widget' %>
+        </div>
       </div>
     </div>
   </article>
 </section>
 
 <script>
-  window.upgrade_packages = JSON.parse('<%= @upgrades.to_json.html_safe %>');
+  window.upgrade_packages = JSON.parse('<%= @upgrades.map(&:name).to_json.html_safe %>');
 </script>
