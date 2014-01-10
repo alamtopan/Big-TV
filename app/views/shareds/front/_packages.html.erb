@@ -24,6 +24,7 @@
   	<table class="table table-bordered different_width margin_bottom_no">
 	    <tbody>
 	      <tr>
+          <% @selected_items = @order ? @order.items.map(&:membership_id) : [] %>
 	        <% @memberships.each do |membership| %>
 	          <td class="td_diff">
 	            <div class="head_pack red">

@@ -151,9 +151,9 @@ $(document).ready(function(){
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-  if($('.twitter-widget-box').length){
-    $('.twitter-widget-box').html(unescape("%3Cscript src='http://twitterforweb.com/twitterbox.js?username=BiGTiVi&settings=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699' type='text/javascript'%3E%3C/script%3E"));
-  }
+  // if($('.twitter-widget-box').length){
+  //   $('.twitter-widget-box').html(unescape("%3Cscript src='http://twitterforweb.com/twitterbox.js?username=BiGTiVi&settings=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699' type='text/javascript'%3E%3C/script%3E"));
+  // }
 
   //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 

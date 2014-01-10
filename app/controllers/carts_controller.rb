@@ -15,7 +15,7 @@ class CartsController < ApplicationController
         extra_package = Membership.find_by_id(params[:extra_id])
         order.add_item(extra_package,session_cart) if extra_package
       else
-        order_item.delete
+        order_item.destroy
       end
     else
       current_premium_id = params[:membership_id].present? ? params[:membership_id] : session[:current_premium_id]
@@ -28,7 +28,9 @@ class CartsController < ApplicationController
   def premium
     @memberships = Membership.packages_by_category('premium')
     @groups = GroupItem.all
-    order
+    if order.items.select{|i| i.membership_category =~ /Premium/i}.present?
+      redirect_to extra_path
+    end
   end
 
   def preview
@@ -77,7 +79,7 @@ class CartsController < ApplicationController
         flash[:success] = 'success'
         CustomerMailer.thanks_email(order).deliver
         @customer = current_customer
-        delete_session
+        # delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
         unless request.xhr?
           redirect_to thanks_path
@@ -118,7 +120,7 @@ class CartsController < ApplicationController
   def update_package
     order.items.each do |item|
       if item.membership_category == 'Premium'
-        item.delete
+        item.destroy
       end
     end
     new_package = Membership.where("name LIKE ?", "%Star%").first
@@ -167,9 +169,9 @@ class CartsController < ApplicationController
     def check_order(order,params_membership)
         order.items.each do |item|
         if params_membership.kind_of?(Array) && !params_membership.include?(item.membership_id)
-          item.delete
+          item.destroy
         elsif params_membership == item.membership_id
-          item.delete
+          item.destroy
         end
       end
     end

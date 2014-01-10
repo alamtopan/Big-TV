@@ -126,7 +126,7 @@ class Order < ActiveRecord::Base
         membership_name = membership.category.name
         if membership_name =~ /Premium|Other/i
           selected_item = valid_order.items.select{|i| i.membership_category == membership_name}.first
-          selected_item.delete if selected_item
+          selected_item.destroy if selected_item
         end
       end
       # return false
