@@ -56,7 +56,7 @@ class Order < ActiveRecord::Base
         populate_order_item(item[:quantity], membership_id,session)
       end
     end
-    self.send(:before_modification)
+    self.send(:before_creation)
     self.save
   end
 

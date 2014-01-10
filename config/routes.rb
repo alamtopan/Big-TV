@@ -18,6 +18,7 @@ BigTv::Application.routes.draw do
     end
   end
 
+  get   '/show_blog/:id',   to: 'publics#show',      as: 'show_map_to'
   get   '/show_blog/:id',   to: 'publics#show_blog',      as: 'show_blog'
   get   '/extra',   to: 'carts#extra',      as: 'extra'
   get   '/premium', to: 'carts#premium',    as: 'premium'

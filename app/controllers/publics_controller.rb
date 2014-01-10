@@ -38,6 +38,10 @@ class PublicsController < ApplicationController
   def decoder
   end
 
+  def cara_berlangganan
+    render layout: "detail_lanjut"
+  end
+
   def show_blog
     @blog = Blog.find_by_id(params[:id])
     render layout: "detail"
