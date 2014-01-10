@@ -26,6 +26,8 @@ module SeedMembership
       items = member["membership_#{n}"]["items"]
       items.each_with_index do |itm,i_itm|
         i_item = itm["item_#{i_itm}"]
+        puts i_item['name']
+        puts i_itm
         item = MembershipItem.new
         item.membership_id = membership.id
         item.unit_item_id = UnitItem.find_by_name(i_item['name']).id

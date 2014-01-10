@@ -41,3 +41,22 @@
   float: left;
   margin-right: 10px;
 }
+
+.why_section {
+  display: block;
+  width: 75%!important;
+  margin: auto;
+}
+
+.tab-content{
+  text-align: center;
+}
+
+table.langganan tr td{
+  width: 20%;
+}
+
+.img_langganan{
+  margin-right: 160px;
+  margin-top: 40px;
+}

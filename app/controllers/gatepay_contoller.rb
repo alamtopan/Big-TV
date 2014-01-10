@@ -17,7 +17,13 @@ class GatepayController < ApplicationController
   end
 
   def redirect
-    order = Order.find_by_code(params[:TRANSIDMERCHANT]) 
-    redirect_to thanks_path
+    redirect_params = {}
+    if params[:TRANSIDMERCHANT].present?
+      payment_token = Digest::SHA1.hexdigest(params[:TRANSIDMERCHANT])[0,10]
+      session[payment_token] = params[:TRANSIDMERCHANT]
+      redirect_params.merge!(order_id: payment_token)
+    end
+
+    redirect_to thanks_path(redirect_params)
   end
 end
