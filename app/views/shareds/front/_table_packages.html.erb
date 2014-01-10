@@ -2,7 +2,7 @@
   <% @groups.each do |group| %>
     <div class="parrent_table">
       <div class="head_pack side_table">
-        <div style="padding-top: <%= group.name =~ /music|news/i ? '0' : '40' %>px !important;">
+        <div class="padding_top40" style="padding-top: <%= group.name =~ /music|news/i ? '0' : '40' %>px !important;">
           <% if group.name =~ /music|news/i %>
             <% group.name.each_char do |a| %>
               <span class="alfa" style="height: <%= group.name =~ /news/i ? '20' : '16' %>px;">
