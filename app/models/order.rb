@@ -36,7 +36,7 @@ class Order < ActiveRecord::Base
       if self.items.blank?
         destroy
       else
-        
+        CustomerMailer.thanks_email(self).deliver
       end
     else
       check_activity
@@ -66,10 +66,20 @@ class Order < ActiveRecord::Base
 
   def populate_order_item(qty, membership_id,session)
     #return false if 
-    validate_membership(session,membership_id)
+    
     item = items.find_or_initialize_by_membership_id(membership_id)
     current_product = item.membership
-    return unless current_product
+    return false unless current_product
+    if current_product.category.name.to_s.downcase == 'premium'
+      single_decoder = Membership.where('name LIKE ?','1 %').first
+      if !items.find_by_membership_id(single_decoder.id) && current_product.name !~ /universe|star/i
+        another_decoder = items.select{|i| i.membership_category =~ /other/i}.first
+        another_decoder.destroy if another_decoder
+      end
+    end
+    
+    validate_membership(session,membership_id) if item.new_record?
+    
     item.quantity = 1
     # item.quantity = (item.quantity||1).to_i
     # if item.membership_category.to_s.downcase != 'other'
@@ -126,7 +136,7 @@ class Order < ActiveRecord::Base
         membership_name = membership.category.name
         if membership_name =~ /Premium|Other/i
           selected_item = valid_order.items.select{|i| i.membership_category == membership_name}.first
-          selected_item.destroy if selected_item
+          selected_item.destroy if selected_item && !selected_item.new_record?
         end
       end
       # return false

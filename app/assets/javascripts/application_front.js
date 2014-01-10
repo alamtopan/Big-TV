@@ -1,5 +1,6 @@
 //= require front/js/jquery-1.9.1
 //= require jquery_ujs
+//= require front/js/jquery-ui
 //= require front/js/jQuery.Opie.PortfolioGallery.min
 //= require front/js/classie
 //= require front/js/modernizr.custom

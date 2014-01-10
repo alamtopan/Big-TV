@@ -29,8 +29,12 @@ class CartsController < ApplicationController
   end
 
   def premium
-    @memberships = Membership.packages_by_category('premium')
-    @groups = GroupItem.all
+    if request.referer.to_s =~ /customer/i && order.items.present?
+      redirect_to extra_package
+    else
+      @memberships = Membership.packages_by_category('premium')
+      @groups = GroupItem.all
+    end
   end
 
   def preview
