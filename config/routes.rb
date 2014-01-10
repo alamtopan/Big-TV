@@ -20,6 +20,7 @@ BigTv::Application.routes.draw do
 
   get   '/lokasi',   to: 'publics#lokasi',      as: 'lokasi'
   get   '/cara_berlangganan',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
+  get   '/support',   to: 'publics#support',      as: 'support'
 
   get   '/show_blog/:id',   to: 'publics#show_blog',      as: 'show_blog'
   get   '/extra',   to: 'carts#extra',      as: 'extra'

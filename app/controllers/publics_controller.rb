@@ -44,8 +44,12 @@ class PublicsController < ApplicationController
     render layout: "detail"
   end
 
-   def cara_berlangganan
+  def cara_berlangganan
     render layout: "detail_lanjut"
+  end
+
+  def support
+    render layout: "detail"
   end
 
   def show_blog
