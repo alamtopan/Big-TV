@@ -8,6 +8,7 @@ module SeedGroup
     groups.each_with_index do |gr,n|
       group = GroupItem.find_or_initialize_by_name(gr["group_#{n}"]["name"])
       group.colour =  gr["group_#{n}"]["colour"]
+      group.position = gr["group_#{n}"]["position"]
       group.save!
       # item
       items = gr["group_#{n}"]["items"]

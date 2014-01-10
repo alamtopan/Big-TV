@@ -8,10 +8,8 @@ module SeedBlog
   		]
   	author_list = ["Admin"]
 
-  	title_list.each do |title|
-  		desc_list.each do |des|
-		  	Location.create( :title => title, :description => des, :author => author )
-		  end
+  	title_list.each_with_index do |title,index|
+	  	Location.create( :title => title, :description => desc_list[index], :author => author.first, picture: File.new("#{Rails.root}/public/blog_picture/#{title}.png") )
 		end
   end
 end
