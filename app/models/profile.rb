@@ -18,6 +18,9 @@ class Profile < ActiveRecord::Base
 	
 	belongs_to :user
 
+  # validates_presence_of   :first_name, :last_name, :city, :address, :no_hp, :province, :jenis_kelamin, :tanggal_lahir,
+  #                         :referal, :tipe_identitas, :no_identitas, :address_shipping
+
   def full_name
     [first_name, last_name].select(&:'present?').join(' ')
   end

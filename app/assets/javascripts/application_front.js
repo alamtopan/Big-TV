@@ -32,12 +32,13 @@ var    topMenu = $(".menu"),
     });
 
 window.lazyImagesLoaded = function(){
-  if(!is_table_loaded && window.current_menu == 'plan'){
+  if(!is_table_loaded){
     is_table_loaded = true;
     $.each($(".side_table_right"),function( index, value ){
       var color = $(value).data('color');
       var _parent = $(value).parents('.parrent_table').first();
       var total_hg = _parent.outerHeight();
+      console.log(_parent.find(".head_pack"))
       _parent.find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
     });
   }
@@ -46,7 +47,8 @@ window.lazyImagesLoaded = function(){
 $(function() {
   $('.lazy-img').lazyload({
     effect : "fadeIn",
-    threshold : 0
+    threshold : 0,
+    load: lazyImagesLoaded
   });
 });
 

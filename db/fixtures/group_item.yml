@@ -294,7 +294,7 @@ group:
           hd:   false
           logo: 'ASN.png'
   - group_6:
-      name: 'Musics'
+      name: 'Music'
       colour: '#5b6063'
       position: 5
       items:

@@ -22,15 +22,15 @@ class CartsController < ApplicationController
       @memberships = Membership.packages_by_category('extra')
       item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
+      if request.referer.to_s =~ /rental/i
+        redirect_to rental_path
+      end
     end
   end
 
   def premium
     @memberships = Membership.packages_by_category('premium')
     @groups = GroupItem.all
-    if order.items.select{|i| i.membership_category =~ /Premium/i}.present?
-      redirect_to extra_path
-    end
   end
 
   def preview

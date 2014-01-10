@@ -164,8 +164,3 @@ function restore(){
   })
 
 })
-
-  $("#support").click(function(){
-    alert("test");
-    window.location.href = "/support";
-  });
