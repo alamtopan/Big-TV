@@ -38,7 +38,13 @@ class PublicsController < ApplicationController
   def decoder
   end
 
-  def cara_berlangganan
+  def lokasi
+    @categories= CategoryOffice.all
+    @regionals= Regional.all
+    render layout: "detail"
+  end
+
+   def cara_berlangganan
     render layout: "detail_lanjut"
   end
 
