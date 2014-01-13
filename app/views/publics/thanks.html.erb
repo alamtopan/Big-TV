@@ -1,9 +1,14 @@
 <section class="wraper_bg-bright">
-  <h1>
-    <span>
-      Registration Complete! Thank you for Subscribing. Our Call Center will call you within 24 hours to schedule an installation appointment
-    </span>
-  </h1>
+ <% if @order.success? %>
+    <h1><span>Registration Complete!</span></h1>
+    <h3>
+      Thank you for Subscribing.<br />
+      Our Call Center will call you within 24 hours to schedule an installation appointment
+    </h3>
+  <% else %>
+    <h1><span>Registration is NOT Complete!</span></h1>
+  <% end %>
+
   <div class="polosochka2"></div>
   <div class="span12">
   <div id="invoice-page">
@@ -69,7 +74,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="span-24" style="margin-top: 50px;">
           <table id="line_items" class="span-24">
             <tbody><tr>
