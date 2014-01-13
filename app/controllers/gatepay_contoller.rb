@@ -8,6 +8,9 @@ class GatepayController < ApplicationController
       response_text = 'Continue'
     end
 
+    Rails.logger.info ':: NOTIFY RESPONSE ...'
+    Rails.logger.info response_text
+
     render text: response_text
   # rescue
   #   render text: 'STOP'
