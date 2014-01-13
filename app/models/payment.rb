@@ -14,8 +14,8 @@ class Payment < ActiveRecord::Base
 
      order.status = options[:VERIFYSTATUS]
      if payment.save && order.save
-      CustomerMailer.delay.payment_email(order, payment).deliver
-      CustomerMailer.delay.email_order_to_admin(order).deliver
+      CustomerMailer.delay.payment_email(order, payment)
+      CustomerMailer.delay.email_order_to_admin(order)
       return true
     else
       return false
