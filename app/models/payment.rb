@@ -15,11 +15,14 @@ class Payment < ActiveRecord::Base
     payment.total          = options[:AMOUNT].to_f
 
     if payment.save && order.send("#{payment_status}!")
-    CustomerMailer.delay.payment_email(order, payment)
-    CustomerMailer.delay.email_order_to_admin(order)
-    return true
+      if @order.success?
+        CustomerMailer.delay.payment_email(order, payment)
+        CustomerMailer.delay.email_order_to_admin(order)
+      end
+
+      return true
     else
-    return false
+      return false
     end
   end
 
