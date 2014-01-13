@@ -11,7 +11,7 @@ class PublicsController < ApplicationController
     @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all
     @regionals     = Regional.all
 
-    @memberships   = Membership.includes(:prices).packages_by_category('premium')
+    @memberships   = Membership.packages_by_category('premium')
     @groups        = GroupItem.includes(unit_items: [:memberships]).all
     @free_channels = UnitItem.where('free = ?', true)
 	end
