@@ -30,14 +30,14 @@ class CartsController < ApplicationController
 
   def premium
     @memberships = Membership.packages_by_category('premium')
-    @groups = GroupItem.all
+    @groups = GroupItem.includes(unit_items: [:memberships]).all
   end
 
   def preview
     if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
       redirect_to premium_path
     end
-    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
+    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
                 ['Koran', 'Koran'], ['Billboard', 'Billboard']
@@ -53,7 +53,7 @@ class CartsController < ApplicationController
   def rental_box
     @memberships = Membership.packages_by_category('other')
     @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%')
-    
+
     if order.items.where('membership_id IN (?)', @memberships.map(&:id)).blank?
       single_decoder = @memberships.where('memberships.name LIKE ?','1 %').first
       order.add_item(single_decoder, session_cart)
@@ -109,7 +109,7 @@ class CartsController < ApplicationController
       package_created = Membership.find(params[:membership_id])
     end
     order.add_item(package_created,session_cart)
-    if order.errors.blank? 
+    if order.errors.blank?
       session.delete(:current_premium_id)
       redirect_to path_redirect
     else
@@ -182,11 +182,11 @@ class CartsController < ApplicationController
       order.items.each do |item|
         if item.membership_category == "Premium"
           if item.subtotal < minimum_package.price_month && selected_decoder.price_month > 50000
-            flash[:alert] = "Your Premium Package Must Be least Big Star Package, 
-                             Do You want To Get Big Star Package? 
-                             <a href='#{update_package_path}' >yes</a> | 
+            flash[:alert] = "Your Premium Package Must Be least Big Star Package,
+                             Do You want To Get Big Star Package?
+                             <a href='#{update_package_path}' >yes</a> |
                              <a href='#' data-dismiss='alert'>no</a>".html_safe
-            flash[:upgrade_channel] = true 
+            flash[:upgrade_channel] = true
             return false
           end
         end
@@ -215,7 +215,7 @@ class CartsController < ApplicationController
     #   gatepay.trxstatus = 'Pending'
     #   gatepay.save
     # end
-    
+
     # def params_doku(order)
     #   total = order.total.round(2)
     #   params << params[:MALLID] = 958
