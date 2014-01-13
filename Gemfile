@@ -31,13 +31,14 @@ gem 'rails', '3.2.13'
 
 group :production, :staging do
   gem 'unicorn'
-  gem 'capistrano'
+
 end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', platforms: :ruby
+  gem 'turbo-sprockets-rails3'
   gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-rails'
@@ -47,4 +48,6 @@ group :development, :test do
   gem 'letter_opener'
   gem 'debugger'
   gem 'quiet_assets'
+
+  gem 'capistrano', '~> 2'
 end
