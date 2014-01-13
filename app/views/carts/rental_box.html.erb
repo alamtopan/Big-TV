@@ -18,13 +18,21 @@
             <% end %>
             <div class="span12">
               <% default_decoder = @memberships.first %>
+              <% add_class = "pck_decode_table_active" %>   
+              <% active_limit = false %>   
               <% @memberships.each_with_index do |member, index| %>
-                <% add_class = @order.items.map(&:membership_id).include?(member.id) ? 'pck_decode_table_active' : '' %>      
+                <% 
+                add_class =  '' if active_limit
+                if @order.items.map(&:membership_id).include?(member.id)
+                  select_class = @order.items.map(&:membership_id).include?(member.id) ? 'selected' : '' 
+                  active_limit = true
+                end 
+                %>      
                 <div class="grid_packages_decode pck_decode span6">
                   <div class="head_pack red">
                     <span class="small-counter2"><%= member.name %></span>
                   </div>
-                  <table class="table table-bordered padding0 decode pck_decode_table <%= add_class %>" data-index="<%= member.id %>" data-price="<%= member.price_month %>">
+                  <table class="table table-bordered padding0 decode pck_decode_table <%= add_class %> <%= select_class %>" data-index="<%= member.id %>" data-price="<%= member.price_month %>">
                     <tbody>
                       <tr>
                         <td>

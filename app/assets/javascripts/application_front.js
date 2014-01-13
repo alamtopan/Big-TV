@@ -75,7 +75,13 @@ $(document).ready(function(){
       // for (var z = 1; z < total_decoder; z++) {
       //   decoder_price += Number($(decoders[z]).attr('data-price'));
       // }
-      $.get('/extra.js?extra_id='+$(this).attr('data-index')+'&add=true')
+      if($(this).hasClass('selected')){
+        console.log('has selected')
+      }else{
+        $('.pck_decode_table').removeClass('selected')
+        $.get('/extra.js?extra_id='+$(this).attr('data-index')+'&add=true')
+        $(this).addClass('selected')
+      }
     }
     
   })
