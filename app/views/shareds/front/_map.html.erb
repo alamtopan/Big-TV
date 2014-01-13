@@ -8,7 +8,7 @@
   <div class="bar_search">
     <div class="f_search" style="width:80%">
       <span class="font_search">Search Dealer</span>
-      <form class="search_form" action="#" method="POST"> 
+      <form class="search_form" action="#" method="POST">
         <input class="search1" type="text" name="search" id="search_location" placeholder="Dealer Locations">
         <input class="search2" type="submit" name="subscribe" value="Go Search" onclick="return false;">
       </form>
@@ -40,7 +40,7 @@
           <tbody>
             <% cate.offices.each do |office| %>
               <tr class="grid_packages_location <%= cate.name.downcase %>" data-limit="12">
-                <td class="map_location_js" data-latitude="<%= office.latitude %>" 
+                <td class="map_location_js" data-latitude="<%= office.latitude %>"
                 		data-longitude="<%= office.longitude %>" data-province="<%= office.regional.name %>"
                     data-value= "<%= [{name: office.name, area: office.phone_area,phone: office.no_phone,address: office.address}].to_json %>"
                     >
@@ -49,7 +49,7 @@
                     <div><%= office.address %></div>
                     <% if office.no_phone.present? %>
                       <div class="phone">
-                        <%= image_tag "phone.png" %> 
+                        <%= image_tag "phone.png" %>
                         <%= office.phone_area %> <%= office.no_phone %>
                       </div>
                     <% end %>
