@@ -124,6 +124,8 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     polyglot (0.3.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -225,6 +227,7 @@ DEPENDENCIES
   letter_opener
   mysql2 (= 0.3.11)
   paperclip
+  quiet_assets
   rails (= 3.2.13)
   recaptcha
   sass-rails (~> 3.2.3)

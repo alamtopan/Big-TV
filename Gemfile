@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'rails', git: 'git://github.com/rails/rails.git'
 
 # group :db do
   gem 'mysql2','0.3.11'
@@ -22,7 +22,7 @@ gem 'rails', '3.2.13'
   gem 'daemons'                         # Daemon for Background Job
   gem 'delayed_job_web'                 # Delayed Job Monitoring System
   gem 'figaro'
-  gem "recaptcha", :require => "recaptcha/rails"
+  gem "recaptcha", require: "recaptcha/rails"
 #end
 
 
@@ -37,7 +37,7 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', platforms: :ruby
   gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-rails'
@@ -46,4 +46,5 @@ end
 group :development, :test do
   gem 'letter_opener'
   gem 'debugger'
+  gem 'quiet_assets'
 end
