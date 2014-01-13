@@ -4,16 +4,16 @@ class GatepayController < ApplicationController
     order = Order.find_by_code(params[:TRANSIDMERCHANT])
     response_text = 'Stop'
 
-    if order && order.total.to_f == params[:AMOUNT].to_f && Payment.track_payment(order, params, request.env)
+    if order && order.total.to_f == params[:AMOUNT].to_f &&
+        Payment.track_payment(order, params, request.env)
       response_text = 'Continue'
     end
 
     Rails.logger.info ':: NOTIFY RESPONSE ...'
     Rails.logger.info response_text
-
     render text: response_text
-  # rescue
-  #   render text: 'STOP'
+  rescue
+    render text: 'STOP'
   end
 
   def redirect
