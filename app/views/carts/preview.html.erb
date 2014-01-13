@@ -219,10 +219,39 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<div class="br"></div>
+										<div class="form-group">
+											<label class="control-label">
+												Jenis Pembayaran
+											</label>
+											<table>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '01', true %> 
+												</td>
+												<td>
+													<%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%>
+												</td>
+											</tr>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '05' %> 
+												</td>
+												<td>
+													<%= image_tag "atm.png", style: 'height:33px' %>
+												</td>
+											</tr>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '04' %> 
+												</td>
+												<td>
+													<%= image_tag "doku_wallet.png", style: 'height: 33px' %>
+												</td>
+											</tr>
+										</table>
+										</div>
 										<div class="br"></div>
-	                  <%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%><%= image_tag "atm.png", style: 'height:33px' %><%= image_tag "doku_wallet.png", style: 'height: 33px' %>
-										<div class="br"></div>
-										Pilih Pembayaran
+										Lama Berlangganan
 										<div class="br"></div>
 										<select name="order[period]" id="mm" class="form-control">
 											<option value="1">Beli 1 Bulan, Gratis 2 Bulan</option>
