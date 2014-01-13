@@ -66,7 +66,7 @@ BigTv::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.asset_host = 'http://big-tv.com'
-  config.action_mailer.default_url_options = {host: 'big-tv.com'}
+  config.action_mailer.default_url_options = { host: 'big-tv.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.sendgrid.net',
@@ -75,6 +75,6 @@ BigTv::Application.configure do
     user_name:            'domikado',
     password:             'domikado12345eskado',
     authentication:       'plain',
-    enable_starttls_auto: true  
+    enable_starttls_auto: true
   }
 end
