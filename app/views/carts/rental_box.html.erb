@@ -19,7 +19,7 @@
             <div class="span12">
               <% default_decoder = @memberships.first %>
               <% @memberships.each_with_index do |member, index| %>
-                <% add_class = index == 0 ? 'pck_decode_table_active' : '' %>      
+                <% add_class = @order.items.map(&:membership_id).include?(member.id) ? 'pck_decode_table_active' : '' %>      
                 <div class="grid_packages_decode pck_decode span6">
                   <div class="head_pack red">
                     <span class="small-counter2"><%= member.name %></span>

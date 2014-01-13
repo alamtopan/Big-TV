@@ -38,7 +38,7 @@
 									<label class="control-label">
 										* Jenis Kelamin
 									</label>
-									<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {class: 'form-control', required: true, value: current_customer.profile.jenis_kelamin} %>
+									<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true, value: current_customer.profile.jenis_kelamin} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
@@ -54,13 +54,13 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">
-										* Referal
+										Referal
 									</label>
 									<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
-										SPG/Dealer ID
+										SPG ID/ Dealer ID/ BigTV ID
 									</label>
 									<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "To be field by BIG TV personnel only", 																			 value: current_customer.profile.referal_id} %>
 								</div>
@@ -93,7 +93,7 @@
 							<div class="col-md-5">
 								<div class="form-group">
 									<label class="control-label">
-										Telepon
+										* Telepon
 									</label>
 									<%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Telepon', required: true, value: current_customer.profile.no_phone} %>
 								</div>
@@ -225,9 +225,9 @@
 										Pilih Pembayaran
 										<div class="br"></div>
 										<select name="order[period]" id="mm" class="form-control">
-											<option value="1">1 Bulan</option>
-											<option value="6">6 Bulan</option>
-											<option value="12">12 Bulan</option>
+											<option value="1">Beli 1 Bulan, Gratis 2 Bulan</option>
+											<option value="6">Beli 6 Bulan, Gratis 3 Bulan</option>
+											<option value="12">Beli 12 Bulan, Gratis 4 Bulan</option>
 										</select>
 										<div class="br"></div>
 										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN"> 

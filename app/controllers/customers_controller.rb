@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
       end
     else
       flash[:errors] = @customer.errors.full_messages.uniq.join(', ')
-      render action: :new
+      redirect_to new_customer_path
     end
   end
 
@@ -27,7 +27,8 @@ class CustomersController < ApplicationController
       @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'], 
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
-                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'] ];
+                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'],
+                ['Pelanggan BigTV','Pelanggan BigTV'] ];
     end
 
 end

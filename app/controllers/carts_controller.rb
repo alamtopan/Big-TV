@@ -53,6 +53,7 @@ class CartsController < ApplicationController
   def rental_box
     @memberships = Membership.packages_by_category('other')
     @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%')
+    @order  = order
     
     if order.items.where('membership_id IN (?)', @memberships.map(&:id)).blank?
       single_decoder = @memberships.where('memberships.name LIKE ?','1 %').first
@@ -73,11 +74,10 @@ class CartsController < ApplicationController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
       params[:user].delete(:username)
-
       if current_customer.update_attributes(params[:user])
         save_order(current_customer)
         flash[:success] = 'success'
-        CustomerMailer.thanks_email(order).deliver
+        CustomerMailer.thanks_email(order).deliver if params[:billing] == 'email'
         @customer = current_customer
         # delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
