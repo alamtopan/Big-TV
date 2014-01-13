@@ -12,10 +12,10 @@ class Payment < ActiveRecord::Base
      payment.access_record  = "#{req_env}"
      payment.total          = options[:AMOUNT].to_f
 
-     order.status = options[:VERIFYSTATUS]
+     order.status = options[:VERIFYSTATUS].to_s.upcase
      if payment.save && order.save
-      CustomerMailer.delay.payment_email(order, payment).deliver
-      CustomerMailer.delay.email_order_to_admin(order).deliver
+      CustomerMailer.delay.payment_email(order, payment)
+      CustomerMailer.delay.email_order_to_admin(order)
       return true
     else
       return false

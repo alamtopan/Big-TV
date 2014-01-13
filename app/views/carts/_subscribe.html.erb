@@ -1,4 +1,4 @@
-<%= form_tag ENV['API_URL'], method: 'POST' do %>
+<%= form_tag ENV['API_URL'], id: 'paymentForm', method: 'POST' do %>
   <%= hidden_field_tag 'MALLID', ENV['MALL_ID'] %>
   <%= hidden_field_tag 'CHAINMERCHANT', 'NA' %>
   <%= hidden_field_tag 'AMOUNT', "%.2f" % @order.total %>
@@ -10,7 +10,7 @@
   <%= hidden_field_tag 'PURCHASECURRENCY', '360' %>
   <%= hidden_field_tag 'NAME', @customer.profile.full_name %>
   <%= hidden_field_tag 'EMAIL', @customer.email %>
-  <%#= hidden_field_tag 'PAYMENTCHANNEL', '01' %>
+  <%= hidden_field_tag 'PAYMENTCHANNEL', params[:payment_method] %>
   <%= hidden_field_tag 'CC_NAME', @customer.profile.full_name %>
   <%= hidden_field_tag 'ADDRESS', @customer.profile.address.to_s.gsub(/\W/,' ') %>
   <%= hidden_field_tag 'CITY', @customer.profile.city %>
