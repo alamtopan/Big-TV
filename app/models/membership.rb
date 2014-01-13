@@ -1,6 +1,6 @@
 class Membership < ActiveRecord::Base
   attr_accessible :name, :description, :publish_on, :expire_on, :version,
-                  :position, :is_published, :is_featured, :prices_attributes, 
+                  :position, :is_published, :is_featured, :prices_attributes,
                   :unit_item_ids, :category_id
 
   has_many    :prices, class_name: "MembershipPrice", dependent: :destroy
@@ -17,17 +17,17 @@ class Membership < ActiveRecord::Base
 
   class << self
     def packages_by_category(_package)
-      includes(:category).where(['categories.name = ?', _package])
+      includes(:category, :prices).where(['categories.name = ?', _package])
     end
-    
+
     def other_packages
       joins(:category).where('categories.name LIKE ?','%other%')
     end
   end
-  
+
   def default_price
     pricing = prices.where({periode_name: 'month', total_period: 1}).first
     return pricing.price if pricing
     0
   end
-end 
+end

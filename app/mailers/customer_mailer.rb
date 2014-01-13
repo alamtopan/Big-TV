@@ -14,7 +14,7 @@ class CustomerMailer < ActionMailer::Base
   def payment_email(order, payment)
     prepare_order(order)
     @payment = payment
-    mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: 'Notifikasi Pembayaran BigTv #{@order.code}')
+    mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: "Notifikasi Pembayaran BigTv #{@order.code}")
   end
 
   def prepare_order(order)

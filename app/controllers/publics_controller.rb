@@ -2,17 +2,17 @@ class PublicsController < ApplicationController
   layout "public"
 
 	def show
-		if params[:regional] 
+		if params[:regional]
 			regional = params[:regional]
-		else 
-			regional = "Sumatra"	
+		else
+			regional = "Sumatra"
 		end
-    @blogs = Blog.all
-    @categories= CategoryOffice.all
-    @regionals= Regional.all
-		
-    @memberships = Membership.packages_by_category('premium')
-    @groups = GroupItem.all
+    @blogs         = Blog.all
+    @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all
+    @regionals     = Regional.all
+
+    @memberships   = Membership.packages_by_category('premium')
+    @groups        = GroupItem.includes(unit_items: [:memberships]).all
     @free_channels = UnitItem.where('free = ?', true)
 	end
 
@@ -20,9 +20,9 @@ class PublicsController < ApplicationController
     @order = Order.find_by_code(session[params[:order_id]]) if session[params[:order_id]].present?
     # @order = Order.last
     if @order
-      @customer = @order.orderable 
+      @customer = @order.orderable
       @customer_profile = @customer.profile
-      render layout: "detail" 
+      render layout: "detail"
     else
       redirect_to root_path
     end
@@ -56,5 +56,5 @@ class PublicsController < ApplicationController
     @blog = Blog.find_by_id(params[:id])
     render layout: "detail"
   end
-  
+
 end
