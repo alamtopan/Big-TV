@@ -195,6 +195,10 @@ class CartsController < ApplicationController
     end
 
     def authorize_customer
+      if params[:token].present? && @order = Order.find_by_token(params[:token])
+        sign_in(:customer, @order.orderable)
+      end
+
       session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
       unless current_customer
         if request.xhr?

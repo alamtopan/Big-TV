@@ -17,15 +17,18 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    @order = Order.find_by_code(session[params[:order_id]]) if session[params[:order_id]].present?
-    # @order = Order.last
-    if @order
+    if params[:token].present? && @order = Order.find_by_token(params[:token])
       @customer = @order.orderable
       @customer_profile = @customer.profile
       render layout: "detail"
     else
       redirect_to root_path
     end
+
+    # @order = Order.last
+    # @customer = Customer.last
+    # @customer_profile = Profile.last
+    # render layout: 'detail'
   end
 
   def render_map

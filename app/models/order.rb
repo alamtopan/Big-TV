@@ -109,6 +109,7 @@ class Order < ActiveRecord::Base
       ].join(',')
     }.join(';')
   end
+
   private
     def after_modification
       check_activity
@@ -122,7 +123,8 @@ class Order < ActiveRecord::Base
         set_code_sufix
       end
 
-      self.status = 'pending' if self.status.blank?
+      self.token  = Digest::SHA1.hexdigest("#{code}#{Time.now}")
+      self.status = Status::PENDING if self.status.blank?
     end
 
     def set_code_prefix
