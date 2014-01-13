@@ -192,6 +192,11 @@
                                     <p style="margin-bottom:15px">Customer service kami akan menghubungi anda untuk konfirmasi pemesanan, mohon lakukan pembayaran untuk mempercepat proses instalasi anda.</p>
                                     <p style="margin-bottom:15px">Selamat menikmati tayangan-tayangan menarik channel lokal maupun mancanegara hanya di Big TV!<br style="line-height:100%">
 
+                                    <p>
+                                      Klik link di bawah ini untuk membayar secara online:<br />
+                                      <%= link_to "Bayar Online", thanks_url(token: @order.token) %>
+                                    </p>
+
                                     <p><a href="http://big-tv.com" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">BIG CUSTOMER SERVICE</a>
                                       <br/>customer.service@bigtv.co.id
                                     </p>
