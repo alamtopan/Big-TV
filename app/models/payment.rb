@@ -2,7 +2,7 @@ class Payment < ActiveRecord::Base
   belongs_to :order
 
   def self.track_payment(order, options, req_env)
-    payment_status = options[:RESPONSECODE] === '0000' ? 'SUCCESS' : 'FAILED'
+    payment_status = options[:RESPONSECODE] === '0000' ? Order::Status::SUCCESS : Order::Status::FAILED
 
     payment = Payment.new
     payment.order_id       = order.id
@@ -14,8 +14,7 @@ class Payment < ActiveRecord::Base
     payment.access_record  = "#{req_env}"
     payment.total          = options[:AMOUNT].to_f
 
-    order.status = payment_status
-    if payment.save && order.save
+    if payment.save && order.send("#{payment_status}!")
     CustomerMailer.delay.payment_email(order, payment)
     CustomerMailer.delay.email_order_to_admin(order)
     return true
