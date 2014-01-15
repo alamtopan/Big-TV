@@ -2460,7 +2460,7 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
   border: 0px solid #000000;
 }
 
-.package-channel-table td{ position: relative; }
+.table td{ position: relative; }
 
 
 
