@@ -56,7 +56,7 @@
 									<label class="control-label">
 										Referal
 									</label>
-									<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
+									<%= profile.select :referal, @referal, {:selected => current_customer.profile.referal}, {class: 'form-control'} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
@@ -138,9 +138,9 @@
 										* Tagihan
 									</label>
 									<br/>
-									<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
+									<%= radio_button_tag :billing, 'post', true %> <label for="billing_post">Kirim Lewat Pos</label>
 									<br/>
-									<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
+									<%= radio_button_tag :billing, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
 								</div>
 							</div>
 						</div>
