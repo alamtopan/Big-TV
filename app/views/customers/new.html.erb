@@ -3,7 +3,7 @@
   <div class="polosochka2"></div>
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
-    <%= form_for @customer, method: 'post' do |f| %>
+    <%= form_for @customer, url: customers_path, method: 'post' do |f| %>
       <%= f.fields_for(:profile) do |profile| %>
         <div class="panel-body">
           <div class="span<%= @membership_order ? '9' : '12' %>">
@@ -21,10 +21,8 @@
             <div class="row">
               <div class="col-md-12">
                 <% if flash[:errors].present? %>
-                  <div class="errorHandler alert no-display">
-                    <div class="alert-danger">
+                  <div class="errorHandler alert no-display alert-danger">
                       <i class="icon-remove-sign"></i> <%= flash[:errors] %>
-                    </div>
                   </div>
                 <% end %>
                 <!-- <div class="successHandler alert alert-success no-display">
@@ -51,7 +49,7 @@
                   <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi'} %>
                 </div>
               </div>
-                
+
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">
@@ -75,7 +73,7 @@
                 <div class="pull-right customer-actions">
                   <%= recaptcha_tags %>
                   <div class="customer-actions">
-                    <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>"> 
+                    <input type="submit" class="pack-order float-right-fixed margn" value="LANJUT >>">
                   </div>
                 </div>
               </div>
