@@ -15,7 +15,7 @@
       <% @categories.each_with_index do |category,index| %>
         <tr>
           <td><%= index+1 %></td>
-          <td><%= category.name %></td>
+          <td><%= category.name.to_s.titleize %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: category, confirmation: "#{category.name} will be deleted, are you sure ?"} %>
             </div>

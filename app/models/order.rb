@@ -12,7 +12,6 @@ class Order < ActiveRecord::Base
     SUCCESS = 'success'
     FAILED  = 'failed'
     PENDING = 'pending'
-
   end
 
  Status.constants.each do |constant|
@@ -56,7 +55,7 @@ class Order < ActiveRecord::Base
       if self.items.blank?
         destroy
       else
-
+        CustomerMailer.thanks_email(self).deliver
       end
     else
       check_activity
@@ -85,16 +84,19 @@ class Order < ActiveRecord::Base
   end
 
   def populate_order_item(qty, membership_id,session)
-    #return false if
-    validate_membership(session,membership_id)
     item = items.find_or_initialize_by_membership_id(membership_id)
     current_product = item.membership
-    return unless current_product
+    return false unless current_product
+    
+    # remove decoder if quantity is more than 1 and current package is not universe or star
+    if current_product.requires_upgrade_by_decoder?(items)
+      another_decoder = items.select{|i| i.decoder?}.first
+      another_decoder.destroy if another_decoder
+    end if current_product.premium?
+    
+    validate_membership(session,membership_id) if item.new_record?
+    
     item.quantity = 1
-    # item.quantity = (item.quantity||1).to_i
-    # if item.membership_category.to_s.downcase != 'other'
-    #   item.quantity += qty.to_i
-    # end
     item.price = current_product.default_price
     item.title = current_product.name
     item.save
@@ -144,13 +146,9 @@ class Order < ActiveRecord::Base
     def validate_membership(session,membership_id)
       valid_order = Order.find_by_session_id(session)
       membership = Membership.find(membership_id)
-      if valid_order && membership
-        membership_name = membership.category.name
-        if membership_name =~ /Premium|Other/i
-          selected_item = valid_order.items.select{|i| i.membership_category == membership_name}.first
-          selected_item.destroy if selected_item
-        end
-      end
-      # return false
+      if membership.premium? || membership.other?
+        selected_item = valid_order.items.select{|i| i.membership_category == membership.category_name}.first
+        selected_item.destroy if selected_item && !selected_item.new_record?
+      end if valid_order && membership
     end
 end

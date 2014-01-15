@@ -20,7 +20,7 @@
         <tr>
           <td><%= index+1 %></td>
           <td><%= member.name %></td>
-          <td><%= member.category.name if member.category %></td>
+          <td><%= member.category.name.to_s.titleize if member.category %></td>
           <td><%= member.publish_on %></td>
           <td><%= member.is_published %></td>
           <td><%= member.is_featured %></td>

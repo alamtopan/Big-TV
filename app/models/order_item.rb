@@ -13,12 +13,34 @@ class OrderItem < ActiveRecord::Base
 
 
   def membership_category
-    self.membership.category.name
+    @membership_category ||= self.membership.category.name.to_s
+  end
+
+  Category::Config::NAMES.each do |val|
+    define_method("#{ val.downcase }?") do
+      membership_category =~ /#{val}/i
+    end
+  end
+
+  def decoder?
+    return false unless self.membership
+    self.membership.name =~ /decoder/i && self.other?
   end
   
   private
     def before_saving
-      self.subtotal = self.price.to_i * self.quantity.to_i
+      if self.decoder? && self.membership.name !~ /1/i
+        requested_decoder = self.membership.name.gsub(/[a-z\s]/i, '').to_i
+        if requested_decoder > 1
+          self.subtotal = (1..requested_decoder).map do |t|
+            Membership.decoder_by_quantity(t)
+          end.compact.sum(&:default_price)
+          self.price = self.subtotal
+          self.quantity = 1
+        end
+      else
+        self.subtotal = self.price.to_i * self.quantity.to_i
+      end
       self.title = self.membership.name
     end
 

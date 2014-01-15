@@ -4,7 +4,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:  'Premium'
+      category:  'premium'
       prices:
         - price_0:
             price:    488888
@@ -190,7 +190,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:  'Premium'
+      category:  'premium'
       prices:
         - price_0:
             price:    269999
@@ -340,7 +340,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:  'Premium'
+      category:  'premium'
       prices:
         - price_0:
             price:    149999
@@ -464,7 +464,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:  'Premium'
+      category:  'premium'
       prices:
         - price_0:
             price:    107999
@@ -556,7 +556,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:  'Premium'
+      category:  'premium'
       prices:
         - price_0:
             price:    89999
@@ -632,7 +632,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    10000
@@ -650,7 +650,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    49999
@@ -672,7 +672,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    24999
@@ -696,7 +696,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    150000
@@ -710,7 +710,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    49999
@@ -732,7 +732,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    49999
@@ -754,7 +754,7 @@ membership:
       description:  ''
       published:    true
       featured:     true
-      category:     'Extra'
+      category:     'extra'
       prices:
         - price_0:
             price:    99999
@@ -784,7 +784,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    69999
@@ -806,7 +806,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    69999
@@ -828,7 +828,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    120000
@@ -844,7 +844,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    120000
@@ -858,7 +858,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    50000
@@ -872,7 +872,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    50000
@@ -892,7 +892,7 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Extra'
+        category:     'extra'
         prices:
           - price_0:
               price:    200000
@@ -920,10 +920,10 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Other'
+        category:     'other'
         prices:
           - price_0:
-              price:    50000
+              price:    20000
               total:    1
               periode:  'month'
         items: 
@@ -932,10 +932,10 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Other'
+        category:     'other'
         prices:
           - price_0:
-              price:    70000
+              price:    50000
               total:    1
               periode:  'month'
         items: 
@@ -944,10 +944,10 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Other'
+        category:     'other'
         prices:
           - price_0:
-              price:    90000
+              price:    50000
               total:    1
               periode:  'month'
         items: 
@@ -956,10 +956,10 @@ membership:
         description:  ''
         published:    true
         featured:     true
-        category:     'Other'
+        category:     'other'
         prices:
           - price_0:
-              price:    110000
+              price:    50000
               total:    1
               periode:  'month'
         items: 
