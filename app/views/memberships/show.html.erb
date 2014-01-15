@@ -49,7 +49,7 @@
         <div class="form-group">
           <%= label_tag :category_id, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @membership.category.name if @membership.category %>
+            <%= @membership.category.name.to_s.titleize if @membership.category %>
           </div>
         </div>
         <br/>

@@ -11,6 +11,22 @@ class Membership < ActiveRecord::Base
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
   scope :by_position, order_by: ("position ASC")
 
+  Category::Config::NAMES.each do |val|
+    define_method("#{ val.downcase }?") do
+      category.name =~ /#{val}/i
+    end
+  end
+
+  def category_name
+    return '' unless category
+    category.name
+  end
+
+  def requires_upgrade_by_decoder?(original_items)
+    single_decoder = Membership.decoder_by_quantity(1)
+    !original_items.find_by_membership_id(single_decoder.id) && name !~ /universe|star/i
+  end
+
   def price_month
     self.prices.first.price if self.prices
   end
@@ -23,6 +39,10 @@ class Membership < ActiveRecord::Base
     def other_packages
       joins(:category).where('categories.name LIKE ?','%other%')
     end
+
+    def decoder_by_quantity(qty)
+      where('name LIKE ?',"#{qty} %").first
+    end
   end
 
   def default_price
@@ -30,4 +50,6 @@ class Membership < ActiveRecord::Base
     return pricing.price if pricing
     0
   end
+
+  
 end

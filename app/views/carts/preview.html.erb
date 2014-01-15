@@ -3,7 +3,7 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-    <%= form_for :user, url: subcribe_carts_path, method: 'post', html: {multipart: true, remote: true, class: 'form-subscribe'} do |f| %>
+    <%= form_for :user, url: subcribe_carts_path(token: params[:token]), method: 'post', html: {remote: true, class: 'form-subscribe'} do |f| %>
 			<%= f.fields_for(:profile_attributes) do |profile| %>
 		    <div class="panel-body">
 					<div class="span9">
@@ -56,7 +56,7 @@
 									<label class="control-label">
 										Referal
 									</label>
-									<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
+									<%= profile.select :referal, @referal, {:selected => current_customer.profile.referal}, {class: 'form-control'} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
@@ -86,7 +86,8 @@
 									<label class="control-label">
 										* Nomor Identitas
 									</label>
-									<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas', required: true} %>
+									<%= profile.text_field :no_identitas, value: current_customer.profile.no_identitas,
+                                                        class: 'form-control', placeholder: 'Nomor Identitas', required: true %>
 								</div>
 							</div>
 
@@ -138,9 +139,9 @@
 										* Tagihan
 									</label>
 									<br/>
-									<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
+									<%= radio_button_tag :billing, 'post', true %> <label for="billing_post">Kirim Lewat Pos</label>
 									<br/>
-									<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
+									<%= radio_button_tag :billing, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
 								</div>
 							</div>
 						</div>
@@ -188,8 +189,8 @@
 											<% end %>
 										<% end %>
 										<% @order.items.each do |item| %>
-											<% if item.membership_category == 'Other' %>
-											<% if item.title.present? %>	
+											<% if item.membership_category.downcase == 'other' %>
+											<% if item.title.present? %>
 											<div class="br"></div>
 												<table class="tbl_order">
 													<tbody>
@@ -219,10 +220,39 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<div class="br"></div>
+										<div class="form-group">
+											<label class="control-label">
+												Jenis Pembayaran
+											</label>
+											<table>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '01', true %>
+												</td>
+												<td>
+													<%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%>
+												</td>
+											</tr>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '05' %>
+												</td>
+												<td>
+													<%= image_tag "atm.png", style: 'height:33px' %>
+												</td>
+											</tr>
+											<tr>
+												<td valign="top">
+													<%= radio_button_tag :payment_method, '04' %>
+												</td>
+												<td>
+													<%= image_tag "doku_wallet.png", style: 'height: 33px' %>
+												</td>
+											</tr>
+										</table>
+										</div>
 										<div class="br"></div>
-	                  <%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%><%= image_tag "atm.png", style: 'height:33px' %><%= image_tag "doku_wallet.png", style: 'height: 33px' %>
-										<div class="br"></div>
-										Pilih Pembayaran
+										Lama Berlangganan
 										<div class="br"></div>
 										<select name="order[period]" id="mm" class="form-control">
 											<option value="1">Beli 1 Bulan, Gratis 2 Bulan</option>
@@ -230,7 +260,7 @@
 											<option value="12">Beli 12 Bulan, Gratis 4 Bulan</option>
 										</select>
 										<div class="br"></div>
-										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN"> 
+										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN">
 									</div>
 								</div>
 							</div>

@@ -42,7 +42,7 @@
         <div class="form-group">
           <%= label_tag :name, nil, class: "col-sm-2 control-label" %>
           <div class="col-sm-9">
-            <%= @category.name %>
+            <%= @category.name.to_s.titleize %>
           </div>
         </div>
         <div class="form-group">

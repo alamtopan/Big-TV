@@ -1,22 +1,11 @@
-<section class="wraper_bg-bright">
- <% if @order.success? %>
-    <h1><span>Registration Complete!</span></h1>
-    <h3>
-      Thank you for Subscribing.<br />
-      Our Call Center will call you within 24 hours to schedule an installation appointment
-    </h3>
-  <% else %>
-    <h1><span>Registration is NOT Complete!</span></h1>
-  <% end %>
-
-  <div class="polosochka2"></div>
-  <div class="span12">
+<div class="span12">
   <div id="invoice-page">
     <div id="invoice_contents" style="float:left;background: #fff;">
       <div style="height: 48px">
         <div style="float:left;">
           <h2 style="position:relative; top: 20px;">
-            <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span> <%= @order.code %>
+            <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span>
+            <%= @order.code %>
           </h2>
         </div>
         <div style="float:right;">
@@ -34,10 +23,12 @@
                   <span style="float:left;font-size: 14px;"><%= @customer.email %></span>
                 </div>
                 <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
-                  <span style="float:left">No Telp. <%= @customer_profile.no_phone %></span>
+                  <span style="float:left">No Telp.
+                    <%= @customer_profile.no_phone %></span>
                 </div>
                 <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
-                  <span style="float:left">No HP. <%= @customer_profile.no_hp %></span>
+                  <span style="float:left">No HP.
+                    <%= @customer_profile.no_hp %></span>
                 </div>
                 <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
                   <span style="width: 54px;float:left">Alamat:</span>
@@ -51,7 +42,6 @@
           </tbody>
         </table>
       </div>
-
       <div class="span-10 last">
         <div class="details clearfix" style="font-size: 14px;">
           <div class="span-15" style="text-align:right;">
@@ -75,11 +65,9 @@
           </div>
         </div>
       </div>
-
       <div class="span-24" style="margin-top: 50px;">
         <table id="line_items" class="span-24">
-          <tbody>
-            <tr>
+          <tbody><tr>
               <th class="description" style="width:225px">KETERANGAN</th>
               <th style="font-size:14px">PERIODE</th>
               <th class="unit-price" style="font-size:14px;width: 150px;text-align:center;">HARGA/BULAN</th>
@@ -104,10 +92,31 @@
                 </td>
               </tr>
             <% end %>
+            <tr>
+              <td class="rule" colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                &nbsp;
+              </td>
+              <td class="amount_due">
+                <b class="right">Total</b>
+              </td>
+              <td class="amount_due nowrap" id="invoice_total">
+                <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
+              </td>
+            </tr>
           </tbody>
         </table>
+
+        <% unless @order.success? %>
+          <div class="extra_banner">
+            <div class="own_extra">
+              <%= link_to 'Bayar >>', preview_path(token: @order.token), class: 'pack-order float-right-fixed margn' %>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <%= render 'order_info' %>
     </div>
   </div>
-</section>
+</div>
