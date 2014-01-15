@@ -1,466 +1,516 @@
 items:
   - item_0:
-      name:   'Aceh TV'
-      hd:     false
-      free:   true
-      logo:   'Aceh_TV.png'
-  - item_1:
-      name:   'ANTV'
-      hd:     false
-      free:   true
-      logo:   'anteve.png'
-  - item_2:
-      name:   'Arjuna TV'
-      hd:     false
-      free:   true
-      logo:   'Arjuna_TV.png'
-  - item_3:
-      name:   'Bali TV'
-      hd:     false
-      free:   true
-      logo:   'Bali_TV.png'
-  - item_4:
-      name:   'Bandung TV'
-      hd:     false
-      free:   true
-      logo:   'Bandung_TV.png'
-  - item_5:
-      name:   'Daai TV'
-      hd:     false
-      free:   true
-      logo:   'DAAI_TV.png'
-  - item_6:
-      name:   'Indosiar'
-      hd:     false
-      free:   true
-      logo:   'Indosiar.png'
-  - item_7:
-      name:   'Insan TV'
-      hd:     false
-      free:   true
-      logo:   'Insan_TV.png'
-  - item_8:
-      name:   'Jak TV'
-      hd:     false
-      free:   true
-      logo:   'Jak_TV.png'
-  - item_9:
-      name:   'Jogja TV'
-      hd:     false
-      free:   true
-      logo:   'Jogja_TV.png'
-  - item_10:
-      name:   'Kompas TV'
-      hd:     false
-      free:   true
-      logo:   'Kompas_TV.png'
-  - item_11:
-      name:   'Malang TV'
-      hd:     false
-      free:   true
-      logo:   'Malang_TV.png'
-  - item_12:
-      name:   'Metro TV'
-      hd:     false
-      free:   true
-      logo:   'Metro_TV.png'
-  - item_13:
       name:   'TVRI'
       hd:     false
       free:   true
       logo:   'TVRI.png'
-  - item_14:
+  - item_1:
       name:   'TV One'
       hd:     false
       free:   true
       logo:   'TV_One.png'
-  - item_15:
+  - item_2:
       name:   'Trans 7'
       hd:     false
       free:   true
       logo:   'Trans_7.png'
-  - item_16:
+  - item_3:
       name:   'Trans TV'
       hd:     false
       free:   true
       logo:   'Trans_TV.png'
-  - item_17:
-      name:   'Televisi_Edukasi'
+  - item_4:
+      name:   'Indosiar'
       hd:     false
       free:   true
-      logo:   'Televisi_Edukasi.png'
-  - item_18:
-      name:   'Surabaya TV'
+      logo:   'Indosiar.png'
+  - item_5:
+      name:   'ANTV'
       hd:     false
       free:   true
-      logo:   'Surabaya_TV.png'
-  - item_19:
-      name:   'Sriwijaya TV'
+      logo:   'anteve.png'  
+  - item_6:
+      name:   'Metro TV'
       hd:     false
       free:   true
-      logo:   'Sriwijaya_TV.png'
-  - item_20:
-      name:   'Semarang TV'
+      logo:   'Metro_TV.png'
+  - item_7:
+      name:   'Jak TV'
       hd:     false
       free:   true
-      logo:   'Semarang_TV.png'
-  - item_21:
+      logo:   'Jak_TV.png'
+  - item_8:
+      name:   'Kompas TV'
+      hd:     false
+      free:   true
+      logo:   'Kompas_TV.png'
+  - item_9:
       name:   'SCTV'
       hd:     false
       free:   true
       logo:   'SCTV.png'
-  - item_22:
-      name:   'Rodja TV'
+  - item_10:
+      name:   'O Channel'
       hd:     false
       free:   true
-      logo:   'Rodja_TV.png'
-  - item_23:
-      name:   'Papua Barat TV'
-      hd:     false
-      free:   true
-      logo:   'Papua_Barat_TV.png'
-  - item_24:
-      name:   'TV Timor Leste'
-      hd:     false
-      free:   true
-      logo:   'TV_Timor_Leste.png'
-  - item_25:
-      name:   'Papua Barat TV'
-      hd:     false
-      free:   true
-      logo:   'TV_One.png'
-  - item_26:
-      name:   'TVRI Sumbar'
-      hd:     false
-      free:   true
-      logo:   'TVRI_Sumbar.png'
-  - item_27:
-      name:   'TVRI Papua'
-      hd:     false
-      free:   true
-      logo:   'TVRI_Papua.png'
-  - item_28:
-      name:   'TVRI Kaltim'
-      hd:     false
-      free:   true
-      logo:   'TVRI_Kaltim.png'
-  - item_29:
-      name:   'TVRI Kalteng'
-      hd:     false
-      free:   true
-      logo:   'TVRI_Kalteng.png'
-  - item_30:
-      name:   'TVRI Kalbar'
-      hd:     false
-      free:   true
-      logo:   'TVRI_Kalbar.png'
-  - item_31:
-      name:   'TV Edukasi Siswa'
-      hd:     false
-      free:   true
-      logo:   'TV_Edukasi_1_Siswa.png'
-  - item_32:
-      name:   'TV Edukasi Guru'
-      hd:     false
-      free:   true
-      logo:   'TV_Edukasi_2_Guru.png'
-  - item_33:
-      name:   'Top TV Papua'
-      hd:     false
-      free:   true
-      logo:   'Top_TV_Papua.png'
-  - item_34:
-      name:   'Televisi Mandiri Papua'
-      hd:     false
-      free:   true
-      logo:   'Televisi_Mandiri_Papua.png'
-  - item_35:
-      name:   'NGC Wild HD'
-      hd:     true
-      free:   free
-      logo:   'Nat_Geo_Wild.png'
-  - item_36:
-      name:   'ASN HD'
-      hd:     true
-      free:   free
-      logo:   'ASN_HD.png'
-  - item_37:
-      name:   'FOX Sports Plus'
-      hd:     false
-      free:   false
-      logo:   'Fox_Sports_Plus.png'
-  - item_38:
-      name:   'Eurosports HD'
-      hd:     true
-      free:   false
-      logo:   'Eurosport_HD.png'
-  - item_39:
-      name:   'Eurosports'
-      hd:     false
-      free:   false
-      logo:   'Eurosport.png'
-  - item_40:
-      name:   'ASN HD'
-      hd:     true
-      free:   false
-      logo:   'ASN_HD.png'
-  - item_41:
-      name:   'ASN'
-      hd:     false
-      free:   false
-      logo:   'ASN.png'
-  - item_42:
-      name:   'Star Cricket'
-      hd:     false
-      free:   false
-      logo:   'Star_Cricket.png'
-  - item_43:
-      name:   'Star Chinese Channel'
-      hd:     false
-      free:   false
-      logo:   'Star_Chinese_Channel.png'
-  - item_44:
-      name:   'K-TV'
-      hd:     false
-      free:   false
-      logo:   'KTV.png'
-  - item_45:
-      name:   'Setanta Sports'
-      hd:     false
-      free:   false
-      logo:   'Setanta_Sports.png'
-  - item_46:
-      name:   'TVB 8'
-      hd:     false
-      free:   false
-      logo:   'TVB_8.png'
-  - item_47:
-      name:   'Star Cricket'
-      hd:     false
-      free:   false
-      logo:   'Star_Cricket.png'
-  - item_48:
-      name:   'TVB S Asia'
-      hd:     false
-      free:   false
-      logo:   'TVB_S_Asia.png'
-  - item_49:
-      name:   'TVB Xing He'
-      hd:     false
-      free:   false
-      logo:   'TVB_XingHe.png'
-  - item_50:
-      name:   'TVB Jade'
-      hd:     false
-      free:   false
-      logo:   'TVB_Jade.png'
-  - item_51:
-      name:   'TVB S News'
-      hd:     false
-      free:   false
-      logo:   'TVB_S_News.png'
-  - item_52:
+      logo:   'O_Channel.png'
+  - item_11:
       name:   'Net TV HD'
       hd:     false
       free:   true
       logo:   'NET_TV.png'
-  - item_53:
-      name:   'Star Gold'
+  - item_12:
+      name:   'JTV'
       hd:     false
       free:   true
-      logo:   'Star_Gold.png'
-  - item_54:
-      name:   'B Channel'
-      hd:     false
-      free:   true
-      logo:   'B_Channel.png'
-  - item_55:
-      name:   'Bloomberg Indonesia'
-      hd:     false
-      free:   free
-      logo:   'Bloomberg_TV_Indonesia.png'
-  - item_56:
-      name:   'O Channel'
-      hd:     false
-      free:   free
-      logo:   'O_Channel.png'
-  - item_57:
-      name:   'jTV'
-      hd:     false
-      free:   free
       logo:   'JTV.png'
-  - item_58:
+  - item_13:
       name:   'Bali TV'
       hd:     false
-      free:   free
+      free:   true
       logo:   'Bali_TV.png'
-  - item_59:
-      name:   'Antara TV'
+  - item_14:
+      name:   'Aceh TV'
       hd:     false
-      free:   free
-      logo:   'Antara_TV.png'
-  - item_60:
-      name:   'TimorLeste TV'
+      free:   false
+      logo:   'Aceh_TV.png'
+  - item_15:
+      name:   'Arjuna TV'
       hd:     false
-      free:   free
-      logo:   'O_Channel.png'
-  - item_61:
-      name:   'TV Edukasi Siswa'
+      free:   false
+      logo:   'Arjuna_TV.png'
+  - item_16:
+      name:   'Bali TV'
       hd:     false
-      free:   free
-      logo:   'TV_Edukasi_1_Siswa.png'
-  - item_62:
-      name:   'TV Edukasi 2 Guru'
-      hd:     false
-      free:   free
-      logo:   'TV_Edukasi_2_Guru.png'
-  - item_63:
-      name:   'TVRI Edukasi'
-      hd:     false
-      free:   free
-      logo:   'TVRI.png'
-  - item_64:
-      name:   'Top TV Papua'
-      hd:     false
-      free:   free
-      logo:   'Top_TV_Papua.png'
-  - item_65:
-      name:   'TVRI Kalbar'
-      hd:     false
-      free:   free
-      logo:   'TVRI_Kalbar.png'
-  - item_66:
-      name:   'TVRI Kalteng'
-      hd:     false
-      free:   free
-      logo:   'TVRI_Kalteng.png'
-  - item_67:
-      name:   'TVRI Kaltim'
-      hd:     false
-      free:   free
-      logo:   'TVRI_Kaltim.png'
-  - item_68:
-      name:   'TVRI Papua'
-      hd:     false
-      free:   free
-      logo:   'TVRI_Papua.png'
-  - item_69:
-      name:   'U Channel'
-      hd:     false
-      free:   free
-      logo:   'U_Channel.png'
-  - item_70:
+      free:   true
+      logo:   'Bali_TV.png'
+  - item_17:
       name:   'Papua TV'
       hd:     false
-      free:   free
+      free:   true
       logo:   'Papua_Barat_TV.png'
-  - item_71:
-      name:   'CCTV France'
+  - item_18:
+      name:   "J'Go"
       hd:     false
-      free:   free
-      logo:   'cctv_francais.png'
-  - item_72:
-      name:   'CCTV Espanol'
+      free:   true
+      logo:   ''
+  - item_19:
+      name:   "Hi!"
       hd:     false
-      free:   free
-      logo:   'cctv_espanol.png'
-  - item_73:
-      name:   'CCTV Arabic'
-      hd:     false
-      free:   free
-      logo:   'cctv_arabic.png'
-  - item_74:
-      name:   'CCTV Russian'
-      hd:     false
-      free:   free
-      logo:   'cctv_russian.png'
-  - item_75:
-      name:   'Star Chinese Channel'
-      hd:     false
-      free:   free
-      logo:   'star_chinese.png'
-  - item_76:
-      name:   'Channel V'
-      hd:     false
-      free:   free
-      logo:   'Channel_V.png'
-  - item_77:
-      name:   'Baby First'
-      hd:     false
-      free:   free
-      logo:   'Baby_First_TV.png'
-  - item_78:
-      name:   'France 24 English'
-      hd:     false
-      free:   free
-      logo:   'France_24.png'
-  - item_79:
-      name:   'CCTV NEWS'
-      hd:     false
-      free:   free
-      logo:   'CCTV_News.png'
-  - item_80:
-      name:   'Star World'
-      hd:     false
-      free:   free
-      logo:   'StarWorld.png'
-  - item_81:
+      free:   true
+      logo:   'Reformed_21.png'
+  - item_20:
       name:   'Reformed 21'
       hd:     false
-      free:   free
+      free:   true
       logo:   'Reformed_21.png'
-  - item_82:
-      name:   'TV Parlement'
+  - item_21:
+      name:   'Berita Satu News'
       hd:     false
-      free:   free
-      logo:   'TV_Parlement.png'
-  - item_83:
-      name:   'Big Show'
+      free:   true
+      logo:   'Berita_Satu_CA.png'
+  - item_22:
+      name:   'Berita Satu World'
       hd:     false
-      free:   free
-      logo:   'BIGTV_logo.png'
-  - item_84:
-      name:   'Big Info'
+      free:   true
+      logo:   ''
+  - item_23:
+      name:   'Mix'
       hd:     false
-      free:   free
-      logo:   'BIGTV_logo.png'
-  - item_85:
-      name:   'Big Channel list'
+      free:   true
+      logo:   ''
+  - item_24:
+      name:   'Dangdutz'
       hd:     false
-      free:   free
-      logo:   'BIGTV_logo.png'
-  - item_86:
-      name:   'Star World HD'
+      free:   true
+      logo:   ''
+  - item_25:
+      name:   'Jakarta Globe TV'
+      hd:     false
+      free:   true
+      logo:   ''
+  - item_26:
+      name: 'TV Parliament'
+      hd:   false
+      free: true
+      logo: 'TV_Parlement.png'
+  - item_27:
+      name:   'Berita Satu News HD'
       hd:     true
-      free:   free
-      logo:   'BIGTV_logo.png'
-  - item_87:
-      name:   'Fox HD'
+      free:   true
+      logo:   ''
+  - item_28:
+      name:   "J'Go HD"
       hd:     true
-      free:   free
-      logo:   'FOX_HD.png'
-  - item_88:
-      name:   'AXN HD'
-      hd:     true
-      free:   free
-      logo:   'AXN_HD.png'
-  - item_89:
-      name:   'History HD'
-      hd:     true
-      free:   free
-      logo:   'History_HD.png'
-  - item_90:
+      free:   true
+      logo:   'J_Go.png'
+  - item_29:
+      name:   'Rodja TV'
+      hd:     false
+      free:   true
+      logo:   'Rodja_TV.png'
+  - item_30:
+      name:   'U Channel'
+      hd:     false
+      free:   true
+      logo:   'U_Channel.png'
+  - item_31:
+      name:   'Antara TV'
+      hd:     false
+      free:   true
+      logo:   'Antara_TV.png'
+  - item_32:
+      name:   'Channel News Asia'
+      hd:     false
+      free:   true
+      logo:   ''
+  - item_33:
+      name:   'Bandung TV'
+      hd:     false
+      free:   false
+      logo:   'Bandung_TV.png'
+  - item_34:
+      name:   'Daai TV'
+      hd:     false
+      free:   false
+      logo:   'DAAI_TV.png'
+  - item_35:
+      name:   'Insan TV'
+      hd:     false
+      free:   false
+      logo:   'Insan_TV.png'
+  - item_36:
+      name:   'Jogja TV'
+      hd:     false
+      free:   false
+      logo:   'Jogja_TV.png'
+  - item_37:
+      name:   'Malang TV'
+      hd:     false
+      free:   false
+      logo:   'Malang_TV.png'
+  - item_38:
+      name:   'Televisi_Edukasi'
+      hd:     false
+      free:   false
+      logo:   'Televisi_Edukasi.png'
+  - item_39:
+      name:   'Surabaya TV'
+      hd:     false
+      free:   false
+      logo:   'Surabaya_TV.png'
+  - item_40:
+      name:   'Sriwijaya TV'
+      hd:     false
+      free:   false
+      logo:   'Sriwijaya_TV.png'
+  - item_41:
+      name:   'Semarang TV'
+      hd:     false
+      free:   false
+      logo:   'Semarang_TV.png'
+  - item_42:
+      name:   'Papua Barat TV'
+      hd:     false
+      free:   false
+      logo:   'Papua_Barat_TV.png'
+  - item_43:
+      name:   'TV Timor Leste'
+      hd:     false
+      free:   false
+      logo:   'TV_Timor_Leste.png'
+  - item_44:
+      name:   'Papua Barat TV'
+      hd:     false
+      free:   false
+      logo:   'Papua_Barat_TV.png'
+  - item_45:
+      name:   'TVRI Sumbar'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Sumbar.png'
+  - item_46:
+      name:   'TVRI Papua'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Papua.png'
+  - item_47:
+      name:   'TVRI Kaltim'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kaltim.png'
+  - item_48:
+      name:   'TVRI Kalteng'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kalteng.png'
+  - item_49:
+      name:   'TVRI Kalbar'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kalbar.png'
+  - item_50:
+      name:   'TV Edukasi Siswa'
+      hd:     false
+      free:   false
+      logo:   'TV_Edukasi_1_Siswa.png'
+  - item_51:
+      name:   'TV Edukasi Guru'
+      hd:     false
+      free:   false
+      logo:   'TV_Edukasi_2_Guru.png'
+  - item_52:
+      name:   'Top TV Papua'
+      hd:     false
+      free:   false
+      logo:   'Top_TV_Papua.png'
+  - item_53:
+      name:   'Televisi Mandiri Papua'
+      hd:     false
+      free:   false
+      logo:   'Televisi_Mandiri_Papua.png'
+  - item_54:
       name:   'NGC Wild HD'
       hd:     true
-      free:   free
+      free:   false
       logo:   'Nat_Geo_Wild.png'
-  - item_91:
+  - item_55:
       name:   'ASN HD'
       hd:     true
-      free:   free
+      free:   false
       logo:   'ASN_HD.png'
+  - item_56:
+      name:   'FOX Sports Plus'
+      hd:     false
+      free:   false
+      logo:   'Fox_Sports_Plus.png'
+  - item_57:
+      name:   'Eurosports HD'
+      hd:     true
+      free:   false
+      logo:   'Eurosport_HD.png'
+  - item_58:
+      name:   'Eurosports'
+      hd:     false
+      free:   false
+      logo:   'Eurosport.png'
+  - item_59:
+      name:   'ASN HD'
+      hd:     true
+      free:   false
+      logo:   'ASN_HD.png'
+  - item_60:
+      name:   'ASN'
+      hd:     false
+      free:   false
+      logo:   'ASN.png'
+  - item_61:
+      name:   'Star Cricket'
+      hd:     false
+      free:   false
+      logo:   'Star_Cricket.png'
+  - item_62:
+      name:   'Star Chinese Channel'
+      hd:     false
+      free:   false
+      logo:   'Star_Chinese_Channel.png'
+  - item_63:
+      name:   'K-TV'
+      hd:     false
+      free:   false
+      logo:   'KTV.png'
+  - item_64:
+      name:   'Setanta Sports'
+      hd:     false
+      free:   false
+      logo:   'Setanta_Sports.png'
+  - item_65:
+      name:   'TVB 8'
+      hd:     false
+      free:   false
+      logo:   'TVB_8.png'
+  - item_66:
+      name:   'Star Cricket'
+      hd:     false
+      free:   false
+      logo:   'Star_Cricket.png'
+  - item_67:
+      name:   'TVB S Asia'
+      hd:     false
+      free:   false
+      logo:   'TVB_S_Asia.png'
+  - item_68:
+      name:   'TVB Xing He'
+      hd:     false
+      free:   false
+      logo:   'TVB_XingHe.png'
+  - item_69:
+      name:   'TVB Jade'
+      hd:     false
+      free:   false
+      logo:   'TVB_Jade.png'
+  - item_70:
+      name:   'TVB S News'
+      hd:     false
+      free:   false
+      logo:   'TVB_S_News.png'
+  - item_71:
+      name:   'Star Gold'
+      hd:     false
+      free:   false
+      logo:   'Star_Gold.png'
+  - item_72:
+      name:   'B Channel'
+      hd:     false
+      free:   false
+      logo:   'B_Channel.png'
+  - item_73:
+      name:   'Bloomberg Indonesia'
+      hd:     false
+      free:   false
+      logo:   'Bloomberg_TV_Indonesia.png'
+  - item_74:
+      name:   'TimorLeste TV'
+      hd:     false
+      free:   false
+      logo:   'O_Channel.png'
+  - item_75:
+      name:   'TV Edukasi Siswa'
+      hd:     false
+      free:   false
+      logo:   'TV_Edukasi_1_Siswa.png'
+  - item_76:
+      name:   'TV Edukasi 2 Guru'
+      hd:     false
+      free:   false
+      logo:   'TV_Edukasi_2_Guru.png'
+  - item_77:
+      name:   'TVRI Edukasi'
+      hd:     false
+      free:   false
+      logo:   'TVRI.png'
+  - item_78:
+      name:   'Top TV Papua'
+      hd:     false
+      free:   false
+      logo:   'Top_TV_Papua.png'
+  - item_79:
+      name:   'TVRI Kalbar'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kalbar.png'
+  - item_80:
+      name:   'TVRI Kalteng'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kalteng.png'
+  - item_81:
+      name:   'TVRI Kaltim'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Kaltim.png'
+  - item_82:
+      name:   'TVRI Papua'
+      hd:     false
+      free:   false
+      logo:   'TVRI_Papua.png'
+  - item_83:
+      name:   'CCTV France'
+      hd:     false
+      free:   false
+      logo:   'cctv_francais.png'
+  - item_84:
+      name:   'CCTV Espanol'
+      hd:     false
+      free:   false
+      logo:   'cctv_espanol.png'
+  - item_85:
+      name:   'CCTV Arabic'
+      hd:     false
+      free:   false
+      logo:   'cctv_arabic.png'  
+  - item_86:
+      name:   'Big Channel list'
+      hd:     false
+      free:   false
+      logo:   'BIGTV_logo.png'
+  - item_87:
+      name:   'Star World HD'
+      hd:     true
+      free:   false
+      logo:   'BIGTV_logo.png'
+  - item_88:
+      name:   'Fox HD'
+      hd:     true
+      free:   false
+      logo:   'FOX_HD.png'
+  - item_89:
+      name:   'AXN HD'
+      hd:     true
+      free:   false
+      logo:   'AXN_HD.png'
+  - item_90:
+      name:   'History HD'
+      hd:     true
+      free:   false
+      logo:   'History_HD.png'
+  - item_91:
+      name:   'NGC Wild HD'
+      hd:     true
+      free:   false
+      logo:   'Nat_Geo_Wild.png'
   - item_92:
+      name:   'ASN HD'
+      hd:     true
+      free:   false
+      logo:   'ASN_HD.png'
+  - item_93:
       name:   'Sony'
       hd:     true
       free:   false
-      logo:   'Sony.png'
+      logo:   'Sony.png' 
+  - item_94:
+      name:   'CCTV Russian'
+      hd:     false
+      free:   false
+      logo:   'cctv_russian.png'
+  - item_95:
+      name:   'Star Chinese Channel'
+      hd:     false
+      free:   false
+      logo:   'star_chinese.png'
+  - item_96:
+      name:   'Channel V'
+      hd:     false
+      free:   false
+      logo:   'Channel_V.png'
+  - item_97:
+      name:   'Baby First'
+      hd:     false
+      free:   false
+      logo:   'Baby_First_TV.png'
+  - item_98:
+      name:   'France 24 English'
+      hd:     false
+      free:   false
+      logo:   'France_24.png'
+  - item_99:
+      name:   'CCTV NEWS'
+      hd:     false
+      free:   false
+      logo:   'CCTV_News.png'
+  - item_100:
+      name:   'Star World'
+      hd:     false
+      free:   false
+      logo:   'StarWorld.png'
+  - item_101:
+      name:   'Big Show'
+      hd:     false
+      free:   false
+      logo:   'BIGTV_logo.png'
+  - item_102:
+      name:   'Big Info'
+      hd:     false
+      free:   false
+      logo:   'BIGTV_logo.png'

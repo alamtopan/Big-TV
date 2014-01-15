@@ -224,13 +224,13 @@ membership:
       - item_105:
           name: 'TV 5 Monde Asia'
       - item_106:
-          name: "J'Go"
+          name: "J'Go HD"
       - item_107:
           name: 'Hi!'
       - item_108:
           name: 'Reformed 21'
       - item_109:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
       - item_110:
           name: 'Berita Satu World'
       - item_111:
@@ -524,13 +524,13 @@ membership:
       - item_105:
           name: 'TV 5 Monde Asia'
       - item_106:
-          name: "J'Go"
+          name: "J'Go HD"
       - item_107:
           name: 'Hi!'
       - item_108:
           name: 'Reformed 21'
       - item_109:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
       - item_110:
           name: 'Berita Satu World'
       - item_111:
@@ -648,7 +648,7 @@ membership:
       - item_37:
           name: 'FOX Sports Plus'
       - item_38:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
       - item_39:
           name: 'MTV Asia'
       - item_40:
@@ -784,7 +784,7 @@ membership:
       - item_105:
           name: 'TV 5 Monde Asia'
       - item_106:
-          name: "J'Go"
+          name: "J'Go HD"
       - item_107:
           name: 'Hi!'
       - item_108:
@@ -888,13 +888,13 @@ membership:
       - item_42:
           name: 'TV 5 Monde Asia'
       - item_43:
-          name: "J'Go"
+          name: "J'Go HD"
       - item_44:
           name: 'Hi!'
       - item_45:
           name: 'Reformed 21'
       - item_46:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
       - item_47:
           name: 'Berita Satu World'
       - item_48:
@@ -1102,13 +1102,13 @@ membership:
       - item_42:
           name: 'TV 5 Monde Asia'
       - item_43:
-          name: "J'Go"
+          name: "J'Go HD"
       - item_44:
           name: 'Hi!'
       - item_45:
           name: 'Reformed 21'
       - item_46:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
       - item_47:
           name: 'Berita Satu World'
       - item_48:
@@ -1680,13 +1680,13 @@ membership:
         - item_67:
             name: 'Reformed 21'
         - item_68:
-            name: 'Berita Satu News'
+            name: 'Berita Satu News HD'
         - item_69:
             name: 'Berita Satu World'
         - item_70:
             name: 'Jakarta Globe TV'
         - item_71:
-            name: 'TV Parlement'
+            name: 'TV Parliament'
         - item_72:
             name: 'Big Show'
         - item_73:
