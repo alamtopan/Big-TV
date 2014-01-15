@@ -4,7 +4,7 @@ class CartsController < ApplicationController
 
   def extra
     if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
-      redirect_to premium_path
+      redirect_to(premium_path) and return
     end
     if session[:current_premium_id].blank?
       flash[:alert] = 'Please subscribe any premium package!'
@@ -35,7 +35,7 @@ class CartsController < ApplicationController
 
   def preview
     if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
-      redirect_to premium_path
+      redirect_to(premium_path) and return
     end
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
@@ -205,7 +205,7 @@ class CartsController < ApplicationController
         if request.xhr?
           render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
         else
-          redirect_to new_customer_path
+          redirect_to(new_customer_path) and return
         end
       end
     end
