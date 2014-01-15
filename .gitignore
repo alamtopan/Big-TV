@@ -19,8 +19,6 @@ config/database.yml
 Capfile
 config/deploy.rb
 config/deploy/*
-deployer/Capfile
-deployer/Gemfile
-deployer/Gemfile.lock
-deployer/config/deploy.rb
-deployer/config/deploy/production.rb
+deployer/*
+
+public/assets/*
