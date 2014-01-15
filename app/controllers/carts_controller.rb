@@ -3,13 +3,8 @@ class CartsController < ApplicationController
   before_filter :authorize_customer
 
   def extra
-    if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
-      redirect_to premium_path
-    end
-    if session[:current_premium_id].blank?
-      flash[:alert] = 'Please subscribe any premium package!'
-      redirect_to premium_path
-    elsif request.xhr? && params[:extra_id].present?
+    display_extra_data = false
+    if request.xhr? && params[:extra_id].present?
       order_item = order.items.find_by_membership_id(params[:extra_id])
       if params[:add].to_s == 'true' && !order_item
         extra_package = Membership.find_by_id(params[:extra_id])
@@ -17,25 +12,36 @@ class CartsController < ApplicationController
       else
         order_item.destroy
       end
-    else
+    elsif params[:membership_id].present? || session[:current_premium_id]
       current_premium_id = params[:membership_id].present? ? params[:membership_id] : session[:current_premium_id]
-      @memberships = Membership.packages_by_category('extra')
       item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
+      display_extra_data = true
       if request.referer.to_s =~ /rental/i
         redirect_to rental_path
       end
+    elsif order.items.select{|i| i.premium? }.present?
+      display_extra_data = true
+    else
+      flash[:alert] = 'Please subscribe any premium package!'
+      redirect_to premium_path
     end
+    
+    @memberships = Membership.packages_by_category('extra') if display_extra_data
   end
 
   def premium
-    @memberships = Membership.packages_by_category('premium')
-    @groups = GroupItem.includes(unit_items: [:memberships]).all
+    if request.referer.to_s =~ /customer/i && order.items.present?
+      redirect_to extra_path
+    else
+      @memberships = Membership.packages_by_category('premium')
+      @groups = GroupItem.includes(unit_items: [:memberships]).all
+    end
   end
 
   def preview
-    if order.items.select{|i| i.membership_category =~ /Premium/i}.blank?
-      redirect_to premium_path
+    if order.items.select{|i| i.premium? }.blank?
+      redirect_to(premium_path) and return
     end
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
@@ -81,10 +87,12 @@ class CartsController < ApplicationController
         @customer = current_customer
         # delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
+
         @payment_method = params[:payment_method]
         unless request.xhr?
           redirect_to thanks_path
         end
+        
       else
         flash[:errors] = current_customer.errors.full_messages
         unless request.xhr?
@@ -205,54 +213,9 @@ class CartsController < ApplicationController
         if request.xhr?
           render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
         else
-          redirect_to new_customer_path
+          redirect_to(new_customer_path) and return
         end
       end
     end
-
-    # def authenticate_customer!(opts={})
-    #   opts[:scope] = :customer
-    #   warden.authenticate!(opts)
-    # end
-
-    # def save_gatepay(order)
-    #   gatepay = Gatepay.find_or_initialize_by_transid(order.code)
-    #   gatepay.trxstatus = 'Pending'
-    #   gatepay.save
-    # end
-
-    # def params_doku(order)
-    #   total = order.total.round(2)
-    #   params << params[:MALLID] = 958
-    #   params << params[:CHAINMERCHANT] = 'NA'
-    #   params << params[:AMOUNT] = order.total
-    #   params << params[:PURCHASEAMOUNT] = order.total
-    #   params << params[:TRANSIDMERCHANT] = order.code
-    #   params << params[:WORDS] = generate_word(total,order.code)
-    #   params << params[:REQUESTDATETIME] = DateTime.now.strftime('%Y%m%d%H%I%S') #datetime, YYYYMMDDHHMMSS
-    #   params << params[:CURRENCY] = 360
-    #   params << params[:PURCHASECURRENCY] = 360
-    #   params << params[:SESSIONID] = #blmtau
-    #   params << params[:NAME] = order.orderable.profile.first_name
-    #   params << params[:EMAIL] = order.orderable.email
-    #   params << params[:PAYMENTCHANNEL] = '04'
-    #   params << params[:BASKET] = generate_basket(order)
-    #   params
-    # end
-
-    # def generate_word(total,code)
-    #   Digest::SHA1.hexdigest(total + 958 + '75Pi0aDrFBc0' + code)
-    # end
-
-    # def generate_basket(order)
-    #   basket = ''
-    #   order.items.each_with_index do |item,index|
-    #     total = item.subtotal * order.periode
-    #     basket += "#{item.title},#{item.subtotal},#{order.period},#{total}"
-    #     basket += ";" if index != (order.items.count - 1)
-    #   end
-    #   basket
-    # end
-
 
 end

@@ -32,7 +32,7 @@
 }
 
 .pack-order.active, a:hover .pack-order.active{
-  background-color: #C48687 !important;
+  background-color: orange !important;
   cursor: default;
 }
 

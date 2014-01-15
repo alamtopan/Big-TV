@@ -1,5 +1,6 @@
 //= require front/js/jquery-1.9.1
 //= require jquery_ujs
+//= require front/js/jquery-ui
 //= require front/js/jQuery.Opie.PortfolioGallery.min
 //= require front/js/classie
 //= require front/js/modernizr.custom
@@ -37,9 +38,7 @@ window.lazyImagesLoaded = function(){
     $.each($(".side_table_right"),function( index, value ){
       var color = $(value).data('color');
       var _parent = $(value).parents('.parrent_table').first();
-      var total_hg = _parent.outerHeight();
-      console.log(_parent.find(".head_pack"))
-      _parent.find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
+      _parent.find(".head_pack").attr("style","background:"+color+"");
     });
   }
 }

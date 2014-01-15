@@ -12,6 +12,7 @@ class PublicsController < ApplicationController
     @regionals     = Regional.all
 
     @memberships   = Membership.packages_by_category('premium')
+    @memberships_extra = Membership.packages_by_category('extra')
     @groups        = GroupItem.includes(unit_items: [:memberships]).all
     @free_channels = UnitItem.where('free = ?', true)
 	end

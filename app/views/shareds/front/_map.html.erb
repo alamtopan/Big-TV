@@ -42,7 +42,7 @@
               <tr class="grid_packages_location <%= cate.name.downcase %>" data-limit="12">
                 <td class="map_location_js" data-latitude="<%= office.latitude %>"
                 		data-longitude="<%= office.longitude %>" data-province="<%= office.regional.name %>"
-                    data-value= "<%= [{name: office.name, area: office.phone_area,phone: office.no_phone,address: office.address}].to_json %>"
+                    data-value= "<%= {name: office.name, area: office.phone_area,phone: office.no_phone,address: office.address}.to_json %>"
                     >
                     <div class="title_loc"><%= office.name %></div>
                     <span class="symbol_category"><%= office.category_office.name %></span>
@@ -60,7 +60,6 @@
         </table>
         <div style="float:left; width:100%">
           <div class="trial" data-value="<%= cate.name.downcase %>"><a>VIEW MORE</a></div>
-          <hr/>
         </div>
       <% end %>
     </div>

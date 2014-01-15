@@ -50,27 +50,14 @@ $(document).ready(function(){
   if($(".map_location_js").length){
     $(".js_button_map").on('click',function(){
       var province = $(this).data('value');
+      $(".js_button_map").removeClass('active');
+      $(this).addClass('active');
       $(".map_location_js").closest('tr').addClass('hide');
-      $(".map_location_js").addClass('hide');
       $(".map_location_js[data-province='" + province+ "']").closest('tr').removeClass('hide');
       $(".map_location_js[data-province='" + province+ "']").removeClass('hide');
       // restore();
       // $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
       return false;
-    });
-  }
-
-  if($("#search_location").length){
-    $("#search_location").on("change",function(){
-      if($("#search_location").val().length > 0){
-        $(".map_location_js").closest('tr').addClass('hide');
-        $(".map_location_js").addClass('hide');
-        $(".map_location_js:contains('"+$(this).val()+"')").closest('tr').removeClass('hide');
-        $(".map_location_js:contains('"+$(this).val()+"')").removeClass('hide');
-        return false;
-      }else{
-        initilizeLocation()
-      }
     });
   }
 
@@ -81,19 +68,21 @@ $(document).ready(function(){
   function initilizeLocation(){
     $.each($("div.trial"), function( index, div ) {
       var val = $(this).data('value');
-      $.each($("."+val), function( n, locat ) {
-        if(n < 12){
-          if($(locat).hasClass('hide')){
-            $(locat).removeClass('hide');
+      if(val){
+        $.each($("."+val), function( n, locat ) {
+          if(n < 12){
+            if($(locat).hasClass('hide')){
+              $(locat).removeClass('hide');
+            }
+          }else{
+            $(locat).addClass('hide');
           }
-        }else{
-          $(locat).addClass('hide');
-        }
-      });
-      $(div).on('click',function(){
-        $("."+val).removeClass('hide');
-        $(this).addClass('hide');
-      })
+        });
+        $(div).on('click',function(){
+          $("."+val).removeClass('hide');
+          $(this).addClass('hide');
+        })
+      }
     })
   }
 
@@ -152,6 +141,28 @@ function restore(){
       }
     }
   });
+}
+
+if($("#search_location").length){
+  $("#search_location").on("change",function(){
+    if($("#search_location").val().length > 0){
+      $(".js_button_map").removeClass('active');
+      $(".map_location_js").closest('tr').addClass('hide');
+      var regexp = new RegExp($(this).val(), 'i');
+      $(".map_location_js").each(function(index, el){
+        if($(el).data('value')){
+          if(String($(el).data('value').name).match(regexp) || String($(el).data('value').address).match(regexp)){ 
+            $(el).closest('tr').removeClass('hide');
+          }
+        }
+      })
+      return false;
+    }else{
+      initilizeLocation();
+      $('.js_button_map[data-value="Jawa Madura"]').click();
+    }
+  });
+  $('.js_button_map[data-value="Jawa Madura"]').click();
 }
 
   $("input[type='radio'][name='billing']").on('click',function(){

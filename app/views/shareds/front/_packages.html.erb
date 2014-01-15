@@ -2,28 +2,28 @@
 	<h1><span>PAKET</span> & <span>CHANNEL</span></h1>
 	<div class="polosochka2"></div>
   <h3>Tersedia beragam macam paket berlangganan sesuai dengan keinginan Anda.<br> Dengan perpaduan channel yang seimbang, tunggu apa lagi, ayo berlangganan segera!</h3>
-                
+
 	<article class="packs-cont cbp-so-scroller">
-		<div class="head_pack side_table padding_top40 side_paket" >
-      <span class="alfa">
-      P 
-      </span>
-      <span class="alfa">
-      A
-      </span>
-      <span class="alfa">
-      K 
-      </span>
-      <span class="alfa">
-      e 
-      </span>
-      <span class="alfa">
-      T
-      </span>
-  	</div>
   	<table class="table table-bordered different_width margin_bottom_no">
 	    <tbody>
 	      <tr>
+	      	<td rowspan="2" class="head_pack side_table side_paket padding_top20">
+	      		<span class="alfa">
+			      P
+			      </span>
+			      <span class="alfa">
+			      A
+			      </span>
+			      <span class="alfa">
+			      K
+			      </span>
+			      <span class="alfa">
+			      e
+			      </span>
+			      <span class="alfa">
+			      T
+			      </span>
+	      	</td>
           <% @selected_items = @order ? @order.items.map(&:membership_id) : [] %>
 	        <% @memberships.each do |membership| %>
 	          <td class="td_diff">
@@ -52,7 +52,7 @@
 				            </td>
 				          </tr>
 					      </tbody>
-					    </table>       
+					    </table>
 	          </td>
 	        <% end %>
 	      </tr>
@@ -62,4 +62,48 @@
   </article>
   <br><br>
 	<div class="polosochka"></div>
-</section>	
+</section>
+
+
+<section class="wraper_bg-bright extra_packages border_bottom">
+  <h1><span>EXTRA</span> PACKAGES</h1>
+  <div class="polosochka2"></div>
+  <article class="packs-cont cbp-so-scroller" style="text-align:left">
+      <div class="panel-body">
+        <div class="row-fluid">
+            <div class="grd_masonry_extra_front">
+              <% @memberships_extra.each_with_index do |membership,index| %>
+                <div class="grid_packages_extra_front">
+                  <div class="head_pack red vers add_padding">
+                  	<div class="extra_mrg">
+	                    <span class="title_ord italic">BiG</span>
+	                    <span class="title_ord"><%= membership.name %></span>
+	                    <div>
+	                      Rp. <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
+	                    </div>
+	                  </div>
+                  </div>
+                  <table class="table table-bordered padding0">
+                    <tbody>
+                      <% membership.unit_items.each do |item| %>
+                        <tr>
+                          <td>
+                            <% if item.status_hd %>
+                              <span class="hd">HD</span>
+                            <% end %>
+                            <span class="name_channel"><%= item.name %></span>
+                          </td>
+                          <td>
+                            <%= image_tag item.logo.url(:thumb), { class: "small_image", alt: item.logo.name }  %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+  </article>
+</section>
