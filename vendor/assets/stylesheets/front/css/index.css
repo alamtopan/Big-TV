@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5, p, ul
 p{
   margin-bottom: 10px;
 }
+.mrg_top{
+  margin-top: 20px;
+}
 .border_bottom{
   border-bottom: solid 1px #ccc;
 }

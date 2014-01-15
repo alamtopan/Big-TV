@@ -54,16 +54,12 @@
                 </div>
               <% end %>
             </div>
-             <span class="warn">*) Untuk berlangganan paket wajib menyewa minimal 1 decoder</span>
+            <span class="warn">*) Untuk berlangganan paket wajib menyewa minimal 1 decoder</span>
+            <%= link_to 'Lanjut >>', preview_path, class: 'pack-order float-right-fixed margn', style: 'text-align: center' %>
           </div>
           <div class="section_decode upgrade-package-cont" style="display:<%= flash[:upgrade_channel] ? 'block' : 'none' %>;">
             <div class="alert alert-danger" style="margin-top: 10px;">
               <%= render 'carts/upgrade_premium' %>
-            </div>
-          </div>
-          <div class="section_decode">
-            <div class="own_extra full100">
-              <%= link_to 'Lanjut >>', preview_path, class: 'pack-order float-right-fixed margn full100', style: 'text-align: center' %>
             </div>
           </div>
         </div>
