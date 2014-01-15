@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140110092429) do
+ActiveRecord::Schema.define(:version => 20140113100853) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(:version => 20140110092429) do
   end
 
   create_table "orders", :force => true do |t|
-    t.decimal  "total",                    :precision => 10, :scale => 0
+    t.decimal  "total",          :precision => 10, :scale => 0
     t.string   "session_id"
     t.string   "code_prefix"
     t.integer  "position"
@@ -136,12 +136,9 @@ ActiveRecord::Schema.define(:version => 20140110092429) do
     t.string   "status"
     t.integer  "period"
     t.string   "period_name"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
-    t.string   "file_faktur_file_name"
-    t.string   "file_faktur_content_type"
-    t.integer  "file_faktur_file_size"
-    t.datetime "file_faktur_updated_at"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.string   "token"
   end
 
   create_table "payments", :force => true do |t|
@@ -167,8 +164,8 @@ ActiveRecord::Schema.define(:version => 20140110092429) do
     t.string   "city"
     t.string   "province"
     t.string   "codepos"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
     t.date     "tanggal_lahir"
@@ -181,6 +178,10 @@ ActiveRecord::Schema.define(:version => 20140110092429) do
     t.string   "file_ktp_content_type"
     t.integer  "file_ktp_file_size"
     t.datetime "file_ktp_updated_at"
+    t.string   "file_faktur_file_name"
+    t.string   "file_faktur_content_type"
+    t.integer  "file_faktur_file_size"
+    t.datetime "file_faktur_updated_at"
   end
 
   create_table "regionals", :force => true do |t|

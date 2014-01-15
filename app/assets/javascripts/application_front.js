@@ -37,9 +37,7 @@ window.lazyImagesLoaded = function(){
     $.each($(".side_table_right"),function( index, value ){
       var color = $(value).data('color');
       var _parent = $(value).parents('.parrent_table').first();
-      var total_hg = _parent.outerHeight();
-      console.log(_parent.find(".head_pack"))
-      _parent.find(".head_pack").attr("style","min-height: "+total_hg+"px;background:"+color+"");
+      _parent.find(".head_pack").attr("style","background:"+color+"");
     });
   }
 }
