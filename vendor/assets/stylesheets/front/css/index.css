@@ -18,11 +18,16 @@ h1,h2,h3,h4,h5, p, ul
 p{
   margin-bottom: 10px;
 }
+.border_bottom{
+  border-bottom: solid 1px #ccc;
+}
 .foo
 {
   max-width: 1100px!important;
 }
-
+.extra_mrg{
+  padding-left:20px
+}
 .img_blog{
   float: left;
   margin-right: 20px;
@@ -1124,6 +1129,7 @@ footer.wraper
 }
 #plan{
   background: #f2f6f9;
+  padding-bottom: 80px;
 }
 #team{
   background: #fff;
@@ -2732,6 +2738,27 @@ table.padding0 tbody tr td{
   text-align: left!important;
 }
 
+div.grd_masonry_extra_front{
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+div.grid_packages_extra_front{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+  }
+
+div.grid_packages_extra_front:hover{
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
 
 div.grd_masonry{
     -moz-column-count: 3;
