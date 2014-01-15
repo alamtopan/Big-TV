@@ -81,6 +81,7 @@ class CartsController < ApplicationController
         @customer = current_customer
         # delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
+        @payment_method = params[:payment_method]
         unless request.xhr?
           redirect_to thanks_path
         end
