@@ -480,7 +480,7 @@ group:
       position: 10
       items:
       - item_0:
-          name: "J'Go"
+          name: "J'Go HD"
           hd:   true
           logo: "J_Go_HD.png"
       - item_1:
@@ -492,7 +492,7 @@ group:
           hd:   false
           logo: 'Reformed_21.png'
       - item_3:
-          name: 'Berita Satu News'
+          name: 'Berita Satu News HD'
           hd:   true
           logo: 'Berita_Satu_World_HD.png'
       - item_4:
