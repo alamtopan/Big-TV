@@ -18,11 +18,19 @@ h1,h2,h3,h4,h5, p, ul
 p{
   margin-bottom: 10px;
 }
+.mrg_top{
+  margin-top: 20px;
+}
+.border_bottom{
+  border-bottom: solid 1px #ccc;
+}
 .foo
 {
   max-width: 1100px!important;
 }
-
+.extra_mrg{
+  padding-left:20px
+}
 .img_blog{
   float: left;
   margin-right: 20px;
@@ -46,12 +54,14 @@ p{
 }
 .side_paket{
   background:#fdb414; padding-bottom:43px!important;
+  width: 4.9%!important;
 }
-.different_width{
-  width:95%!important; float:right; margin-bottom:40px;
+.width95{
+  width: 95.2%!important;
+  float:right;
 }
 .td_diff{
-  padding:0px!important; width:20%;
+  padding:0px!important; width:19%;
 }
 .margin_bottom_no{
   margin-bottom: 0px;
@@ -99,6 +109,7 @@ p{
   height: 40px;
   width: 100%;
   float: left;
+  text-transform: uppercase;
 }
 .parrent_table{
   float:left; width:100%;
@@ -121,18 +132,17 @@ p{
 .side_table{
   width: 5%;
 }
-.side_table_right{
-  width: 95%!important;
-}
 
 .padding_top40{
   padding-top: 40px!important;
+}
+.padding_top20{
+  padding-top: 20px!important;
 }
 .head_pack{
   text-transform: uppercase;
   color: #fff;
   padding: 10px 0px;
-  float: left;
   height: 100%;
   text-align: center;
   overflow: hidden;
@@ -1122,6 +1132,7 @@ footer.wraper
 }
 #plan{
   background: #f2f6f9;
+  padding-bottom: 80px;
 }
 #team{
   background: #fff;
@@ -2730,6 +2741,27 @@ table.padding0 tbody tr td{
   text-align: left!important;
 }
 
+div.grd_masonry_extra_front{
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+div.grid_packages_extra_front{
+    display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+    width: 100%; 
+    margin-bottom: 10px;
+  }
+
+div.grid_packages_extra_front:hover{
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
 
 div.grd_masonry{
     -moz-column-count: 3;
@@ -2907,7 +2939,7 @@ ul.gallery_footer li{
     margin-bottom: 10px;
     height: 180px;
     width: 21%;
-    background-image:url("../../map-marker.png");
+    background-image:url("../../map-marker-home.png");
     background-repeat: no-repeat;
     padding-left:35px;
     padding-top: 10px;
