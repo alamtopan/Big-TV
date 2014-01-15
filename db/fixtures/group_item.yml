@@ -517,7 +517,7 @@ group:
           logo: 'TV_Parlement.png'
   - group_12:  
       name: 'Freeview Nasional'
-      colour: '#f0005'
+      colour: '#ff0005'
       position: 11
       items:
       - item_0:
