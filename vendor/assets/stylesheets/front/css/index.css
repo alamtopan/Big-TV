@@ -106,6 +106,12 @@ p{
   color: red;
 }
 .alfa{
+  height: 25px;
+  width: 100%;
+  float: left;
+  text-transform: uppercase;
+}
+.alfa2{
   height: 40px;
   width: 100%;
   float: left;
