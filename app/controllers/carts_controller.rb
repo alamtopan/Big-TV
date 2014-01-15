@@ -41,19 +41,15 @@ class CartsController < ApplicationController
 
   def preview
     if order.items.select{|i| i.premium? }.blank?
-      redirect_to(premium_path) and return
+      redirect_to premium_path
+    elsif order.total.to_i < 1
+      redirect_to root_path
     end
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
                 ['Koran', 'Koran'], ['Billboard', 'Billboard']
                ];
-    if order.total.to_i < 1
-      redirect_to root_path
-    # elsif decoder = Membership.other_packages.first
-    #   decoder_item = order.items.find_or_initialize_by_membership_id(decoder.id)
-    #   order.add_item(decoder,session_cart) if decoder_item.new_record?
-    end
   end
 
   def rental_box
@@ -81,16 +77,16 @@ class CartsController < ApplicationController
       params[:user].delete(:password_confirmation)
       params[:user].delete(:username)
       if current_customer.update_attributes(params[:user])
-        save_order(current_customer)
+        save_order
         flash[:success] = 'success'
-        CustomerMailer.thanks_email(order).deliver if params[:billing] == 'email'
+        CustomerMailer.thanks_email(order).deliver
         @customer = current_customer
         # delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
 
         @payment_method = params[:payment_method]
         unless request.xhr?
-          redirect_to thanks_path
+          redirect_to thanks_path(token: order.token)
         end
         
       else
@@ -128,7 +124,7 @@ class CartsController < ApplicationController
 
   def update_package
     order.items.each do |item|
-      if item.membership_category == 'Premium'
+      if item.premium?
         item.destroy
       end
     end
@@ -150,28 +146,25 @@ class CartsController < ApplicationController
   end
 
   private
-    def order
-      @order ||= Order.find_or_create_by_session_id(session_cart)
-    end
-
     def product
       @product ||= Membership.find(params[:id])
     end
 
-    def delete_session
-      cart = cookies[:cart_id]
-      session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
-      session.delete if session.present?
-      sign_out(:customer)
-      cookies.delete :cart_id
-    end
+    # def delete_session
+    #   cart = cookies[:cart_id]
+    #   session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
+    #   session.delete if session.present?
+    #   sign_out(:customer)
+    #   cookies.delete :cart_id
+    # end
 
-    def save_order(user)
+    def save_order
       period = params[:order][:period].to_i
-      order.orderable = user
+      order.orderable = current_customer if order.orderable.blank?
       order.session_id = nil
       order.period = period
       order.period_name = 'month'
+      order.file_faktur = params[:file_faktur] if params[:file_faktur].present?
       order.save
     end
 
@@ -189,7 +182,7 @@ class CartsController < ApplicationController
       selected_decoder = Membership.find(params_membership)
       minimum_package = Membership.where("name LIKE ?", "%Star%").first
       order.items.each do |item|
-        if item.membership_category == "Premium"
+        if item.premium?
           if item.subtotal < minimum_package.price_month && selected_decoder.price_month > 50000
             flash[:alert] = "Your Premium Package Must Be least Big Star Package,
                              Do You want To Get Big Star Package?

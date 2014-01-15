@@ -3,15 +3,17 @@ class CustomersController < ApplicationController
   layout 'detail'
 
   def new
-    @customer = Customer.new
+    @customer = current_customer||Customer.new
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
   end
 
   def create
-    @customer = Customer.find_or_initialize_by_email(params[:customer])
+    @customer = Customer.find_or_initialize_by_email(params[:customer][:email])
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
 
     if verify_recaptcha(model: @customer, message: "Verification code is invalid") && @customer.update_attributes(params[:customer])
+      order.orderable = @customer
+      order.save
       sign_in(:customer, @customer)
       if session[:current_premium_id].present?
         redirect_to extra_path
