@@ -3,7 +3,7 @@ module SeedChannel
     fixture_path = "#{Rails.root}/db/fixtures"
 
     yaml_item = YAML.load_file("#{fixture_path}/channel.yml")
-    items = yaml_item['items']
+    items = yaml_item['items'].uniq
 
     items.each_with_index do |itm,n|
       item = UnitItem.find_or_initialize_by_name(itm["item_#{n}"]["name"])
