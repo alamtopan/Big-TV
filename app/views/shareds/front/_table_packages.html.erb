@@ -1,7 +1,7 @@
 <div class="table-responsive">
   <% @groups.each do |group| %>
     <div class="parrent_table">
-      <table class="table table-bordered side_table_right" data-color="<%= group.colour %>">
+      <table class="table table-bordered side_table_right package-channel-table" data-color="<%= group.colour %>">
         <tbody>
           <% group.unit_items.each_with_index do |item,index| %>
             <tr>
@@ -10,15 +10,15 @@
                 <% if group.name =~ /music|news/i %>
                   <% group.name.each_char do |a| %>
                     <span class="alfa" style="height: <%= group.name =~ /news/i ? '20' : '16' %>px;">
-                    <%= a %> 
+                    <%= a %>
                     </span>
                   <% end %>
                 <% else %>
                   <% group.name.each_char do |a| %>
                     <span class="alfa">
-                    <%= a %> 
+                    <%= a %>
                     </span>
-                  <% end %> 
+                  <% end %>
                 <% end %>
               </td>
               <% end %>
