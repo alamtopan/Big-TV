@@ -3,7 +3,7 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-    <%= form_for :user, url: subcribe_carts_path, method: 'post', html: {remote: true, class: 'form-subscribe'} do |f| %>
+    <%= form_for :user, url: subcribe_carts_path(token: params[:token]), method: 'post', html: {remote: true, class: 'form-subscribe'} do |f| %>
 			<%= f.fields_for(:profile_attributes) do |profile| %>
 		    <div class="panel-body">
 					<div class="span9">
@@ -56,7 +56,7 @@
 									<label class="control-label">
 										Referal
 									</label>
-									<%= profile.select :referal, @referal, {}, {class: 'form-control'} %>
+									<%= profile.select :referal, @referal, {:selected => current_customer.profile.referal}, {class: 'form-control'} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
@@ -86,7 +86,8 @@
 									<label class="control-label">
 										* Nomor Identitas
 									</label>
-									<%= profile.text_field :no_identitas, {class: 'form-control', placeholder: 'Nomor Identitas', required: true} %>
+									<%= profile.text_field :no_identitas, value: current_customer.profile.no_identitas,
+                                                        class: 'form-control', placeholder: 'Nomor Identitas', required: true %>
 								</div>
 							</div>
 
@@ -138,9 +139,9 @@
 										* Tagihan
 									</label>
 									<br/>
-									<%= radio_button_tag :billing, 'post', true %> Kirim Lewat Pos
+									<%= radio_button_tag :billing, 'post', true %> <label for="billing_post">Kirim Lewat Pos</label>
 									<br/>
-									<%= radio_button_tag :billing, 'email' %> Kirim Lewat Email
+									<%= radio_button_tag :billing, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
 								</div>
 							</div>
 						</div>
@@ -189,7 +190,7 @@
 										<% end %>
 										<% @order.items.each do |item| %>
 											<% if item.membership_category == 'Other' %>
-											<% if item.title.present? %>	
+											<% if item.title.present? %>
 											<div class="br"></div>
 												<table class="tbl_order">
 													<tbody>
@@ -226,7 +227,7 @@
 											<table>
 											<tr>
 												<td valign="top">
-													<%= radio_button_tag :payment_method, '01', true %> 
+													<%= radio_button_tag :payment_method, '01', true %>
 												</td>
 												<td>
 													<%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%>
@@ -234,7 +235,7 @@
 											</tr>
 											<tr>
 												<td valign="top">
-													<%= radio_button_tag :payment_method, '05' %> 
+													<%= radio_button_tag :payment_method, '05' %>
 												</td>
 												<td>
 													<%= image_tag "atm.png", style: 'height:33px' %>
@@ -242,7 +243,7 @@
 											</tr>
 											<tr>
 												<td valign="top">
-													<%= radio_button_tag :payment_method, '04' %> 
+													<%= radio_button_tag :payment_method, '04' %>
 												</td>
 												<td>
 													<%= image_tag "doku_wallet.png", style: 'height: 33px' %>
@@ -259,7 +260,7 @@
 											<option value="12">Beli 12 Bulan, Gratis 4 Bulan</option>
 										</select>
 										<div class="br"></div>
-										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN"> 
+										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN">
 									</div>
 								</div>
 							</div>
