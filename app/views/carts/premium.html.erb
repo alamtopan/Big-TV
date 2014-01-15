@@ -4,26 +4,26 @@
   <h3>Tersedia beragam macam paket berlangganan sesuai dengan keinginan Anda.<br> Dengan perpaduan channel yang seimbang, tunggu apa lagi, ayo berlangganan segera!</h3>
                 
   <article class="packs-cont cbp-so-scroller">
-    <div class="head_pack side_table padding_top40 side_paket" >
-      <span class="alfa">
-      P 
-      </span>
-      <span class="alfa">
-      A
-      </span>
-      <span class="alfa">
-      K 
-      </span>
-      <span class="alfa">
-      e 
-      </span>
-      <span class="alfa">
-      T
-      </span>
-    </div>
     <table class="table table-bordered different_width margin_bottom_no">
       <tbody>
         <tr>
+          <td rowspan="2" class="head_pack side_table side_paket padding_top20">
+            <span class="alfa">
+            P 
+            </span>
+            <span class="alfa">
+            A
+            </span>
+            <span class="alfa">
+            K 
+            </span>
+            <span class="alfa">
+            e 
+            </span>
+            <span class="alfa">
+            T
+            </span>
+          </td>
           <% @selected_items = @order ? @order.items.map(&:membership_id) : [] %>
           <% @memberships.each do |membership| %>
             <td class="td_diff">
