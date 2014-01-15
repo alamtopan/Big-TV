@@ -337,7 +337,7 @@ group:
           hd:   false
           logo: 'Xing_Kong.png'
   - group_9:  
-      name: 'Other Special Tiering'
+      name: 'Special Tiering'
       colour: '#409cc1'
       position: 9
       items:

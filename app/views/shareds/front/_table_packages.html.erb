@@ -6,10 +6,10 @@
           <% group.unit_items.each_with_index do |item,index| %>
             <tr>
               <% if index == 0 %>
-              <td rowspan="<%= group.unit_items.count %>" class="head_pack side_table <%= group.name =~ /musics/i ? 'padding_top10' : 'padding_top20' %>">
-                <% if group.name =~ /music|news/i %>
+              <td rowspan="<%= group.unit_items.count %>" class="head_pack side_table <%= group.name =~ /musics|other/i ? 'padding_top10' : 'padding_top20' %>">
+                <% if group.name =~ /music|news|other/i %>
                   <% group.name.each_char do |a| %>
-                    <span class="alfa" style="height: <%= group.name =~ /news/i ? '20' : '16' %>px;">
+                    <span class="alfa" style="height: <%= group.name =~ /news|other/i ? '20' : '16' %>px;">
                     <%= a %>
                     </span>
                   <% end %>

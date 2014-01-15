@@ -396,7 +396,7 @@ membership:
       - item_41:
           name: 'STAR Sports'
       - item_42:
-          name: 'Sony Mix'
+          name: 'Jak TV'
       - item_43:
           name: 'MTV Asia'
       - item_44:
@@ -559,8 +559,6 @@ membership:
           name: "Metro TV"
       - item_123:
           name: 'B Channel'
-      - item_124:
-          name: 'Jak TV'
   - membership_2:
       name:         'Sun 94'
       description:  ''
@@ -650,7 +648,7 @@ membership:
       - item_37:
           name: 'FOX Sports Plus'
       - item_38:
-          name: 'Sony Mix'
+          name: 'Berita Satu News'
       - item_39:
           name: 'MTV Asia'
       - item_40:
@@ -791,8 +789,6 @@ membership:
           name: 'Hi!'
       - item_108:
           name: 'Reformed 21'
-      - item_109:
-          name: 'Berita Satu News'
   - membership_3:
       name:         'Fun 79'
       description:  ''
@@ -870,7 +866,7 @@ membership:
       - item_31:
           name: 'FOX Sports Plus'
       - item_32:
-          name: 'Sony Mix'
+          name: 'Arirang'
       - item_33:
           name: 'BBC World'
       - item_34:
@@ -1007,8 +1003,6 @@ membership:
           name: 'Euro News'
       - item_100:
           name: 'KBS World'
-      - item_101:
-          name: 'Arirang'
   - membership_4:
       name:         'Deal 70'
       description:  ''
@@ -1068,7 +1062,7 @@ membership:
       - item_22:
           name: 'FOX Sports Plus'
       - item_23:
-          name: 'Sony Mix'
+          name: 'CNC'
       - item_24:
           name: 'BBC World'
       - item_25:
@@ -1201,8 +1195,6 @@ membership:
           name: "Channel News Asia"
       - item_89:
           name: 'Rai Italia'
-      - item_90:
-          name: 'CNC'
   - membership_5:
       name:         'BPL'
       description:  ''
