@@ -5,37 +5,37 @@ group:
       position: 0
       items:
       - item_0:
-          name: 'Berita Satu World'
-          hd:   false
-          logo: 'Berita_Satu_CA.png'
-      - item_1:
-          name: 'Starworld'
+          name: 'STAR World'
           hd:   true
           logo: 'Star_World_HD.png'
-      - item_2:
-          name: 'Tru Tv'
+      - item_1:
+          name: 'TruTV'
           hd:   false
           logo: 'Tru_TV.png'
-      - item_3:
+      - item_2:
           name: 'AXN'
           hd:   true
-          logo: 'AXN.png'
-      - item_4:
+          logo: 'AXN_HD.png'
+      - item_3:
           name: 'Animax'
           hd:   false
           logo: 'Animax.png'
-      - item_5:
+      - item_4:
           name: 'Aniplus'
           hd:   false
           logo: 'AniPlus.png'
-      - item_6:
-          name: 'Be Tv'
+      - item_5:
+          name: 'BeTv'
           hd:   false
           logo: 'beTV.png'
-      - item_7:
+      - item_6:
           name: 'FOX'
           hd:   true
           logo: 'FOX.png'
+      - item_7:
+          name: 'FOX Crime'
+          hd:   false
+          logo: 'FOX_Crime.png'
       - item_8:
           name: 'FX'
           hd:   false
@@ -49,74 +49,54 @@ group:
           hd:   false
           logo: 'Universal.png'
       - item_11:
-          name: 'FOX Crime'
-          hd:   false
-          logo: 'FOX_Crime.png'
-      - item_12:
-          name: 'Big Show'
-          hd:    false   
-          logo: ''
-      - item_13:
           name: 'DIVA'
           hd:   false
           logo: 'Diva.png'
-      - item_14:
+      - item_12:
           name: 'M Channel'
           hd:   false
           logo: 'M_Channel.png'
-      - item_15:
+      - item_13:
           name: 'SET'
           hd:   false
           logo: 'SET.png'
-      - item_16:
-          name: 'Net'
-          hd:   true
-          logo: 'NET_TV.png'
   - group_1:
       name: 'Lifestyle'
       colour: '#ed3d78'
       position: 1
       items:
       - item_0:
-          name: 'Hi!'
-          hd:   true
-          logo: 'Hi_HD.png'
-      - item_1:
           name: 'Discovery Turbo'
           hd:   false
           logo: 'Discovery_Turbo.png'
-      - item_2:
+      - item_1:
           name: 'TLC'
           hd:   false
           logo: 'TLC.png'
-      - item_3:
-          name: 'Home & Health'
+      - item_2:
+          name: 'Discovery Home & Health'
           hd:   false
           logo: 'Discovery_Home_and_Health.png'
-      - item_4:
+      - item_3:
           name: 'Asian Food Channel'
+          hd:   false
+      - item_4:
+          name: 'Li TV'
           hd:   false
           logo: 'Asian_Food_Channel.png'
       - item_5:
           name: 'E! Entertainment'
           hd:   false
           logo: 'E!_Entertainment.png'
-      - item_6:
-          name: 'Li TV'
-          hd:   false
           logo: 'Li_TV.png'
+      - item_6:
+          name: 'Fashion One'
+          hd:   false
+          logo: 'Fashion_One.png'
       - item_7:
           name: 'Ginx'
           hd:   false
           logo: 'Ginx.png'
-      - item_8:
-          name: 'Fashion One'
-          hd:   false
-          logo: 'Fashion_One.png'
-      - item_9:
-          name: 'NDTV Good time'
-          hd:   false
-          logo: 'NDTV-GOODTIME.png'
   - group_2:
       name: 'Education'
       colour: '#48cf94'
@@ -129,43 +109,47 @@ group:
       - item_1:
           name: 'Discovery Science'
           hd:   false
-          logo: 'National_Graphic_Channel.png'
+          logo: 'Discovery_Science.png'
       - item_2:
+          name: 'Discovery World'
+          hd:   true
+          logo: 'Discovery_HD_World.png'
+      - item_3:
           name: 'Animal Planet'
           hd:   false
           logo: 'Animal_Planet.png'
-      - item_3:
-          name: 'Nat Geo Channel'
-          hd:   true
-          logo: 'National_Geographic_Channel.png'
       - item_4:
-          name: 'Nat Geo Adventure'
-          hd:   false
-          logo: 'National_Geographic_Adventure.png'
+          name: 'Nat Geographic Channel'
+          hd:   true
+          logo: 'National_Graphic_Channel.png'
       - item_5:
           name: 'Nat Geo Wild'
           hd:   true
           logo: 'National_Geographic_Wild.png'
       - item_6:
-          name: 'History'
-          hd:   true
-          logo: 'History_HD.png'
+          name: 'Nat Geo Adventure'
+          hd:   false
+          logo: 'National_Geographic_Adventure.png'
       - item_7:
-          name: 'Biography'
-          hd:   false
-          logo: 'Biography.png'
-      - item_8:
-          name: 'Crime Investigation'
-          hd:   false
-          logo: 'Crime_and_Investigation_Channel.png'
-      - item_9:
-          name: 'Lifetime'
-          hd:   false
-          logo: 'Lifetime.png'
-      - item_10:
           name: 'Outdoor Channel'
           hd:   false
           logo: 'Outdoor_Channel.png'
+      - item_8:
+          name: 'History'
+          hd:   true
+          logo: 'History_HD.png'
+      - item_9:
+          name: 'Lifetime'
+          hd:   true
+          logo: 'Lifetime_HD.png'
+      - item_10:
+          name: 'Biography'
+          hd:   false
+          logo: 'Biography.png'
+      - item_11:
+          name: 'Crime Investigation'
+          hd:   false
+          logo: 'Crime_and_Investigation_Channel.png'
   - group_3:
       name: 'Kids'
       colour: '#fabc00'
@@ -174,35 +158,35 @@ group:
       - item_0:
           name: 'Disney Channel'
           hd:   false
-          logo: 'Disney_Channel_HD.png'
+          logo: 'Disney_Channel.png'
       - item_1:
-          name: 'Nickelodeon'
-          hd:   false
-          logo: 'Nickelodeon.png'
-      - item_2:
-          name: 'Cartoon Network'
-          hd:   true
-          logo: 'Cartoon_Network_HD.png'
-      - item_3:
-          name: 'Discovery Kids'
-          hd:   false
-          logo: 'Discovery_Kids.png'
-      - item_4:
           name: 'Disney Junior'
           hd:   false
           logo: 'Disney_Junior.png'
-      - item_5:
+      - item_2:
+          name: 'Nickelodeon'
+          hd:   false
+          logo: 'Nickelodeon.png'
+      - item_3:
+          name: 'Cartoon Network'
+          hd:   true
+          logo: 'Cartoon_Network_HD.png'
+      - item_4:
           name: 'Jim Jam'
           hd:   false
           logo: 'Jim_Jam.png'
-      - item_6:
+      - item_5:
           name: 'Toonami'
           hd:   false
           logo: 'Toonami.png'
-      - item_7:
+      - item_6:
           name: 'Cartoonito'
           hd:   false
           logo: 'Cartoonito.png'
+      - item_7:
+          name: 'Discovery Kids'
+          hd:   false
+          logo: 'Discovery_Kids.png'
   - group_4:
       name: 'Movies'
       colour: '#dc4b4e'
@@ -213,86 +197,78 @@ group:
           hd:   true
           logo: 'HBO_HD.png'
       - item_1:
-          name: 'Fox Movies Premium'
-          hd:   true
-          logo: 'Fox_Movies_Premium__HD.png'
+          name: 'HBO Signature'
+          hd:   false
+          logo: 'HBO_Signature.png'
       - item_2:
           name: 'HBO Hits'
-          hd:   false
-          logo: 'HBO_Hits.png'
+          hd:   true
+          logo: 'HBO_Hits_HD.png'
       - item_3:
-          name: 'Fox Action Movies'
+          name: "HBO Family"
           hd:   false
-          logo: 'FOX_Action_Movies.png'
+          logo: 'HBO_Family.png'
       - item_4:
           name: 'CineMAX'
           hd:   false
           logo: 'Cinemax.png'
       - item_5:
-          name: 'Fox Family Movies'
-          hd:   false
-          logo: 'Fox_Family_Movies.png'
-      - item_6:
-          name: "HBO Family"
-          hd:   false
-          logo: 'HBO_Family.png'
-      - item_7:
-          name: 'HBO Signature'
-          hd:   false
-          logo: 'HBO_Signature.png'
-      - item_8:
           name: 'MGM'
           hd:   false
           logo: 'MGM.png'
+      - item_6:
+          name: 'Fox Movies Premium'
+          hd:   true
+          logo: 'Fox_Movies_Premium__HD.png'
+      - item_7:
+          name: 'Fox Action Movies'
+          hd:   false
+          logo: 'FOX_Action_Movies.png'
+      - item_8:
+          name: 'Fox Family Movies'
+          hd:   false
+          logo: 'Fox_Family_Movies.png'
   - group_5:
       name: 'Sports'
       colour: '#634590'
       position: 4
       items:
       - item_0:
-          name: 'beIN Sports 1 HD'
+          name: 'beIN Sports 1'
           hd:   true
-          logo: 'Bein_Sport_1_HD.png'
+          logo: 'beIN1_Sport.png'
       - item_1:
-          name: 'beIN Sports 2 HD'
+          name: 'beIN Sports 2'
           hd:   true
-          logo: 'Bein_Sport_2_HD.png'
+          logo: 'beIN2_Sport.png'
       - item_2:
-          name: 'Fight Sports'
+          name: 'Fight'
           hd:   false
           logo: 'Fight.png'
       - item_3:
-          name: 'Berita Satu Sports'
-          hd:   false
-          logo: 'Berita_Satu_Sport.png'
-      - item_4:
-          name: 'Motorvision TV'
+          name: 'Motorvision'
           hd:   false
           logo: 'Motorvision.png'
+      - item_4:
+          name: 'ASN'
+          hd:   true
+          logo: 'ASN_HD.png'
       - item_5:
+          name: 'Euro Sport'
+          hd:   true
+          logo: 'Eurosport_HD.png'
+      - item_6:
+          name: 'NBA TV'
+          hd:   true
+          logo: 'NBA_TV_HD.png'
+      - item_7:
           name: 'FOX Sports Plus HD'
           hd:   true
           logo: 'Fox_Sports_Plus_HD.png'
-      - item_6:
+      - item_8:
           name: 'STAR Sports'
           hd:   false
           logo: 'STAR_Sports.png'
-      - item_7:
-          name: 'Setanta Sports Rugby'
-          hd:   false
-          logo: 'Setanta_Sports_Rugby.png'
-      - item_8:
-          name: 'Euro Sport'
-          hd:   false
-          logo: 'Eurosport.png'
-      - item_9:
-          name: 'Star Cricket'
-          hd:   false
-          logo: 'Star_Cricket.png'
-      - item_10:
-          name: 'ASN'
-          hd:   false
-          logo: 'ASN.png'
   - group_6:
       name: 'Music'
       colour: '#5b6063'
@@ -305,41 +281,37 @@ group:
       - item_1:
           name: 'MTV Live'
           hd:   false
-          logo: 'MTV_Live_HD.png'
+          logo: 'MTV-LIVE.png'
   - group_7:
       name: 'News / International'
       colour: '#7ecae9'
       position: 6
       items:
       - item_0:
-          name: 'Berita Satu News'
-          hd:   true
-          logo: 'Berita_Satu_World_HD.png'
-      - item_1:
-          name: 'Jakarta Globe TV'
-          hd:   false
-          logo: 'Jakarta_Globe_TV.png'
-      - item_2:
           name: 'NDTV 24 x 7'
           hd:   false
           logo: 'NDTV_24_x_7.png'
-      - item_3:
+      - item_1:
           name: 'BBC World'
           hd:   false
           logo: 'BBC_World.png'
-      - item_4:
+      - item_2:
           name: 'Fox News'
           hd:   false
           logo: 'Fox_News.png'
-      - item_5:
+      - item_3:
           name: 'CNN International'
           hd:   false
           logo: 'CNN_International.png'
-      - item_6:
+      - item_4:
+          name: 'CNN Headline News'
+          hd:   false
+          logo: 'CNN_Headline_News.png'
+      - item_5:
           name: 'CNBC Asia'
           hd:   false
-          logo: 'CNBC.png'
-      - item_7:
+          logo: 'CNBC-Asia.png'
+      - item_6:
           name: 'SKY News'
           hd:   false
           logo: 'Sky_News.png'
@@ -353,168 +325,314 @@ group:
           hd:   false
           logo: 'Star_Chinese_Movies.png'
       - item_1:
-          name: 'Phoenix Info'
-          hd:   false
-          logo: 'Phoenix_Info.png'
-      - item_2:
-          name: "Phoenix News"
+          name: 'Phoenix Info News'
           hd:   false
           logo: 'Phoenix_News.png'
+      - item_2:
+          name: "Phoenix Chinese"
+          hd:   false
+          logo: 'Phoenix_Info.png'
       - item_3:
           name: 'Xing Kong'
           hd:   false
           logo: 'Xing_Kong.png'
-      - item_4:
-          name: 'TVB 8'
-          hd:   false
-          logo: 'TVB_8.png'
-      - item_5:
-          name: 'TVB S Asia'
-          hd:   false
-          logo: 'TVB_S_Asia.png'
-      - item_6:
-          name: 'TVB Xing He'
-          hd:   false
-          logo: 'TVB_XingHe.png'
-      - item_7:
-          name: 'TVB Jade'
-          hd:   false
-          logo: 'TVB_Jade.png'
-      - item_8:
-          name: 'TVB S News'
-          hd:   false
-          logo: 'TVB_S_News.png'
   - group_9:  
-      name: 'Special Tiering'
-      colour: '#b2b2b1'
+      name: 'Other Special Tiering'
+      colour: '#409cc1'
       position: 9
       items:
       - item_0:
-          name: "KBS"
-          hd:   false
-          logo: 'KBS_World.png'
-      - item_1:
-          name: 'Star Plus'
-          hd:   false
-          logo: 'Star_Plus.png'
-      - item_2:
-          name: 'Arirang'
-          hd:   false
-          logo: 'Arirang.png'
-      - item_3:
-          name: 'Star Gold'
-          hd:   false
-          logo: 'Star_Gold.png'
-      - item_4:
-          name: 'Australia Network'
-          hd:   false
-          logo: 'Australia_Network.png'
-      - item_5:
-          name: 'Sony'
-          hd:   false
-          logo: 'Sony.png'
-      - item_6:
-          name: 'DW-TV Asia+'
-          hd:   false
-          logo: 'DW-TV_Asia+.png'
-      - item_7:
-          name: "MAX"
-          hd:   false
-          logo: 'MAX.png'
-      - item_8:
-          name: 'TV 5 Monde Asia'
-          hd:   false
-          logo: 'TV5_Monde.png'
-      - item_9:
-          name: 'NHK World'
-          hd:   false
-          logo: 'NHK_World.png'
-      - item_10:
           name: 'Set India'
           hd:   false
           logo: 'Set_TV.png'
-      - item_11:
+      - item_1:
+          name: "MAX"
+          hd:   false
+          logo: 'MAX.png'
+      - item_2:
           name: 'Sony SAB'
           hd:   false
           logo: 'Sony_SAB_TV.png'
-      - item_12:
+      - item_3:
           name: 'Sony Mix'
           hd:   false
           logo: 'Sony-Mix.png'
-      - item_13:
-          name: 'KTV'
+      - item_4:
+          name: 'Star Plus'
           hd:   false
-          logo: 'KTV.png'
-      - item_14:
-          name: 'NDTV India'
+          logo: 'Star_Plus.png'
+      - item_5:
+          name: 'Star Gold'
           hd:   false
-          logo: 'NDTV_India.png'
+          logo: 'Star_Gold.png'
+      - item_6:
+          name: 'NHK World Premium'
+          hd:   false
+          logo: 'NHK_World.png'
   - group_10:  
       name: 'Freeview International'
-      colour: '#b4b4b3'
-      position: 10
+      colour: '#5ec82a'
+      position: 12
       items:
       - item_0:
-          name: "Bloomberg Television"
+          name: "CCTV France"
           hd:   false
-          logo: 'Bloomberg_Television.png'
+          logo: 'cctv_francais.png'
       - item_1:
-          name: 'Al Jazeera'
+          name: 'CCTV Espanol'
           hd:   false
-          logo: 'Al_Jazeera.png'
+          logo: 'cctv_espanol.png'
       - item_2:
-          name: 'Channel News Asia'
+          name: 'CCTV Arabic'
+          hd:   false
+          logo: 'cctv_arabic.png'
+      - item_3:
+          name: 'CCTV Russia'
+          hd:   false
+          logo: 'cctv_russian.png'
+      - item_4:
+          name: 'Star Chinese Channel'
+          hd:   false
+          logo: 'Star_Chinese_Channel.png'
+      - item_5:
+          name: 'Channel V'
+          hd:   false
+          logo: 'Channel_V.png'
+      - item_6:
+          name: 'Baby First'
+          hd:   false
+          logo: 'Baby_First_TV.png'
+      - item_7:
+          name: "Channel News Asia"
           hd:   false
           logo: 'Channel_News_Asia.png'
-      - item_3:
-          name: 'CCTV 4'
-          hd:   false
-          logo: 'CCTV_4.png'
-      - item_4:
-          name: 'CCTV 9'
-          hd:   false
-          logo: 'CCTV_9.png'
-      - item_5:
-          name: 'France 24'
-          hd:   false
-          logo: 'France_24.png'
-      - item_6:
-          name: 'CNN Headline News'
-          hd:   false
-          logo: 'CNN_Headline_News.png'
-      - item_7:
-          name: "Euro News"
-          hd:   false
-          logo: 'Euro_News.png'
       - item_8:
-          name: 'Russia Today'
+          name: 'Rai Italia'
           hd:   false
-          logo: 'Russia_Today.png'
+          logo: 'Rai_Italia.png'
       - item_9:
           name: 'CNC'
           hd:   false
           logo: 'CNC.png'
       - item_10:
-          name: 'RAI'
+          name: 'Russia Today'
           hd:   false
-          logo: 'Rai_Italia.png'
+          logo: 'Russia_Today.png'
       - item_11:
+          name: 'France 24 English'
+          hd:   false
+          logo: 'France_24.png'
+      - item_12:
+          name: 'CCTV 4'
+          hd:   false
+          logo: 'CCTV_4.png'
+      - item_13:
+          name: 'CCTV 9'
+          hd:   false
+          logo: 'CCTV_9.png'
+      - item_14:
+          name: 'CCTV NEWS'
+          hd:   false
+          logo: 'CCTV_News.png'
+      - item_15:
+          name: 'Aljazeerah English'
+          hd:   false
+          logo: 'Al_Jazeera.png'
+      - item_16:
+          name: 'Aljazeerah Arabic'
+          hd:   false
+          logo: 'Al_Jazeera.png'
+      - item_17:
+          name: 'Bloomberg'
+          hd:   false
+          logo: 'Bloomberg_Television.png'
+      - item_18:
+          name: 'Euro News'
+          hd:   false
+          logo: 'Euronews.png'
+      - item_19:
+          name: 'KBS World'
+          hd:   false
+          logo: 'KBS_World.png'
+      - item_20:
+          name: 'Arirang'
+          hd:   false
+          logo: 'Arirang.png'
+      - item_21:
           name: 'Australian Network'
           hd:   false
           logo: 'Australia_Network.png'
-      - item_12:
-          name: 'KBS Arirang'
+      - item_22:
+          name: 'DW-TV Asia+'
           hd:   false
-          logo: 'KBS.png'
-      - item_13:
-          name: 'DW-TV Asia'
+          logo: 'DW-TV_Asia+.png'
+      - item_23:
+          name: 'NHK World'
           hd:   false
-          logo: 'DW_TV_Asia.png'
-      - item_14:
-          name: 'TV5 Monde Asia'
+          logo: 'NHK_World.png'
+      - item_24:
+          name: 'TV 5 Monde Asia'
           hd:   false
           logo: 'TV_5_Monde_Asia.png'
-      - item_15:
+  - group_11:  
+      name: 'Inhouse Channel'
+      colour: '#ed8c01'
+      position: 10
+      items:
+      - item_0:
+          name: "J'Go"
+          hd:   true
+          logo: "J_Go_HD.png"
+      - item_1:
+          name: 'Hi!'
+          hd:   false
+          logo: 'Hi.png'
+      - item_2:
+          name: 'Reformed 21'
+          hd:   false
+          logo: 'Reformed_21.png'
+      - item_3:
+          name: 'Berita Satu News'
+          hd:   true
+          logo: 'Berita_Satu_World_HD.png'
+      - item_4:
+          name: 'Berita Satu World'
+          hd:   false
+          logo: 'Berita_Satu_World.png'
+      - item_5:
+          name: 'Mix'
+          hd:   false
+          logo: 'Mix.png'
+      - item_6:
           name: 'Dangdutz'
           hd:   false
           logo: 'Dangdutz.png'
+      - item_7:
+          name: "Jakarta Globe TV"
+          hd:   false
+          logo: 'Jakarta_Globe_TV.png'
+      - item_8:
+          name: 'TV Parliament'
+          hd:   false
+          logo: 'TV_Parlement.png'
+  - group_12:  
+      name: 'Freeview Nasional'
+      colour: '#ff0005'
+      position: 11
+      items:
+      - item_0:
+          name: "Net TV"
+          hd:   true
+          logo: 'Net_TV_HD.png'
+      - item_1:
+          name: 'TVRI'
+          hd:   false
+          logo: 'TVRI.png'
+      - item_2:
+          name: 'TV One'
+          hd:   false
+          logo: 'TV_One.png'
+      - item_3:
+          name: 'Trans 7'
+          hd:   false
+          logo: 'Trans_7.png'
+      - item_4:
+          name: 'Trans TV'
+          hd:   false
+          logo: 'Trans_TV.png'
+      - item_5:
+          name: 'Indosiar'
+          hd:   false
+          logo: 'Indosiar.png'
+      - item_6:
+          name: 'ANTV'
+          hd:   false
+          logo: 'anteve.png'
+      - item_7:
+          name: "Metro TV"
+          hd:   false
+          logo: 'Metro_TV.png'
+      - item_8:
+          name: 'B Channel'
+          hd:   false
+          logo: 'B_Channel.png'
+      - item_9:
+          name: 'Jak TV'
+          hd:   false
+          logo: 'Jak_TV.png'
+      - item_10:
+          name: 'Kompas TV'
+          hd:   false
+          logo: 'Kompas_TV.png'
+      - item_11:
+          name: 'Net TV'
+          hd:   false
+          logo: 'NET_TV.png'
+      - item_12:
+          name: 'SCTV'
+          hd:   false
+          logo: 'SCTV.png'
+      - item_13:
+          name: 'Bloomberg Indonesia'
+          hd:   false
+          logo: 'Bloomberg_TV_Indonesia.png'
+      - item_14:
+          name: 'DAAI TV'
+          hd:   false
+          logo: 'DAAI_TV.png'
+      - item_15:
+          name: 'O Channel'
+          hd:   false
+          logo: 'O_Channel.png'
+      - item_16:
+          name: 'JTV'
+          hd:   false
+          logo: 'JTV.png'
+      - item_17:
+          name: 'Bali TV'
+          hd:   false
+          logo: 'Bali_TV.png'
+      - item_18:
+          name: 'Antara TV'
+          hd:   false
+          logo: 'Antara_TV.png'
+      - item_19:
+          name: 'Timor Leste TV'
+          hd:   false
+          logo: 'TV_Timor_Leste.png'
+      - item_20:
+          name: 'TV Edukasi Siswa'
+          hd:   false
+          logo: 'TV_Edukasi_1_Siswa.png'
+      - item_21:
+          name: 'TV Edukasi 2 Guru'
+          hd:   false
+          logo: 'TV_Edukasi_2_Guru.png'
+      - item_22:
+          name: 'TVRI Edukasi'
+          hd:   false
+          logo: 'Televisi_Edukasi.png'
+      - item_23:
+          name: 'TOP TV Papua'
+          hd:   false
+          logo: 'Top_TV_Papua.png'
+      - item_24:
+          name: 'TVRI Kalbar'
+          hd:   false
+          logo: 'TVRI_Kalbar.png'
+      - item_25:
+          name: 'TVRI Kalteng'
+          hd:   false
+          logo: 'TVRI_Kalteng.png'
+      - item_26:
+          name: 'TVRI Papua'
+          hd:   false
+          logo: 'TVRI_Papua.png'
+      - item_27:
+          name: 'Rodja TV'
+          hd:   false
+          logo: 'Rodja_TV.png'
+      - item_28:
+          name: 'U Channel'
+          hd:   false
+          logo: 'U_Channel.png'

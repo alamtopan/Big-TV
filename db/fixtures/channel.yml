@@ -175,15 +175,15 @@ items:
       free:   true
       logo:   'Televisi_Mandiri_Papua.png'
   - item_35:
-      name:   'beIN Sports 1'
-      free:   false
-      hd:     false
-      logo:   'Bein_Sport_1.png'
+      name:   'NGC Wild HD'
+      hd:     true
+      free:   free
+      logo:   'Nat_Geo_Wild.png'
   - item_36:
-      name: 'beIN Sports 2'
-      hd:   false
-      free: false
-      logo: 'Bein_Sport_2.png'
+      name:   'ASN HD'
+      hd:     true
+      free:   free
+      logo:   'ASN_HD.png'
   - item_37:
       name:   'FOX Sports Plus'
       hd:     false
@@ -459,3 +459,8 @@ items:
       hd:     true
       free:   free
       logo:   'ASN_HD.png'
+  - item_92:
+      name:   'Sony'
+      hd:     true
+      free:   false
+      logo:   'Sony.png'
