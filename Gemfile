@@ -23,6 +23,7 @@ gem 'rails', '3.2.13'
   gem 'delayed_job_web'                 # Delayed Job Monitoring System
   gem 'figaro'
   gem "recaptcha", require: "recaptcha/rails"
+  gem "exception_notification", :require => "exception_notifier"
 #end
 
 
