@@ -242,7 +242,7 @@ membership:
       - item_114:
           name: 'TV Parliament'
       - item_115:
-          name: "Net TV"
+          name: "Net TV HD"
       - item_116:
           name: 'TVRI'
       - item_117:
@@ -542,7 +542,7 @@ membership:
       - item_114:
           name: 'TV Parliament'
       - item_115:
-          name: "Net TV"
+          name: "Net TV HD"
       - item_116:
           name: 'TVRI'
       - item_117:
@@ -676,7 +676,7 @@ membership:
       - item_51:
           name: 'TV Parliament'
       - item_52:
-          name: "Net TV"
+          name: "Net TV HD"
       - item_53:
           name: 'TVRI'
       - item_54:
@@ -906,7 +906,7 @@ membership:
       - item_51:
           name: 'TV Parliament'
       - item_52:
-          name: "Net TV"
+          name: "Net TV HD"
       - item_53:
           name: 'TVRI'
       - item_54:
@@ -1120,7 +1120,7 @@ membership:
       - item_51:
           name: 'TV Parliament'
       - item_52:
-          name: "Net TV"
+          name: "Net TV HD"
       - item_53:
           name: 'TVRI'
       - item_54:

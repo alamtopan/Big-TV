@@ -34,7 +34,7 @@ group:
           logo: 'FOX.png'
       - item_7:
           name: 'FOX Crime'
-          hd:   false
+          hd:   true
           logo: 'FOX_Crime.png'
       - item_8:
           name: 'FX'
@@ -80,15 +80,15 @@ group:
       - item_3:
           name: 'Asian Food Channel'
           hd:   false
+          logo: 'Asian_Food_Channel.png'
       - item_4:
           name: 'Li TV'
           hd:   false
-          logo: 'Asian_Food_Channel.png'
+          logo: 'Li_TV.png'
       - item_5:
           name: 'E! Entertainment'
-          hd:   false
-          logo: 'E!_Entertainment.png'
-          logo: 'Li_TV.png'
+          hd:   true
+          logo: 'E!_Entertainment_HD.png'
       - item_6:
           name: 'Fashion One'
           hd:   false
@@ -521,7 +521,7 @@ group:
       position: 11
       items:
       - item_0:
-          name: "Net TV"
+          name: "Net TV HD"
           hd:   true
           logo: 'Net_TV_HD.png'
       - item_1:
@@ -636,3 +636,7 @@ group:
           name: 'U Channel'
           hd:   false
           logo: 'U_Channel.png'
+      - item_29:
+          name: 'Papua TV'
+          hd:   false
+          logo: 'Televisi_Mandiri_Papua.png'
