@@ -1,4 +1,5 @@
-class UsersController < ResourcesController
+class Manage::UsersController < Manage::ResourcesController
+  defaults :resource_class => User, :collection_name => 'users', :instance_name => 'user'
   prepend_before_filter :draw_password, only: :update
   
   def sign_out

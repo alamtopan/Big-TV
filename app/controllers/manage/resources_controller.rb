@@ -1,4 +1,4 @@
-class ResourcesController < InheritedResources::Base
+class Manage::ResourcesController < InheritedResources::Base
   before_filter :authenticate_user!
 
   def create  

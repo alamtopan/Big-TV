@@ -1,4 +1,5 @@
-class MembershipsController < ResourcesController
+class Manage::MembershipsController < Manage::ResourcesController
+  defaults :resource_class => Membership, :collection_name => 'memberships', :instance_name => 'membership'
   prepend_before_filter :prepare_save, only: [:create, :update]
   before_filter :prepare_select, except: [:index]
   

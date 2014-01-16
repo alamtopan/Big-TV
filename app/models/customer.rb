@@ -2,6 +2,8 @@ class Customer < User
   before_validation :before_validation
   after_save        :after_saving
 
+  default_scope where('code IS NOT NULL').order('updated_at DESC')
+
   private
     def before_validation
       unless self.password

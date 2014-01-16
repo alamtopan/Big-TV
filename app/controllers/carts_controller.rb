@@ -76,21 +76,20 @@ class CartsController < ApplicationController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
       params[:user].delete(:username)
-      if current_customer.update_attributes(params[:user])
-        save_order
+      @customer = @order.orderable
+      if @customer.update_attributes(params[:user]) && save_order
         flash[:success] = 'success'
         CustomerMailer.thanks_email(order).deliver
-        @customer = current_customer
-        # delete_session
+        
+        delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
 
         @payment_method = params[:payment_method]
         unless request.xhr?
           redirect_to thanks_path(token: order.token)
         end
-        
       else
-        flash[:errors] = current_customer.errors.full_messages
+        flash[:errors] = @customer.errors.full_messages
         unless request.xhr?
           redirect_to preview_path
         end
@@ -150,17 +149,16 @@ class CartsController < ApplicationController
       @product ||= Membership.find(params[:id])
     end
 
-    # def delete_session
-    #   cart = cookies[:cart_id]
-    #   session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
-    #   session.delete if session.present?
-    #   sign_out(:customer)
-    #   cookies.delete :cart_id
-    # end
+    def delete_session
+      cart = cookies[:cart_id]
+      session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
+      session.delete if session.present?
+      sign_out(:customer)
+      cookies.delete :cart_id
+    end
 
     def save_order
       period = params[:order][:period].to_i
-      order.orderable = current_customer if order.orderable.blank?
       order.session_id = nil
       order.period = period
       order.period_name = 'month'
@@ -197,12 +195,10 @@ class CartsController < ApplicationController
     end
 
     def authorize_customer
-      if params[:token].present? && @order = Order.find_by_token(params[:token])
-        sign_in(:customer, @order.orderable)
-      end
+      @order = Order.find_by_token(params[:token]) if params[:token].present?
 
       session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
-      unless current_customer
+      unless order.orderable
         if request.xhr?
           render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
         else

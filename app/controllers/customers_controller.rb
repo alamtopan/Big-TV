@@ -3,24 +3,32 @@ class CustomersController < ApplicationController
   layout 'detail'
 
   def new
-    @customer = current_customer||Customer.new
+    @customer = order.orderable||Customer.new
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
   end
 
   def create
-    @customer = Customer.find_or_initialize_by_email(params[:customer][:email])
+    input_param = params[:user] || params[:customer]
+    if input_param
+      input_param.delete(:password)
+      input_param.delete(:password_confirmation)
+      input_param.delete(:username)
+    end
+
+    @customer = Customer.find_or_initialize_by_email(input_param[:email])
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
 
-    if verify_recaptcha(model: @customer, message: "Verification code is invalid") && @customer.update_attributes(params[:customer])
+    if verify_recaptcha(model: @customer, message: "Verification code is invalid") && @customer.update_attributes(input_param)
       order.orderable = @customer
-      order.save
-      sign_in(:customer, @customer)
-      if session[:current_premium_id].present?
+      
+      
+      if order.save && session[:current_premium_id].present?
         redirect_to extra_path
       else
         redirect_to premium_path
       end
     else
+      @customer = Customer.new(input_param)
       flash[:errors] = @customer.errors.full_messages.uniq.join(', ')
       render :new
     end

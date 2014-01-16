@@ -13,7 +13,13 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
+
+  # default_scope where('code IS NULL').order('updated_at DESC')
   
+  def full_name
+    return '' unless profile
+    profile.full_name
+  end
 
   protected
     def after_initialized

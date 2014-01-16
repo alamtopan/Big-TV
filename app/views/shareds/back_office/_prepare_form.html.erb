@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <%= form_for resource, method: form_method, html: {class: "form-horizontal"} do |f| %>
+        <%= form_for [:manage, resource], method: form_method, html: {class: "form-horizontal"} do |f| %>
           <%= render partial: 'form', locals: {f: f} %>
         <% end %>
       </div>
