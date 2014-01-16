@@ -33,18 +33,20 @@ BigTv::Application.routes.draw do
   get   '/premium', to: 'carts#premium',    as: 'premium'
   get   '/preview', to: 'carts#preview',    as: 'preview'
   get   '/rental',  to: 'carts#rental_box', as: 'rental'
-  
+
   get   '/update_package',  to: 'carts#update_package', as: 'update_package'
-  
+
   get   '/thanks',  to: 'publics#thanks',  as: 'thanks'
   
   get   "/manage",  to: "manage/home#dashboard", as: "manage_root"
+  get   '/payment-instruction',  to: 'publics#payment_instruction',  as: 'payment_instruction'
 
   get   '/dashboard',  to: 'home#dashboard', as: 'dashboard'
   get   '/form',       to: 'home#form',      as: 'form'
   get   '/list',       to: 'home#list',      as: 'list'
+
   # get   '/home',       to: 'home#home',  as: 'home'
-  
+
   root to: 'publics#show'
 
   # SAMPLE DECODER

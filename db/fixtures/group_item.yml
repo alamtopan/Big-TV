@@ -34,7 +34,7 @@ group:
           logo: 'FOX.png'
       - item_7:
           name: 'FOX Crime'
-          hd:   false
+          hd:   true
           logo: 'FOX_Crime.png'
       - item_8:
           name: 'FX'
@@ -80,15 +80,15 @@ group:
       - item_3:
           name: 'Asian Food Channel'
           hd:   false
+          logo: 'Asian_Food_Channel.png'
       - item_4:
           name: 'Li TV'
           hd:   false
-          logo: 'Asian_Food_Channel.png'
+          logo: 'Li_TV.png'
       - item_5:
           name: 'E! Entertainment'
-          hd:   false
-          logo: 'E!_Entertainment.png'
-          logo: 'Li_TV.png'
+          hd:   true
+          logo: 'E!_Entertainment_HD.png'
       - item_6:
           name: 'Fashion One'
           hd:   false
@@ -336,7 +336,7 @@ group:
           name: 'Xing Kong'
           hd:   false
           logo: 'Xing_Kong.png'
-  - group_9:  
+  - group_9:
       name: 'Special Tiering'
       colour: '#409cc1'
       position: 9
@@ -369,7 +369,7 @@ group:
           name: 'NHK World Premium'
           hd:   false
           logo: 'NHK_World.png'
-  - group_10:  
+  - group_10:
       name: 'Freeview International'
       colour: '#5ec82a'
       position: 12
@@ -474,7 +474,7 @@ group:
           name: 'TV 5 Monde Asia'
           hd:   false
           logo: 'TV_5_Monde_Asia.png'
-  - group_11:  
+  - group_11:
       name: 'Inhouse Channel'
       colour: '#ed8c01'
       position: 10
@@ -515,15 +515,15 @@ group:
           name: 'TV Parliament'
           hd:   false
           logo: 'TV_Parlement.png'
-  - group_12:  
+  - group_12:
       name: 'Freeview Nasional'
       colour: '#ff0005'
       position: 11
       items:
       - item_0:
-          name: "Net TV"
+          name: "Net TV HD"
           hd:   true
-          logo: 'Net_TV_HD.png'
+          logo: 'NET_TV_HD.png'
       - item_1:
           name: 'TVRI'
           hd:   false
@@ -636,3 +636,7 @@ group:
           name: 'U Channel'
           hd:   false
           logo: 'U_Channel.png'
+      - item_29:
+          name: 'Papua TV'
+          hd:   false
+          logo: 'Televisi_Mandiri_Papua.png'
