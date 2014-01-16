@@ -73,7 +73,7 @@
       Address Installation
     </label>
     <div class="col-sm-9">
-      <%= profile.text_field :shipping_address, class: 'form-control input-lg',placeholder:'Address' %>
+      <%= profile.text_field :address_shipping, class: 'form-control input-lg',placeholder:'Address' %>
     </div>
   </div>
   <div class="br"></div>
@@ -100,6 +100,30 @@
     </div>
     <div class="col-sm-3">
       <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      Identity Type
+    </label>
+    <div class="col-sm-3">
+      <%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{prompt: 'Select Identity Type'}, {class: 'form-control', required: true} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      Identity No
+    </label>
+    <div class="col-sm-3">
+      <%= profile.text_field :no_identitas, class: 'form-control', placeholder: 'Nomor Identitas', required: true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      Identity File
+    </label>
+    <div class="col-sm-3">
+      <%= image_tag @customer.profile.file_ktp.url(:medium) %>
     </div>
   </div>
 

@@ -19,7 +19,7 @@
           <td><%= index+1 %></td>
           <td><%= customer.full_name %></td>
           <td><%= customer.email %></td>
-          <td><%= customer.phone %></td>
+          <td><%= customer.profile.no_hp %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: customer, confirmation: "#{customer.full_name} will be deleted, are you sure ?"} %>
             </div>
