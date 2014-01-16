@@ -19,17 +19,12 @@ class PublicsController < ApplicationController
 
   def thanks
     if params[:token].present? && @order = Order.find_by_token(params[:token])
-      @customer = @order.orderable
+      @customer         = @order.orderable
       @customer_profile = @customer.profile
-      render layout: "detail"
+      render layout: 'detail'
     else
       redirect_to root_path
     end
-
-    # @order = Order.last
-    # @customer = Customer.last
-    # @customer_profile = Profile.last
-    # render layout: 'detail'
   end
 
   def render_map
