@@ -1,0 +1,29 @@
+<section class="wraper_bg-bright">
+  <h1><span>Payment Instruction</span></h1>
+  <div class="polosochka2"></div>
+
+  <div class="span12 text-left">
+    <div class="atm-payment-instruction">
+      <p>
+        Selamat anda telah berhasil melakukan pemesanan dengan order number: <strong><%= @order.code %></strong>
+      </p>
+      <p>Berikut detail data yang harus anda gunakan saat melakukan pembayaran di ATM</p>
+
+      <ul class="payment-code-info">
+        <li>Payment Code: <strong><%= params[:code] %></strong></li>
+        <li>Amount: <strong><%= number_to_currency @order.total, precision: 0, unit: '' %></strong></li>
+      </ul>
+
+      <p>
+        Anda bisa melakukan pembayan melalui ATM bersama atau melalui internet banking.<br />
+        Klik <%= link_to 'di sini', support_path %> untuk informasi lebih lanjut.
+      </p>
+      <p>
+        Untuk melakukan pembayaran dengan internetbanking pastikan akun anda telah terdaftar dan telah aktif (untuk info detail mengenai pendaftaran dan pengaktifan internet banking bisa langsung menghubungi kantor bank terdekat anda).
+      </p>
+    </div>
+  </div>
+
+  <%= render 'publics/order_info' %>
+</section>
+
