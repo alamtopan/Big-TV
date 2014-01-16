@@ -17,11 +17,15 @@ class GatepayController < ApplicationController
   end
 
   def redirect
-    redirect_params = {}
-    if params[:TRANSIDMERCHANT].present? && @order = Order.find_by_code(params[:TRANSIDMERCHANT])
-      redirect_params.merge!(token: @order.token)
-    end
+    @order = Order.find_by_code(params[:TRANSIDMERCHANT])
+    redirect_to(root_path) and return unless @order
 
-    redirect_to thanks_path(redirect_params)
+    @payment_channel = PaymentChannel.new(params[:PAYMENTCHANNEL])
+
+    if @payment_channel.atm? && !@order.success?
+      render 'publics/_atm_payment_instruction', layout: 'detail'
+    else
+      redirect_to thanks_path(token: @order.token)
+    end
   end
 end
