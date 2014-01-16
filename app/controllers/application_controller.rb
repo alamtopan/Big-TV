@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
       return cookies[:cart_id] if cookies[:cart_id]
       cookies[:cart_id] = request.session_options[:id]
     end
+
+    def order
+      @order ||= Order.find_or_create_by_session_id(session_cart)
+    end
     
 end

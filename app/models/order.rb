@@ -1,5 +1,11 @@
 class Order < ActiveRecord::Base
-  attr_accessible :orderable_id, :orderable_type, :session_id, :items_attributes
+  attr_accessible :orderable_id, :orderable_type, :session_id, :items_attributes, :file_faktur
+  
+ has_attached_file :file_faktur, styles:  { 
+                                   :medium => "600x600>", 
+                                   :thumb => "100x100>" 
+                                  }, 
+                                  :default_url => "/assets/no-image.png"
 
   has_many   :items, class_name: "OrderItem", dependent: :destroy
   belongs_to :orderable, polymorphic: true

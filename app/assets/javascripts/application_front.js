@@ -1,5 +1,6 @@
 //= require front/js/jquery-1.9.1
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require front/js/jquery-ui
 //= require front/js/jQuery.Opie.PortfolioGallery.min
 //= require front/js/classie
@@ -93,7 +94,6 @@ $(document).ready(function(){
     }
     return false;
   }
-  
 
   var resizeImage = function(){
     $(window).resize(function(){
@@ -150,19 +150,6 @@ $(document).ready(function(){
     $.get('/extra.js?extra_id='+$(this).val()+'&add='+$(this).is(':checked'))
   });
 
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=791578794202636";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // if($('.twitter-widget-box').length){
-  //   $('.twitter-widget-box').html(unescape("%3Cscript src='http://twitterforweb.com/twitterbox.js?username=BiGTiVi&settings=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699' type='text/javascript'%3E%3C/script%3E"));
-  // }
-
-  //$("#map_section").gmap3({map:{options:{scrollwheel: false}}});
 
   $(window).scroll(function(){
      var fromTop = $(this).scrollTop();
@@ -177,19 +164,24 @@ $(document).ready(function(){
        lazyImagesLoaded()
      }                   
   });
-  //$(window).on('resize', function(){
-  // $.each($('.info img'), function(){
-  //  $.image = $(this)
-  //  console.log($.image)
-  //  $.image.on('load', function(){
-  //    console.log(imgHeight)
-  //        var imgHeight = $(this).height();
 
-  //    $('.cont, .slide-main, .wraper2 , #sequence').css('height',  imgHeight +'px');
-  //    var hdHeight = $('.wraper.head').height();
-  //    $('.head_bander').css('height', hdHeight+'px');
-  //  })
-  // })
+  $('input[name="payment_method"]').on('change',function(){
+    if($(this).val() == 'lokasi'){
+      $('.file-faktur-container').removeClass('hide')
+      $('#file_faktur').attr('required','required');
+    }else{
+      $('.file-faktur-container').addClass('hide');
+      $('#file_faktur').removeAttr('required');
+    }
+  })
 
-  //  }).resize();
+
+  $('.twitter-widget-box').find('iframe').attr('src','http://twitterforweb.com/iframe/twitterbox/BiGTiVi.html?s=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699');
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=791578794202636";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 });

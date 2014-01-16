@@ -33,7 +33,7 @@ class Membership < ActiveRecord::Base
 
   class << self
     def packages_by_category(_package)
-      includes(:category, :prices).where(['categories.name = ?', _package])
+      includes(:category, :prices, :unit_items).where(['categories.name = ?', _package])
     end
 
     def other_packages
@@ -51,5 +51,5 @@ class Membership < ActiveRecord::Base
     0
   end
 
-  
+
 end

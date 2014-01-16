@@ -73,12 +73,13 @@
               <th class="unit-price" style="font-size:14px;width: 150px;text-align:center;">HARGA/BULAN</th>
               <th class="line_item_subtotal" style="font-size:14px">TOTAL</th>
             </tr>
+
             <% packages = @order.items.all %>
-            <% extra_packages = packages.select{|i| i.membership_category == 'Extra'} %>
+            <% extra_packages = packages.select{|i| i.extra? } %>
             <% packages = packages - extra_packages %>
-            <% premium_package = packages.select{|i| i.membership_category == 'Premium'}.first %>
+            <% premium_package = packages.select{|i| i.premium?}.first %>
             <% packages = packages - [premium_package] %>
-            <% [premium_package].concat(extra_packages).concat(packages).flatten.each do |item| %>
+            <% [premium_package].concat(extra_packages).concat(packages).flatten.compact.each do |item| %>
               <tr class="line_item odd">
                 <td class="description" style="text-align:left;">
                   <%= item.title.titleize %>

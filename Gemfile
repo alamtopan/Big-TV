@@ -24,6 +24,7 @@ gem 'rails', '3.2.13'
   gem 'figaro'
   gem "recaptcha", require: "recaptcha/rails"
   gem "exception_notification", :require => "exception_notifier"
+  gem 'remotipart', '~> 1.2'
 #end
 
 
