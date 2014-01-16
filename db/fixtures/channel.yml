@@ -58,7 +58,7 @@ items:
       name:   'Net TV HD'
       hd:     false
       free:   true
-      logo:   'NET_TV.png'
+      logo:   'NET_TV_HD.png'
   - item_12:
       name:   'JTV'
       hd:     false
@@ -93,7 +93,7 @@ items:
       name:   "J'Go"
       hd:     false
       free:   true
-      logo:   ''
+      logo:   'J_Go.png'
   - item_19:
       name:   "Hi!"
       hd:     false
