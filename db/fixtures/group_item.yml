@@ -250,7 +250,7 @@ group:
           hd:   false
           logo: 'Motorvision.png'
       - item_4:
-          name: 'ASN'
+          name: 'ASN HD'
           hd:   true
           logo: 'ASN_HD.png'
       - item_5:

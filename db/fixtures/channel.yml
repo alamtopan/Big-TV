@@ -275,10 +275,10 @@ items:
       free:   false
       logo:   'Nat_Geo_Wild.png'
   - item_55:
-      name:   'ASN HD'
-      hd:     true
+      name:   'Big Show'
+      hd:     false
       free:   false
-      logo:   'ASN_HD.png'
+      logo:   'BIGTV_logo.png'
   - item_56:
       name:   'FOX Sports Plus'
       hd:     false
@@ -460,13 +460,13 @@ items:
       free:   false
       logo:   'Nat_Geo_Wild.png'
   - item_92:
-      name:   'ASN HD'
-      hd:     true
+      name:   'Big Info'
+      hd:     false
       free:   false
-      logo:   'ASN_HD.png'
+      logo:   'BIGTV_logo.png'
   - item_93:
       name:   'Sony'
-      hd:     true
+      hd:     false
       free:   false
       logo:   'Sony.png' 
   - item_94:
@@ -504,13 +504,3 @@ items:
       hd:     false
       free:   false
       logo:   'StarWorld.png'
-  - item_101:
-      name:   'Big Show'
-      hd:     false
-      free:   false
-      logo:   'BIGTV_logo.png'
-  - item_102:
-      name:   'Big Info'
-      hd:     false
-      free:   false
-      logo:   'BIGTV_logo.png'

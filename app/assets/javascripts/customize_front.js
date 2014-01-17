@@ -35,7 +35,7 @@ $(document).ready(function(){
 
   $('#view-more-channel').on('click',function(){
     $('.channel_member').removeClass('hide');
-    $('html,body').animate({scrollTop: $("#team_members_channel").offset().top},'slow');
+    $('html,body').animate({scrollTop: $("#team").offset().top},'slow');
     $(this).addClass('hide');
     return false;
   });
