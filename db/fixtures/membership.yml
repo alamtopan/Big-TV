@@ -1203,7 +1203,7 @@ membership:
       category:     'extra'
       prices:
         - price_0:
-            price:    10000
+            price:    19999
             total:    1
             periode:  'month'
       items:
@@ -1232,7 +1232,7 @@ membership:
       - item_2:
           name: 'Fight'
       - item_3:
-          name: 'Fox Sports Plus'
+          name: 'FOX Sports Plus HD'
       - item_4:
           name: 'Star Sports' 
   - membership_7:
@@ -1415,7 +1415,7 @@ membership:
         category:     'extra'
         prices:
           - price_0:
-              price:    120000
+              price:    150000
               total:    1
               periode:  'month'
         items:
@@ -1434,7 +1434,7 @@ membership:
               periode:  'month'
         items:
         - item_0:
-            name: 'NHK World'
+            name: 'NHK World Premium'
   - membership_17:
         name:         'India'
         description:  ''
@@ -1443,7 +1443,7 @@ membership:
         category:     'extra'
         prices:
           - price_0:
-              price:    50000
+              price:    75000
               total:    1
               periode:  'month'
         items:
@@ -1474,15 +1474,15 @@ membership:
         - item_2:
             name: 'Fight'
         - item_3:
-            name: 'Fox Sports Plus'
+            name: 'FOX Sports Plus HD'
         - item_4:
             name: 'STAR Sports'
         - item_5:
-            name: 'Eurosports'
+            name: 'Euro Sport'
         - item_6:
             name: 'ASN HD'
         - item_7:
-            name: 'ASN'
+            name: 'NBA TV'
   - membership_19:
         name:         '1 DECODER'
         description:  ''

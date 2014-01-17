@@ -4,6 +4,39 @@
     max-width: 720px;
     min-width: 570px;
   }
+  table.width95 td{
+    padding: 0px!important;
+  }
+  .package-channel-table td{
+    padding: 6px!important;
+  }
+  .name_channel {
+    margin-left: 0px;
+  }
+  .hd {
+    position: static;
+  }
+  .off{
+    display: none;
+  }
+  .display_group_name{
+    display: block;
+  }
+  .table.decode tbody tr td {
+    padding: 0px!important;
+    padding-bottom: 10px!important;
+    padding-top: 40px;
+  }
+  .big-decode2 {
+    font-size: 28px;
+  }
+  .prc {
+    font-size: 18px!important;
+    font-weight: bold;
+  }
+  .small-counter2 {
+    font-size: 15px;
+  }
   div.grd_masonry_extra_front{
     -moz-column-count: 2;
     -moz-column-gap: 20px;
@@ -55,14 +88,14 @@
     background: #ed2024;
     color: #fff100;
     font-size: 20px;
-    padding: 20px;
+    padding: 20px 0px!important;
     float: left;
     text-align: center;
     width: 100%;
     font-weight: bold;
   }
   .top_banner div{
-    width: 80%;
+    width: 100%!important;
   }
   .f_search
   {

@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5, p, ul
 p{
   margin-bottom: 10px;
 }
+.display_group_name{
+  display: none;
+}
 .mrg_top{
   margin-top: 20px;
 }
@@ -41,7 +44,7 @@ p{
   font-style: italic;
 }
 .nav-tabs > li {
-  width: 19.89%;
+  width: 19.87%;
   border-bottom: solid 2px #b81418!important;
 }
 .why_us{
@@ -2391,8 +2394,6 @@ feedback-as:nth-child(8){
 
 }
 iframe{
-  width: 100%;
-  height: 100%;
   margin: 0;
   border: none;
 }
@@ -2806,11 +2807,11 @@ div.grid_packages:hover{
 
 
 div.grd_masonry_footer{
-    -moz-column-count: 4;
+    -moz-column-count: 3;
     -moz-column-gap: 10px;
-    -webkit-column-count: 4;
+    -webkit-column-count: 3;
     -webkit-column-gap: 10px;
-    column-count: 4;
+    column-count: 3;
     column-gap: 10px;
     width: 100%;
     float: left;
@@ -2836,6 +2837,7 @@ div.grid_packages_footer{
   margin-top: 40px;
   float: left;
   color: #fdb414;
+  padding-bottom: 20px;
 }
 ul.gallery_footer{
   display:table; margin-left:auto; margin-right:auto;
@@ -3186,7 +3188,7 @@ div.grid_packages_decode2{
 .chan_section
 {
   display: block;
-  width: 65%;
+  width: 70%;
   margin: auto;
 }
 
@@ -3202,6 +3204,8 @@ div.grid_packages_decode2{
 .blog_section_white{
   background: #fff!important;
 }
+
 .add-margin-top10{
   margin-top: 10%;
 }
+

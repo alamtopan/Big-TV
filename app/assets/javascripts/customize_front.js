@@ -149,6 +149,7 @@ if($("#search_location").length){
       $(".js_button_map").removeClass('active');
       $(".map_location_js").closest('tr').addClass('hide');
       var regexp = new RegExp($(this).val(), 'i');
+      var count_hide = 0;
       $(".map_location_js").each(function(index, el){
         if($(el).data('value')){
           if(String($(el).data('value').name).match(regexp) || String($(el).data('value').address).match(regexp)){ 
@@ -156,6 +157,14 @@ if($("#search_location").length){
           }
         }
       })
+      $("#map div.trial").each(function(index_more, el_more){
+        var categoryDiv = $(el_more).data('value');
+        if($(".grid_packages_location."+categoryDiv).length == $(".grid_packages_location.hide."+categoryDiv).length){
+          $(el_more).addClass('hide');
+        }else{
+          $(el_more).removeClass('hide');
+        }
+      });
       return false;
     }else{
       initilizeLocation();
