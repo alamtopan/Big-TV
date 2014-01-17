@@ -18,13 +18,11 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    if params[:token].present? && @order = Order.find_by_token(params[:token])
-      @customer         = @order.orderable
-      @customer_profile = @customer.profile
-      render layout: 'detail'
-    else
-      redirect_to root_path
-    end
+    prepare_order_by_token
+  end
+
+  def payment_instruction
+    prepare_order_by_token
   end
 
   def render_map
@@ -55,5 +53,16 @@ class PublicsController < ApplicationController
     @blog = Blog.find_by_id(params[:id])
     render layout: "detail"
   end
+
+  private
+    def prepare_order_by_token
+      if params[:token].present? && @order = Order.find_by_token(params[:token])
+        @customer         = @order.orderable
+        @customer_profile = @customer.profile
+        render layout: 'detail'
+      else
+        redirect_to root_path
+      end
+    end
 
 end

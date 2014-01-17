@@ -5,14 +5,20 @@ BigTv::Application.routes.draw do
   	resources :profiles
     get :sign_out
   end
-  resources :unit_items,  path: 'channels'
-  resources :group_items, path: 'channel_categories'
-  resources :memberships
-  resources :blogs
-  resources :orders, path: 'subcriptions'
-  resources :categories
-  resources :customers, only: [:new, :create]
-  resources :carts, except: [:show] do
+
+  namespace :manage do
+    resources :unit_items,  path: 'channels'
+    resources :group_items, path: 'channel_categories'
+    resources :memberships
+    resources :blogs
+    resources :orders,      path: 'subcriptions'
+    resources :categories
+    resources :users
+    resources :customers
+  end
+  
+  resources :customers,   only: [:new, :create]
+  resources :carts,       except: [:show] do
     collection do
       post '/subcribe', to: 'carts#subcribe'
     end
@@ -27,16 +33,20 @@ BigTv::Application.routes.draw do
   get   '/premium', to: 'carts#premium',    as: 'premium'
   get   '/preview', to: 'carts#preview',    as: 'preview'
   get   '/rental',  to: 'carts#rental_box', as: 'rental'
-  
+
   get   '/update_package',  to: 'carts#update_package', as: 'update_package'
-  
+
   get   '/thanks',  to: 'publics#thanks',  as: 'thanks'
   
-  get   '/dashboard',  to: 'home#dashboard',as: 'dashboard'
-  get   '/form',       to: 'home#form',  as: 'form'
-  get   '/list',       to: 'home#list', as: 'list'
+  get   "/manage",  to: "manage/home#dashboard", as: "manage_root"
+  get   '/payment-instruction',  to: 'publics#payment_instruction',  as: 'payment_instruction'
+
+  get   '/dashboard',  to: 'home#dashboard', as: 'dashboard'
+  get   '/form',       to: 'home#form',      as: 'form'
+  get   '/list',       to: 'home#list',      as: 'list'
+
   # get   '/home',       to: 'home#home',  as: 'home'
-  
+
   root to: 'publics#show'
 
   # SAMPLE DECODER

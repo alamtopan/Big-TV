@@ -61,6 +61,16 @@ table.langganan tr td{
   margin-top: 40px;
 }
 
-.payment-code-info{
-  margin-left: 40px;
+.atm-payment-instruction{
+  background: #fff;
+  margin: 0 auto;
+  width: 853px;
+  padding: 30px 0 20px;
+  margin-bottom: 20px
 }
+.atm-payment-instruction p{
+  margin-left: 3.5em;
+  margin-right: 3.5em;
+}
+.atm-payment-instruction p:last-child:after{ content: ' ';padding-bottom: 30px; }
+.atm-payment-instruction .payment-code-info{ margin-left: 95px; }

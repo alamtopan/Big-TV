@@ -1,4 +1,4 @@
-class HomeController < ResourcesController
+class HomeController < Manage::ResourcesController
 	
 	def dashboard
 

@@ -1,3 +1,0 @@
-class BlogsController < ResourcesController
-end
-

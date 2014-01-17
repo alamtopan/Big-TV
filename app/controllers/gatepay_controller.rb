@@ -21,9 +21,8 @@ class GatepayController < ApplicationController
     redirect_to(root_path) and return unless @order
 
     @payment_channel = PaymentChannel.new(params[:PAYMENTCHANNEL])
-
     if @payment_channel.atm? && !@order.success?
-      render 'publics/_atm_payment_instruction', layout: 'detail'
+      redirect_to payment_instruction_path(token: @order.token, code: params[:PAYMENTCODE])
     else
       redirect_to thanks_path(token: @order.token)
     end

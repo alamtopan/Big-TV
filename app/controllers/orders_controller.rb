@@ -1,2 +1,0 @@
-class OrdersController < ResourcesController
-end

@@ -3,7 +3,7 @@
 	<div class="polosochka2"></div>
 
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-    <%= form_for @order.orderable||current_customer, url: subcribe_carts_path(token: params[:token]), method: 'post', html: {multipart: true, remote: true, class: 'form-subscribe'} do |f| %>
+    <%= form_for @order.orderable||Customer.new, url: subcribe_carts_path(token: params[:token]), method: 'post', html: {multipart: true, remote: true, class: 'form-subscribe'} do |f| %>
 			<%= f.fields_for(:profile) do |profile| %>
 		    <div class="panel-body">
 					<div class="span9">
@@ -80,8 +80,7 @@
 									<label class="control-label">
 										* Nomor Identitas
 									</label>
-									<%= profile.text_field :no_identitas, value: current_customer.profile.no_identitas,
-                                                        class: 'form-control', 
+									<%= profile.text_field :no_identitas, class: 'form-control', 
                                                         placeholder: 'Nomor Identitas', 
                                                         required: true %>
 								</div>
