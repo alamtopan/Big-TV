@@ -2394,7 +2394,6 @@ feedback-as:nth-child(8){
 
 }
 iframe{
-  height: 100%;
   margin: 0;
   border: none;
 }
@@ -2808,11 +2807,11 @@ div.grid_packages:hover{
 
 
 div.grd_masonry_footer{
-    -moz-column-count: 4;
+    -moz-column-count: 3;
     -moz-column-gap: 10px;
-    -webkit-column-count: 4;
+    -webkit-column-count: 3;
     -webkit-column-gap: 10px;
-    column-count: 4;
+    column-count: 3;
     column-gap: 10px;
     width: 100%;
     float: left;
@@ -3205,3 +3204,7 @@ div.grid_packages_decode2{
 .blog_section_white{
   background: #fff!important;
 }
+.twitter-timeline p{
+  color: #fff!important;
+}
+

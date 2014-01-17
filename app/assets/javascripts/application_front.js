@@ -18,6 +18,7 @@
 //= require customize_front
 //= require scrolltofixed-min
 //= require jquery.lazyload
+//= require widgets-twitt
 
 //= require_self
 
