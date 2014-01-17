@@ -17,10 +17,19 @@ class CustomerMailer < ActionMailer::Base
     mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: "Notifikasi Pembayaran BigTv #{@order.code}")
   end
 
-  def prepare_order(order)
-    @user = order.orderable
-    @order = order
-    @url  = 'http://big-tv.com/'
-    attachments.inline['bigtv.png'] = File.read("#{Rails.root}/vendor/assets/images/bigtv.png")
+  def atm_payment_instruction(order, payment_code)
+    prepare_order(order)
+    @payment_code = payment_code
+    mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: "Instruksi Pembayaran ##{@order.code}")
   end
+
+  private
+
+    def prepare_order(order)
+      @user = order.orderable
+      @order = order
+      @url  = 'http://big-tv.com/'
+      attachments.inline['bigtv.png'] = File.read("#{Rails.root}/vendor/assets/images/bigtv.png")
+    end
+
 end
