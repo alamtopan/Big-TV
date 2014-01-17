@@ -1802,7 +1802,7 @@ input.s_form1
 .feature p
 {
   color: #fff;
-  font-style: italic;
+  /*font-style: italic;*/
   font-size: 14px;
 }
 
@@ -3204,7 +3204,8 @@ div.grid_packages_decode2{
 .blog_section_white{
   background: #fff!important;
 }
-.twitter-timeline p{
-  color: #fff!important;
+
+.add-margin-top10{
+  margin-top: 10%;
 }
 
