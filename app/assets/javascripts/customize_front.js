@@ -61,12 +61,15 @@ $(document).ready(function(){
     });
   }
 
-  if($("div.trial").length){
+  if($("#map div.trial").length){
     initilizeLocation();
   }
 
   function initilizeLocation(){
     $.each($("div.trial"), function( index, div ) {
+      if ($(div).hasClass('hide')) {
+        $(div).removeClass('hide');
+      }; 
       var val = $(this).data('value');
       if(val){
         $.each($("."+val), function( n, locat ) {
