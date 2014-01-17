@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5, p, ul
 p{
   margin-bottom: 10px;
 }
+.display_group_name{
+  display: none;
+}
 .mrg_top{
   margin-top: 20px;
 }
@@ -41,7 +44,7 @@ p{
   font-style: italic;
 }
 .nav-tabs > li {
-  width: 19.89%;
+  width: 19.87%;
   border-bottom: solid 2px #b81418!important;
 }
 .why_us{
@@ -2391,7 +2394,6 @@ feedback-as:nth-child(8){
 
 }
 iframe{
-  width: 100%;
   height: 100%;
   margin: 0;
   border: none;
@@ -2836,6 +2838,7 @@ div.grid_packages_footer{
   margin-top: 40px;
   float: left;
   color: #fdb414;
+  padding-bottom: 20px;
 }
 ul.gallery_footer{
   display:table; margin-left:auto; margin-right:auto;
