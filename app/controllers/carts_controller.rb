@@ -161,13 +161,17 @@ class CartsController < ApplicationController
     def regenerate_package(order,membership)
       premium_items = get_premium_package(order)
       new_package = []
-      same_item = true
+      same_item = []
       membership.each do |member|
         member.unit_items.each do |item|
-          same_item = false unless premium_items.map(&:id).include?(item.id)
+          unless premium_items.map(&:id).include?(item.id)
+            same_item.push(false) 
+          else
+            same_item.push(true)
+          end
         end
-        new_package.push(member) unless same_item
-        same_item = true
+        new_package.push(member) if same_item.include?(false)
+        same_item.clear
       end
       new_package
     end
