@@ -36,21 +36,25 @@ class PublicsController < ApplicationController
   end
 
   def lokasi
+    @title_page = "Lokasi"
     @categories= CategoryOffice.all
     @regionals= Regional.all
     render layout: "detail"
   end
 
   def cara_berlangganan
+    @title_page = "Cara Berlangganan"
     render layout: "detail_lanjut"
   end
 
   def support
+    @title_page = "Support"
     render layout: "detail"
   end
 
   def show_blog
     @blog = Blog.find_by_id(params[:id])
+    @title_page = "#{@blog.title}"
     render layout: "detail"
   end
 

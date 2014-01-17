@@ -2440,8 +2440,6 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
 .small_image{
   height: 30px;
   float: right;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 
 .name_channel{
@@ -2672,7 +2670,7 @@ input[type="checkbox"]{
   font-weight: bold;
   font-size: 16px;
   color: yellow;
-  padding-right: 10px;
+  padding-right: 2px;
 }
 .title_ord_big{
   font-weight: bold;
@@ -3207,5 +3205,9 @@ div.grid_packages_decode2{
 
 .add-margin-top10{
   margin-top: 10%;
+}
+.info-footer{
+  margin-top:40px; 
+  float:left
 }
 

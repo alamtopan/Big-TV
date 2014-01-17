@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
   layout 'detail'
 
   def new
+    @title_page = "Pendaftaran"
     @customer = order.orderable||Customer.new
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
   end
@@ -39,8 +40,9 @@ class CustomersController < ApplicationController
       @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
                 ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
-                ['Koran/Billboard', 'Koran/Billboard'],['Others', 'Others'],
-                ['Pelanggan BigTV','Pelanggan BigTV'] ];
+                ['Koran/Billboard', 'Koran/Billboard'],
+                ['Pelanggan BigTV','Pelanggan BigTV'],
+                ['Others', 'Others']];
     end
 
 end

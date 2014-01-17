@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   before_filter :authorize_customer
 
   def extra
+    @title_page = "Extra"
     display_extra_data = false
     if request.xhr? && params[:extra_id].present?
       order_item = order.items.find_by_membership_id(params[:extra_id])
@@ -35,6 +36,7 @@ class CartsController < ApplicationController
   end
 
   def premium
+    @title_page = "Premium"
     if request.referer.to_s =~ /customer/i && order.items.present?
       redirect_to extra_path
     else
@@ -44,19 +46,22 @@ class CartsController < ApplicationController
   end
 
   def preview
+    @title_page = "More Info"
     if order.items.select{|i| i.premium? }.blank?
       redirect_to premium_path
     elsif order.total.to_i < 1
       redirect_to root_path
     end
     @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
-                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'], ['Others', 'Others'],
+                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
                 ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
-                ['Koran', 'Koran'], ['Billboard', 'Billboard']
-               ];
+                ['Koran/Billboard', 'Koran/Billboard'],
+                ['Pelanggan BigTV','Pelanggan BigTV'],
+                ['Others', 'Others']];
   end
 
   def rental_box
+    @title_page = "Sewa Dekoder"
     @memberships = Membership.packages_by_category('other')
     @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%')
 
