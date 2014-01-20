@@ -70,40 +70,36 @@
   <div class="polosochka2"></div>
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
       <div class="panel-body">
-        <div class="row-fluid">
-            <div class="grd_masonry_extra_front">
-              <% @memberships_extra.each_with_index do |membership,index| %>
-                <div class="grid_packages_extra_front">
-                  <div class="head_pack red vers add_padding">
-                  	<div class="extra_mrg">
-	                    <span class="title_ord italic">BiG</span>
-	                    <span class="title_ord"><%= membership.name %></span>
-	                    <div>
-	                      Rp. <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
-	                    </div>
-	                  </div>
-                  </div>
-                  <table class="table table-bordered padding0">
-                    <tbody>
-                      <% membership.unit_items.each do |item| %>
-                        <tr>
-                          <td>
-                            <% if item.status_hd %>
-                              <span class="hd">HD</span>
-                            <% end %>
-                            <span class="name_channel"><%= item.name %></span>
-                          </td>
-                          <td>
-                            <%= image_tag item.logo.url(:thumb), { class: "small_image", alt: item.logo.name }  %>
-                          </td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
+      	<div class="panel-group" id="accordion">
+      		<% @memberships_extra.each_with_index do |membership,index| %>
+            <div class="panel panel-default">
+              <div class="panel-heading red-h">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= membership.id %>">
+                    <span class="title_ord italic">BiG</span>
+                    <span class="title_ord"><%= membership.name %></span>
+                    <span class="left-mrg">Rp.</span>
+                    <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
+                    <div class="tb"></div>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse<%= membership.id %>" class="panel-collapse collapse">
+                <div class="panel-body">
+			            	<% membership.unit_items.each do |item| %>
+			                <div class="div_packages_extra_new">
+			                  <% if item.status_hd %>
+			                    <span class="hd2">HD</span>
+			                  <% end %>
+			                  <span class="name_channel2"><%= item.name %></span>
+			                  <%= image_tag item.logo.url(:thumb), { class: "small_image", alt: item.logo.name }  %>
+			                </div>
+			              <% end %>
                 </div>
-              <% end %>
+              </div>
             </div>
-        </div>
+          <% end %>
+				</div>
       </div>
   </article>
 </section>
