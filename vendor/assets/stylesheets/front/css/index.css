@@ -3251,6 +3251,15 @@ div.grid_packages_decode2{
   margin-top: 0px;
   min-height: 40px;
 }
+.div_packages_extra_new2{
+  border: solid 1px #ccc;
+  width: 29.3%;
+  float: left;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 0px;
+  min-height: 40px;
+}
 a.collapsed .tb{
   background-color: #ed2024 !important;
   color: #fff;
