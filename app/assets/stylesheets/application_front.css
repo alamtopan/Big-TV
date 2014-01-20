@@ -1,5 +1,6 @@
 /*
  *= require_self
+ *= require front/bootstrap
  *= require front/css
  *= require front/css/normalize
  *= require front/css/index
@@ -7,7 +8,6 @@
  *= require front/css/mobile
  *= require front/css/jQuery.Opie.PortfolioGallery
  *= require front/css/component
- *= require front/bootstrap
  *= require plugins/datepicker/css/datepicker
  *= require front/css/invoice
  */

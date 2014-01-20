@@ -15,6 +15,9 @@ h1,h2,h3,h4,h5, p, ul
     padding: 0;
     margin: 0;
 }
+a{
+  text-decoration: none!important;
+}
 p{
   margin-bottom: 10px;
 }
@@ -2448,6 +2451,13 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
   margin-left: 34px;
   display: block;
 }
+.name_channel2 {
+  width: 100px;
+  text-align: left;
+  margin-left: 10px;
+  display: block;
+  float: left;
+}
 
 .hd{
   position: absolute;
@@ -2463,6 +2473,20 @@ background: url("../../check_radio_sheet.png") -19px top no-repeat;
   -moz-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
   border: 0px solid #000000;
+}
+
+.hd2{
+  margin-top: 4px;
+  font-size: 16px;
+  background: #FF0321;
+  padding: 6px 5px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: 0px solid #000000;
+  float: left;
 }
 
 .table td{ position: relative; }
@@ -2544,8 +2568,6 @@ input[type="checkbox"]{
   height: 23px;
   background: #fcfcfc;
   margin:auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
   position: relative;
 }
 
@@ -2746,7 +2768,6 @@ table.padding0 tbody tr td{
 }
 .versi2{
   float: left;
-  margin-left: 10px;
   margin-right: 10px;
 }
 
@@ -2762,13 +2783,13 @@ div.grd_masonry_extra_front{
     column-count: 4;
     column-gap: 20px;
     width: 100%;
-    margin-top: 60px;
   }
 
 div.grid_packages_extra_front{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     width: 100%;
     margin-bottom: 10px;
+    border: solid 1px #ccc;
   }
 
 div.grid_packages_extra_front:hover{
@@ -3211,3 +3232,50 @@ div.grid_packages_decode2{
   float:left
 }
 
+.panel-default > .panel-heading {
+  background: #ed2024;
+  color: #fff;
+}
+.panel-default > .panel-heading a{
+  text-decoration: none!important;
+}
+.left-mrg{
+  margin-left: 20px;
+}
+.div_packages_extra_new{
+  border: solid 1px #ccc;
+  width: 21.9%;
+  float: left;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 0px;
+  min-height: 40px;
+}
+a.collapsed .tb{
+  background-color: #ed2024 !important;
+  color: #fff;
+  background-image: url("../../tb.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+a .tb{
+  background-color: #ed2024;
+  text-decoration: none;
+  color: #fff;
+  background-image: url("../../tb2.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#accordion{
+  margin-bottom: 40px;
+}
+.tb{
+  float: right;
+  width: 40px;
+  height: 25px;
+}
+.red-h{
+  padding: 15px;
+}
