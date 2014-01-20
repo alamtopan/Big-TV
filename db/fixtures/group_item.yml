@@ -280,7 +280,7 @@ group:
           logo: 'MTV_Asia.png'
       - item_1:
           name: 'MTV Live'
-          hd:   false
+          hd:   true
           logo: 'MTV-LIVE.png'
   - group_7:
       name: 'News / International'
@@ -565,78 +565,74 @@ group:
           hd:   false
           logo: 'Kompas_TV.png'
       - item_11:
-          name: 'Net TV'
-          hd:   false
-          logo: 'NET_TV.png'
-      - item_12:
           name: 'SCTV'
           hd:   false
           logo: 'SCTV.png'
-      - item_13:
+      - item_12:
           name: 'Bloomberg Indonesia'
           hd:   false
           logo: 'Bloomberg_TV_Indonesia.png'
-      - item_14:
+      - item_13:
           name: 'DAAI TV'
           hd:   false
           logo: 'DAAI_TV.png'
-      - item_15:
+      - item_14:
           name: 'O Channel'
           hd:   false
           logo: 'O_Channel.png'
-      - item_16:
+      - item_15:
           name: 'JTV'
           hd:   false
           logo: 'JTV.png'
-      - item_17:
+      - item_16:
           name: 'Bali TV'
           hd:   false
           logo: 'Bali_TV.png'
-      - item_18:
+      - item_17:
           name: 'Antara TV'
           hd:   false
           logo: 'Antara_TV.png'
-      - item_19:
+      - item_18:
           name: 'Timor Leste TV'
           hd:   false
           logo: 'TV_Timor_Leste.png'
-      - item_20:
+      - item_19:
           name: 'TV Edukasi Siswa'
           hd:   false
           logo: 'TV_Edukasi_1_Siswa.png'
-      - item_21:
+      - item_20:
           name: 'TV Edukasi 2 Guru'
           hd:   false
           logo: 'TV_Edukasi_2_Guru.png'
-      - item_22:
+      - item_21:
           name: 'TVRI Edukasi'
           hd:   false
           logo: 'Televisi_Edukasi.png'
-      - item_23:
+      - item_22:
           name: 'TOP TV Papua'
           hd:   false
           logo: 'Top_TV_Papua.png'
-      - item_24:
+      - item_23:
           name: 'TVRI Kalbar'
           hd:   false
           logo: 'TVRI_Kalbar.png'
-      - item_25:
+      - item_24:
           name: 'TVRI Kalteng'
           hd:   false
           logo: 'TVRI_Kalteng.png'
-      - item_26:
+      - item_25:
           name: 'TVRI Papua'
           hd:   false
           logo: 'TVRI_Papua.png'
-      - item_27:
+      - item_26:
           name: 'Rodja TV'
           hd:   false
           logo: 'Rodja_TV.png'
-      - item_28:
+      - item_27:
           name: 'U Channel'
           hd:   false
           logo: 'U_Channel.png'
-      - item_29:
+      - item_28:
           name: 'Papua TV'
           hd:   false
           logo: 'Televisi_Mandiri_Papua.png'

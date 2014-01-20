@@ -1,6 +1,6 @@
 membership:
   - membership_0:
-      name:         'Universe 142'
+      name:         'Universe 169'
       description:  ''
       published:    true
       featured:     true
@@ -300,7 +300,7 @@ membership:
       - item_143:
           name: 'Rodja TV'
   - membership_1:
-      name:         'Star 117'
+      name:         'Star 139'
       description:  ''
       published:    true
       featured:     true
@@ -560,7 +560,7 @@ membership:
       - item_123:
           name: 'B Channel'
   - membership_2:
-      name:         'Sun 94'
+      name:         'Sun 119'
       description:  ''
       published:    true
       featured:     true
@@ -580,217 +580,213 @@ membership:
       - item_3:
           name: 'AXN'
       - item_4:
-          name: 'Animax'
-      - item_5:
           name: 'Aniplus'
-      - item_6:
+      - item_5:
           name: 'FOX'
-      - item_7:
+      - item_6:
           name: 'FOX Crime'
-      - item_8:
+      - item_7:
           name: 'FX'
-      - item_9:
+      - item_8:
           name: 'ASN'
-      - item_10:
+      - item_9:
           name: 'SET'
-      - item_11:
+      - item_10:
           name: 'Discovery Turbo'
-      - item_12:
+      - item_11:
           name: 'Discovery World'
-      - item_13:
+      - item_12:
           name: 'TLC'
-      - item_14:
+      - item_13:
           name: 'Discovery Home & Health'
-      - item_15:
+      - item_14:
           name: 'Asian Food Channel'
-      - item_16:
+      - item_15:
           name: 'E! Entertainment'
-      - item_17:
+      - item_16:
           name: 'Li TV'
-      - item_18:
+      - item_17:
           name: 'Fashion One'
-      - item_19:
+      - item_18:
           name: 'Discovery Channel'
-      - item_20:
+      - item_19:
           name: 'Animal Planet'
-      - item_21:
+      - item_20:
           name: 'Nat Geographic Channel'
-      - item_22:
+      - item_21:
           name: 'Nat Geo Adventure'
-      - item_23:
+      - item_22:
           name: 'Nat Geo Wild'
-      - item_24:
-          name: 'Ginx'
-      - item_25:
+      - item_23:
           name: 'History'
-      - item_26:
+      - item_24:
           name: 'Biography'
-      - item_27:
+      - item_25:
           name: 'Crime Investigation'
-      - item_28:
+      - item_26:
           name: 'Lifetime'
-      - item_29:
+      - item_27:
           name: 'Disney Channel'
-      - item_30:
+      - item_28:
           name: 'Nickelodeon'
-      - item_31:
+      - item_29:
           name: 'Cartoon Network'
-      - item_32:
+      - item_30:
           name: 'Discovery Kids'
-      - item_33:
+      - item_31:
           name: 'Disney Junior'
-      - item_34:
+      - item_32:
           name: 'Jim Jam'
-      - item_35:
+      - item_33:
           name: 'Toonami'
-      - item_36:
+      - item_34:
           name: 'Motorvision'
-      - item_37:
+      - item_35:
           name: 'FOX Sports Plus'
-      - item_38:
+      - item_36:
           name: 'Berita Satu News HD'
-      - item_39:
+      - item_37:
           name: 'MTV Asia'
-      - item_40:
+      - item_38:
           name: 'MTV Live'
-      - item_41:
+      - item_39:
           name: 'NDTV 24 x 7'
-      - item_42:
+      - item_40:
           name: 'BBC World'
-      - item_43:
+      - item_41:
           name: 'CNN International'
-      - item_44:
+      - item_42:
           name: 'CNBC Asia'
-      - item_45:
+      - item_43:
           name: 'Fox Family Movies'
-      - item_46:
+      - item_44:
           name: 'MGM'
-      - item_47:
+      - item_45:
           name: 'Berita Satu World'
-      - item_48:
+      - item_46:
           name: 'Mix'
-      - item_49:
+      - item_47:
           name: 'Dangdutz'
-      - item_50:
+      - item_48:
           name: "Jakarta Globe TV"
-      - item_51:
+      - item_49:
           name: 'TV Parliament'
-      - item_52:
+      - item_50:
           name: "Net TV HD"
-      - item_53:
+      - item_51:
           name: 'TVRI'
-      - item_54:
+      - item_52:
           name: 'TV One'
-      - item_55:
+      - item_53:
           name: 'Trans 7'
-      - item_56:
+      - item_54:
           name: 'Trans TV'
-      - item_57:
+      - item_55:
           name: 'Indosiar'
-      - item_58:
+      - item_56:
           name: 'ANTV'
-      - item_59:
+      - item_57:
           name: "Metro TV"
-      - item_60:
+      - item_58:
           name: 'B Channel'
-      - item_61:
+      - item_59:
           name: 'Jak TV'      
-      - item_62:
+      - item_60:
           name: 'Net TV'
-      - item_63:
+      - item_61:
           name: 'SCTV'
-      - item_64:
+      - item_62:
           name: 'Bloomberg Indonesia'
-      - item_65:
+      - item_63:
           name: 'DAAI TV'
-      - item_66:
+      - item_64:
           name: 'O Channel'
-      - item_67:
+      - item_65:
           name: 'JTV'
-      - item_68:
+      - item_66:
           name: 'Bali TV'
-      - item_69:
+      - item_67:
           name: 'Antara TV'
-      - item_70:
+      - item_68:
           name: 'Timor Leste TV'
-      - item_71:
+      - item_69:
           name: 'TV Edukasi Siswa'
-      - item_72:
+      - item_70:
           name: 'TV Edukasi 2 Guru'
-      - item_73:
+      - item_71:
           name: 'TVRI Edukasi'
-      - item_74:
+      - item_72:
           name: 'TOP TV Papua'
-      - item_75:
+      - item_73:
           name: 'TVRI Kalbar'
-      - item_76:
+      - item_74:
           name: 'TVRI Kalteng'
-      - item_77:
+      - item_75:
           name: 'TVRI Papua'
-      - item_78:
+      - item_76:
           name: 'Rodja TV'
-      - item_79:
+      - item_77:
           name: 'U Channel'
-      - item_80:
+      - item_78:
           name: 'Kompas TV'
-      - item_81:
+      - item_79:
           name: "CCTV France"
-      - item_82:
+      - item_80:
           name: 'CCTV Espanol'
-      - item_83:
+      - item_81:
           name: 'CCTV Arabic'
-      - item_84:
+      - item_82:
           name: 'CCTV Russia'
-      - item_85:
+      - item_83:
           name: 'Star Chinese Channel'
-      - item_86:
+      - item_84:
           name: 'Channel V'
-      - item_87:
+      - item_85:
           name: 'Baby First'
-      - item_88:
+      - item_86:
           name: "Channel News Asia"
-      - item_89:
+      - item_87:
           name: 'Rai Italia'
-      - item_90:
+      - item_88:
           name: 'CNC'
-      - item_91:
+      - item_89:
           name: 'Russia Today'
-      - item_92:
+      - item_90:
           name: 'France 24 English'
-      - item_93:
+      - item_91:
           name: 'CCTV 4'
-      - item_94:
+      - item_92:
           name: 'CCTV 9'
-      - item_95:
+      - item_93:
           name: 'CCTV NEWS'
-      - item_96:
+      - item_94:
           name: 'Aljazeerah English'
-      - item_97:
+      - item_95:
           name: 'Aljazeerah Arabic'
-      - item_98:
+      - item_96:
           name: 'Bloomberg'
-      - item_99:
+      - item_97:
           name: 'Euro News'
-      - item_100:
+      - item_98:
           name: 'KBS World'
-      - item_101:
+      - item_99:
           name: 'Arirang'
-      - item_102:
+      - item_100:
           name: 'Australian Network'
-      - item_103:
+      - item_101:
           name: 'DW-TV Asia+'
-      - item_104:
+      - item_102:
           name: 'NHK World'
-      - item_105:
+      - item_103:
           name: 'TV 5 Monde Asia'
-      - item_106:
+      - item_104:
           name: "J'Go HD"
-      - item_107:
+      - item_105:
           name: 'Hi!'
-      - item_108:
+      - item_106:
           name: 'Reformed 21'
   - membership_3:
-      name:         'Fun 79'
+      name:         'Fun 109'
       description:  ''
       published:    true
       featured:     true
@@ -820,191 +816,185 @@ membership:
       - item_8:
           name: 'FX'
       - item_9:
-          name: 'SET'
-      - item_10:
           name: 'Discovery World'
-      - item_11:
+      - item_10:
           name: 'TLC'
-      - item_12:
+      - item_11:
           name: 'Discovery Home & Health'
-      - item_13:
+      - item_12:
           name: 'Asian Food Channel'
-      - item_14:
-          name: 'E! Entertainment'
-      - item_15:
+      - item_13:
           name: 'Li TV'
-      - item_16:
+      - item_14:
           name: 'Fashion One'
-      - item_17:
+      - item_15:
           name: 'Discovery Channel'
-      - item_18:
+      - item_16:
           name: 'Animal Planet'
-      - item_19:
+      - item_17:
           name: 'Nat Geographic Channel'
-      - item_20:
+      - item_18:
           name: 'Nat Geo Wild'
-      - item_21:
-          name: 'Ginx'
-      - item_22:
-          name: 'History'
-      - item_23:
-          name: 'Lifetime'
-      - item_24:
-          name: 'Disney Channel'
-      - item_25:
-          name: 'Nickelodeon'
-      - item_26:
-          name: 'Cartoon Network'
-      - item_27:
-          name: 'Discovery Kids'
-      - item_28:
-          name: 'Disney Junior'
-      - item_29:
-          name: 'Jim Jam'
-      - item_30:
-          name: 'Toonami'
-      - item_31:
-          name: 'FOX Sports Plus'
-      - item_32:
-          name: 'Arirang'
-      - item_33:
-          name: 'BBC World'
-      - item_34:
-          name: 'CNN International'
-      - item_35:
-          name: 'Fox Family Movies'
-      - item_36:
-          name: 'MGM'
-      - item_37:
-          name: 'ASN'
-      - item_38:
-          name: 'Discovery Turbo'
-      - item_39:
-          name: 'Australian Network'
-      - item_40:
-          name: 'DW-TV Asia+'
-      - item_41:
-          name: 'NHK World'
-      - item_42:
-          name: 'TV 5 Monde Asia'
-      - item_43:
-          name: "J'Go HD"
-      - item_44:
-          name: 'Hi!'
-      - item_45:
-          name: 'Reformed 21'
-      - item_46:
-          name: 'Berita Satu News HD'
-      - item_47:
-          name: 'Berita Satu World'
-      - item_48:
-          name: 'Mix'
-      - item_49:
-          name: 'Dangdutz'
-      - item_50:
-          name: "Jakarta Globe TV"
-      - item_51:
-          name: 'TV Parliament'
-      - item_52:
-          name: "Net TV HD"
-      - item_53:
-          name: 'TVRI'
-      - item_54:
-          name: 'TV One'
-      - item_55:
-          name: 'Trans 7'
-      - item_56:
-          name: 'Trans TV'
-      - item_57:
-          name: 'Indosiar'
-      - item_58:
-          name: 'ANTV'
-      - item_59:
-          name: "Metro TV"
-      - item_60:
-          name: 'B Channel'
-      - item_61:
-          name: 'Jak TV'      
-      - item_62:
-          name: 'Net TV'
-      - item_63:
-          name: 'SCTV'
-      - item_64:
-          name: 'Bloomberg Indonesia'
-      - item_65:
-          name: 'DAAI TV'
-      - item_66:
-          name: 'O Channel'
-      - item_67:
-          name: 'JTV'
-      - item_68:
-          name: 'Bali TV'
-      - item_69:
-          name: 'Antara TV'
-      - item_70:
-          name: 'Timor Leste TV'
-      - item_71:
-          name: 'TV Edukasi Siswa'
-      - item_72:
-          name: 'TV Edukasi 2 Guru'
-      - item_73:
-          name: 'TVRI Edukasi'
-      - item_74:
-          name: 'TOP TV Papua'
-      - item_75:
-          name: 'TVRI Kalbar'
-      - item_76:
-          name: 'TVRI Kalteng'
-      - item_77:
-          name: 'TVRI Papua'
-      - item_78:
-          name: 'Rodja TV'
-      - item_79:
-          name: 'U Channel'
-      - item_80:
-          name: 'Kompas TV'
-      - item_81:
-          name: "CCTV France"
-      - item_82:
-          name: 'CCTV Espanol'
-      - item_83:
-          name: 'CCTV Arabic'
-      - item_84:
-          name: 'CCTV Russia'
-      - item_85:
-          name: 'Star Chinese Channel'
-      - item_86:
-          name: 'Channel V'
-      - item_87:
-          name: 'Baby First'
-      - item_88:
-          name: "Channel News Asia"
-      - item_89:
-          name: 'Rai Italia'
-      - item_90:
-          name: 'CNC'
-      - item_91:
-          name: 'Russia Today'
-      - item_92:
-          name: 'France 24 English'
-      - item_93:
-          name: 'CCTV 4'
-      - item_94:
-          name: 'CCTV 9'
-      - item_95:
-          name: 'CCTV NEWS'
-      - item_96:
-          name: 'Aljazeerah English'
-      - item_97:
-          name: 'Aljazeerah Arabic'
-      - item_98:
-          name: 'Bloomberg'
-      - item_99:
-          name: 'Euro News'
-      - item_100:
+      - item_19:
           name: 'KBS World'
+      - item_20:
+          name: 'History'
+      - item_21:
+          name: 'Lifetime'
+      - item_22:
+          name: 'Disney Channel'
+      - item_23:
+          name: 'Nickelodeon'
+      - item_24:
+          name: 'Cartoon Network'
+      - item_25:
+          name: 'Discovery Kids'
+      - item_26:
+          name: 'Disney Junior'
+      - item_27:
+          name: 'Jim Jam'
+      - item_28:
+          name: 'Toonami'
+      - item_29:
+          name: 'FOX Sports Plus'
+      - item_30:
+          name: 'Arirang'
+      - item_31:
+          name: 'BBC World'
+      - item_32:
+          name: 'CNN International'
+      - item_33:
+          name: 'Fox Family Movies'
+      - item_34:
+          name: 'MGM'
+      - item_35:
+          name: 'ASN'
+      - item_36:
+          name: 'Discovery Turbo'
+      - item_37:
+          name: 'Australian Network'
+      - item_38:
+          name: 'DW-TV Asia+'
+      - item_39:
+          name: 'NHK World'
+      - item_40:
+          name: 'TV 5 Monde Asia'
+      - item_41:
+          name: "J'Go HD"
+      - item_42:
+          name: 'Hi!'
+      - item_43:
+          name: 'Reformed 21'
+      - item_44:
+          name: 'Berita Satu News HD'
+      - item_45:
+          name: 'Berita Satu World'
+      - item_46:
+          name: 'Mix'
+      - item_47:
+          name: 'Dangdutz'
+      - item_48:
+          name: "Jakarta Globe TV"
+      - item_49:
+          name: 'TV Parliament'
+      - item_50:
+          name: "Net TV HD"
+      - item_51:
+          name: 'TVRI'
+      - item_52:
+          name: 'TV One'
+      - item_53:
+          name: 'Trans 7'
+      - item_54:
+          name: 'Trans TV'
+      - item_55:
+          name: 'Indosiar'
+      - item_56:
+          name: 'ANTV'
+      - item_57:
+          name: "Metro TV"
+      - item_58:
+          name: 'B Channel'
+      - item_59:
+          name: 'Jak TV'      
+      - item_60:
+          name: 'Net TV'
+      - item_61:
+          name: 'SCTV'
+      - item_62:
+          name: 'Bloomberg Indonesia'
+      - item_63:
+          name: 'DAAI TV'
+      - item_64:
+          name: 'O Channel'
+      - item_65:
+          name: 'JTV'
+      - item_66:
+          name: 'Bali TV'
+      - item_67:
+          name: 'Antara TV'
+      - item_68:
+          name: 'Timor Leste TV'
+      - item_69:
+          name: 'TV Edukasi Siswa'
+      - item_70:
+          name: 'TV Edukasi 2 Guru'
+      - item_71:
+          name: 'TVRI Edukasi'
+      - item_72:
+          name: 'TOP TV Papua'
+      - item_73:
+          name: 'TVRI Kalbar'
+      - item_74:
+          name: 'TVRI Kalteng'
+      - item_75:
+          name: 'TVRI Papua'
+      - item_76:
+          name: 'Rodja TV'
+      - item_77:
+          name: 'U Channel'
+      - item_78:
+          name: 'Kompas TV'
+      - item_79:
+          name: "CCTV France"
+      - item_80:
+          name: 'CCTV Espanol'
+      - item_81:
+          name: 'CCTV Arabic'
+      - item_82:
+          name: 'CCTV Russia'
+      - item_83:
+          name: 'Star Chinese Channel'
+      - item_84:
+          name: 'Channel V'
+      - item_85:
+          name: 'Baby First'
+      - item_86:
+          name: "Channel News Asia"
+      - item_87:
+          name: 'Rai Italia'
+      - item_88:
+          name: 'CNC'
+      - item_89:
+          name: 'Russia Today'
+      - item_90:
+          name: 'France 24 English'
+      - item_91:
+          name: 'CCTV 4'
+      - item_92:
+          name: 'CCTV 9'
+      - item_93:
+          name: 'CCTV NEWS'
+      - item_94:
+          name: 'Aljazeerah English'
+      - item_95:
+          name: 'Aljazeerah Arabic'
+      - item_96:
+          name: 'Bloomberg'
+      - item_97:
+          name: 'Euro News'
   - membership_4:
-      name:         'Deal 70'
+      name:         'Deal 99'
       description:  ''
       published:    true
       featured:     true
@@ -1048,7 +1038,7 @@ membership:
       - item_15:
           name: 'Nat Geo Wild'
       - item_16:
-          name: 'Ginx'
+          name: 'Rai Italia'
       - item_17:
           name: 'History'
       - item_18:
@@ -1193,8 +1183,6 @@ membership:
           name: 'Baby First'
       - item_88:
           name: "Channel News Asia"
-      - item_89:
-          name: 'Rai Italia'
   - membership_5:
       name:         'BPL'
       description:  ''
