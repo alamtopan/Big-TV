@@ -30,7 +30,7 @@ module SeedMembership
         puts i_itm
         item = MembershipItem.new
         item.membership_id = membership.id
-        item.unit_item_id = UnitItem.find_by_name(i_item['name']).id
+        item.unit_item_id = UnitItem.find_or_create_by_name(i_item['name']).id
         item.save
       end if items.present?
     end

@@ -8,19 +8,19 @@ class CustomerMailer < ActionMailer::Base
 
   def email_order_to_admin(order)
     prepare_order(order)
-    mail(to: 'bigtv.complete@gmail.com', subject: "Notifikasi Pemesanan BigTv #{@order.code}")
+    mail(to: 'verifikasi.online@gmail.com', subject: "Notifikasi Pemesanan BigTv #{@order.code}")
   end
 
   def payment_email(order, payment)
     prepare_order(order)
     @payment = payment
-    mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: "Notifikasi Pembayaran BigTv #{@order.code}")
+    mail(to: @user.email, bcc: 'verifikasi.online@gmail.com', subject: "Notifikasi Pembayaran BigTv #{@order.code}")
   end
 
   def atm_payment_instruction(order, payment_code)
     prepare_order(order)
     @payment_code = payment_code
-    mail(to: @user.email, bcc: 'bigtv.complete@gmail.com', subject: "Instruksi Pembayaran ##{@order.code}")
+    mail(to: @user.email, bcc: 'verifikasi.online@gmail.com', subject: "Instruksi Pembayaran ##{@order.code}")
   end
 
   private

@@ -3211,3 +3211,47 @@ div.grid_packages_decode2{
   float:left
 }
 
+/*.small_image{
+  position: absolute;
+  right: 7px;
+  top: 0;
+  margin: auto;
+  bottom: 0;
+}*/
+
+.hd {
+  left: 5px;
+  /*top: 0;
+  bottom: 0;
+  height: 18px;
+  text-align: center;
+  margin: auto;*/
+}
+
+.name_channel{
+  width: 106px;
+  margin-left: 32px;
+/*  text-align: left;
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -20px;
+  float: left;
+  right: 0;*/
+}
+
+/*.package-channel-table .roundedOne{
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}*/
+
+.package-channel-table td .small_image{
+  max-width: 60px;
+  max-height: 26px;
+}

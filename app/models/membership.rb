@@ -11,6 +11,8 @@ class Membership < ActiveRecord::Base
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
   scope :by_position, order_by: ("position ASC")
 
+  acts_as_list
+
   Category::Config::NAMES.each do |val|
     define_method("#{ val.downcase }?") do
       category.name =~ /#{val}/i
