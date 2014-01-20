@@ -12,7 +12,7 @@
               <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table <%= group.name =~ /musics|other/i ? 'padding_top10' : 'padding_top20' %>">
                 <% if group.name =~ /music|news|other/i %>
                   <% group.name.each_char do |a| %>
-                    <span class="alfa" style="height: <%= group.name =~ /news|other/i ? '20' : '16' %>px;">
+                    <span class="alfa" style="height: auto; line-height: <%= group.name =~ /news|other/i ? '19' : '14' %>px;">
                     <%= a %>
                     </span>
                   <% end %>
@@ -26,11 +26,13 @@
               </td>
               <% end %>
               <td width="19%">
-                <%= image_tag 'img/transparent.png', 'data-original' => item.logo.url(:thumb),class: "small_image lazy-img" %>
-                <span class="name_channel"><%= item.name %> </span>
-                <% if item.status_hd %>
-                  <span class="hd">HD</span>
-                <% end %>
+                <div class="channel-container">
+                  <%= image_tag 'img/transparent.png', 'data-original' => item.logo.url(:thumb),class: "small_image lazy-img" %>
+                  <span class="name_channel"><%= item.name %> </span>
+                  <% if item.status_hd %>
+                    <span class="hd">HD</span>
+                  <% end %>
+                </div>
               </td>
               <% (memberships.count - 1).times do |i| %>
                 <td>

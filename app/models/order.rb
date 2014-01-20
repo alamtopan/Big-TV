@@ -57,7 +57,7 @@ class Order < ActiveRecord::Base
   end
 
   def remove_cart
-    if time.now < updated_at.since(1.hour)
+    if time.now > updated_at.since(5.minutes)
       if self.items.blank?
         destroy
       else
@@ -69,7 +69,7 @@ class Order < ActiveRecord::Base
   end
 
   def check_activity
-    delay(run_at: 1.hours.from_now).remove_cart if session_id.present?
+    delay(run_at: 5.minutes.from_now).remove_cart if session_id.present?
   end
 
   def is_order?
