@@ -3263,7 +3263,7 @@ div.grid_packages_decode2{
 a.collapsed .tb{
   background-color: #ed2024 !important;
   color: #fff;
-  background-image: url("../../tb.png");
+  background-image: url("/assets/tb.png");
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -3272,7 +3272,7 @@ a .tb{
   background-color: #ed2024;
   text-decoration: none;
   color: #fff;
-  background-image: url("../../tb2.png");
+  background-image: url("/assets/tb2.png");
   background-repeat: no-repeat;
   background-position: right;
 }
