@@ -4,6 +4,24 @@
     max-width: 720px;
     min-width: 570px;
   }
+  .div_packages_extra_new{
+    border: solid 1px #ccc;
+    width: 43%;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    margin-top: 0px;
+    min-height: 40px;
+  }
+.div_packages_extra_new2{
+    border: solid 1px #ccc;
+    width: 43%;
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    margin-top: 0px;
+    min-height: 40px;
+  }
   table.width95 td{
     padding: 0px!important;
   }

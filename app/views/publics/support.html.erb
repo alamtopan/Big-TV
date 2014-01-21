@@ -1,7 +1,178 @@
-<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left" id="blog">
+<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
+	<h1><span>PEMBAYARAN MUDAH DIMANA SAJA</span></h1>
+	<div class="polosochka2"></div>
 	<article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
 		<div class="panel-body" style="text-align:center; width:940px">
-			<%= image_tag "langganan/support-pembayaran.png" %>
+			<ul class="nav nav-tabs">
+			  <li><a href="#bonus" data-toggle="tab">HYPERMART</a></li>
+			  <li><a href="#channel" data-toggle="tab">ATM</a></li>
+			  <li><a href="#kualitas" data-toggle="tab">TRANSFER</a></li>
+			  <li><a href="#terjangkau" data-toggle="tab">KARTU KREDIT</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  <div class="tab-pane active white_tab" id="bonus">
+			  	<div class="content_support">
+				  	<h2 class="h_support">Bisa di Hypermart</h2>
+				  	<%= image_tag "support/hypermart.png", class: "img_support" %>
+						<p class="text_support_big">Pembayaran dilakukan di kasir secara tunai, kartu debit/kredit apapun</p>
+					</div>
+			  </div>
+			  <div class="tab-pane white_tab" id="channel">
+			  	<div class="content_support">
+				  	<h2 class="h_support">Bisa di ATM</h2>
+				  	<%= image_tag "support/atm.png", class: "img_support" %>
+				  	<%= image_tag "support/niaga.png" %>
+				  	<br><br>
+						<p class="text_support">
+							1. Masukkan kartu ATM (Kartu CIMB Niaga).<br>
+							2. Ketik PIN.<br>
+							3. Pilih TRANSFER.<br>
+							4. Pilih ANTAR REKENING CIMB NIAGA.<br>
+							5. Masukkan nominal transaksi.<br>
+						</p>
+						<hr class="dash">
+						<%= image_tag "support/atm-bersama.png" %>
+				  	<br><br>
+				  	<p class="text_support">
+				  		<ul class="num">
+				  			<li>
+				  				Masukkan kartu ATM jaringan ATM Bersama/Prima (BCA, Mandiri, 
+				  				BNI, BII, BTN, Danamon, OCBC NISP, dll)
+				  			</li>
+								<li>Ketik PIN.</li>
+								<li>Pilih TRANSFER KE BANK LAIN.</li>
+								<li>
+									Masukkan :<br>
+									Kode bank tujuan : 022 (CIMB Niaga).<br>
+									Nomor rekening : dengan angka 166900 dan diikuti 10 digit nomor pelanggan (166900xxxxxxxxxx)<br>
+
+									Kode bank tujuan : 503 (Nobu Bank).<br>
+									Nomor rekening : dengan angka 888930 dan diikuti 10 digit nomor pelanggan (888930xxxxxxxxxx)<br>
+
+									Masukkan nominal transaksi, lalu pilih PROSES / BENAR / YA / OK
+								</li>
+								<li>
+									Masukkan nomor referensi (opsional).
+								</li>
+								<li>
+									Pilih JENIS REKENING ANDA.<br>
+								</li>
+								<li>
+									Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA / OK apabila semua data sudah benar.
+								</li>
+							</ul>
+						<hr class="dash">
+						<%= image_tag "support/nobu.png" %>
+				  	<br><br>
+				  	<ul class="num">
+				  		<li>
+								Masukkan kartu ATM (khusus Kartu Bank Nobu).
+							</li>
+							<li>Ketik PIN.</li>
+							<li>Pilih TRANSAKSI LAINNYA.</li>
+							<li>Pilih Transaksi : PEMBAYARAN.</li>
+							<li>Pilih Jenis Pembayaran TV/INTERNET.</li>
+							<li>Pilih Perusahaan : BiG TV</li>
+							<li>Masukkan nomor pelanggan : 10 digit nomor pelanggan (xxxxxxxxxx)</li>
+							<li>Pilih Jenis Rekening.</li>
+							<li>Masukkan jumlah pembayaran.</li>
+							<li>Masukkan nomor referensi (opsional).</li>
+							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA untuk pembayaran.</li>
+							</li>
+						</ul>
+						<hr class="dash">
+						<%= image_tag "support/bri.png" %>
+				  	<br><br>
+				  	<ul class="num">
+			  			<li>Masukkan kartu ATM (kartu BRI).</li>
+							<li>Pilih Bahasa Anda.</li>
+							<li>Ketik PIN.</li>
+							<li>Pilih TRANSAKSI LAIN.</li>
+							<li>Pilih PEMBAYARAN.</li>
+							<li>Pilih PEMBAYARAN LAINNYA.</li>
+							<li>Pilih BRIVA (=BRI Virtual Account).</li>
+							<li>Masukkan rekening tujuan, dengan angka 32433 diikuti 10 digit nomor pelanggan (32433xxxxxxxxxxx)</li>
+							<li>Masukkan nomor referensi (opsional).</li>
+							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses.</li>
+							<li>Masukkan nominal transaksi. </li>
+							<li>Pilih YA/OK apabila semua data sudah benar.</li>
+						</ul>
+						<hr class="dash">
+						<%= image_tag "support/erapon.jpg" %>
+				  	<br><br>
+				  	Berikut Petunjuk untuk pelanggan Big Mate :
+				  	<ul class="num">
+							<li>Pelanggan harus memiliki User ID Mandiri Internet dan Token Mandiri.</li>
+							<li>
+								Pelanggan harus mengaktifasikan layanan mandiri clickpay pada Mandiri internet di website bank mandiri.
+							</li>
+							<li>
+								Jika pelanggan sudah memiliki layanan mandiri clickpay, silahkan lakukan pembayaran dengan memilih mandiri clickpay yang ada di button pembayaran yang ada di halaman Finish Order, BIGTV juga menyediakan halaman untuk memasukkan Token mandiri pelanggan yang dapat digunakan untuk berlangganan.
+							</li>
+							<li>Untuk informasi lebih lanjut mengenai mandiri clickpay pelanggan dapat mengunjungi mandiri clickpay atau mandiri call 14000.</li>
+						</ul>
+						<hr class="dash">
+						<%= image_tag "support/bca.jpg", width: "100px" %>
+				  	<br><br>
+				  	Pembayaran dengan KlikBCA diproses melalui payment gateway mitra kami Doku (sebelumnya dikenal sebagai NSIAPAY).<br><br>
+
+						Proses jika pelanggan menggunakan KlikBCA : <br>
+				  	<ul class="num">
+							<li>
+								Pelanggan harus memasukkan User ID KlikBCA yang digunakan sebagai informasi yang akan erafone proses.
+							</li>
+							<li>
+								Pelanggan akan mendapatkan halaman status Pesanan dan Pembayaran yang menginformasikan pelanggan untuk segera melakukan pembayaran melalui klik BCA (klik disini : Cara Pembayaran Klik BCA)
+							</li>
+							<li>
+								Pelanggan akan mendapatkan informasi Status pembayaran via email, baik sebelum melakukan pembayaran klikBCA maupun setelah mentransfer pembayaran klikBCA.
+							</li>
+						</ul>
+					</div>
+			  </div>
+			  <div class="tab-pane white_tab" id="kualitas">
+			  	<div class="content_support">
+			  		<h2 class="h_support">Bisa di Transfer</h2>
+				  	<%= image_tag "support/transfer.png", class: "img_support" %>
+				  	<%= image_tag "support/niaga.png" %>
+				  	<br><br>
+						<p class="text_support">Ditujukan ke :
+								No. rek : 166900 + No. pelanggan Anda,
+								Contoh : 1669001234567890 (10 digit terakhir adalah nomor pelanggan Anda)
+						</p>
+						<hr class="dash">
+						<br>
+						<%= image_tag "support/bri.png" %>
+				  	<br><br>
+						<p class="text_support">
+							Ditujukan ke :
+							No. rek : 32433 + No. pelanggan Anda,
+							Contoh : 32433123456789 (10 digit terakhir adalah nomor pelanggan Anda)
+						</p>
+					</div>
+			  </div>
+			  <div class="tab-pane white_tab" id="terjangkau">
+			  	<div class="content_support">
+				  	<h2 class="h_support">Bisa di Kartu Kredit</h2>
+				  	<%= image_tag "support/kartu-kredit.png", class: "img_support" %>
+						<p class="text_support">Pembayaran dapat dilakukan dengan Auto Debit Kartu Kredit berikut ini :<br>
+								1. CIMB Niaga, Hotline Number 14041<br>
+								2. Kartu kredit Visa/Master yang diterbitkan oleh bank lainnya.<br>
+						</p>
+					</div>
+			  </div>
+			</div>
+			<div class="content_support" style="text-align:left">
+				<%= image_tag "support/contact.png", class: "img_support" %>
+				<p class="text_support_big">
+					PERTANYAAN LEBIH LANJUT SILAHKAN HUBUNGI<br>
+					KAMI DI CONTACT CENTER <span class="red_contact">0804 1 222 222</span><br>
+					EMAIL : <span class="red_contact">CUSTOMER.SERVICE@BIGTV.CO.ID</span><br>
+					FAX : <span class="red_contact">(021) 557 77722</span><br>
+				</p>
+			</div>
 		</div>
 	</div>
 	<div class="polosochka"></div>
