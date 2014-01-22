@@ -11,6 +11,7 @@ module SeedMembership
       membership.category_id  =  Category.find_by_name(member["membership_#{n}"]["category"]).id
       membership.is_published =  member["membership_#{n}"]["published"]
       membership.is_featured  =  member["membership_#{n}"]["featured"]
+      membership.position  =  member["membership_#{n}"]["position"]
       membership.save!
       # price
       prices = member["membership_#{n}"]["prices"]

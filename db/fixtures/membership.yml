@@ -5,6 +5,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
+      position: 0
       prices:
         - price_0:
             price:    488888
@@ -305,6 +306,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
+      position: 0
       prices:
         - price_0:
             price:    269999
@@ -565,6 +567,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
+      position: 0
       prices:
         - price_0:
             price:    149999
@@ -791,6 +794,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
+      position: 0
       prices:
         - price_0:
             price:    107999
@@ -997,6 +1001,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
+      position: 0
       prices:
         - price_0:
             price:    89999
@@ -1187,6 +1192,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 2
       prices:
         - price_0:
             price:    19999
@@ -1205,6 +1211,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 0
       prices:
         - price_0:
             price:    49999
@@ -1227,6 +1234,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 0
       prices:
         - price_0:
             price:    24999
@@ -1251,6 +1259,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 3
       prices:
         - price_0:
             price:    150000
@@ -1265,6 +1274,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 4
       prices:
         - price_0:
             price:    49999
@@ -1287,6 +1297,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 5
       prices:
         - price_0:
             price:    49999
@@ -1309,6 +1320,7 @@ membership:
       published:    true
       featured:     true
       category:     'extra'
+      position: 6
       prices:
         - price_0:
             price:    99999
@@ -1339,6 +1351,7 @@ membership:
         published:    true
         featured:     true
         category:     'extra'
+        position: 7
         prices:
           - price_0:
               price:    69999
@@ -1356,33 +1369,12 @@ membership:
         - item_4:
             name: 'HBO Family'
   - membership_13:
-        name:         'HBO Movies'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'extra'
-        prices:
-          - price_0:
-              price:    69999
-              total:    1
-              periode:  'month'
-        items:
-        - item_0:
-            name: 'HBO'
-        - item_1:
-            name: 'HBO Hits'
-        - item_2:
-            name: 'CineMAX'
-        - item_3:
-            name: 'HBO Signature'
-        - item_4:
-            name: 'HBO Family'
-  - membership_14:
         name:         'Aussie'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
+        position: 8
         prices:
           - price_0:
               price:    120000
@@ -1393,12 +1385,13 @@ membership:
             name: 'Setanta Sports'
         - item_1:
             name: 'Australian Network'
-  - membership_15:
+  - membership_14:
         name:         'Korea'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
+        position: 9
         prices:
           - price_0:
               price:    150000
@@ -1407,12 +1400,13 @@ membership:
         items:
         - item_0:
             name: 'K-TV'
-  - membership_16:
+  - membership_15:
         name:         'Japan'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
+        position: 10
         prices:
           - price_0:
               price:    50000
@@ -1421,12 +1415,13 @@ membership:
         items:
         - item_0:
             name: 'NHK World Premium'
-  - membership_17:
+  - membership_16:
         name:         'India'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
+        position: 11
         prices:
           - price_0:
               price:    75000
@@ -1441,12 +1436,13 @@ membership:
             name: 'Star Plus'
         - item_3:
             name: 'Star Gold'
-  - membership_18:
+  - membership_17:
         name:         'MAX Sports'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
+        position: 12
         prices:
           - price_0:
               price:    200000
@@ -1469,24 +1465,39 @@ membership:
             name: 'ASN HD'
         - item_7:
             name: 'NBA TV'
-  - membership_19:
+  - membership_18:
         name:         '1 DECODER'
         description:  ''
         published:    true
         featured:     true
         category:     'other'
+        position: 0
         prices:
           - price_0:
               price:    20000
               total:    1
               periode:  'month'
         items: 
-  - membership_20:
+  - membership_19:
         name:         '2 DECODERS'
         description:  ''
         published:    true
         featured:     true
         category:     'other'
+        position: 0
+        prices:
+          - price_0:
+              price:    50000
+              total:    1
+              periode:  'month'
+        items: 
+  - membership_20:
+        name:         '3 DECODERS'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'other'
+        position: 0
         prices:
           - price_0:
               price:    50000
@@ -1494,11 +1505,12 @@ membership:
               periode:  'month'
         items: 
   - membership_21:
-        name:         '3 DECODERS'
+        name:         '4 DECODERS'
         description:  ''
         published:    true
         featured:     true
         category:     'other'
+        position: 0
         prices:
           - price_0:
               price:    50000
@@ -1506,23 +1518,12 @@ membership:
               periode:  'month'
         items: 
   - membership_22:
-        name:         '4 DECODERS'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'other'
-        prices:
-          - price_0:
-              price:    50000
-              total:    1
-              periode:  'month'
-        items: 
-  - membership_23:
         name:         'Action'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    34999
@@ -1691,12 +1692,13 @@ membership:
             name: 'NGC Wild HD'
         - item_80:
             name: 'ASN HD'
-  - membership_24:
+  - membership_23:
         name:         'Lifestyle'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    34999
@@ -1839,12 +1841,13 @@ membership:
             name: 'Lifetime'
         - item_67:
             name: 'ASN'
-  - membership_25:
+  - membership_24:
         name:         'Movies'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    34999
@@ -1975,12 +1978,13 @@ membership:
             name: 'MGM'
         - item_61:
             name: 'Fox Family Movies'
-  - membership_26:
+  - membership_25:
         name:         'Sporties'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    29999
@@ -2099,12 +2103,13 @@ membership:
             name: 'Australian Network'
         - item_55:
             name: 'DW-TV Asia+'
-  - membership_27:
+  - membership_26:
         name:         'Sporties'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    29999
@@ -2231,12 +2236,13 @@ membership:
             name: 'beIn Sports 1'
         - item_59:
             name: 'beIn Sports 2'
-  - membership_28:
+  - membership_27:
         name:         'Entertainment'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    19999
@@ -2355,12 +2361,13 @@ membership:
             name: 'Australian Network'
         - item_55:
             name: 'DW-TV Asia+'
-  - membership_29:
+  - membership_28:
         name:         'Kids'
         description:  ''
         published:    true
         featured:     true
         category:     'Ez'
+        position: 0
         prices:
           - price_0:
               price:    19999
@@ -2477,13 +2484,13 @@ membership:
             name: 'Arirang'        
         - item_54:
             name: 'Discovery Kids'
-
-  - membership_30:
+  - membership_29:
         name:         'BPL Bola'
         description:  ''
         published:    true
         featured:     true
         category:     'Extra'
+        position: 1
         prices:
           - price_0:
               price:    10000

@@ -15,23 +15,61 @@
 			  <div class="tab-pane active white_tab" id="bonus">
 			  	<div class="content_support">
 				  	<h2 class="h_support">Bisa di Hypermart</h2>
-				  	<%= image_tag "support/hypermart.png", class: "img_support" %>
-						<p class="text_support_big">Pembayaran dilakukan di kasir secara tunai, kartu debit/kredit apapun</p>
+				  	<%= image_tag "support/hypermart.png", class: "img_support"%>
+						<p class="text_support">Pembayaran dilakukan di kasir secara tunai, kartu debit/kredit apapun</p>
 					</div>
 			  </div>
 			  <div class="tab-pane white_tab" id="channel">
 			  	<div class="content_support">
 				  	<h2 class="h_support">Bisa di ATM</h2>
-				  	<%= image_tag "support/atm.png", class: "img_support" %>
-				  	<%= image_tag "support/niaga.png" %>
+				  	<%= image_tag "support/atm.png", class: "img_support", style: "margin-bottom:100px" %>
+						<%= image_tag "support/nobu.png" %>
+				  	<br><br>
+				  	<ul class="num">
+				  		<li>
+								Masukkan kartu ATM (khusus Kartu Bank Nobu).
+							</li>
+							<li>Ketik PIN.</li>
+							<li>Pilih TRANSAKSI LAINNYA.</li>
+							<li>Pilih Transaksi : PEMBAYARAN.</li>
+							<li>Pilih Jenis Pembayaran TV/INTERNET.</li>
+							<li>Pilih Perusahaan : BiG TV</li>
+							<li>Masukkan nomor pelanggan : 10 digit nomor pelanggan (xxxxxxxxxx)</li>
+							<li>Pilih Jenis Rekening.</li>
+							<li>Masukkan jumlah pembayaran.</li>
+							<li>Masukkan nomor referensi (opsional).</li>
+							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA untuk pembayaran.</li>
+							</li>
+						</ul>
+						<hr class="dash">
+						<%= image_tag "support/niaga.png" %>
 				  	<br><br>
 						<p class="text_support">
-							1. Masukkan kartu ATM (Kartu CIMB Niaga).<br>
-							2. Ketik PIN.<br>
-							3. Pilih TRANSFER.<br>
-							4. Pilih ANTAR REKENING CIMB NIAGA.<br>
-							5. Masukkan nominal transaksi.<br>
+							<ul class="num">
+				  			<li>Masukkan kartu ATM (Kartu CIMB Niaga).</li>
+								<li>Ketik PIN</li>
+								<li>Pilih TRANSFER</li>
+								<li>Pilih ANTAR REKENING CIMB NIAGA</li>
+								<li>Masukkan nominal transaksi</li>
+							</ul>
 						</p>
+						<hr class="dash">
+						<%= image_tag "support/bri.png" %>
+				  	<br><br>
+				  	<ul class="num">
+			  			<li>Masukkan kartu ATM (kartu BRI).</li>
+							<li>Pilih Bahasa Anda.</li>
+							<li>Ketik PIN.</li>
+							<li>Pilih TRANSAKSI LAIN.</li>
+							<li>Pilih PEMBAYARAN.</li>
+							<li>Pilih PEMBAYARAN LAINNYA.</li>
+							<li>Pilih BRIVA (=BRI Virtual Account).</li>
+							<li>Masukkan rekening tujuan, dengan angka 32433 diikuti 10 digit nomor pelanggan (32433xxxxxxxxxxx)</li>
+							<li>Masukkan nomor referensi (opsional).</li>
+							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses.</li>
+							<li>Masukkan nominal transaksi. </li>
+							<li>Pilih YA/OK apabila semua data sudah benar.</li>
+						</ul>
 						<hr class="dash">
 						<%= image_tag "support/atm-bersama.png" %>
 				  	<br><br>
@@ -63,42 +101,6 @@
 									Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA / OK apabila semua data sudah benar.
 								</li>
 							</ul>
-						<hr class="dash">
-						<%= image_tag "support/nobu.png" %>
-				  	<br><br>
-				  	<ul class="num">
-				  		<li>
-								Masukkan kartu ATM (khusus Kartu Bank Nobu).
-							</li>
-							<li>Ketik PIN.</li>
-							<li>Pilih TRANSAKSI LAINNYA.</li>
-							<li>Pilih Transaksi : PEMBAYARAN.</li>
-							<li>Pilih Jenis Pembayaran TV/INTERNET.</li>
-							<li>Pilih Perusahaan : BiG TV</li>
-							<li>Masukkan nomor pelanggan : 10 digit nomor pelanggan (xxxxxxxxxx)</li>
-							<li>Pilih Jenis Rekening.</li>
-							<li>Masukkan jumlah pembayaran.</li>
-							<li>Masukkan nomor referensi (opsional).</li>
-							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA untuk pembayaran.</li>
-							</li>
-						</ul>
-						<hr class="dash">
-						<%= image_tag "support/bri.png" %>
-				  	<br><br>
-				  	<ul class="num">
-			  			<li>Masukkan kartu ATM (kartu BRI).</li>
-							<li>Pilih Bahasa Anda.</li>
-							<li>Ketik PIN.</li>
-							<li>Pilih TRANSAKSI LAIN.</li>
-							<li>Pilih PEMBAYARAN.</li>
-							<li>Pilih PEMBAYARAN LAINNYA.</li>
-							<li>Pilih BRIVA (=BRI Virtual Account).</li>
-							<li>Masukkan rekening tujuan, dengan angka 32433 diikuti 10 digit nomor pelanggan (32433xxxxxxxxxxx)</li>
-							<li>Masukkan nomor referensi (opsional).</li>
-							<li>Layar ATM akan menampilkan detail transaksi yang akan diproses.</li>
-							<li>Masukkan nominal transaksi. </li>
-							<li>Pilih YA/OK apabila semua data sudah benar.</li>
-						</ul>
 						<hr class="dash">
 						<%= image_tag "support/erapon.jpg" %>
 				  	<br><br>
@@ -168,7 +170,7 @@
 				<%= image_tag "support/contact.png", class: "img_support" %>
 				<p class="text_support_big">
 					PERTANYAAN LEBIH LANJUT SILAHKAN HUBUNGI<br>
-					KAMI DI CONTACT CENTER <span class="red_contact">0804 1 222 222</span><br>
+					KAMI DI CONTACT CENTER <span class="red_contact">021-500 244</span><br>
 					EMAIL : <span class="red_contact">CUSTOMER.SERVICE@BIGTV.CO.ID</span><br>
 					FAX : <span class="red_contact">(021) 557 77722</span><br>
 				</p>

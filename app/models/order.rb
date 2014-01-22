@@ -57,11 +57,11 @@ class Order < ActiveRecord::Base
   end
 
   def remove_cart
-    if time.now > updated_at.since(5.minutes)
+    if Time.now > updated_at.since(5.minutes)
       if self.items.blank?
         destroy
       else
-        CustomerMailer.thanks_email(self).deliver
+        CustomerMailer.email_order_to_admin(self).deliver
       end
     else
       check_activity

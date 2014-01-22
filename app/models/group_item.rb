@@ -4,6 +4,8 @@ class GroupItem < ActiveRecord::Base
   
   has_many :unit_items
 
+  scope :by_position , order("position ASC")
+  
   before_create :before_creation
 
   private

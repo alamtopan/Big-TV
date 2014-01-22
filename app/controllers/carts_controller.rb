@@ -29,7 +29,7 @@ class CartsController < ApplicationController
     end
     
     if display_extra_data
-      membership = Membership.packages_by_category('extra') 
+      membership = Membership.packages_by_category('extra').by_position
       @memberships = regenerate_package(order,membership)
       redirect_to rental_path if @memberships.blank?
     end
