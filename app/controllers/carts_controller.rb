@@ -18,9 +18,6 @@ class CartsController < ApplicationController
       item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
       display_extra_data = true
-      if request.referer.to_s =~ /rental/i
-        redirect_to rental_path
-      end
     elsif order.items.select{|i| i.premium? }.present?
       display_extra_data = true
     else
@@ -30,13 +27,14 @@ class CartsController < ApplicationController
     
     if display_extra_data
       premium_item = order.items.premium
-      if premium_item && premium_item.title =~ /universe/i
-        redirect_to rental_path
-      else
+      if premium_item && premium_item.title !~ /universe/i
         @memberships = Membership.includes(:unit_items,:category).
-                         where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
-                         by_position
-        redirect_to rental_path if @memberships.blank?
+                        where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
+                        by_position
+      end
+
+      unless @memberships
+        redirect_to rental_path
       end
     end
       
@@ -59,9 +57,8 @@ class CartsController < ApplicationController
     elsif order.total.to_i < 1
       redirect_to root_path
     end
-    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
-                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
-                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
+    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'],
+                ['Dealer', 'Dealer'],
                 ['Koran/Billboard', 'Koran/Billboard'],
                 ['Pelanggan BigTV','Pelanggan BigTV'],
                 ['Others', 'Others']];
@@ -80,7 +77,8 @@ class CartsController < ApplicationController
   end
 
   def subcribe
-    if params[:user].blank?
+    customer_info = params[:user] || params[:customer]
+    if customer_info.blank?
       flash[:errors] = "Please Fill The Form"
       if request.xhr?
         render json: {error: 'Invalid Parameters', redirect_url: preview_path}, status: :unprocessable_entity
@@ -89,11 +87,11 @@ class CartsController < ApplicationController
       end
     else
       #user = Customer.find_or_initialize_by_email(params[:user][:email])
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-      params[:user].delete(:username)
+      customer_info.delete(:password)
+      customer_info.delete(:password_confirmation)
+      customer_info.delete(:username)
       @customer = @order.orderable
-      if @customer.update_attributes(params[:user]) && save_order
+      if @customer.update_attributes(customer_info) && save_order
         flash[:success] = 'success'
         CustomerMailer.thanks_email(order).deliver
         
