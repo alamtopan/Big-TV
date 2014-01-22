@@ -1466,7 +1466,7 @@ membership:
         - item_7:
             name: 'NBA TV'
   - membership_18:
-        name:         '1 DECODER'
+        name:         '1 DEKODER'
         description:  ''
         published:    true
         featured:     true
@@ -1479,7 +1479,7 @@ membership:
               periode:  'month'
         items: 
   - membership_19:
-        name:         '2 DECODERS'
+        name:         '2 DEKODER'
         description:  ''
         published:    true
         featured:     true
@@ -1492,7 +1492,7 @@ membership:
               periode:  'month'
         items: 
   - membership_20:
-        name:         '3 DECODERS'
+        name:         '3 DEKODER'
         description:  ''
         published:    true
         featured:     true
@@ -1505,7 +1505,7 @@ membership:
               periode:  'month'
         items: 
   - membership_21:
-        name:         '4 DECODERS'
+        name:         '4 DEKODER'
         description:  ''
         published:    true
         featured:     true

@@ -24,7 +24,7 @@ class OrderItem < ActiveRecord::Base
 
   def decoder?
     return false unless self.membership
-    self.membership.name =~ /decoder/i && self.other?
+    self.membership.name =~ /decoder|dekoder/i && self.other?
   end
   
   private

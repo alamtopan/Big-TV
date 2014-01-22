@@ -12,13 +12,13 @@
               <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table <%= group.name =~ /musics|other/i ? 'padding_top10' : 'padding_top20' %>">
                 <% if group.name =~ /music|news|other/i %>
                   <% group.name.each_char do |a| %>
-                    <span class="alfa" style="height: auto; line-height: <%= group.name =~ /news|other/i ? '19' : '14' %>px;">
+                    <span class="alfa" style="height: auto; line-height: <%= group.name =~ /music/i ? '19' : '21' %>px;">
                     <%= a %>
                     </span>
                   <% end %>
                 <% else %>
                   <% group.name.each_char do |a| %>
-                    <span class="alfa">
+                    <span class="alfa" >
                     <%= a %>
                     </span>
                   <% end %>

@@ -3376,6 +3376,8 @@ a .tb{
 .num li{
   list-style-type: decimal;
   margin-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .red_contact{
   font-weight: bold;
@@ -3383,4 +3385,13 @@ a .tb{
 }
 .back_support{
   background: #f1f8f8!important;
+}
+
+.cy li{
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.red_font{
+  color: #fe0000;
 }

@@ -116,6 +116,22 @@
                                         </tr>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Email:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.email %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Telp/HP:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= [@user.profile.no_phone, @user.profile.no_hp].join(' / ') %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
                                             Alamat Pemasangan:
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
