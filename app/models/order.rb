@@ -62,17 +62,17 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def follow_up_customer
-    if Time.now > updated_at.since(5.minutes)
+  def follow_up_unpaid_order
+    if Time.now > updated_at.since(30.minutes)
       CustomerMailer.email_order_to_admin(self).deliver
     else
-      check_activity
+      delay(run_at: 30.minutes.from_now).follow_up_unpaid_order
     end if session_id.present?
   end
 
   def remove_junk
     if Time.now > updated_at.since(2.hours)
-      destroy
+      destroy if items.blank?
     else
       delay(run_at: 30.minutes.from_now).remove_junk 
     end if session_id.present?
@@ -80,7 +80,7 @@ class Order < ActiveRecord::Base
 
   def check_activity
     if session_id.present?
-      delay(run_at: 5.minutes.from_now).follow_up_customer 
+      delay(run_at: 30.minutes.from_now).follow_up_unpaid_order
       delay(run_at: 2.hours.from_now).remove_junk 
     end
   end

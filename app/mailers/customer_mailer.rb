@@ -6,9 +6,19 @@ class CustomerMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'Terimakasih telah berlangganan BigTv')
   end
 
+  def welcome_email(user)
+    prepare_user(user)
+    mail(to: @user.email, subject: 'Terimakasih telah bergabung dengan BigTv')
+  end
+
+  def welcome_email_admin(user)
+    prepare_user(user)
+    mail(to: 'verifikasi.online@gmail.com', subject: "REGISTERED, #{@user.code}, #{@user.profile.full_name}")
+  end
+
   def email_order_to_admin(order)
     prepare_order(order)
-    mail(to: 'verifikasi.online@gmail.com', subject: "REGISTERED, #{@user.code}, #{@user.profile.full_name}")
+    mail(to: 'verifikasi.online@gmail.com', subject: "UNPAIDREGISTERED, #{@user.code}, #{@user.profile.full_name}")
   end
 
   def payment_email(order, payment)
@@ -31,11 +41,15 @@ class CustomerMailer < ActionMailer::Base
 
   private
 
-    def prepare_order(order)
-      @user = order.orderable
-      @order = order
+    def prepare_user(user)
       @url  = 'http://big-tv.com/'
+      @user = user
       attachments.inline['bigtv.png'] = File.read("#{Rails.root}/vendor/assets/images/bigtv.png")
+    end
+
+    def prepare_order(order)
+      prepare_user(order.orderable)
+      @order = order
     end
 
 end
