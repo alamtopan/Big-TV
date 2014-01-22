@@ -11,6 +11,20 @@ class OrderItem < ActiveRecord::Base
   before_save   :before_saving
   after_destroy :after_destroy
 
+  class << self
+    Category::Config::NAMES.each do |name_item|
+      define_method("#{ name_item.downcase.pluralize }") do
+         category = Category.find_by_name("#{name_item.downcase}")
+         return [] unless category
+         includes(:membership).where(['memberships.category_id = ?', category.id])
+      end
+      
+      define_method("#{ name_item.downcase.singularize }") do
+        send("#{ name_item.downcase.pluralize }").first
+      end
+    end
+  end
+
 
   def membership_category
     @membership_category ||= self.membership.category.name.to_s

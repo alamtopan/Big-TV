@@ -10,6 +10,14 @@ class Category < ActiveRecord::Base
     NAMES=['premium','extra','other','ez']
   end
 
+  class << self
+    Config::NAMES.each do |name_item|
+      define_method("#{ name_item.downcase }") do
+        find_by_name('premium')
+      end
+    end
+  end
+
   private
     def before_validating
       self.name.downcase! if self.name

@@ -103,62 +103,82 @@ function restore(){
     }
   });
 }
-
-  if($(".map_location_js").length){
-    $(".js_button_map").on('click',function(){
-      var province = $(this).data('value');
-      $(".js_button_map").removeClass('active');
-      $(this).addClass('active');
-      $(".map_location_js").closest('tr').addClass('hide');
-      var founds = {}
-
-      $.each($("#map div.trial"), function( index, div ) {
-        var val = $(div).data('value');
-        // $(div).addClass('hide');
-        founds[val] = 0;
-
-        if(val){
-          // var items = $(".map_location_js[data-province='" + province+ "']");
-          // items.closest('tr').removeClass('hide');
-          // items.removeClass('hide');
-          var items = $("."+val).find(".map_location_js[data-province='" + province+ "']").slice(0,12);
-          items.closest('tr').removeClass('hide');
-          items.removeClass('hide');
-        }
-      })
-      
-      // restore();
-      // $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
-      return false;
-    });
-  }
-
-  if($("#map div.trial").length){
-    initilizeLocation();
-  }
-
+ 
   function initilizeLocation(){
     $.each($("#map div.trial"), function( index, div ) {
       if ($(div).hasClass('hide')) {
         $(div).removeClass('hide');
+        // $(div).show();
       }; 
       var val = $(this).data('value');
       if(val){
         $.each($("."+val), function( n, locat ) {
           if(n < 12 && $(locat).hasClass('hide')){
             $(locat).removeClass('hide');
+            // $(locat).show();
           }else{
             $(locat).addClass('hide');
           }
         });
         $(div).on('click',function(){
           $("."+val).removeClass('hide');
+          // $("."+val).show();
           $(this).addClass('hide');
         })
       }
     })
   }
 
+// SEARCH LOCATION BY PROVINCE
+if($(".map_location_js").length){
+  $(".js_button_map").on('click',function(){
+    var province = $(this).data('value');
+    var province_selector = ".map_location_js[data-province='" + province+ "']";
+    $(".js_button_map").removeClass('active');
+    $(this).addClass('active');
+    $(".map_location_js").closest('tr').addClass('hide');
+    var founds = {}
+
+    $.each($("#map div.trial"), function( index, div ) {
+      var val = $(div).data('value');
+      $(div).addClass('hide');
+      founds[val] = 0;
+
+      if(val){
+
+        $.each($("."+val), function( n, locat ) {
+          if($(locat).find(province_selector).length){
+            if(founds[val] < 12){
+              $(locat).removeClass('hide');
+              $(locat).show();
+            }else{
+              $(div).removeClass('hide');
+              $(locat).show();
+              $(locat).addClass('hide');
+            }
+
+            founds[val] += 1;
+            
+          }else{
+            $(locat).removeClass('hide');
+            $(locat).hide();
+          }
+        });
+        
+      }
+    })
+    
+    // restore();
+    // $("#map_section").gmap3({map:{options:{scrollwheel: false}}});
+    return false;
+  });
+}
+
+if($("#map div.trial").length){
+  initilizeLocation();
+}
+
+// SEARCH LOCATION BY KEYWORD
 if($("#search_location").length){
   $("#search_location").on("change",function(){
     if($("#search_location").val().length > 0){
@@ -177,16 +197,16 @@ if($("#search_location").length){
             var loc_data = $(locat).find('.map_location_js').data('value');
             if(loc_data){
               if(String(loc_data.name).match(regexp) || String(loc_data.address).match(regexp)){ 
-                // if(founds[val] < 12){
+                if(founds[val] < 12){
                   $(locat).removeClass('hide');
                   $(locat).show();
-                // }else{
-                //   if($(div).hasClass('hide')){
-                //     $(div).removeClass('hide')
-                //   }
-                //   $(locat).addClass('hide');
-                // }
-                // founds[val] += 1;
+                }else{
+                  $(div).removeClass('hide');
+                  $(locat).show();
+                  $(locat).addClass('hide');
+                }
+
+                founds[val] += 1;
               }else{
                 $(locat).removeClass('hide');
                 $(locat).hide();
@@ -201,7 +221,7 @@ if($("#search_location").length){
 
       return false;
     }else{
-      initilizeLocation();
+      // initilizeLocation();
       $('.js_button_map[data-value="Jawa Madura"]').click();
     }
   });

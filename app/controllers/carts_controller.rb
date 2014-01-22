@@ -29,10 +29,17 @@ class CartsController < ApplicationController
     end
     
     if display_extra_data
-      membership = Membership.packages_by_category('extra').by_position
-      @memberships = regenerate_package(order,membership)
-      redirect_to rental_path if @memberships.blank?
+      premium_item = order.items.premium
+      if premium_item && premium_item.title =~ /universe/i
+        redirect_to rental_path
+      else
+        @memberships = Membership.includes(:unit_items,:category).
+                         where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
+                         by_position
+        redirect_to rental_path if @memberships.blank?
+      end
     end
+      
   end
 
   def premium
@@ -156,28 +163,6 @@ class CartsController < ApplicationController
   private
     def product
       @product ||= Membership.find(params[:id])
-    end
-
-    def regenerate_package(order,membership)
-      premium_items = get_premium_package(order)
-      new_package = []
-      same_item = []
-      membership.each do |member|
-        member.unit_items.each do |item|
-          unless premium_items.map(&:id).include?(item.id)
-            same_item.push(false) 
-          else
-            same_item.push(true)
-          end
-        end
-        new_package.push(member) if same_item.include?(false)
-        same_item.clear
-      end
-      new_package
-    end
-
-    def get_premium_package(order)
-      order.items.map{|a| a if a.membership_category == 'premium'}.compact.first.membership.unit_items
     end
 
     def delete_session

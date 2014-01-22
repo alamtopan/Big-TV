@@ -41,6 +41,12 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def premium_unit_items
+    premium_item = items.premium
+    return [] unless premium_item
+    premium_item.membership.unit_items
+  end
+
   def calculate_total(autosave=:false)
     total_amount = items.sum(:subtotal) * (self.period||1)
 
@@ -56,20 +62,27 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def remove_cart
+  def follow_up_customer
     if Time.now > updated_at.since(5.minutes)
-      if self.items.blank?
-        destroy
-      else
-        CustomerMailer.email_order_to_admin(self).deliver
-      end
+      CustomerMailer.email_order_to_admin(self).deliver
     else
       check_activity
     end if session_id.present?
   end
 
+  def remove_junk
+    if Time.now > updated_at.since(2.hours)
+      destroy
+    else
+      delay(run_at: 30.minutes.from_now).remove_junk 
+    end if session_id.present?
+  end
+
   def check_activity
-    delay(run_at: 5.minutes.from_now).remove_cart if session_id.present?
+    if session_id.present?
+      delay(run_at: 5.minutes.from_now).follow_up_customer 
+      delay(run_at: 2.hours.from_now).remove_junk 
+    end
   end
 
   def is_order?

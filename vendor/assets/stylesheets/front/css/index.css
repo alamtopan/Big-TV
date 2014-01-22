@@ -3304,27 +3304,26 @@ a .tb{
   bottom: 0;
 }*/
 
-.hd {
+.package-channel-table .hd {
   left: 5px;
-  /*top: 0;
-  bottom: 0;
-  height: 18px;
-  text-align: center;
-  margin: auto;*/
-}
-
-.name_channel{
-  width: 106px;
-  margin-left: 32px;
-/*  text-align: left;
   display: table;
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
+  width: 26px;
+}
+
+.package-channel-table .name_channel{
+  width: 110px;
+  margin-left: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   left: -20px;
-  float: left;
-  right: 0;*/
+  right: 0;
+  display: table;
 }
 
 /*.package-channel-table .roundedOne{
