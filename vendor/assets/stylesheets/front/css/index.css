@@ -21,6 +21,13 @@ a{
 p{
   margin-bottom: 10px;
 }
+.package-channel-table tr td img{
+  position: absolute;
+  margin: auto;
+  right: 9px;
+  top: 0px;
+  bottom: 0px;
+}
 .display_group_name{
   display: none;
 }
