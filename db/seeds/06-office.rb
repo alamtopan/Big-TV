@@ -1,31 +1,41 @@
+require 'csv'
 module SeedOffice
   def self.seed
     fixture_path = "#{Rails.root}/db/fixtures"
+    location_attributes = ["Alamat","Area","Telepon","Fax"]
+    regionals = ["Sumatra",
+                 "Jawa Madura",
+                 "Kalimantan", 
+                 "Sulawesi", 
+                 "Bali", 
+                 "Nusa Tenggara", 
+                 "Maluku Papua"].map do |regional_name|
+                    Regional.find_or_create_by_name(regional_name)
+                 end
 
-    yaml_office = YAML.load_file("#{fixture_path}/office.yml")
-    office_yml = yaml_office['office']
-    regionals = office_yml['regionals']
+    categories = ['Retailer', 'Mall', 'Dealer'].map do |category_name|
+      CategoryOffice.find_or_create_by_name(category_name.gsub('Retailer','Hypermart'))
+    end
+    
+    regionals.each do |regional|
+      regional_prefix = regional.name.gsub(/\W/,'_')
+      categories.each do |category|
+        category_prefix = category.name.gsub('Hypermart','Retailer').titleize
+        csv_path = "#{fixture_path}/#{regional_prefix}_#{category_prefix}.csv".downcase
 
-    regionals.each_with_index do |reg,n|
-      regional = Regional.find_or_create_by_name(reg["regional_#{n}"]["name"])
-      categories = reg["regional_#{n}"]['categories']
-      categories.each_with_index do |cate,c|
-        category = CategoryOffice.find_or_create_by_name(cate["category_#{c}"]['name'])
-        offices = cate["category_#{c}"]['offices']
-        offices.each_with_index do |of,i|
-          office = Office.find_or_initialize_by_name(of["office_#{i}"]['name'])
-          office.address = of["office_#{i}"]['address']
-          office.phone_area = of["office_#{i}"]['area']
-          office.no_phone = of["office_#{i}"]['phone']
-          office.no_fax = of["office_#{i}"]['fax']
-          office.no_fax = of["office_#{i}"]['fax']
-          office.longitude = of["office_#{i}"]['longitude']
-          office.latitude = of["office_#{i}"]['latitude']
+        CSV.new(File.read(csv_path), headers: true).each do |csv|
+          next if csv[category_prefix].blank?
+          office = Office.find_or_initialize_by_name(csv[category_prefix])
+          office.address = csv['Alamat']
+          office.phone_area = csv['Area']
+          office.no_phone = csv['Telepon']
+          office.no_fax = csv['Fax']
           office.regional_id = regional.id
           office.category_office_id = category.id
           office.save
-        end if offices.present?
-      end if categories.present?
+        end if File.exist?(csv_path)
+
+      end
     end
   end
 end

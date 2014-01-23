@@ -98,7 +98,8 @@ class CartsController < ApplicationController
       @customer = @order.orderable
       if @customer.update_attributes(customer_info) && save_order
         flash[:success] = 'success'
-        CustomerMailer.thanks_email(order).deliver
+        CustomerMailer.delay.thanks_email(order)
+        CustomerMailer.delay.email_order_to_admin(order)
         
         delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")

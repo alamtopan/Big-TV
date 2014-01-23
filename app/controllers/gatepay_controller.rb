@@ -22,7 +22,7 @@ class GatepayController < ApplicationController
 
     @payment_channel = PaymentChannel.new(params[:PAYMENTCHANNEL])
     if @payment_channel.atm? && !@order.success?
-      CustomerMailer.atm_payment_instruction(@order, params[:PAYMENTCODE]).deliver
+      CustomerMailer.delay.atm_payment_instruction(@order, params[:PAYMENTCODE])
       redirect_to payment_instruction_path(token: @order.token, code: params[:PAYMENTCODE])
     else
       redirect_to thanks_path(token: @order.token)
