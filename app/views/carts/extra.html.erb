@@ -35,7 +35,7 @@
                             <%= check_box_tag 'membership_ids[]', membership.id, checked, id: "member_#{index}" %>
                             <label for="member_<%= index %>"></label>
                           </div>
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= membership.id %>">
+                          <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapse<%= membership.id %>">
                             <span class="title_ord italic">BiG</span>
                             <span class="title_ord"><%= membership.name %></span>
                             <span class="left-mrg">Rp.</span>
@@ -43,7 +43,7 @@
                             <% if membership.name =~ /BPL Bola/i  %>
                               (PALING LARIS)
                             <% end %>
-                            <div class="tb"></div>
+                            <span class="tb"></span>
                           </a>
                       </h4>
                     </div>

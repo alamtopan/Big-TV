@@ -18,7 +18,7 @@ class CartsController < ApplicationController
       item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
       display_extra_data = true
-    elsif order.items.select{|i| i.premium? }.present?
+    elsif order.items.premium.present?
       display_extra_data = true
     else
       flash[:alert] = 'Please subscribe any premium package!'
@@ -27,10 +27,14 @@ class CartsController < ApplicationController
     
     if display_extra_data
       premium_item = order.items.premium
-      if premium_item && premium_item.title !~ /universe/i
-        @memberships = Membership.includes(:unit_items,:category).
-                        where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
-                        by_position
+      if premium_item 
+        if premium_item.title !~ /universe/i
+          @memberships = Membership.includes(:unit_items,:category).
+                          where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
+                          by_position
+        else
+          order.items.extras.destroy_all
+        end
       end
 
       unless @memberships

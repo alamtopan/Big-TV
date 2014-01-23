@@ -78,7 +78,7 @@
             <div class="panel panel-default">
               <div class="panel-heading red-h">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= membership.id %>">
+                  <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapse<%= membership.id %>">
                     <span class="title_ord italic">BiG</span>
                     <span class="title_ord"><%= membership.name %></span>
                     <span class="left-mrg">Rp.</span>
@@ -86,7 +86,7 @@
                     <% if membership.name =~ /BPL Bola/i  %>
                       (PALING LARIS)
                     <% end %>
-                    <div class="tb"></div>
+                    <span class="tb"></span>
                   </a>
                 </h4>
               </div>
