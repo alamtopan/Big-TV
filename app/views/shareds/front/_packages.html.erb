@@ -83,11 +83,11 @@
                     <span class="title_ord"><%= membership.name %></span>
                     <span class="left-mrg">Rp.</span>
                     <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
-                    <% if membership.name =~ /BPL Bola/i  %>
-                      (PALING LARIS)
-                    <% end %>
                     <div class="tb"></div>
                   </a>
+                  <% if membership.name =~ /BPL Bola/i  %>
+	                  <%= image_tag "star.png", height: "40px", style: "position:absolute; top: 5px;" %>
+	                <% end %>
                 </h4>
               </div>
               <div id="collapse<%= membership.id %>" class="panel-collapse in">

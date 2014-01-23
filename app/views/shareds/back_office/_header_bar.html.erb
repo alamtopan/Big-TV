@@ -17,7 +17,7 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_user_path(current_user) %>
+								<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_manage_user_path(current_user) %>
 							</li>
 							<li>
 								<%= link_to "<i class='clip-exit'></i>SignOut".html_safe, destroy_user_session_path, :method => :delete %>

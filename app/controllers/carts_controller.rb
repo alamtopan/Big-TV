@@ -10,7 +10,7 @@ class CartsController < ApplicationController
       if params[:add].to_s == 'true' && !order_item
         extra_package = Membership.find_by_id(params[:extra_id])
         order.add_item(extra_package,session_cart) if extra_package
-      else
+      elsif order_item
         order_item.destroy
       end
     elsif params[:membership_id].present? || session[:current_premium_id]
@@ -61,6 +61,7 @@ class CartsController < ApplicationController
                 ['Dealer', 'Dealer'],
                 ['Koran/Billboard', 'Koran/Billboard'],
                 ['Pelanggan BigTV','Pelanggan BigTV'],
+                ['SPG','SPG'],
                 ['Others', 'Others']];
   end
 

@@ -5,7 +5,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
-      position: 0
+      position: 16
       prices:
         - price_0:
             price:    488888
@@ -306,7 +306,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
-      position: 0
+      position: 17
       prices:
         - price_0:
             price:    269999
@@ -561,13 +561,17 @@ membership:
           name: "Metro TV"
       - item_123:
           name: 'B Channel'
+      - item_124:
+          name: 'ASN HD'
+      - item_125:
+          name: 'FOX Sports Plus HD'
   - membership_2:
       name:         'Sun 119'
       description:  ''
       published:    true
       featured:     true
       category:  'premium'
-      position: 0
+      position: 18
       prices:
         - price_0:
             price:    149999
@@ -794,7 +798,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
-      position: 0
+      position: 19
       prices:
         - price_0:
             price:    107999
@@ -1001,7 +1005,7 @@ membership:
       published:    true
       featured:     true
       category:  'premium'
-      position: 0
+      position: 20
       prices:
         - price_0:
             price:    89999
@@ -1186,7 +1190,26 @@ membership:
           name: 'Baby First'
       - item_88:
           name: "Channel News Asia"
+
+
   - membership_5:
+        name:         'BPL Bola'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 1
+        prices:
+          - price_0:
+              price:    10000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'beIn Sports 1'
+        - item_1:
+            name: 'beIn Sports 2'
+  - membership_6:
       name:         'BPL'
       description:  ''
       published:    true
@@ -1205,13 +1228,13 @@ membership:
           name: 'beIn Sports 2'
       - item_2:
           name: 'Fight' 
-  - membership_6:
+  - membership_7:
       name:         'Ultimate Sports'
       description:  ''
       published:    true
       featured:     true
       category:     'extra'
-      position: 0
+      position: 3
       prices:
         - price_0:
             price:    49999
@@ -1228,99 +1251,42 @@ membership:
           name: 'FOX Sports Plus HD'
       - item_4:
           name: 'Star Sports' 
-  - membership_7:
-      name:         'Kids'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 0
-      prices:
-        - price_0:
-            price:    24999
-            total:    1
-            periode:  'month'
-      items:
-      - item_0:
-          name: 'Cartoon Network'
-      - item_1:
-          name: 'Jim Jam'
-      - item_2:
-          name: 'Discovery Kids'
-      - item_3:
-          name: 'Cartoonito'
-      - item_4:
-          name: 'Nickelodeon'
-      - item_5:
-          name: 'Toonami' 
   - membership_8:
-      name:         'England'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 3
-      prices:
-        - price_0:
-            price:    150000
-            total:    1
-            periode:  'month'
-      items:
-      - item_0:
-          name: 'Star Cricket'
+        name:         'MAX Sports'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 4
+        prices:
+          - price_0:
+              price:    200000
+              total:    1
+              periode:  'month'
+        items:
+        - item_0:
+            name: 'beIn Sports 1'
+        - item_1:
+            name: 'beIn Sports 2'
+        - item_2:
+            name: 'Fight'
+        - item_3:
+            name: 'FOX Sports Plus HD'
+        - item_4:
+            name: 'STAR Sports'
+        - item_5:
+            name: 'Euro Sport'
+        - item_6:
+            name: 'ASN HD'
+        - item_7:
+            name: 'NBA TV'
   - membership_9:
-      name:         'Hong Kong'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 4
-      prices:
-        - price_0:
-            price:    49999
-            total:    1
-            periode:  'month'
-      items:
-      - item_0:
-          name: 'TVB 8'
-      - item_1:
-          name: 'TVB S Asia'
-      - item_2:
-          name: 'TVB Xing He'
-      - item_3:
-          name: 'TVB Jade'
-      - item_4:
-          name: 'TVB S News'
-  - membership_10:
-      name:         'China'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 5
-      prices:
-        - price_0:
-            price:    49999
-            total:    1
-            periode:  'month'
-      items:
-      - item_0:
-          name: 'Star Chinese Movies'
-      - item_1:
-          name: 'Star Chinese Channel'
-      - item_2:
-          name: 'Phoenix Info News'
-      - item_3:
-          name: 'Phoenix Chinese'
-      - item_4:
-          name: 'Xing Kong'
-  - membership_11:
       name:         'Box Office'
       description:  ''
       published:    true
       featured:     true
       category:     'extra'
-      position: 6
+      position: 5
       prices:
         - price_0:
             price:    99999
@@ -1345,13 +1311,13 @@ membership:
           name: 'HBO Signature'
       - item_8:
           name: 'HBO Family'
-  - membership_12:
+  - membership_10:
         name:         'HBO Movies'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 7
+        position: 6
         prices:
           - price_0:
               price:    69999
@@ -1368,30 +1334,105 @@ membership:
             name: 'HBO Signature'
         - item_4:
             name: 'HBO Family'
-  - membership_13:
-        name:         'Aussie'
+  - membership_11:
+        name:         'Movies'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 8
+        position: 7
         prices:
           - price_0:
-              price:    120000
+              price:    49999
               total:    1
               periode:  'month'
         items:
         - item_0:
-            name: 'Setanta Sports'
+            name: 'FOX Movies Premium HD'
         - item_1:
-            name: 'Australian Network'
+            name: 'FOX Family Movies'
+        - item_2:
+            name: 'MGM'
+        - item_3:
+            name: "J'Go HD"
+  - membership_12:
+      name:         'Kids'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 8
+      prices:
+        - price_0:
+            price:    24999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Cartoon Network HD'
+      - item_1:
+          name: 'Jim Jam'
+      - item_2:
+          name: 'Discovery Kids'
+      - item_3:
+          name: 'Cartoonito'
+      - item_4:
+          name: 'Nickelodeon'
+      - item_5:
+          name: 'Toonami' 
+  - membership_13:
+      name:         'Hong Kong'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 9
+      prices:
+        - price_0:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'TVB 8'
+      - item_1:
+          name: 'TVB S Asia'
+      - item_2:
+          name: 'TVB Xing He'
+      - item_3:
+          name: 'TVB Jade'
+      - item_4:
+          name: 'TVB S News'
   - membership_14:
+      name:         'China'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 10
+      prices:
+        - price_0:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Star Chinese Movies'
+      - item_1:
+          name: 'Star Chinese Channel'
+      - item_2:
+          name: 'Phoenix Info News'
+      - item_3:
+          name: 'Phoenix Chinese'
+      - item_4:
+          name: 'Xing Kong'
+  - membership_15:
         name:         'Korea'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 9
+        position: 11
         prices:
           - price_0:
               price:    150000
@@ -1400,13 +1441,13 @@ membership:
         items:
         - item_0:
             name: 'K-TV'
-  - membership_15:
+  - membership_16:
         name:         'Japan'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 10
+        position: 12
         prices:
           - price_0:
               price:    50000
@@ -1415,13 +1456,13 @@ membership:
         items:
         - item_0:
             name: 'NHK World Premium'
-  - membership_16:
+  - membership_17:
         name:         'India'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 11
+        position: 13
         prices:
           - price_0:
               price:    75000
@@ -1436,81 +1477,60 @@ membership:
             name: 'Star Plus'
         - item_3:
             name: 'Star Gold'
-  - membership_17:
-        name:         'MAX Sports'
+  - membership_18:
+        name:         'Aussie'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 12
+        position: 14
         prices:
           - price_0:
-              price:    200000
+              price:    120000
               total:    1
               periode:  'month'
         items:
         - item_0:
-            name: 'beIn Sports 1'
+            name: 'Setanta Sports'
         - item_1:
-            name: 'beIn Sports 2'
-        - item_2:
-            name: 'Fight'
-        - item_3:
-            name: 'FOX Sports Plus HD'
-        - item_4:
-            name: 'STAR Sports'
-        - item_5:
-            name: 'Euro Sport'
-        - item_6:
-            name: 'ASN HD'
-        - item_7:
-            name: 'NBA TV'
-  - membership_18:
+            name: 'Australian Network'
+  - membership_19:
+      name:         'England'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 15
+      prices:
+        - price_0:
+            price:    150000
+            total:    1
+            periode:  'month'
+      items:
+      - item_0:
+          name: 'Star Cricket'
+
+
+  - membership_20:
         name:         '1 DEKODER'
         description:  ''
         published:    true
         featured:     true
         category:     'other'
-        position: 0
+        position: 21
         prices:
           - price_0:
               price:    20000
               total:    1
               periode:  'month'
         items: 
-  - membership_19:
+  - membership_21:
         name:         '2 DEKODER'
         description:  ''
         published:    true
         featured:     true
         category:     'other'
-        position: 0
-        prices:
-          - price_0:
-              price:    50000
-              total:    1
-              periode:  'month'
-        items: 
-  - membership_20:
-        name:         '3 DEKODER'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'other'
-        position: 0
-        prices:
-          - price_0:
-              price:    50000
-              total:    1
-              periode:  'month'
-        items: 
-  - membership_21:
-        name:         '4 DEKODER'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'other'
-        position: 0
+        position: 22
         prices:
           - price_0:
               price:    50000
@@ -1518,986 +1538,30 @@ membership:
               periode:  'month'
         items: 
   - membership_22:
-        name:         'Action'
+        name:         '3 DEKODER'
         description:  ''
         published:    true
         featured:     true
-        category:     'Ez'
-        position: 0
+        category:     'other'
+        position: 23
         prices:
           - price_0:
-              price:    34999
+              price:    50000
               total:    1
               periode:  'month'
         items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'TVRI'
-        - item_3:
-            name: 'TV One'
-        - item_4:
-            name: 'Trans 7'
-        - item_5:
-            name: 'Hi!'
-        - item_6:
-            name: 'Net TV'
-        - item_7:
-            name: 'TVRI'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'Net TV'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-        - item_56:
-            name: 'TV 5 Monde Asia'
-        - item_57:
-            name: 'NHK World'
-        - item_58:
-            name: 'Star World'
-        - item_59:
-            name: 'AXN'
-        - item_60:
-            name: 'Universal'
-        - item_61:
-            name: 'Nat Geographic Channel'
-        - item_62:
-            name: 'Outdoor Channel'
-        - item_63:
-            name: 'History'
-        - item_64:
-            name: 'ASN'
-        - item_65:
-            name: 'CineMAX'
-        - item_66:
-            name: 'Hi!'
-        - item_67:
-            name: 'Reformed 21'
-        - item_68:
-            name: 'Berita Satu News HD'
-        - item_69:
-            name: 'Berita Satu World'
-        - item_70:
-            name: 'Jakarta Globe TV'
-        - item_71:
-            name: 'TV Parliament'
-        - item_72:
-            name: 'Big Show'
-        - item_73:
-            name: 'Big Info'
-        - item_74:
-            name: 'Big Channel list'
-        - item_75:
-            name: 'Star World HD'
-        - item_76:
-            name: 'Fox HD'
-        - item_77:
-            name: 'AXN HD'
-        - item_78:
-            name: 'History'
-        - item_79:
-            name: 'NGC Wild HD'
-        - item_80:
-            name: 'ASN HD'
   - membership_23:
-        name:         'Lifestyle'
+        name:         '4 DEKODER'
         description:  ''
         published:    true
         featured:     true
-        category:     'Ez'
-        position: 0
+        category:     'other'
+        position: 24
         prices:
           - price_0:
-              price:    34999
+              price:    50000
               total:    1
               periode:  'month'
         items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'TVRI'
-        - item_3:
-            name: 'TV One'
-        - item_4:
-            name: 'Trans 7'
-        - item_5:
-            name: 'Hi!'
-        - item_6:
-            name: 'Net TV'
-        - item_7:
-            name: 'TVRI'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'Net TV'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-        - item_56:
-            name: 'TV 5 Monde Asia'
-        - item_57:
-            name: 'NHK World'
-        - item_58:
-            name: 'Star World'
-        - item_59:
-            name: 'AXN'
-        - item_60:
-            name: 'Fox'
-        - item_61:
-            name: 'Universal'
-        - item_62:
-            name: 'TLC'
-        - item_63:
-            name: 'Li TV'
-        - item_64:
-            name: 'E! Entertainment'
-        - item_65:
-            name: 'Nat Geographic Channel'
-        - item_66:
-            name: 'Lifetime'
-        - item_67:
-            name: 'ASN'
-  - membership_24:
-        name:         'Movies'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Ez'
-        position: 0
-        prices:
-          - price_0:
-              price:    34999
-              total:    1
-              periode:  'month'
-        items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'TVRI'
-        - item_3:
-            name: 'TV One'
-        - item_4:
-            name: 'Trans 7'
-        - item_5:
-            name: 'Hi!'
-        - item_6:
-            name: 'Net TV'
-        - item_7:
-            name: 'TVRI'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'Net TV'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-        - item_56:
-            name: 'TV 5 Monde Asia'
-        - item_57:
-            name: 'NHK World'
-        - item_58:
-            name: 'Diva'
-        - item_59:
-            name: 'ASN'
-        - item_60:
-            name: 'MGM'
-        - item_61:
-            name: 'Fox Family Movies'
-  - membership_25:
-        name:         'Sporties'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Ez'
-        position: 0
-        prices:
-          - price_0:
-              price:    29999
-              total:    1
-              periode:  'month'
-        items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'TVRI'
-        - item_3:
-            name: 'TV One'
-        - item_4:
-            name: 'Trans 7'
-        - item_5:
-            name: 'TV 5 Monde Asia'
-        - item_6:
-            name: 'NHK World'
-        - item_7:
-            name: 'beIn Sports 1'
-        - item_8:
-            name: 'beIn Sports 2'
-        - item_9:
-            name: 'ASN'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'Star Sports'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-  - membership_26:
-        name:         'Sporties'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Ez'
-        position: 0
-        prices:
-          - price_0:
-              price:    29999
-              total:    1
-              periode:  'month'
-        items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'TVRI'
-        - item_3:
-            name: 'TV One'
-        - item_4:
-            name: 'Trans 7'
-        - item_5:
-            name: 'ASN'
-        - item_6:
-            name: 'Star Sports'
-        - item_7:
-            name: 'TVRI'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'Net TV'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-        - item_56:
-            name: 'TV 5 Monde Asia'
-        - item_57:
-            name: 'NHK World'
-        - item_58:
-            name: 'beIn Sports 1'
-        - item_59:
-            name: 'beIn Sports 2'
-  - membership_27:
-        name:         'Entertainment'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Ez'
-        position: 0
-        prices:
-          - price_0:
-              price:    19999
-              total:    1
-              periode:  'month'
-        items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'        
-        - item_2:
-            name: 'TV 5 Monde Asia'
-        - item_3:
-            name: 'NHK World'
-        - item_4:
-            name: 'Li TV'
-        - item_5:
-            name: 'Discovery Channel'
-        - item_6:
-            name: 'Animal Planet'
-        - item_7:
-            name: 'TVRI'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'ASN'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'
-        - item_54:
-            name: 'Australian Network'
-        - item_55:
-            name: 'DW-TV Asia+'
-  - membership_28:
-        name:         'Kids'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Ez'
-        position: 0
-        prices:
-          - price_0:
-              price:    19999
-              total:    1
-              periode:  'month'
-        items: 
-        - item_0:
-            name: 'Hi!'
-        - item_1:
-            name: 'Net TV'
-        - item_2:
-            name: 'Australian Network'
-        - item_3:
-            name: 'DW-TV Asia+'
-        - item_4:
-            name: 'TV 5 Monde Asia'
-        - item_5:
-            name: 'NHK World'
-        - item_6:
-            name: 'Cartoon Network'
-        - item_7:
-            name: 'Jim Jam'
-        - item_8:
-            name: 'TV One'
-        - item_9:
-            name: 'Trans 7'
-        - item_10:
-            name: 'Indosiar'
-        - item_11:
-            name: 'ANTV'
-        - item_12:
-            name: 'Metro TV'
-        - item_13:
-            name: 'B Channel'
-        - item_14:
-            name: 'Jak TV'
-        - item_15:
-            name: 'Kompas TV'
-        - item_16:
-            name: 'ASN'
-        - item_17:
-            name: 'SCTV'
-        - item_18:
-            name: 'Bloomberg Indonesia'
-        - item_19:
-            name: 'DAAI TV'
-        - item_20:
-            name: 'O Channel'
-        - item_21:
-            name: 'JTV'
-        - item_22:
-            name: 'Bali TV'
-        - item_23:
-            name: 'Antara TV'
-        - item_24:
-            name: 'TimorLeste TV'
-        - item_25:
-            name: 'TV Edukasi Siswa'
-        - item_26:
-            name: 'TV Edukasi 2 Guru'
-        - item_27:
-            name: 'TVRI Edukasi'
-        - item_28:
-            name: 'Top TV Papua'
-        - item_29:
-            name: 'Papua TV'
-        - item_30:
-            name: 'TVRI Kalbar'
-        - item_31:
-            name: 'TVRI Kalteng'
-        - item_32:
-            name: 'TVRI Papua'
-        - item_33:
-            name: 'U Channel'
-        - item_34:
-            name: 'CCTV France'
-        - item_35:
-            name: 'CCTV Espanol'
-        - item_36:
-            name: 'CCTV Arabic'
-        - item_37:
-            name: 'CCTV Russian'
-        - item_38:
-            name: 'Star Chinese Channel'
-        - item_39:
-            name: 'Channel V'
-        - item_40:
-            name: 'Baby First'
-        - item_41:
-            name: 'Channel News Asia'
-        - item_42:
-            name: 'Rai Italia'
-        - item_43:
-            name: 'CNC'
-        - item_44:
-            name: 'Russia Today'
-        - item_45:
-            name: 'France 24 English'
-        - item_46:
-            name: 'CCTV 4'
-        - item_47:
-            name: 'CCTV 9'
-        - item_48:
-            name: 'CCTV NEWS'
-        - item_49:
-            name: 'Aljazeerah English'
-        - item_50:
-            name: 'Bloomberg'
-        - item_51:
-            name: 'Euro News'
-        - item_52:
-            name: 'KBS World'
-        - item_53:
-            name: 'Arirang'        
-        - item_54:
-            name: 'Discovery Kids'
-  - membership_29:
-        name:         'BPL Bola'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'Extra'
-        position: 1
-        prices:
-          - price_0:
-              price:    10000
-              total:    1
-              periode:  'month'
-        items:
-        - item_0:
-            name: 'beIn Sports 1'
-        - item_1:
-            name: 'beIn Sports 2'
+
+

@@ -21,6 +21,9 @@ a{
 p{
   margin-bottom: 10px;
 }
+.img_langganan {
+  margin-right: 150px!important;
+}
 .package-channel-table tr td img{
   position: absolute;
   margin: auto;
@@ -3242,6 +3245,7 @@ div.grid_packages_decode2{
 .panel-default > .panel-heading {
   background: #ed2024;
   color: #fff;
+  position: relative;
 }
 .panel-default > .panel-heading a{
   text-decoration: none!important;

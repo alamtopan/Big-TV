@@ -508,3 +508,43 @@ items:
       name: 'Net TV'
       hd:   false
       logo: 'NET_TV.png'
+
+  - item_102:
+      name: 'Cartoon Network HD'
+      hd:   true
+      logo: 'Cartoon_Network_HD.png'
+  - item_103:
+      name: 'Jim Jam'
+      hd:   false
+      logo: 'Jim_Jam.png'
+  - item_104:
+      name: 'Discovery Kids'
+      hd:   false
+      logo: 'Discovery_Kids.png'
+  - item_105:
+      name: 'Cartoonito'
+      hd:   false
+      logo: 'Cartoonito.png'
+  - item_106:
+      name: 'Nickelodeon'
+      hd:   false
+      logo: 'Nickelodeon.png'
+  - item_107:
+      name: 'Toonami'
+      hd:   false
+      logo: 'Toonami.png'
+
+  - item_108:
+      name: 'FOX Movies Premium HD'
+      hd:   true
+      logo: 'Fox_Movies_Premium__HD.png'
+  - item_109:
+      name: 'FOX Family Movies'
+      hd:   false
+      logo: 'Fox_Family_Movies.png'
+  - item_110:
+      name: 'MGM'
+      hd:   false
+      logo: 'MGM.png'
+
+

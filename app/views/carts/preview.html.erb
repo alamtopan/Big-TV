@@ -38,13 +38,13 @@
 									<label class="control-label">
 										* Jenis Kelamin
 									</label>
-									<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true} %>
+									<%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Pilih Jenis Kelamin-"}, {class: 'form-control', required: true} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
 										* Tanggal Lahir
 									</label>
-									<%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true} %>
+									<%= profile.text_field :tanggal_lahir, {class: 'form-control', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal/Bulan/Tahun', required: true} %>
 								</div>
 								<div class="form-group">
 									<label class="control-label">
@@ -134,9 +134,9 @@
 										* Tagihan
 									</label>
 									<br/>
-									<%= radio_button_tag :billing, 'email', true %> <label for="billing_email">Kirim Lewat Email</label>
+									<%= profile.radio_button :billing_method, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
 									<br/>
-									<%= radio_button_tag :billing, 'post' %> <label for="billing_post">Kirim Lewat Pos</label>
+									<%= profile.radio_button :billing_method, 'post' %> <label for="billing_post">Kirim Lewat Pos</label>
 								</div>
 							</div>
 						</div>

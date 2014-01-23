@@ -42,6 +42,7 @@ class CustomersController < ApplicationController
                 ['Dealer', 'Dealer'], 
                 ['Koran/Billboard', 'Koran/Billboard'],
                 ['Pelanggan BigTV','Pelanggan BigTV'],
+                ['SPG','SPG'],
                 ['Others', 'Others']];
     end
 

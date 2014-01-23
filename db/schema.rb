@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140117213314) do
+ActiveRecord::Schema.define(:version => 20140123150957) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -182,6 +182,7 @@ ActiveRecord::Schema.define(:version => 20140117213314) do
     t.string   "file_ktp_content_type"
     t.integer  "file_ktp_file_size"
     t.datetime "file_ktp_updated_at"
+    t.string   "billing_method"
   end
 
   create_table "regionals", :force => true do |t|
