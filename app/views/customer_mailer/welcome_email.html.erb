@@ -89,10 +89,10 @@
                             <tbody>
                               <tr style="border-collapse:collapse">
                                 <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse" width="580">
-                                  <p style="color: #ee3a37; font-family: Helvetica Neue,Arial,Helvetica,Geneva,sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; margin-bottom: 18px; margin-top: 0px; text-align: left">Terimakasih telah membayar BigTV!</p>
+                                  <p style="color: #ee3a37; font-family: Helvetica Neue,Arial,Helvetica,Geneva,sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; margin-bottom: 18px; margin-top: 0px; text-align: left">Selamat datang di BigTV!</p>
 
                                   <div style="color: #444444; font-family: Helvetica Neue,Arial,Helvetica,Geneva,sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 18px; margin-top: 0px; text-align: left">
-                                    <p style="margin-bottom:15px">Terima kasih atas kepercayaan Anda untuk berlangganan dengan kami.</p>
+                                    <p style="margin-bottom:15px">Terima kasih atas kepercayaan Anda untuk menjadi anggota BiGTV.</p>
 
                                     <p><b>INFO PELANGGAN</b></p>
 
@@ -130,82 +130,13 @@
                                             <%= [@user.profile.no_phone, @user.profile.no_hp].join(' / ') %>
                                           </td>
                                         </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Alamat Pemasangan:
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <% if @user.profile.address_shipping.blank? %>
-                                              <%= @user.profile.address_shipping %>
-                                            <% else %>
-                                              <%= @user.profile.address %>
-                                            <% end %>
-                                            <br/><%= @user.profile.regional %>
-                                          </td>
-                                        </tr>
                                       </tbody>
                                     </table>
 
-                                    <p><b>INFO PEMBAYARAN</b></p>
-
-                                    <table border="0" cellpadding="0" cellspacing="0" width="580">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Kode Invoice
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @order.code %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Kode Pembayaran
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @payment.transaction_no %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Cara Pembayaran
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @payment.transaction_no %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Status:
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @order.status.blank? ? 'Pending' : @order.status.titleize %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Tanggal Bayar:
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @payment.created_at.strftime('%d %b %Y') %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Total Bayar:
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            Rp. <%= number_to_currency(@payment.total,{precision: 0, unit: ''}) %>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-
-                                    <p style="margin-bottom:15px">Customer service kami akan menghubungi anda untuk konfirmasi pembayaran. Jika pembayaran telah diverifikasi, team instalasi akan melakukan pemasangan secepatnya.</p>
+                                    <p style="margin-bottom:15px">Silahkan pilih paket yang anda inginkan atau hubungi customer service kami di (021) 500-244 atau email ke customer.service@bigtv.co.id</p>
                                     <p style="margin-bottom:15px">Selamat menikmati tayangan-tayangan menarik channel lokal maupun mancanegara hanya di Big TV!<br style="line-height:100%">
 
                                     <p><a href="http://big-tv.com" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">BIG CUSTOMER SERVICE</a>
-                                      <br/>customer.service@bigtv.co.id
                                     </p>
 
                                     <p style="margin-bottom:15px">&nbsp;</p>

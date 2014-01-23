@@ -18,9 +18,6 @@ class CartsController < ApplicationController
       item = Membership.find_by_id(current_premium_id)
       order.add_item(item, session_cart)
       display_extra_data = true
-      if request.referer.to_s =~ /rental/i
-        redirect_to rental_path
-      end
     elsif order.items.select{|i| i.premium? }.present?
       display_extra_data = true
     else
@@ -29,10 +26,18 @@ class CartsController < ApplicationController
     end
     
     if display_extra_data
-      membership = Membership.packages_by_category('extra').by_position
-      @memberships = regenerate_package(order,membership)
-      redirect_to rental_path if @memberships.blank?
+      premium_item = order.items.premium
+      if premium_item && premium_item.title !~ /universe/i
+        @memberships = Membership.includes(:unit_items,:category).
+                        where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
+                        by_position
+      end
+
+      unless @memberships
+        redirect_to rental_path
+      end
     end
+      
   end
 
   def premium
@@ -52,9 +57,8 @@ class CartsController < ApplicationController
     elsif order.total.to_i < 1
       redirect_to root_path
     end
-    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], ['MTA', 'MTA'],
-                ['Dealer', 'Dealer'], ['Distributor', 'Distributor'],
-                ['Books and Beyond', 'Books and Beyond'],['Siloam', 'Siloam'],
+    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'],
+                ['Dealer', 'Dealer'],
                 ['Koran/Billboard', 'Koran/Billboard'],
                 ['Pelanggan BigTV','Pelanggan BigTV'],
                 ['Others', 'Others']];
@@ -73,7 +77,8 @@ class CartsController < ApplicationController
   end
 
   def subcribe
-    if params[:user].blank?
+    customer_info = params[:user] || params[:customer]
+    if customer_info.blank?
       flash[:errors] = "Please Fill The Form"
       if request.xhr?
         render json: {error: 'Invalid Parameters', redirect_url: preview_path}, status: :unprocessable_entity
@@ -82,11 +87,11 @@ class CartsController < ApplicationController
       end
     else
       #user = Customer.find_or_initialize_by_email(params[:user][:email])
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-      params[:user].delete(:username)
+      customer_info.delete(:password)
+      customer_info.delete(:password_confirmation)
+      customer_info.delete(:username)
       @customer = @order.orderable
-      if @customer.update_attributes(params[:user]) && save_order
+      if @customer.update_attributes(customer_info) && save_order
         flash[:success] = 'success'
         CustomerMailer.thanks_email(order).deliver
         
@@ -156,28 +161,6 @@ class CartsController < ApplicationController
   private
     def product
       @product ||= Membership.find(params[:id])
-    end
-
-    def regenerate_package(order,membership)
-      premium_items = get_premium_package(order)
-      new_package = []
-      same_item = []
-      membership.each do |member|
-        member.unit_items.each do |item|
-          unless premium_items.map(&:id).include?(item.id)
-            same_item.push(false) 
-          else
-            same_item.push(true)
-          end
-        end
-        new_package.push(member) if same_item.include?(false)
-        same_item.clear
-      end
-      new_package
-    end
-
-    def get_premium_package(order)
-      order.items.map{|a| a if a.membership_category == 'premium'}.compact.first.membership.unit_items
     end
 
     def delete_session

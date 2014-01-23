@@ -16,7 +16,7 @@ class Payment < ActiveRecord::Base
     if payment.save && order.send("#{payment_status}!")
       if order.success?
         CustomerMailer.delay.payment_email(order, payment)
-        CustomerMailer.delay.email_order_to_admin(order)
+        CustomerMailer.delay.payment_email_admin(order, payment)
       end
 
       return true

@@ -40,6 +40,9 @@
                             <span class="title_ord"><%= membership.name %></span>
                             <span class="left-mrg">Rp.</span>
                             <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
+                            <% if membership.name =~ /BPL Bola/i  %>
+                              (PALING LARIS)
+                            <% end %>
                             <div class="tb"></div>
                           </a>
                       </h4>

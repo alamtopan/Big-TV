@@ -9,6 +9,7 @@ class Membership < ActiveRecord::Base
   belongs_to  :category
 
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
+
   scope :by_position, order("position ASC")
 
   acts_as_list
@@ -17,6 +18,12 @@ class Membership < ActiveRecord::Base
     define_method("#{ val.downcase }?") do
       category.name =~ /#{val}/i
     end
+  end
+
+  def self.extra_by_order(order)
+    includes(:unit_items, :category).
+      where('categories.name = ?', 'extra').
+      where('unit_items.id NOT IN (?)', order.premium_unit_items.map(&:id))
   end
 
   def category_name
@@ -35,7 +42,7 @@ class Membership < ActiveRecord::Base
 
   class << self
     def packages_by_category(_package)
-      includes(:category, :prices, :unit_items).where(['categories.name = ?', _package])
+      includes(:category, :prices, :unit_items).where(['categories.name = ?', _package]).by_position
     end
 
     def other_packages
