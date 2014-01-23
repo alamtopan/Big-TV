@@ -1,0 +1,34 @@
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Referrals', 
+                     button_name: 'Referral'
+                   } do %>
+  <table class="table table-hover" id="sample-table-1">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @referrals.each_with_index do |referral,index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= referral.full_name %></td>
+          <td><%= referral.email %></td>
+          <td><%= referral.profile.no_hp %></td>
+          <td>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: referral, confirmation: "#{referral.full_name} will be deleted, are you sure ?"} %>
+            </div>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @referrals %>
+  </div>
+<% end %>

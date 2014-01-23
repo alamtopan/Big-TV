@@ -1,0 +1,122 @@
+<%= f.fields_for(:profile) do |profile| %>
+  <% if @referral.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-block alert-danger fade in ">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Warning!</strong> <%= pluralize(@referral.errors.count, "error") %>
+        <% @referral.errors.full_messages.each do |msg| %>
+        <diV>
+          <%= msg %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+   <% end %>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-8">
+      * Username
+    </label>
+    <div class="col-sm-4">
+      <%= f.text_field :username, class: 'form-control',placeholder:'Username', required: true %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-8">
+      * Email
+    </label>
+    <div class="col-sm-4">
+      <%= f.text_field :email, class: 'form-control',placeholder:'Email', required: true %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-8">
+      * Password
+    </label>
+    <div class="col-sm-4">
+      <%= f.password_field :password, class: 'form-control',placeholder:'Password' %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-8">
+      * Password Confirmation
+    </label>
+    <div class="col-sm-4">
+      <%= f.password_field :password_confirmation, class: 'form-control',placeholder:'Password Confirmation' %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      * Full Name
+    </label>
+    <div class="col-sm-3">
+      <%= profile.text_field :first_name, class: 'form-control',placeholder:'First Name', required: true %>
+    </div>
+    <div class="col-sm-4">
+      <%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name', required: true %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      * Sex
+    </label>
+    <div class="col-sm-3">
+      <%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true} %>
+    </div>
+    <div class="col-sm-4">
+      <%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true} %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-12">
+      * Address
+    </label>
+    <div class="col-sm-9">
+      <%= profile.text_field :address, class: 'form-control input-lg',placeholder:'Address', required: true %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label" for="form-field-13">
+    </label>
+    <div class="col-sm-3">
+      <%= profile.text_field :city, class: 'form-control',placeholder:'City', required: true %>
+    </div>
+    <div class="col-sm-3">
+      <%= profile.text_field :province, class: 'form-control',placeholder:'Province', required: true %>
+    </div>
+    <div class="col-sm-3">
+      <%= profile.text_field :codepos, class: 'form-control',placeholder:'Poscode' %>
+    </div>
+  </div>
+  <div class="br"></div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      * Contact
+    </label>
+    <div class="col-sm-3">
+      <%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone', required: true %>
+    </div>
+    <div class="col-sm-3">
+      <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone', required: true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      * Code
+    </label>
+    <div class="col-sm-3">
+      <%= profile.text_field :referal_id, class: 'form-control', placeholder: 'Code', required: true %>
+    </div>
+  </div>
+
+  <div class="pull-right">
+    <%= f.submit 'Save', class: "btn btn-bricky" %>
+    <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_referrals_path, class: "btn btn-dark-grey" %>
+  </div>
+<% end %>
