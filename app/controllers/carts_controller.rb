@@ -101,22 +101,21 @@ class CartsController < ApplicationController
         order.items.where('membership_id IS NULL').destroy_all
 
         if customer_info[:profile_attributes][:billing_method].to_s =~ /post/i
-          item = order.items.new
+          item = order.items.find_or_initialize_by_membership_id(nil)
           item.title = 'Pengiriman Pos'
           item.price = 7500
           item.quantity = 1
           item.save
-          order.reload
+          order.calculate_total(:conditional)
         end
 
         flash[:success] = 'success'
         # CustomerMailer.delay.thanks_email(order)
         # CustomerMailer.delay.email_order_to_admin(order)
         
-        delete_session
-        @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
-
+        @words = Digest::SHA1.hexdigest("#{"%.2f" % order.grand_total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{order.code}")
         @payment_method = params[:payment_method]
+        delete_session
         unless request.xhr?
           redirect_to thanks_path(token: order.token)
         end

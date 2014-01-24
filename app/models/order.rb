@@ -140,7 +140,7 @@ class Order < ActiveRecord::Base
     }.join(';')
     return basket_str unless self.charge_fee.to_f > 0
     charge_fee_str = "%.2f" % self.charge_fee
-    "#{basket_str};Biaya Transaksi, #{charge_fee_str}, 1, #{charge_fee_str}"
+    "#{basket_str};Biaya Transaksi,#{charge_fee_str},1,#{charge_fee_str}"
   end
 
   private
