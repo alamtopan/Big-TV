@@ -100,14 +100,6 @@
                                       <tbody>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            ID Pelanggan:
-                                          </td>
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @user.code %>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
                                             Nama Pelanggan:
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
@@ -160,7 +152,7 @@
                                         </tr>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Kode Pembayaran
+                                            Kode Transaksi
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <%= @payment.transaction_no %>
@@ -168,10 +160,10 @@
                                         </tr>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            Cara Pembayaran
+                                            Nama Bank
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @payment.transaction_no %>
+                                            <%= @payment.bank_issuer %>
                                           </td>
                                         </tr>
                                         <tr style="border-collapse:collapse">
@@ -179,7 +171,7 @@
                                             Status:
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
-                                            <%= @order.status.blank? ? 'Pending' : @order.status.titleize %>
+                                            <%= (@order.status.blank? ? 'Pending' : @order.status.titleize).gsub(/Pending/i, 'In Progress') %>
                                           </td>
                                         </tr>
                                         <tr style="border-collapse:collapse">

@@ -1,8 +1,8 @@
 <%= form_tag ENV['API_URL'], id: 'paymentForm', method: 'POST' do %>
   <%= hidden_field_tag 'MALLID', ENV['MALL_ID'] %>
   <%= hidden_field_tag 'CHAINMERCHANT', 'NA' %>
-  <%= hidden_field_tag 'AMOUNT', "%.2f" % @order.total %>
-  <%= hidden_field_tag 'PURCHASEAMOUNT', "%.2f" % @order.total %>
+  <%= hidden_field_tag 'AMOUNT', "%.2f" % @order.grand_total %>
+  <%= hidden_field_tag 'PURCHASEAMOUNT', "%.2f" % @order.grand_total %>
   <%= hidden_field_tag 'TRANSIDMERCHANT', @order.code %>
   <%= hidden_field_tag 'WORDS', @words %>
   <%= hidden_field_tag 'REQUESTDATETIME', "#{Time.now.strftime("%Y%M%d%H%M%S")}" %>

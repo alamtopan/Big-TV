@@ -11,7 +11,7 @@
 
       <ul class="payment-code-info">
         <li>Payment Code: <strong><%= params[:code] %></strong></li>
-        <li>Amount: <strong><%= number_to_currency @order.total, precision: 0, unit: '' %></strong></li>
+        <li>Amount: <strong><%= number_to_currency @order.grand_total, precision: 0, unit: '' %></strong></li>
       </ul>
 
       <p>

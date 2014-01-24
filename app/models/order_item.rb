@@ -32,6 +32,7 @@ class OrderItem < ActiveRecord::Base
 
   Category::Config::NAMES.each do |val|
     define_method("#{ val.downcase }?") do
+      return false unless self.membership
       membership_category =~ /#{val}/i
     end
   end
@@ -55,7 +56,7 @@ class OrderItem < ActiveRecord::Base
       else
         self.subtotal = self.price.to_i * self.quantity.to_i
       end
-      self.title = self.membership.name
+      self.title = self.membership.name if self.membership.present?
     end
 
     def after_destroy

@@ -20,6 +20,8 @@ class Order < ActiveRecord::Base
     PENDING = 'pending'
   end
 
+  CHARGE_FEE = {'01' => 0.035, '04' => 0.02}
+
  Status.constants.each do |constant|
     value = Status.const_get(constant)
     define_method("#{ value }?") do
@@ -41,15 +43,24 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def success_payments
+    payments.where(status: Order::Status::SUCCESS)
+  end
+
   def premium_unit_items
     premium_item = items.premium
     return [] unless premium_item
     premium_item.membership.unit_items
   end
 
+  def grand_total
+    self.total.to_i + self.charge_fee.to_i
+  end
+
   def calculate_total(autosave=:false)
     total_amount = items.sum(:subtotal) * (self.period||1)
-
+    self.charge_fee = (CHARGE_FEE[self.payment_method.to_s].to_f * total_amount).ceil
+    
     if [:conditional, :true].include?(autosave)
       if total_amount.to_i != total || autosave == :true
         unless self.total.to_f == total_amount.to_f
@@ -63,18 +74,24 @@ class Order < ActiveRecord::Base
   end
 
   def remove_junk
-    begin
-      if Time.now > updated_at.since(2.hours)
-        destroy if items.blank?
-      else
-        delay(run_at: 30.minutes.from_now).remove_junk 
-      end if session_id.present?
-    rescue
+    if Time.now.utc > updated_at.since(15.minutes).utc
+      if items.blank? && session_id.present?
+        CustomerMailer.welcome_email_admin(orderable) if orderable.present?
+        destroy
+      elsif success_payments.blank?
+        CustomerMailer.thanks_email(order).deliver
+        CustomerMailer.email_order_to_admin(order).deliver
+      end
+    else
+      delay(run_at: 10.minutes.from_now).remove_junk 
     end
   end
 
   def check_activity
-    delay(run_at: 1.hours.from_now).remove_junk if session_id.present?
+    if session_id.present? && !is_queue
+      update_column(:is_queue, true)
+      delay(run_at: 15.minutes.from_now).remove_junk 
+    end
   end
 
   def is_order?
@@ -114,13 +131,16 @@ class Order < ActiveRecord::Base
   end
 
   def basket
-    items.map{|item|
+    basket_str = items.map{|item|
       [item.title,
        "%.2f" % item.price,
        period*item.quantity,
        "%.2f" % (period*item.quantity*item.price)
       ].join(',')
     }.join(';')
+    return basket_str unless self.charge_fee.to_f > 0
+    charge_fee_str = "%.2f" % self.charge_fee
+    "#{basket_str};Biaya Transaksi, #{charge_fee_str}, 1, #{charge_fee_str}"
   end
 
   private

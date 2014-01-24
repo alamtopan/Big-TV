@@ -1,12 +1,42 @@
-$(document).ready(function(){
-  $('#mm').on('change', function(){
-    var total = $('#total-nominal').data('value');
-    var new_total = $(this).val() * total;
-    var new_total_str = new_total.formatMoney(0,'.',',');
-    $('#total-nominal').html(new_total_str);
-    $('#hidden_total').val(new_total);
-  });
+window.provinces = [
+  
+  "Bali",
+  "Bangka Belitung",
+  "Banten",
+  "Bengkulu",
+  "D.K.I. Jakarta",
+  "D.I. Yogyakarta",
+  "D.I. Aceh",
+  "Gorontalo",
+  "Jambi",
+  "Jawa Barat",
+  "Jawa Tengah",
+  "Jawa Timur",
+  "Kalimantan Barat",
+  "Kalimantan Selatan",
+  "Kalimantan Tengah",
+  "Kalimantan Timur",
+  "Kepulauan Riau",
+  "Lampung",
+  "Maluku",
+  "Maluku Utara",
+  "Nusa Tenggara Barat",
+  "Nusa Tenggara Timur",
+  "Papua",
+  "Papua Barat",
+  "Riau",
+  "Sulawesi Barat",
+  "Sulawesi Selatan",
+  "Sulawesi Tengah",
+  "Sulawesi Tenggara",
+  "Sulawesi Utara",
+  "Sumatra Barat",
+  "Sumatra Selatan",
+  "Sumatra Utara",
+]
 
+$(document).ready(function(){
+  
   Number.prototype.formatMoney = function(c, d, t){
     var n = this, 
     c = isNaN(c = Math.abs(c)) ? 2 : c, 

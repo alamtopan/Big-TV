@@ -21,8 +21,8 @@ class CustomersController < ApplicationController
 
     if verify_recaptcha(model: @customer, message: "Verification code is invalid") && @customer.update_attributes(input_param)
       order.orderable = @customer
-      CustomerMailer.delay.welcome_email(@customer)
-      CustomerMailer.delay.welcome_email_admin(@customer)
+      # CustomerMailer.delay.welcome_email(@customer)
+      # CustomerMailer.delay.welcome_email_admin(@customer)
       
       if order.save && session[:current_premium_id].present?
         redirect_to extra_path

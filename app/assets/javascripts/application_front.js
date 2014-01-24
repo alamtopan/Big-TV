@@ -14,6 +14,7 @@
 //= require front/js/init
 //= require plugins/bootstrap/js/bootstrap.min
 //= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
+//= require plugins/jquery.autocomplete.min
 //= require js/imagesloaded
 //= require customize_front
 //= require scrolltofixed-min
@@ -166,15 +167,58 @@ $(document).ready(function(){
      }                   
   });
 
+  function calculateTotalSubscription(){
+    var total = Number($('#total-nominal').data('value'));
+    var fee = 0;
+    
+    if(String($('input[name="customer[profile_attributes][billing_method]"]:checked').val()) == 'post'){
+      total = total + 7500;
+      $('.post_fee').removeClass('hide')
+    }else{
+      $('.post_fee').addClass('hide')
+    }
+
+    var new_total = Number($('#mm').val()) * total;
+
+    if(String($('input[name="payment_method"]:checked').val()) == '01'){
+      fee = new_total*(3.5/100);
+      $('.install_fee').removeClass('hide');
+    }else if(String($('input[name="payment_method"]:checked').val()) == '04'){
+      fee = new_total*(2.0/100);
+      $('.install_fee').removeClass('hide');
+    }else{
+      $('.install_fee').addClass('hide');
+    }
+
+    new_total = new_total + fee; 
+    $('.install_fee_nominal').html(fee.formatMoney(0,'.',','))
+    var new_total_str = new_total.formatMoney(0,'.',',');
+    $('#total-nominal').html(new_total_str);
+    $('#hidden_total').val(new_total);
+  }
+
+  $('#mm').on('change', function(){
+    calculateTotalSubscription();
+  });
+
   $('input[name="payment_method"]').on('change',function(){
     if($(this).val() == 'lokasi'){
-      $('.file-faktur-container').removeClass('hide')
+      $('.file-faktur-container').removeClass('hide');
       $('#file_faktur').attr('required','required');
     }else{
       $('.file-faktur-container').addClass('hide');
       $('#file_faktur').removeAttr('required');
     }
+    calculateTotalSubscription();
+  });
+
+  $('input[name="customer[profile_attributes][billing_method]"]').on('change', function(){
+    calculateTotalSubscription();
   })
+
+  $('#customer_profile_attributes_province').autocomplete({
+      data: window.provinces
+  });
 
 
   $('.twitter-widget-box').find('iframe').attr('src','http://twitterforweb.com/iframe/twitterbox/BiGTiVi.html?s=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699');

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140124034921) do
+ActiveRecord::Schema.define(:version => 20140124134509) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -136,13 +136,16 @@ ActiveRecord::Schema.define(:version => 20140124034921) do
     t.string   "status"
     t.integer  "period"
     t.string   "period_name"
-    t.datetime "created_at",                                              :null => false
-    t.datetime "updated_at",                                              :null => false
+    t.datetime "created_at",                                                                 :null => false
+    t.datetime "updated_at",                                                                 :null => false
     t.string   "file_faktur_file_name"
     t.string   "file_faktur_content_type"
     t.integer  "file_faktur_file_size"
     t.datetime "file_faktur_updated_at"
     t.string   "token"
+    t.boolean  "is_queue",                                                :default => false
+    t.string   "payment_method"
+    t.decimal  "charge_fee",               :precision => 10, :scale => 0, :default => 0
   end
 
   create_table "payments", :force => true do |t|

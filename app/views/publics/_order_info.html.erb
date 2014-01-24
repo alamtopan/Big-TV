@@ -48,7 +48,7 @@
             <b>Status:</b>
           </div>
           <div class="span-9 last t-right" style="text-align:right;">
-            <%= @order.status.blank? ? 'PENDING' : @order.status.to_s.upcase %>
+            <%= (@order.status.blank? ? 'Pending' : @order.status).gsub(/Pending/i, 'In Progress').upcase %>
           </div>
           <div class="span-15" style="text-align:right;">
             <b>Dipesan Tanggal:</b>

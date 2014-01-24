@@ -21,7 +21,7 @@ class CartsController < ApplicationController
     elsif order.items.premium.present?
       display_extra_data = true
     else
-      flash[:alert] = 'Please subscribe any premium package!'
+      flash[:alert] = 'Mohon pilih salah satu paket premium!'
       redirect_to premium_path
     end
     
@@ -84,7 +84,7 @@ class CartsController < ApplicationController
   def subcribe
     customer_info = params[:user] || params[:customer]
     if customer_info.blank?
-      flash[:errors] = "Please Fill The Form"
+      flash[:errors] = "Silahkan isi aplikasi pendaftaran dengan benar"
       if request.xhr?
         render json: {error: 'Invalid Parameters', redirect_url: preview_path}, status: :unprocessable_entity
       else
@@ -96,10 +96,22 @@ class CartsController < ApplicationController
       customer_info.delete(:password_confirmation)
       customer_info.delete(:username)
       @customer = @order.orderable
+      
       if @customer.update_attributes(customer_info) && save_order
+        order.items.where('membership_id IS NULL').destroy_all
+
+        if customer_info[:profile_attributes][:billing_method].to_s =~ /post/i
+          item = order.items.new
+          item.title = 'Pengiriman Pos'
+          item.price = 7500
+          item.quantity = 1
+          item.save
+          order.reload
+        end
+
         flash[:success] = 'success'
-        CustomerMailer.delay.thanks_email(order)
-        CustomerMailer.delay.email_order_to_admin(order)
+        # CustomerMailer.delay.thanks_email(order)
+        # CustomerMailer.delay.email_order_to_admin(order)
         
         delete_session
         @words = Digest::SHA1.hexdigest("#{"%.2f" % @order.total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{@order.code}")
@@ -182,6 +194,7 @@ class CartsController < ApplicationController
       order.session_id = nil
       order.period = period
       order.period_name = 'month'
+      order.payment_method = params[:payment_method]
       order.file_faktur = params[:file_faktur] if params[:file_faktur].present?
       order.save
     end
