@@ -3405,3 +3405,20 @@ a .tb{
 .red_font{
   color: #fe0000;
 }
+
+footer.wraper{
+  background-color: #ed2024;
+  color: #fff;
+}
+
+footer .post{
+  color: #fff;
+}
+
+footer h3 span{
+  color: #fff;
+}
+
+.copyright{
+  color: #fff200;
+}

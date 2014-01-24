@@ -246,4 +246,25 @@ if($("#search_location").length){
 
   })
 
+  $('.block-twitter-block .content').bind('DOMSubtreeModified',function(){
+    var selectors = '.thm-dark, .thm-dark .p-author .profile .p-name,' + 
+                    '.thm-dark .cards-base p, .thm-dark .cards-base p a,' + 
+                    '.thm-dark .timeline-header .summary,' + 
+                    '.thm-dark .byline, .thm-dark .custom-timeline-owner-profile .p-name:focus, ' +
+                    '.p-name, .thm-dark .p-author a.profile:focus .p-name, ' +
+                    '.customisable-highlight, .p-nickname, .expand, .reply-action, .dt-updated'
+                    
+
+    var twitter_iframe = $('.block-twitter-block .content').find('iframe').first().contents();
+    twitter_iframe.find(selectors).css('color','#fff');
+    twitter_iframe.find('.thm-dark .tweet-box-button').
+      css('color', '#000').
+      css('background', '#fff');
+  });
+   
+  // $('.fb_widget_block').bind('DOMSubtreeModified',function(){
+  //   var fb_iframe = $('.fb_widget_block').find('iframe').first().contents();
+  //   fb_iframe.find('.pluginConnectTextDark').css('color','#fff');
+  // }); 
+
 })

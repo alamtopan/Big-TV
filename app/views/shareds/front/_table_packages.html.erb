@@ -9,14 +9,8 @@
           <% group.unit_items.each_with_index do |item,index| %>
             <tr>
               <% if index == 0 %>
-              <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table <%= group.name =~ /musics|other/i ? 'padding_top10' : 'padding_top20' %>">
-                <% if group.name =~ /music|news|other/i %>
-                  <% group.name.each_char do |a| %>
-                    <span class="alfa" style="height: auto; line-height: <%= group.name =~ /music/i ? '19' : '21' %>px;">
-                    <%= a %>
-                    </span>
-                  <% end %>
-                <% else %>
+              <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table padding_top20">
+                
                   <% group.name.each_char do |a| %>
                     <span class="alfa" >
                     <%= a %>
@@ -24,7 +18,6 @@
                   <% end %>
                 <% end %>
               </td>
-              <% end %>
               <td width="19%">
                 <div class="channel-container">
                   <%= image_tag 'img/transparent.png', 'data-original' => item.logo.url(:thumb),class: "small_image lazy-img" %>

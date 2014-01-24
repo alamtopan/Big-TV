@@ -7,6 +7,9 @@ module SeedMembership
 
     memberships.each_with_index do |member,n|
       member = member['membership']
+      puts "------------------------------------------------------------"
+      puts "#{member}"
+      puts "------------------------------------------------------------"
       membership = Membership.find_or_initialize_by_name(member["name"])
       membership.description  =  member["description"]
       membership.category_id  =  Category.find_by_name(member["category"]).id
