@@ -53,16 +53,18 @@
               <div class="col-md-5">
                 <div class="form-group">
                   <label class="control-label">
-                    * Telepon
-                  </label>
-                  <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
-                </div>
-                <div class="form-group">
-                  <label class="control-label">
                    * Handphone
                   </label>
                   <%= profile.text_field :no_hp, {class: 'form-control', placeholder: 'Masukan nomor telepon handphone', required: true} %>
                 </div>
+                
+                <div class="form-group">
+                  <label class="control-label">
+                    * Telepon
+                  </label>
+                  <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
+                </div>
+                
                 <div class="form-group tf-dealer" style='display:none;'>
                   <label class="control-label">
                     SPG ID/ Dealer ID/ BigTV ID
