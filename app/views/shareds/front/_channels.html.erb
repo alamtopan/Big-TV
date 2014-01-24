@@ -2,15 +2,18 @@
 	<h1 class="gray"><span class="black">DAPATKAN GRATIS</span> PAKET <%= @free_channels.count %> CHANNEL</h1>
 	<br>
 	<div class="cbp-so-scroller team_scroller_mobile_cont">
-		<div id="team_members_channel" class="chan_section cbp-so-section" data-limit="21">
-			<% @free_channels.each do |channel| %>
-				<div class="member channel_member cbp-so-side cbp-so-side-top">
-          <div>
-            <%= image_tag 'img/transparent.png', 'data-original' => channel.logo.url(:medium), class: "icon_channel lazy-img"; %>
-          </div>
-				</div>
-			<% end %>
-		</div>
+		<% counter = (@free_channels.size.to_f/10).ceil %>
+		<% counter.times do |n| %>
+		  <div id="team_members_channel" class="chan_section cbp-so-section" data-limit="21">
+				<% @free_channels[n*10, 10].each do |channel| %>
+					<div class="member channel_member cbp-so-side cbp-so-side-top">
+	          <div>
+	            <%= image_tag 'img/transparent.png', 'data-original' => channel.logo.url(:medium), class: "icon_channel lazy-img"; %>
+	          </div>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
 	<div class="br"></div>
 	<div class="trial" id="view-more-channel"><a>VIEW MORE</a></div>

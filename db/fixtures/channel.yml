@@ -40,20 +40,20 @@ items:
       free:   true
       logo:   ''
   - item:
-      name:   'Kompas TV'
-      hd:     false
-      free:   true
-      logo:   'Kompas_TV.png'
+      name: 'TV Parlemen'
+      hd:   false
+      free: true
+      logo: 'TV_Parlement.png'
   - item:
       name:   'SCTV'
       hd:     false
       free:   true
       logo:   'SCTV.png'
   - item:
-      name: 'TV Parliament'
-      hd:   false
-      free: true
-      logo: 'TV_Parlement.png'
+      name:   'Kompas TV'
+      hd:     false
+      free:   true
+      logo:   'Kompas_TV.png'
   - item:
       name:   'Net TV HD'
       hd:     false
