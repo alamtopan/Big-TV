@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123150957) do
+ActiveRecord::Schema.define(:version => 20140124034921) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -249,6 +249,7 @@ ActiveRecord::Schema.define(:version => 20140123150957) do
     t.datetime "logo_updated_at"
     t.boolean  "status_hd",         :default => false
     t.boolean  "free",              :default => false
+    t.integer  "position",          :default => 0
   end
 
   add_index "unit_items", ["name"], :name => "index_unit_items_on_name"

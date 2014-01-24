@@ -10,7 +10,7 @@ class Membership < ActiveRecord::Base
 
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
 
-  scope :by_position, order("position ASC")
+  scope :by_position, order("memberships.position ASC")
 
   acts_as_list
 

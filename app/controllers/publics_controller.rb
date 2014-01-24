@@ -14,7 +14,7 @@ class PublicsController < ApplicationController
     @memberships   = Membership.packages_by_category('premium')
     @memberships_extra = Membership.packages_by_category('extra').by_position
     @groups        = GroupItem.includes(unit_items: [:memberships]).by_position
-    @free_channels = UnitItem.where('free = ?', true)
+    @free_channels = UnitItem.free_channels
 	end
 
   def thanks

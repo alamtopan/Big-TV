@@ -131,6 +131,7 @@ function restore(){
 
 // SEARCH LOCATION BY PROVINCE
 if($(".map_location_js").length){
+  var firstTimeLocation = true;
   $(".js_button_map").on('click',function(){
     var province = $(this).data('value');
     var province_selector = ".map_location_js[data-province='" + province+ "']";
@@ -148,13 +149,21 @@ if($(".map_location_js").length){
 
         $.each($("."+val), function( n, locat ) {
           if($(locat).find(province_selector).length){
-            if(founds[val] < 12){
-              $(locat).removeClass('hide');
-              $(locat).show();
-            }else{
+            if(firstTimeLocation){
               $(div).removeClass('hide');
               $(locat).show();
               $(locat).addClass('hide');
+            }else{
+
+              if(founds[val] < 12){
+                $(locat).removeClass('hide');
+                $(locat).show();
+              }else{
+                $(div).removeClass('hide');
+                $(locat).show();
+                $(locat).addClass('hide');
+              }
+            
             }
 
             founds[val] += 1;

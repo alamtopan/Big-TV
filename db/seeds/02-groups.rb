@@ -3,23 +3,20 @@ module SeedGroup
     fixture_path = "#{Rails.root}/db/fixtures"
 
     yaml_group = YAML.load_file("#{fixture_path}/group_item.yml")
-    groups = yaml_group['group']
+    groups = yaml_group['groups']
 
-    groups.each_with_index do |gr,n|
-      group = GroupItem.find_or_initialize_by_name(gr["group_#{n}"]["name"])
-      group.colour =  gr["group_#{n}"]["colour"]
-      group.position = gr["group_#{n}"]["position"]
+    groups.each_with_index do |data|
+      group = GroupItem.find_or_initialize_by_name(data["group"]["name"])
+      group.colour =   data["group"]["colour"]
+      group.position = data["group"]["position"]
       group.save!
-      # item
-      items = gr["group_#{n}"]["items"]
-      items.each_with_index do |itm,i_itm|
-        i_item = itm["item_#{i_itm}"]
-        item = UnitItem.find_or_initialize_by_name(i_item['name'])
+
+      data["group"]["items"].each do |channel_item|
+        data_channel = channel_item['item']
+        item = UnitItem.find_or_initialize_by_name(data_channel['name'])
         item.group_item_id = group.id
-        item.status_hd = i_item['hd']
-        if i_item['logo'].present?
-          item.logo = File.new("#{Rails.root}/public/logo/#{i_item['logo']}")
-        end
+        item.status_hd = data_channel['hd']
+        item.logo = File.new("#{Rails.root}/public/logo/#{data_channel['logo']}") if data_channel['logo'].present?
         item.save
       end
     end
