@@ -4,7 +4,7 @@ class GatepayController < ApplicationController
     order = Order.find_by_code(params[:TRANSIDMERCHANT])
     response_text = 'Stop'
 
-    if order && order.total.to_f == params[:AMOUNT].to_f &&
+    if order && order.grand_total.to_f == params[:AMOUNT].to_f &&
         Payment.track_payment(order, params, request.env)
       response_text = 'Continue'
     end
