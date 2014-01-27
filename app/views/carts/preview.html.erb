@@ -46,11 +46,9 @@
 										* Tanggal Lahir
 									</label>
 									<br>
-									<div class="input-append date" id="dpYears" data-date="12-02-1990" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-										<%= profile.text_field :tanggal_lahir, {class: 'form-control span4', data: {"date-format" => "dd-mm-yyyy", "date-viewmode" => "years"}, placeholder: 'Tgl-Bln-Thn', required: true} %>
-										<span class="add-on"><i class="icon-calendar"></i></span>
-									</div>
+					      <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Tanggal', month: 'Bulan', year: 'Tahun'}}, {class: 'select_span2', required: true} %>
 								</div>
+								<br><br>
 								<div class="form-group">
 									<label class="control-label">
 										* Email
@@ -205,7 +203,7 @@
 											<table class="tbl_order">
 												<tbody>
 													<tr>
-														<td>Pengiriman Pos</td>
+														<td>Biaya Pengiriman</td>
 														<td><div class="nominal">Rp.<b><span class='post_nominal'><%= number_to_currency(7500,{precision: 0, unit: ''}) %></span></b></div></td>
 													</tr>
 												<tbody>
@@ -216,7 +214,7 @@
 											<table class="tbl_order">
 												<tbody>
 													<tr>
-														<td>Biaya Pembayaran</td>
+														<td>Biaya Transaksi</td>
 														<td><div class="nominal">Rp.<b><span class='install_fee_nominal'>0</span></b></div></td>
 													</tr>
 												<tbody>

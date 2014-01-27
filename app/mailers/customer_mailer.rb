@@ -1,5 +1,5 @@
 class CustomerMailer < ActionMailer::Base
-  default from: "customer.service@bigtv.co.id"
+  default from: "noreply@bigtv.co.id"
 
   def thanks_email(order)
     prepare_order(order)

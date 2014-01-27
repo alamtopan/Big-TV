@@ -101,10 +101,6 @@ groups:
           name: 'Ginx'
           hd:   false
           logo: 'Ginx.png'
-      - item:
-          name: 'Reformed 21'
-          hd:   false
-          logo: 'Reformed_21.png'
   - group:
       name: 'Education'
       colour: '#48cf94'
@@ -405,6 +401,10 @@ groups:
           name: 'NHK World Premium'
           hd:   false
           logo: 'NHK_World.png'
+      - item:
+          name: 'Reformed 21'
+          hd:   false
+          logo: 'Reformed_21.png'
   - group:
       name: 'Freeview International'
       colour: '#5ec82a'

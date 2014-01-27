@@ -3,7 +3,12 @@ $(document).ready(function(){
     $('li').removeClass('active');
     $(this).closest('li').addClass('active');
   })
-  $('.datepicker').datepicker();
+  // date picker
+  $(function(){
+    window.prettyPrint && prettyPrint();
+    $('#dpYears').datepicker();
+  });
+
   $('.colorpicker').colorpicker();
 
   // select group id if all select unit

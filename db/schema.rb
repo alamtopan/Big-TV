@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140124134509) do
+ActiveRecord::Schema.define(:version => 20140127152325) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20140124134509) do
     t.datetime "updated_at",            :null => false
     t.integer  "user_id"
     t.string   "jenis_kelamin"
-    t.string   "tanggal_lahir"
+    t.date     "tanggal_lahir"
     t.string   "referal"
     t.string   "tipe_identitas"
     t.string   "no_identitas"

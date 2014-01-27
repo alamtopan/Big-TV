@@ -67,8 +67,13 @@
     <div class="col-sm-3">
       <%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true} %>
     </div>
-    <div class="col-sm-4">
-      <%= profile.text_field :tanggal_lahir, {class: 'form-control datepicker', data: {"date-format" => "yyyy-mm-dd", "date-viewmode" => "years"}, placeholder: 'Tanggal Lahir', required: true} %>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">
+      * Birthday
+    </label>
+    <div class="col-sm-6">
+      <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'select_span2', required: true} %>
     </div>
   </div>
   <div class="br"></div>
