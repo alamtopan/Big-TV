@@ -13,7 +13,7 @@
 //= require front/js/hover
 //= require front/js/init
 //= require plugins/bootstrap/js/bootstrap.min
-//= require plugins/bootstrap-datepicker/js/bootstrap-datepicker
+//= require plugins/bootstrap-datepicker/bootstrap-datepicker_new
 //= require plugins/jquery.autocomplete.min
 //= require js/imagesloaded
 //= require customize_front
@@ -22,7 +22,6 @@
 //= require widgets-twitt
 
 //= require_self
-
 
 window.current_menu = 'intro';
 window.is_table_loaded = false;

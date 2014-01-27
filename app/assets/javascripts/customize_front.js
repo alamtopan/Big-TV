@@ -49,7 +49,10 @@ $(document).ready(function(){
  };
 
  // date picker
- $('.datepicker').datepicker();
+ $(function(){
+    window.prettyPrint && prettyPrint();
+    $('#dpYears').datepicker();
+  });
 
 
  // channel

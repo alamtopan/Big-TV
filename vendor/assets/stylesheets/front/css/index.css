@@ -21,6 +21,15 @@ a{
 p{
   margin-bottom: 10px;
 }
+.warn_info{
+  background: #fef3b9;
+  float: right;
+  width: 95%;
+  font-style: italic;
+  padding: 20px 0px;
+  margin-top: 10px;
+  border:solid 1px #ddd;
+}
 .img_langganan {
   margin-right: 150px!important;
 }

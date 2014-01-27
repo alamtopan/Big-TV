@@ -1,5 +1,6 @@
 /*
  *= require_self
+ *= require bootstrap_new
  *= require front/bootstrap
  *= require front/css
  *= require front/css/normalize
