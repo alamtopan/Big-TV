@@ -38,85 +38,134 @@
           </a>
         </div>
       </div>
-      <div class="panel-body">
-        
-        <div class="form-group">
-          <%= label_tag :code, nil, class: "col-sm-2 control-label" %>
-          <div class="col-sm-9">
-            <%= @order.code %>
-          </div>
-        </div>
-        <br/>
-        <div class="form-group">
-          <%= label_tag :orderable, 'Subcriber', class: "col-sm-2 control-label" %>
-          <div class="col-sm-9">
-            <%= @order.orderable.profile.first_name if @order.orderable %>
-          </div>
-        </div>
-        <br/>
-        <div class="form-group">
-          <%= label_tag :periode, 'Periode', class: "col-sm-2 control-label" %>
-          <div class="col-sm-9">
-            <%= "#{@order.period} #{@order.period_name}" %>
-          </div>
-        </div>
-        <br/>
-        <div class="form-group">
-          <%= label_tag :total, nil, class: "col-sm-2 control-label" %>
-          <div class="col-sm-9">
-            <%= @order.total %>
-          </div>
-        </div>
-        <br/>
-        <div class="form-group">
-          <%= label_tag :status, nil, class: "col-sm-2 control-label" %>
-          <div class="col-sm-9">
-            <%= @order.status %>
-          </div>
-        </div>
-        <br/>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                Membership Item
-                <div class="panel-tools">
-                  <a class="btn btn-xs btn-link panel-expand" href="#">
-                    <i class="icon-resize-full"></i>
-                  </a>
-                  <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
-                  </a>
+      <div class="panel-body backg_gray">
+        <div class="span12">
+          <div id="invoice_contents" class="margin_invo" style="margin:auto">
+            <div style="height: 48px">
+              <div style="float:left;">
+                <h2 style="position:relative; top: 20px;">
+                  <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span>
+                  <%= @order.code %>
+                </h2>
+              </div>
+              <div style="float:right;">
+                <%= image_tag 'bigtv.png', style: 'height: 64px;' %>
+              </div>
+            </div>
+            <br>
+            <hr class="space" style="margin-bottom: 50px;">
+            <div class="span-14">
+              <table class="to-from">
+                <tbody>
+                  <tr>
+                    <td>
+                      <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;">
+                        <%= @order.orderable.profile.full_name.upcase if @order.orderable %>
+                      </h4>
+                      <div>
+                        <span>No Telp.
+                          <%= @order.orderable.profile.no_phone if @order.orderable %>
+                        </span>
+                      </div>
+                      <div>
+                        <span>No HP.
+                          <%= @order.orderable.profile.no_hp if @order.orderable %>
+                        </span>
+                      </div>
+                      <div>
+                        <span>Alamat:</span>
+                        <span>
+                          <%= @order.orderable.profile.address if @order.orderable %>
+                        </span>
+                      </div>
+                      <div>
+                        <span>Alamat Pemasangan: </span> 
+                        <span>
+                          <%= @order.orderable.profile.address_shipping if @order.orderable %>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="span-10 last">
+              <div class="details clearfix">
+                <div class="span-15" style="text-align:right;">
+                  <b>Status:</b>
+                </div>
+                <div class="span-9 last t-right">
+                  <%= (@order.status.blank? ? 'Pending' : @order.status).gsub(/Pending/i, 'In Progress').upcase %>
+                </div>
+                <div class="span-15" style="text-align:right;">
+                  <b>Dipesan Tanggal:</b>
+                </div>
+                <div class="span-9 last t-right">
+                  <%= @order.created_at.strftime('%d %b %Y') %>
+                </div>
+                <div class="span-15" style="text-align:right;">
+                  <b>Total:</b>
+                </div>
+                <div class="span-9 last t-right">
+                  <span class="currency_code">Rp.</span>
+                  <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
                 </div>
               </div>
-              <div class="panel-body">
-                <table class="table table-hover" id="sample-table-1">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Name</th>
-                      <th>Subtotal</th>
+            </div>
+            <div class="span-24" style="margin-top: 50px;">
+              <table id="line_items" class="span-24">
+                <tbody><tr>
+                    <th class="description">KETERANGAN</th>
+                    <th style="font-size:14px">PERIODE</th>
+                    <th class="unit-price" style="font-size:14px;width: 150px;text-align:center;">HARGA/BULAN</th>
+                    <th class="line_item_subtotal" style="font-size:14px">TOTAL</th>
+                  </tr>
+
+                  <% packages = @order.items.all %>
+                  <% extra_packages = packages.select{|i| i.extra? } %>
+                  <% packages = packages - extra_packages %>
+                  <% premium_package = packages.select{|i| i.premium?}.first %>
+                  <% packages = packages - [premium_package] %>
+                  <% [premium_package].concat(extra_packages).concat(packages).flatten.compact.each do |item| %>
+                    <tr class="line_item odd">
+                      <td class="description">
+                        <%= item.title.titleize %>
+                      </td>
+                      <td><%= @order.period %></td>
+                      <td class="nowrap">
+                        <%= number_to_currency(item.price,{precision: 0, unit: ''}) %>
+                      </td>
+                      <td class="line_item_subtotal nowrap">
+                        <%= number_to_currency(item.price * @order.period,{precision: 0, unit: ''}) %>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <% @order.items.each_with_index do |item,index| %>
-                      <tr>
-                        <td><%= index+1 %></td>
-                        <td><%= item.title %></td>
-                        <td><%= item.subtotal %></td>
-                      </tr>  
-                    <% end if @order.items.present? %>
-                  </tbody>
-                </table>
-              </div>
+                  <% end %>
+                  <tr>
+                    <td class="rule" colspan="4">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      &nbsp;
+                    </td>
+                    <td class="amount_due">
+                      <b class="right">Total</b>
+                    </td>
+                    <td class="amount_due nowrap" id="invoice_total">
+                      <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div style="margin-top: 10px;">
+            <div class="pull-right">
+              <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_orders_path, class: "btn btn-dark-grey" %>
+              <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_manage_order_path(@order), class: "btn btn-purple" %>
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <div class="pull-right">
-            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_orders_path, class: "btn btn-dark-grey" %>
-            <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_manage_order_path(@order), class: "btn btn-purple" %>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>

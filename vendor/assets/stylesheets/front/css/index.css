@@ -1743,7 +1743,7 @@ input.s_form1
 .feature_cont
 {
   display: block;
-  max-width: 960px;
+  max-width: 840px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -1754,7 +1754,7 @@ input.s_form1
 {
   display: inline-block;
   width: 190px;
-  margin: 0px 63px;
+  margin: 0px 43px;
   position: relative;
   float: left;
 }
@@ -3244,7 +3244,7 @@ div.grid_packages_decode2{
 }
 
 .add-margin-top10{
-  margin-top: 10%;
+  margin-top: 8%;
 }
 .info-footer{
   margin-top:40px; 

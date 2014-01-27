@@ -13,7 +13,7 @@ class CustomerMailer < ActionMailer::Base
 
   def welcome_email_admin(user)
     prepare_user(user)
-    mail(to: 'verifikasi.online@gmail.com', subject: "REGISTERED, #{@user.code}, #{@user.profile.full_name}")
+    mail(to: 'online.bigtv@gmail.com', subject: "REGISTERED, #{@user.code}, #{@user.profile.full_name}")
   end
 
   def email_order_to_admin(order)

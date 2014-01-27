@@ -12,6 +12,7 @@
  *= require plugins/datepicker/css/datepicker
  *= require css/jquery.autocomplete
  *= require front/css/invoice
+ *= require jquery.autocomplete
  */
 
 .pack-order{

@@ -1,39 +1,4 @@
-window.provinces = [
-  
-  "Bali",
-  "Bangka Belitung",
-  "Banten",
-  "Bengkulu",
-  "D.K.I. Jakarta",
-  "D.I. Yogyakarta",
-  "D.I. Aceh",
-  "Gorontalo",
-  "Jambi",
-  "Jawa Barat",
-  "Jawa Tengah",
-  "Jawa Timur",
-  "Kalimantan Barat",
-  "Kalimantan Selatan",
-  "Kalimantan Tengah",
-  "Kalimantan Timur",
-  "Kepulauan Riau",
-  "Lampung",
-  "Maluku",
-  "Maluku Utara",
-  "Nusa Tenggara Barat",
-  "Nusa Tenggara Timur",
-  "Papua",
-  "Papua Barat",
-  "Riau",
-  "Sulawesi Barat",
-  "Sulawesi Selatan",
-  "Sulawesi Tengah",
-  "Sulawesi Tenggara",
-  "Sulawesi Utara",
-  "Sumatra Barat",
-  "Sumatra Selatan",
-  "Sumatra Utara",
-]
+
 
 $(document).ready(function(){
   

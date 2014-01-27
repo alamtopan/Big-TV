@@ -16,6 +16,7 @@
 //= require plugins/bootstrap-datepicker/bootstrap-datepicker_new
 //= require plugins/jquery.autocomplete.min
 //= require js/imagesloaded
+//= require front/js/provinces
 //= require customize_front
 //= require scrolltofixed-min
 //= require jquery.lazyload
@@ -213,12 +214,22 @@ $(document).ready(function(){
 
   $('input[name="customer[profile_attributes][billing_method]"]').on('change', function(){
     calculateTotalSubscription();
-  })
-
-  $('#customer_profile_attributes_province').autocomplete({
-      data: window.provinces
   });
 
+  $('#customer_profile_attributes_province').autocomplete({
+      data: window.provinces,
+      onItemSelect: function(result){
+
+        $('#customer_profile_attributes_city').removeData();
+        $('#customer_profile_attributes_city').unbind();
+        $('#customer_profile_attributes_city').autocomplete({
+          data: window.provinces_cities[result.value]
+        })
+      }
+  });
+  $('#customer_profile_attributes_province').focus(function(){
+    $('#customer_profile_attributes_city').val('')
+  });
 
   $('.twitter-widget-box').find('iframe').attr('src','http://twitterforweb.com/iframe/twitterbox/BiGTiVi.html?s=1,1,5,236,650,000000,1,1d1f21,ffffff,1,1,336699');
   (function(d, s, id) {

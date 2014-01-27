@@ -28,7 +28,7 @@
 	*= require plugins/bootstrap-fileupload/bootstrap-fileupload.min
 	*= require plugins/summernote/build/summernote
 	*= require plugins/ckeditor/contents
-
+	*= require front/css/invoice
 
  */
 
@@ -55,4 +55,18 @@
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   float: left;
   margin-right: 4px;
+}
+.margin_invo{
+	padding: 20px;
+	margin: 20px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid #ddd;
+	float: left;
+	width: 100%;
+	background-color: #fff;
+}
+.backg_gray{
+	background-color: #ddd;
 }

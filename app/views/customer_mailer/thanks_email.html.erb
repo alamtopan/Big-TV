@@ -92,7 +92,7 @@
                                   <p style="color: #ee3a37; font-family: Helvetica Neue,Arial,Helvetica,Geneva,sans-serif; font-size: 18px; font-weight: bold; line-height: 24px; margin-bottom: 18px; margin-top: 0px; text-align: left">Terimakasih telah berlangganan BigTV!</p>
 
                                   <div style="color: #444444; font-family: Helvetica Neue,Arial,Helvetica,Geneva,sans-serif; font-size: 13px; line-height: 18px; margin-bottom: 18px; margin-top: 0px; text-align: left">
-                                    <p style="margin-bottom:15px">Terima kasih atas kepercayaan Anda untuk berlangganan dengan kami.</p>
+                                    
 
                                     <p><b>INFO PELANGGAN</b></p>
 
@@ -100,7 +100,7 @@
                                       <tbody>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            ID Pelanggan:
+                                            No. Registrasi:
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <%= @user.code %>
@@ -152,7 +152,7 @@
                                       <tbody>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            No Invoice
+                                            Kode
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <%= @order.code %>
@@ -209,18 +209,19 @@
                                       </tbody>
                                     </table>
 
-                                    <p style="margin-bottom:15px">Langkah-langkah berikutnya adalah:.</p>
+                                    <p style="margin-bottom:15px">Untuk selanjutnya pihak BigTV akan melakukan langkah-langkah sebagai berikut:.</p>
                                     <ul>
-                                      <li>Customer Service akan melakukan verifikasi</li>
-                                      <li>Atau Anda akan mendapatkan email verifikasi</li>
-                                      <li>Installer akan datang dan melakukan pemasangan maksimal 10 hari</li>
-                                      <li>Untuk info lebih lanjut segera hubungi <b>0804 1 222 222</b></li>
-                                      <li>Jika anda belum melakukan pembayaran, silahkan klik tautan berikut, 
-                                        <b> <%= link_to "Bayar Online!", thanks_url(token: @order.token) %> </b>, 
-                                        untuk melakukan pembayaran menggunakan kartu kredit, ATM, maupun Doku Wallet.</li>
+                                      <li>1. Pihak customer service kami akan melakukan verifikasi data anda.</li>
+                                      <li>2. Proses pemasangan BigTV akan dilakukan maksimum 10 hari setelah pembayaran</li>
+                                      <li>3. Proses aktivasi layanan BigTV akan dilakukan dalam waktu 2x24 Jam</li>
                                     </ul>
-                                    <p style="margin-bottom:15px">Selamat menikmati tayangan-tayangan menarik channel lokal maupun mancanegara hanya di Big TV!<br style="line-height:100%">
-
+                                    <p style="margin-bottom:15px">
+                                    Selamat menikmati tayangan-tayangan menarik channel lokal maupun mancanegara hanya di BigTV!
+                                    <br style="line-height:100%">
+                                    <br>
+                                    Klik link dibawah untuk melakukan pembayaran secara online:
+                                    <br>
+                                    <%= link_to 'Bayar Online', thanks_url(token: @order.token) %>
                                     <p><a href="http://big-tv.com" style="color:#ee3a37;font-weight:bold;text-decoration:none" target="_blank">BIG CUSTOMER SERVICE</a>
                                       <br/>customer.service@bigtv.co.id
                                     </p>
