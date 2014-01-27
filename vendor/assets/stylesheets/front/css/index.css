@@ -2432,7 +2432,8 @@ ul.menu li:nth-child(1){
   display: none;
 }
 .feature_cont{
-  width: 1760px;
+  /*width: 1760px;*/
+  width: auto;
 }
 .mbl-pack-mask{
   display: none;
