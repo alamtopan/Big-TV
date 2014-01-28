@@ -188,8 +188,13 @@ class Order < ActiveRecord::Base
     end
 
     def set_code_sufix
-      code_sufix = "%.10d" % self.position
-      self.code = "#{self.code_prefix}#{code_sufix}"
+      if self.code_prefix.to_s == "0114"
+        code_sufix = "%.9d" % self.position
+        self.code = "1#{self.code_prefix}#{code_sufix}"
+      else
+        code_sufix = "%.10d" % self.position
+        self.code = "#{self.code_prefix}#{code_sufix}"
+      end
     end
 
     def validate_membership(session,membership_id)
