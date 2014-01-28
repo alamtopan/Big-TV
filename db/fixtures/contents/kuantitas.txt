@@ -1,0 +1,11 @@
+<div class='feature cbp-so-side cbp-so-side-left'>
+  <div class='img_border2 hi-icon'>
+    <div class='counter_item'>
+      <span id='counter-1'>177<span class='small-counter'></span></span>
+      <h3>CHANNELS</h3>
+    </div>
+  </div>
+  <h3><span>KUANTITAS</span></h3>
+  <p>BigTV yang paling besar di Indonesia. Dengan 177 saluran, semua pasti menemukan yang diinginkan.</p>
+  <div class='horizontal h-pc'></div>
+</div>
