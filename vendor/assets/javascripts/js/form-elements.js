@@ -76,6 +76,8 @@ var FormElements = function () {
     //function to initiate ckeditor
     var runCKEditor = function () {
         CKEDITOR.disableAutoInline = true;
+        CKEDITOR.config.allowedContent = true;
+        // CKEDITOR.config.div_wrapTable = true;
         $('textarea.ckeditor').ckeditor();
     };
     return {
