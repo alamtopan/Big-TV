@@ -100,14 +100,14 @@ class CartsController < ApplicationController
       if @customer.update_attributes(customer_info) && save_order
         order.items.where('membership_id IS NULL').destroy_all
 
-        if customer_info[:profile_attributes][:billing_method].to_s =~ /post/i
-          item = order.items.find_or_initialize_by_membership_id(nil)
-          item.title = 'Biaya Pengiriman'
-          item.price = 7500
-          item.quantity = 1
-          item.save
-          order.calculate_total(:conditional)
-        end
+        # if customer_info[:profile_attributes][:billing_method].to_s =~ /post/i
+        #   item = order.items.find_or_initialize_by_membership_id(nil)
+        #   item.title = 'Biaya Pengiriman'
+        #   item.price = 7500
+        #   item.quantity = 1
+        #   item.save
+        #   order.calculate_total(:conditional)
+        # end
 
         flash[:success] = 'success'
         # CustomerMailer.delay.thanks_email(order)

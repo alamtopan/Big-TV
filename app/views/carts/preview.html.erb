@@ -228,7 +228,7 @@
 											<tbody>
 												<tr>
 													<td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
-													<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total %>"><%= number_to_currency(@order.total,{precision: 0, unit: ''}) %></span></b></div>
+													<td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total_without_fee_and_period %>"><%= number_to_currency(@order.total_without_fee_and_period,{precision: 0, unit: ''}) %></span></b></div>
 													</td>
 												</tr>
 											<tbody>
@@ -287,7 +287,7 @@
 										<div class="br"></div>
 										Lama Berlangganan
 										<div class="br"></div>
-										<select name="order[period]" id="mm" class="form-control">
+										<select name="order[period]" id="mm" class="form-control" data-period="<%= @order.period.to_i %>">
 											<option value="1">Beli 1 Bulan, Gratis 2 Bulan</option>
 											<option value="6">Beli 6 Bulan, Gratis 3 Bulan</option>
 											<option value="12">Beli 12 Bulan, Gratis 4 Bulan</option>

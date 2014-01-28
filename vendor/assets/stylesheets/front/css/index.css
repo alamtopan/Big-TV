@@ -2994,7 +2994,7 @@ ul.gallery_footer li{
     margin-bottom: 10px;
     height: 170px;
     width: 21%;
-    background-image:url("../../map-marker-home.png");
+    background-image:url("/assets/map-marker-home.png");
     background-repeat: no-repeat;
     padding-left:35px;
     padding-top: 10px;

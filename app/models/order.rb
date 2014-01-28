@@ -20,7 +20,7 @@ class Order < ActiveRecord::Base
     PENDING = 'pending'
   end
 
-  CHARGE_FEE = {'01' => 0.035, '04' => 0.02}
+  CHARGE_FEE = {'04' => 0.02}
 
  Status.constants.each do |constant|
     value = Status.const_get(constant)
@@ -55,6 +55,24 @@ class Order < ActiveRecord::Base
 
   def grand_total
     self.total.to_i + self.charge_fee.to_i
+  end
+
+  def total_non_fee
+    self.period = 1 if self.period.to_i < 1
+    total_non_fee_without_period * self.period.to_i
+  end
+
+  def total_without_fee_and_period
+    items.where('membership_id IS NOT NULL').sum(:subtotal)
+  end
+
+  def total_with_fee_and_non_period
+    items.sum(:subtotal)
+  end
+
+  def total_with_fee
+    self.period = 1 if self.period.to_i < 1
+    total_with_fee_and_non_period * self.period.to_i
   end
 
   def calculate_total(autosave=:false)
