@@ -1,4 +1,8 @@
-
+.italiq_small_red{
+  font-style: italic;
+  font-style: 11px;
+  color: red;
+}
 .pack-order{
   text-decoration: none;
 }
