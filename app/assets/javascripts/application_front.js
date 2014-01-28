@@ -171,19 +171,20 @@ $(document).ready(function(){
     var total = Number($('#total-nominal').data('value'));
     var fee = 0;
     
-    if(String($('input[name="customer[profile_attributes][billing_method]"]:checked').val()) == 'post'){
-      total = total + 7500;
-      $('.post_fee').removeClass('hide')
-    }else{
-      $('.post_fee').addClass('hide')
-    }
+    // if(String($('input[name="customer[profile_attributes][billing_method]"]:checked').val()) == 'post'){
+    //   total = total + 7500;
+    //   $('.post_fee').removeClass('hide')
+    // }else{
+    //   $('.post_fee').addClass('hide')
+    // }
 
     var new_total = Number($('#mm').val()) * total;
 
-    if(String($('input[name="payment_method"]:checked').val()) == '01'){
-      fee = new_total*(3.5/100);
-      $('.install_fee').removeClass('hide');
-    }else if(String($('input[name="payment_method"]:checked').val()) == '04'){
+    // if(String($('input[name="payment_method"]:checked').val()) == '01'){
+    //   fee = new_total*(3.5/100);
+    //   $('.install_fee').removeClass('hide');
+    // }else 
+    if(String($('input[name="payment_method"]:checked').val()) == '04'){
       fee = new_total*(2.0/100);
       $('.install_fee').removeClass('hide');
     }else{
@@ -200,6 +201,11 @@ $(document).ready(function(){
   $('#mm').on('change', function(){
     calculateTotalSubscription();
   });
+
+  if($('#mm').length && Number($('#mm').data('period')) > 0){
+    $('#mm').val(Number($('#mm').data('period')));
+    calculateTotalSubscription();
+  }
 
   $('input[name="payment_method"]').on('change',function(){
     if($(this).val() == 'lokasi'){
