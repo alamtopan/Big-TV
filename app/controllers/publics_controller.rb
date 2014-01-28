@@ -15,6 +15,9 @@ class PublicsController < ApplicationController
     @memberships_extra = Membership.packages_by_category('extra').by_position
     @groups        = GroupItem.includes(unit_items: [:memberships]).by_position
     @free_channels = UnitItem.free_channels
+
+    @features  = PageContent.where("category =?", "Fitur Content").order('id ASC')
+    @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").order('id ASC')
 	end
 
   def thanks
@@ -49,6 +52,7 @@ class PublicsController < ApplicationController
 
   def support
     @title_page = "Support"
+    @supports   = PageContent.where("category =?", "Tab Support Content").order('id ASC')
     render layout: "detail"
   end
 
