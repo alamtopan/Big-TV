@@ -1,0 +1,3 @@
+<h2 class='h_support'>Bisa di Hypermart</h2>
+<img alt='Hypermart' class='img_support' src='/assets/support/hypermart.png' style='width:100px'>
+<p class='text_support'>Pembayaran dilakukan di kasir secara tunai, kartu debit/kredit apapun</p>

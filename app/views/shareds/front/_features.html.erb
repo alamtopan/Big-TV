@@ -1,39 +1,9 @@
 <section class="wraper_bg-bright" id="features">
 	<div class="cbp-so-scroller feature_cont_slider_mobile add-margin-top10">
     <div class="feature_cont cbp-so-section" >
-			<div class="feature cbp-so-side cbp-so-side-left">
-				<div class="img_border2 hi-icon">
-					<div class="counter_item">
-						<span id="counter-1">177<span class="small-counter"></span></span>
-						<h3>CHANNELS</h3>
-					</div>
-				</div>
-				<h3><span>KUANTITAS</span></h3>
-				<p>BigTV yang paling besar di Indonesia. Dengan 177 saluran, semua pasti menemukan yang diinginkan.</p>
-				<div class="horizontal h-pc"></div>
-			</div>
-			<div class="feature cbp-so-side cbp-so-side-left">
-				<div class="img_border2 hi-icon">
-					<div class="counter_item">
-						<span id="counter-2">24<span class="small-counter">HD</span></span>
-						<h3>CHANNELS</h3>
-					</div>
-				</div>
-				<h3><span>KUALITAS</span></h3>
-				<p>BigTV memberikan tayangan HD paling banyak di Indonesia, dengan kualitas yang paling bagus. Sudah waktunya TV HD Anda ditonton dengan tayangan HD.</p>
-				<div class="horizontal h-pc"></div>
-			</div>
-			<div class="feature cbp-so-side cbp-so-side-left">
-				<div class="img_border2 hi-icon">
-					<div class="counter_item">
-						<span id="counter-3">40<span class="small-counter">%</span></span>
-						<h3>LEBIH EKONOMIS</h3>
-					</div>
-				</div>
-				<h3><span>HARGA</span></h3>
-				<p>BigTV paling ekonomis.<br> Inilah komitmen kami - memberikan tayangan paling banyak, paling baik, dengan harga yang paling ekonomis.</p>
-				<div class="horizontal h-pc"></div>
-			</div>
+			<% @features.each do |features| %>
+				<%= features.description.html_safe %>
+			<% end %>
 		</div>
 	</div>             	
 	<section class="paging paging-main mbl-paging" id="feature_cont_slider_mobile_paging">
@@ -51,30 +21,18 @@
 	<div class="br"></div>
 	<div class="why_section cbp-so-section">
 			<ul class="nav nav-tabs">
-			  <li><a href="#bonus" data-toggle="tab">BONUS</a></li>
-			  <li><a href="#channel" data-toggle="tab">CHANNEL</a></li>
-			  <li><a href="#kualitas" data-toggle="tab">KUALITAS</a></li>
-			  <li><a href="#terjangkau" data-toggle="tab">TERJANGKAU</a></li>
-			  <li><a href="#layanan" data-toggle="tab">LAYANAN</a></li>
+				<% @why_bigtv.each do |why_bigtv| %>
+				  <li><a href="#<%= why_bigtv.title%>" data-toggle="tab"><%= why_bigtv.title%></a></li>
+				<% end %>
 			</ul>
 
 			<!-- Tab panes -->
 			<div class="tab-content">
-			  <div class="tab-pane active" id="bonus">
-			  	<%= image_tag "why_us/1.png", width: '100%' %>
-			  </div>
-			  <div class="tab-pane" id="channel">
-			  	<%= image_tag "why_us/2.jpg", width: '100%'%>
-			  </div>
-			  <div class="tab-pane" id="kualitas">
-			  	<%= image_tag "why_us/3.png", width: '100%' %>
-			  </div>
-			  <div class="tab-pane" id="terjangkau">
-			  	<%= image_tag "why_us/4.png", width: '100%' %>
-			  </div>
-			  <div class="tab-pane" id="layanan">
-			  	<%= image_tag "why_us/5.png", width: '100%' %>
-			  </div>
+				<% @why_bigtv.each_with_index do |why_bigtv,index| %> 
+				  <div class="tab-pane <%= " active" if index == 0 %>" id="<%= why_bigtv.title%>">
+				  	<%= image_tag why_bigtv.picture, width: '100%'%>
+				  </div>
+			  <% end %>
 			</div>
 	</div>
 </div>

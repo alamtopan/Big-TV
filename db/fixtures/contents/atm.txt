@@ -1,0 +1,195 @@
+<h2 class='h_support'>Bisa di ATM</h2>
+<img alt='Atm' class='img_support' src='/assets/support/atm.png' style='margin-bottom:140px'>
+<img alt='Nobu' src='/assets/support/nobu.png'>
+<br><br>
+<ul class='num'>
+  <li>
+    Masukkan kartu ATM (khusus Kartu Bank Nobu).
+  </li>
+  <li>Ketik PIN.</li>
+  <li>Pilih TRANSAKSI LAINNYA.</li>
+  <li>Pilih Transaksi : PEMBAYARAN.</li>
+  <li>Pilih Jenis Pembayaran TV/INTERNET.</li>
+  <li>Pilih Perusahaan : BiG TV</li>
+  <li>Masukkan nomor pelanggan : 10 digit nomor pelanggan (xxxxxxxxxx)</li>
+  <li>Pilih Jenis Rekening.</li>
+  <li>Masukkan jumlah pembayaran.</li>
+  <li>Masukkan nomor referensi (opsional).</li>
+  <li>Layar ATM akan menampilkan detail transaksi yang akan diproses. Pilih YA untuk pembayaran.</li>
+  
+</ul>
+<hr class='dash'>
+<img alt='Niaga' src='/assets/support/niaga.png'>
+<br><br>
+<p class='text_support'>
+  </p><ul class='num'>
+    <li>Masukkan kartu ATM (Kartu CIMB Niaga).</li>
+    <li>Ketik PIN</li>
+    <li>Pilih TRANSFER</li>
+    <li>Pilih ANTAR REKENING CIMB NIAGA</li>
+    <li>Masukkan nominal transaksi</li>
+    <li>Masukkan rekening tujuan, dengan angka 166900 diikuti 10 digit nomor pelanggan (166900xxxxxxxxxxx)</li>
+  </ul>
+<p></p>
+<hr class='dash'>
+<img alt='Bri' src='/assets/support/bri.png'>
+<br><br>
+<ul class='num'>
+  <li>Masukkan kartu ATM (kartu BRI).</li>
+  <li>Pilih Bahasa Anda.</li>
+  <li>Ketik PIN.</li>
+  <li>Pilih TRANSAKSI LAIN.</li>
+  <li>Pilih PEMBAYARAN.</li>
+  <li>Pilih PEMBAYARAN LAINNYA.</li>
+  <li>Pilih BRIVA (=BRI Virtual Account).</li>
+  <li>Masukkan rekening tujuan, dengan angka 32433 diikuti 10 digit nomor pelanggan (32433xxxxxxxxxxx)</li>
+  <li>Masukkan nomor referensi (opsional).</li>
+  <li>Layar ATM akan menampilkan detail transaksi yang akan diproses.</li>
+  <li>Masukkan nominal transaksi. </li>
+  <li>Pilih YA/OK apabila semua data sudah benar.</li>
+</ul>
+<hr class='dash'>
+<img alt='Bersama' src='/assets/support/bersama.jpg'>
+<br><br>
+<p class='text_support'>
+  Proses Pembayaran via Transfer ATM :
+  </p><ul class='num'>
+    <li>
+      Pelanggan harus memilih button bank transfer untuk melakukan pembayaran melalui ATM(bank transfer).
+    </li>
+    <li>
+      Proses Order akan di lanjutkan ke halaman DOKU, yang akan menampilkan rincian transaksi anda lalu klik button Process Payment.
+    </li>
+    <li>
+      Pelanggan akan mendapatkan Payment Code atau No Rekening yang terdiri dari 16 Digit yang harus pelanggan transfer melalui ATM, lalu klik Complete Process untuk menyelesaikan Pesanan.
+    </li>
+    <li>
+      Pelanggan dapat melakukan transfer melalui ATM ke bank-bank yang telah di tentukan dengan batas maksimal waktu transfer 3 Hari (3x24 Jam).
+    </li>
+  </ul>
+  <br>
+  List Bank untuk Pembayaran Melalui ATM
+  <br><br>
+  <ul class='num'>
+    <li>
+      <b class='red_font'>Bank anggota jaringan ATM ALTO di Indonesia</b><br>
+      <p>PermataBank, Bank Internasional Indonesia, Bank Danamon, Bank Lippo, Bank Bukopin, Bank Artha Graha, Bank Panin, Bank Haga, Bank Buana,Bank Ekonomi, Bank Nusantara Parahyangan, Bank Eka Bumi Artha</p>
+    </li>
+    <li>
+      <b class='red_font'>Bank anggota jaringan ATM Bersama di Indonesia</b><br>
+      <p>PermataBank, Bank Mandiri, Bank Niaga, Bank Nusantara Parahyangan, Bank Bumiputera, BPD Lampung, BPD DIY, Bank BRI, Bank Sulut, BPD Jambi, Bank Riau, BPD Bali, BPD KalTim, Bank Mayapada, Bank Mega, Bank Jatim, Bank Nagari, BPD Aceh, Bank Mestika, Bank Papua, Bank NISP, Bank IFI, BPD KalSel, Bank DKI, Bank Muamalat Indonesia, Bank Ina Perdana, Bank Panin, Bank Sumut, Bank Maluku, Bank Syariah Mandiri, BPD Sulsel, Bank Commonwealth, Bank Agroniaga, Bank HS 1906, Bank NTT,Bank Danamon, Bank Eksekutif, Bank NTB, Bank Arta Niaga Kencana, Bank UOB Buana, Bank Syariah Mega Indonesia, Bank Bukopin, Bank Artos Indonesia, Bank Jabar, Bank Kalteng, Bank BNI, ABN AMRO, Bank Swadesi, Standard Chartered Bank, Bank Ganesha, Bank Mayora, BPD Sultra, Bank Bengkulu, Bank Lippo, BPR Karyajatnika Sadaya (Eksekutif), BII, BPD Jateng, Bank Kesawan, Bank Capital, Bank BTPN, HSBC, Bank Sumsel, BPD Kalbar</p>
+    </li>
+    <li>
+      <b class='red_font'>Bank anggota Jaringan ATM Prima di Indonesia</b><br>
+      <p>PermataBank, Bank Central Asia, Bank ABN AMRO, Bank Bukopin, Bank Maspion, Bank Mega, BPD SumSel, BRI, Bank Bumi Artha, Bank Jasa Jakarta, Bank Muamalat, Bank Nusantara Parahyangan, Bank UIB, Bank Ekonomi, Bank Mayapada, Bank Victoria, Bank Jabar, Bank Jateng, Bank BPD Kaltim, Bank UOB Buana, Bank Eksekutif, Bank Haga, Bank Hagakita, Bank NISP, Bank of Tokyo Mitsubishi, Bank Papua, Bank Syariah Mega Indonesia, Bank Syariah Mandiri, Bank Royal</p>
+    </li>
+  </ul>
+  <br>
+  Cara pembayaran melalui ATM beragam tergantung dari ATM Bank mana yang anda gunakan. Berikut beberapa cara untuk melakukan pembayaran melalui ATM BCA, Bank Mandiri dan Bank Permata.
+  <br><br>
+  <ul class='num'>
+    <li>
+      <b class='red_font'>Pembayaran melalui ATM BCA/Bank sejenis dalam Jaringan PRIMA</b><br>
+        <ul class='cy'>
+          <li>Masukkan PIN</li>
+          <li>Pilih 'TRANSAKSI LAINNYA'</li>
+          <li>Pilih 'TRANSFER'</li>
+          <li>Pilih 'KE REK BANK LAIN'</li>
+          <li>Masukkan Kode Bank Permata(013) kemudian tekan 'Benar'</li>
+          <li>Musukkan Jumlah pembayaran sesuai dengan yang ditagihkan (Jumlah yang ditransfer harus sama persis tidak boleh lebih dan kurang). <b>Jumlah nominal yang tidak sesuai dengan tagihan akan menyebabkan transaksi gagal.</b></li>
+          <li>Masukkan Nomor Rekening tujuan. Contoh : <b>013965123456789012 lalu tekan 'benar'</b></li>
+          <li>Muncul Layar Konfirmasi Transfer yang berisi nomor rekening tujuan Bank Permata dan Nama beserta jumlah yang dibayar, jika sudah benar, Tekan 'Benar'.</li>
+          <li>Selesai.</li>
+        </ul>
+    </li>
+    <li>
+      <b class='red_font'>Pembayaran melalui ATM Mandiri/Bank sejenis dalam Jaringan ATM Bersama/Alto</b><br>
+        <ul class='cy'>
+          <li>Masukkan PIN</li>
+          <li>Pilih 'TRANSAKSI LAINNYA'</li>
+          <li>Pilih 'TRANSFER'</li>
+          <li>Pilih 'KE REK BANK LAIN'</li>
+          <li>Masukkan Kode Bank Permata(013) + Kode Pembayaran. Contoh : <b>013965123456789012</b> lalu tekan 'Benar'</li>
+          <li>Musukkan Jumlah pembayaran sesuai dengan yang ditagihkan (Jumlah yang ditransfer harus sama persis tidak boleh lebih dan kurang). <b>Jumlah nominal yang tidak sesuai dengan tagihan akan menyebabkan transaksi gagal.</b></li>
+          <li>Kosongkan nomor referensi transfer kemudian tekan 'benar'</li>
+          <li>Masukkan Nomor Rekening tujuan. Contoh : <b>013965123456789012 lalu tekan 'benar'</b></li>
+          <li>Muncul Layar Konfirmasi Transfer yang berisi nomor rekening tujuan Bank Permata dan Nama beserta jumlah yang dibayar, jika sudah benar, Tekan 'Benar'.</li>
+          <li>Selesai.</li>
+        </ul>
+    </li>
+    <li>
+      <b class='red_font'>Pembayaran melalui ATM Bank Permata</b><br>
+        <ul class='cy'>
+          <li>Masukkan PIN</li>
+          <li>Pilih 'TRANSAKSI LAINNYA'</li>
+          <li>Pilih 'TRANSAKSI PEMBAYARAN'</li>
+          <li>Pilih 'PEMBAYARAN LAINNYA'</li>
+          <li>Pilih 'VIRTUAL ACCOUNT'</li>
+          <li>Masukkan Nomor Virtual Account. Contoh : <b>8965123456789012</b></li>
+          <li>Muncul Layar Konfirmasi yang berisi Nomor Virtual Account dan Nama bila benar pilih 'Benar'</li>
+          <li>Selesai</li>
+        </ul>
+    </li>
+    <li>
+      <b class='red_font'>Pertanyaan Umum (Q &amp; A)</b><br>
+        <ul class='cy'>
+          <li>
+            Apakah untuk melakukan transaksi pembayaran hanya dapat dilakukan di ATM BCA, ATM Mandiri dan ATM Permata?<br><br>
+            <b>Tidak, Transaksi pembayaran (TRANSFER) dapat juga dilakukan di seluruh ATM yang tergabung dalam jaringan ATM Bersama, Prima dan Alto</b><br><br>
+          </li>
+          
+          <li>
+            Apakah dikenakan biaya apabila melakukan transaksi di Jaringan ATM bersama atau Prima?<br><br>
+            <b>Ya, biaya dikenakan apabila melakukan pembayaran melalui jaringan ATM bersama, Prima atau Alto, biaya yang dikenakan sesuai dengan ketetapan ATM Bersama, Prima dan Alto. Saat ini biaya yang dikenakan standarnya adalah Rp 5000,-/transaksi*. Untuk transaksi di ATM Bank Permata dengan menggunakan Kartu Bank Permata tidak dikenakan biaya</b><br><br>
+          </li>
+          
+          <li>
+            Apakah bisa melakukan pembayaran dengan menggunakan kartu ATM bank Mandiri di Mesin ATM BNI atau sebaliknya?<br><br>
+            <b>Bisa, Pembayaran dapat dilakukan dengan kartu ATM di seluruh Mesin ATM dalam Jaringan yang sama (ATM Bersama, Prima atau Alto), dengan dikenakan biaya yang ditetapkan oleh masing-masing bank dan jaringan (saat ini standarnya Rp. 5000/transaksi*) 
+            <br><br>*tergantung dari Issuer Bank (Bank Penerbit Kartu)</b><br><br>
+          </li>
+          
+          <li>
+            Bagaimana bila jumlah nominal uang yang ditransfer untuk pembayaran tidak sama dengan harga yang tertera?<br><br>
+            <b>Transaksi akan ditolak, jumlah nominal uang yang ditransfer harus sesuai dengan yang ditagihkan</b><br><br>
+          </li>
+          
+          <li>
+            Apakah dapat melakukan pembayaran melalui internet atau mobile banking?<br><br>
+            <b>Internet atau mobile banking pada beberapa bank menyediakan TRANSFER ONLINE, namun sebagian besar tidak. Transfer dengan RTGS atau pun Klirin/SKN/LLG tidak dapat dilakukan untuk membayar. Pembayaran Transfer melalui ATM adalah rekomendasi kami</b><br><br>
+          </li> 
+        </ul>
+    </li>
+  </ul>
+<p></p>
+<hr class='dash'>
+<img alt='Erapon' src='/assets/support/erapon.jpg'>
+<br><br>
+Berikut Petunjuk untuk pelanggan BigTV :
+<ul class='num'>
+  <li>Pelanggan harus memiliki User ID Mandiri Internet dan Token Mandiri.</li>
+  <li>
+    Pelanggan harus mengaktifasikan layanan mandiri clickpay pada Mandiri internet di website bank mandiri.
+  </li>
+  <li>
+    Jika pelanggan sudah memiliki layanan mandiri clickpay, silahkan lakukan pembayaran dengan memilih mandiri clickpay yang ada di button pembayaran yang ada di halaman Finish Order, BIGTV juga menyediakan halaman untuk memasukkan Token mandiri pelanggan yang dapat digunakan untuk berlangganan.
+  </li>
+  <li>Untuk informasi lebih lanjut mengenai mandiri clickpay pelanggan dapat mengunjungi mandiri clickpay atau mandiri call 14000.</li>
+</ul>
+<hr class='dash'>
+<img alt='Bca' src='/assets/support/bca.jpg' width='100px'>
+<br><br>
+Pembayaran dengan KlikBCA diproses melalui payment gateway mitra kami Doku (sebelumnya dikenal sebagai NSIAPAY).<br><br>
+
+Proses jika pelanggan menggunakan KlikBCA : <br>
+<ul class='num'>
+  <li>
+    Pelanggan harus memasukkan User ID KlikBCA yang digunakan sebagai informasi yang akan BigTV proses.
+  </li>
+  <li>
+    Pelanggan akan mendapatkan halaman status Pesanan dan Pembayaran yang menginformasikan pelanggan untuk segera melakukan pembayaran melalui klik BCA (klik disini : Cara Pembayaran Klik BCA)
+  </li>
+  <li>
+    Pelanggan akan mendapatkan informasi Status pembayaran via email, baik sebelum melakukan pembayaran klikBCA maupun setelah mentransfer pembayaran klikBCA.
+  </li>
+</ul>

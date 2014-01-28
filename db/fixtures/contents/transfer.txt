@@ -1,0 +1,19 @@
+<div class='content_support'>
+  <h2 class='h_support'>Bisa di Transfer</h2>
+  <img alt='Transfer' class='img_support' src='/assets/support/transfer.png'>
+  <img alt='Niaga' src='/assets/support/niaga.png'>
+  <br><br>
+  <p class='text_support'>Ditujukan ke :
+      No. rek : 166900 + No. pelanggan Anda,
+      Contoh : 1669001234567890 (10 digit terakhir adalah nomor pelanggan Anda)
+  </p>
+  <hr class='dash'>
+  <br>
+  <img alt='Bri' src='/assets/support/bri.png'>
+  <br><br>
+  <p class='text_support'>
+    Ditujukan ke :
+    No. rek : 32433 + No. pelanggan Anda,
+    Contoh : 32433123456789 (10 digit terakhir adalah nomor pelanggan Anda)
+  </p>
+</div>

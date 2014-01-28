@@ -1,0 +1,8 @@
+<div class='content_support'>
+  <h2 class='h_support'>Bisa di Kartu Kredit</h2>
+  <img alt='Kartu-kredit' class='img_support' src='/assets/support/kartu-kredit.png'>
+  <p class='text_support'>Pembayaran dapat dilakukan dengan Auto Debit Kartu Kredit berikut ini :<br>
+      1. CIMB Niaga, Hotline Number 14041<br>
+      2. Kartu kredit Visa/Master yang diterbitkan oleh bank lainnya.<br>
+  </p>
+</div>
