@@ -28,13 +28,17 @@ class CartsController < ApplicationController
     if display_extra_data
       premium_item = order.items.premium
       if premium_item 
-        if premium_item.title !~ /universe/i
+      #   if premium_item.title !~ /universe/i
           @memberships = Membership.includes(:unit_items,:category).
                           where('id IN (?)', Membership.extra_by_order(order).map(&:id)).
                           by_position
-        else
-          order.items.extras.destroy_all
-        end
+          # remove all cart items which are not in extra package
+          order.items.extras.
+            where('membership_id NOT IN (?)', @memberships.map(&:id)).
+            destroy_all if @memberships.present?
+        # else
+        #   order.items.extras.destroy_all
+        # end
       end
 
       unless @memberships
