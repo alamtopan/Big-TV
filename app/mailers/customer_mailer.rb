@@ -3,12 +3,12 @@ class CustomerMailer < ActionMailer::Base
 
   def thanks_email(order)
     prepare_order(order)
-    mail(to: @user.email, subject: 'Terimakasih telah berlangganan BigTv')
+    mail(to: @user.email, subject: 'Terima kasih telah berlangganan BigTv')
   end
 
   def welcome_email(user)
     prepare_user(user)
-    mail(to: @user.email, subject: 'Terimakasih telah bergabung dengan BigTv')
+    mail(to: @user.email, subject: 'Terima kasih telah bergabung dengan BigTv')
   end
 
   def welcome_email_admin(user)
