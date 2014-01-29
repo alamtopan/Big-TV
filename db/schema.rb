@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140128143556) do
+ActiveRecord::Schema.define(:version => 20140129201059) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -200,6 +200,12 @@ ActiveRecord::Schema.define(:version => 20140128143556) do
     t.string   "billing_method"
   end
 
+  create_table "referral_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "regionals", :force => true do |t|
     t.string "name"
   end
@@ -285,6 +291,7 @@ ActiveRecord::Schema.define(:version => 20140128143556) do
     t.datetime "updated_at",                             :null => false
     t.string   "username"
     t.string   "code"
+    t.integer  "referral_category_id",   :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

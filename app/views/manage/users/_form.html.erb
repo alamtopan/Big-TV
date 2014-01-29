@@ -12,6 +12,11 @@
       </div>
     </div>
 	 <% end %>
+
+	<% if @user.type.present? %>
+	  <h3><%= @user.type %> No: <%= @user.code %></h3>
+	<% end %>
+	<br><br>
 	<div class="form-group">
 		<label class="col-sm-2 control-label" for="form-field-8">
 			* Username

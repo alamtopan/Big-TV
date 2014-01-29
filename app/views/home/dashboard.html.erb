@@ -30,42 +30,44 @@
 			<h1>Dashboard</h1>
 		</div>
 	</div>
-	<div class="col-sm-4">
-		<div class="core-box">
-			<div class="heading">
-				<i class="clip-user-4 circle-icon circle-green"></i>
-				<h2>Manage Users</h2>
+	<% if current_user.type != 'Referral' %>
+		<div class="col-sm-4">
+			<div class="core-box">
+				<div class="heading">
+					<i class="clip-user-4 circle-icon circle-green"></i>
+					<h2>Manage Users</h2>
+				</div>
+				<div class="content">
+					You can manage user information, show the detail, edit or create.
+				</div>
+				<%= link_to "View More <i class='clip-arrow-right-2'></i>".html_safe, manage_users_path,class: "view-more" %>
 			</div>
-			<div class="content">
-				You can manage user information, show the detail, edit or create.
-			</div>
-			<%= link_to "View More <i class='clip-arrow-right-2'></i>".html_safe, manage_users_path,class: "view-more" %>
 		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="core-box">
-			<div class="heading">
-				<i class="clip-clip circle-icon circle-green clip-star-3"></i>
-				<h2>Manage Membership</h2>
+		<div class="col-sm-4">
+			<div class="core-box">
+				<div class="heading">
+					<i class="clip-clip circle-icon circle-green clip-star-3"></i>
+					<h2>Manage Membership</h2>
+				</div>
+				<div class="content">
+					You can manage membership information, show the detail, edit or create.
+				</div>
+				<%= link_to "View More <i class='clip-arrow-right-2'></i>".html_safe, manage_memberships_path,class: "view-more" %>
 			</div>
-			<div class="content">
-				You can manage membership information, show the detail, edit or create.
-			</div>
-			<%= link_to "View More <i class='clip-arrow-right-2'></i>".html_safe, manage_memberships_path,class: "view-more" %>
 		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="core-box">
-			<div class="heading">
-				<i class="clip-database circle-icon circle-green clip-checkbox"></i>
-				<h2>Manage Subscription</h2>
+		<div class="col-sm-4">
+			<div class="core-box">
+				<div class="heading">
+					<i class="clip-database circle-icon circle-green clip-checkbox"></i>
+					<h2>Manage Subscription</h2>
+				</div>
+				<div class="content">
+					You can manage customer subscription, show the detail, edit or create.
+				</div>
+				<a class="view-more" href="#">
+					View More <i class="clip-arrow-right-2"></i>
+				</a>
 			</div>
-			<div class="content">
-				You can manage customer subscription, show the detail, edit or create.
-			</div>
-			<a class="view-more" href="#">
-				View More <i class="clip-arrow-right-2"></i>
-			</a>
 		</div>
-	</div>
+	<% end %>
 </div>

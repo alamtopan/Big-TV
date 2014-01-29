@@ -1,5 +1,6 @@
 class Manage::ResourcesController < InheritedResources::Base
   before_filter :authenticate_user!
+  before_filter :authorize_index
 
   def create  
     create! do |success, failure|
@@ -23,6 +24,12 @@ class Manage::ResourcesController < InheritedResources::Base
     end
 
     def collection
-      get_collection_ivar || set_collection_ivar(end_of_association_chain.page(page).per(per_page))
+      get_collection_ivar || set_collection_ivar(end_of_association_chain.accessible_by(current_ability).page(page).per(per_page))
+    end
+
+    def authorize_index
+      unless can?(:index, end_of_association_chain)
+        raise CanCan::AccessDenied
+      end if end_of_association_chain
     end
 end

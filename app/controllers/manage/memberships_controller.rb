@@ -1,4 +1,5 @@
 class Manage::MembershipsController < Manage::ResourcesController
+  skip_load_and_authorize_resource only: :index
   defaults :resource_class => Membership, :collection_name => 'memberships', :instance_name => 'membership'
   prepend_before_filter :prepare_save, only: [:create, :update]
   before_filter :prepare_select, except: [:index]

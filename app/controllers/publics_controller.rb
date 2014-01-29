@@ -18,6 +18,7 @@ class PublicsController < ApplicationController
 
     @features  = PageContent.where("category =?", "Fitur Content").order('id ASC')
     @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").order('id ASC')
+    
 	end
 
   def thanks

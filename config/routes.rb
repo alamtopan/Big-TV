@@ -17,6 +17,7 @@ BigTv::Application.routes.draw do
     resources :customers
     resources :referrals
     resources :page_contents
+    resources :referral_categories
   end
   
   resources :customers,   only: [:new, :create]

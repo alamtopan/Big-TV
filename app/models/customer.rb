@@ -1,11 +1,13 @@
 class Customer < User
-  before_validation :before_validation
+  before_validation :before_validating
   after_save        :after_saving
+
+  has_many :orders, as: :orderable
 
   # default_scope where('code IS NOT NULL').order('updated_at DESC')
 
   private
-    def before_validation
+    def before_validating
       unless self.password
         self.password = Devise.friendly_token[0,20]
         self.password_confirmation = self.password

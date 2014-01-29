@@ -27,137 +27,144 @@
 					</li>
 				</ul>
 			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-file-3"></i>
-					<span class="title"> News </span>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_blog_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_blogs_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-user-4"></i>
-					<span class="title"> Referrals </span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_referral_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_referrals_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-user-4"></i>
-					<span class="title"> Customers </span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_customer_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_customers_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-user-4"></i>
-					<span class="title"> Users </span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_user_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_users_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-star-6"></i>
-					<span class="title"> Membership </span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_membership_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_memberships_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_categories_path do %>
-							<span class='title'> Categories </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-grid-5"></i>
-					<span class="title">Channels</span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to new_manage_unit_item_path do %>
-							<span class='title'> Create New </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_unit_items_path do %>
-							<span class='title'> List </span>
-						<% end %>
-					</li>
-					<li>
-						<%= link_to manage_group_items_path do %>
-							<span class="title">Channel Group</span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="javascript:void(0)"><i class="clip-cog"></i>
-					<span class="title">Contents</span><i class="icon-arrow"></i>
-					<span class="selected"></span>
-				</a>
-				<ul class="sub-menu">
-					<li>
-						<%= link_to manage_page_contents_path do %>
-							<span class='title'> Edit Content </span>
-						<% end %>
-					</li>
-				</ul>
-			</li>
+			<% if current_user.type != 'Referral' %>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-file-3"></i>
+						<span class="title"> News </span>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_blog_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_blogs_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-user-4"></i>
+						<span class="title"> Referrals </span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_referral_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_referrals_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_referral_categories_path do %>
+								<span class='title'> Referral Categories </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-user-4"></i>
+						<span class="title"> Customers </span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_customer_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_customers_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-user-4"></i>
+						<span class="title"> Users </span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_user_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_users_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-star-6"></i>
+						<span class="title"> Membership </span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_membership_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_memberships_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_categories_path do %>
+								<span class='title'> Categories </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-grid-5"></i>
+						<span class="title">Channels</span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_unit_item_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_unit_items_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_group_items_path do %>
+								<span class="title">Channel Group</span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="clip-cog"></i>
+						<span class="title">Contents</span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to manage_page_contents_path do %>
+								<span class='title'> Edit Content </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+			<% end %>
 		</ul>
 	</div>
 </div>

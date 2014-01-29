@@ -9,6 +9,7 @@ class Order < ActiveRecord::Base
 
   has_many   :items, class_name: "OrderItem", dependent: :destroy
   belongs_to :orderable, polymorphic: true
+  belongs_to :user, foreign_key: 'orderable_id', conditions: "orders.orderable_type = 'User'"
   has_many   :payments
 
   after_update  :after_modification
@@ -36,6 +37,11 @@ class Order < ActiveRecord::Base
   end
 
   class << self
+    def accessible_by(current_ability)
+      return self if current_ability.current_user.type.blank?
+      current_ability.current_user.orders
+    end
+
     def latest_order(prefix)
       result = self
       result = result.where(code_prefix: prefix) if prefix

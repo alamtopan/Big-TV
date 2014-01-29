@@ -59,18 +59,22 @@ class CartsController < ApplicationController
   end
 
   def preview
+    @referral = ReferralCategory.order("id ASC")
     @title_page = "More Info"
     if order.items.select{|i| i.premium? }.blank?
       redirect_to premium_path
     elsif order.total.to_i < 1
       redirect_to root_path
     end
-    @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'],
-                ['Dealer', 'Dealer'],
-                ['Koran/Billboard', 'Koran/Billboard'],
-                ['Pelanggan BigTV','Pelanggan BigTV'],
-                ['SPG','SPG'],
-                ['Others', 'Others']];
+
+    if current_user && order
+      customer_profile = order.orderable ? order.orderable.profile : nil
+      if customer_profile
+        customer_profile.referal_id = current_user.code 
+        customer_profile.referal = current_user.referral_category.name if current_user.referral_category
+      end
+    end
+
   end
 
   def rental_box

@@ -46,7 +46,7 @@
                   <label class="control-label">
                   * Referal
                   </label>
-                  <%= profile.select :referal, @referal, {prompt: 'Pilih referensi'}, {class: 'form-control cb-referensi',  required: true} %>
+                  <%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@referal ? @referal.name : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@
                   <%= profile.text_field :no_phone, {class: 'form-control', placeholder: 'Masukan nomor telepon yang bisa dihubungi', required: true} %>
                 </div>
                 
-                <div class="form-group tf-dealer" style='display:none;'>
+                <div class="form-group tf-dealer" style="display:<%= @customer.profile.referal ? 'block' : 'none' %>;">
                   <label class="control-label">
                     SPG ID/ Dealer ID/ BigTV ID
                   </label>

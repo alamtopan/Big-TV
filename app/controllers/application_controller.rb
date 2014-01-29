@@ -1,7 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :page_content
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to dashboard_path, :alert => exception.message
+  end
+
+  
 
   protected
+    def page_content
+      @footer   = PageContent.where("category =?", "Footer Content").first
+    end
+
     def after_sign_in_path_for(resource)
   	  dashboard_path
 	  end

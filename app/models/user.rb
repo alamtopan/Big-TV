@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   after_initialize :after_initialized
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :profile_attributes
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :profile_attributes, :referral_category_id
   # attr_accessible :title, :body
 
   has_one :profile, dependent: :destroy

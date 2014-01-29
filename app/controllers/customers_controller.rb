@@ -1,11 +1,11 @@
 class CustomersController < ApplicationController
-  before_filter :prepare_referal, only: [:new, :create]
   layout 'detail'
 
   def new
     @title_page = "Pendaftaran"
     @customer = order.orderable||Customer.new
-    @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
+
+    prepare_customer_form
   end
 
   def create
@@ -32,18 +32,19 @@ class CustomersController < ApplicationController
     else
       @customer = Customer.new(input_param)
       flash[:errors] = @customer.errors.full_messages.uniq.join(', ')
+      prepare_customer_form
       render :new
     end
   end
 
   private
-    def prepare_referal
-      @referal = [['Hypermart', 'Hypermart'], ['Matahari', 'Matahari'], 
-                ['Dealer', 'Dealer'], 
-                ['Koran/Billboard', 'Koran/Billboard'],
-                ['Pelanggan BigTV','Pelanggan BigTV'],
-                ['SPG','SPG'],
-                ['Others', 'Others']];
-    end
+    def prepare_customer_form
+      if current_user && @customer.profile
+        @customer.profile.referal_id = current_user.code 
+        @customer.profile.referal = current_user.referral_category.name if current_user.referral_category
+      end
 
+      @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
+      @referral = ReferralCategory.order("id ASC")
+    end
 end
