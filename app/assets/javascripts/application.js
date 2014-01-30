@@ -56,3 +56,12 @@ jQuery(document).ready(function() {
 });
 
 
+$(document).ready(function(){
+  $.each($(".side_table_right"),function( index, value ){
+    var color = $(value).data('color');
+    var _parent = $(value).parents('.parrent_table').first();
+    _parent.find(".head_pack").attr("style","background:"+color+"");
+  });
+});
+
+

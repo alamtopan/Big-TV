@@ -1538,6 +1538,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border: 1px solid #dddddd;
+  vertical-align: middle!important;
 }
 
 .table-bordered > thead > tr > th,

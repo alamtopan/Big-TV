@@ -7,7 +7,8 @@ class Referral < User
 
 	def orders
 		Order.includes(:user => [:profile]).
-		      where(['profiles.referal_id = ?', self.code])
+		      where(['profiles.referal_id = ?', self.code]).
+		      where('session_id IS NULL')
 	end
 
 	private

@@ -17,6 +17,9 @@ body {
 	margin: 0px !important;
 	background: #ffffff;
 }
+.img_attach{
+	width: 200px;
+}
 .br{
 	margin-bottom: 10px;
 	width: 100%;

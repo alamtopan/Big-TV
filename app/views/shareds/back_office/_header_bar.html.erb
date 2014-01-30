@@ -16,13 +16,22 @@
 							<i class="clip-chevron-down"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li>
-								<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_manage_user_path(current_user) %>
+					  	<li>
+								<%= link_to "Dashboard".html_safe, dashboard_path %>
 							</li>
 							<li>
-								<%= link_to "<i class='clip-exit'></i>SignOut".html_safe, destroy_user_session_path, :method => :delete %>
+								<%= link_to "Add Customer".html_safe,  new_customer_path %>
 							</li>
-						</ul>
+							<li>
+								<%= link_to "Subscriptions".html_safe,  manage_orders_path %>
+							</li>
+					    <li>
+								<%= link_to "My Profile".html_safe, edit_manage_user_path(current_user) %>
+							</li>
+							<li>
+								<%= link_to "SignOut".html_safe, destroy_user_session_path, :method => :delete %>
+							</li>
+					  </ul>
 					</li>
 				</ul>
 			</div>

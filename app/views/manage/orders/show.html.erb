@@ -156,6 +156,15 @@
                   </tr>
                 </tbody>
               </table>
+              <div>
+                Attachment :<br>
+                <% if @order.orderable.profile.file_ktp %>
+                  <%= image_tag @order.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
+                <% end %>
+                <% if @order.file_faktur %>
+                  <%= image_tag @order.file_faktur.url(:medium), class: "attachment img_attach" %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div style="margin-top: 10px;">
