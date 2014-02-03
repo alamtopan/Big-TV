@@ -1,15 +1,17 @@
 <section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left blog_section_white" id="blog">
-	<h1><span><%= @blog.title %></span></h1>
-	<div class="polosochka2"></div>
-	<article class="packs-cont cbp-so-scroller" style="text-align:left">
-		<div class="panel-body">
-			<div class="blog_section">
-				<%= image_tag "#{@blog.picture}", class: "img_blog" %>
-				<span class="time_create"><%= @blog.created_at.to_formatted_s(:long) %></span>
-				<div class="br"></div>
-				<%= @blog.description.html_safe %>
+	<% if @blog %>
+		<h1><span><%= @blog.title %></span></h1>
+		<div class="polosochka2"></div>
+		<article class="packs-cont cbp-so-scroller" style="text-align:left">
+			<div class="panel-body">
+				<div class="blog_section">
+					<%= image_tag "#{@blog.picture}", class: "img_blog" %>
+					<span class="time_create"><%= @blog.created_at.to_formatted_s(:long) %></span>
+					<div class="br"></div>
+					<%= @blog.description.html_safe %>
+				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>
 	<div class="polosochka"></div>
 </section>
