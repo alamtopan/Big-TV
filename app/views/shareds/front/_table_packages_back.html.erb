@@ -1,0 +1,67 @@
+<div class="table-responsive">
+  <% @groups.each do |group| %>
+    <div class="parrent_table">
+      <table class="table table-bordered side_table_right package-channel-table" data-color="<%= group.colour %>" style="margin-bottom:0px;">
+        <tbody>
+          <% group.unit_items.each_with_index do |item,index| %>
+            <tr>
+              <% if index == 0 %>
+              <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table" width="5%">
+                
+                  <% group.name.each_char do |a| %>
+                    <span class="alfa" >
+                    <%= a %>
+                    </span>
+                    <br>
+                  <% end %>
+                <% end %>
+              </td>
+              <td width="19%">
+                <div class="channel-container">
+                  <%= image_tag 'img/transparent.png', 'data-original' => item.logo.url(:thumb),class: "small_image lazy-img" %>
+                  <span class="name_channel"><%= item.name %> </span>
+                  <% if item.status_hd %>
+                    <span class="hd">HD</span>
+                  <% end %>
+                </div>
+              </td>
+              <% (memberships.count - 1).times do |i| %>
+                <td>
+                  <% checked = item.memberships.map(&:id).include?(memberships[i+1]) %>
+                  <div class="roundedOne">
+                    <%= check_box_tag 'check', '', checked, {id: "member", class: "pgk"} %>
+                    <label for="<%= "member_#{index}_#{i}" %>"></label>
+                  </div>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+  <table class="table table-bordered different_width width95" style="width:95%; float:right">
+    <tbody>
+      <tr>
+        <% (memberships.count).times do |i| %>
+          <td>
+            <div class="br"></div>
+            <%= link_to extra_path(membership_id: memberships[i]),{class: 'no_underscore'} do %>
+              <div class='pack-order version2'>SUBSCRIBE</div>
+            <% end unless @selected_items.include?(memberships[i]) %>
+            <% if @selected_items.include?(memberships[i]) %>
+              <%= link_to 'javascript:void(0)',{class: 'no_underscore'} do %>
+                <div class='pack-order version2 active'>SUBSCRIBED</div>
+              <% end %>
+            <% end %>
+            <div class="br"></div>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="warn_info">
+    <span>Disclaimer: Semua Paket, Harga, dan Channel dapat berganti sewaktu-waktu tanpa pemberitahuan</span>
+</div>

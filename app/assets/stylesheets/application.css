@@ -175,3 +175,33 @@ input[type="checkbox"].pgk{
   filter: alpha(opacity=100);
   opacity: 1;
 }
+
+.prc {
+  font-size: 25px!important;
+  font-weight: bold;
+}
+.font_red {
+  color: #ed2024;
+}
+.big-decode {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+}
+.small-decode {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.head_pack_gray {
+  background-color: #f3f3f3;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  border: solid 1px #ddd!important;
+  border-bottom: none!important;
+}
+.radius_top {
+  border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  border: 0px solid #000000;
+}

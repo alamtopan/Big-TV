@@ -27,6 +27,8 @@ BigTv::Application.routes.draw do
     end
   end
 
+  get   '/customer_form',   to: 'manage/orders#customer_form',      as: 'customer_form'
+
   get   '/lokasi',   to: 'publics#lokasi',      as: 'lokasi'
   get   '/reg',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',      as: 'support'
