@@ -77,6 +77,7 @@ var FormElements = function () {
     var runCKEditor = function () {
         CKEDITOR.disableAutoInline = true;
         CKEDITOR.config.allowedContent = true;
+        CKEDITOR.basePath = "/assets/plugins/ckeditor/";
         // CKEDITOR.config.div_wrapTable = true;
         $('textarea.ckeditor').ckeditor();
     };
