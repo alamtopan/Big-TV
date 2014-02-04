@@ -55,39 +55,41 @@
             <br>
             <hr class="space" style="margin-bottom: 50px;">
             <div class="span-14">
-              <table class="to-from">
-                <tbody>
-                  <tr>
-                    <td>
-                      <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;">
-                        <%= @order.orderable.profile.full_name.upcase if @order.orderable %>
-                      </h4>
-                      <div>
-                        <span>No Telp.
-                          <%= @order.orderable.profile.no_phone if @order.orderable %>
-                        </span>
-                      </div>
-                      <div>
-                        <span>No HP.
-                          <%= @order.orderable.profile.no_hp if @order.orderable %>
-                        </span>
-                      </div>
-                      <div>
-                        <span>Alamat:</span>
-                        <span>
-                          <%= @order.orderable.profile.address if @order.orderable %>
-                        </span>
-                      </div>
-                      <div>
-                        <span>Alamat Pemasangan: </span> 
-                        <span>
-                          <%= @order.orderable.profile.address_shipping if @order.orderable %>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <% if @order.orderable %>
+                <table class="to-from">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;">
+                          <%= @order.orderable.profile.full_name.upcase if @order.orderable %>
+                        </h4>
+                        <div>
+                          <span>No Telp.
+                            <%= @order.orderable.profile.no_phone if @order.orderable %>
+                          </span>
+                        </div>
+                        <div>
+                          <span>No HP.
+                            <%= @order.orderable.profile.no_hp if @order.orderable %>
+                          </span>
+                        </div>
+                        <div>
+                          <span>Alamat:</span>
+                          <span>
+                            <%= @order.orderable.profile.address if @order.orderable %>
+                          </span>
+                        </div>
+                        <div>
+                          <span>Alamat Pemasangan: </span> 
+                          <span>
+                            <%= @order.orderable.profile.address_shipping if @order.orderable %>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              <% end %>
             </div>
             <div class="span-10 last">
               <div class="details clearfix">
@@ -157,12 +159,14 @@
                 </tbody>
               </table>
               <div>
-                Attachment :<br>
-                <% if @order.orderable.profile.file_ktp %>
-                  <%= image_tag @order.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
-                <% end %>
-                <% if @order.file_faktur %>
-                  <%= image_tag @order.file_faktur.url(:medium), class: "attachment img_attach" %>
+                <% if @order.orderable %>
+                  Attachment :<br>
+                  <% if @order.orderable.profile.file_ktp %>
+                    <%= image_tag @order.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
+                  <% end %>
+                  <% if @order.file_faktur %>
+                    <%= image_tag @order.file_faktur.url(:medium), class: "attachment img_attach" %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
