@@ -1,0 +1,74 @@
+<section class="back_packages_section">
+  <h1><span>EXTRA</span> PACKAGES</h1>
+  <div class="polosochka2"></div>
+
+  <article class="back_packages_section" style="text-align:left">
+      <div class="panel-body">
+        <div class="row-fluid">
+          <div class="span9">
+            <div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">Silahkan pilih paket extra yang akan diikutsertakan</span>
+                <%= link_to 'Lanjut >>', rental_box_manage_orders_path, class: 'pack-order float-right-fixed margn' %>
+              </div>
+            </div>
+             <div class="row-fluid">
+              <% if(flash[:alert]) %>
+                <div id="error_explanation">
+                  <div class="alert alert-block alert-danger fade in ">
+                    <%= flash[:alert] %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="br"></div>
+            <div class="panel-group" id="accordion">
+              <% @memberships.each_with_index do |membership,index| %>
+                <div class="panel panel-default">
+                    <div class="panel-heading red-h">
+                      <h4 class="panel-title">
+                        <div class="roundedOne2 versi2" styele="z-index:99999; position:absolute">
+                          <% checked = @order.items.map(&:membership_id).include?(membership.id) %>
+                          <%= check_box_tag 'membership_ids[]', membership.id, checked, id: "member_#{index}", class: "pgk" %>
+                          <label for="member_<%= index %>"></label>
+                        </div>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= membership.id %>">
+                          <span class="title_ord italic">BiG</span>
+                          <span class="title_ord"><%= membership.name %></span>
+                          <span class="left-mrg">Rp.</span>
+                          <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
+                          <span class="tb"></span>
+                        </a>
+                        <% if membership.name =~ /BPL Bola/i  %>
+                          <%= image_tag "star.png", height: "50px", style: "position: absolute;top: -1px; margin-left: 10px;" %>
+                        <% end %>
+                      </h4>
+                    </div>
+                  <div id="collapse<%= membership.id %>" class="panel-collapse in">
+                    <div class="panel-body">
+                        <% membership.unit_items.each do |item| %>
+                          <div class="div_packages_extra_new2">
+                            <% if item.status_hd %>
+                              <span class="hd2">HD</span>
+                            <% end %>
+                            <span class="name_channel2"><%= item.name %></span>
+                            <%= image_tag item.logo.url(:thumb), { class: "small_image", alt: item.logo.name }  %>
+                          </div>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="br"></div>
+            <div class="extra_banner">
+              <div class="own_extra">
+                <span class="extra_info">Silahkan pilih paket extra yang akan diikutsertakan</span>
+                <%= link_to 'Lanjut >>', rental_box_manage_orders_path, class: 'pack-order float-right-fixed margn' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </article>
+</section>

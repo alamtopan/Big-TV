@@ -1,0 +1,194 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <a href="/">Dashboard</a>
+      </li>
+      <li class="active">
+        New Customer
+      </li>
+      <li class="search-box">
+        <form class="sidebar-search">
+          <div class="form-group">
+            <input type="text" placeholder="Start Searching..." data-default="130">
+            <button class="submit">
+              <i class="clip-search-3"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>New Customer</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Customer
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= form_for @customer, url: create_customer_manage_orders_path, method: 'post', html: {class: "form-horizontal"} do |f| %>
+          <%= f.fields_for(:profile) do |profile| %>
+            <% if @customer.errors.any? %>
+              <div id="error_explanation">
+                <div class="alert alert-block alert-danger fade in ">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong>Warning!</strong> <%= pluralize(@customer.errors.count, "error") %>
+                  <% @customer.errors.full_messages.each do |msg| %>
+                  <diV>
+                    <%= msg %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+             <% end %>
+            <div class="br"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Full Name
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :first_name, class: 'form-control',placeholder:'First Name', required: true %>
+              </div>
+              <div class="col-sm-4">
+                <%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-8">
+                * Email
+              </label>
+              <div class="col-sm-4">
+                <%= f.text_field :email, class: 'form-control',placeholder:'Email', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Sex
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Birthday
+              </label>
+              <div class="col-sm-6">
+                <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'select_span2', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-12">
+                * Address
+              </label>
+              <div class="col-sm-9">
+                <%= profile.text_field :address, class: 'form-control input-lg',placeholder:'Address', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-12">
+                * Address Installation
+              </label>
+              <div class="col-sm-9">
+                <%= profile.text_field :address_shipping, class: 'form-control input-lg',placeholder:'Address', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-13">
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :city, class: 'form-control',placeholder:'City', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :province, class: 'form-control',placeholder:'Province', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :codepos, class: 'form-control',placeholder:'Poscode' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Contact
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Identity Type
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{prompt: 'Select Identity Type'}, {class: 'form-control', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Identity No
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_identitas, class: 'form-control', placeholder: 'Nomor Identitas', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                Identity File
+              </label>
+              <div class="col-sm-3">
+                <%= image_tag @customer.profile.file_ktp.url(:medium) %>
+                <%= profile.file_field :file_ktp, class: "file-input" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Referral
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@referral ? @referral.name : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * SPG ID/ Dealer ID/ BigTV ID
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :referal_id, class: 'form-control', placeholder: 'Referall', value: "#{current_user.code}", required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Tagihan
+              </label>
+              <div class="col-sm-3">
+                <%= profile.radio_button :billing_method, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
+                <br/>
+                <%= profile.radio_button :billing_method, 'post' %> <label for="billing_post">Kirim Lewat Pos</label>
+              </div>
+            </div>
+
+            <div class="pull-right">
+              <%= f.submit 'Save', class: "btn btn-bricky" %>
+              <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_customers_path, class: "btn btn-dark-grey" %>
+            </div>
+          <% end %>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</div>

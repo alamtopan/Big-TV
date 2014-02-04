@@ -1,0 +1,336 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <a href="/">Dashboard</a>
+      </li>
+      <li class="active">
+        New Customer
+      </li>
+      <li class="search-box">
+        <form class="sidebar-search">
+          <div class="form-group">
+            <input type="text" placeholder="Start Searching..." data-default="130">
+            <button class="submit">
+              <i class="clip-search-3"></i>
+            </button>
+          </div>
+        </form>
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>More Info Customer</h1>
+      <span class="extra_info">
+        Data nomor telepon dan alamat email diperlukan untuk proses verifikasi dalam proses registrasi berlangganan
+      </span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Customer
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= form_for @order.orderable||Customer.new, url: subcribe_manage_orders_path(token: params[:token]), method: 'post', html: {multipart: true, remote: true, class: 'form-subscribe form-horizontal'} do |f| %>
+          <%= hidden_field_tag(:token, params[:token]||@order.token) if @order %>
+          <%= f.fields_for(:profile) do |profile| %>
+            <div class="br"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Full Name
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :first_name, class: 'form-control',placeholder:'First Name', required: true %>
+              </div>
+              <div class="col-sm-4">
+                <%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-8">
+                * Email
+              </label>
+              <div class="col-sm-4">
+                <%= f.text_field :email, class: 'form-control',placeholder:'Email', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Sex
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{}, {:prompt => "- Pilih Salah Satu -",class: 'form-control', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Birthday
+              </label>
+              <div class="col-sm-6">
+                <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'select_span2', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-12">
+                * Address
+              </label>
+              <div class="col-sm-9">
+                <%= profile.text_field :address, class: 'form-control input-lg',placeholder:'Address', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-12">
+                * Address Installation
+              </label>
+              <div class="col-sm-9">
+                <%= profile.text_field :address_shipping, class: 'form-control input-lg',placeholder:'Address', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="form-field-13">
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :province, class: 'form-control',placeholder:'Province', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :city, class: 'form-control',placeholder:'City', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :codepos, class: 'form-control',placeholder:'Poscode' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Contact
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone', required: true %>
+              </div>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Identity Type
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select :tipe_identitas, [['KTP', 'KTP'], ['SIM', 'SIM'],['Passport','Passport']],{prompt: 'Select Identity Type'}, {class: 'form-control', required: true} %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Identity No
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :no_identitas, class: 'form-control', placeholder: 'Nomor Identitas', required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                Identity File
+              </label>
+              <div class="col-sm-3">
+                <%= image_tag @order.orderable.profile.file_ktp.url(:medium) %>
+                <%= profile.file_field :file_ktp, class: "file-input" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Referral
+              </label>
+              <div class="col-sm-3">
+                <%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@referral ? @referral.name : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * SPG ID/ Dealer ID/ BigTV ID
+              </label>
+              <div class="col-sm-3">
+                <%= profile.text_field :referal_id, class: 'form-control', placeholder: 'Referall', value: "#{current_user.code}", required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                * Tagihan
+              </label>
+              <div class="col-sm-3">
+                <%= profile.radio_button :billing_method, 'email' %> <label for="billing_email">Kirim Lewat Email</label>
+                <br/>
+                <%= profile.radio_button :billing_method, 'post' %> <label for="billing_post">Kirim Lewat Pos</label>
+                <p class="italiq_small_red">Untuk biaya pengriman lembar tagihan melalui POS maka pelanggan dikenakan biaya sebesar  Rp.7,500,-</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="order_summary">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <span class="title_ord_big">ORDER SUMMARY</span>
+                        <div class="br"></div>
+                        <% @order.items.each do |item| %>
+                          <% if item.premium? %>
+                            <span class="title_ord"><%= item.membership_category %></span>
+                            <table class="tbl_order">
+                              <tbody>
+                                <tr>
+                                  <td><%= item.title %></td>
+                                  <td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+                                </tr>
+                              <tbody>
+                            </table>
+                          <% end %>
+                        <% end %>
+                        <% membership_category = '' %>
+                        <% @order.items.each do |item| %>
+                          <% if item.extra? %>
+                            <% if item.membership_category != membership_category %>
+                              <span class="title_ord"><%= item.membership_category %></span>
+                            <% end %>
+                            <table class="tbl_order">
+                              <tbody>
+                                <tr>
+                                  <td><%= item.title %></td>
+                                  <td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+                                </tr>
+                              <tbody>
+                            </table>
+                            <% membership_category = item.membership_category %>
+                          <% end %>
+                        <% end %>
+                        <% @order.items.each do |item| %>
+                          <% if item.other? %>
+                            <% if item.title.present? %>
+                              <div class="br"></div>
+                              <table class="tbl_order">
+                                <tbody>
+                                  <tr>
+                                    <td><%= item.title %></td>
+                                    <td><div class="nominal">Rp.<b><%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %></b></div></td>
+                                  </tr>
+                                <tbody>
+                              </table>
+                            <% end %>
+                          <% end %>
+                        <% end %>
+                        <div class="post_fee hide">
+                          <div class="br"></div>
+                          <table class="tbl_order">
+                            <tbody>
+                              <tr>
+                                <td>Biaya Pengiriman</td>
+                                <td><div class="nominal">Rp.<b><span class='post_nominal'><%= number_to_currency(7500,{precision: 0, unit: ''}) %></span></b></div></td>
+                              </tr>
+                            <tbody>
+                          </table>
+                        </div>
+                        <div class="install_fee hide">
+                          <div class="br"></div>
+                          <table class="tbl_order">
+                            <tbody>
+                              <tr>
+                                <td>Biaya Transaksi</td>
+                                <td><div class="nominal">Rp.<b><span class='install_fee_nominal'>0</span></b></div></td>
+                              </tr>
+                            <tbody>
+                          </table>
+                        </div>
+                        <div class="br"></div>
+                        <div class="hr"></div>
+                        <table class="tbl_order">
+                          <tbody>
+                            <tr>
+                              <td><div style="float:right"><span class="title_ord">TOTAL</span></div></td>
+                              <td><div class="nominal">Rp.<b><span id="total-nominal" data-value="<%= @order.total_without_fee_and_period %>"><%= number_to_currency(@order.total_without_fee_and_period,{precision: 0, unit: ''}) %></span></b></div>
+                              </td>
+                            </tr>
+                          <tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="br"></div>
+                        <div class="form-group">
+                          <label class="control-label">
+                            Jenis Pembayaran
+                          </label>
+                          <table>
+                          <tr>
+                            <td valign="top">
+                              <%= radio_button_tag :payment_method, '01', false, required: true %>
+                            </td>
+                            <td>
+                              <%= image_tag "visa.png", style:"margin-right:5px"%><%= image_tag "master.png"%>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top">
+                              <%= radio_button_tag :payment_method, '05', false, required: true %>
+                            </td>
+                            <td>
+                              <%= image_tag "atm.png", style: 'height:33px' %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top">
+                              <%= radio_button_tag :payment_method, '04', false, required: true %>
+                            </td>
+                            <td>
+                              <%= image_tag "doku_wallet.png", style: 'height: 33px' %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top">
+                              <%= radio_button_tag :payment_method, 'lokasi', false, required: true %>
+                            </td>
+                            <td style="padding-top: 10px;">
+                              Pembayaran di lokasi
+                            </td>
+                          </tr>
+                        </table>
+                        </div>
+                        <div class="file-faktur-container hide">
+                          <div class="br"></div>
+                          Upload Bukti Pembayaran
+                          <div class="br"></div>
+                          <%= file_field_tag :file_faktur, class: "file-input" %>
+                        </div>
+                        <div class="br"></div>
+                        Lama Berlangganan
+                        <div class="br"></div>
+                        <select name="order[period]" id="mm" class="form-control" data-period="<%= @order.period.to_i %>">
+                          <option value="1">Beli 1 Bulan, Gratis 2 Bulan</option>
+                          <option value="6">Beli 6 Bulan, Gratis 3 Bulan</option>
+                          <option value="12">Beli 12 Bulan, Gratis 4 Bulan</option>
+                        </select>
+                        <div class="br"></div>
+                        <input type="submit" class="submit" value="LANJUT KE PEMBAYARAN">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ipay hide"></div>

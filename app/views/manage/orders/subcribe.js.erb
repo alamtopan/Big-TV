@@ -1,0 +1,7 @@
+<% if @payment_method == 'lokasi' %>
+  window.location = '/thanks?token=' + '<%= @order.token %>'
+<% else %>
+  var _html = "<%= escape_javascript(render("carts/subscribe")) %>";
+  $('.ipay').html(_html);
+  $('.ipay').find('form').submit();
+<% end %>
