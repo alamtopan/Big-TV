@@ -13,6 +13,17 @@
     </div>
    <% end %>
   
+  <% if @customer.created_at %>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">
+        * Created At
+      </label>
+      <div class="col-sm-3">
+        <h5><%= @customer.created_at.strftime('%d %b %Y - at %I:%M%p') %></h5>
+      </div>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <label class="col-sm-2 control-label">
       * Full Name

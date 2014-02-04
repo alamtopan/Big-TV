@@ -10,7 +10,7 @@
         <th>No</th>
         <th>INVOICE NO</th>
         <th>Customer</th>
-        <th>Period</th>
+        <th>Created At</th>
         <th>Total</th>
         <th>Status</th>
         <th></th>
@@ -22,7 +22,7 @@
           <th><%= index+1 %></th>
           <th><%= order.code %></th>
           <th><%= order.orderable.profile.first_name if order.orderable %></th>
-          <th><%= "#{order.period} #{order.period_name}" %></th>
+          <th><b><%= order.orderable.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></th>
           <th>Rp. <%= number_to_currency(order.total,{precision: 0, unit: ''}) %></th>
           <th><%= order.status.to_s.gsub(/pending/i, 'in progress').upcase %></th>
           <th>

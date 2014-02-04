@@ -11,7 +11,9 @@
   <body>
     <%= render partial: "shareds/front/header_detail" %>
     <div class="top_banner">
-      <div>TELEVISI SATELIT BERBAYAR <span class="white">TERBESAR</span> DI INDONESIA</div>
+      <div>
+        <%= @top_content.description.html_safe %>
+      </div>
     </div>
     <div class="cbp-fbscroller">
       <%= yield %>

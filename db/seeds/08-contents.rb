@@ -2,6 +2,30 @@ module SeedContent
   def self.seed
     contents = [
       {
+        title: 'Top Slogan Bigtv',
+        content_path: "#{Rails.root}/db/fixtures/contents/top_content.txt",
+        picture: '',
+        category: 'Slogan Bigtv'
+      },
+      {
+        title: 'SLIDE_1',
+        content_path: '',
+        picture: "#{Rails.root}/public/content/slide/SLIDE_1.jpg",
+        category: 'Slider Top'
+      },
+      {
+        title: 'SLIDE_2',
+        content_path: '',
+        picture: "#{Rails.root}/public/content/slide/SLIDE_2.jpg",
+        category: 'Slider Top'
+      },
+      {
+        title: 'SLIDE_3',
+        content_path: '',
+        picture: "#{Rails.root}/public/content/slide/SLIDE_3.jpg",
+        category: 'Slider Top'
+      },
+      {
         title: 'KUANTITAS',
         content_path: "#{Rails.root}/db/fixtures/contents/kuantitas.txt",
         picture: '',
@@ -78,6 +102,12 @@ module SeedContent
         content_path: "#{Rails.root}/db/fixtures/contents/footer_content.txt",
         picture: '',
         category: 'Footer Content'
+      },
+      {
+        title: 'FOOTER ABOUT BIGTV',
+        content_path: "#{Rails.root}/db/fixtures/contents/about_footer.txt",
+        picture: '',
+        category: 'Footer About Bigtv'
       }
       
     ]

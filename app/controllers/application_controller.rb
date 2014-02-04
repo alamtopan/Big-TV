@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
 
   protected
     def page_content
+      @top_content   = PageContent.where("category =?", "Slogan Bigtv").first
+      @slides   = PageContent.where("category =?", "Slider Top").all
+      @about_bigtv   = PageContent.where("category =?", "Footer About Bigtv").first
       @footer   = PageContent.where("category =?", "Footer Content").first
     end
 
