@@ -58,7 +58,7 @@ class PublicsController < ApplicationController
   end
 
   def show_blog
-    @blog = Blog.find_by_id(params[:id])
+    @blog = Blog.where(slug: params[:id]).first
     @title_page = "#{@blog.title}"
     render layout: "detail"
   end

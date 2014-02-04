@@ -44,9 +44,9 @@
     <tbody>
       <tr>
         <% (memberships.count).times do |i| %>
-          <td>
+          <td width="17.9%">
             <div class="br"></div>
-            <%= link_to extra_path(membership_id: memberships[i]),{class: 'no_underscore'} do %>
+            <%= link_to extra_manage_orders_path(membership_id: memberships[i]),{class: 'no_underscore'} do %>
               <div class='pack-order version2'>SUBSCRIBE</div>
             <% end unless @selected_items.include?(memberships[i]) %>
             <% if @selected_items.include?(memberships[i]) %>

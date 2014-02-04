@@ -21,50 +21,21 @@
 				</a>
 				<ul class="sub-menu" style="display: none;">
 					<li>
-						<%= link_to new_manage_order_path do %>
-							<span class='title'> Add Subscribe </span>
-						<% end %>
-					</li>
-					<li>
 						<%= link_to manage_orders_path do %>
-							<span class='title'> List </span>
+							<span class='title'> List Subscriptions</span>
 						<% end %>
 					</li>
 					<li>
-						<%= link_to customer_form_path do %>
-							<span class='title'> Add Bio </span>
+						<%= link_to new_customer_manage_orders_path do %>
+							<span class='title'> Add Subscription </span>
 						<% end %>
 					</li>
 				</ul>
 			</li>
-			<% if @membership_order %>
-				<br><br>
-        <div class="span3" style="text-align:center; margin:4px;">
-          <div class="grid_packages_decode white46">
-            <div class="head_pack_gray radius_top">
-              <h4 align="center">PAKET YANG DIPESAN</h4>
-            </div>
-            <table class="table table-bordered padding0 decode2">
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="pack-info">
-                      <div class="big-decode font_red">BiG</div>
-                      <span class="small-decode font_red"><%= @membership_order.name %></span>
-                      <div class="br-small"></div>
-                      <div class="pack-i-line">
-                        Rp.
-                        <span class="prc">
-                          <%= number_to_currency(@membership_order.prices.first.price,{precision: 0, unit: ''}) %>
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <% if @order %>
+	      <div class="cart-widget-container">
+	        <%= render 'widget' %>
+	      </div>
       <% end %>
 			<% if current_user.type != 'Referral' %>
 				<li>

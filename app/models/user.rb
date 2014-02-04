@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_one :profile, dependent: :destroy
+  belongs_to :referral_category
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
 

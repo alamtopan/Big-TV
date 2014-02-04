@@ -11,7 +11,17 @@ BigTv::Application.routes.draw do
     resources :group_items, path: 'channel_categories'
     resources :memberships
     resources :blogs
-    resources :orders,      path: 'subcriptions'
+    resources :orders,      path: 'subcriptions' do
+      collection do
+        match :extra, via: [:get, :post]
+        get   :new_customer
+        post  :create_customer
+        get   :rental_box
+        get   :preview
+        get   :premium
+        post  :subcribe
+      end
+    end
     resources :categories
     resources :users
     resources :customers
@@ -27,7 +37,6 @@ BigTv::Application.routes.draw do
     end
   end
 
-  get   '/customer_form',   to: 'manage/orders#customer_form',      as: 'customer_form'
 
   get   '/lokasi',   to: 'publics#lokasi',      as: 'lokasi'
   get   '/reg',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
