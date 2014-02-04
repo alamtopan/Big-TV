@@ -82,6 +82,7 @@ class Order < ActiveRecord::Base
   end
 
   def calculate_total(autosave=:false)
+    self.period = 1 if self.period.to_i < 1
     total_amount = items.sum(:subtotal) * (self.period||1)
     self.charge_fee = (CHARGE_FEE[self.payment_method.to_s].to_f * total_amount).ceil
     
@@ -103,8 +104,8 @@ class Order < ActiveRecord::Base
         CustomerMailer.welcome_email_admin(orderable) if orderable.present?
         destroy
       elsif success_payments.blank?
-        CustomerMailer.thanks_email(order).deliver
-        CustomerMailer.email_order_to_admin(order).deliver
+        CustomerMailer.thanks_email(self).deliver
+        CustomerMailer.email_order_to_admin(self).deliver
       end
     else
       delay(run_at: 10.minutes.from_now).remove_junk 
