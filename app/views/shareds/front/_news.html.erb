@@ -6,6 +6,7 @@
 		<div class="panel-body">
 			<div class="grd_masonry_news">
 				<% @blogs.each do |blog| %>
+				  <% next unless blog %>
 			    <div class="grid_packages_news">
 			    	<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
 			    	<div class="news_des">
@@ -16,7 +17,7 @@
 				    	</div>
 						</div>
 			    </div>
-		    <% end %>
+		    <% end if @blogs.present? %>
 		  </div>
 		</div>
 	</div>

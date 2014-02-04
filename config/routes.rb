@@ -42,7 +42,7 @@ BigTv::Application.routes.draw do
   get   '/reg',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',      as: 'support'
 
-  get   '/show_blog/:id',   to: 'publics#show_blog',      as: 'show_blog'
+  get   '/news/:id',   to: 'publics#show_blog',      as: 'show_blog'
   get   '/extra',   to: 'carts#extra',      as: 'extra'
   get   '/premium', to: 'carts#premium',    as: 'premium'
   get   '/preview', to: 'carts#preview',    as: 'preview'

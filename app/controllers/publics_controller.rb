@@ -59,7 +59,7 @@ class PublicsController < ApplicationController
 
   def show_blog
     @blog = Blog.where(slug: params[:id]).first
-    @title_page = "#{@blog.title}"
+    @title_page = "#{@blog.title}" if @blog
     render layout: "detail"
   end
 
