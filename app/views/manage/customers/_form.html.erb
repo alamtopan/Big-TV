@@ -12,7 +12,7 @@
       </div>
     </div>
    <% end %>
-  <div class="br"></div>
+  
   <div class="form-group">
     <label class="col-sm-2 control-label">
       * Full Name
@@ -24,7 +24,7 @@
       <%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name', required: true %>
     </div>
   </div>
-  <div class="br"></div>
+  
   <div class="form-group">
     <label class="col-sm-2 control-label" for="form-field-8">
       * Email
@@ -33,7 +33,7 @@
       <%= f.text_field :email, class: 'form-control',placeholder:'Email', required: true %>
     </div>
   </div>
-  <div class="br"></div>
+  
   <div class="form-group">
     <label class="col-sm-2 control-label">
       * Sex
@@ -50,7 +50,7 @@
       <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'select_span2', required: true} %>
     </div>
   </div>
-  <div class="br"></div>
+  
   <div class="form-group">
     <label class="col-sm-2 control-label" for="form-field-12">
       * Address
@@ -67,30 +67,34 @@
       <%= profile.text_field :address_shipping, class: 'form-control input-lg',placeholder:'Address', required: true %>
     </div>
   </div>
-  <div class="br"></div>
+  
   <div class="form-group">
     <label class="col-sm-2 control-label" for="form-field-13">
     </label>
     <div class="col-sm-3">
-      <%= profile.text_field :city, class: 'form-control',placeholder:'City', required: true %>
-    </div>
-    <div class="col-sm-3">
+      * Province
       <%= profile.text_field :province, class: 'form-control',placeholder:'Province', required: true %>
     </div>
     <div class="col-sm-3">
+      * City
+      <%= profile.text_field :city, class: 'form-control',placeholder:'City', required: true %>
+    </div>
+    <div class="col-sm-3">
+      * Poscode
       <%= profile.text_field :codepos, class: 'form-control',placeholder:'Poscode' %>
     </div>
   </div>
-  <div class="br"></div>
+  
   <div class="form-group">
-    <label class="col-sm-2 control-label">
-      * Contact
+    <label class="col-sm-2 control-label" for="form-field-13">
     </label>
     <div class="col-sm-3">
-      <%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone', required: true %>
+      * Handphone
+      <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone', required: true %>
     </div>
     <div class="col-sm-3">
-      <%= profile.text_field :no_phone, class: 'form-control',placeholder:'Handphone', required: true %>
+      * Phone
+      <%= profile.text_field :no_hp, class: 'form-control',placeholder:'Phone', required: true %>
     </div>
   </div>
   <div class="form-group">

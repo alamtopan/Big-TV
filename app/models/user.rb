@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
   belongs_to :referral_category
+  validates :email, uniqueness: true
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
 

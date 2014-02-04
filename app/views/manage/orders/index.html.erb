@@ -8,7 +8,7 @@
     <thead>
       <tr>
         <th>No</th>
-        <th>No Transaksi</th>
+        <th>INVOICE NO</th>
         <th>Customer</th>
         <th>Period</th>
         <th>Total</th>
@@ -26,6 +26,13 @@
           <th>Rp. <%= number_to_currency(order.total,{precision: 0, unit: ''}) %></th>
           <th><%= order.status.to_s.gsub(/pending/i, 'in progress').upcase %></th>
           <th>
+            <% if current_user.type != 'Referral' %>
+              <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+                <%= link_to manage_order_path(order.id), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' do %>
+                  <i class="icon-share"></i> Delete
+                <% end %>
+              </div>
+            <% end %>
             <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
               <%= link_to manage_order_path(order), class: 'btn btn-default' do %>
                 <i class="icon-share"></i> Invoice
