@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   after_update  :after_modification
   before_create :before_creation
 
-  scope :success_order, where("session_id IS NOT NULL")
+  scope :success_order, where("session_id IS NULL")
 
   module Status
     SUCCESS = 'success'
