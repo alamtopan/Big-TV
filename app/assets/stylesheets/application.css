@@ -445,3 +445,29 @@ div.grid_packages_decode {
 .gray_packages td{
   background: #fff;
 }
+.pack-order2 {
+  background-color: #ed2024!important;
+  height: 40px;
+  line-height: 40px;
+  margin: auto;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+  font-weight: bold;
+}
+.float-right-fixed {
+  float: right;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding: 0px 30px;
+  margin-bottom: 1px;
+}
+a.pack-order2:hover {
+  text-decoration: none;
+  color: #ccc;
+}

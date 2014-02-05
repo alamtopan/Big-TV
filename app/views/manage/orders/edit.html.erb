@@ -1,0 +1,14 @@
+<% if current_user.type != 'Referral' %>
+	<%= render partial: 'shareds/back_office/prepare_form', 
+	           locals: {
+	                     form_name:   'Orders', 
+	                     action_name: 'Edit', 
+	                     form_method: 'put'
+	                   } %>
+<% else %>
+	<br>
+	<div class="alert alert-danger">
+    <a class="close" data-dismiss="alert">×</a>
+    <div id="flash_alert">You are not authorized to access this page.</div>
+  </div>
+<% end %>

@@ -45,7 +45,7 @@
               <div style="float:left;">
                 <h2 style="position:relative; top: 20px;">
                   <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span>
-                  <%= @order.code %>
+                  <%= @order_view.code %>
                 </h2>
               </div>
               <div style="float:right;">
@@ -55,34 +55,34 @@
             <br>
             <hr class="space" style="margin-bottom: 50px;">
             <div class="span-14">
-              <% if @order.orderable %>
+              <% if @order_view.orderable %>
                 <table class="to-from">
                   <tbody>
                     <tr>
                       <td>
                         <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;">
-                          <%= @order.orderable.profile.full_name.upcase if @order.orderable %>
+                          <%= @order_view.orderable.profile.full_name.upcase if @order_view.orderable %>
                         </h4>
                         <div>
                           <span>No Telp.
-                            <%= @order.orderable.profile.no_phone if @order.orderable %>
+                            <%= @order_view.orderable.profile.no_phone if @order_view.orderable %>
                           </span>
                         </div>
                         <div>
                           <span>No HP.
-                            <%= @order.orderable.profile.no_hp if @order.orderable %>
+                            <%= @order_view.orderable.profile.no_hp if @order_view.orderable %>
                           </span>
                         </div>
                         <div>
                           <span>Alamat:</span>
                           <span>
-                            <%= @order.orderable.profile.address if @order.orderable %>
+                            <%= @order_view.orderable.profile.address if @order_view.orderable %>
                           </span>
                         </div>
                         <div>
                           <span>Alamat Pemasangan: </span> 
                           <span>
-                            <%= @order.orderable.profile.address_shipping if @order.orderable %>
+                            <%= @order_view.orderable.profile.address_shipping if @order_view.orderable %>
                           </span>
                         </div>
                       </td>
@@ -97,20 +97,20 @@
                   <b>Status:</b>
                 </div>
                 <div class="span-9 last t-right">
-                  <%= (@order.status.blank? ? 'Pending' : @order.status).gsub(/Pending/i, 'In Progress').upcase %>
+                  <%= (@order_view.status.blank? ? 'Pending' : @order_view.status).gsub(/Pending/i, 'In Progress').upcase %>
                 </div>
                 <div class="span-15" style="text-align:right;">
                   <b>Dipesan Tanggal:</b>
                 </div>
                 <div class="span-9 last t-right">
-                  <%= @order.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %>
+                  <%= @order_view.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %>
                 </div>
                 <div class="span-15" style="text-align:right;">
                   <b>Total:</b>
                 </div>
                 <div class="span-9 last t-right">
                   <span class="currency_code">Rp.</span>
-                  <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
+                  <%= number_to_currency(@order_view.total,{precision: 0, unit: ''}) %>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@
                     <th class="line_item_subtotal" style="font-size:14px">TOTAL</th>
                   </tr>
 
-                  <% packages = @order.items.all %>
+                  <% packages = @order_view.items.all %>
                   <% extra_packages = packages.select{|i| i.extra? } %>
                   <% packages = packages - extra_packages %>
                   <% premium_package = packages.select{|i| i.premium?}.first %>
@@ -133,12 +133,12 @@
                       <td class="description">
                         <%= item.title.titleize %>
                       </td>
-                      <td><%= @order.period %></td>
+                      <td><%= @order_view.period %></td>
                       <td class="nowrap">
                         <%= number_to_currency(item.price,{precision: 0, unit: ''}) %>
                       </td>
                       <td class="line_item_subtotal nowrap">
-                        <%= number_to_currency(item.price * @order.period,{precision: 0, unit: ''}) %>
+                        <%= number_to_currency(item.price * @order_view.period,{precision: 0, unit: ''}) %>
                       </td>
                     </tr>
                   <% end %>
@@ -153,19 +153,19 @@
                       <b class="right">Total</b>
                     </td>
                     <td class="amount_due nowrap" id="invoice_total">
-                      <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
+                      <%= number_to_currency(@order_view.total,{precision: 0, unit: ''}) %>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <div>
-                <% if @order.orderable %>
+                <% if @order_view.orderable %>
                   Attachment :<br>
-                  <% if @order.orderable.profile.file_ktp %>
-                    <%= image_tag @order.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
+                  <% if @order_view.orderable.profile.file_ktp %>
+                    <%= image_tag @order_view.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
                   <% end %>
-                  <% if @order.file_faktur %>
-                    <%= image_tag @order.file_faktur.url(:medium), class: "attachment img_attach" %>
+                  <% if @order_view.file_faktur %>
+                    <%= image_tag @order_view.file_faktur.url(:medium), class: "attachment img_attach" %>
                   <% end %>
                 <% end %>
               </div>
@@ -174,7 +174,9 @@
           <div style="margin-top: 10px;">
             <div class="pull-right">
               <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_orders_path, class: "btn btn-dark-grey" %>
-              <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_manage_order_path(@order), class: "btn btn-purple" %>
+              <% if current_user.type != 'Referral' %>
+                <%= link_to '<i class="icon-wrench"></i> Edit'.html_safe, edit_manage_order_path(@order_view), class: "btn btn-purple" %>
+              <% end %>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :orderable_id, :orderable_type, :session_id, :items_attributes, :file_faktur
+  attr_accessible :orderable_id, :orderable_type, :session_id, :items_attributes, :file_faktur, :status
   
   has_attached_file :file_faktur, styles:  { 
                                    :medium => "600x600>", 

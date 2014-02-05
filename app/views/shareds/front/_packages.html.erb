@@ -76,20 +76,20 @@
       	<div class="panel-group" id="accordion">
       		<% @memberships_extra.each_with_index do |membership,index| %>
             <div class="panel panel-default">
-              <div class="panel-heading red-h">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapse<%= membership.id %>">
-                    <span class="title_ord italic">BiG</span>
-                    <span class="title_ord"><%= membership.name %></span>
-                    <span class="left-mrg">Rp.</span>
-                    <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
-                    <span class="tb"></span>
-                  </a>
-                  <% if membership.name =~ /BPL Bola/i  %>
-	                  <%= image_tag "star.png", height: "50px", style: "position: absolute;top: -1px; margin-left: 10px;" %>
-	                <% end %>
-                </h4>
-              </div>
+            	<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapse<%= membership.id %>">
+	              <div class="panel-heading red-h">
+	                <h4 class="panel-title">
+	                    <span class="title_ord italic">BiG</span>
+	                    <span class="title_ord"><%= membership.name %></span>
+	                    <span class="left-mrg">Rp.</span>
+	                    <b><%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>,-</b>
+	                    <span class="tb"></span>
+	                  <% if membership.name =~ /BPL Bola/i  %>
+		                  <%= image_tag "star.png", height: "50px", style: "position: absolute;top: -1px; margin-left: 10px;" %>
+		                <% end %>
+	                </h4>
+	              </div>
+	            </a>
               <div id="collapse<%= membership.id %>" class="panel-collapse in">
                 <div class="panel-body">
 			            	<% membership.unit_items.each do |item| %>

@@ -15,7 +15,7 @@ class Ability
   end
 
   def referral_abilities(user)
-    can [:read, :create, :update], Order
+    can [:read, :create], Order
     can [:read, :update], User, id: user.id
   end
 

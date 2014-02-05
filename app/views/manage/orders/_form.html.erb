@@ -1,0 +1,145 @@
+<div class="span12">
+  <div id="invoice_contents" class="margin_invo" style="margin:auto">
+    <div style="height: 48px">
+      <div style="float:left;">
+        <h2 style="position:relative; top: 20px;">
+          <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span>
+          <%= @order_view.code %>
+        </h2>
+      </div>
+      <div style="float:right;">
+        <%= image_tag 'bigtv.png', style: 'height: 64px;' %>
+      </div>
+    </div>
+    <br>
+    <hr class="space" style="margin-bottom: 50px;">
+    <div class="span-14">
+      <% if @order_view.orderable %>
+        <table class="to-from">
+          <tbody>
+            <tr>
+              <td>
+                <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;">
+                  <%= @order_view.orderable.profile.full_name.upcase if @order_view.orderable %>
+                </h4>
+                <div>
+                  <span>No Telp.
+                    <%= @order_view.orderable.profile.no_phone if @order_view.orderable %>
+                  </span>
+                </div>
+                <div>
+                  <span>No HP.
+                    <%= @order_view.orderable.profile.no_hp if @order_view.orderable %>
+                  </span>
+                </div>
+                <div>
+                  <span>Alamat:</span>
+                  <span>
+                    <%= @order_view.orderable.profile.address if @order_view.orderable %>
+                  </span>
+                </div>
+                <div>
+                  <span>Alamat Pemasangan: </span> 
+                  <span>
+                    <%= @order_view.orderable.profile.address_shipping if @order_view.orderable %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+    <div class="span-10 last">
+      <div class="details clearfix">
+        <div class="span-15" style="text-align:right;">
+          <b>Status:</b>
+        </div>
+        <div class="span-9 last t-right">
+          <%= f.select :status, 
+              [ ['Pending', 'pending'],
+                ['Failed', 'failed'], 
+                ['Success', 'success']],
+                {:prompt => "- Select Gender -"},
+                {class: 'form-control', required: true} %>
+        </div>
+        <div class="br"></div>
+        <div class="span-15" style="text-align:right;">
+          <b>Dipesan Tanggal:</b>
+        </div>
+        <div class="span-9 last t-right">
+          <%= @order_view.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %>
+        </div>
+        <div class="span-15" style="text-align:right;">
+          <b>Total:</b>
+        </div>
+        <div class="span-9 last t-right">
+          <span class="currency_code">Rp.</span>
+          <%= number_to_currency(@order_view.total,{precision: 0, unit: ''}) %>
+        </div>
+      </div>
+    </div>
+    <div class="span-24" style="margin-top: 50px;">
+      <table id="line_items" class="span-24">
+        <tbody><tr>
+            <th class="description">KETERANGAN</th>
+            <th style="font-size:14px">PERIODE</th>
+            <th class="unit-price" style="font-size:14px;width: 150px;text-align:center;">HARGA/BULAN</th>
+            <th class="line_item_subtotal" style="font-size:14px">TOTAL</th>
+          </tr>
+
+          <% packages = @order_view.items.all %>
+          <% extra_packages = packages.select{|i| i.extra? } %>
+          <% packages = packages - extra_packages %>
+          <% premium_package = packages.select{|i| i.premium?}.first %>
+          <% packages = packages - [premium_package] %>
+          <% [premium_package].concat(extra_packages).concat(packages).flatten.compact.each do |item| %>
+            <tr class="line_item odd">
+              <td class="description">
+                <%= item.title.titleize %>
+              </td>
+              <td><%= @order_view.period %></td>
+              <td class="nowrap">
+                <%= number_to_currency(item.price,{precision: 0, unit: ''}) %>
+              </td>
+              <td class="line_item_subtotal nowrap">
+                <%= number_to_currency(item.price * @order_view.period,{precision: 0, unit: ''}) %>
+              </td>
+            </tr>
+          <% end %>
+          <tr>
+            <td class="rule" colspan="4">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              &nbsp;
+            </td>
+            <td class="amount_due">
+              <b class="right">Total</b>
+            </td>
+            <td class="amount_due nowrap" id="invoice_total">
+              <%= number_to_currency(@order_view.total,{precision: 0, unit: ''}) %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <% if @order_view.orderable %>
+          Attachment :<br>
+          <% if @order_view.orderable.profile.file_ktp %>
+            <%= image_tag @order_view.orderable.profile.file_ktp.url(:medium), class: "attachment img_attach" %>
+          <% end %>
+          <% if @order_view.file_faktur %>
+            <%= image_tag @order_view.file_faktur.url(:medium), class: "attachment img_attach" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 10px;">
+    <div class="pull-right">
+      <%= f.submit 'Save Change', class: "btn btn-bricky" %>
+      <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_orders_path, class: "btn btn-dark-grey" %>
+    </div>
+  </div>
+</div>

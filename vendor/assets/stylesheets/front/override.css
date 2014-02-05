@@ -88,3 +88,10 @@ table.langganan tr td{
 }
 
 #features .feature{ margin: 0px 23px; }
+a div.panel-heading.red-h{
+  background: #ed2024!important;
+  position: relative;
+}
+a div.panel-heading.red-h{
+  color: #fff;
+}

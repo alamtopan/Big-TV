@@ -6,6 +6,14 @@ class Manage::OrdersController < Manage::ResourcesController
     @orders = Order.success_order.page(params[:page]).per(20)
   end
 
+  def show
+    @order_view = Order.find(params[:id])
+  end
+
+  def edit
+    @order_view = Order.find(params[:id])
+  end
+
   def new
   	@memberships   = Membership.packages_by_category('premium')
     @groups        = GroupItem.includes(unit_items: [:memberships]).by_position
