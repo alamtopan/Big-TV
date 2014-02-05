@@ -57,13 +57,18 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">
-									* Referal
+									Referal
 									</label>
 									<%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@referal ? @referal.name : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
 								</div>
-								<div class="form-group">
+								<div class="form-group tf-dealer">
 									<label class="control-label">
-										SPG ID/ Dealer ID/ BigTV ID
+										<%= "SPG ID / BIGTV ID" if @order.orderable.profile == '1' || '2' %>
+										<%= "Dealer / Distributor ID" if @order.orderable.profile == '3' %>
+										<%= "Program" if @order.orderable.profile == '4' %>
+										<%= "Bigtv ID" if @order.orderable.profile == '5' %>
+										<%= "SPG ID" if @order.orderable.profile == '6' %>
+										<%= "Others" if @order.orderable.profile == '7' %>
 									</label>
 									<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "Khusus untuk staff BigTV"} %>
 								</div>
