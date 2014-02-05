@@ -245,4 +245,13 @@ $(document).ready(function(){
     js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1&appId=791578794202636";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+  $('#click_packages_more').click(function(){
+    $('.click_packages_more').slideToggle(600);
+    $(this).css("display","none");
+  });
+
+  $('#click_footer_more').click(function(){
+    $('.click_footer_more').slideToggle(600);
+    $(this).css("display","none");
+  });
 });

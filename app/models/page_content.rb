@@ -7,4 +7,5 @@ class PageContent < ActiveRecord::Base
                                     :default_url => "/assets/no-image.png"
 
   validates_presence_of :title
+
 end

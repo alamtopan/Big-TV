@@ -61,7 +61,12 @@
 	      </tr>
 	    </tbody>
 	  </table>
-		<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
+		<div class="click_packages_more">
+			<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
+		</div>
+		<div class="br"></div>
+		<div class="trial" id="click_packages_more"><a>VIEW MORE</a></div>
+
   </article>
   <br><br>
 	<div class="polosochka"></div>

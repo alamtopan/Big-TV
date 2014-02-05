@@ -3,7 +3,11 @@ class Manage::OrdersController < Manage::ResourcesController
   defaults :resource_class => Order, :collection_name => 'orders', :instance_name => 'order'
 
   def index
-    @orders = Order.success_order.page(params[:page]).per(20)
+    if current_user.type == 'Referral'
+      @orders = current_user.orders.success_order.page(params[:page]).per(20)
+    else
+      @orders = Order.success_order.page(params[:page]).per(20)
+    end
   end
 
   def show

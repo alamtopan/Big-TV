@@ -1,52 +1,86 @@
-<%= render layout: 'shareds/back_office/prepare_table', 
-           locals: {
-                     table_name:  'Subscriptions', 
-                     button_name: 'Subscription'
-                   } do %>
-
-  <table class="table table-hover" id="sample-table-1">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>INVOICE NO</th>
-        <th>Customer</th>
-        <th>Created At</th>
-        <th>Total</th>
-        <th>Status</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each_with_index do |order,index| %>
-        <tr>
-          <th><%= index+1 %></th>
-          <th><%= order.code %></th>
-          <th><%= order.orderable.profile.first_name if order.orderable %></th>
-          <th>
-              <b><%= order.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %></b>
-          </th>
-          <th>Rp. <%= number_to_currency(order.total,{precision: 0, unit: ''}) %></th>
-          <th><%= order.status.to_s.gsub(/pending/i, 'in progress').upcase %></th>
-          <th>
-            <% if current_user.type != 'Referral' %>
-              <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
-                <%= link_to manage_order_path(order.id), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' do %>
-                  <i class="icon-share"></i> Delete
-                <% end %>
-              </div>
-            <% end %>
-            <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
-              <%= link_to manage_order_path(order), class: 'btn btn-default' do %>
-                <i class="icon-share"></i> Invoice
-              <% end %>
-            </div>
-          </th>
-        </tr>  
-      <% end %>
-   </tbody>
-  </table>
-  <div>
-    <%= paginate @orders %>
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <a href="/">Dashboard</a>
+      </li>
+      <li class="active">
+        Subscriptions
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>
+        Subscriptions List
+        <div style="display: inline-table; float: right;">
+          <%= link_to new_customer_manage_orders_path, class: "btn btn-primary" do %>
+            <i class="icon-plus"></i>
+            Add Subscription
+          <% end %>
+        </div>
+      </h1>
+    </div>
   </div>
-  
-<% end %>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Subscriptions
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover" id="sample-table-1">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>INVOICE NO</th>
+              <th>Customer</th>
+              <th>Created At</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each_with_index do |order,index| %>
+              <tr>
+                <th><%= index+1 %></th>
+                <th><%= order.code %></th>
+                <th><%= order.orderable.profile.first_name if order.orderable %></th>
+                <th>
+                    <b><%= order.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %></b>
+                </th>
+                <th>Rp. <%= number_to_currency(order.total,{precision: 0, unit: ''}) %></th>
+                <th><%= order.status.to_s.gsub(/pending/i, 'in progress').upcase %></th>
+                <th>
+                  <% if current_user.type != 'Referral' %>
+                    <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+                      <%= link_to manage_order_path(order.id), method: :delete, data: {confirm: 'Are you sure'}, class: 'btn btn-default' do %>
+                        <i class="icon-share"></i> Delete
+                      <% end %>
+                    </div>
+                  <% end %>
+                  <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+                    <%= link_to manage_order_path(order), class: 'btn btn-default' do %>
+                      <i class="icon-share"></i> Invoice
+                    <% end %>
+                  </div>
+                </th>
+              </tr>  
+            <% end %>
+         </tbody>
+        </table>
+        <div>
+          <%= paginate @orders %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

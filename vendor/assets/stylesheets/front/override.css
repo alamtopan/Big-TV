@@ -1,4 +1,7 @@
- #sml{
+.click_packages_more, .click_footer_more{
+  display: none;
+}
+#sml{
   float: left!important;
   margin-right: 4px!important;
  }
@@ -84,7 +87,7 @@ table.langganan tr td{
   left: 0;
   right: 0;
   display: inline-block;
-  margin-top: 8%;
+  margin-top: 5%;
 }
 
 #features .feature{ margin: 0px 23px; }
