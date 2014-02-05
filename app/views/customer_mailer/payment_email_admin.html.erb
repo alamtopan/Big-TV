@@ -136,7 +136,7 @@
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <% if @user.profile.tanggal_lahir.is_a?(Date) %>
-                                              <%= @user.profile.tanggal_lahir.strftime('%d %b %Y')
+                                              <%= @user.profile.tanggal_lahir.strftime('%d %b %Y') %>
                                             <% else %>
                                               <%= @user.profile.tanggal_lahir %>
                                             <% end %>
