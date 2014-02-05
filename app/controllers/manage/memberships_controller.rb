@@ -8,6 +8,7 @@ class Manage::MembershipsController < Manage::ResourcesController
     def prepare_select
       @categories = Category.all
       @group_items = GroupItem.all
+      @unit_items = UnitItem.where("group_item_id IS NULL")
       @periode_name =  MembershipPrice.periode_name.values
     end
 
