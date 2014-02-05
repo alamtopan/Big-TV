@@ -8,9 +8,6 @@ config/database.yml
 /log/*.log
 /tmp
 
-Capfile
-config/deploy.rb
-config/deploy/*
 deployer/*
 
 public/assets/*

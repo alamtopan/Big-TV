@@ -100,7 +100,7 @@
                                       <tbody>
                                         <tr style="border-collapse:collapse">
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
-                                            ID Pelanggan:
+                                            No registrasi:
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <%= @user.code %>
@@ -128,6 +128,66 @@
                                           </td>
                                           <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
                                             <%= [@user.profile.no_phone, @user.profile.no_hp].join(' / ') %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Tanggal Lahir:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <% if @user.profile.tanggal_lahir.is_a?(Date) %>
+                                              <%= @user.profile.tanggal_lahir.strftime('%d %b %Y')
+                                            <% else %>
+                                              <%= @user.profile.tanggal_lahir %>
+                                            <% end %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Tipe Identitas:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.tipe_identitas %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Referral:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.referal %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Referral ID:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.referal_id %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Cara Pembayaran:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.billing_method %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Alamat Tinggal:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.address %>
+                                          </td>
+                                        </tr>
+                                        <tr style="border-collapse:collapse">
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:right;font-size:12;font-weight:bold;" width="100">
+                                            Alamat Pemasangan:
+                                          </td>
+                                          <td style="font-family:Helvetica Neue,Arial,Helvetica,Geneva,sans-serif;border-collapse:collapse;text-align:left;padding-left: 10px;font-size:12px;" width="400">
+                                            <%= @user.profile.address_shipping %>
                                           </td>
                                         </tr>
                                       </tbody>

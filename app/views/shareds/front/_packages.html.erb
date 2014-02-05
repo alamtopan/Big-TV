@@ -45,6 +45,7 @@
 													<span class="prc">
 														<%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
 													</span>
+                          <br/>per bulan
 												</div>
 											</div>
 											<div class="br"></div>
@@ -59,8 +60,9 @@
 	          </td>
 	        <% end %>
 	      </tr>
-	    </tbody>
-	  </table>
+      </tbody>
+    </table>
+    
 		<div class="click_packages_more">
 			<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
 		</div>

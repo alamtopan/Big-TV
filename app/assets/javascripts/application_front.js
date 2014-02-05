@@ -247,12 +247,12 @@ $(document).ready(function(){
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   $('#click_packages_more').click(function(){
-    $('.click_packages_more').slideToggle(600);
+    $('.click_packages_more').slideToggle(2000);
     $(this).css("display","none");
   });
 
   $('#click_footer_more').click(function(){
-    $('.click_footer_more').slideToggle(600);
+    $('.click_footer_more').slideToggle(2000);
     $(this).css("display","none");
   });
   $('.customer_profile_attributes_referal').value

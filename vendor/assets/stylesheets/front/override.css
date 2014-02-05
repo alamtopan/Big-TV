@@ -87,7 +87,7 @@ table.langganan tr td{
   left: 0;
   right: 0;
   display: inline-block;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 #features .feature{ margin: 0px 23px; }
@@ -97,4 +97,15 @@ a div.panel-heading.red-h{
 }
 a div.panel-heading.red-h{
   color: #fff;
+}
+
+#click_footer_more a{
+  color: #ed2024;
+}
+
+.alfa27{
+  height: 27px;
+  width: 100%;
+  float: left;
+  text-transform: uppercase;
 }

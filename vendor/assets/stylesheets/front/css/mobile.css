@@ -4,6 +4,9 @@
     max-width: 720px;
     min-width: 570px;
   }
+  #intro{
+    display: none;
+  }
   .div_packages_extra_new{
     border: solid 1px #ccc;
     width: 43%;
@@ -406,7 +409,7 @@ div.grid_packages_footer{
   {
     font-size: 20px;
     line-height: 26px;
-    font-family: 'Calibri', serif;
+    font-family: 'Lato', serif;
   }
   .profits-block h2
   {
@@ -596,7 +599,9 @@ div.grid_packages_footer{
            margin: 0;
            float: left;
         }
-    .feature_cont_slider_mobile .feature_cont .feature p,
+    .feature_cont_slider_mobile .feature_cont .feature p{
+      font-size: 18px;
+    }
     .feature_cont_slider_mobile .feature_cont .feature h3 span{
       font-size: 24px;
     }
@@ -704,13 +709,13 @@ div.grid_packages_footer{
     {
       font-size: 20px;
       line-height: 26px;
-      font-family: 'Calibri', serif;
+      font-family: 'Lato', serif;
     }
     .feedback-info .main
     {
       font-size: 21px;
       line-height: 20px;
-      font-family: 'Calibri', serif;
+      font-family: 'Lato', serif;
     }
     .blog_post_info p,
     .address h3

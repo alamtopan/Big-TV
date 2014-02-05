@@ -28,5 +28,6 @@ class Profile < ActiveRecord::Base
   def regional
     [city, province, codepos].select{|r| r.present?}.join(',')
   end
+
 end
 

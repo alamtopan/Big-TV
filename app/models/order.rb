@@ -107,7 +107,7 @@ class Order < ActiveRecord::Base
         destroy
       elsif success_payments.blank?
         CustomerMailer.thanks_email(self).deliver
-        CustomerMailer.email_order_to_admin(self).deliver
+        # CustomerMailer.email_order_to_admin(self).deliver
       end
     else
       delay(run_at: 10.minutes.from_now).remove_junk 

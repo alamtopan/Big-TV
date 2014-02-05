@@ -40,6 +40,15 @@ class Membership < ActiveRecord::Base
     self.prices.first.price if self.prices
   end
 
+  def price_year
+    monthly_price = price_month
+    if price_month
+      annual_price = self.prices.where(total_period: 12, periode_name: 'month').first
+      return annual_price.price if annual_price.price.to_i > 0
+      return 12*monthly_price
+    end
+  end
+
   class << self
     def packages_by_category(_package)
       includes(:category, :prices, :unit_items).where(['categories.name = ?', _package]).by_position
