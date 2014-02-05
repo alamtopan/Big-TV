@@ -177,7 +177,7 @@
                                               <% @order.items.each do |item| %>
                                                 <li><%= item.title %>(<%= "Rp. #{number_to_currency(item.subtotal,{precision: 0, unit: ''})}" %>)</li><% end %>
                                               <% if @order.charge_fee.to_f > 0 %>
-                                                <li>Biaya Transaksi (<%= "Rp. #{number_to_currency(item.charge_fee,{precision: 0, unit: ''})}" %>)</li>
+                                                <li>Biaya Transaksi (<%= "Rp. #{number_to_currency(@order.charge_fee,{precision: 0, unit: ''})}" %>)</li>
                                               <% end %>
                                             </ul>
                                           </td>
