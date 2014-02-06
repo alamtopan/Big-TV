@@ -2860,6 +2860,7 @@ div.grid_packages_footer{
     display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
     width: 100%;
     margin-bottom: 10px;
+    float: left;
   }
 
 .post{

@@ -109,3 +109,21 @@ a div.panel-heading.red-h{
   float: left;
   text-transform: uppercase;
 }
+
+.fb_iframe_widget iframe{
+  width: 100%!important;
+  height: 300px!important;
+}
+.table td{
+  position: relative!important;
+}
+.channel-container{
+  position: relative!important;
+  width: 100%!important;
+}
+.package-channel-table tr td img {
+  right: -0px;
+}
+.package-channel-table .hd {
+  left: 0px;
+}
