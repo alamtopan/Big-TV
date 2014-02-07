@@ -1281,36 +1281,26 @@ memberships:
         - item:
             name: 'NBA TV'
   - membership:
-      name:         'Box Office'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 5
-      prices:
-        - price:
-            price:    99999
-            total:    1
-            periode:  'month'
-      items:
-      - item:
-          name: 'Fox Movies Premium'
-      - item:
-          name: 'Fox Action Movies'
-      - item:
-          name: 'Fox Family Movies'
-      - item:
-          name: 'MGM'
-      - item:
-          name: 'HBO'
-      - item:
-          name: 'HBO Hits'
-      - item:
-          name: 'CineMAX'
-      - item:
-          name: 'HBO Signature'
-      - item:
-          name: 'HBO Family'
+        name:         'Movies'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 5
+        prices:
+          - price:
+              price:    49999
+              total:    1
+              periode:  'month'
+        items:
+        - item:
+            name: 'FOX Movies Premium HD'
+        - item:
+            name: 'FOX Family Movies'
+        - item:
+            name: 'MGM'
+        - item:
+            name: "J'Go HD"
   - membership:
         name:         'HBO Movies'
         description:  ''
@@ -1335,26 +1325,36 @@ memberships:
         - item:
             name: 'HBO Family'
   - membership:
-        name:         'Movies'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'extra'
-        position: 7
-        prices:
-          - price:
-              price:    49999
-              total:    1
-              periode:  'month'
-        items:
-        - item:
-            name: 'FOX Movies Premium HD'
-        - item:
-            name: 'FOX Family Movies'
-        - item:
-            name: 'MGM'
-        - item:
-            name: "J'Go HD"
+      name:         'Box Office'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 7
+      prices:
+        - price:
+            price:    99999
+            total:    1
+            periode:  'month'
+      items:
+      - item:
+          name: 'Fox Movies Premium'
+      - item:
+          name: 'Fox Action Movies'
+      - item:
+          name: 'Fox Family Movies'
+      - item:
+          name: 'MGM'
+      - item:
+          name: 'HBO'
+      - item:
+          name: 'HBO Hits'
+      - item:
+          name: 'CineMAX'
+      - item:
+          name: 'HBO Signature'
+      - item:
+          name: 'HBO Family'
   - membership:
       name:         'Kids'
       description:  ''
@@ -1381,28 +1381,20 @@ memberships:
       - item:
           name: 'Toonami' 
   - membership:
-      name:         'Hong Kong'
-      description:  ''
-      published:    true
-      featured:     true
-      category:     'extra'
-      position: 9
-      prices:
-        - price:
-            price:    49999
-            total:    1
-            periode:  'month'
-      items:
-      - item:
-          name: 'TVB 8'
-      - item:
-          name: 'TVB S Asia'
-      - item:
-          name: 'TVB Xing He'
-      - item:
-          name: 'TVB Jade'
-      - item:
-          name: 'TVB S News'
+        name:         'Korea'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 9
+        prices:
+          - price:
+              price:    150000
+              total:    1
+              periode:  'month'
+        items:
+        - item:
+            name: 'K-TV'
   - membership:
       name:         'China'
       description:  ''
@@ -1427,63 +1419,35 @@ memberships:
       - item:
           name: 'Xing Kong'
   - membership:
-        name:         'Korea'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'extra'
-        position: 11
-        prices:
-          - price:
-              price:    150000
-              total:    1
-              periode:  'month'
-        items:
-        - item:
-            name: 'K-TV'
-  - membership:
-        name:         'Japan'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'extra'
-        position: 12
-        prices:
-          - price:
-              price:    50000
-              total:    1
-              periode:  'month'
-        items:
-        - item:
-            name: 'NHK World Premium'
-  - membership:
-        name:         'India'
-        description:  ''
-        published:    true
-        featured:     true
-        category:     'extra'
-        position: 13
-        prices:
-          - price:
-              price:    75000
-              total:    1
-              periode:  'month'
-        items:
-        - item:
-            name: 'Sony'
-        - item:
-            name: 'MAX'
-        - item:
-            name: 'Star Plus'
-        - item:
-            name: 'Star Gold'
+      name:         'Hong Kong'
+      description:  ''
+      published:    true
+      featured:     true
+      category:     'extra'
+      position: 11
+      prices:
+        - price:
+            price:    49999
+            total:    1
+            periode:  'month'
+      items:
+      - item:
+          name: 'TVB 8'
+      - item:
+          name: 'TVB S Asia'
+      - item:
+          name: 'TVB Xing He'
+      - item:
+          name: 'TVB Jade'
+      - item:
+          name: 'TVB S News'
   - membership:
         name:         'Aussie'
         description:  ''
         published:    true
         featured:     true
         category:     'extra'
-        position: 14
+        position: 12
         prices:
           - price:
               price:    120000
@@ -1500,7 +1464,7 @@ memberships:
       published:    true
       featured:     true
       category:     'extra'
-      position: 15
+      position: 13
       prices:
         - price:
             price:    150000
@@ -1509,6 +1473,42 @@ memberships:
       items:
       - item:
           name: 'Star Cricket'
+  - membership:
+        name:         'Japan'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 14
+        prices:
+          - price:
+              price:    50000
+              total:    1
+              periode:  'month'
+        items:
+        - item:
+            name: 'NHK World Premium'
+  - membership:
+        name:         'India'
+        description:  ''
+        published:    true
+        featured:     true
+        category:     'extra'
+        position: 15
+        prices:
+          - price:
+              price:    75000
+              total:    1
+              periode:  'month'
+        items:
+        - item:
+            name: 'Sony'
+        - item:
+            name: 'MAX'
+        - item:
+            name: 'Star Plus'
+        - item:
+            name: 'Star Gold'
 
 
   - membership:

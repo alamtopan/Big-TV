@@ -98,6 +98,12 @@ module SeedContent
         category: 'Tab Support Content'
       },
       {
+        title: 'ATM BERSAMA',
+        content_path: "#{Rails.root}/db/fixtures/contents/atm_bersama.txt",
+        picture: '',
+        category: 'Tab Support Content'
+      },
+      {
         title: 'FOOTER CONTENT',
         content_path: "#{Rails.root}/db/fixtures/contents/footer_content.txt",
         picture: '',
