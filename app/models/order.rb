@@ -62,7 +62,7 @@ class Order < ActiveRecord::Base
   end
 
   def grand_total
-    self.total.to_i + self.charge_fee.to_i
+    self.total.to_i + calculate_charge_fee.to_i
   end
 
   def total_non_fee
@@ -83,10 +83,17 @@ class Order < ActiveRecord::Base
     total_with_fee_and_non_period * self.period.to_i
   end
 
+  def calculate_charge_fee(total_amount=nil)
+    return self.charge_fee if self.charge_fee.to_i > 0 && CHARGE_FEE[self.payment_method.to_s].present?
+    total_amount = self.total.to_i unless total_amount
+    self.update_column(:charge_fee, (CHARGE_FEE[self.payment_method.to_s].to_f * total_amount).ceil)
+    self.charge_fee.to_i
+  end
+
   def calculate_total(autosave=:false)
     self.period = 1 if self.period.to_i < 1
     total_amount = items.sum(:subtotal) * (self.period||1)
-    self.charge_fee = (CHARGE_FEE[self.payment_method.to_s].to_f * total_amount).ceil
+    self.charge_fee = calculate_charge_fee(total_amount)
     
     if [:conditional, :true].include?(autosave)
       if total_amount.to_i != total || autosave == :true
@@ -165,8 +172,8 @@ class Order < ActiveRecord::Base
        "%.2f" % (period*item.quantity*item.price)
       ].join(',')
     }.join(';')
-    return basket_str unless self.charge_fee.to_f > 0
-    charge_fee_str = "%.2f" % self.charge_fee
+    return basket_str unless calculate_charge_fee > 0
+    charge_fee_str = "%.2f" % calculate_charge_fee
     "#{basket_str};Biaya Transaksi,#{charge_fee_str},1,#{charge_fee_str}"
   end
 
