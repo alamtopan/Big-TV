@@ -11,7 +11,7 @@
 				<ul class="nav navbar-right">
 					<li class="dropdown current-user">
 						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-							<img src="/assets/avatar-1-small.jpg" class="circle-img" alt="">
+							<%= image_tag current_user.profile.avatar.url(:medium), class: "circle-img", height: '35px'%>
 							<span class="username"><%= current_user.username if current_user %></span>
 							<i class="clip-chevron-down"></i>
 						</a>

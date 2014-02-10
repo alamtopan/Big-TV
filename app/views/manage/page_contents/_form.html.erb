@@ -44,12 +44,23 @@
     </div>
   </div>
 </div>
-<div class="form-group">
-  <%= f.label :description, class: "col-sm-2 control-label" %>
-  <div class="col-sm-9">
-    <%= f.text_area :description, class: "ckeditor form-control", required: true %>
+<% if @page_content.category == 'Slider Top' %>
+  <div class="form-group">
+    <%= f.label :link_url, class: "col-sm-2 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :link, class: "form-control", required: true %>
+    </div>
   </div>
-</div>
+<% end %>
+<% if @page_content.category != 'Slider Top' %>
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-2 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_area :description, class: "ckeditor form-control", required: true %>
+    </div>
+  </div>
+<% end %>
+
 <div class="pull-right">
   <%= f.submit 'Save', class: "btn btn-bricky" %>
   <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_page_contents_path, class: "btn btn-dark-grey" %>

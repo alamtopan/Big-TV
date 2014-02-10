@@ -11,7 +11,9 @@
         <% @slides.each do |slide| %>
           <li>
             <div class="info" style="text-align:center;">
-              <%= image_tag slide.picture %>
+              <a href="<%= slide.link %>">
+                <%= image_tag slide.picture %>
+              </a>
             </div>
           </li>
         <% end %>

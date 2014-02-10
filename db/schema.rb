@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140203235753) do
+ActiveRecord::Schema.define(:version => 20140210192603) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20140203235753) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "link"
   end
 
   create_table "payments", :force => true do |t|
@@ -212,6 +213,10 @@ ActiveRecord::Schema.define(:version => 20140203235753) do
     t.integer  "file_ktp_file_size"
     t.datetime "file_ktp_updated_at"
     t.string   "billing_method"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "referral_categories", :force => true do |t|

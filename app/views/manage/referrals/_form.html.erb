@@ -49,6 +49,27 @@
   </div>
   
   <div class="form-group">
+    <%= profile.label :avatar, class: "col-sm-2 control-label" %>
+    <br>
+    <div class="col-sm-9">
+      <div class="fileupload fileupload-new" data-provides="fileupload">
+        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+          <%= image_tag @referral.profile.avatar.url(:medium) %>
+        </div>
+        <div>
+          <div class="btn btn-light-grey btn-file">
+            <span class="btn btn-file btn-light-grey">
+              <i class="icon-folder-open-alt"></i> 
+              <span class="fileupload-new">Select file</span>
+              <span class="fileupload-exists">Change</span>
+              <%= profile.file_field :avatar, class: "file-input" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
     <label class="col-sm-2 control-label">
       * Full Name
     </label>

@@ -1,5 +1,5 @@
 class PageContent < ActiveRecord::Base
-  attr_accessible :category, :description, :title, :picture
+  attr_accessible :category, :description, :title, :picture, :link
   has_attached_file :picture, styles:  { 
                                      :medium => "300x300>", 
                                      :thumb => "100x100>" 
