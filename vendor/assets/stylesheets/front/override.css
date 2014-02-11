@@ -1,3 +1,37 @@
+.des_tab.warn{
+  color: red;
+  font-style: italic;
+}
+.support_width{
+  width: 400px;
+  margin: auto;
+  margin-top:40px; 
+}
+.support_cont{
+  background: #ed2024;
+  color: #fff;
+  padding: 20px 20px;
+  width: 39%;
+  float: left;
+  cursor: pointer;
+  margin-right: 1px;
+  font-weight: bold;
+}
+.support_cont:hover{
+  opacity:0.8;
+  border-bottom: solid 3px yellow;
+}
+.support_cont.active{
+  opacity:0.8;
+  border-bottom: solid 3px yellow;
+}
+.cont2{
+    display: none;
+    width: 100%;
+  }
+#cont1, #cont2{
+    cursor: pointer;
+  }
 .previous_slider{
   position: absolute;
   padding: 8px 10px;

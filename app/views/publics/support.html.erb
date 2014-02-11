@@ -1,23 +1,55 @@
 <section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
-	<h1><span>PEMBAYARAN MUDAH DIMANA SAJA</span></h1>
-	<div class="polosochka2"></div>
+	<div class="support_width">
+		<div class="support_cont c1" id="cont1">PEMBAYARAN</div>
+		<div class="support_cont c2" id="cont2">FAQ</div>
+	</div>
 	<article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
 		<div class="panel-body" style="text-align:center; width:940px">
-			<ul class="nav nav-tabs">
-			  <% @supports.each do |support| %>
-				  <li><a href="#<%= support.id%>" data-toggle="tab"><%= support.title%></a></li>
-				<% end %>
-			</ul>
+			<div class="cont1">
+				<h1><span>PEMBAYARAN MUDAH DIMANA SAJA</span></h1>
+				<div class="polosochka2"></div>
+				<ul class="nav nav-tabs">
+				  <% @support_pembayaran.each do |support| %>
+					  <li><a href="#<%= support.id%>" data-toggle="tab"><%= support.title%></a></li>
+					<% end %>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+				  <% @support_pembayaran.each_with_index do |support,index| %> 
+					  <div class="tab-pane <%= " active" if index == 0 %> white_tab" id="<%= support.id%>">
+					  	<div class="content_support">
+					  		<%= support.description.html_safe %>
+					  	</div>
+					  </div>
+				  <% end %>
+				</div>
+			</div>
 
-			<!-- Tab panes -->
-			<div class="tab-content">
-			  <% @supports.each_with_index do |support,index| %> 
-				  <div class="tab-pane <%= " active" if index == 0 %> white_tab" id="<%= support.id%>">
-				  	<div class="content_support">
-				  		<%= support.description.html_safe %>
-				  	</div>
-				  </div>
-			  <% end %>
+			<div class="cont2">
+				<% if @support_faq.present? %>
+					<h1><span>FAQ</span></h1>
+					<div class="polosochka2"></div>
+					<ul class="nav nav-tabs">
+					  <% @support_faq.each do |support| %>
+						  <li><a href="#<%= support.id%>b" data-toggle="tab"><%= support.title%></a></li>
+						<% end %>
+					</ul>
+					<div class="tab-content">
+					  <% @support_faq.each_with_index do |support,index| %> 
+						  <div class="tab-pane <%= " active" if index == 0 %> white_tab" id="<%= support.id%>b">
+						  	<div class="content_support">
+						  		<%= support.description.html_safe %>
+						  	</div>
+						  </div>
+					  <% end %>
+					</div>
+				<% else %>
+				<div class="des_tab warn">
+						<div>
+							Data faq is empty
+						</div>
+					</div>
+				<% end %>
 			</div>
 			<div class="content_support" style="text-align:left">
 				<%= image_tag "support/contact.png", class: "img_support" %>

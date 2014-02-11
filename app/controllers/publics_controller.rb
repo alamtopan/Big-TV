@@ -53,7 +53,8 @@ class PublicsController < ApplicationController
 
   def support
     @title_page = "Support"
-    @supports   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC')
+    @support_pembayaran   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC')
+    @support_faq   = PageContent.where("category =?", "Tab Support Content FAQ").published.order('id ASC')
     render layout: "detail"
   end
 

@@ -11,6 +11,7 @@ class Manage::PageContentsController <  Manage::ResourcesController
 												      ['Fitur Content', 'Fitur Content'],
 												      ['Tab Why BigTV', 'Tab Why BigTV'],
 												      ['Tab Support Content', 'Tab Support Content'], 
+												      ['Tab Support Content FAQ', 'Tab Support Content FAQ'], 
 												      ['Footer Content', 'Footer Content'],
 												      ['Footer About Bigtv', 'Footer About Bigtv'],
 												      ['Single Page', 'Single Page']

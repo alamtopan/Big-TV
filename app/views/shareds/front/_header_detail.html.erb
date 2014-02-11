@@ -14,35 +14,6 @@
 				<li><a href="#blog" onclick="window.location='/#blog'">berita</a></li>
 				<li><a href="#support" onclick="window.location='/support'">support</a></li>
 			</ul>
-			<% if current_user %>
-				<div class="btn-group log-data">
-				  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-				    <img src="/assets/avatar-1-small.jpg" class="circle-img" id="sml" alt="">
-				    <%= current_user.email %> <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				  	<li>
-							<%= link_to "<i class='clip-user-2'></i>Dashboard".html_safe, dashboard_path %>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<%= link_to "<i class='clip-user-2'></i>List Subscriptions".html_safe,  manage_orders_path %>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<%= link_to "<i class='clip-user-2'></i>Add Subscription".html_safe,  new_customer_manage_orders_path %>
-						</li>
-						<li class="divider"></li>
-				    <li>
-							<%= link_to "<i class='clip-user-2'></i>My Profile".html_safe, edit_manage_user_path(current_user) %>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<%= link_to "<i class='clip-exit'></i>SignOut".html_safe, destroy_user_session_path, :method => :delete %>
-						</li>
-				  </ul>
-				</div>
-			<% end %>
 			<div class="mbl-menu" id="mbl-button">
 				<div class="mbl_menu_el"></div>
 				<div class="mbl_menu_el"></div>

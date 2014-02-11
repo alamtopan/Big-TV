@@ -31,7 +31,15 @@
 			<div class="tab-content">
 				<% @why_bigtv.each_with_index do |why_bigtv,index| %> 
 				  <div class="tab-pane <%= " active" if index == 0 %>" id="<%= why_bigtv.title%>">
-				  	<%= image_tag why_bigtv.picture, width: '100%'%>
+				  	<% if why_bigtv.description.blank? %>
+				  		<%= image_tag why_bigtv.picture, width: '100%'%>
+				  	<% else %>
+					  	<div class="des_tab">
+					  		<div>
+					  			<%= why_bigtv.description.to_s.html_safe %>
+					  		</div>
+					  	</div>
+				  	<% end %>
 				  </div>
 			  <% end %>
 			</div>
