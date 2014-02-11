@@ -39,8 +39,7 @@ BigTv::Application.routes.draw do
       post '/subcribe', to: 'carts#subcribe'
     end
   end
-
-
+  
   get   '/lokasi',   to: 'publics#lokasi',      as: 'lokasi'
   get   '/reg',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',      as: 'support'

@@ -8,6 +8,14 @@
 		</div>
 		<!-- end: MAIN MENU TOGGLER BUTTON -->
 		<!-- start: MAIN NAVIGATION MENU -->
+		<% if current_user.type == 'Referral' %>
+			<div class="div_ava">
+				<div class="circle-img cycle_ava">
+					<%= image_tag current_user.profile.avatar.url(:medium), class: "ava" %>
+				</div>
+				Referral No: <b><%= current_user.code %><b>
+			</div>
+		<% end %>
 		<ul class="main-navigation-menu">
 			<li class="active open">
 				<%= link_to dashboard_path do %>

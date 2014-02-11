@@ -52,6 +52,6 @@ group :development, :test do
   gem 'letter_opener'
   gem 'debugger'
   gem 'quiet_assets'
-
+  gem 'sextant'
   gem 'capistrano', '~> 2'
 end

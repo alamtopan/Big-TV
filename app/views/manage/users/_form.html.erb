@@ -11,8 +11,8 @@
         <% end %>
       </div>
     </div>
-	 <% end %>
-
+	<% end %>
+	<%= render partial: "shareds/back_office/alert" %>
 	<% if @user.type.present? %>
 	  <h3><%= @user.type %> No: <%= @user.code %></h3>
 	<% end %>
@@ -86,6 +86,25 @@
 			<%= profile.text_field :last_name, class: 'form-control',placeholder:'Last Name' %>
 		</div>
 	</div>
+
+	<% if current_user.type == 'Referral' %>
+		<div class="form-group">
+	    <label class="col-sm-2 control-label">
+	      * Sex
+	    </label>
+	    <div class="col-sm-3">
+	      <%= profile.select :jenis_kelamin, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Select Gender -"}, {class: 'form-control', required: true} %>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="col-sm-2 control-label">
+	      * Birthday
+	    </label>
+	    <div class="col-sm-6">
+	      <%= profile.date_select :tanggal_lahir, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'select_span2', required: true} %>
+	    </div>
+	  </div>
+  <% end %>
 	
 	<div class="form-group">
 		<label class="col-sm-2 control-label" for="form-field-12">
@@ -126,8 +145,36 @@
     </div>
   </div>
 
+  <% if current_user.type == 'Referral' %>
+	  <div class="form-group">
+	    <label class="col-sm-2 control-label">
+	      * Referral Type
+	    </label>
+	    <div class="col-sm-3">
+	      <%= f.select :referral_category_id, options_from_collection_for_select(ReferralCategory.all, 'id', 'name'), {prompt: 'Select Referral Type'}, {class: 'form-control', required: true} %>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="col-sm-2 control-label">
+	      Referral Info
+	    </label>
+	    <div class="col-sm-9">
+	      <%= profile.text_field :referral_info, class: 'form-control', placeholder: 'Referral Info', required: true %>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="col-sm-2 control-label">
+	      * Referral ID
+	    </label>
+	    <div class="col-sm-3">
+	      <%= f.text_field :code, class: 'form-control', placeholder: 'Code', required: true %>
+	    </div>
+	  </div>
+	<% end %>
+
 	<div class="pull-right">
 		<%= f.submit 'Save', class: "btn btn-bricky" %>
 	  <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_users_path, class: "btn btn-dark-grey" %>
 	</div>
 <% end %>
+

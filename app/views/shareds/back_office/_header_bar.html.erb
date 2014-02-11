@@ -30,7 +30,7 @@
 								<% end %>
 							</li>
 					    <li>
-								<%= link_to "My Profile".html_safe, edit_manage_user_path(current_user) %>
+								<%= link_to "My Profile".html_safe, edit_manage_user_path(current_user.id) %>
 							</li>
 							<li>
 								<%= link_to "SignOut".html_safe, destroy_user_session_path, :method => :delete %>

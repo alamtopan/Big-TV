@@ -32,7 +32,21 @@
 	*= require front/css/invoice
 
  */
-
+.div_ava{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ava{
+  width: 100px;
+}
+.cycle_ava{
+  width:100px; 
+  height:100px; 
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 10px;
+}
 select.select_span2{
   background-color: #FFFFFF;
   border: 1px solid #D5D5D5;
