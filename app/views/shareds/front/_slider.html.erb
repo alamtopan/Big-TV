@@ -7,6 +7,8 @@
         <% end %>
       </div>
       <div id="sequence">
+        <%= image_tag("bt-prev.png", class: 'sequence-prev') %>
+        <%= image_tag("bt-next.png", class: 'sequence-next') %>
         <ul class="sequence-canvas">
         <% @slides.each do |slide| %>
           <li>

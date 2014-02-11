@@ -159,3 +159,52 @@ a div.panel-heading.red-h{
 .package-channel-table .hd {
   left: 0px;
 }
+
+.btn-slider{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 15;
+}
+
+.btn-slider-left{
+  left: 0;
+}
+
+.btn-slider-right{
+  right: 0;
+}
+
+.btn-slider img{
+  border: none;
+  text-decoration: none;
+}
+
+.sequence-next,
+.sequence-prev {
+  color: white;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  height: 75px;
+  margin-top: -47.5px;
+}
+
+.sequence-prev {
+  left: 3%;
+}
+
+.sequence-next {
+  right: 3%;
+}
+
+.sequence-prev img,
+.sequence-next img {
+  height: 100%;
+  width: auto;
+}
