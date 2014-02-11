@@ -183,24 +183,34 @@ a div.panel-heading.red-h{
 
 .sequence-next,
 .sequence-prev {
-  color: white;
-  cursor: pointer;
-  display: none;
-  font-weight: bold;
-  padding: 10px 15px;
   position: absolute;
-  top: 50%;
-  z-index: 1000;
-  height: 75px;
-  margin-top: -47.5px;
+  padding: 8px 10px;
+  font-size: 40px;
+  background: #ccc;
+  top: 140px;
+  background: #ed2024;
+  cursor: pointer;
+  z-index: 9999;
+  border-radius: 8px 8px 8px 8px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  border: 0px solid #000000;
+}
+.sequence-next:hover,
+.sequence-prev:hover {
+  opacity:0.8;
+  border-radius: 194px 194px 194px 194px;
+  -moz-border-radius: 194px 194px 194px 194px;
+  -webkit-border-radius: 194px 194px 194px 194px;
+  border: 0px solid #000000;
 }
 
 .sequence-prev {
-  left: 3%;
+  left: 1%;
 }
 
 .sequence-next {
-  right: 3%;
+  right: 1%;
 }
 
 .sequence-prev img,
