@@ -1,0 +1,59 @@
+<% if @office.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-block alert-danger fade in ">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Warning!</strong> <%= pluralize(@office.errors.count, "error") %>
+      <% @office.errors.full_messages.each do |msg| %>
+      <diV>
+        <%= msg %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="form-group">
+  <%= f.label :category_office, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <%= f.select(:category_office_id, options_from_collection_for_select(@cate_office, :id, :name, (@office ? @office.category_office_id : '')), {prompt: '-- Select Category Office --'}, {class: "form-control"}) %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :regional, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <%= f.select(:regional_id, options_from_collection_for_select(@reg_office, :id, :name, (@office ? @office.regional_id : '')), {prompt: '-- Select Regional --'}, {class: "form-control"}) %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :name, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="form-field-12">
+    Address
+  </label>
+  <div class="col-sm-9">
+    <%= f.text_field :address, class: 'form-control input-lg' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :phone_area, class: "col-sm-2 control-label" %>
+  <div class="col-sm-1">
+    <%= f.text_field :phone_area, class: "form-control" %>
+  </div>
+  <%= f.label :no_phone, class: "col-sm-1 control-label" %>
+  <div class="col-sm-3">
+    <%= f.text_field :no_phone, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :no_fax, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <%= f.text_field :no_fax, class: "form-control" %>
+  </div>
+</div>
+<div class="pull-right">
+  <%= f.submit 'Save', class: "btn btn-bricky" %>
+  <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_offices_path, class: "btn btn-dark-grey" %>
+</div>

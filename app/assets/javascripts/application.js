@@ -48,7 +48,7 @@
 //= require front/js/provinces
 //= require js/index
 //= require customize
-//= require plugins/bootstrap-datepicker/bootstrap-datepicker_new
+
 
 jQuery(document).ready(function() {
  Main.init();

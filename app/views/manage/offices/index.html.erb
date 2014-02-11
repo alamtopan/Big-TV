@@ -1,0 +1,34 @@
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Offices', 
+                     button_name: 'Office'
+                   } do %>
+  <table class="table table-hover" id="sample-table-1">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Category Office</th>
+        <th>Regional</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @offices.each_with_index do |office,index| %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><b><%= office.name %></b></td>
+          <td><%= office.category_office.name %></td>
+          <td><%= office.regional.name %></td>
+          <td>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: office, confirmation: "#{office.name} will be deleted, are you sure ?"} %>
+            </div>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @offices %>
+  </div>
+<% end %>

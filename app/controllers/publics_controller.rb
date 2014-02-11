@@ -7,7 +7,7 @@ class PublicsController < ApplicationController
 		else
 			regional = "Sumatra"
 		end
-    @blogs         = Blog.all
+    @blogs         = Blog.published
     @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all
     @regionals     = Regional.all
 
@@ -17,7 +17,7 @@ class PublicsController < ApplicationController
     @free_channels = UnitItem.free_channels
 
     @features  = PageContent.where("category =?", "Fitur Content").order('id ASC')
-    @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").order('id ASC')
+    @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").published.order('id ASC')
     
 	end
 
@@ -53,7 +53,7 @@ class PublicsController < ApplicationController
 
   def support
     @title_page = "Support"
-    @supports   = PageContent.where("category =?", "Tab Support Content").order('id ASC')
+    @supports   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC')
     render layout: "detail"
   end
 

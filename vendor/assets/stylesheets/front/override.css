@@ -1,3 +1,35 @@
+.previous_slider{
+  position: absolute;
+  padding: 8px 10px;
+  font-size: 40px;
+  left:10px;
+  background: #ccc;
+  top: 130px;
+  background: #ed2024;
+  cursor: pointer;
+  z-index: 9999;
+}
+.next_slider{
+  position: absolute;
+  padding: 8px 10px;
+  font-size: 40px;
+  right:10px;
+  background: #ccc;
+  top: 130px;
+  background: #ed2024;
+  cursor: pointer;
+  z-index: 9999;
+}
+.des_tab{
+  width: 100%;
+  background: #fff;
+  float: left;
+  text-align: left!important;
+}
+.des_tab div{
+  background: #fff;
+  margin: 20px;
+}
 .click_packages_more, .click_footer_more{
   display: none;
 }

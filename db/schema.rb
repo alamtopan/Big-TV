@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140210192603) do
+ActiveRecord::Schema.define(:version => 20140211042009) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20140210192603) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "slug"
+    t.date     "publish"
+    t.date     "unpublish"
   end
 
   add_index "blogs", ["slug"], :name => "index_blogs_on_slug", :unique => true
@@ -173,6 +175,8 @@ ActiveRecord::Schema.define(:version => 20140210192603) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "link"
+    t.date     "publish"
+    t.date     "unpublish"
   end
 
   create_table "payments", :force => true do |t|
@@ -217,6 +221,7 @@ ActiveRecord::Schema.define(:version => 20140210192603) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "referral_info"
   end
 
   create_table "referral_categories", :force => true do |t|

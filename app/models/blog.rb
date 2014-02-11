@@ -1,6 +1,6 @@
 class Blog < ActiveRecord::Base
   extend FriendlyId
-  attr_accessible :author, :description, :picture, :title
+  attr_accessible :author, :description, :picture, :title, :publish, :unpublish
   friendly_id :title, use: [:slugged]
 
   has_attached_file :picture, styles:  { 
@@ -9,5 +9,7 @@ class Blog < ActiveRecord::Base
                                     }, 
                                     :default_url => "/assets/no-image.png"
   validates_presence_of :title
+
+  scope :published,  -> { where('(publish IS NULL OR unpublish IS NULL) OR (publish <= NOW() AND unpublish >= NOW())') }
 
 end
