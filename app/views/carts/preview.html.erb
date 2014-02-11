@@ -59,7 +59,7 @@
 									<label class="control-label">
 									Referal
 									</label>
-									<%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@referal ? @referal.name : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+									<%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@order.orderable.profile.referal ? @order.orderable.profile.referal	 : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
 								</div>
 								<div class="form-group tf-dealer">
 									<label class="control-label">

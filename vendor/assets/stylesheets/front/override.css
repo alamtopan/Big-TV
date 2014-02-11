@@ -232,10 +232,7 @@ a div.panel-heading.red-h{
 }
 .sequence-next:hover,
 .sequence-prev:hover {
-  opacity:0.8;
-  border-radius: 194px 194px 194px 194px;
-  -moz-border-radius: 194px 194px 194px 194px;
-  -webkit-border-radius: 194px 194px 194px 194px;
+  opacity:0.9;
   border: 0px solid #000000;
 }
 
