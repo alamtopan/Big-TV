@@ -137,6 +137,10 @@
 
 
 @media (max-width: 767px) {
+	.navbar-collapse.in {
+		overflow-y: auto;
+		border-bottom: solid 1px #ddd;
+	}
 	.cycle_ava{
 		margin-top: 20px
 	}
@@ -347,6 +351,10 @@
 
 
 @media (max-width: 480px) {
+	.navbar-collapse.in {
+		overflow-y: auto;
+		border-bottom: solid 1px #ddd;
+	}
 	.cycle_ava{
 		margin-top: 20px
 	}
