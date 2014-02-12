@@ -5,12 +5,16 @@
  *= require front/css
  *= require front/css/normalize
  *= require front/css/index
- *= require front/css/mobile-reset
- *= require front/css/jQuery.Opie.PortfolioGallery
- *= require front/css/mobile
+ * require front/css/mobile-reset
+ * require front/css/jQuery.Opie.PortfolioGallery
+ * require front/css/mobile
  *= require front/css/component
  *= require plugins/datepicker/css/datepicker
  *= require front/css/invoice
  *= require jquery.autocomplete
  *= require front/override
  */
+
+ .mbl-menu, .mbl_menu_cont{
+ 	display: none;
+ }
