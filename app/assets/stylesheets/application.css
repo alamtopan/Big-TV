@@ -32,6 +32,12 @@
 	*= require front/css/invoice
 
  */
+ .transt_hover{
+  display: none;
+ }
+ .transt_hover.active{
+  display: block;
+ }
 .hro{
   border-top: solid 1px #ccc;
   margin-top: 10px;

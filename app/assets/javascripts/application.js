@@ -207,4 +207,10 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $(".navbar-toggle").click(function(){
+    $(".transt_hover").toggleClass("active");
+  })
+});
+
 

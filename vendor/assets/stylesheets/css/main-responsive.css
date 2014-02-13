@@ -172,6 +172,9 @@
 
 
 @media (max-width: 767px) {
+	.span6.wd{
+		width: 49%!important;
+	}
 	h2{
 		font-size: 20px;
 	}
@@ -438,6 +441,9 @@
 
 
 @media (max-width: 480px) {
+	.span6.wd{
+		width: 100%!important;
+	}
 	ul.main-navigation-menu {
 		list-style: none;
 		margin: 0;
