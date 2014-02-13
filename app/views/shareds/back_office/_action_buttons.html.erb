@@ -13,14 +13,14 @@
     </a>
     <ul role="menu" class="dropdown-menu pull-right">
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="#">
+        <%= link_to edit_resource_path(resource), role: "menuitem",tabindex: "-1" do %>
           <i class="icon-edit"></i> Edit
-        </a>
+        <% end %>
       </li>
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="#">
+        <%= link_to resource_path(resource), role: "menuitem",tabindex: "-1", method: :delete, data: { confirm: confirmation } do %>
           <i class="icon-remove"></i> Remove
-        </a>
+        <% end %>
       </li>
     </ul>
   </div>

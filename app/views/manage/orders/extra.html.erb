@@ -1,9 +1,9 @@
 <section class="back_packages_section">
-  <h1><span>EXTRA</span> PACKAGES</h1>
+  <h1><span>PAKET</span> EXTRA</h1>
   <div class="polosochka2"></div>
 
   <article class="back_packages_section" style="text-align:left">
-      <div class="panel-body">
+      <div class="panel-body out_padding">
         <div class="row-fluid">
           <div class="span9">
             <div class="extra_banner">
@@ -25,7 +25,7 @@
             <div class="panel-group" id="accordion">
               <% @memberships.each_with_index do |membership,index| %>
                 <div class="panel panel-default">
-                    <div class="panel-heading red-h">
+                    <div class="mbl panel-heading red-h">
                       <h4 class="panel-title">
                         <div class="roundedOne2 versi2" styele="z-index:99999; position:absolute">
                           <% checked = @order.items.map(&:membership_id).include?(membership.id) %>

@@ -149,6 +149,13 @@ class Manage::OrdersController < Manage::ResourcesController
       else
         redirect_to preview_manage_orders_path
       end
+    elsif order.orderable.blank?
+      flash[:errors] = "Silahkan isi data pelanggan terlebih dahulu"
+      if request.xhr?
+        render json: {error: 'Invalid Customer', redirect_url: new_customer_manage_orders_path}, status: :unprocessable_entity
+      else
+        redirect_to new_customer_manage_orders_path
+      end
     else
       #user = Customer.find_or_initialize_by_email(params[:user][:email])
       customer_info.delete(:password)

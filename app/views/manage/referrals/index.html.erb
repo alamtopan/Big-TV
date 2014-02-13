@@ -10,8 +10,8 @@
         <th>Avatar</th>
         <th>Code</th>
         <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
+        <th class="mbl_hide">Email</th>
+        <th class="mbl_hide">Phone</th>
         <th></th>
       </tr>
     </thead>
@@ -22,8 +22,8 @@
           <td><%= image_tag referral.profile.avatar.url(:medium),height: '60px'%></td>
           <td><b><%= referral.code %></b></td>
           <td><%= referral.full_name %></td>
-          <td><%= referral.email %></td>
-          <td><%= referral.profile.no_hp %></td>
+          <td class="mbl_hide"><%= referral.email %></td>
+          <td class="mbl_hide"><%= referral.profile.no_hp %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: referral, confirmation: "#{referral.full_name} will be deleted, are you sure ?"} %>
             </div>
