@@ -121,6 +121,20 @@ module SeedContent
         link: '#'
       },
       {
+        title: 'GENERAL FAQ',
+        content_path: "#{Rails.root}/db/fixtures/contents/general_faq.txt",
+        picture: '',
+        category: 'Tab Support Content FAQ',
+        link: '#'
+      },
+      {
+        title: 'FAQ TROUBLE SHOOTING',
+        content_path: "#{Rails.root}/db/fixtures/contents/trouble_faq.txt",
+        picture: '',
+        category: 'Tab Support Content FAQ',
+        link: '#'
+      },
+      {
         title: 'FOOTER CONTENT',
         content_path: "#{Rails.root}/db/fixtures/contents/footer_content.txt",
         picture: '',

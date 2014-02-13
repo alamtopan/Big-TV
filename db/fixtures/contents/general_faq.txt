@@ -1,0 +1,41 @@
+<h2 align="center">GENERAL FAQ</h2>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li><strong>Daerah mana saja yang bisa dilayani BiGTV?</strong><br />
+	Wilayah jangkauan layanan BiGTV adalah seluruh wilayah Indonesia.</li>
+	<br />
+	<li><strong>Bagaimana cara berlangganan BiGTV?</strong><br />
+	Calon pelanggan bisa menghubungi Contact Center BiGTV atau datang ke distributor/dealer yang tersebar di berbagai wilayah Indonesia, atau datang ke Hypermart terdekat.</li>
+	<br />
+	<li><strong>Satelit apa yang digunakan oleh BiGTV?</strong><br />
+	BiGTV menggunakan satelit LIPPOSTAR-1.</li>
+	<br />
+	<li><strong>Frekuensi apa yang digunakan oleh satelit BiGTV?</strong><br />
+	BiGTV menggunakan frekuensi KU Band.</li>
+	<br />
+	<li><strong>Apakah akan ada gangguan jika terjadi hujan?</strong><br />
+	BiGTV menggunakan teknologi terkini untuk meminimalkan gangguan yang terjadi karena hujan</li>
+	<br />
+	<li><strong>Berapa jumlah channel yang ada di BiGTV?</strong><br />
+	BiGTV berisi 153 channel Standard Definition (SD) dan 24 channel High Definition (HD).</li>
+	<br />
+	<li><strong>Apakah bisa berlangganan lebih dari 2 STB?</strong><br />
+	Bisa. STB ke-2 dan seterusnya tidak perlu membayar biaya paket, hanya penambahan biaya rental box. Untuk paket yang diambil minimal adalah BIG STAR.</li>
+	<br />
+	<li><strong>Jika pelanggan sudah memiliki parabola, apakah bisa digunakan untuk BiGTV?</strong><br />
+	Untuk menjamin kualitas dan kenyamanan pelanggan, disarankan menggunakan parabola yang sudah disediakan BiGTV.</li>
+	<br />
+	<li><strong>Jika pelanggan sudah memiliki STB, apakah bisa digunakan untuk BiGTV?</strong><br />
+	Untuk menjamin kualitas dan kenyamanan pelanggan, STB selain dari BiGTV tidak bisa digunakan untuk berlangganan BiGTV. STB akan disediakan oleh BiGTV.</li>
+	<br />
+	<li><strong>Jika pelanggan sudah ada jaringan kabel di dalam rumahnya, apakah bisa digunakan untuk BiGTV?</strong><br />
+	Bisa, dengan syarat kabel yang sudah ada tersebut memenuhi standar kualitas BiGTV.</li>
+	<br />
+	<li><strong>Jika saya pindah rumah dan ingin tetap menggunakan BiGTV, bagaimana prosesnya?</strong><br />
+	Pelanggan bisa menghubungi Contact Center BiGTV atau dealer terdekat untuk dilakukan pemindahan perangkat dengan biaya ditanggung pemilik.</li>
+	<br />
+	<br />
+	&nbsp;
+</ol>

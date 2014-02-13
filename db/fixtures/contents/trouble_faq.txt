@@ -1,0 +1,92 @@
+<h2 align="center">FAQ TROUBLE SHOOTING</h2>
+
+<p>&nbsp;</p>
+
+<ol>
+	<li><strong>Lampu indikator STB tidak menyala</strong>
+
+	<ul>
+		<li>Periksa apakah kabel power/adaptor terkoneksi dengan benar ke outlet listrik</li>
+		<li>Tekan tombol STAND BY di STB atau tombol power di remote untuk menghidupkan STB</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV blank / tidak ada gambar</strong>
+	<ul>
+		<li>Pastikan STB dalam keadaan ON dengan indikator di STB berwarna hijau</li>
+		<li>Periksa koneksi kabel AV / HDMI pada port STB dan TV</li>
+		<li>Periksa posisi source / input di TV sesuai dengan port di STB dan TV</li>
+		<li>Jika menggunakan kabel AV, pastikan setting RESOLUSI VIDEO di 576i</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Gambar di TV putus &ndash; putus / Freeze</strong>
+	<ul>
+		<li>Pastikan kabel antena di belakang STB terpasang dengan baik</li>
+		<li>Jika kondisi sedang berawan tebal akan mengalami degradasi kualitas</li>
+		<li>Periksa sinyal dengan menekan tombol menu-diagnosa-meter sinyal. Jika sinyal sementara waktu dibawah 70% atau C/N dibawah 12 hubungi Contact Center untuk permintaan kedatangan teknisi</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Ada gambar namun tidak ada suara</strong>
+	<ul>
+		<li>Pastikan mode suara tidak mute dan volume di STB/TV dinaikkan</li>
+		<li>Jika menggunakan kabel AV, pastikan kabel audio terkoneksi dengan baik</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Ada suara namun tidak ada gambar</strong>
+	<ul>
+		<li>Jika menggunakan kabel AV, pastikan kabel video terkoneksi dengan baik</li>
+		<li>Restart STB dengan mencabut kabel power STB selama beberapa saat dan koneksi kembali</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Tidak ada Signal yang terdeteksi/ No signal is detected&ldquo;</strong>
+	<ul>
+		<li>Pastikan kabel antena di belakang STB terpasang dengan baik</li>
+		<li>Periksa sinyal dengan menekan tombol menu-diagnosa-meter sinyal, jika sinyal dibawah 70% atau C/N dibawah 12 hubungi Contact Center untuk permintaan kedatangan teknisi</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Smart Card Tidak Pernah Dipasangkan/Smart Card Never Paired&ldquo;?</strong>
+	<ul>
+		<li>Hubungi Contact Center untuk permintaan refresh STB melalui sistem dengan menyebutkan nomor pelanggan</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Akses Ditolak/Access Denied&ldquo;</strong>
+	<ul>
+		<li>Kemungkinan channel dengan tampilan &ldquo;Access denied&ldquo; tidak termasuk dalam paket yang Anda pilih</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Smart Card Berakhir/Smart Card Expired&ldquo;</strong>
+	<ul>
+		<li>Hubungi Contact Center untuk permintaan refresh STB melalui sistem</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Smart Card Terbalik/Smart Card Mute&rdquo;</strong>
+	<ul>
+		<li>Periksa posisi smartcard.</li>
+		<li>Pastikan terpasang dengan posisi chip di depan dan menghadap kebawah</li>
+		<li>Bersihkan chip pada smartcard</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Tampilan di layar TV &ldquo;Tidak ada Smart Card yang Dimasukkan/No Smart Card Inserted&rdquo;</strong>
+	<ul>
+		<li>Pastikan smart card sudah dimasukkan dengan benar</li>
+	</ul>
+	</li>
+	<br />
+	<li><strong>Remote tidak dapat digunakan ?</strong>
+	<ul>
+		<li>Periksa kondisi baterai apakah masih layak atau tidak, ganti dengan yang baru dan pastikan terpasang dengan benar</li>
+		<li>Arahkan remote dengan baterei baru ke STB dan tekan tombol power, bila tidak bereaksi akan dilakukan penggantian RCU</li>
+	</ul>
+	</li>
+	&nbsp;
+	<li>&nbsp;</li>
+</ol>
