@@ -79,7 +79,10 @@ var FormElements = function () {
         CKEDITOR.config.allowedContent = true;
         CKEDITOR.basePath = "/assets/plugins/ckeditor/";
         // CKEDITOR.config.div_wrapTable = true;
-        $('textarea.ckeditor').ckeditor();
+        if($('textarea.ckeditor').length){
+          $('textarea.ckeditor').ckeditor();
+        }
+        
     };
     return {
         //main function to initiate template pages
