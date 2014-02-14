@@ -194,14 +194,6 @@ class CartsController < ApplicationController
       @product ||= Membership.find(params[:id])
     end
 
-    def delete_session
-      cart = cookies[:cart_id]
-      session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
-      session.delete if session.present?
-      sign_out(:customer)
-      cookies.delete :cart_id
-    end
-
     def save_order
       period = params[:order][:period].to_i
       order.session_id = nil

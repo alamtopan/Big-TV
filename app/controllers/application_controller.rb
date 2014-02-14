@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
   rescue_from ActionView::Template::Error do |exception|
     redirect_to root_path
   end
+
+  def delete_session
+    session_store = ActiveRecord::SessionStore::Session.find_by_session_id(cookies[:cart_id])
+    session_store.delay(run_at: 3.hours.from_now).destroy if session_store
+    cookies[:cart_id] = SecureRandom.hex(16)
+  end
   
 
   protected

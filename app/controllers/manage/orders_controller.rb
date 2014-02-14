@@ -130,6 +130,8 @@ class Manage::OrdersController < Manage::ResourcesController
       if customer_profile
         customer_profile.referal_id = current_user.code 
         customer_profile.referal = current_user.referral_category.name if current_user.referral_category
+      else
+        redirect_to new_customer_manage_orders_path
       end
     end
   end
@@ -227,15 +229,6 @@ class Manage::OrdersController < Manage::ResourcesController
 
     def product
       @product ||= Membership.find(params[:id])
-    end
-
-    def delete_session
-      cookies[:cart_id] = SecureRandom.hex(16)
-      # cart = cookies[:cart_id]
-      # session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
-      # session.delete if session.present?
-      # # sign_out(:customer)
-      # cookies.delete :cart_id
     end
 
     def save_order
