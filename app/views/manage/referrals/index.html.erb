@@ -3,11 +3,11 @@
                      table_name:  'Referrals', 
                      button_name: 'Referral'
                    } do %>
-  <table class="table table-hover" id="sample-table-1">
+  <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
     <thead>
       <tr>
-        <th>No</th>
         <th>Avatar</th>
+        <th>No</th>
         <th>Code</th>
         <th>Name</th>
         <th class="mbl_hide">Email</th>
@@ -18,8 +18,8 @@
     <tbody>
       <% @referrals.each_with_index do |referral,index| %>
         <tr>
-          <td><%= index+1 %></td>
-          <td><%= image_tag referral.profile.avatar.url(:medium),height: '60px'%></td>
+          <td style="text-align:center"><%= image_tag referral.profile.avatar.url(:medium),height: '60px'%></td>
+          <td style="text-align:center"><%= index+1 %></td>
           <td><b><%= referral.code %></b></td>
           <td><%= referral.full_name %></td>
           <td class="mbl_hide"><%= referral.email %></td>
@@ -32,7 +32,4 @@
       <% end %>
     </tbody>
   </table>
-  <div>
-    <%= paginate @referrals %>
-  </div>
 <% end %>

@@ -4,10 +4,11 @@
                      button_name: 'User'
                    } do %>
 
-	<table class="table table-hover" id="sample-table-1">
+	<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
 		<thead>
 			<tr>
-				<th class="center">#</th>
+				<th>Created at</th>
+				<th class="center">No</th>
 				<th>Fist Name</th>
 				<th class="hidden-xs">Last Name</th>
 				<th class="hidden-xs">Phone</th>
@@ -17,9 +18,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @users.each do |user| %>
+			<% @users.each_with_index do |user, index| %>
 			<tr>
-				<td class="center">1</td>
+				<td><b><%= user.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></td>
+				<td class="center"><%= index+1 %></td>
 				<td class="hidden-xs"><%= user.profile.first_name if user.profile %></td>
 				<td><%= user.profile.last_name if user.profile %></td>
 				<td class="hidden-xs"><%= user.profile.no_phone if user.profile %></td>
@@ -32,9 +34,5 @@
 			<% end %>
 		</tbody>
 	</table>
-	<div>
-		<%= paginate @users %>
-	</div>
-				
 <% end %>
 

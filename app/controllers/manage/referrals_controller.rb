@@ -3,13 +3,17 @@ class Manage::ReferralsController < Manage::ResourcesController
 	defaults :resource_class => Referral, :collection_name => 'referrals', :instance_name => 'referral'
 	prepend_before_filter :draw_password, only: :update
 
+  def index
+    @referrals = Referral.order('id ASC')
+  end
+
 	def update
-    @user = User.find(params[:id])  
-    if @user.update_attributes(params[:user])   
+    @referral = Referral.find(params[:id])  
+    if @referral.update_attributes(params[:referral])   
       flash[:notice] = "Successfully updated profile!" 
-      redirect_to edit_manage_user_path
+      redirect_to edit_manage_referral_path
     else  
-      redirect_to edit_manage_user_path
+      redirect_to edit_manage_referral_path
     end  
   end
 
@@ -20,7 +24,7 @@ class Manage::ReferralsController < Manage::ResourcesController
         redirect_to dashboard_path
       end 
     end
-    @user = User.find(params[:id]) 
+    @referral = Referral.find(params[:id]) 
   end
 
 	private

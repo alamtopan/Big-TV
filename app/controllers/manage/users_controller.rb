@@ -2,6 +2,10 @@ class Manage::UsersController < Manage::ResourcesController
   skip_load_and_authorize_resource only: :index
   defaults :resource_class => User, :collection_name => 'users', :instance_name => 'user'
   prepend_before_filter :draw_password, only: :update
+
+  def index
+    @users = User.order('id ASC')
+  end
   
   def sign_out
     redirect_to root_path

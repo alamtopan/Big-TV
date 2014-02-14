@@ -30,8 +30,19 @@
 	*= require plugins/ckeditor/contents
   *= require jquery.autocomplete
 	*= require front/css/invoice
+  *= require plugins/select2/select2
+  *= require plugins/DataTables/media/css/DT_bootstrap
 
  */
+ .atm-payment-instruction{
+    padding: 20px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    margin-top: 20px;
+ }
  .span-14 {
     width: 46.5%!important;
   }

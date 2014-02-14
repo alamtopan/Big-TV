@@ -48,11 +48,17 @@
 //= require front/js/provinces
 //= require js/index
 //= require customize
+//= require plugins/select2/select2.min
+//= require plugins/DataTables/media/js/jquery.dataTables.min
+//= require plugins/DataTables/media/js/DT_bootstrap
+//= require plugins/DataTables/media/js/DT_bootstrap
+//= require js/table-data
 
 
 jQuery(document).ready(function() {
- Main.init();
- FormElements.init();
+   Main.init();
+   FormElements.init();
+   TableData.init();
 });
 
 Number.prototype.formatMoney = function(c, d, t){

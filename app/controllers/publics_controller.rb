@@ -26,7 +26,7 @@ class PublicsController < ApplicationController
   end
 
   def payment_instruction
-    prepare_order_by_token
+    prepare_order_by_token('invoice')
   end
 
   def render_map

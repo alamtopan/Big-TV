@@ -3,6 +3,10 @@ class Manage::PageContentsController <  Manage::ResourcesController
 	defaults :resource_class => PageContent, :collection_name => 'page_contents', :instance_name => 'page_content'
 	before_filter :category_content
 
+	def index
+  	@page_contents = PageContent.order('id ASC')
+  end
+
 	private
 		def category_content
 	  	@category_contents = [
