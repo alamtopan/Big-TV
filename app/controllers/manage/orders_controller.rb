@@ -4,7 +4,7 @@ class Manage::OrdersController < Manage::ResourcesController
 
   def index
     @orders = current_user.type == 'Referral' ? current_user.orders : Order
-    @orders = @orders.success_order.order('orders.created_at ASC')
+    @orders = @orders.success_order.order('orders.created_at DESC')
   end
 
   def show

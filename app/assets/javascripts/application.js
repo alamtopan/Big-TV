@@ -51,7 +51,6 @@
 //= require plugins/select2/select2.min
 //= require plugins/DataTables/media/js/jquery.dataTables.min
 //= require plugins/DataTables/media/js/DT_bootstrap
-//= require plugins/DataTables/media/js/DT_bootstrap
 //= require js/table-data
 
 

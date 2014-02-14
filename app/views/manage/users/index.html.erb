@@ -8,7 +8,6 @@
 		<thead>
 			<tr>
 				<th>Created at</th>
-				<th class="center">No</th>
 				<th>Fist Name</th>
 				<th class="hidden-xs">Last Name</th>
 				<th class="hidden-xs">Phone</th>
@@ -21,7 +20,6 @@
 			<% @users.each_with_index do |user, index| %>
 			<tr>
 				<td><b><%= user.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></td>
-				<td class="center"><%= index+1 %></td>
 				<td class="hidden-xs"><%= user.profile.first_name if user.profile %></td>
 				<td><%= user.profile.last_name if user.profile %></td>
 				<td class="hidden-xs"><%= user.profile.no_phone if user.profile %></td>

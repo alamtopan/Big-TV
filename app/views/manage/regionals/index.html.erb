@@ -6,7 +6,6 @@
   <table class="table table-hover" id="sample-table-1">
     <thead>
       <tr>
-        <th>No</th>
         <th>Name</th>
         <th></th>
       </tr>
@@ -14,7 +13,6 @@
     <tbody>
       <% @regionals.each_with_index do |regional,index| %>
         <tr>
-          <td><%= index+1 %></td>
           <td><%= regional.name %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: regional, confirmation: "#{regional.name} will be deleted, are you sure ?"} %>

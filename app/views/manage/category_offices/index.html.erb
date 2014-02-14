@@ -6,7 +6,6 @@
   <table class="table table-hover" id="sample-table-1">
     <thead>
       <tr>
-        <th>No</th>
         <th>Name</th>
         <th></th>
       </tr>
@@ -14,7 +13,6 @@
     <tbody>
       <% @category_offices.each_with_index do |category_office,index| %>
         <tr>
-          <td><%= index+1 %></td>
           <td><%= category_office.name %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: category_office, confirmation: "#{category_office.name} will be deleted, are you sure ?"} %>

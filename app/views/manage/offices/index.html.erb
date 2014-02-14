@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Category Office</th>
-        <th>No</th>
         <th>Name</th>
         <th>Regional</th>
         <th></th>
@@ -17,7 +16,6 @@
       <% @offices.each_with_index do |office,index| %>
         <tr>
           <td><%= office.category_office.name %></td>
-          <td><%= index+1 %></td>
           <td><b><%= office.name %></b></td>
           <td><%= office.regional.name %></td>
           <td>

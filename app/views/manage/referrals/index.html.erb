@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Avatar</th>
-        <th>No</th>
         <th>Code</th>
         <th>Name</th>
         <th class="mbl_hide">Email</th>
@@ -19,7 +18,6 @@
       <% @referrals.each_with_index do |referral,index| %>
         <tr>
           <td style="text-align:center"><%= image_tag referral.profile.avatar.url(:medium),height: '60px'%></td>
-          <td style="text-align:center"><%= index+1 %></td>
           <td><b><%= referral.code %></b></td>
           <td><%= referral.full_name %></td>
           <td class="mbl_hide"><%= referral.email %></td>

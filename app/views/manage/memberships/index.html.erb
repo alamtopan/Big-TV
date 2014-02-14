@@ -6,7 +6,6 @@
   <table class="table table-hover" id="sample-table-1">
     <thead>
       <tr>
-        <th>No</th>
         <th>Name</th>
         <th>Position</th>
         <th>Category</th>
@@ -19,7 +18,6 @@
     <tbody>
       <% @memberships.each_with_index do |member,index| %>
         <tr>
-          <td><%= index+1 %></td>
           <td><%= member.name %></td>
           <td><%= member.position %></td>
           <td><%= member.category.name.to_s.titleize if member.category %></td>

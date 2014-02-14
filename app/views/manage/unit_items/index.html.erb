@@ -8,7 +8,6 @@
     <thead>
       <tr>
         <th>Logo</th>
-        <th>No</th>
         <th>Name</th>
         <th>HD</th>
         <th>Free</th>
@@ -20,7 +19,6 @@
       <% @unit_items.each_with_index do |item,index| %>
         <tr>
           <th style="text-align:center"><%= image_tag(item.logo.url(:thumb)) %></th>
-          <th><%= index+1 %></th>
           <th><%= item.name %></th>
           <th><%= item.status_hd %></th>
           <th><%= item.free %></th>

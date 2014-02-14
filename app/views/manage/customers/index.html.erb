@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Created at</th>
-        <th>No</th>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
@@ -18,7 +17,6 @@
       <% @customers.each_with_index do |customer,index| %>
         <tr>
           <td><b><%= customer.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></td>
-          <td><%= index+1 %></td>
           <td><%= customer.full_name %></td>
           <td><%= customer.email %></td>
           <td><%= customer.profile.no_hp %></td>

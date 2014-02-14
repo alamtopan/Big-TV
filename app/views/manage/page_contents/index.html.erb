@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th>Category Content</th>
-        <th>No</th>
         <th>Title</th>
         <th></th>
       </tr>
@@ -16,7 +15,6 @@
       <% @page_contents.each_with_index do |page_content,index| %>
         <tr>
           <td><b><%= page_content.category %></b></td>
-          <td><%= index+1 %></td>
           <td><%= page_content.title %></td>
           <td>
             <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: page_content, confirmation: "#{page_content.title} will be deleted, are you sure ?"} %>
