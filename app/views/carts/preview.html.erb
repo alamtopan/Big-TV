@@ -5,6 +5,7 @@
 	<article class="packs-cont cbp-so-scroller" style="text-align:left">
     <%= form_for @order.orderable||Customer.new, url: subcribe_carts_path(token: params[:token]), method: 'post', html: {multipart: true, remote: true, class: 'form-subscribe'} do |f| %>
       <%= hidden_field_tag(:token, params[:token]||@order.token) if @order %>
+      <% f.object.referral_category_id = nil if f.object.referral_category_id == 0 %>
 			<%= f.fields_for(:profile) do |profile| %>
 		    <div class="panel-body">
 					<div class="span12">
@@ -57,18 +58,19 @@
 								</div>
 								<div class="form-group">
 									<label class="control-label">
-									Referal
+									Referal 
 									</label>
-									<%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@order.orderable.profile.referal ? @order.orderable.profile.referal	 : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+									<%= f.select(:referral_category_id, options_from_collection_for_select(@referral, :id, :name, @order.orderable.referral_category_id), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
 								</div>
 								<div class="form-group tf-dealer">
 									<label class="control-label">
-										<%= "SPG ID / BIGTV ID" if @order.orderable.profile == '1' || '2' %>
-										<%= "Dealer / Distributor ID" if @order.orderable.profile == '3' %>
-										<%= "Program" if @order.orderable.profile == '4' %>
-										<%= "Bigtv ID" if @order.orderable.profile == '5' %>
-										<%= "SPG ID" if @order.orderable.profile == '6' %>
-										<%= "Others" if @order.orderable.profile == '7' %>
+										 <% referral_type = @order.orderable.referral_category ? @order.orderable.referral_category.name : @order.orderable.profile.referal %>
+										<%= "SPG ID / BIGTV ID" if referral_type =~ /hypermart|matahari/i %>
+		                <%= "Dealer / Distributor ID" if referral_type =~ /dealer/i %>
+		                <%= "Program" if referral_type =~ /koran|billboard/i %>
+		                <%= "Bigtv ID" if referral_type =~ /pelanggan/i %>
+		                <%= "SPG ID" if referral_type =~ /spg/i %>
+		                <%= "Others" if referral_type =~ /other/i %>
 									</label>
 									<%= profile.text_field :referal_id, {class: 'form-control', placeholder: "Khusus untuk staff BigTV"} %>
 								</div>

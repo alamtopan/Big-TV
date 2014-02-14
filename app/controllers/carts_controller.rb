@@ -103,6 +103,12 @@ class CartsController < ApplicationController
       customer_info.delete(:password)
       customer_info.delete(:password_confirmation)
       customer_info.delete(:username)
+
+      if customer_info[:profile_attributes].present? && customer_info[:referral_category_id].present?
+        referral_category = ReferralCategory.find_by_id(customer_info[:referral_category_id])
+        customer_info[:profile_attributes][:referal] = referral_category.name if referral_category
+      end
+
       @customer = @order.orderable
       
       if @customer.update_attributes(customer_info) && save_order

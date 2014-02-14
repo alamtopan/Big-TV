@@ -22,7 +22,7 @@ class PublicsController < ApplicationController
 	end
 
   def thanks
-    prepare_order_by_token
+    prepare_order_by_token('invoice')
   end
 
   def payment_instruction
@@ -65,11 +65,11 @@ class PublicsController < ApplicationController
   end
 
   private
-    def prepare_order_by_token
+    def prepare_order_by_token(layout_name='detail')
       if params[:token].present? && @order = Order.find_by_token(params[:token])
         @customer         = @order.orderable
         @customer_profile = @customer.profile
-        render layout: 'detail'
+        render layout: layout_name
       else
         redirect_to root_path
       end

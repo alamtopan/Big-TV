@@ -155,15 +155,29 @@
                 * Referral
               </label>
               <div class="col-sm-3">
-                <%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@order.orderable.profile.referal ? @order.orderable.profile.referal  : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+                <% unless current_user.is_a?(Referral) %>
+                  <%= f.select(:referral_category_id, options_from_collection_for_select(@referral, :id, :name, @order.orderable.referral_category_id), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi", required: true}) %>
+                <% else %>
+                  <%= current_user.referral_category.name %>
+                <% end %>
               </div>
             </div>
             <div class="form-group">
               <label class="col-sm-2 control-label">
-                * SPG ID/ Dealer ID/ BigTV ID
+                <% referral_type = @order.orderable.referral_category ? @order.orderable.referral_category.name : @order.orderable.profile.referal %>
+                <%= "SPG ID / BIGTV ID" if referral_type =~ /hypermart|matahari/i %>
+                <%= "Dealer / Distributor ID" if referral_type =~ /dealer/i %>
+                <%= "Program" if referral_type =~ /koran|billboard/i %>
+                <%= "Bigtv ID" if referral_type =~ /pelanggan/i %>
+                <%= "SPG ID" if referral_type =~ /spg/i %>
+                <%= "Others" if referral_type =~ /other/i %>
               </label>
               <div class="col-sm-3">
-                <%= profile.text_field :referal_id, class: 'form-control', placeholder: 'Referall', value: "#{current_user.code}", required: true %>
+                <% unless current_user.is_a?(Referral) %>
+                  <%= profile.text_field :referal_id, class: 'form-control', placeholder: 'Referall', value: "#{current_user.code}", required: true %>
+                <% else %>
+                  <%= current_user.code %> 
+                <% end %>
               </div>
             </div>
             <div class="form-group">

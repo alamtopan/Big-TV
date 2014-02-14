@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   layout 'detail'
 
   def new
+    cookies[:cart_id] = SecureRandom.hex(16)
     @title_page = "Pendaftaran"
     @customer = order.orderable||Customer.new
 
@@ -14,6 +15,10 @@ class CustomersController < ApplicationController
       input_param.delete(:password)
       input_param.delete(:password_confirmation)
       input_param.delete(:username)
+      if input_param[:profile_attributes].present? && input_param[:referral_category_id].present?
+        referral_category = ReferralCategory.find_by_id(input_param[:referral_category_id])
+        input_param[:profile_attributes][:referal] = referral_category.name if referral_category
+      end
     end
 
     @customer = Customer.find_or_initialize_by_email(input_param[:email])

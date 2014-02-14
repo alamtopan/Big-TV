@@ -3,6 +3,7 @@
   <div class="polosochka2"></div>
 
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
+    <% @customer.referral_category_id = nil if @customer.referral_category_id == 0 %>
     <%= form_for @customer, url: customers_path, method: 'post' do |f| %>
       <%= f.fields_for(:profile) do |profile| %>
         <div class="panel-body">
@@ -46,7 +47,7 @@
                   <label class="control-label">
                   Referal
                   </label>
-                  <%= profile.select(:referal, options_from_collection_for_select(@referral, :id, :name, (@customer.profile.referal ? @customer.profile.referal : '')), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi"}) %>
+                  <%= f.select(:referral_category_id, options_from_collection_for_select(@referral, :id, :name), {prompt: 'Pilih Referensi'}, {class: "form-control cb-referensi"}) %>
                 </div>
               </div>
 

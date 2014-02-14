@@ -32,6 +32,34 @@
 	*= require front/css/invoice
 
  */
+ .span-14 {
+    width: 46.5%!important;
+  }
+  .span-10 {
+    width: 50.5%!important;
+  }
+ .details.clearfix{
+    font-size: 11px!important;
+ }
+ .invoice-page{
+    margin: 0px;
+ }
+ .wraper_bg-bright h1{
+  text-align: center;
+ }
+ #invoice-page #invoice_contents, #invoice-page .shell {
+    padding: 10px;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ddd;
+    float: left;
+    width: 100%;
+    background-color: #fff;
+  }
+
  .transt_hover{
   display: none;
  }
@@ -517,3 +545,6 @@ a.pack-order2:hover {
   text-decoration: none;
   color: #ccc;
 }
+.sbmt {
+  padding: 10px 10px;
+  }

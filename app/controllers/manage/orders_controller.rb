@@ -24,6 +24,7 @@ class Manage::OrdersController < Manage::ResourcesController
   end
 
   def new_customer
+    delete_session
   	@customer = order.orderable||Customer.new
   	prepare_customer_form
   end
@@ -34,11 +35,16 @@ class Manage::OrdersController < Manage::ResourcesController
       input_param.delete(:password)
       input_param.delete(:password_confirmation)
       input_param.delete(:username)
+      if current_user.is_a?(Referral) && input_param[:profile_attributes].present?
+        input_param[:referral_category_id] = current_user.referral_category_id
+        input_param[:profile_attributes][:referal_id] = current_user.code
+        input_param[:profile_attributes][:referal] = current_user.referral_category.name if current_user.referral_category
+      end
     end
 
     @customer = Customer.find_or_initialize_by_email(input_param[:email])
     @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
-
+    
     if @customer.update_attributes(input_param)
       order.orderable = @customer
       # CustomerMailer.delay.welcome_email(@customer)
@@ -196,13 +202,17 @@ class Manage::OrdersController < Manage::ResourcesController
 
   private
     def prepare_customer_form
-      if current_user && @customer.profile
-        @customer.profile.referal_id = current_user.code 
-        @customer.profile.referal = current_user.referral_category.name if current_user.referral_category
-      end
-
+      prepopulate_customer_info
       @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
       @referral = ReferralCategory.order("id ASC")
+    end
+
+    def prepopulate_customer_info
+      if current_user && @customer.new_record? && @customer.profile
+        @customer.profile.referal_id = current_user.code 
+        @customer.profile.referal = current_user.referral_category.name if current_user.referral_category
+        @customer.referral_category_id = current_user.referral_category_id
+      end
     end
 
     def prepare_order_by_token
@@ -220,11 +230,12 @@ class Manage::OrdersController < Manage::ResourcesController
     end
 
     def delete_session
-      cart = cookies[:cart_id]
-      session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
-      session.delete if session.present?
-      # sign_out(:customer)
-      cookies.delete :cart_id
+      cookies[:cart_id] = SecureRandom.hex(16)
+      # cart = cookies[:cart_id]
+      # session = ActiveRecord::SessionStore::Session.find_by_session_id(cart)
+      # session.delete if session.present?
+      # # sign_out(:customer)
+      # cookies.delete :cart_id
     end
 
     def save_order

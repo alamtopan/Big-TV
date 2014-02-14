@@ -15,6 +15,17 @@
  *= require front/override
  */
 
- .mbl-menu, .mbl_menu_cont{
- 	display: none;
- }
+.mbl-menu, .mbl_menu_cont{
+	display: none;
+}
+.btn-group.overide{
+		float: right;
+		margin-top: 10px;
+}
+.btn-group.overide img{
+		float: left;
+		margin-right: 10px;
+	}
+.caret{
+		margin-left: 5px!important;
+}

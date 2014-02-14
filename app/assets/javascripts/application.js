@@ -213,4 +213,28 @@ $(document).ready(function(){
   })
 });
 
+$('.cb-referensi').on('change', function(){
+  if($(this).val() != 'Others'){
+    $('.tf-dealer').show();
+    $('.tf-dealer label.control-label').html(convert_label_refferal($(this).val()));
+  }else{
+    $('.tf-dealer').hide();
+  }
+});
+function convert_label_refferal(val){
+  if(val == "1" || val == "2"){
+    return "SPG ID / BIGTV ID";
+  }else if(val == "3"){
+    return "Dealer / Distributor ID";
+  }else if(val == "4"){
+    return "Program";
+  }else if(val == "5"){
+    return "Bigtv ID";
+  }else if(val == "6"){
+    return "SPG ID";
+  }else if(val == "7"){
+    return "Others";
+  }
+}
+
 
