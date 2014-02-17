@@ -172,6 +172,27 @@
 
 
 @media (max-width: 767px) {
+	.details {
+		padding: 0px;
+	}
+	.details.clearfix{
+    font-size: 11px;
+ 	}
+	.h2mb{
+		width: 60%;
+	}
+	h2 {
+		font-size: 16px;
+	}
+	.margin_invo {
+		padding: 10px;
+	}
+	#line_items th{
+		font-size: 11px!important;
+	}
+	.panel-body {
+		padding: 10px;
+	}
 	.div_packages_extra_new2 {
 		text-align: center;
 		height: auto;
@@ -181,9 +202,6 @@
 	}
 	.span6.wd{
 		width: 49%!important;
-	}
-	h2{
-		font-size: 20px;
 	}
 	ul.main-navigation-menu {
 		list-style: none;
@@ -453,6 +471,40 @@
 
 
 @media (max-width: 480px) {
+	.container{
+		padding: 0px;
+	}
+	#invoice_contents{
+		padding: 10px!important;
+	}
+	.to-from span{
+		font-size: 10px!important;
+	}
+	.details {
+		padding: 0px!important;
+	}
+	.details.clearfix{
+    font-size: 11px;
+ 	}
+	.h2mb{
+		width: 60%;
+	}
+	h2 {
+		font-size: 16px;
+	}
+	#line_items th{
+		font-size: 11px!important;
+	}
+
+	h1{
+		font-size: 26px;
+	}
+	.mbl_hide_small{
+		display: none;
+	}
+	.dataTable{
+		font-size: 10px;
+	}
 	.div_packages_extra_new2 {
 		text-align: center;
 		height: auto;

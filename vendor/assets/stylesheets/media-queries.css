@@ -1,0 +1,114 @@
+/@media screen and (max-width: 1200px) {
+	img.bank-list { width: 257px; }
+}
+/************************************************************************************
+smaller than 980
+*************************************************************************************/
+@media screen and (max-width: 980px) {
+	body { overflow-x: hidden; }
+	#main { width: 90%; }
+	.weaccept { float: none; width: 100%; }
+	.infield { float: none; width: 100%; }
+	#we_accept { width: 100%; }
+	#we_accept_list {
+		float: left;
+		margin: 0;
+		padding: 10px 0;
+	}
+	#footer_content { width: 90%; }
+	.left-switch { float: none; width: 100%; }
+	img.bank-list { width: auto; }
+	#wrapper-input-payment li a.current, #wrapper-input-payment li a.current:hover { font-size: 12px;  padding: 8px 5px 6px;}
+	#wrapper-input-payment .nav li a { font-size: 12px;  padding: /* 8px 5px 6px; */ 8px 5px 6px; width: 140px !important; }
+	#wrapper-input-payment .nav li a:hover, #wrapper-input-payment .nav li a:focus { font-size: 12px;  padding: 8px 5px 6px;}
+	#wrapper-input-payment .nav li { margin: 0 5px 0 0; }
+	img.bank-list { width: 257px; }
+	input.bttn_pay { margin: 0; }
+	bttn_cancel { margin: 0 5px; }
+	
+	#wrapper-input-payment .nav li {
+		border: 1px solid #CCCCCC;
+		float: left;
+		margin-bottom: 7px;
+		padding: 6px;
+		width: 153px;
+	}
+	.wrapper-list-option {
+		background-color: #FFFFFF;
+		border: 1px solid #EEEEEE;
+		padding: 0 16px;
+		margin-top: 15px;
+	}
+	#wrapper-input-payment .nav { margin-top: 10px; }
+	.text-choose {
+		background-color: #EFEFEF;
+		float: none;
+		margin-top: 8px;
+		padding: 13px;
+		width: auto;
+		margin-right: 0;
+	}
+	.text-payment { display: inline !important; }
+
+	/* citibank */
+	.left-cp {
+		float: none;
+		margin-right: 0;
+		width: auto;
+	}
+	.right-cp { width: 100%; margin-top: 13px; }
+}
+
+/************************************************************************************
+smaller than 650
+*************************************************************************************/
+@media screen and (max-width: 650px) {
+	.left-message { float: none; width: 100%; margin-bottom: 10px;}
+	.right-message { float: none; width: 100%; }
+	
+	.content-card {
+		clear: left;
+		padding-top: 10px;
+		width: 200px;
+	}
+
+	#where_cvv {
+		padding-top: 6px;
+		width: auto;
+		clear: left;
+	}
+	.tbl_header {
+		font-size: 10px;
+	}
+	
+	.infield table { width: auto; }
+	
+	/* for doku switch */
+	
+	#kolomkiri, #kolomkanan { float: none; width: auto; }
+	#payid_input {
+		background: url("../oco/images/bg_payid-small.png") no-repeat scroll 0 0 transparent;
+		height: 156px;
+		padding: 10px;
+		width: 270px;
+	}
+	#inputleft { margin: 3px 0 10px 0;}
+	
+}
+
+/************************************************************************************
+smaller than 560
+*************************************************************************************/
+@media screen and (max-width: 480px) {
+	#logo{
+		margin:0 0 10px 0;
+		padding:0;
+		border-bottom:#606c80 2px solid;
+		/* background:url(../oco/images/logo_doku-small.png) no-repeat; */
+	}
+	#logo img { width: 202px; }
+	
+	table.table-item-list { width: 100%!important; }
+	.total-price { text-align: left; }
+}
+

@@ -34,6 +34,9 @@
   *= require plugins/DataTables/media/css/DT_bootstrap
 
  */
+ .panel-group .panel {
+    width: 100%;
+  }
  .atm-payment-instruction{
     padding: 20px;
     border-radius: 10px 10px 10px 10px;
@@ -49,9 +52,6 @@
   .span-10 {
     width: 50.5%!important;
   }
- .details.clearfix{
-    font-size: 11px!important;
- }
  .invoice-page{
     margin: 0px;
  }
@@ -59,9 +59,9 @@
   text-align: center;
  }
  #invoice-page #invoice_contents, #invoice-page .shell {
-    padding: 10px;
-    padding-left: 20px!important;
-    padding-right: 20px!important;
+    padding: 10px!important;
+    padding-left: 20px;
+    padding-right: 20px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
