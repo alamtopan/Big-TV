@@ -471,9 +471,6 @@
 
 
 @media (max-width: 480px) {
-	.container{
-		padding: 0px;
-	}
 	#invoice_contents{
 		padding: 10px!important;
 	}
