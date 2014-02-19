@@ -81,7 +81,9 @@
 									  </div>
 									</div>
 									<div class="pull-right">
-									  <%= button_tag 'Lanjut', class: "pack-order float-right-fixed margn lanjut_btn", id: "tahap_1" %>
+									  <div class="pack-order float-right-fixed margn lanjut_btn", id="tahap_1">
+									  	Lanjut
+									  </div>
 									</div>
 								</div>
 								<div class="tahap_2">
@@ -139,7 +141,12 @@
 									  </div>
 									</div>
 									<div class="pull-right">
-									  <%= button_tag 'Lanjut', class: "pack-order float-right-fixed margn lanjut_btn2", id: "tahap_2" %>
+										<div class="pack-order float-right-fixed margn lanjut_btn2", id="tahap_2">
+									  	Lanjut
+									  </div>
+									  <div class="pack-order float-right-fixed margn kembali", id="kembali">
+									  	Kembali
+									  </div>
 									</div>
 								</div>
 								<div class="tahap_3">
@@ -168,6 +175,9 @@
 									</div>
 									<div class="pull-right">
 									  <%= f.submit 'Kirim', class: "pack-order float-right-fixed margn" %>
+									  <div class="pack-order float-right-fixed margn kembali2", id="kembali2">
+									  	Kembali
+									  </div>
 									</div>
 								</div>
 							<% end %>

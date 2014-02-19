@@ -317,6 +317,18 @@ $(document).ready(function() {
     $('.tahap_3').show();
   });
 
+  $('#kembali').click(function(){
+    $('.tahap_1').show();
+    $('.tahap_2').hide();
+    $('.tahap_3').hide();
+  });
+
+  $('#kembali2').click(function(){
+    $('.tahap_1').hide();
+    $('.tahap_2').show();
+    $('.tahap_3').hide();
+  });
+
   $('.lanjut').click(function(){
     $('.lanjut_btn').show();
   });
