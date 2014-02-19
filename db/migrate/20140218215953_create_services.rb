@@ -2,7 +2,7 @@ class CreateServices < ActiveRecord::Migration
   def change
     create_table :services do |t|
       t.string :name
-      t.integer :phone
+      t.string :phone
       t.string :email
       t.text :address
       t.string :no_customer
