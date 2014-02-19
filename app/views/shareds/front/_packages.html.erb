@@ -70,7 +70,6 @@
 		<div class="trial" id="click_packages_more"><a>VIEW MORE</a></div>
 
   </article>
-  <br><br>
 	<div class="polosochka"></div>
 </section>
 
@@ -80,7 +79,8 @@
   <div class="polosochka2"></div>
   <article class="packs-cont cbp-so-scroller" style="text-align:left">
       <div class="panel-body">
-      	<div class="panel-group" id="accordion">
+
+      	<div class="panel-group click_extras_more" id="accordion">
       		<% @memberships_extra.each_with_index do |membership,index| %>
             <div class="panel panel-default">
             	<a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapse<%= membership.id %>">
@@ -113,6 +113,9 @@
             </div>
           <% end %>
 				</div>
+				<div class="br"></div>
+				<div class="trial" id="click_extras_more"><a>VIEW MORE</a></div>
+
       </div>
   </article>
 </section>

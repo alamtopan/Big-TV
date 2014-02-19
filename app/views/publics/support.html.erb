@@ -1,10 +1,20 @@
 <section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
-	<div class="support_width">
-		<div class="support_cont c1" id="cont1">PEMBAYARAN</div>
-		<div class="support_cont c2" id="cont2">FAQ</div>
+	<div style="float:left; width:100%; margin-bottom:20px;">
+		<div class="support_width">
+			<div class="support_cont c1" id="cont1">PEMBAYARAN</div>
+			<div class="support_cont c2" id="cont2">FAQ</div>
+		</div>
 	</div>
 	<article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
 		<div class="panel-body" style="text-align:center; width:940px">
+			<% flash.each do |name, msg| %>
+			  <% if msg.present? && msg.is_a?(String) %>
+			    <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+			      <a class="close" data-dismiss="alert">&#215;</a>
+			      <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+			    </div>
+			  <% end %>
+			<% end %>
 			<div class="cont1">
 				<h1><span>PEMBAYARAN MUDAH DIMANA SAJA</span></h1>
 				<div class="polosochka2"></div>
@@ -33,6 +43,7 @@
 					  <% @support_faq.each do |support| %>
 						  <li><a href="#<%= support.id%>b" data-toggle="tab"><%= support.title%></a></li>
 						<% end %>
+						<li><a href="#service_request" data-toggle="tab">Service Request</a></li>
 					</ul>
 					<div class="tab-content">
 					  <% @support_faq.each_with_index do |support,index| %> 
@@ -42,6 +53,127 @@
 						  	</div>
 						  </div>
 					  <% end %>
+					   <div class="tab-pane white_tab" id="service_request">
+						  	<div class="content_support">
+							  	<%= form_for @service, url:create_support_path, method: 'post', html: {class: "form-horizontal"} do |f| %>
+							  		<div class="tahap_1">
+								  		<h2 align="center">
+								  			<span class="thp1 active_thp">TAHAP 1</span> --->
+								  			<span class="thp2">TAHAP 2</span> --->
+								  			<span class="thp3">TAHAP 3</span>
+								  		</h2>
+								  		<div class="br"></div>
+								  		<div class="br"></div>
+											<div align="left"><b>Silahkan pilih dibawah ini : </b></div>
+								  		<div class="br"></div>
+								  		<div class="br"></div>
+											<div class="form-group">
+												<%= f.hidden_field :status, value: "IN PROGRESS" %>
+											  <%= f.label '* Layanan service', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-7">
+											    <% @problem.each_with_index do |problem, index|%>
+											    <div class="roundedThree versi2 mg-top-nul">
+											      <%= f.radio_button :problem, problem ,id:"problem_#{index}", class: "pgk_hide", required: true%>
+											      <label for="problem_<%= index %>" class="lanjut"></label>
+											    </div>
+											      <b><%= problem %></b>
+											      <br><br>
+											    <% end %>
+											  </div>
+											</div>
+											<div class="pull-right">
+											  <%= button_tag 'Lanjut', class: "pack-order float-right-fixed margn lanjut_btn", id: "tahap_1" %>
+											</div>
+										</div>
+										<div class="tahap_2">
+											<h2 align="center">
+								  			<span class="thp1">TAHAP 1</span> --->
+								  			<span class="thp2 active_thp">TAHAP 2</span> --->
+								  			<span class="thp3">TAHAP 3</span>
+								  		</h2>
+											<div class="br"></div>
+											<div class="br"></div>
+											<div align="left"><b>Silahkan lengkapi data anda : </b></div>
+								  		<div class="br"></div>
+								  		<div class="br"></div>
+											<div class="form-group">
+											  <%= f.label '* Nama lengkap', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <%= f.text_field :name, class: "form-control", required: true %>
+											  </div>
+											</div>
+											<div class="form-group">
+											  <%= f.label '* No telepon', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <%= f.text_field :phone, class: "form-control", required: true %>
+											  </div>
+											</div>
+											<div class="form-group">
+											  <%= f.label '* Email', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <%= f.text_field :email, class: "form-control", required: true %>
+											  </div>
+											</div>
+											<div class="form-group">
+											  <%= f.label '* Alamat_pemasangan', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <%= f.text_area :address, class: "form-control", style: "height:100px;", required: true %>
+											  </div>
+											</div>
+											<div class="form-group">
+											  <%= f.label '* No pelanggan', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <%= f.text_field :no_customer, class: "form-control", required: true%>
+											  </div>
+											</div>
+											<div class="form-group">
+											  <%= f.label '* Program', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-6">
+											    <% @program.each_with_index do |program, index| %>
+												    <div class="roundedThree versi2 mg-top-nul">
+												      <%= f.radio_button :program, program, id:"program_#{index}", class: "pgk_hide", required: true%>
+												      <label for="program_<%= index %>" class="lanjut2"></label>
+												    </div>
+											      <b><%= program %></b>
+											      <br><br>
+											    <% end %>
+											  </div>
+											</div>
+											<div class="pull-right">
+											  <%= button_tag 'Lanjut', class: "pack-order float-right-fixed margn lanjut_btn2", id: "tahap_2" %>
+											</div>
+										</div>
+										<div class="tahap_3">
+											<h2 align="center">
+								  			<span class="thp1">TAHAP 1</span> --->
+								  			<span class="thp2">TAHAP 2</span> --->
+								  			<span class="thp3 active_thp">TAHAP 3</span>
+								  		</h2>
+								  		<div class="br"></div>
+								  		<div class="br"></div>
+											<div align="left"><b>Sudah berapa lama masalah berjalan : </b></div>
+								  		<div class="br"></div>
+								  		<div class="br"></div>
+											<div class="form-group">
+											  <%= f.label '* Sudah_berapa_lama', class: "col-sm-2 control-label" %>
+											  <div class="col-sm-3">
+											    <% @day_problem.each_with_index do |day, index|%>
+												    <div class="roundedThree versi2 mg-top-nul">
+												      <%= f.radio_button :day_problem, day, id:"day_#{index}", class: "pgk_hide", required: true %>
+												      <label for="day_<%= index %>"></label>
+												    </div>
+											      <b><%= day %></b>
+											      <br><br>
+											    <% end %>
+											  </div>
+											</div>
+											<div class="pull-right">
+											  <%= f.submit 'Kirim', class: "pack-order float-right-fixed margn" %>
+											</div>
+										</div>
+									<% end %>
+						  	</div>
+						  </div>
 					</div>
 				<% else %>
 				<div class="des_tab warn">

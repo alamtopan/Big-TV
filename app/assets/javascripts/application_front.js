@@ -251,6 +251,11 @@ $(document).ready(function(){
     $(this).css("display","none");
   });
 
+  $('#click_extras_more').click(function(){
+    $('.click_extras_more').slideToggle(2000);
+    $(this).css("display","none");
+  });
+
   $('#click_footer_more').click(function(){
     $('.click_footer_more').slideToggle(2000);
     $(this).css("display","none");
@@ -299,5 +304,24 @@ $(document).ready(function() {
     $('.cont1').hide();
     $('.c2').addClass('active')
     $('.c1').removeClass('active');
+  });
+
+  $('#tahap_1').click(function(){
+    $('.tahap_1').hide();
+    $('.tahap_2').show();
+  });
+
+  $('#tahap_2').click(function(){
+    $('.tahap_1').hide();
+    $('.tahap_2').hide();
+    $('.tahap_3').show();
+  });
+
+  $('.lanjut').click(function(){
+    $('.lanjut_btn').show();
+  });
+
+  $('.lanjut2').click(function(){
+    $('.lanjut_btn2').show();
   });
 });

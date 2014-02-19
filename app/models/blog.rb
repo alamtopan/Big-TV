@@ -11,6 +11,6 @@ class Blog < ActiveRecord::Base
                                         :default_url => "/assets/no-image.png"
   validates_presence_of :title
 
-  scope :published,  -> { where('(publish IS NULL OR unpublish IS NULL) OR (publish <= NOW() AND unpublish >= NOW())') }
+  scope :published,  -> { where('(publish IS NULL OR unpublish IS NULL) OR (publish <= NOW() AND unpublish >= NOW())').order("id DESC") }
 
 end

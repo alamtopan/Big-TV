@@ -31,6 +31,7 @@ BigTv::Application.routes.draw do
     resources :regionals
     resources :offices
     resources :category_offices
+    resources :services
   end
   
   resources :customers,   only: [:new, :create]
@@ -40,6 +41,7 @@ BigTv::Application.routes.draw do
     end
   end
   
+  post   '/create_support',   to: 'publics#create_support',      as: 'create_support'
   get   '/lokasi',   to: 'publics#lokasi',      as: 'lokasi'
   get   '/reg',   to: 'publics#cara_berlangganan',      as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',      as: 'support'

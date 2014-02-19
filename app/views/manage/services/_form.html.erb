@@ -1,0 +1,88 @@
+<% if @service.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-block alert-danger fade in ">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Warning!</strong> <%= pluralize(@service.errors.count, "error") %>
+      <% @service.errors.full_messages.each do |msg| %>
+      <diV>
+        <%= msg %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<div class="form-group">
+  <%= f.label :status, class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <% @status.each do |status|%>
+      <%= f.radio_button :status, status %>
+      <b><%= status %></b>
+      &nbsp; &nbsp;  &nbsp;
+    <% end %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :problem, class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <% @problem.each do |problem|%>
+      <%= f.radio_button :problem, problem %>
+      <b><%= problem %></b>
+      <br><br>
+    <% end %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :name, class: "col-sm-2 control-label" %>
+  <div class="col-sm-6">
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :phone, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :phone %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :email, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_field :email %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :address, class: "col-sm-2 control-label" %>
+  <div class="col-sm-9">
+    <%= f.text_area :address %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :no_customer, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <%= f.text_field :no_customer %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :program, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <% @program.each do |program| %>
+      <%= f.radio_button :program, program %>
+      <b><%= program %></b>
+      &nbsp; &nbsp; 
+    <% end %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :day_problem, class: "col-sm-2 control-label" %>
+  <div class="col-sm-3">
+    <% @day_problem.each do |day|%>
+      <%= f.radio_button :day_problem, day %>
+      <b><%= day %></b>
+      &nbsp; &nbsp;  &nbsp; 
+    <% end %>
+  </div>
+</div>
+<div class="pull-right">
+  <%= f.submit 'Save', class: "btn btn-bricky" %>
+  <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_services_path, class: "btn btn-dark-grey" %>
+</div>
+

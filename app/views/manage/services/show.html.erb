@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <%= link_to "Dashboard", dashboard_path %>
+      </li>
+      <li class="active">
+        Show Service
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>Show Services</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Service
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Created At</label>
+          <div class="col-sm-6">
+            : <b><%= @service.created_at.strftime('%d %b %Y - at %I:%M%p') %></b>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Status</label>
+          <div class="col-sm-6">
+            : <b><%= @service.status %></b>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Problem</label>
+          <div class="col-sm-6">
+           : <%= @service.problem %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-6">
+            : <%= @service.name %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Phone</label>
+          <div class="col-sm-9">
+            : <%= @service.phone %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-9">
+            : <%= @service.email %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Address</label>
+          <div class="col-sm-9">
+            : <%= @service.address %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">No.Customer</label>
+          <div class="col-sm-3">
+            : <%= @service.no_customer %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Program</label>
+          <div class="col-sm-3">
+            : <%= @service.program %>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Day Problem</label>
+          <div class="col-sm-3">
+            : <%= @service.day_problem %>
+          </div>
+        </div>
+        <div class="pull-right">
+          <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_services_path, class: "btn btn-dark-grey" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

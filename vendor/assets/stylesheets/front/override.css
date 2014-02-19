@@ -64,7 +64,7 @@
   background: #fff;
   margin: 20px;
 }
-.click_packages_more, .click_footer_more{
+.click_packages_more, .click_footer_more, .click_extras_more{
   display: none;
 }
 #sml{

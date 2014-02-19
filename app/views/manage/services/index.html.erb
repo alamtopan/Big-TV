@@ -1,0 +1,39 @@
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Services', 
+                     button_name: 'Service'
+                   } do %>
+
+  <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+    <thead>
+      <tr>
+        <th width="20%">No.Customer</th>
+        <th width="10%">No Services</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @services.each_with_index do |item,index| %>
+        <tr>
+          <th><%= item.no_customer %></th>
+          <th><%= index+1 %></th>
+          <th><%= item.name %></th>
+          <th><%= item.status %></th>
+          <th><b><%= item.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></th>
+          <th>
+            <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+              <%= link_to manage_service_path(item), class: 'btn btn-default' do %>
+                <i class="icon-share"></i> Show
+              <% end %>
+            </div>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: item, confirmation: "#{item.name} will be deleted, are you sure ?"} %>
+            </div>
+          </th>
+        </tr>  
+      <% end %>
+   </tbody>
+  </table>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140211042009) do
+ActiveRecord::Schema.define(:version => 20140219152937) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -232,6 +232,20 @@ ActiveRecord::Schema.define(:version => 20140211042009) do
 
   create_table "regionals", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "services", :force => true do |t|
+    t.string   "name"
+    t.integer  "phone"
+    t.string   "email"
+    t.text     "address"
+    t.string   "no_customer"
+    t.string   "program"
+    t.string   "problem"
+    t.string   "day_problem"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "status"
   end
 
   create_table "sessions", :force => true do |t|

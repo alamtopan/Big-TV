@@ -55,7 +55,22 @@ class PublicsController < ApplicationController
     @title_page = "Support"
     @support_pembayaran   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC')
     @support_faq   = PageContent.where("category =?", "Tab Support Content FAQ").published.order('id ASC')
+    @service = Service.new
+    choice
     render layout: "detail"
+  end
+
+  def create_support
+    @service = Service.new(params[:service])
+    if @service.save
+      flash[:notice] = "
+                          Terima kasih atas data yang telah Anda 
+                          lengkapi ke dalam Service Request. <br>
+                          Mohon maff sebelumnya atas ketidaknyamanan bapak/ibu. <br>
+                          Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi bapak/ibu kembali
+                       "
+      redirect_to support_path
+    end
   end
 
   def show_blog
@@ -73,6 +88,20 @@ class PublicsController < ApplicationController
       else
         redirect_to root_path
       end
+    end
+
+    def choice
+      @problem      = [
+                         'Gambar sering kabur atau muncul tulisan No Signal',
+                         'Di dalam layar terdapat tulisan "Access Danied" atau "Card Not Paired"',
+                         'Box tidak menyala',
+                         'Masalah lainnya'
+                      ]
+
+      @program      = ['Pre Paid','Post Paid']
+      @day_problem  = ['1-2 Hari','3-7 Hari','8-15 Hari']
+      @status       = ['IN PROGRESS','DONE','FAILED']
+
     end
 
 end

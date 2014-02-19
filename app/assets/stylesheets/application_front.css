@@ -29,3 +29,25 @@
 .caret{
 		margin-left: 5px!important;
 }
+.trial a{
+	font-weight: bold!important;
+	color: #bbb;
+}
+input[type="radio"].pgk_hide{
+	display: none;
+}
+.mg-top-nul{
+	margin-top: 0px!important;
+}
+.tahap_2, .tahap_3{
+	display: none;
+}
+.thp1, .thp2, .thp3{
+	color: #ccc;
+}
+.active_thp{
+	color: #000!important;
+}
+.lanjut_btn, .lanjut_btn2{
+	display: none;
+}
