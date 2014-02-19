@@ -98,6 +98,9 @@ GEM
       activesupport (>= 3.2, < 5)
     highline (1.6.20)
     hike (1.2.3)
+    httparty (0.13.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -116,11 +119,15 @@ GEM
     letter_opener (1.2.0)
       launchy (~> 2.2)
     libv8 (3.16.14.3)
+    lolsoap (0.5.1)
+      nokogiri (~> 1.5)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     mysql2 (0.3.11)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -129,6 +136,9 @@ GEM
     net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    nori (2.3.0)
     orm_adapter (0.5.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
@@ -215,6 +225,8 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
+    wash_out (0.9.0)
+      nori (>= 2.0.0)
 
 PLATFORMS
   ruby
@@ -235,10 +247,12 @@ DEPENDENCIES
   exception_notification
   figaro
   friendly_id
+  httparty
   inherited_resources
   jquery-rails
   kaminari
   letter_opener
+  lolsoap
   mysql2 (= 0.3.11)
   paperclip
   quiet_assets
@@ -252,3 +266,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
+  wash_out

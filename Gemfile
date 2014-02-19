@@ -27,6 +27,9 @@ gem 'rails', '3.2.13'
   gem 'remotipart', '~> 1.2'
   gem 'acts_as_list'
   gem 'friendly_id'
+  gem 'lolsoap'
+  gem 'httparty'
+  gem 'wash_out'
 #end
 
 
