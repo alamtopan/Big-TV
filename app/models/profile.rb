@@ -35,5 +35,17 @@ class Profile < ActiveRecord::Base
     [city, province, codepos].select{|r| r.present?}.join(',')
   end
 
+  def name_first
+    full_name.split(' ').first
+  end
+
+  def name_last
+    full_name.split(' ').last
+  end
+
+  def billing_method_code
+    billing_method.to_s.downcase === "email" ? "E" : "P"
+  end
+
 end
 
