@@ -1,13 +1,15 @@
-class Manage::PageContentsController <  Manage::ResourcesController
+class Manage::PageContentsController <  Manage::ResourcesController # Menggunakan fungsi yang ada di resource controller/induk controller
 	skip_load_and_authorize_resource only: :index
 	defaults :resource_class => PageContent, :collection_name => 'page_contents', :instance_name => 'page_content'
 	before_filter :category_content
 
+	# Override fungsi index/crud
 	def index
   	@page_contents = PageContent.order('id ASC')
   end
 
 	private
+		# Fungsi tambahan untuk select kategori konten
 		def category_content
 	  	@category_contents = [
 												      ['Slogan Bigtv', 'Slogan Bigtv'],

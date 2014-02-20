@@ -14,7 +14,7 @@ class Ability
     end
   end
 
-  def referral_abilities(user)
+  def referral_abilities(user) # Hak Akses untuk SPG Hanya bisa manage Order dan data dirinya
     can [:read, :create], Order
     can [:read, :update], User, id: user.id
   end
@@ -23,7 +23,7 @@ class Ability
     can :read, Order, Order
   end
   
-  def admin_abilitties
+  def admin_abilitties # Hak Akses untuk admin bisa manage semua data
     can :manage, :all
   end
 end

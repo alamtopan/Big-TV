@@ -1,11 +1,12 @@
 class Order < ActiveRecord::Base
+  # Attributess model order
   attr_accessible :orderable_id, :orderable_type, :session_id, :items_attributes, :file_faktur, :status
   
   has_attached_file :file_faktur, styles:  { 
                                    :medium => "600x600>", 
                                    :thumb => "100x100>" 
                                   }, 
-                                  :default_url => "/assets/no-image.png"
+                                  :default_url => "/assets/no-image.png" # Role field file faktur
 
   has_many   :items, class_name: "OrderItem", dependent: :destroy
   belongs_to :orderable, polymorphic: true
@@ -15,6 +16,7 @@ class Order < ActiveRecord::Base
   after_update  :after_modification
   before_create :before_creation
 
+  # Scope query
   scope :success_order, where("session_id IS NULL")
 
   module Status

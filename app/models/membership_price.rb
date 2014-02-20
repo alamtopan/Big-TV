@@ -2,7 +2,7 @@ class MembershipPrice < ActiveRecord::Base
   extend Enumerize
   enumerize :periode_name, in: [:day, :week, :month, :year], default: :month
 
-  attr_accessible :price, :total_period, :periode_name, :membership_id
+  attr_accessible :price, :total_period, :periode_name, :membership_id # Attributess membership price
   
   with_options(presence: true) do |presence|
     presence.validates :periode_name

@@ -1,10 +1,10 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name
-  has_one :membership
+  attr_accessible :name # Attributess model category
+  has_one :membership # Mempunyai banyak membership
 
   before_validation :before_validating
-  validates_uniqueness_of :name
-  validates_presence_of  :name
+  validates_uniqueness_of :name # Validation unique
+  validates_presence_of  :name # Validation present
   
   module Config
     NAMES=['premium','extra','other','ez']

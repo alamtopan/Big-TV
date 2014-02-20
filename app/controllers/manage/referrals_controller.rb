@@ -1,12 +1,14 @@
-class Manage::ReferralsController < Manage::ResourcesController
+class Manage::ReferralsController < Manage::ResourcesController # Menggunakan fungsi yang ada di resource controller/induk controller
 	skip_load_and_authorize_resource only: :index
 	defaults :resource_class => Referral, :collection_name => 'referrals', :instance_name => 'referral'
 	prepend_before_filter :draw_password, only: :update
 
+  # Override fungsi index/crud
   def index
     @referrals = Referral.order('id ASC')
   end
 
+  # Override fungsi action update
 	def update
     @referral = Referral.find(params[:id])  
     if @referral.update_attributes(params[:referral])   
@@ -17,6 +19,7 @@ class Manage::ReferralsController < Manage::ResourcesController
     end  
   end
 
+  # Override halaman edit
   def edit
     if current_user.type == 'Referral'
       unless current_user.id.to_i == params[:id].to_i

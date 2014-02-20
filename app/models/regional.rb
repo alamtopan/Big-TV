@@ -1,4 +1,4 @@
 class Regional < ActiveRecord::Base
-  attr_accessible :name
-  has_many :offices
+  attr_accessible :name # Attributess tabel regional
+  has_many :offices # Mempunyai banyak offices
 end

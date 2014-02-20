@@ -1,34 +1,38 @@
 class PublicsController < ApplicationController
-  layout "public"
+  layout "public"  # Render layout template Public halaman depan
 
+  # Fungsi Show data dihalaman Home/Depan bigtv
 	def show
 		if params[:regional]
 			regional = params[:regional]
 		else
 			regional = "Sumatra"
 		end
-    @blogs         = Blog.published
-    @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all
-    @regionals     = Regional.all
+    @blogs         = Blog.published # Show data promo/news
+    @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all # Show data kategori office
+    @regionals     = Regional.all # Show data regional
 
-    @memberships   = Membership.packages_by_category('premium')
-    @memberships_extra = Membership.packages_by_category('extra').by_position
-    @groups        = GroupItem.includes(unit_items: [:memberships]).by_position
-    @free_channels = UnitItem.free_channels
+    @memberships   = Membership.packages_by_category('premium') # Show paket premium
+    @memberships_extra = Membership.packages_by_category('extra').by_position # Show data extra paket
+    @groups        = GroupItem.includes(unit_items: [:memberships]).by_position # Show data group paket
+    @free_channels = UnitItem.free_channels # Show data channels
 
-    @features  = PageContent.where("category =?", "Fitur Content").order('id ASC')
-    @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").published.order('id ASC')
+    @features  = PageContent.where("category =?", "Fitur Content").order('id ASC') # Show data fitur
+    @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").published.order('id ASC') # Show data why bigtv content
     
 	end
 
+  # Halaman Thanks dengan render template invoice
   def thanks
     prepare_order_by_token('invoice')
   end
 
+  # Halaman Payment intruction dengan render template invoice
   def payment_instruction
     prepare_order_by_token('invoice')
   end
 
+  # Halaman lokasi dengan format map
   def render_map
     return unless params[:regional]
     regional = params[:regional]
@@ -36,30 +40,31 @@ class PublicsController < ApplicationController
     render partial: 'map'
   end
 
-  def decoder
-  end
-
+  # Fungsi yang ada di Halaman lokasi
   def lokasi
-    @title_page = "Lokasi"
+    @title_page = "Lokasi" # Display title
     @categories= CategoryOffice.all
     @regionals= Regional.all
-    render layout: "detail"
+    render layout: "detail" # Render template detail
   end
 
+  # Fungsi yang ada di Halaman cara berlangganan
   def cara_berlangganan
-    @title_page = "Cara Berlangganan"
-    render layout: "detail_lanjut"
+    @title_page = "Cara Berlangganan" # Display title cara berlangganan
+    render layout: "detail_lanjut" # Render template detail_lanjut
   end
 
+  # Fungsi yang ada di Halaman support
   def support
-    @title_page = "Support"
-    @support_pembayaran   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC')
-    @support_faq   = PageContent.where("category =?", "Tab Support Content FAQ").published.order('id ASC')
+    @title_page = "Support" # Display title support
+    @support_pembayaran   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC') # Show data tab support pembayaran
+    @support_faq   = PageContent.where("category =?", "Tab Support Content FAQ").published.order('id ASC') # Show data tab faq support pembayaran
     @service = Service.new
     choice
-    render layout: "detail"
+    render layout: "detail" # Render template detail
   end
 
+  # Fungsi yang dipakai untuk create Service request
   def create_support
     @service = Service.new(params[:service])
     if @service.save
@@ -69,14 +74,15 @@ class PublicsController < ApplicationController
                           Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
                           Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
                        "
-      redirect_to support_path
+      redirect_to support_path # Redirect kembali kehalaman support
     end
   end
 
+  # Fungsi yang dipakai di halaman detail promo/news
   def show_blog
     @blog = Blog.where(slug: params[:id]).first
     @title_page = "#{@blog.title}" if @blog
-    render layout: "detail"
+    render layout: "detail" # Render template detail
   end
 
   private
@@ -90,6 +96,7 @@ class PublicsController < ApplicationController
       end
     end
 
+    # Fungsi select di form service request
     def choice
       @problem      = [
                          'Gambar sering kabur atau muncul tulisan No Signal',

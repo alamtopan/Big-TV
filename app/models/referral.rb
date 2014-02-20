@@ -1,4 +1,4 @@
-class Referral < User
+class Referral < User # Turunan dari model user
 	before_validation	:before_validating
 	after_save				:after_saving
 	attr_accessible :code

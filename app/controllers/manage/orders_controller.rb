@@ -1,16 +1,19 @@
-class Manage::OrdersController < Manage::ResourcesController
+class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungsi yang ada di resource controller juga
 	skip_load_and_authorize_resource only: :index
   defaults :resource_class => Order, :collection_name => 'orders', :instance_name => 'order'
 
+  # Override fungsi dihalaman index/crud
   def index
     @orders = current_user.type == 'Referral' ? current_user.orders : Order
     @orders = @orders.success_order.order('orders.created_at DESC')
   end
 
+  # Override fungsi dihalaman show data
   def show
     @order_view = Order.find(params[:id])
   end
 
+  # Override fungsi dihalaman edit
   def edit
     @order_view = Order.find(params[:id])
   end
@@ -23,12 +26,14 @@ class Manage::OrdersController < Manage::ResourcesController
     prepare_customer_form
   end
 
+  # Fungsi untuk halaman create subcribe baru
   def new_customer
     delete_session
   	@customer = order.orderable||Customer.new
   	prepare_customer_form
   end
 
+  # Fungsi untuk action create customer baru
   def create_customer
     input_param = params[:user] || params[:customer]
     if input_param
@@ -63,6 +68,7 @@ class Manage::OrdersController < Manage::ResourcesController
     end
   end
 
+  # Fungsi untuk halaman pilih extra paket
   def extra
     display_extra_data = false
     if request.xhr? && params[:extra_id].present?
@@ -82,7 +88,7 @@ class Manage::OrdersController < Manage::ResourcesController
       display_extra_data = true
     else
       flash[:alert] = 'Mohon pilih salah satu paket premium!'
-      redirect_to premium_manage_orders_path
+      redirect_to premium_manage_orders_path # Redirect ke halaman premium paket dihalaman backend/spg
     end
     
     if display_extra_data
@@ -102,11 +108,12 @@ class Manage::OrdersController < Manage::ResourcesController
       end
 
       unless @memberships
-        redirect_to rental_box_manage_orders_path
+        redirect_to rental_box_manage_orders_path # Redirect ke halaman pilih dekoder dihalaman backend/spg
       end
     end   
   end
 
+  # Fungsi yang digunakan dihalaman premium paket
   def premium
     if request.referer.to_s =~ /customer/i && order.items.present?
       redirect_to extra_manage_orders_path
@@ -116,6 +123,7 @@ class Manage::OrdersController < Manage::ResourcesController
     end
   end
 
+  # Fungsi yang digunakan dihalaman preview data customer
   def preview
     @referral = ReferralCategory.order("id ASC")
     @title_page = "More Info"
@@ -136,6 +144,7 @@ class Manage::OrdersController < Manage::ResourcesController
     end
   end
 
+  # Fungsi yang digunakan dihalaman dekoder
   def rental_box
     @title_page = "Sewa Dekoder"
     @memberships = Membership.packages_by_category('other')
@@ -148,6 +157,7 @@ class Manage::OrdersController < Manage::ResourcesController
     end
   end
 
+  # Fungsi tambahan yang digunakan untuk subcribe
   def subcribe
     customer_info = params[:user] || params[:customer]
     if customer_info.blank?
@@ -203,6 +213,8 @@ class Manage::OrdersController < Manage::ResourcesController
   end
 
   private
+    # dibawah ini beberapan Fungsi tambahan yang digunakan untuk subcriptions
+    
     def prepare_customer_form
       prepopulate_customer_info
       @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]

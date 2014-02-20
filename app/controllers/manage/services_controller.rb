@@ -1,10 +1,11 @@
-class Manage::ServicesController < Manage::ResourcesController
+class Manage::ServicesController < Manage::ResourcesController # Menggunakan fungsi yang ada di resource controller/induk controller
 	skip_load_and_authorize_resource only: :index
 	defaults :resource_class => Service, :collection_name => 'services', :instance_name => 'service'
 	before_filter :choice
 
 
 	private
+		# Fungsi tambahan untuk redio button di service request
 		def choice
 			@problem 			= [
 												 'Gambar sering kabur atau muncul tulisan No Signal',

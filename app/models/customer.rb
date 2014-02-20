@@ -1,4 +1,4 @@
-class Customer < User
+class Customer < User # Turunan dari user model
   before_validation :before_validating
   after_save        :after_saving
 

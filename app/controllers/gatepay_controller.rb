@@ -1,5 +1,6 @@
 class GatepayController < ApplicationController
 
+  # Fungsi Pembayaran
   def notify
     order = Order.find_by_code(params[:TRANSIDMERCHANT])
     response_text = 'Stop'
@@ -16,6 +17,7 @@ class GatepayController < ApplicationController
     render text: 'STOP'
   end
 
+  # Redirect fungsi pembayaran
   def redirect
     @order = Order.find_by_code(params[:TRANSIDMERCHANT])
     redirect_to(root_path) and return unless @order

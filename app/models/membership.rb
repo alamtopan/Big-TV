@@ -1,4 +1,5 @@
 class Membership < ActiveRecord::Base
+  # Attributes membership
   attr_accessible :name, :description, :publish_on, :expire_on, :version,
                   :position, :is_published, :is_featured, :prices_attributes,
                   :unit_item_ids, :category_id
@@ -10,9 +11,12 @@ class Membership < ActiveRecord::Base
 
   accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
 
+  # Scope
   scope :by_position, order("memberships.position ASC")
 
   acts_as_list
+
+  # dibawah ini Fungsi tambahan dan query tambahan di model membership
 
   Category::Config::NAMES.each do |val|
     define_method("#{ val.downcase }?") do

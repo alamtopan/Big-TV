@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  # Attributess dari model profile
   attr_accessible :address, :city, :codepos, :first_name, :last_name, 
                   :no_hp, :no_phone, :province, :jenis_kelamin, :tanggal_lahir,
                   :referal, :tipe_identitas, :no_identitas ,:user_id, :referal_id,
@@ -8,13 +9,13 @@ class Profile < ActiveRecord::Base
                                      :medium => "600x600>", 
                                      :thumb => "100x100>" 
                                     }, 
-                                    :default_url => "/assets/no-image.png"
+                                    :default_url => "/assets/no-image.png" # role field file ktp
 
   has_attached_file :avatar, styles:  { 
                                      :medium => "600x600>", 
                                      :thumb => "100x100>" 
                                     }, 
-                                    :default_url => "/assets/no-image.png"
+                                    :default_url => "/assets/no-image.png" # role field avatar
 
    # has_attached_file :file_faktur, styles:  { 
    #                                   :medium => "600x600>", 
@@ -26,7 +27,7 @@ class Profile < ActiveRecord::Base
 
   # validates_presence_of   :first_name, :last_name, :city, :address, :no_hp, :province, :jenis_kelamin, :tanggal_lahir,
   #                         :referal, :tipe_identitas, :no_identitas, :address_shipping
-
+  # Fungsi tambahan
   def full_name
     [first_name, last_name].select(&:'present?').join(' ')
   end

@@ -1,10 +1,12 @@
 class Office < ActiveRecord::Base
+  # Attributess dari model office
   attr_accessible :name,:address,:phone_area,:no_phone,:no_fax,:longitude,:latitude,
                   :category_office_id, :regional_id
   belongs_to :category_office
   belongs_to :regional
 
   class << self
+    # Query pemanggilan data
     def packages_by_map(_package)
       includes(:regional).where(['regionals.name = ?', _package])
     end

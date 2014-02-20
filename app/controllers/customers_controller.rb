@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
-  layout 'detail'
+  layout 'detail' # Render template detail
 
+  # Fungsi di halaman registrasi customer
   def new
     cookies[:cart_id] = SecureRandom.hex(16)
     @title_page = "Pendaftaran"
@@ -9,6 +10,7 @@ class CustomersController < ApplicationController
     prepare_customer_form
   end
 
+  # Fungsi create action registrasi customer
   def create
     input_param = params[:user] || params[:customer]
     if input_param
@@ -43,6 +45,7 @@ class CustomersController < ApplicationController
   end
 
   private
+    # Fungsi tambahan reistrasi customer
     def prepare_customer_form
       if current_user && @customer.profile
         @customer.profile.referal_id = current_user.code 

@@ -1,9 +1,10 @@
 class CartsController < ApplicationController
-  layout "detail"
-  before_filter :authorize_customer
+  layout "detail" # Render layout template detail
+  before_filter :authorize_customer # Eksekusi fungsi ini
 
+  # Fungsi yang dipakai dihalaman Extra paket
   def extra
-    @title_page = "Extra"
+    @title_page = "Extra" # Display title dihalman extra paket
     display_extra_data = false
     if request.xhr? && params[:extra_id].present?
       order_item = order.items.find_by_membership_id(params[:extra_id])
@@ -22,7 +23,7 @@ class CartsController < ApplicationController
       display_extra_data = true
     else
       flash[:alert] = 'Mohon pilih salah satu paket premium!'
-      redirect_to premium_path
+      redirect_to premium_path # Redirect halaman ke premium paket
     end
     
     if display_extra_data
@@ -42,29 +43,31 @@ class CartsController < ApplicationController
       end
 
       unless @memberships
-        redirect_to rental_path
+        redirect_to rental_path # Redirect halaman dekoder
       end
     end
       
   end
 
-  def premium
-    @title_page = "Premium"
+  # Fungsi yang dipakai di halaman premium
+  def premium 
+    @title_page = "Premium" # Display title dihalman extra paket
     if request.referer.to_s =~ /customer/i && order.items.present?
-      redirect_to extra_path
+      redirect_to extra_path # Redirect ke halaman extra paket
     else
       @memberships = Membership.packages_by_category('premium')
       @groups = GroupItem.includes(unit_items: [:memberships]).all
     end
   end
 
+  # Fungsi yang dipakai dihalaman more info (Preview data customer)
   def preview
     @referral = ReferralCategory.order("id ASC")
     @title_page = "More Info"
     if order.items.select{|i| i.premium? }.blank?
-      redirect_to premium_path
+      redirect_to premium_path # Redirect ke halaman premium
     elsif order.total.to_i < 1
-      redirect_to root_path
+      redirect_to root_path # Redirect ke halaman public depan
     end
 
     if current_user && order
@@ -77,8 +80,9 @@ class CartsController < ApplicationController
 
   end
 
+  # Fungsi yang dipakai dihalaman pilih Dekoder
   def rental_box
-    @title_page = "Sewa Dekoder"
+    @title_page = "Sewa Dekoder" # Display title halaman sewa dekoder
     @memberships = Membership.packages_by_category('other')
     @upgrades = Membership.where('name LIKE ? OR name LIKE ?', '%universe%', '%star%')
 
@@ -89,6 +93,7 @@ class CartsController < ApplicationController
     end
   end
 
+  # Fungsi yang dipakai untuk subscribe baru
   def subcribe
     customer_info = params[:user] || params[:customer]
     if customer_info.blank?
@@ -96,7 +101,7 @@ class CartsController < ApplicationController
       if request.xhr?
         render json: {error: 'Invalid Parameters', redirect_url: preview_path}, status: :unprocessable_entity
       else
-        redirect_to preview_path
+        redirect_to preview_path # Redirect ke halaman preview customer
       end
     else
       #user = Customer.find_or_initialize_by_email(params[:user][:email])
@@ -131,12 +136,12 @@ class CartsController < ApplicationController
         @payment_method = params[:payment_method]
         delete_session
         unless request.xhr?
-          redirect_to thanks_path(token: order.token)
+          redirect_to thanks_path(token: order.token) # Redirect ke halaman thanks dengan token
         end
       else
         flash[:errors] = @customer.errors.full_messages
         unless request.xhr?
-          redirect_to preview_path
+          redirect_to preview_path # Redirect ke halaman preview customer
         end
       end
     end
@@ -162,10 +167,11 @@ class CartsController < ApplicationController
       session.delete(:current_premium_id)
       redirect_to path_redirect
     else
-      render action: :extra
+      render action: :extra # Diarahankan ke halaman extra
     end
   end
 
+  # Fungsi untuk update paket
   def update_package
     order.items.each do |item|
       if item.premium?
@@ -174,7 +180,7 @@ class CartsController < ApplicationController
     end
     new_package = Membership.where("name LIKE ?", "%Star%").first
     order.add_item(new_package,session_cart)
-    redirect_to rental_path
+    redirect_to rental_path # Diarahankan ke halaman dekoder
   end
 
   def update
@@ -190,10 +196,12 @@ class CartsController < ApplicationController
   end
 
   private
+    # Fungsi query paket
     def product
       @product ||= Membership.find(params[:id])
     end
 
+    # Fungsi save order cart
     def save_order
       period = params[:order][:period].to_i
       order.session_id = nil
@@ -204,6 +212,7 @@ class CartsController < ApplicationController
       order.save
     end
 
+    # Fungsi check order paket
     def check_order(order,params_membership)
         order.items.each do |item|
         if params_membership.kind_of?(Array) && !params_membership.include?(item.membership_id)
@@ -214,6 +223,7 @@ class CartsController < ApplicationController
       end
     end
 
+    # Fungsi check order dekoder
     def check_decoder_membership(params_membership)
       selected_decoder = Membership.find(params_membership)
       minimum_package = Membership.where("name LIKE ?", "%Star%").first
@@ -232,6 +242,7 @@ class CartsController < ApplicationController
       # return redirect_to preview_path
     end
 
+    # Check Authorize customer
     def authorize_customer
       @order = Order.find_by_token(params[:token]) if params[:token].present?
 
