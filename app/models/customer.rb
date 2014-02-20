@@ -6,6 +6,17 @@ class Customer < User # Turunan dari user model
 
   # default_scope where('code IS NOT NULL').order('updated_at DESC')
 
+  def reference_no
+    return '' unless profile
+    profile.referal_id
+  end
+
+  def reference_type
+    return referral_category.name if referral_category
+    return '' unless profile
+    profile.referral_info
+  end
+
   private
     def before_validating
       unless self.password
