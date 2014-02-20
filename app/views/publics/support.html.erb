@@ -42,7 +42,7 @@
 				  <% @support_faq.each do |support| %>
 					  <li><a href="#<%= support.id%>b" data-toggle="tab"><%= support.title%></a></li>
 					<% end if @support_faq %>
-					<li class="<%= "active" if @support_faq.blank? %>"><a href="#service_request" data-toggle="tab">Service Request</a></li>
+					<li class="<%= "active" if @support_faq.blank? %>"><a href="#service_request" data-toggle="tab">SERVICE REQUEST</a></li>
 				</ul>
 				<div class="tab-content">
 				  <% @support_faq.each_with_index do |support,index| %> 
@@ -68,7 +68,7 @@
 						  		<div class="br"></div>
 									<div class="form-group">
 										<%= f.hidden_field :status, value: "IN PROGRESS" %>
-									  <%= f.label '* Layanan service', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* Layanan service</label>
 									  <div class="col-sm-7">
 									    <% @problem.each_with_index do |problem, index|%>
 									    <div class="roundedThree versi2 mg-top-nul">
@@ -98,37 +98,37 @@
 						  		<div class="br"></div>
 						  		<div class="br"></div>
 									<div class="form-group">
-									  <%= f.label '* Nama lengkap', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* Nama lengkap</label>
 									  <div class="col-sm-6">
 									    <%= f.text_field :name, class: "form-control", required: true %>
 									  </div>
 									</div>
 									<div class="form-group">
-									  <%= f.label '* No telepon', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* No telepon</label>
 									  <div class="col-sm-6">
 									    <%= f.text_field :phone, class: "form-control", required: true %>
 									  </div>
 									</div>
 									<div class="form-group">
-									  <%= f.label '* Email', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* Email</label>
 									  <div class="col-sm-6">
 									    <%= f.text_field :email, class: "form-control", required: true %>
 									  </div>
 									</div>
 									<div class="form-group">
-									  <%= f.label '* Alamat_pemasangan', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* Alamat_pemasangan</label>
 									  <div class="col-sm-6">
 									    <%= f.text_area :address, class: "form-control", style: "height:100px;", required: true %>
 									  </div>
 									</div>
 									<div class="form-group">
-									  <%= f.label '* No pelanggan', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* No pelanggan</label>
 									  <div class="col-sm-6">
 									    <%= f.text_field :no_customer, class: "form-control", required: true%>
 									  </div>
 									</div>
 									<div class="form-group">
-									  <%= f.label '* Program', class: "col-sm-2 control-label" %>
+									  <label class="col-sm-2 control-label">* Program</label>
 									  <div class="col-sm-6">
 									    <% @program.each_with_index do |program, index| %>
 										    <div class="roundedThree versi2 mg-top-nul">
@@ -144,6 +144,8 @@
 										<div class="pack-order float-right-fixed margn lanjut_btn2", id="tahap_2">
 									  	Lanjut
 									  </div>
+									</div>
+									<div class="pull-left">
 									  <div class="pack-order float-right-fixed margn kembali", id="kembali">
 									  	Kembali
 									  </div>
@@ -161,7 +163,7 @@
 						  		<div class="br"></div>
 						  		<div class="br"></div>
 									<div class="form-group">
-									  <%= f.label '* Sudah_berapa_lama', class: "col-sm-2 control-label" %>
+										<label class="col-sm-2 control-label">* Sudah_berapa_lama</label>
 									  <div class="col-sm-3">
 									    <% @day_problem.each_with_index do |day, index|%>
 										    <div class="roundedThree versi2 mg-top-nul">
@@ -175,6 +177,8 @@
 									</div>
 									<div class="pull-right">
 									  <%= f.submit 'Kirim', class: "pack-order float-right-fixed margn" %>
+									</div>
+									<div class="pull-left">
 									  <div class="pack-order float-right-fixed margn kembali2", id="kembali2">
 									  	Kembali
 									  </div>

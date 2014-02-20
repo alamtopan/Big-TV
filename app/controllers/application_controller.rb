@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  rescue_from ActionView::MissingTemplate do |exception|
+    redirect_to root_path
+  end
+
   def delete_session
     session_store = ActiveRecord::SessionStore::Session.find_by_session_id(cookies[:cart_id])
     session_store.delay(run_at: 3.hours.from_now).destroy if session_store

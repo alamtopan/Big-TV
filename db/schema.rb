@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140219152937) do
+ActiveRecord::Schema.define(:version => 20140219211311) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -236,7 +236,7 @@ ActiveRecord::Schema.define(:version => 20140219152937) do
 
   create_table "services", :force => true do |t|
     t.string   "name"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "email"
     t.text     "address"
     t.string   "no_customer"

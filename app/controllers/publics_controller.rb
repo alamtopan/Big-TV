@@ -66,8 +66,8 @@ class PublicsController < ApplicationController
       flash[:notice] = "
                           Terima kasih atas data yang telah Anda 
                           lengkapi ke dalam Service Request. <br>
-                          Mohon maff sebelumnya atas ketidaknyamanan bapak/ibu. <br>
-                          Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi bapak/ibu kembali
+                          Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
+                          Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
                        "
       redirect_to support_path
     end
