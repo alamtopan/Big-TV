@@ -295,15 +295,28 @@ $(document).ready(function() {
   $('#cont1').click(function(){
     $('.cont1').show();
     $('.cont2').hide();
+    $('.cont3').hide();
     $('.c1').addClass('active');
     $('.c2').removeClass('active');
+    $('.c3').removeClass('active');
   });
 
   $('#cont2').click(function(){
     $('.cont2').show();
     $('.cont1').hide();
+    $('.cont3').hide();
     $('.c2').addClass('active')
     $('.c1').removeClass('active');
+    $('.c3').removeClass('active');
+  });
+
+  $('#cont3').click(function(){
+    $('.cont3').show();
+    $('.cont1').hide();
+    $('.cont2').hide();
+    $('.c3').addClass('active')
+    $('.c1').removeClass('active');
+    $('.c2').removeClass('active');
   });
 
   $('#tahap_1').click(function(){

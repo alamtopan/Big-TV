@@ -1,6 +1,12 @@
 class CustomerMailer < ActionMailer::Base
   default from: "noreply@bigtv.co.id"
 
+  def service_support(service)
+    icon_bigtv
+    @service = service
+    mail(to: 'customer.service@bigtv.co.id', subject: "Service Request, #{@service.problem}, #{@service.name}")
+  end
+
   def thanks_email(order)
     prepare_order(order)
     mail(to: @user.email, subject: 'Terima kasih telah berlangganan BigTv')
@@ -44,6 +50,10 @@ class CustomerMailer < ActionMailer::Base
     def prepare_user(user)
       @url  = 'http://big-tv.com/'
       @user = user
+      attachments.inline['bigtv.png'] = File.read("#{Rails.root}/vendor/assets/images/bigtv.png")
+    end
+
+    def icon_bigtv
       attachments.inline['bigtv.png'] = File.read("#{Rails.root}/vendor/assets/images/bigtv.png")
     end
 

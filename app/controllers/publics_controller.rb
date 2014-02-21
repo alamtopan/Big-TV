@@ -68,6 +68,7 @@ class PublicsController < ApplicationController
   def create_support
     @service = Service.new(params[:service])
     if @service.save
+      CustomerMailer.service_support(@service).deliver
       flash[:notice] = "
                           Terima kasih atas data yang telah Anda 
                           lengkapi ke dalam Service Request. <br>
@@ -106,7 +107,7 @@ class PublicsController < ApplicationController
                       ]
 
       @program      = ['Pre Paid','Post Paid']
-      @day_problem  = ['1-2 Hari','3-7 Hari','8-15 Hari']
+      @day_problem  = ['1-2 Hari','3-7 Hari','>15 Hari']
       @status       = ['IN PROGRESS','DONE','FAILED']
 
     end

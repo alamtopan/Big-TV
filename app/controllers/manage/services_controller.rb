@@ -15,7 +15,7 @@ class Manage::ServicesController < Manage::ResourcesController # Menggunakan fun
 											]
 
 			@program 			= ['Pre Paid','Post Paid']
-			@day_problem  =	['1-2 Hari','3-7 Hari','8-15 Hari']
+			@day_problem  =	['1-2 Hari','3-7 Hari','>15 Hari']
 			@status				= ['IN PROGRESS','DONE','FAILED']
 
 		end

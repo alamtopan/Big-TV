@@ -1,9 +1,12 @@
+.padding-top50{
+  padding-top: 50px!important;
+}
 .des_tab.warn{
   color: red;
   font-style: italic;
 }
 .support_width{
-  width: 400px;
+  width: 600px;
   margin: auto;
   margin-top:40px; 
 }
@@ -11,7 +14,7 @@
   background: #ed2024;
   color: #fff;
   padding: 20px 20px;
-  width: 39%;
+  width: 26.5%;
   float: left;
   cursor: pointer;
   margin-right: 1px;
@@ -25,11 +28,11 @@
   opacity:0.8;
   border-bottom: solid 3px yellow;
 }
-.cont2{
+.cont2, .cont3{
     display: none;
     width: 100%;
   }
-#cont1, #cont2{
+#cont1, #cont2, #cont3{
     cursor: pointer;
   }
 .previous_slider{
