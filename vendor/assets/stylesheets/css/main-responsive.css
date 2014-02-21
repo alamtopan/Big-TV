@@ -471,11 +471,19 @@
 
 
 @media (max-width: 480px) {
+	h2.h2mb{
+		font-size: 13px;
+	}
+	.big_icon{
+		height: 54px;
+	}
 	#invoice_contents{
 		padding: 10px!important;
+		font-size: 9px!important;
+		position: relative;
 	}
-	.to-from span{
-		font-size: 10px!important;
+	.to-from span, .details.clearfix, .details.clearfix span.currency_code{
+		font-size: 9px!important;
 	}
 	.details {
 		padding: 0px!important;
@@ -484,13 +492,13 @@
     font-size: 11px;
  	}
 	.h2mb{
-		width: 60%;
+		width: 50%;
 	}
 	h2 {
 		font-size: 16px;
 	}
 	#line_items th{
-		font-size: 11px!important;
+		font-size: 9px!important;
 	}
 
 	h1{
@@ -500,7 +508,7 @@
 		display: none;
 	}
 	.dataTable{
-		font-size: 10px;
+		font-size: 9px;
 	}
 	.div_packages_extra_new2 {
 		text-align: center;

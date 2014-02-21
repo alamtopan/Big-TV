@@ -3,13 +3,13 @@
     <div id="invoice_contents" style="float:left;background: #fff;">
       <div style="height: 48px">
         <div style="float:left;">
-          <h2 style="position:relative;">
+          <h2 style="position:absolute;" class="h2mb">
             <span style="font-size: 0.9em;font-weight: bold;">INVOICE NO.</span>
             <%= @order.code %>
           </h2>
         </div>
         <div style="float:right;">
-          <%= image_tag 'bigtv.png', style: 'height: 64px;' %>
+          <%= image_tag 'bigtv.png', class: 'big_icon' %>
         </div>
       </div>
       <hr class="space" style="margin-bottom: 50px;">
@@ -47,19 +47,19 @@
           <div class="span-15" style="text-align:right;">
             <b>Status:</b>
           </div>
-          <div class="span-9 last t-right" style="text-align:right;">
+          <div class="span-9 last t-right" style="text-align:left;">
             <%= (@order.status.blank? ? 'Pending' : @order.status).gsub(/Pending/i, 'In Progress').upcase %>
           </div>
           <div class="span-15" style="text-align:right;">
             <b>Dipesan Tanggal:</b>
           </div>
-          <div class="span-9 last t-right" style="text-align:right;">
+          <div class="span-9 last t-right" style="text-align:left;">
             <%= @order.created_at.strftime('%d %b %Y') %>
           </div>
           <div class="span-15" style="text-align:right;">
             <b>Total:</b>
           </div>
-          <div class="span-9 last t-right" style="text-align:right;">
+          <div class="span-9 last t-right" style="text-align:left;">
             <span class="currency_code">Rp.</span>
             <%= number_to_currency(@order.total,{precision: 0, unit: ''}) %>
           </div>

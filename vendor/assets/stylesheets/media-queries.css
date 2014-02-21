@@ -100,6 +100,18 @@ smaller than 650
 smaller than 560
 *************************************************************************************/
 @media screen and (max-width: 480px) {
+	.merchant_address,.date_display, #merchant_address, .tbl_header, .tbl_row, .tbl_total, .tbl_row2{
+		font-size: 9px;
+	}
+	.text-choose, input, textarea{
+		font-size: 10px!important;
+	}
+	.tbl_row2:first-child {
+		width: auto!important;
+	}
+	.table-item-list{
+		font-size: 9px!important;
+	}
 	#logo{
 		margin:0 0 10px 0;
 		padding:0;

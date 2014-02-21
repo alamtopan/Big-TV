@@ -14,7 +14,6 @@
  *= require jquery.autocomplete
  *= require front/override
  */
-
 .mbl-menu, .mbl_menu_cont{
 	display: none;
 }
