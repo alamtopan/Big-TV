@@ -32,6 +32,11 @@ gem 'rails', '3.2.13'
   gem 'wash_out'
 #end
 
+# group :security do
+  gem 'improved-rack-throttle'
+  gem 'rack-contrib'
+# end
+
 
 # Gems used only for assets and not required
 # in production environments by default.

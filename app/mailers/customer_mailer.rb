@@ -1,7 +1,7 @@
 class CustomerMailer < ActionMailer::Base
   default from: "noreply@bigtv.co.id"
 
-  def service_support(service)
+  def service_request(service)
     icon_bigtv
     @service = service
     mail(to: 'customer.service@bigtv.co.id', subject: "Service Request, #{@service.problem}, #{@service.name}")

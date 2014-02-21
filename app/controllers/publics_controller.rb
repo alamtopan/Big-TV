@@ -68,7 +68,7 @@ class PublicsController < ApplicationController
   def create_support
     @service = Service.new(params[:service])
     if @service.save
-      CustomerMailer.service_support(@service).deliver
+      CustomerMailer.service_request(@service).deliver
       flash[:notice] = "
                           Terima kasih atas data yang telah Anda 
                           lengkapi ke dalam Service Request. <br>
