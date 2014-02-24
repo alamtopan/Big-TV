@@ -9,7 +9,9 @@
 				  <% next unless blog %>
 			    <div class="grid_packages_news">
 			    	<div class="overview_hide">
-			    		<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
+			    		<%= link_to show_blog_path(blog.slug) do %>
+			    			<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
+			    		<% end %>
 			    	</div>
 			    	<div class="news_des">
 				    	<div class="title_news_catalog"><%= link_to blog.title, show_blog_path(blog.slug), style: 'color: red;' %></div>
