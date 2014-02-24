@@ -14,6 +14,20 @@
  *= require jquery.autocomplete
  *= require front/override
  */
+.title_news_catalog{
+  color: #ed2024;
+  text-transform: uppercase;
+  font-size: 18px;
+  float: left;
+  width: 100%;
+  height: 44px;
+}
+.overview_hide{
+	overflow: hidden;
+	width: 100%;
+	height: 170px;
+	border-bottom: solid 1px #f4f4f4;
+}
 .mbl-menu, .mbl_menu_cont{
 	display: none;
 }

@@ -8,7 +8,9 @@
 				<% @blogs.each do |blog| %>
 				  <% next unless blog %>
 			    <div class="grid_packages_news">
-			    	<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
+			    	<div class="overview_hide">
+			    		<%= image_tag "#{blog.picture}",class: "news_image lazy" %>
+			    	</div>
 			    	<div class="news_des">
 				    	<div class="title_news_catalog"><%= link_to blog.title, show_blog_path(blog.slug), style: 'color: red;' %></div>
 				    	<div>
