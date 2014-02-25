@@ -1,10 +1,10 @@
 <section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left blog_section_white" id="blog">
 	<% if @blog %>
-		<h1><span><%= @blog.title %></span></h1>
+		<h1 style="font-size:36px"><span><%= @blog.title %></span></h1>
 		<div class="polosochka2"></div>
 		<article class="packs-cont cbp-so-scroller" style="text-align:left">
 			<div class="panel-body" style="text-align:center;">
-				<%= image_tag "#{@blog.picture.url(:medium)}" %>
+				<%= image_tag "#{@blog.picture.url}" %>
 			</div>
 			<div class="panel-body" style="margin-top: 0px;margin-bottom: 50px;">
 				<%= @blog.description.html_safe %>
