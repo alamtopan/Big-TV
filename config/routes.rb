@@ -48,8 +48,8 @@ BigTv::Application.routes.draw do
   post   '/create_support',   to: 'publics#create_support',      as: 'create_support'
   post   '/create_job',   to: 'publics#create_job',      as: 'create_job'
 
-  get   '/carriers',   to: 'publics#carriers',           as: 'carriers'
-  get   '/show_carrier/:id',  to: 'publics#show_carrier',         as: 'show_carrier'
+  get   '/careers',   to: 'publics#careers',           as: 'careers'
+  get   '/show_career/:id',  to: 'publics#show_career',         as: 'show_career'
   get   '/lokasi',    to: 'publics#lokasi',            as: 'lokasi'
   get   '/reg',       to: 'publics#cara_berlangganan', as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',           as: 'support'

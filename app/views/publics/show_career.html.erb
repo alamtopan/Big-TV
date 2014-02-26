@@ -1,0 +1,86 @@
+<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
+  <% if @job %>
+    <h1 style="font-size:36px"><span><%= @job.position %></span></h1>
+    <div class="polosochka2"></div>
+    <article class="packs-cont cbp-so-scroller job_section" style="text-align:left">
+      <% if flash[:alert] %>
+        <div id="error_explanation" style="text-align:center">
+          <div class="alert alert-block alert-danger fade in ">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> %>
+            <diV>
+              <p class="flash-error"><%= flash[:alert].html_safe %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="panel-body" style="margin-top: 0px;">
+        <%= image_tag 'jobsBanner.jpg',class: "banner_job" %>
+        <div class="info_date_job">
+          Division : <b><%= @job.division %></b><br>
+        </div>
+        <div class="br"></div>
+        <div class="br"></div>
+        <div class="info_job">
+          <%= @job.requirement.html_safe %>
+        </div>
+        <div class="pack-order float-right-fixed margn" id="apply_job">
+          Apply This Job
+        </div>
+        <div class="form_apply">
+          <%= form_for @job_applicant, url:create_job_path, method: 'post', html: {class: "form-horizontal"} do |f| %>
+            <%= f.hidden_field :status, value: "Pending" %>
+            <% if @job_applicant.errors.any? %>
+              <div id="error_explanation">
+                <div class="alert alert-block alert-danger fade in ">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong>Warning!</strong> <%= pluralize(@job_applicant.errors.count, "error") %>
+                  <% @job_applicant.errors.full_messages.each do |msg| %>
+                  <diV>
+                    <%= msg %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <%= f.label :job_apply, class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= @job.position %>
+                <%= f.hidden_field :position, value: "#{params[:id]}" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :nama, class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= f.text_field :name, class: "form-control", required: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :email, class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= f.text_field :email, class: "form-control", required_email: true %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :upload_resume, class: "col-sm-2 control-label" %>
+              <div class="col-sm-4">
+                <%= f.file_field :file_resume, class: "form-control" %> (zip, rar, pdf, doc)
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.label :resume, class: "col-sm-2 control-label" %>
+              <div class="col-sm-6">
+                <%= f.text_area :resume, class: "ckeditor form-control", style: "height: 200px", required: true %>
+              </div>
+            </div>
+            <div class="pull-right">
+              <input class="pack-order float-right-fixed margn" name="commit" type="submit" value="Kirim Resume">
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="polosochka"></div>
+</section>

@@ -14,6 +14,9 @@
  *= require jquery.autocomplete
  *= require front/override
  */
+.alert{
+	padding-right: 30px!important;
+}
 .form_apply{
 	background: rgba(237,237,237,1);
 	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
