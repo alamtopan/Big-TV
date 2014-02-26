@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li>
+        <i class="clip-home-3"></i>
+        <%= link_to "Dashboard", dashboard_path %>
+      </li>
+      <li class="active">
+        Show Job Applicant
+      </li>
+    </ol>
+    <div class="page-header">
+      <h1>Show Job Applicant</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="icon-external-link-sign"></i>
+        Job Applicant
+        <div class="panel-tools">
+          <a class="btn btn-xs btn-link panel-expand" href="#">
+            <i class="icon-resize-full"></i>
+          </a>
+          <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+          </a>
+        </div>
+      </div>
+      <div class="panel-body backg_gray">
+        <div id="invoice_contents" class="margin_invo" style="margin:auto">
+          <div style="height: 48px">
+            <div style="float:left;">
+              <h3 style="position:absolute;" class="h2mb">
+                <span style="font-size: 0.9em;font-weight: bold;">Job Apply</span>
+                <%= @job_applicant.job.position %>
+              </h3>
+            </div>
+            <div style="float:right;">
+              <%= image_tag 'bigtv.png', class: 'big_icon' %>
+            </div>
+          </div>
+          <br>
+          <hr class="space" style="margin-bottom: 50px;">
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Created At</label>
+            <div class="col-sm-6">
+              : <b><%= @job_applicant.created_at.strftime('%d %b %Y - at %I:%M%p') %></b>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Status</label>
+            <div class="col-sm-6">
+              : <b><%= @job_applicant.status %></b>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-6">
+             : <%= @job_applicant.name %>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-6">
+              : <%= @job_applicant.email %>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">CV File</label>
+            <div class="col-sm-9">
+              : <%= link_to "DOWNLOAD", "#{root_path}.#{download_manage_job_applicant_path(@job_applicant)}" if @job_applicant.file_resume.present? %>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Resume</label>
+            <div class="col-sm-9">
+              : <%= @job_applicant.resume.html_safe %>
+            </div>
+          </div>
+          <br>
+          <div class="pull-right">
+            <%= link_to '<i class="icon-circle-arrow-left"></i> Back'.html_safe, manage_job_applicants_path, class: "btn btn-dark-grey" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

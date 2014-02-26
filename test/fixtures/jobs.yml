@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  position: MyString
+  requirement: MyText
+  division: MyString
+  publish: 2014-02-25
+  unpublish: 2014-02-25
+  author: MyString
+
+two:
+  position: MyString
+  requirement: MyText
+  division: MyString
+  publish: 2014-02-25
+  unpublish: 2014-02-25
+  author: MyString

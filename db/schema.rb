@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140221134637) do
+ActiveRecord::Schema.define(:version => 20140225233054) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -75,6 +75,31 @@ ActiveRecord::Schema.define(:version => 20140221134637) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "position"
+  end
+
+  create_table "job_applicants", :force => true do |t|
+    t.string   "name"
+    t.string   "position"
+    t.string   "email"
+    t.text     "resume"
+    t.string   "status"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "file_resume_file_name"
+    t.string   "file_resume_content_type"
+    t.integer  "file_resume_file_size"
+    t.datetime "file_resume_updated_at"
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.string   "position"
+    t.text     "requirement"
+    t.string   "division"
+    t.date     "publish"
+    t.date     "unpublish"
+    t.string   "author"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "membership_items", :force => true do |t|

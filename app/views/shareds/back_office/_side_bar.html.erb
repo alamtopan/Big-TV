@@ -200,6 +200,29 @@
 					</ul>
 				</li>
 				<li>
+					<a href="javascript:void(0)"><i class="clip-paperplane"></i>
+						<span class="title">Jobs</span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_job_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_jobs_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_job_applicants_path do %>
+								<span class="title">Job Applicants</span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
 					<a href="javascript:void(0)"><i class="icon-envelope-alt"></i>
 						<span class="title">Services</span><i class="icon-arrow"></i>
 						<span class="selected"></span>

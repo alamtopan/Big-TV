@@ -251,7 +251,7 @@ p{
 }
 .head-els
 {
-  max-width: 1000px;
+  max-width: 1060px;
   margin: auto;
   height: 40px;
   position: relative;
@@ -279,7 +279,7 @@ ul.menu
 }
 ul.menu li
 {
-  margin-left: 12px;
+  margin-left: 10px;
   padding: 10px;
   display: inline;
   list-style: none;

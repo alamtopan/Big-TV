@@ -79,6 +79,42 @@ class PublicsController < ApplicationController
     end
   end
 
+  # Fungsi yang ada di Halaman carrier
+  def carriers
+    @title_page = "Carrier" # Display title carrier
+    @jobs = Job.published # Show data jobs
+    render layout: "detail" # Render template detail
+  end
+
+  # Fungsi yang dipakai di halaman detail carrier
+  def show_carrier
+    @job = Job.where(id: params[:id]).first
+    @job_applicant = JobApplicant.new
+    @title_page = "#{@job.position}" if @job
+    render layout: "detail" # Render template detail
+  end
+
+  # Fungsi yang dipakai untuk create Job
+  def create_job
+    @job_applicant = JobApplicant.new(params[:job_applicant])
+    if @job_applicant.file_resume_file_size >= 2000000
+      flash[:alert] = "
+                          File resume terlalu besar untuk dikirim..!<br>
+                          File resume maximal 2MB
+                       "
+      redirect_to :back
+    elsif 
+      @job_applicant.save
+      CustomerMailer.job_request(@job_applicant).deliver
+      flash[:notice] = "
+                          Terima kasih atas data lamaran yang anda kirim..! <br>
+                          Untuk selanjutnya akan kami kirimkan balasan kembali ke email anda.
+                       "
+      redirect_to carriers_path # Redirect kembali kehalaman carriers
+    end
+  end
+
+
   # Fungsi yang dipakai di halaman detail promo/news
   def show_blog
     @blog = Blog.where(slug: params[:id]).first

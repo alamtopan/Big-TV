@@ -1,0 +1,86 @@
+<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
+	<article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
+		<div class="panel-body" style="text-align:center; width:940px">
+			<% flash.each do |name, msg| %>
+			  <% if msg.present? && msg.is_a?(String) %>
+			    <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+			      <a class="close" data-dismiss="alert">&#215;</a>
+			      <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+			    </div>
+			  <% end %>
+			<% end %>
+			<div class="cont1">
+				<h1 class="padding-top50"><span>Job Vacancy BigTV</span></h1>
+				<div class="polosochka2"></div>
+				<br><br>
+				<div class="tab-content">
+					<table border="2" bordercolor="#c0504d" cellpadding="9" cellspacing="0" rules="ROWS" style="width:100%; text-align:left; font-size:13px;">
+						<colgroup>
+							<col width="4%">
+							<col width="30%">
+							<col width="20%">
+							<col width="20%">
+							<col width="20%">
+							<col width="20%">
+						</colgroup>
+						<tbody>
+							<tr valign="left">
+								<td bgcolor="#ed2024">
+									<p><font color="#ffffff">#</font></p>
+								</td>
+								<td bgcolor="#ed2024">
+									<p><font color="#ffffff"><b>Position</b></font></p>
+								</td>
+								<td bgcolor="#ed2024">
+									<p><font color="#ffffff"><b>Division</b></font></p>
+								</td>
+								<td bgcolor="#ed2024">
+									<p><font color="#ffffff"><b>Date Posted</b></font></p>
+								</td>
+								<td bgcolor="#ed2024">
+									<p><font color="#ffffff"><b>Applicant Deadline</b></font></p>
+								</td>
+								<td bgcolor="#ed2024" align="center">
+									<p><font color="#ffffff"><b>Apply</b></font></p>
+								</td>
+							</tr>
+							<% @jobs.each_with_index do |job, index| %>
+								<tr valign="left">
+									<td bgcolor="#fff">
+										<%= index+1 %>
+									</td>
+									<td bgcolor="#fff">
+										<%= job.position %>
+									</td>
+									<td bgcolor="#fff">
+										<%= job.division %>
+									</td>
+									<td bgcolor="#fff">
+										<b><%= job.publish.strftime('%d %b %Y') %></b>
+									</td>
+									<td bgcolor="#fff">
+										<b><%= job.unpublish.strftime('%d %b %Y') %></b>
+									</td>
+									<td bgcolor="#fff">
+										<%= link_to show_carrier_path(job) do %>
+											<div class="pack-order float-right-fixed margn">
+										  	View
+										  </div>
+										<% end %>
+									</td>
+								</tr>
+							<% end %>
+							<% if @jobs.blank? %>
+								<b>No Jobs Post Here</b>
+								<div class="br"></div>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="br"></div>
+			<div class="br"></div>
+		</div>
+	</div>
+	<div class="polosochka"></div>
+</section>

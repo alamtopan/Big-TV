@@ -32,6 +32,10 @@ BigTv::Application.routes.draw do
     resources :offices
     resources :category_offices
     resources :services
+    resources :jobs
+    resources :job_applicants do
+      get :download, on: :member
+    end
   end
   
   resources :customers,   only: [:new, :create]
@@ -42,6 +46,10 @@ BigTv::Application.routes.draw do
   end
   
   post   '/create_support',   to: 'publics#create_support',      as: 'create_support'
+  post   '/create_job',   to: 'publics#create_job',      as: 'create_job'
+
+  get   '/carriers',   to: 'publics#carriers',           as: 'carriers'
+  get   '/show_carrier/:id',  to: 'publics#show_carrier',         as: 'show_carrier'
   get   '/lokasi',    to: 'publics#lokasi',            as: 'lokasi'
   get   '/reg',       to: 'publics#cara_berlangganan', as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',           as: 'support'

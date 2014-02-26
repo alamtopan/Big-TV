@@ -350,3 +350,9 @@ $(document).ready(function() {
     $('.lanjut_btn2').show();
   });
 });
+
+$('#apply_job').click(function(){
+  $('.form_apply').slideToggle(2000);
+  $(this).css("display","block");
+  $('#apply_job').hide();
+});

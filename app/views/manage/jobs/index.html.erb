@@ -1,0 +1,34 @@
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Jobs', 
+                     button_name: 'Jobs'
+                   } do %>
+  <table class="table table-hover" id="sample-table-1">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Division</th>
+        <th>Publish on</th>
+        <th>Expire on</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each_with_index do |job,index| %>
+        <tr>
+          <td><%= job.position %></td>
+          <td><%= job.division %></td>
+          <td><b><%= job.publish.strftime('%d %b %Y - at %I:%M%p') %></b></td>
+          <td><b><%= job.unpublish.strftime('%d %b %Y - at %I:%M%p') %></b></td>
+          <td>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: job, confirmation: "#{job.position} will be deleted, are you sure ?"} %>
+            </div>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @jobs %>
+  </div>
+<% end %>

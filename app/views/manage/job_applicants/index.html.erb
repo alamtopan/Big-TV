@@ -1,0 +1,40 @@
+<%= render layout: 'shareds/back_office/prepare_table', 
+           locals: {
+                     table_name:  'Job Applicants', 
+                     button_name: 'Job Applicants'
+                   } do %>
+  <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+    <thead>
+      <tr>
+        <th>Job Apply</th>
+        <th>No</th>
+        <th>Date Apply</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @job_applicants.each_with_index do |job_applicant,index| %>
+        <tr>
+          <td><b><%= job_applicant.job.position %></b></td>
+          <td><%= index+1 %></td>
+          <td><%= job_applicant.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
+          <td><%= job_applicant.name %></td>
+          <td><%= job_applicant.email %></td>
+          <td><b><%= job_applicant.status %></b></td>
+          <td>
+            <div class="pull-right btn-group btn-group-sm visible-md visible-lg hidden-sm hidden-xs">
+              <%= link_to manage_job_applicant_path(job_applicant), class: 'btn btn-default' do %>
+                <i class="icon-share"></i> Show
+              <% end %>
+            </div>
+            <%= render partial: 'shareds/back_office/action_buttons', locals: {resource: job_applicant, confirmation: "#{job_applicant.name} will be deleted, are you sure ?"} %>
+            </div>
+          </td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
