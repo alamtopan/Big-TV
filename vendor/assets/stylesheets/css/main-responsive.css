@@ -471,8 +471,8 @@
 
 
 @media (max-width: 480px) {
-	h2.h2mb{
-		font-size: 13px;
+	h2.h2mb, h5{
+		font-size: 13px!important;
 	}
 	.big_icon{
 		height: 54px;
@@ -580,7 +580,6 @@
 		margin-bottom: 5px;
 	}
 	.span6 {
-		width: 100% !important;
 		float: left;
 		margin-right: 0px;
 	}

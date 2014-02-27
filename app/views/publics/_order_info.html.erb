@@ -19,18 +19,18 @@
             <tr>
               <td style="width: 50%; vertical-align: top; padding-bottom: 0; text-align: left;">
                 <h4 class="invoice-from" style="font-weight: bold;font-size: 16px;"><%= @customer.profile.full_name.upcase %></h4>
-                <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
+                <div style="float:left;font-size: 12px;margin: 2px 0px;">
                   <span style="float:left;font-size: 14px;"><%= @customer.email %></span>
                 </div>
-                <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
+                <div style="float:left;font-size: 12px;margin: 2px 0px;">
                   <span style="float:left">No Telp.
                     <%= @customer_profile.no_phone %></span>
                 </div>
-                <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
+                <div style="float:left;font-size: 12px;margin: 2px 0px;">
                   <span style="float:left">No HP.
                     <%= @customer_profile.no_hp %></span>
                 </div>
-                <div style="width: 400px;float:left;font-size: 12px;margin: 2px 0px;">
+                <div style="float:left;font-size: 12px;margin: 2px 0px;">
                   <span style="width: 54px;float:left">Alamat:</span>
                   <span style="float:left">
                     <%= @customer_profile.address_shipping.present? ? @customer_profile.address_shipping : @customer_profile.address %>
