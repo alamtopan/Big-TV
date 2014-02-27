@@ -16,7 +16,7 @@ class CustomerMailer < ActionMailer::Base
   def job_request(job_applicant)
     icon_bigtv
     @job_applicant = job_applicant
-    mail(to: 'hrd@bigtv.co.id', subject: "Job Applicant, #{@job_applicant.job.position}, #{@job_applicant.name}")
+    mail(to: 'hrd@big-tv.com', subject: "Job Applicant, #{@job_applicant.job.position}, #{@job_applicant.name}")
   end
 
   def thanks_email(order)
