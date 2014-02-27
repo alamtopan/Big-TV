@@ -7,6 +7,12 @@ class CustomerMailer < ActionMailer::Base
     mail(to: 'customer.service@bigtv.co.id', subject: "{ONLINES}Service Request, #{@service.problem}, #{@service.name}")
   end
 
+  def thanks_service(service)
+    icon_bigtv
+    @service = service
+    mail(to: '#{@service.email}', subject: "Terima kasih atas data yang telah Anda lengkapi ke dalam Service Request BigTV")
+  end
+
   def job_request(job_applicant)
     icon_bigtv
     @job_applicant = job_applicant
