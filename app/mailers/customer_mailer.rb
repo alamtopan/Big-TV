@@ -4,18 +4,24 @@ class CustomerMailer < ActionMailer::Base
   def service_request(service)
     icon_bigtv
     @service = service
-    mail(to: 'customer.service@bigtv.co.id', subject: "{ONLINES}Service Request, #{@service.problem}, #{@service.name}")
+    mail(to: 'customer.service@bigtv.co.id', subject: "{ONLINE} Service Request, #{@service.problem}, #{@service.name}")
   end
 
   def thanks_service(service)
     icon_bigtv
     @service = service
-    mail(to: '#{@service.email}', subject: "Terima kasih atas data yang telah Anda lengkapi ke dalam Service Request BigTV")
+    mail(to: '#{@service.email}', subject: "Terima kasih telah menghubungi BigTV")
   end
 
   def job_request(job_applicant)
     icon_bigtv
     @job_applicant = job_applicant
+    begin
+      if @job_applicant.file_resume.present? && File.exist?(@job_applicant.file_resume.path)
+        attachments[@job_applicant.file_resume_file_name] = File.read(@job_applicant.file_resume.path)
+      end
+    rescue
+    end
     mail(to: 'hrd@big-tv.com', subject: "Job Applicant, #{@job_applicant.job.position}, #{@job_applicant.name}")
   end
 

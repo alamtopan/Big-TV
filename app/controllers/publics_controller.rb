@@ -2,12 +2,12 @@ class PublicsController < ApplicationController
   layout "public"  # Render layout template Public halaman depan
 
   # Fungsi Show data dihalaman Home/Depan bigtv
-	def show
-		if params[:regional]
-			regional = params[:regional]
-		else
-			regional = "Sumatra"
-		end
+  def show
+    if params[:regional]
+      regional = params[:regional]
+    else
+      regional = "Sumatra"
+    end
     @blogs         = Blog.published # Show data promo/news
     @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all # Show data kategori office
     @regionals     = Regional.all # Show data regional
@@ -19,8 +19,8 @@ class PublicsController < ApplicationController
 
     @features  = PageContent.where("category =?", "Fitur Content").order('id ASC') # Show data fitur
     @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").published.order('id ASC') # Show data why bigtv content
-    
-	end
+
+  end
 
   # Halaman Thanks dengan render template invoice
   def thanks
@@ -71,7 +71,7 @@ class PublicsController < ApplicationController
       CustomerMailer.service_request(@service).deliver
       CustomerMailer.thanks_service(@service).deliver
       flash[:notice] = "
-                          Terima kasih atas data yang telah Anda 
+                          Terima kasih atas data yang telah Anda
                           lengkapi ke dalam Service Request. <br>
                           Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
                           Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
@@ -104,7 +104,7 @@ class PublicsController < ApplicationController
                           File resume maximal 2MB
                        "
       redirect_to :back
-    elsif 
+    elsif
       @job_applicant.save
       CustomerMailer.job_request(@job_applicant).deliver
       flash[:notice] = "
