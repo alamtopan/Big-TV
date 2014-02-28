@@ -10,7 +10,7 @@ class CustomerMailer < ActionMailer::Base
   def thanks_service(service)
     icon_bigtv
     @service = service
-    mail(to: '#{@service.email}', subject: "Terima kasih telah menghubungi BigTV")
+    mail(to: "#{@service.email}", subject: "Terima kasih telah menghubungi BigTV")
   end
 
   def job_request(job_applicant)
