@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     # Variabel query untuk CMS content di halaman depan
     def page_content
       @top_content   = PageContent.where("category =?", "Slogan Bigtv").first
-      @slides   = PageContent.where("category =?", "Slider Top").published
+      @slides   = PageContent.where("category =?", "Slider Top").published.order('created_at DESC')
       @about_bigtv   = PageContent.where("category =?", "Footer About Bigtv").first
       @footer   = PageContent.where("category =?", "Footer Content").first
     end
