@@ -19,6 +19,10 @@ class BigApi
         </REQUESTINFO>"
     end
 
+    def self.referenceNo
+      "99#{Time.now.to_i*(rand(900)+1)}"
+    end
+
     def self.user(customer)
       profile = customer.profile
 
@@ -98,7 +102,9 @@ class BigApi
     auth_request = client.request('AuthenticateUser')
     auth_request.body do |b|
       b.AuthenticateUserXML Parameter.auth
+      b.referenceNo Parameter.referenceNo
     end
+    
     raw_response = HTTParty.post(auth_request.url, body: auth_request.content, headers: auth_request.headers)
     @connected = raw_response.code === 200
     client.response(auth_request, raw_response)
@@ -109,8 +115,19 @@ class BigApi
     request.body do |b|
       b.AuthenticateUserXML Parameter.auth
       b.CustomerXML Parameter.user(customer)
+      b.referenceNo Parameter.referenceNo
     end
     raw_response = HTTParty.post(request.url, body: request.content, headers: request.headers)
     client.response(request, raw_response)
   end
 end
+
+# How to Use:
+# @big_api = BigApi.new
+# Auth:
+# @big_api.authenticate
+# Create User:
+# @big_api.create_user(Customer.last)
+
+# 1. Ada request masuk gak?
+# 2. Datanya kesimpen gak

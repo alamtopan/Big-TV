@@ -360,3 +360,10 @@ $('#apply_job').click(function(){
 $('.close_pop').click(function(){
   $('#gb').hide();
 });
+
+function blinker() {
+    $('.blink_me').fadeOut(500);
+    $('.blink_me').fadeIn(500);
+}
+
+setInterval(blinker, 1000);
