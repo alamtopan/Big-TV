@@ -30,6 +30,8 @@ gem 'rails', '3.2.13'
   gem 'lolsoap'
   gem 'httparty'
   gem 'wash_out'
+  gem 'htmlentities'
+  gem 'gyoku'
 #end
 
 # group :security do
