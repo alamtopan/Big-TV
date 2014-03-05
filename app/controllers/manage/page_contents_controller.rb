@@ -20,7 +20,8 @@ class Manage::PageContentsController <  Manage::ResourcesController # Menggunaka
 												      ['Tab Support Content FAQ', 'Tab Support Content FAQ'], 
 												      ['Footer Content', 'Footer Content'],
 												      ['Footer About Bigtv', 'Footer About Bigtv'],
-												      ['Single Page', 'Single Page']
+												      ['Single Page', 'Single Page'],
+												      ['Pop Up Home', 'Pop Up Home']
 												    ]
 	 	end
 end

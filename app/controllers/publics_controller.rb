@@ -19,7 +19,7 @@ class PublicsController < ApplicationController
 
     @features  = PageContent.where("category =?", "Fitur Content").order('id ASC') # Show data fitur
     @why_bigtv   = PageContent.where("category =?", "Tab Why BigTV").published.order('id ASC') # Show data why bigtv content
-
+    @pop_up   = PageContent.where("category =?", "Pop Up Home").first # Show PopUp Home
   end
 
   # Halaman Thanks dengan render template invoice

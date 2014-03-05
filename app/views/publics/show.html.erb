@@ -1,8 +1,25 @@
 ﻿<%= render partial: "shareds/front/slider" %>
 <%= render partial: "shareds/front/header" %>
 <%= render partial: "shareds/front/features" %>
-<%#= render partial: "shareds/front/programmes" %>
 <%= render partial: "shareds/front/channels" %>
 <%= render partial: "shareds/front/packages" %>
 <%= render partial: "shareds/front/map" %>
 <%= render partial: "shareds/front/news" %>
+<% if @pop_up.present? %>
+	<div id="gb">
+		<div class="gbtab" onclick="showHideGB()"> </div>
+		<div class="gbcontent">
+			<div style="text-align:right">
+				<span class="close_pop">
+				[Close]
+				</span>
+			</div>
+			<center>
+				<a href="http://go.firstmedia.com/" target="_blank">
+					<%= image_tag "#{@pop_up.picture}"%>
+				</a>
+			</center>
+		</div>
+	</div>
+<% end %>
+

@@ -356,3 +356,7 @@ $('#apply_job').click(function(){
   $(this).css("display","block");
   $('#apply_job').hide();
 });
+
+$('.close_pop').click(function(){
+  $('#gb').hide();
+});

@@ -14,6 +14,25 @@
  *= require jquery.autocomplete
  *= require front/override
  */
+#gb{
+	position:fixed;
+	top:20px;
+	z-index:+1000;
+	left: 25%;
+	right: 30%;
+}
+.gbcontent{
+	float:right;
+	border:2px solid red;
+	background:#ffffff;
+	padding:10px;
+	padding-top: 2px;
+}
+.close_pop{
+	cursor: pointer;
+	color: red;
+	padding-bottom: 2px;
+}
 .alert{
 	padding-right: 30px!important;
 }
