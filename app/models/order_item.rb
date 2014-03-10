@@ -47,15 +47,15 @@ class OrderItem < ActiveRecord::Base
       if self.decoder? && self.membership.name !~ /1/i
         requested_decoder = self.membership.name.gsub(/[a-z\s]/i, '').to_i
         if requested_decoder > 1
-          self.subtotal = (1..requested_decoder).map do |t|
+          price_per_month = (1..requested_decoder).map do |t|
             Membership.decoder_by_quantity(t)
           end.compact.sum(&:default_price)
-          self.price = self.subtotal
-          self.quantity = 1
+          self.price = price_per_month
+          self.quantity = 1 if self.quantity.to_i < 1
         end
-      else
-        self.subtotal = self.price.to_i * self.quantity.to_i
       end
+      
+      self.subtotal = self.price.to_i * self.quantity.to_i
       self.title = self.membership.name if self.membership.present?
     end
 

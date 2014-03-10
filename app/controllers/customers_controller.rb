@@ -24,7 +24,7 @@ class CustomersController < ApplicationController
     end
 
     @customer = Customer.find_or_initialize_by_email(input_param[:email])
-    @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
+    prepare_price
 
     if verify_recaptcha(model: @customer, message: "Verification code is invalid") && @customer.update_attributes(input_param)
       order.orderable = @customer
@@ -51,8 +51,17 @@ class CustomersController < ApplicationController
         @customer.profile.referal_id = current_user.code 
         @customer.profile.referal = current_user.referral_category.name if current_user.referral_category
       end
-
-      @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
       @referral = ReferralCategory.order("id ASC")
+      prepare_price
+    end
+
+    def prepare_price
+
+      @membership_price = MembershipPrice.find(session[:current_price_id]) if session[:current_price_id]
+      
+      if session[:current_premium_id]
+        @membership_order = Membership.find(session[:current_premium_id])    
+        @membership_price = @membership_order.prices.first if @membership_order && !@membership_price
+      end
     end
 end

@@ -6,21 +6,27 @@ class CartsController < ApplicationController
   def extra
     @title_page = "Extra" # Display title dihalman extra paket
     display_extra_data = false
+
     if request.xhr? && params[:extra_id].present?
       order_item = order.items.find_by_membership_id(params[:extra_id])
+
       if params[:add].to_s == 'true' && !order_item
         extra_package = Membership.find_by_id(params[:extra_id])
-        order.add_item(extra_package,session_cart) if extra_package
+        order.add_item(extra_package,session_cart, session[:current_price_id]) if extra_package
       elsif order_item
         order_item.destroy
       end
+
     elsif params[:membership_id].present? || session[:current_premium_id]
       current_premium_id = params[:membership_id].present? ? params[:membership_id] : session[:current_premium_id]
+      current_price_id = params[:price_id].present? ? params[:price_id] : session[:current_price_id]
       item = Membership.find_by_id(current_premium_id)
-      order.add_item(item, session_cart)
+      order.add_item(item, session_cart, current_price_id)
       display_extra_data = true
+
     elsif order.items.premium.present?
       display_extra_data = true
+
     else
       flash[:alert] = 'Mohon pilih salah satu paket premium!'
       redirect_to premium_path # Redirect halaman ke premium paket
@@ -247,6 +253,7 @@ class CartsController < ApplicationController
       @order = Order.find_by_token(params[:token]) if params[:token].present?
 
       session[:current_premium_id] = params[:membership_id] if params[:membership_id].present?
+      session[:current_price_id] = params[:price_id] if params[:price_id].present?
       unless order.orderable
         if request.xhr?
           render json: {error: 'Unauthorized Access', redirect_url: new_customer_path}, status: 401
