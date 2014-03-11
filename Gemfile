@@ -31,7 +31,11 @@ gem 'rails', '3.2.13'
   gem 'httparty'
   gem 'wash_out'
   gem 'htmlentities'
-  gem 'gyoku'
+  gem 'gyoku' #, '~> 1.0.0'
+  #gem 'nori', '~> 2.0.0'
+  #gem 'akami'
+  #gem 'savon', '~> 2.0'
+  gem 'typhoeus'
 #end
 
 # group :security do
