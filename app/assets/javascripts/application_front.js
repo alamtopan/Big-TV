@@ -367,3 +367,8 @@ function blinker() {
 }
 
 setInterval(blinker, 1000);
+
+$('#paket-lain').click(function(){
+  $('.show-paket-lain').slideToggle(2000);
+  $('#paket-lain').hide();
+});

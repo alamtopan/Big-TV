@@ -21,4 +21,17 @@ class MembershipPrice < ActiveRecord::Base
   def to_time
     total_period.send(periode_name)
   end
+
+  def periode_name_bahasa
+    periode_name.to_s.gsub(/month/i,'bulan').gsub(/year/i, 'tahun')
+  end
+
+  def total_period_bahasa
+    ["per", "#{total_period.to_s.gsub(/^1$/,'')}"].select(&:'present?').join(' ')
+  end
+
+  def total_period_in_month
+    total_month = periode_name.to_s == 'year' ? 12 : 1
+    total_period.to_i * total_month
+  end
 end

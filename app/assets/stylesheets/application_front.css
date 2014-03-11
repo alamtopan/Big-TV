@@ -14,6 +14,26 @@
  *= require jquery.autocomplete
  *= require front/override
  */
+.prc-promo{
+	font-size: 18px!important;
+	font-weight: bold;
+}
+.show-paket-lain{
+	display: none;
+}
+.sction-paket-promo{
+	background-color: #ed2024;
+	color: #fff;
+	padding: 8px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+}
+.alfa-promo{
+	font-size: 13px;
+	width: 100%;
+	float: left;
+}
 a.blink_me{
 	color: red!important;
 	font-weight: bold;

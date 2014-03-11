@@ -31,11 +31,9 @@
             </div>
           <% end %>
           <% (extra_packages + packages).each do |item| %>
-            <% if item.extra? %>
+            <% unless item.premium? %>
               <%= render partial: 'carts/widget_item', locals: {item: item} %>
-            <% else %>
-              <%= render partial: 'carts/widget_item', locals: {item: item} %>
-            <% end unless item.premium?  %>
+            <% end %>
           <% end %>
           <div class="pack-info additional-pack">
             <span class="small-decode font_red">TOTAL</span>

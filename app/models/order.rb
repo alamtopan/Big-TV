@@ -27,7 +27,7 @@ class Order < ActiveRecord::Base
 
   CHARGE_FEE = {'04' => 0.02}
 
- Status.constants.each do |constant|
+Status.constants.each do |constant|
     value = Status.const_get(constant)
     define_method("#{ value }?") do
       status == value
@@ -134,20 +134,20 @@ class Order < ActiveRecord::Base
     orderable.present? && session_id.blank?
   end
 
-  def add_item(item,session)
+  def add_item(item,session,price_id=nil)
     if item.is_a?(Membership)
-      populate_order_item(0, item.id,session)
+      populate_order_item(0, item.id,session,price_id)
     else
       return if item[:membership_ids].blank?
       item[:membership_ids].compact.uniq.each do |membership_id|
-        populate_order_item(item[:quantity], membership_id,session)
+        populate_order_item(item[:quantity], membership_id,session,price_id)
       end
     end
     self.send(:before_creation)
     self.save
   end
 
-  def populate_order_item(qty, membership_id,session)
+  def populate_order_item(qty, membership_id,session,price_id=nil)
     item = items.find_or_initialize_by_membership_id(membership_id)
     current_product = item.membership
     return false unless current_product
@@ -162,6 +162,16 @@ class Order < ActiveRecord::Base
     
     item.quantity = 1
     item.price = current_product.default_price
+
+    if price_id
+      new_price = MembershipPrice.where(id: price_id).first 
+      unless current_product.premium?
+        item.quantity = new_price.total_period_in_month 
+      else
+        item.price = new_price.price
+      end if new_price
+    end
+
     item.title = current_product.name
     item.save
   end

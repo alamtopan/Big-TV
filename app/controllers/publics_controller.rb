@@ -11,8 +11,8 @@ class PublicsController < ApplicationController
     @blogs         = Blog.published # Show data promo/news
     @categories    = CategoryOffice.includes(offices: [:category_office, :regional]).all # Show data kategori office
     @regionals     = Regional.all # Show data regional
-
     @memberships   = Membership.packages_by_category('premium') # Show paket premium
+    @memberships_promo  = Membership.packages_by_category('premium') # Show paket premium
     @memberships_extra = Membership.packages_by_category('extra').by_position # Show data extra paket
     @groups        = GroupItem.includes(unit_items: [:memberships]).by_position # Show data group paket
     @free_channels = UnitItem.free_channels # Show data channels
