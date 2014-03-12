@@ -13,7 +13,7 @@ class BigApi
     def self.auth
       "<REQUESTINFO>
           <AUTHENTICATEUSER>
-            <USERNAME>#{Config::USERNAME}</USERNAME>
+            <USER_ID>#{Config::USERNAME}</USER_ID>
             <PASSWORD>#{Config::PASSWORD}</PASSWORD>
           </AUTHENTICATEUSER>
         </REQUESTINFO>"
