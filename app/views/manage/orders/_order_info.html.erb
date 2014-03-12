@@ -89,7 +89,7 @@
                   <%= number_to_currency(item.price,{precision: 0, unit: ''}) %>
                 </td>
                 <td class="line_item_subtotal nowrap">
-                  <%= number_to_currency(item.price * @order.period,{precision: 0, unit: ''}) %>
+                  <%= number_to_currency(item.subtotal,{precision: 0, unit: ''}) %>
                 </td>
               </tr>
             <% end %>

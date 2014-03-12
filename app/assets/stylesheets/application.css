@@ -96,7 +96,7 @@
 .pilih-paket{
   background: #fdb414;
   float: left;
-  width: 97%;
+  width: 100%;
   color: #fff;
   font-weight: bold;
   padding: 10px 0px;
@@ -558,4 +558,20 @@ a.pack-order2:hover {
 }
 .sbmt {
   padding: 10px 10px;
-  }
+}
+div.grd_masonry_paket{
+  -moz-column-count: 2;
+  -moz-column-gap: 10px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 10px;
+  column-count: 2;
+  column-gap: 10px;
+  width: 100%;
+}
+
+div.grid_packages_decode_paket{
+  display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+  width: 100%;
+  margin-bottom: 10px;
+}
+

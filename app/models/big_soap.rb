@@ -1,3 +1,6 @@
+# Usage:
+#   BigSoap::Client.new.get_customer_info('12345678')
+#   BigSoap::Client.new.create_customer(Customer.last)
 module BigSoap
   SERVICE_URL = "http://103.21.218.52/WEBSERVICE/SERVICE.ASMX"
   USERID  = "APIUSER"
@@ -21,7 +24,7 @@ module BigSoap
               xml.ExternalPartyName "WEB"
             end
           end
-          xml['soap'].Body(&block)
+          # xml['soap'].Body(&block)
         end
       end
     end
@@ -45,7 +48,7 @@ module BigSoap
         end
       end
 
-      #BigSoap::CustomerInfo.new(post(envelope)).after_create #rescue nil
+      BigSoap::CustomerInfo.new(post(envelope)).after_create #rescue nil
     end
 
     def post(data)
