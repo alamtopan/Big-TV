@@ -11,43 +11,47 @@
 			PAKET
 		</div>
     <% @selected_items = @order ? @order.items.map(&:membership_id) : [] %>
-    <% @memberships.each do |membership| %>
-	    <div class="grid_packages_decode pck_decode span6">
-	      <table class="table table-bordered different_width margin_bottom_no" style="margin-bottom:0px">
-			    <tbody>
-			      <tr>
-		          <td class="td_diff" width="19%" style="padding:0px; border:none">
-		            <div class="head_pack red">
-									<div class="big-decode2">BiG</div>
-									<span class="small-counter2"><%= membership.name %></span>
-				    		</div>
-				    		<table class="table table-bordered padding0 decode no_border" style="margin-bottom:0px">
-						      <tbody class="gray_packages">
-					          <tr>
-					            <td>
-					            	<div class="br"></div>
-					              <div class="pack-info">
-													<div class="pack-i-line">
-														Rp.
-														<span class="prc">
-															<%= number_to_currency(membership.price_month,{unit: '', precision: 0}) %>
-														</span>
-													</div>
-												</div>
-												<div class="br"></div>
-												<%= link_to extra_manage_orders_path(membership_id: membership.id),{class: 'no_underscore'} do %>
-								          <div class='pack-order version2'>SUBSCRIBE</div>
-												<% end %>
-					            </td>
-					          </tr>
-						      </tbody>
-						    </table>
-		          </td>
-		        </tr>
-			    </tbody>
-			  </table>
-			</div>
-    <% end %>
+    <div class="grd_masonry_paket">
+	    <% @memberships.each do |membership| %>
+		    <div class="grid_packages_decode_paket">
+		      <table class="table table-bordered different_width margin_bottom_no" style="margin-bottom:0px">
+				    <tbody>
+				      <tr>
+			          <td class="td_diff" width="19%" style="padding:0px; border:none">
+			            <div class="head_pack red">
+										<div class="big-decode2">BiG</div>
+										<span class="small-counter2"><%= membership.name %></span>
+					    		</div>
+					    		<table class="table table-bordered padding0 decode no_border" style="margin-bottom:0px!important">
+							      <tbody class="gray_packages">
+						          <% membership.prices.each do |price| %>
+							          <tr>
+							            <td>
+							              <div class="pack-info">
+															<div class="pack-i-line">
+																Rp.
+																<span class="prc">
+																	<%= number_to_currency(price.price,{unit: '', precision: 0}) %>
+																</span>
+			                          <br/><%= [price.total_period_bahasa, price.periode_name_bahasa].select(&:'present?').join(' ') %>
+															</div>
+														</div>
+														<div class="br"></div>
+														<%= link_to extra_manage_orders_path(membership_id: membership.id, price_id: price.id),{class: 'no_underscore'} do %>
+										          <div class='pack-order version2'>SUBSCRIBE</div>
+														<% end %>
+							            </td>
+							          </tr>
+							        <% end %>
+							      </tbody>
+							    </table>
+			          </td>
+			        </tr>
+				    </tbody>
+				  </table>
+				</div>
+	    <% end %>
+  	</div>
   </article>
   <br><br>
 	<div class="polosochka"></div>

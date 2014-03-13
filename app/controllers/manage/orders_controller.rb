@@ -71,21 +71,28 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
   # Fungsi untuk halaman pilih extra paket
   def extra
     display_extra_data = false
+
     if request.xhr? && params[:extra_id].present?
       order_item = order.items.find_by_membership_id(params[:extra_id])
+
       if params[:add].to_s == 'true' && !order_item
         extra_package = Membership.find_by_id(params[:extra_id])
         order.add_item(extra_package,session_cart) if extra_package
       elsif order_item
         order_item.destroy
       end
+
     elsif params[:membership_id].present? || session[:current_premium_id]
       current_premium_id = params[:membership_id].present? ? params[:membership_id] : session[:current_premium_id]
+      current_price_id = params[:price_id].present? ? params[:price_id] : session[:current_price_id]
+      session[:current_price_id] = current_price_id if current_price_id.present?
       item = Membership.find_by_id(current_premium_id)
-      order.add_item(item, session_cart)
+      order.add_item(item, session_cart, current_price_id)
       display_extra_data = true
+
     elsif order.items.premium.present?
       display_extra_data = true
+
     else
       flash[:alert] = 'Mohon pilih salah satu paket premium!'
       redirect_to premium_manage_orders_path # Redirect ke halaman premium paket dihalaman backend/spg
@@ -219,6 +226,16 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
       prepopulate_customer_info
       @membership_order = Membership.find(session[:current_premium_id]) if session[:current_premium_id]
       @referral = ReferralCategory.order("id ASC")
+      prepare_price
+    end
+
+    def prepare_price
+      @membership_price = MembershipPrice.find(session[:current_price_id]) if session[:current_price_id]
+      
+      if session[:current_premium_id]
+        @membership_order = Membership.find(session[:current_premium_id])    
+        @membership_price = @membership_order.prices.first if @membership_order && !@membership_price
+      end
     end
 
     def prepopulate_customer_info

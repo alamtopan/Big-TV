@@ -45,7 +45,7 @@ class CustomersController < ApplicationController
   end
 
   private
-    # Fungsi tambahan reistrasi customer
+    # Fungsi tambahan registrasi customer
     def prepare_customer_form
       if current_user && @customer.profile
         @customer.profile.referal_id = current_user.code 
