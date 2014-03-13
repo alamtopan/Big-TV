@@ -17,14 +17,13 @@ module BigSoap
                      "xmlns:xsd" => "http://www.w3.org/2001/XMLSchema") do
           xml.parent.namespace = xml.parent.namespace_definitions.first
           xml['soap'].Header do
-            # Header information goes here
             xml.MQUserNameToken("xmlns" => BigSoap::NAMESPACE) do
               xml.User_id           BigSoap::USERID
               xml.Password          BigSoap::PASSWD
               xml.ExternalPartyName "WEB"
             end
           end
-          # xml['soap'].Body(&block)
+          xml['soap'].Body(&block)
         end
       end
     end
