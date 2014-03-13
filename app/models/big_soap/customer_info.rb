@@ -11,7 +11,7 @@ module BigSoap
     end
 
     def after_create
-      raw_info['CreateCustomerResponse']['CreateCustomerResult']['RESPONSEINFO']['CUSTOMERINFO']
+      raw_info['CreateCustomerResponse']['CreateCustomerResult']['RESPONSEINFO']
     end
   end
 end

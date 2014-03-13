@@ -45,7 +45,7 @@ module BigSoap
         end
       end
 
-      #BigSoap::CustomerInfo.new(post(envelope)).after_create #rescue nil
+      BigSoap::CustomerInfo.new(post(envelope)).after_create rescue nil
     end
 
     def post(data)
