@@ -18,7 +18,11 @@
                var current_package_name = '<%= premium_package.membership.name %>';
             </script>
             <div class="pack-info">
-              <%= link_to 'edit', premium_path, class: 'edit-pack' %>
+              <% if current_user %>
+                <%= link_to 'edit', premium_manage_orders_path, class: 'edit-pack' %>
+              <% else %>
+                <%= link_to 'edit', premium_path, class: 'edit-pack' %>
+              <% end %>
               <div class="big-decode font_red">BiG</div>
               <span class="small-decode font_red"><%= premium_package.membership.name %></span>
               <div class="br-small"></div>

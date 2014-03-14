@@ -34,6 +34,10 @@
   *= require plugins/DataTables/media/css/DT_bootstrap
 
  */
+ .none-display{
+  visibility: hidden;
+  height: 10px;
+}
  .panel-group .panel {
     width: 100%;
   }

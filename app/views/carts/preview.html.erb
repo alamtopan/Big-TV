@@ -292,13 +292,18 @@
 											<%= file_field_tag :file_faktur, class: "file-input" %>
 										</div>
 										<div class="br"></div>
-										Lama Berlangganan
-										<div class="br"></div>
-										<select name="order[period]" id="mm" class="form-control" data-period="<%= @order.period.to_i %>">
-											<option value="1">Beli 1 Bulan, Gratis Tambahan 2 Bulan</option>
-											<option value="6">Beli 6 Bulan, Gratis Tambahan3 Bulan</option>
-											<option value="12">Beli 12 Bulan, Gratis Tambahan 4 Bulan</option>
-										</select>
+										<% if @order.items.last.quantity != 1 %>
+											<%= link_to '<< Edit Paket', premium_path, class: 'edit-pack-bottom' %>
+										<% end %>
+										<div class="<%= "none-display" if @order.items.last.quantity != 1 %>">
+											Lama Berlangganan
+											<div class="br"></div>
+											<select name="order[period]" id="mm" class="form-control" data-period="<%= @order.period.to_i %>">
+												<option value="1">Beli 1 Bulan, Gratis Tambahan 2 Bulan</option>
+												<option value="6">Beli 6 Bulan, Gratis Tambahan3 Bulan</option>
+												<option value="12">Beli 12 Bulan, Gratis Tambahan 4 Bulan</option>
+											</select>
+										</div>
 										<div class="br"></div>
 										<input type="submit" class="submit" value="LANJUT KE PEMBAYARAN">
 									</div>
