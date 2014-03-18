@@ -113,7 +113,7 @@
         <% unless @order.success? %>
           <div class="extra_banner">
             <div class="own_extra">
-              <%= link_to 'Bayar >>', preview_path(token: @order.token), class: 'pack-order float-right-fixed margn sbmt' %>
+              <%= link_to 'Bayar >>', preview_path(token: @order.token), class: 'pack-order float-right-fixed margn sbmt sbmit-ovver' %>
             </div>
           </div>
         <% end %>

@@ -95,7 +95,7 @@ class CartsController < ApplicationController
     @order  = order
     if order.items.where('membership_id IN (?)', @memberships.map(&:id)).blank?
       single_decoder = @memberships.where('memberships.name LIKE ?','1 %').first
-      order.add_item(single_decoder, session_cart)
+      order.add_item(single_decoder, session_cart, session[:current_price_id])
     end
   end
 
@@ -209,10 +209,12 @@ class CartsController < ApplicationController
 
     # Fungsi save order cart
     def save_order
-      period = params[:order][:period].to_i
+      period = params[:order][:period].to_i if params[:order]
       order.session_id = nil
-      order.period = period
-      order.period_name = 'month'
+      if period.to_i > 0
+        order.period = period
+        order.period_name = 'month'
+      end
       order.payment_method = params[:payment_method]
       order.file_faktur = params[:file_faktur] if params[:file_faktur].present?
       order.save

@@ -77,7 +77,7 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
 
       if params[:add].to_s == 'true' && !order_item
         extra_package = Membership.find_by_id(params[:extra_id])
-        order.add_item(extra_package,session_cart) if extra_package
+        order.add_item(extra_package,session_cart,session[:current_price_id]) if extra_package
       elsif order_item
         order_item.destroy
       end
@@ -160,7 +160,7 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
     @order  = order
     if order.items.where('membership_id IN (?)', @memberships.map(&:id)).blank?
       single_decoder = @memberships.where('memberships.name LIKE ?','1 %').first
-      order.add_item(single_decoder, session_cart)
+      order.add_item(single_decoder, session_cart,session[:current_price_id])
     end
   end
 
@@ -261,10 +261,12 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
     end
 
     def save_order
-      period = params[:order][:period].to_i
+      period = params[:order][:period].to_i if params[:order]
       order.session_id = nil
-      order.period = period
-      order.period_name = 'month'
+      if period.to_i > 0
+        order.period = period
+        order.period_name = 'month'
+      end
       order.payment_method = params[:payment_method]
       order.file_faktur = params[:file_faktur] if params[:file_faktur].present?
       order.save

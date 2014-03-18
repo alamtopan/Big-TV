@@ -34,6 +34,37 @@
   *= require plugins/DataTables/media/css/DT_bootstrap
 
  */
+.sbmit-ovver{
+  text-align: center!important;
+  text-transform: uppercase;
+}
+.sbmit-ovver:hover{
+  color: white!important;
+  text-decoration: none;
+  background: orange;
+}
+.prc100{
+  width: 100%;
+}
+a.submit-total-edit {
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: red;
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+  padding: 13px 56px;
+}
+a.submit-total-edit:hover {
+  color: white;
+  background: orange;
+  text-decoration: none;
+}
  .none-display{
   visibility: hidden;
   height: 10px;

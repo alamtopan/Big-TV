@@ -172,6 +172,13 @@ Status.constants.each do |constant|
       end if new_price
     end
 
+    if current_product.premium? && new_price.present?
+      self.items.where('id != ?', current_product.id).each do |non_premium|
+        non_premium.quantity = new_price.total_period_in_month
+        non_premium.save
+      end
+    end
+
     item.title = current_product.name
     item.save
   end

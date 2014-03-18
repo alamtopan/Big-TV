@@ -179,7 +179,7 @@ $(document).ready(function(){
     //   $('.post_fee').addClass('hide')
     // }
 
-    var new_total = Number($('#mm').val()) * total;
+    var new_total = Number($('#mm').val()||1) * total;
 
     // if(String($('input[name="payment_method"]:checked').val()) == '01'){
     //   fee = new_total*(3.5/100);

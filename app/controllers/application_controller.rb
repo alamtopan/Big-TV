@@ -1,4 +1,3 @@
-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :page_content # Baca fungsi ini dahulu
