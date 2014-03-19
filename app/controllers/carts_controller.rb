@@ -138,8 +138,16 @@ class CartsController < ApplicationController
         # CustomerMailer.delay.thanks_email(order)
         # CustomerMailer.delay.email_order_to_admin(order)
         
+
+        response = BigSoap::Client.new.create_customer(@customer)
+        if response && response['CUSTOMERNO'].present?
+          @customer.update_column(:code, response['CUSTOMERNO'])
+          order.update_column(:code, response['CUSTOMERNO'])
+        end
+
         @words = Digest::SHA1.hexdigest("#{"%.2f" % order.grand_total}#{ENV['MALL_ID']}#{ENV['SHARED_KEY']}#{order.code}")
         @payment_method = params[:payment_method]
+
         delete_session
         unless request.xhr?
           redirect_to thanks_path(token: order.token) # Redirect ke halaman thanks dengan token
