@@ -20,7 +20,7 @@ class Manage::ResourcesController < InheritedResources::Base
   protected
     # Fungsi untuk paginasi data
     def per_page
-      params[:per_page] ||= 25
+      params[:per_page] ||= 2
     end
 
     def page

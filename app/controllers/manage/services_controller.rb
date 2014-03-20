@@ -3,6 +3,9 @@ class Manage::ServicesController < Manage::ResourcesController # Menggunakan fun
 	defaults :resource_class => Service, :collection_name => 'services', :instance_name => 'service'
 	before_filter :choice
 
+	def index
+  	@services = Service.order('id ASC')
+  end
 
 	private
 		# Fungsi tambahan untuk redio button di service request
