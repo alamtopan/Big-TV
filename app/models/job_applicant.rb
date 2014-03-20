@@ -4,4 +4,6 @@ class JobApplicant < ActiveRecord::Base
 
   belongs_to :job, foreign_key: "position"
 
+  validates_attachment :file_resume, size: {less_than: 2.megabytes}
+
 end

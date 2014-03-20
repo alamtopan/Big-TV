@@ -98,11 +98,8 @@ class PublicsController < ApplicationController
   # Fungsi yang dipakai untuk create Job
   def create_job
     @job_applicant = JobApplicant.new(params[:job_applicant])
-    if @job_applicant.file_resume_file_size >= 2000000
-      flash[:alert] = "
-                          File resume terlalu besar untuk dikirim..!<br>
-                          File resume maximal 2MB
-                       "
+    if @job_applicant.errors.present?
+      flash[:alert] = @job_applicant.errors.full_messages.uniq.to_sentence
       redirect_to :back
     elsif
       @job_applicant.save
