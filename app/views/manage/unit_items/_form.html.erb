@@ -39,7 +39,7 @@
 <div class="form-group">
   <%= f.label 'Channel Category', class: "col-sm-2 control-label" %>
   <div class="col-sm-9">
-    <%= f.select :group_item_id, options_from_collection_for_select(@group_items, :id, :name), {prompt: "Select Channel Category"}, class: "form-control" %>
+    <%= f.select :group_item_id, options_from_collection_for_select(@group_items, :id, :name, @unit_item.group_item_id),{:include_blank => 'No Category'}, class: "form-control" %>
   </div>
 </div>
 <div class="pull-right">
