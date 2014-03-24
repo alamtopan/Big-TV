@@ -7,12 +7,13 @@ class ApplicationController < ActionController::Base
   end
 
   # Error message to email
-  # rescue_from ActionView::Template::Error do |exception|
-  #   redirect_to root_path
-  # end
+  rescue_from ActionView::Template::Error do |exception|
+    #redirect_to root_path
+    render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+  end
 
   rescue_from ActionView::MissingTemplate do |exception|
-    redirect_to root_path
+    render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
   end
 
   # Delete session cart
