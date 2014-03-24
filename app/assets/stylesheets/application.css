@@ -34,6 +34,10 @@
   *= require plugins/DataTables/media/css/DT_bootstrap
 
  */
+.numb{
+  float: right;
+  width: 80px;
+}
 .sbmit-ovver{
   text-align: center!important;
   text-transform: uppercase;

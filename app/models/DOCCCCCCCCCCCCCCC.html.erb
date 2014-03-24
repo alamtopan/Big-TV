@@ -1,0 +1,191 @@
+class Manage::MembershipsController < Manage::ResourcesController # Menggunakan fungsi yang ada di resource controller/induk controller
+  skip_load_and_authorize_resource only: :index
+  defaults :resource_class => Membership, :collection_name => 'memberships', :instance_name => 'membership'
+  prepend_before_filter :prepare_save, only: [:create, :update]
+  before_filter :prepare_select, except: [:index]
+
+  private
+    # Fungsi pembantu untuk select kategori, group items, unit items dan membership
+    def prepare_select
+      @categories = Category.all
+      @group_items = GroupItem.includes(:unit_items)
+      @unit_items = UnitItem.where("group_item_id IS NULL")
+      @periode_name =  MembershipPrice.periode_name.values
+    end
+
+    def prepare_save
+      params[:membership][:unit_item_ids] = [] unless params[:membership][:unit_item_ids]
+    end
+end
+
+
+
+
+
+
+
+
+
+item.html.erb
+<% @group_items.each_with_index do |group, g_index| %>
+  <tr <%= colour_group(group) %>>
+    <td width="3%"><%= check_box_tag "","",false,{class: "checkbox_item",data: {index: g_index} } %></td>
+    <td><%= group.name %></td>
+  </tr>
+  <% group.unit_items.by_position.each_with_index do |item, i_index| %>
+    <% attr_id = (g_index) + 1 * (i_index + 1) %>
+    <tr>
+      <td>
+        <% selected_item = @membership.items.select{|i| i.unit_item_id == item.id}.first %>
+        <%= check_box_tag "membership[unit_item_ids][]", item.id, selected_item.present?,{ class: "unit_item_id_#{g_index} checkbox_unit" } %>
+      </td>  
+      <td>
+        <%= image_tag item.logo.url(:thumb) if item.logo %>
+        <%= item.name %>
+        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][position]", item.position, { class: "numb" } %>
+        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][id]", item.id, { class: "hide" } %>
+      </td>
+    </tr>
+  <% end %>
+<% end if @group_items %>
+  <tr style="background: black; color:#fff;">
+    <td width="3%"><%= check_box_tag "","",false,{class: "checkbox_item" } %></td>
+    <td>Non Categories</td>
+  </tr>
+  <% @unit_items.each_with_index do |item, i_index| %>
+    <tr>
+      <td>
+        <% selected_item = @membership.items.select{|i| i.unit_item_id == item.id}.first %>
+        <%= check_box_tag "membership[unit_item_ids][]", item.id, selected_item.present?,{ class: " checkbox_unit" } %>
+      </td>
+      <td>
+        <%= image_tag item.logo.url(:thumb) if item.logo %>
+        <%= item.name %>
+      </td>
+    </tr>
+  <% end if @unit_items %>
+
+
+  #group_items
+  class GroupItem < ActiveRecord::Base
+  
+  attr_accessible :name, :colour, :unit_item_ids, :position # Attributess group items
+  
+  has_many :unit_items # Mempunyai banyak unit items
+
+  scope :by_position , order("position ASC") # Scope query group items
+  
+  before_create :before_creation
+
+  private
+    # Fungsi tambahan
+    def before_creation
+      last_item = GroupItem.order('position DESC').first
+      if last_item
+        self.position = last_item.position.to_i + 1
+      else
+        self.position = 1
+      end
+    end
+
+end
+
+
+
+
+
+membership.rb
+class Membership < ActiveRecord::Base
+  # Attributes membership
+  attr_accessible :name, :description, :publish_on, :expire_on, :version,
+                  :position, :is_published, :is_featured, :prices_attributes,
+                  :unit_item_ids, :category_id, :unit_items_attributes, :items_attributes
+
+  has_many    :prices, class_name: "MembershipPrice", dependent: :destroy
+  has_many    :items, class_name: "MembershipItem", dependent: :destroy
+  has_many    :unit_items, through: :items
+  belongs_to  :category
+
+  accepts_nested_attributes_for :prices, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :unit_items, reject_if: :all_blank
+  accepts_nested_attributes_for :items, reject_if: :all_blank
+
+  # Scope
+  scope :by_position, order("memberships.position ASC")
+
+  acts_as_list
+
+  # dibawah ini Fungsi tambahan dan query tambahan di model membership
+
+  Category::Config::NAMES.each do |val|
+    define_method("#{ val.downcase }?") do
+      category.name =~ /#{val}/i
+    end
+  end
+
+  def self.extra_by_order(order)
+    includes(:unit_items, :category).
+      where('categories.name = ?', 'extra').
+      where('unit_items.id NOT IN (?)', order.premium_unit_items.map(&:id))
+  end
+
+  def category_name
+    return '' unless category
+    category.name
+  end
+
+  def requires_upgrade_by_decoder?(original_items)
+    single_decoder = Membership.decoder_by_quantity(1)
+    !original_items.find_by_membership_id(single_decoder.id) && name !~ /universe|star/i
+  end
+
+  def price_month
+    self.prices.first.price if self.prices
+  end
+
+  def price_year
+    monthly_price = price_month
+    if price_month
+      annual_price = self.prices.where(total_period: 12, periode_name: 'month').first
+      return annual_price.price if annual_price.price.to_i > 0
+      return 12*monthly_price
+    end
+  end
+
+  class << self
+    def packages_by_category(_package)
+      includes(:category, :prices, :unit_items).where(['categories.name = ?', _package]).by_position
+    end
+
+    def other_packages
+      joins(:category).where('categories.name LIKE ?','%other%')
+    end
+
+    def decoder_by_quantity(qty)
+      where('name LIKE ?',"#{qty} %").first
+    end
+  end
+
+  def default_price
+    pricing = prices.where({periode_name: 'month', total_period: 1}).first
+    return pricing.price if pricing
+    0
+  end
+
+
+end
+
+
+
+
+membership_item.rb
+class MembershipItem < ActiveRecord::Base
+  
+  attr_accessible :membership_id, :unit_item_id # Attributess membership items
+  
+  validates_uniqueness_of :unit_item_id, on: :membership_id # Validations unique
+
+  belongs_to :unit_item
+  belongs_to :membership
+
+end

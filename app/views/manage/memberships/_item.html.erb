@@ -13,6 +13,8 @@
       <td>
         <%= image_tag item.logo.url(:thumb) if item.logo %>
         <%= item.name %>
+        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][position]", item.position, { class: "numb" } %>
+        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][id]", item.id, { class: "hide" } %>
       </td>
     </tr>
   <% end %>
