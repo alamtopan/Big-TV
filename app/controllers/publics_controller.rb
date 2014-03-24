@@ -67,7 +67,7 @@ class PublicsController < ApplicationController
   # Fungsi yang dipakai untuk create Service request
   def create_support
     @service = Service.new(params[:service])
-    if @service.save
+    if verify_recaptcha(:model => @service, :message => "Verification code is invalid") && @service.save
       CustomerMailer.service_request(@service).deliver
       CustomerMailer.thanks_service(@service).deliver
       flash[:notice] = "
@@ -77,6 +77,10 @@ class PublicsController < ApplicationController
                           Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
                        "
       redirect_to support_path # Redirect kembali kehalaman support
+    elsif 
+      @service.errors.present?
+      flash[:alert] = @service.errors.full_messages.uniq.to_sentence
+      redirect_to :back
     end
   end
 
@@ -98,17 +102,17 @@ class PublicsController < ApplicationController
   # Fungsi yang dipakai untuk create Job
   def create_job
     @job_applicant = JobApplicant.new(params[:job_applicant])
-    if @job_applicant.errors.present?
-      flash[:alert] = @job_applicant.errors.full_messages.uniq.to_sentence
-      redirect_to :back
-    elsif
-      @job_applicant.save
+    if verify_recaptcha(:model => @job_applicant, :message => "Verification code is invalid") && @job_applicant.save
       CustomerMailer.job_request(@job_applicant).deliver
       flash[:notice] = "
                           Terima kasih atas data lamaran yang anda kirim..! <br>
                           Untuk selanjutnya akan kami kirimkan balasan kembali ke email anda.
                        "
       redirect_to careers_path # Redirect kembali kehalaman careers
+    elsif 
+      @job_applicant.errors.present?
+      flash[:alert] = @job_applicant.errors.full_messages.uniq.to_sentence
+      redirect_to :back
     end
   end
 
