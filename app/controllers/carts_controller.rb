@@ -62,7 +62,7 @@ class CartsController < ApplicationController
       redirect_to extra_path # Redirect ke halaman extra paket
     else
       @memberships = Membership.packages_by_category('premium')
-      @groups = GroupItem.includes(unit_items: [:memberships]).all
+      @groups = GroupItem.includes(unit_items: [:memberships])
     end
   end
 

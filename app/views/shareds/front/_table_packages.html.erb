@@ -1,12 +1,12 @@
 <div class="table-responsive">
-  <% @groups.each do |group| %>
+  <% @groups.by_position.each do |group| %>
     <div class="parrent_table">
       <div class="head_pack display_group_name">
         <%= group.name %>
       </div>
       <table class="table table-bordered side_table_right package-channel-table" data-color="<%= group.colour %>">
         <tbody>
-          <% group.unit_items.each_with_index do |item,index| %>
+          <% group.unit_items.by_position.each_with_index do |item,index| %>
             <tr>
               <% if index == 0 %>
               <td rowspan="<%= group.unit_items.count %>" class="head_pack off side_table padding_top20">

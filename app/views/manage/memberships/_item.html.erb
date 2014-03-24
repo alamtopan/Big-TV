@@ -1,9 +1,17 @@
-<% @group_items.each_with_index do |group, g_index| %>
+<% @group_items.by_position.each_with_index do |group, g_index| %>
   <tr <%= colour_group(group) %>>
     <td width="3%"><%= check_box_tag "","",false,{class: "checkbox_item",data: {index: g_index} } %></td>
-    <td><%= group.name %></td>
+    <td>
+      <%= group.name %>
+       <% if params[:group_items].present? && params[:group_items][g_index].present? %>
+          <%= number_field_tag "group_items[#{group.id}][position]", params[:group_items][group.id][:position], { class: "numb" } %>
+        <% else %>
+          <%= number_field_tag "group_items[#{group.id}][position]", group.position, { class: "numb" } %>
+        <% end %>
+        <%= hidden_field_tag "group_items[#{group.id}][id]", group.id %>
+    </td>
   </tr>
-  <% group.unit_items.each_with_index do |item, i_index| %>
+  <% group.unit_items.by_position.each_with_index do |item, i_index| %>
     <% attr_id = (g_index) + 1 * (i_index + 1) %>
     <tr>
       <td>
@@ -13,8 +21,12 @@
       <td>
         <%= image_tag item.logo.url(:thumb) if item.logo %>
         <%= item.name %>
-        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][position]", item.position, { class: "numb" } %>
-        <%= number_field_tag "membership[items_attributes][#{i_index}][unit_items_attributes][][id]", item.id, { class: "hide" } %>
+        <% if params[:unit_items].present? && params[:unit_items][i_index].present? %>
+          <%= number_field_tag "unit_items[#{item.id}][position]", params[:unit_items][item.id][:position], { class: "numb" } %>
+        <% else %>
+          <%= number_field_tag "unit_items[#{item.id}][position]", item.position, { class: "numb" } %>
+        <% end %>
+        <%= hidden_field_tag "unit_items[#{item.id}][id]", item.id %>
       </td>
     </tr>
   <% end %>

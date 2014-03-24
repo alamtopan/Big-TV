@@ -6,6 +6,7 @@ class Manage::ResourcesController < InheritedResources::Base
   # Override Fungsi create all controller
   def create  
     create! do |success, failure|
+      after_save if respond_to?(:after_save)
       success.html { redirect_to collection_path }
     end
   end  
@@ -13,6 +14,7 @@ class Manage::ResourcesController < InheritedResources::Base
   # Override Fungsi update all controller
   def update  
     update! do |success, failure|
+      after_save if respond_to?(:after_save)
       success.html { redirect_to collection_path }
     end
   end  

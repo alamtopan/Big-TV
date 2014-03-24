@@ -23,4 +23,11 @@ class UnitItem < ActiveRecord::Base
     where('free = ?', true).by_position
   end
 
+  def self.batch_position(items)
+    items.each do |index, item|
+      unit_item = find_by_id(item[:id])
+      unit_item.update_attribute(:position, item[:position]) if unit_item
+    end
+  end
+
 end
