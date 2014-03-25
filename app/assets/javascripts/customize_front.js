@@ -103,7 +103,7 @@ function restore(){
 }
  
   function initilizeLocation(){
-    $.each($("#map div.trial"), function( index, div ) {
+    $.each($("#lokasi div.trial"), function( index, div ) {
       if ($(div).hasClass('hide')) {
         $(div).removeClass('hide');
         // $(div).show();
@@ -138,7 +138,7 @@ if($(".map_location_js").length){
     $(".map_location_js").closest('tr').addClass('hide');
     var founds = {}
 
-    $.each($("#map div.trial"), function( index, div ) {
+    $.each($("#lokasi div.trial"), function( index, div ) {
       var val = $(div).data('value');
       $(div).addClass('hide');
       founds[val] = 0;
@@ -181,7 +181,7 @@ if($(".map_location_js").length){
   });
 }
 
-if($("#map div.trial").length){
+if($("#lokasi div.trial").length){
   initilizeLocation();
 }
 
@@ -194,7 +194,7 @@ if($("#search_location").length){
       var regexp = new RegExp($(this).val(), 'i');
       var founds = {}
 
-      $.each($("#map div.trial"), function( index, div ) {
+      $.each($("#lokasi div.trial"), function( index, div ) {
         var val = $(div).data('value');
         $(div).addClass('hide');
         founds[val] = 0;
