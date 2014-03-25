@@ -4,6 +4,13 @@ class Manage::MembershipsController < Manage::ResourcesController # Menggunakan 
   prepend_before_filter :prepare_save, only: [:create, :update]
   before_filter :prepare_select, except: [:index]
   
+  def after_save
+    if @membership.errors.blank?
+      UnitItem.batch_position(params[:unit_items]) if params[:unit_items].present?
+      GroupItem.batch_position(params[:group_items]) if params[:group_items].present?
+    end
+  end
+  
   private
     # Fungsi pembantu untuk select kategori, group items, unit items dan membership
     def prepare_select
@@ -15,14 +22,5 @@ class Manage::MembershipsController < Manage::ResourcesController # Menggunakan 
 
     def prepare_save
       params[:membership][:unit_item_ids] = [] unless params[:membership][:unit_item_ids]
-    end
-  
-
-  protected
-    def after_save
-      if @membership.errors.blank?
-        UnitItem.batch_position(params[:unit_items]) if params[:unit_items].present?
-        GroupItem.batch_position(params[:group_items]) if params[:group_items].present?
-      end
     end
 end
