@@ -1,3 +1,11 @@
-MALL_ID: "958"
-SHARED_KEY: "75Pi0aDrFBc0"
-API_URL: "http://103.10.129.17/Suite/Receive"
+production:
+  API_BIG_TV_URL:      'http://103.21.218.52/bigtvwebservice/service.asmx'
+  API_BIG_TV_USER_ID:  'APIWEB'
+  API_BIG_TV_PASSWORD: 'APIWEB@123'
+development:
+  API_BIG_TV_URL:      'http://103.21.218.52/WEBSERVICE/SERVICE.ASMX'
+  API_BIG_TV_USER_ID:  'APIUSER'
+  API_BIG_TV_PASSWORD: 'APIUSER@123'
+  MALL_ID:             '958'
+  SHARED_KEY:          '75Pi0aDrFBc0'
+  API_URL:             'http://103.10.129.17/Suite/Receive'
