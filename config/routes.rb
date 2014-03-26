@@ -54,6 +54,10 @@ BigTv::Application.routes.draw do
   get   '/reg',       to: 'publics#cara_berlangganan', as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',           as: 'support'
 
+  get   '/pembayaran',        to: 'publics#pembayaran',        as: 'pembayaran'
+  get   '/faq',               to: 'publics#faq',               as: 'faq'
+  get   '/service_request',   to: 'publics#service_request',   as: 'service_request'
+
   get   '/news/:id',  to: 'publics#show_blog',         as: 'show_blog'
   get   '/extra',     to: 'carts#extra',               as: 'extra'
   get   '/premium',   to: 'carts#premium',             as: 'premium'

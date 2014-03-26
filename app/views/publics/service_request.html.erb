@@ -1,0 +1,187 @@
+<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
+	<div style="float:left; width:100%; margin-bottom:20px;">
+		<div class="support_width">
+			<%= link_to '<div class="support_cont c1" id="cont1">PEMBAYARAN</div>'.html_safe, pembayaran_path %>
+			<%= link_to '<div class="support_cont c2" id="cont2">FAQ</div>'.html_safe, faq_path %>
+			<%= link_to '<div class="support_cont c3 active" id="cont3">SERVICE REQUEST</div>'.html_safe, service_request_path %>
+		</div>
+	</div>
+	<article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
+		<div class="panel-body" style="text-align:center; width:940px">
+			<% flash.each do |name, msg| %>
+			  <% if msg.present? && msg.is_a?(String) %>
+			    <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+			      <a class="close" data-dismiss="alert">&#215;</a>
+			      <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+			    </div>
+			  <% end %>
+			<% end %>
+			<div class="cont1">
+				<h1 class="padding-top50"><span>SERVICE REQUEST</span></h1>
+				<div class="polosochka2"></div>
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#service_request" data-toggle="tab">FORM SERVICE</a></li>
+				</ul>
+				<div class="tab-content">
+			    <div class="tab-pane white_tab active" id="service_request">
+				  	<div class="content_support">
+					  	<%= form_for @service, url:create_support_path, method: 'post', html: {class: "form-horizontal"} do |f| %>
+					  		<div class="tahap_1">
+						  		<h2 align="center">
+						  			<span class="thp1 active_thp">STEP 1</span> | 
+						  			<span class="thp2">STEP 2</span> | 
+						  			<span class="thp3">STEP 3</span>
+						  		</h2>
+						  		<div class="br"></div>
+						  		<div class="br"></div>
+									<div align="left"><b>Silahkan pilih dibawah ini : </b></div>
+						  		<div class="br"></div>
+						  		<div class="br"></div>
+									<div class="form-group">
+										<%= f.hidden_field :status, value: "IN PROGRESS" %>
+									  <label class="col-sm-2 control-label">* Layanan service</label>
+									  <div class="col-sm-7">
+									    <% @problem.each_with_index do |problem, index|%>
+									    <div class="roundedThree versi2 mg-top-nul">
+									      <%= f.radio_button :problem, problem ,id:"problem_#{index}", class: "pgk_hide", required: true%>
+									      <label for="problem_<%= index %>" class="lanjut"></label>
+									    </div>
+									      <b><%= problem %></b>
+									      <br><br>
+									    <% end %>
+									  </div>
+									</div>
+									<div class="pull-right">
+									  <div class="pack-order float-right-fixed margn lanjut_btn", id="tahap_1">
+									  	Lanjut
+									  </div>
+									</div>
+								</div>
+								<div class="tahap_2">
+									<h2 align="center">
+						  			<span class="thp1">STEP 1</span> | 
+						  			<span class="thp2 active_thp">STEP 2</span> | 
+						  			<span class="thp3">STEP 3</span>
+						  		</h2>
+									<div class="br"></div>
+									<div class="br"></div>
+									<div align="left"><b>Silahkan lengkapi data anda : </b></div>
+						  		<div class="br"></div>
+						  		<div class="br"></div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* Nama lengkap</label>
+									  <div class="col-sm-6">
+									    <%= f.text_field :name, class: "form-control", required: true %>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* No telepon</label>
+									  <div class="col-sm-6">
+									    <%= f.text_field :phone, class: "form-control", required: true %>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* Email</label>
+									  <div class="col-sm-6">
+									    <%= f.text_field :email, class: "form-control", required: true %>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* Alamat_pemasangan</label>
+									  <div class="col-sm-6">
+									    <%= f.text_area :address, class: "form-control", style: "height:100px;", required: true %>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* Kota</label>
+									  <div class="col-sm-6">
+									    <%= f.text_field :city, class: "form-control", required: true%>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* No pelanggan</label>
+									  <div class="col-sm-6">
+									    <%= f.text_field :no_customer, class: "form-control", required: true%>
+									  </div>
+									</div>
+									<div class="form-group">
+									  <label class="col-sm-2 control-label">* Program</label>
+									  <div class="col-sm-6">
+									    <% @program.each_with_index do |program, index| %>
+										    <div class="roundedThree versi2 mg-top-nul">
+										      <%= f.radio_button :program, program, id:"program_#{index}", class: "pgk_hide", required: true%>
+										      <label for="program_<%= index %>" class="lanjut2"></label>
+										    </div>
+									      <b><%= program %></b>
+									      <br><br>
+									    <% end %>
+									  </div>
+									</div>
+									<div class="pull-right">
+										<div class="pack-order float-right-fixed margn lanjut_btn2", id="tahap_2">
+									  	Lanjut
+									  </div>
+									</div>
+									<div class="pull-left">
+									  <div class="pack-order float-right-fixed margn kembali", id="kembali">
+									  	Kembali
+									  </div>
+									</div>
+								</div>
+								<div class="tahap_3">
+									<h2 align="center">
+						  			<span class="thp1">STEP 1</span> | 
+						  			<span class="thp2">STEP 2</span> | 
+						  			<span class="thp3 active_thp">STEP 3</span>
+						  		</h2>
+						  		<div class="br"></div>
+						  		<div class="br"></div>
+									<div align="left"><b>Sudah berapa lama gangguan ini berjalan ? </b></div>
+						  		<div class="br"></div>
+						  		<div class="br"></div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">* Sudah berapa lama</label>
+									  <div class="col-sm-3">
+									    <% @day_problem.each_with_index do |day, index|%>
+										    <div class="roundedThree versi2 mg-top-nul">
+										      <%= f.radio_button :day_problem, day, id:"day_#{index}", class: "pgk_hide", required: true %>
+										      <label for="day_<%= index %>"></label>
+										    </div>
+									      <b><%= day %></b>
+									      <br><br>
+									    <% end %>
+									  </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">* Captcha</label>
+									  <div class="col-sm-3">
+									    <%= recaptcha_tags %>
+									  </div>
+									</div>
+									<div class="pull-right">
+									  <%= f.submit 'Kirim', class: "pack-order float-right-fixed margn" %>
+									</div>
+									<div class="pull-left">
+									  <div class="pack-order float-right-fixed margn kembali2", id="kembali2">
+									  	Kembali
+									  </div>
+									</div>
+								</div>
+							<% end %>
+				  	</div>
+				  </div>
+				</div>
+			</div>
+			<div class="content_support" style="text-align:left">
+				<%= image_tag "support/contact.png", class: "img_support" %>
+				<p class="text_support_big">
+					PERTANYAAN LEBIH LANJUT SILAHKAN HUBUNGI<br>
+					KAMI DI CONTACT CENTER <span class="red_contact">021-500 244</span><br>
+					EMAIL : <span class="red_contact">CUSTOMER.SERVICE@BIGTV.CO.ID</span><br>
+					FAX : <span class="red_contact">(021) 557 77722</span><br>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="polosochka"></div>
+</section>

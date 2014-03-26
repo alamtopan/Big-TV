@@ -64,6 +64,26 @@ class PublicsController < ApplicationController
     render layout: "detail" # Render template detail
   end
 
+  def pembayaran
+    @title_page = "Pembayaran" # Display title
+    @support_pembayaran   = PageContent.where("category =?", "Tab Support Content").published.order('id ASC') # Show data tab support pembayaran
+    render layout: "detail" # Render template detail
+  end
+
+  def faq
+    @title_page = "FAQ" # Display title
+    @support_faq   = PageContent.where("category =?", "Tab Support Content FAQ").published.order('id ASC') # Show data tab faq support pembayaran
+    render layout: "detail" # Render template detail
+  end
+
+  def service_request
+    @title_page = "Service Request" # Display title
+    @service = Service.new
+    choice
+    render layout: "detail" # Render template detail
+  end
+
+
   # Fungsi yang dipakai untuk create Service request
   def create_support
     @service = Service.new(params[:service])
@@ -76,7 +96,7 @@ class PublicsController < ApplicationController
                           Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
                           Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
                        "
-      redirect_to support_path # Redirect kembali kehalaman support
+      redirect_to service_request_path # Redirect kembali kehalaman support
     elsif 
       @service.errors.present?
       flash[:alert] = @service.errors.full_messages.uniq.to_sentence

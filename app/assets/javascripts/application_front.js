@@ -292,32 +292,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
-  $('#cont1').click(function(){
-    $('.cont1').show();
-    $('.cont2').hide();
-    $('.cont3').hide();
-    $('.c1').addClass('active');
-    $('.c2').removeClass('active');
-    $('.c3').removeClass('active');
-  });
-
-  $('#cont2').click(function(){
-    $('.cont2').show();
-    $('.cont1').hide();
-    $('.cont3').hide();
-    $('.c2').addClass('active')
-    $('.c1').removeClass('active');
-    $('.c3').removeClass('active');
-  });
-
-  $('#cont3').click(function(){
-    $('.cont3').show();
-    $('.cont1').hide();
-    $('.cont2').hide();
-    $('.c3').addClass('active')
-    $('.c1').removeClass('active');
-    $('.c2').removeClass('active');
-  });
 
   $('#tahap_1').click(function(){
     $('.tahap_1').hide();
@@ -349,16 +323,23 @@ $(document).ready(function() {
   $('.lanjut2').click(function(){
     $('.lanjut_btn2').show();
   });
-});
 
-$('#apply_job').click(function(){
-  $('.form_apply').slideToggle(2000);
-  $(this).css("display","block");
-  $('#apply_job').hide();
-});
 
-$('.close_pop').click(function(){
-  $('#gb').hide();
+  $('#apply_job').click(function(){
+    $('.form_apply').slideToggle(2000);
+    $(this).css("display","block");
+    $('#apply_job').hide();
+  });
+
+  $('.close_pop').click(function(){
+    $('#gb').hide();
+  });
+
+  $('#paket-lain').click(function(){
+  $('.show-paket-lain').slideToggle(2000);
+    $('#paket-lain').hide();
+  });
+
 });
 
 function blinker() {
@@ -368,7 +349,3 @@ function blinker() {
 
 setInterval(blinker, 1000);
 
-$('#paket-lain').click(function(){
-  $('.show-paket-lain').slideToggle(2000);
-  $('#paket-lain').hide();
-});

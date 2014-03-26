@@ -2,7 +2,7 @@
 	<div style="float:left; width:100%; margin-bottom:20px;">
 		<div class="support_width">
 			<%= link_to '<div class="support_cont c1" id="cont1">PEMBAYARAN</div>'.html_safe, pembayaran_path %>
-			<%= link_to '<div class="support_cont c2" id="cont2">FAQ</div>'.html_safe, faq_path %>
+			<%= link_to '<div class="support_cont c2 active" id="cont2">FAQ</div>'.html_safe, faq_path %>
 			<%= link_to '<div class="support_cont c3" id="cont3">SERVICE REQUEST</div>'.html_safe, service_request_path %>
 		</div>
 	</div>
@@ -17,17 +17,16 @@
 			  <% end %>
 			<% end %>
 			<div class="cont1">
-				<h1 class="padding-top50"><span>PEMBAYARAN MUDAH DIMANA SAJA</span></h1>
+				<h1 class="padding-top50"><span>FAQ</span></h1>
 				<div class="polosochka2"></div>
 				<ul class="nav nav-tabs">
-				  <% @support_pembayaran.each do |support| %>
-					  <li><a href="#<%= support.id%>" data-toggle="tab"><%= support.title%></a></li>
-					<% end %>
+				  <% @support_faq.each do |support| %>
+					  <li><a href="#<%= support.id%>b" data-toggle="tab"><%= support.title%></a></li>
+					<% end if @support_faq %>
 				</ul>
-				<!-- Tab panes -->
 				<div class="tab-content">
-				  <% @support_pembayaran.each_with_index do |support,index| %> 
-					  <div class="tab-pane <%= " active" if index == 0 %> white_tab" id="<%= support.id%>">
+				  <% @support_faq.each_with_index do |support,index| %> 
+					  <div class="tab-pane <%= " active" if index == 0 %> white_tab" id="<%= support.id%>b">
 					  	<div class="content_support">
 					  		<%= support.description.html_safe %>
 					  	</div>
