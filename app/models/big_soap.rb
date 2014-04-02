@@ -2,9 +2,9 @@
 #   BigSoap::Client.new.get_customer_info('12345678')
 #   BigSoap::Client.new.create_customer(Customer.last)
 module BigSoap
-  SERVICE_URL = "http://103.21.218.52/WEBSERVICE/SERVICE.ASMX"
-  USERID  = "APIUSER"
-  PASSWD  = "APIUSER@123"
+  SERVICE_URL = ENV['API_BIG_TV_URL']
+  USERID  = ENV['API_BIG_TV_USER_ID']
+  PASSWD  = ENV['API_BIG_TV_PASSWORD']
   NAMESPACE = "http://tempuri.org/"
 
   class Client
