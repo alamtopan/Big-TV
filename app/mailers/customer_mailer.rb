@@ -1,6 +1,18 @@
 class CustomerMailer < ActionMailer::Base
   default from: "noreply@bigtv.co.id"
 
+  def reg_promo(reg_promo)
+    icon_bigtv
+    @reg_promo = reg_promo
+    mail(to: 'customer.service@bigtv.co.id', subject: "{ONLINE} Registrasi #{@reg_promo.subject}, #{@reg_promo.name}")
+  end
+
+  def thanks_promo(reg_promo)
+    icon_bigtv
+    @reg_promo = reg_promo
+    mail(to: "#{@reg_promo.email}", subject: "Terima kasih telah mendaftar")
+  end
+
   def service_request(service)
     icon_bigtv
     @service = service

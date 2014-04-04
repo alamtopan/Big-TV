@@ -144,6 +144,30 @@ class PublicsController < ApplicationController
     render layout: "detail" # Render template detail
   end
 
+  def reg_promo
+    @reg_promo = RegPromo.new
+    @title_page = "Registrasi Promo" if @reg_promo
+    render layout: "detail"
+  end
+
+  def create_reg_promo
+    @reg_promo = RegPromo.new(params[:reg_promo])
+    if verify_recaptcha(:model => @reg_promo, :message => "Verification code is invalid") && @reg_promo.save
+      CustomerMailer.reg_promo(@reg_promo).deliver
+      CustomerMailer.thanks_promo(@reg_promo).deliver
+      flash[:notice] = "
+                          Pendaftaran berhasil, Terima kasih atas data yang telah Anda kirim.<br>
+                          Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
+                          Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
+                       "
+      redirect_to reg_promo_path
+    elsif 
+      @reg_promo.errors.present?
+      flash[:alert] = @reg_promo.errors.full_messages.uniq.to_sentence
+      redirect_to :back
+    end
+  end
+
   private
     def prepare_order_by_token(layout_name='detail')
       if params[:token].present? && @order = Order.find_by_token(params[:token])
