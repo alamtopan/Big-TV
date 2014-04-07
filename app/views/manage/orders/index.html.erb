@@ -40,6 +40,7 @@
           <thead>
             <tr>
               <th class="mbl_hide_small">Customer</th>
+              <th>NO</th>
               <th>INVOICE NO</th>
               <th class="mbl_hide">Created At</th>
               <th class="mbl_hide">Total</th>
@@ -51,6 +52,7 @@
             <% @orders.each_with_index do |order,index| %>
               <tr>
                 <th class="mbl_hide_small"><%= order.orderable.profile.first_name if order.orderable %></th>
+                <th><%= index+1 %></th>
                 <th><%= order.code %></th>
                 <th class="mbl_hide">
                     <b><%= order.created_at.in_time_zone('Jakarta').strftime('%d %b %Y at %H:%M') %></b>
