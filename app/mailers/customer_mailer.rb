@@ -4,7 +4,7 @@ class CustomerMailer < ActionMailer::Base
   def reg_promo(reg_promo)
     icon_bigtv
     @reg_promo = reg_promo
-    mail(to: 'customer.service@bigtv.co.id', subject: "{ONLINE} Registrasi #{@reg_promo.subject}, #{@reg_promo.name}")
+    mail(to: 'online.bigtv@gmail.com', subject: "{ONLINE} Registrasi #{@reg_promo.subject}, #{@reg_promo.name}")
   end
 
   def thanks_promo(reg_promo)

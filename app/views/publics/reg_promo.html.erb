@@ -34,7 +34,7 @@
                 <div class="form-group">
                   <%= f.label :subject, class: "col-sm-3 control-label" %>
                   <div class="col-sm-4">
-                    <%= f.text_field :subject, class: "form-control", required: true, value: "#{params[:id]}", disabled: true %>
+                    <%= f.text_field :subject, class: "form-control", value: "#{params[:id]}", disabled: true %>
                     <%= f.hidden_field :subject, class: "form-control", required: true, value: "#{params[:id]}" %>
                   </div>
                 </div>
