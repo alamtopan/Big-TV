@@ -9,10 +9,8 @@
 			<tr>
 				<th>Created at</th>
 				<th>Fist Name</th>
-				<th class="hidden-xs">Last Name</th>
 				<th class="hidden-xs">Phone</th>
 				<th>Email</th>
-				<th class="hidden-xs">Address</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -21,10 +19,8 @@
 			<tr>
 				<td><b><%= user.created_at.strftime('%d %b %Y - at %I:%M%p') %></b></td>
 				<td class="hidden-xs"><%= user.profile.first_name if user.profile %></td>
-				<td><%= user.profile.last_name if user.profile %></td>
 				<td class="hidden-xs"><%= user.profile.no_phone if user.profile %></td>
 				<td><a><%= user.email %></a></td>
-				<td class="hidden-xs"><%= user.profile.address if user.profile %></td>
 				<td class="center">
 					<%= render partial: 'shareds/back_office/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
 				</td>
