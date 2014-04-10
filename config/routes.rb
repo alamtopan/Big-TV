@@ -22,6 +22,7 @@ BigTv::Application.routes.draw do
         post  :subcribe
       end
     end
+    resources :reg_promos
     resources :categories
     resources :users
     resources :customers

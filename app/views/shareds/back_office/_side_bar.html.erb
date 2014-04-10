@@ -49,8 +49,26 @@
       <% end %>
 			<% if current_user.type != 'Referral' %>
 				<li>
+					<a href="javascript:void(0)"><i class="clip-checkbox"></i>
+						<span class="title"> Registrant Promos </span><i class="icon-arrow"></i>
+						<span class="selected"></span>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<%= link_to new_manage_reg_promo_path do %>
+								<span class='title'> Create New </span>
+							<% end %>
+						</li>
+						<li>
+							<%= link_to manage_reg_promos_path do %>
+								<span class='title'> List </span>
+							<% end %>
+						</li>
+					</ul>
+				</li>
+				<li>
 					<a href="javascript:void(0)"><i class="clip-file-3"></i>
-						<span class="title"> News </span>
+						<span class="title"> News </span><i class="icon-arrow"></i>
 						<span class="selected"></span>
 					</a>
 					<ul class="sub-menu">
