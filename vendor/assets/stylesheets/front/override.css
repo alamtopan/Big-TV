@@ -271,3 +271,16 @@ a div.panel-heading.red-h{
   height: 100%;
   width: auto;
 }
+.trial.butt{
+  float: left;
+  color: red;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.trial.butt a{
+  color: red!important;
+}
+.sct-footer{
+  width: 454px;
+  margin: auto;
+}

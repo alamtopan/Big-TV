@@ -259,6 +259,7 @@ $(document).ready(function(){
   $('#click_footer_more').click(function(){
     $('.click_footer_more').slideToggle(2000);
     $(this).css("display","none");
+    $('#butt_careers').hide();
   });
   $('.customer_profile_attributes_referal').value
 
