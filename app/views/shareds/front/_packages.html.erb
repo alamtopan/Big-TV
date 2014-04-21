@@ -47,6 +47,11 @@
 															<%= number_to_currency(price.price,{unit: '', precision: 0}) %>
 														</span>
 	                          <br/><%= [price.total_period_bahasa, price.periode_name_bahasa].select(&:'present?').join(' ') %>
+	                          <div style="color:red">
+	                          	<%= price.membership.unit_items.by_not_hd.size %> CH 
+	                          	+ 
+	                          	<%= price.membership.unit_items.by_hd.size %> HD Channel
+	                          </div>
 													</div>
 												</div>
 												<div class="br"></div>
@@ -69,7 +74,7 @@
 			<%= render partial: "shareds/front/table_packages", locals: {memberships: @memberships.map(&:id)} %>
 		</div>
 		<div class="br"></div>
-		<div class="trial" id="click_packages_more"><a>VIEW MORE</a></div>
+		<div class="trial" id="click_packages_more"><a>LEBIH LENGKAP</a></div>
 
   </article>
 	<div class="polosochka"></div>
@@ -77,7 +82,7 @@
 
 
 <section class="wraper_bg-bright extra_packages border_bottom">
-  <h1><span>EXTRA</span> PACKAGES</h1>
+  <h1><span>PAKET</span> TAMBAHAN</h1>
   <div class="polosochka2"></div>
   <article class="packs-cont cbp-so-scroller" style="text-align:left; min-height:150px">
       <div class="panel-body">
@@ -114,10 +119,14 @@
               </div>
             </div>
           <% end %>
+          <div class="warn_info" style="width:100%">
+					  <span style="padding-left:20px;">
+					  	Disclaimer: Semua Paket, Harga, dan Channel dapat berganti sewaktu-waktu tanpa pemberitahuan
+					  </span>
+					</div>
 				</div>
 				<div class="br"></div>
-				<div class="trial" id="click_extras_more"><a>VIEW MORE</a></div>
-
+				<div class="trial" id="click_extras_more"><a>LEBIH LENGKAP</a></div>
       </div>
   </article>
 </section>

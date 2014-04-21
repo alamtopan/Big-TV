@@ -11,6 +11,8 @@ class UnitItem < ActiveRecord::Base
 
   # Scope query
   scope :by_position, order('position ASC')
+  scope :by_hd, where('status_hd = TRUE')
+  scope :by_not_hd, where('status_hd = FALSE')
 
   validates_presence_of   :name # Validation present
   validates_uniqueness_of :name # Validation unique
