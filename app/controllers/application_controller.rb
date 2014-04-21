@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
   end
 
+  rescue_from ActionController::RedirectBackError do |exception|
+    render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+  end
+
   rescue_from ActionView::MissingTemplate do |exception|
     render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
   end
