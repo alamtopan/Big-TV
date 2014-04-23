@@ -284,3 +284,6 @@ a div.panel-heading.red-h{
   width: 454px;
   margin: auto;
 }
+.alert{
+  text-align: center!important;
+}

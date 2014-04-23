@@ -139,6 +139,7 @@ class PublicsController < ApplicationController
 
   # Fungsi yang dipakai di halaman detail promo/news
   def show_blog
+    @reg_promo = RegPromo.new
     @blog = Blog.where(slug: params[:id]).first
     @title_page = "#{@blog.title}" if @blog
     render layout: "detail" # Render template detail
@@ -160,7 +161,7 @@ class PublicsController < ApplicationController
                           Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
                           Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
                        "
-      redirect_to reg_promo_path
+      redirect_to :back
     elsif 
       @reg_promo.errors.present?
       flash[:alert] = @reg_promo.errors.full_messages.uniq.to_sentence

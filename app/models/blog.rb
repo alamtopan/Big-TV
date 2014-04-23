@@ -1,6 +1,6 @@
 class Blog < ActiveRecord::Base
   extend FriendlyId
-  attr_accessible :author, :description, :picture, :title, :publish, :unpublish # Attributess blog/promo
+  attr_accessible :author, :description, :picture, :title, :publish, :unpublish , :with_register# Attributess blog/promo
   friendly_id :title, use: [:slugged]
 
   has_attached_file :picture, styles:  { 

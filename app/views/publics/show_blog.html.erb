@@ -3,11 +3,81 @@
 		<h1 style="font-size:36px"><span><%= @blog.title %></span></h1>
 		<div class="polosochka2"></div>
 		<article class="packs-cont cbp-so-scroller" style="text-align:left">
+			<% flash.each do |name, msg| %>
+		    <% if msg.present? && msg.is_a?(String) %>
+		      <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+		        <a class="close" data-dismiss="alert">&#215;</a>
+		        <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+		      </div>
+		    <% end %>
+		  <% end %>
 			<div class="panel-body" style="text-align:center;">
 				<%= image_tag "#{@blog.picture.url}" %>
 			</div>
 			<div class="panel-body" style="margin-top: 0px;margin-bottom: 50px;">
 				<%= @blog.description.html_safe %>
+				<br><br>
+				<% if @blog.with_register == true %>
+					<div class="pack-order float-right-fixed margn" id="apply_job">
+	          Register This Promo
+	        </div>
+	      <% end %>
+        <div class="form_apply">
+        	<div class="panel-body">
+            <h1 class="padding-top50" align="center"><span>FORM REGISTRASI PAKET PROMO</span></h1>
+            <div class="polosochka2"></div>
+            <br><br>
+            <%= form_for @reg_promo, url:create_reg_promo_path, method: 'post', html: {class: "form-horizontal", style: "margin-left: 80px;"} do |f| %>
+              <% if @reg_promo.errors.any? %>
+                <div id="error_explanation">
+                  <div class="alert alert-block alert-danger fade in ">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Warning!</strong> <%= pluralize(@job_applicant.errors.count, "error") %>
+                    <% @reg_promo.errors.full_messages.each do |msg| %>
+                    <diV>
+                      <%= msg %>
+                    </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <%= f.label :subject, class: "col-sm-3 control-label" %>
+                <div class="col-sm-6">
+                  <%= f.text_field :subject, class: "form-control", value: "#{params[:id]}", disabled: true %>
+                  <%= f.hidden_field :subject, class: "form-control", required: true, value: "#{params[:id]}" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :name, class: "col-sm-3 control-label" %>
+                <div class="col-sm-6">
+                  <%= f.text_field :name, class: "form-control", required: true %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :email, class: "col-sm-3 control-label" %>
+                <div class="col-sm-6">
+                  <%= f.text_field :email, class: "form-control", required_email: true %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :phone, class: "col-sm-3 control-label" %>
+                <div class="col-sm-6">
+                  <%= f.text_field :phone, class: "form-control", required: true %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.label :captcha, class: "col-sm-3 control-label" %>
+                <div class="col-sm-6">
+                  <%= recaptcha_tags %>
+                </div>
+              </div>
+              <div class="pull-right">
+                <input class="pack-order float-right-fixed margn" name="commit" type="submit" value="DAFTAR">
+              </div>
+            <% end %>
+          </div>
+        </div>
 			</div>
 		</div>
 	<% end %>

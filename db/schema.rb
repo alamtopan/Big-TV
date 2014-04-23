@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140404092359) do
+ActiveRecord::Schema.define(:version => 20140423044910) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20140404092359) do
     t.string   "slug"
     t.date     "publish"
     t.date     "unpublish"
+    t.boolean  "with_register"
   end
 
   add_index "blogs", ["slug"], :name => "index_blogs_on_slug", :unique => true
