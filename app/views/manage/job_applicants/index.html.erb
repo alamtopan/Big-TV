@@ -17,6 +17,7 @@
     </thead>
     <tbody>
       <% @job_applicants.each_with_index do |job_applicant,index| %>
+        <% next unless job_applicant.job %>
         <tr>
           <td><b><%= job_applicant.job.position %></b></td>
           <td><%= index+1 %></td>
