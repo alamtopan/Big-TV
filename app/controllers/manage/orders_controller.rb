@@ -5,7 +5,7 @@ class Manage::OrdersController < Manage::ResourcesController # Menggunakan fungs
   # Override fungsi dihalaman index/crud
   def index
     @orders = current_user.type == 'Referral' ? current_user.orders : Order
-    @orders = @orders.success_order.order('orders.created_at ASC')
+    @orders = @orders.success_order.page(params[:page]).per(100).order('orders.created_at DESC')
   end
 
   # Override fungsi dihalaman show data

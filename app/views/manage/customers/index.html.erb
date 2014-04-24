@@ -3,7 +3,7 @@
                      table_name:  'Customers', 
                      button_name: 'Customer'
                    } do %>
-  <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Created at</th>
@@ -28,4 +28,7 @@
       <% end %>
     </tbody>
   </table>
+  <div>
+    <%= paginate @customers %>
+  </div>
 <% end %>

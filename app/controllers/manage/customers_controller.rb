@@ -4,7 +4,7 @@ class Manage::CustomersController < Manage::ResourcesController # Menggunakan fu
 
   # Override fungsi index/crud
   def index
-  	@customers = Customer.order('id ASC')
+  	@customers = Customer.page(params[:page]).per(100).order('id DESC')
   end
 
 end
