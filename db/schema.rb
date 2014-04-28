@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140423044910) do
+ActiveRecord::Schema.define(:version => 20140428103014) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20140423044910) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.integer  "category_id"
+    t.string   "summary"
   end
 
   add_index "memberships", ["name", "version"], :name => "index_memberships_on_name_and_version"

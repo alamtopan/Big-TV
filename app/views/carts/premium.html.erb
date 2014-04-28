@@ -44,6 +44,11 @@
                               <%= number_to_currency(price.price,{unit: '', precision: 0}) %>
                             </span>
                             <br/><%= [price.total_period_bahasa, price.periode_name_bahasa].select(&:'present?').join(' ') %>
+                            <div style="color:red">
+                              <%# price.membership.unit_items.by_not_hd.size %>
+                              <%# price.membership.unit_items.by_hd.size %>
+                              <%= price.membership.summary %>
+                            </div>
                           </div>
                         </div>
                         <div class="br"></div>
