@@ -5,7 +5,7 @@ class Manage::UsersController < Manage::ResourcesController # Menggunakan fungsi
 
   # Override fungsi index/crud
   def index
-    @users = User.order('id ASC')
+    @users = User.where('type IS NULL').order('id ASC')
   end
   
   # Override fungsi Sign out
