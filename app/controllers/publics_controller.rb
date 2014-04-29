@@ -157,9 +157,8 @@ class PublicsController < ApplicationController
       CustomerMailer.reg_promo(@reg_promo).deliver
       CustomerMailer.thanks_promo(@reg_promo).deliver
       flash[:notice] = "
-                          Pendaftaran berhasil, Terima kasih atas data yang telah Anda kirim.<br>
-                          Mohon maaf sebelumnya atas ketidaknyamanan Bapak/Ibu. <br>
-                          Untuk selanjutnya akan kami proses dalam waktu 1x24Jam untuk menghubungi Bapak/Ibu kembali
+                          Pendaftaran berhasil. Terimakasih atas data yang telah Anda kirim.<br>
+                          Untuk selanjutnya, tim Telesales kami akan menghubungi anda dalam waktu 2x24 Jam.
                        "
       redirect_to :back
     elsif 
