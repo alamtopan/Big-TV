@@ -21,6 +21,7 @@
 //= require scrolltofixed-min
 //= require jquery.lazyload
 //= require widgets-twitt
+//= require countdown
 
 //= require_self
 

@@ -144,11 +144,17 @@ class PublicsController < ApplicationController
     @title_page = "#{@blog.title}" if @blog
     render layout: "detail" # Render template detail
   end
-
+  
   def reg_promo
     @reg_promo = RegPromo.new
-    @title_page = "Registrasi Promo" if @reg_promo
-    render layout: "detail"
+    @title_page = "BIGTV BUNDLING with BOLT SUPER4G-1"
+    render layout: "promo"
+  end
+
+  def reg_promo2
+    @reg_promo = RegPromo.new
+    @title_page = "BIGTV BUNDLING with BOLT SUPER4G-2"
+    render layout: "promo"
   end
 
   def create_reg_promo

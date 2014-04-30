@@ -1,78 +1,76 @@
-<section class="wraper_bg-bright wraper-follow-us bg-raw  fbscroll_item special_line_rotated_left back_support" id="blog">
-  <article class="packs-cont cbp-so-scroller" style="text-align:center; width:940px">
-    <div class="panel-body" style="text-align:center; width:940px">
-      <% flash.each do |name, msg| %>
-        <% if msg.present? && msg.is_a?(String) %>
-          <div class="alert alert-<%= name == :notice ? "success" : "danger" %>" style="text-align:center">
-            <a class="close" data-dismiss="alert">&#215;</a>
-            <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
-          </div>
-        <% end %>
+<body onload="countdown(year,month,day,hour,minute)" style="background-image:url(assets/promo/stadion.jpg);">    
+  <div class="header">
+    <p style="padding-top:3px;width:100%;font-size:55px;font-family:Arial, Helvetica, sans-serif;">
+    <b style="padding-left:70px;">BUNDLING WITH</b>
+    </p>
+  </div>
+  <div id="oval">
+    <%= image_tag "promo/logo-BigTV_JPG.jpg", width: "195", height:"79", style: "margin-top:80px" %>
+  </div>
+  <div class="circle"><%= image_tag "promo/logo_BOLT.jpg", width: "86", height:"32", style:"margin-top:40px;" %></div>
+  <div class="left_content">
+    <%= image_tag "promo/left_content.png" %>
+    <p style="color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;font-size:12px;
+    margin-right:-200px;margin-top:-30px;position:relative;z-index:5;">
+      <a href="http://big-tv.com/news/bigtv-bundling-with-bolt-super4g">Syarat & Ketentuan</a>
+    </p>
+  </div>
+  <div class="page-container">
+    <h4>Our Time Is Running Out</h4>
+    <h1>GRAB IT NOW!</h1>
+    <div class="bg_timer">
+      <table border="0" cellpadding="0" cellspacing="0" id="table" name="table">
+          <tr>
+              <td align="center" colspan="6"><div class="numbers" id="count2" style="padding: 5px 0 0 0; "></div></td>
+          </tr>
+          <tr id="spacer1" height="30">
+              <td align="center" ><div class="numbers" ></div></td>
+              <!--<td align="center" ><div class="numbers" id="dday"></div></td>-->
+              <td align="center" ><div class="numbers" id="dhour"></div></td>
+              <td align="center" ><div class="numbers" id="dmin"></div></td>
+              <td align="center" ><div class="numbers" id="dsec"></div></td>
+              <td align="center" ><div class="numbers" ></div></td>
+          </tr>
+          <tr id="spacer2" height="12">
+              <td align="center" ><div class="title" ></div></td>
+              <!--<td align="center" ><div class="title" id="days">DAYS</div></td>-->
+              <td align="center" ><div class="title" id="hours">HOURS</div></td>
+              <td align="center" ><div class="title" id="minutes">MINUTES</div></td>
+              <td align="center" ><div class="title" id="seconds">SECONDS</div></td>
+              <td align="center" ><div class="title" ></div></td>
+          </tr>
+      </table>
+    </div>
+    <% flash.each do |name, msg| %>
+      <% if msg.present? && msg.is_a?(String) %>
+        <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+          <a class="close" data-dismiss="alert">&#215;</a>
+          <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+        </div>
       <% end %>
-      <div class="cont1">
-        <br><br>
-        <div class="tab-content">
-          <div class="packs-cont cbp-so-scroller job_section">
-            <div class="panel-body">
-              <h1 class="padding-top50"><span>FORM REGISTRASI PAKET PROMO</span></h1>
-              <div class="polosochka2"></div>
-              <br><br>
-              <%= form_for @reg_promo, url:create_reg_promo_path, method: 'post', html: {class: "form-horizontal", style: "margin-left: 80px;"} do |f| %>
-                <% if @reg_promo.errors.any? %>
-                  <div id="error_explanation">
-                    <div class="alert alert-block alert-danger fade in ">
-                      <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      <strong>Warning!</strong> <%= pluralize(@job_applicant.errors.count, "error") %>
-                      <% @reg_promo.errors.full_messages.each do |msg| %>
-                      <diV>
-                        <%= msg %>
-                      </div>
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-                <div class="form-group">
-                  <%= f.label :subject, class: "col-sm-3 control-label" %>
-                  <div class="col-sm-4">
-                    <%= f.text_field :subject, class: "form-control", value: "#{params[:id]}", disabled: true %>
-                    <%= f.hidden_field :subject, class: "form-control", required: true, value: "#{params[:id]}" %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <%= f.label :name, class: "col-sm-3 control-label" %>
-                  <div class="col-sm-4">
-                    <%= f.text_field :name, class: "form-control", required: true %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <%= f.label :email, class: "col-sm-3 control-label" %>
-                  <div class="col-sm-4">
-                    <%= f.text_field :email, class: "form-control", required_email: true %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <%= f.label :phone, class: "col-sm-3 control-label" %>
-                  <div class="col-sm-4">
-                    <%= f.text_field :phone, class: "form-control", required: true %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <%= f.label :captcha, class: "col-sm-3 control-label" %>
-                  <div class="col-sm-4">
-                    <%= recaptcha_tags %>
-                  </div>
-                </div>
-                <div class="pull-right">
-                  <input class="pack-order float-right-fixed margn" name="commit" type="submit" value="DAFTAR">
-                </div>
-              <% end %>
+    <% end %>
+    <%= form_for @reg_promo, url:create_reg_promo_path, method: 'post', html: {class: "contact-us"} do |f| %>
+      <h1>DAFTAR SEKARANG!</h1>
+      <% if @reg_promo.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-block alert-danger fade in ">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> <%= pluralize(@job_applicant.errors.count, "error") %>
+            <% @reg_promo.errors.full_messages.each do |msg| %>
+            <diV>
+              <%= msg %>
             </div>
+            <% end %>
           </div>
         </div>
-      </div>
-      <div class="br"></div>
-      <div class="br"></div>
-    </div>
+      <% end %>
+      <%= f.hidden_field :subject, class: "form-control", value: "BIGTV BUNDLING with BOLT SUPER4G-1" %>
+      <%= f.text_field :name, class: "name ipt", required: true, placeholder: "Name" %>
+      <%= f.text_field :email, class: "email ipt", required_email: true, placeholder: "Emial" %>
+      <%= f.text_field :phone, class: "subject ipt", required: true, placeholder: "Phone" %>
+      <%= f.label :captcha %>
+      <%= recaptcha_tags %>
+      <button type="submit"><h2>SIGN UP</h2></button>
+    <% end %>
   </div>
-  <div class="polosochka"></div>
-</section>
+</diV>
