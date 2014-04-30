@@ -1,0 +1,178 @@
+/*
+ *= require_self
+ *= require bootstrap_new
+ *= require front/bootstrap
+ *= require front/css
+ *= require front/css/normalize
+ *= require front/css/index
+ * require front/css/mobile-reset
+ * require front/css/jQuery.Opie.PortfolioGallery
+ * require front/css/mobile
+ *= require front/css/component
+ *= require plugins/datepicker/css/datepicker
+ *= require front/css/invoice
+ *= require jquery.autocomplete
+ *= require front/override
+ *= require promo/promo
+ */
+.prc100{
+  width: 100%;
+}
+a.submit-total-edit {
+  background-color: white;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: red;
+  cursor: pointer;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border: 0px solid #000000;
+  padding: 13px 56px;
+}
+a.submit-total-edit:hover {
+  color: white;
+  background: orange;
+  text-decoration: none;
+}
+.none-display{
+	visibility: hidden;
+	height: 10px;
+}
+.prc-promo{
+	font-size: 18px!important;
+	font-weight: bold;
+}
+.show-paket-lain{
+	display: none;
+}
+.sction-paket-promo{
+	background-color: #ed2024;
+	color: #fff;
+	padding: 8px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+}
+.alfa-promo{
+	font-size: 13px;
+	width: 100%;
+	float: left;
+}
+a.blink_me{
+	color: red!important;
+	font-weight: bold;
+}
+#gb{
+	position:fixed;
+	top:20px;
+	z-index:+1000;
+	left: 25%;
+	right: 30%;
+}
+.gbcontent{
+	float:right;
+	border:2px solid red;
+	background:#ffffff;
+	padding:10px;
+	padding-top: 2px;
+}
+.close_pop{
+	cursor: pointer;
+	color: red;
+	padding-bottom: 2px;
+}
+.alert{
+	padding-right: 30px!important;
+}
+.form_apply{
+	background: rgba(237,237,237,1);
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,237,237,1)), color-stop(53%, rgba(246,246,246,1)), color-stop(100%, rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=0 );
+	padding: 20px;
+	margin-top: 40px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	display: none;
+}
+.info_date_job{
+	font-size: 13px;
+	margin-top: 10px;
+}
+.banner_job{
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	width: 100%;
+}
+.job_section{
+	border: solid 1px #ddd;
+	padding: 10px;
+	width: 850px;
+	margin-bottom: 100px!important;
+	background: #fff;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+}
+.info_job{
+	margin: 16px;
+}
+.title_news_catalog{
+  color: #ed2024;
+  text-transform: uppercase;
+  font-size: 18px;
+  float: left;
+  width: 100%;
+  height: 44px;
+}
+.overview_hide{
+	overflow: hidden;
+	width: 100%;
+	height: 170px;
+	border-bottom: solid 1px #f4f4f4;
+}
+.mbl-menu, .mbl_menu_cont{
+	display: none;
+}
+.btn-group.overide{
+		float: right;
+		margin-top: 10px;
+}
+.btn-group.overide img{
+		float: left;
+		margin-right: 10px;
+	}
+.caret{
+		margin-left: 5px!important;
+}
+.trial a{
+	font-weight: bold!important;
+	color: #bbb;
+}
+input[type="radio"].pgk_hide{
+	display: none;
+}
+.mg-top-nul{
+	margin-top: 0px!important;
+}
+.tahap_2, .tahap_3{
+	display: none;
+}
+.thp1, .thp2, .thp3{
+	color: #ccc;
+}
+.active_thp{
+	color: #000!important;
+}
+.lanjut_btn, .lanjut_btn2{
+	display: none;
+}

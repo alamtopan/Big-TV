@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	}
+	
+body {
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: #fff;
+	background-color: #f8f8f8;
+	background-image:url(stadion.jpg);
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+	-webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+	-moz-background-size: cover; /* optional for Firefox 3.6 */
+	-o-background-size: cover; /* for Opera 9.5 */
+	background-size: cover;
+	background-position: center top !important;
+	background-repeat: no-repeat !important;
+	background-attachment: fixed;
+}
+
+
+.bar_vertical {
+	background: rgba(45,45,45,1);
+	width:300px;
+	height:100%;
+	
+	}
+
+.page-container {
+    /*margin: 100px auto 0 auto;*/
+	float:right;
+	margin-right:15%;
+	margin-top: 30px;
+	padding: 10px 10px 10px 10px;
+	background: rgba(45,45,45,0.3);
+    position: relative;
+    width: 305px;
+	min-height:100%;
+	border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+}
+
+
+.header {
+	width:100%;
+	height:70px;
+	background-color:#ed2024;
+	margin:0 auto;
+	}
+	
+.header2 {
+	width:452px;
+	height:64px;
+	margin:0 auto;
+	padding-left:80px;
+	}
+	
+.contact-us {
+	width:auto;
+	height:auto;
+	
+    margin: 0px auto 0 auto;
+    text-align: center;
+	border-radius:20px;
+}
+
+.contact-us p {
+	padding-top: 25px;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: left;
+	text-shadow: 0 1px 4px rgba(0,0,0,.2);
+	
+}
+
+.ipt, textarea {
+    width: 270px;
+    height: 42px;
+    margin-top: 25px;
+    padding: 0 15px;
+    background: #ffffff; /* browsers that don't support rgba */
+    background: rgba(225,225,225);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #3d3d3d; /* browsers that don't support rgba */
+    border: 1px solid rgba(255,255,255,.15);
+    -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+	/*font-style:oblique;*/
+	color:#373737;
+    /*text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;*/
+}
+
+textarea {
+	height: 72px;
+	padding-top: 10px;
+	overflow: auto;
+	font-style:oblique;
+}
+
+input[type='text']:-moz-placeholder, textarea:-moz-placeholder { color: #bbbbbb;}
+input[type='text']:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #bbbbbb;}
+input[type='text']::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #bbbbbb;}
+
+input[type='text']:focus, textarea:focus {
+    outline: 0;
+    -moz-box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+}
+
+button {
+    cursor: pointer;
+    width: 300px;
+    height: 44px;
+    margin-top: 25px;
+    padding: 0;
+    background: #ef4300;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #ff730e;
+    -moz-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.25) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.25) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.25) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+}
+
+button:hover, button:focus {
+    -moz-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.15) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.15) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.15) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+}
+
+button:focus { outline: 0; }
+
+button:active {
+	outline: 0;
+    -moz-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.15) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 15px 30px 0 rgba(255,255,255,.15) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:        
+        0 5px 8px 0 rgba(0,0,0,.1) inset,
+        0 1px 4px 0 rgba(0,0,0,.1);
+
+    border: 0px solid #ef4300;
+}
+
+	
+#oval {
+	width: 336px;
+	height: 170px;
+	background: white;
+	-moz-border-radius: 200px / 100px;
+	-webkit-border-radius: 200px / 100px;
+	border-radius: 200px / 100px;
+	position:relative;
+	margin-top:-150px;
+	margin-left:10%;
+	padding-bottom:5px;
+	float:;
+	
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	background: white;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	position:relative;
+	margin-left:71%;
+	margin-top:-120px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: normal;
+	text-shadow: 0 1px 4px rgba(0,0,0,.2);
+	font-family: Aleo;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-size: 28px;
+	font-weight: normal;
+	text-shadow: 0 1px 4px rgba(0,0,0,.2);
+	font-family: Aleo;
+}
+.plus{
+	font-size: 40px;
+	font-weight: normal;
+	text-shadow: 0 1px 4px rgba(0,0,0,.2);
+	font-family: Aleo;
+}
+
+.left_content{
+	float:left;
+	width:auto;
+	height:auto;
+	margin-left:10%;
+	margin-top:40px;
+	color:#FFFFFF;
+	}
+
+a {
+	color:#FFFFFF;
+	font-weight:normal;
+	};
+	
+a:hover {
+	color:#FFFFFF;
+	font-weight:bold;
+	}
+	
+.numbers {
+    width: 55px;
+    text-align: center; 
+    font-family: Arial; 
+    font-size: 28px;
+    font-weight: bold;    /* options are normal, bold, bolder, lighter */
+    /*font-style: normal;    options are normal or italic */
+    color:#FFFFFF;      /* change color using the hexadecimal color codes for HTML */
+}
+.title {		/* the styles below will affect the title under the numbers, i.e., "Days", "Hours", etc. */
+    width: 55px;
+    text-align: center; 
+    font-family: Arial; 
+    font-size: 10px;
+    font-weight: bold;    /* options are normal, bold, bolder, lighter */
+    color:#FFFFFF;      /* change color using the hexadecimal color codes for HTML */
+}
+#table {
+	width: 200px;
+	height: 48px;
+	border-style: none;
+	background-color: transparent;
+	margin: 0px auto;
+	position: relative;   /* leave as "relative" to keep timer centered on your page, or change to "absolute" then change the values of the "top" and "left" properties to position the timer */
+	/*margin-right:100px;*/
+	top: 0px;             /* change to position the timer */
+	left: -10px;
+	padding-bottom:5px;
+	
+	
+}
+
+.bg_timer {
+	width:100%;
+	height:100%;
+	background-color:#ed2024;
+	/*background: rgba(255,255,255,0.5);*/
+	margin:10px 0;
+	
+	border-radius:10px;
+	}
+	

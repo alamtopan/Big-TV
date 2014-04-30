@@ -1,0 +1,53 @@
+<body onload="countdown(year,month,day,hour,minute)" style="background-image:url(assets/promo/bg.jpg);">  
+  <div class="header">
+    <p style="padding-top:3px;width:100%;font-size:55px;font-family:Arial, Helvetica, sans-serif;">
+    <b style="padding-left:70px;">BUNDLING WITH</b></p>
+  </div>
+  <div id="oval">
+    <%= image_tag "promo2/logo-BigTV_JPG.jpg", width: "195", height: "79", style: "margin-top:80px" %>
+  </div>
+  <div class="circle">
+    <%= image_tag "promo2/logo_BOLT.jpg", width: "86", height:"32", style: "margin-top:40px;"  %>
+  </div>
+  <div class="header2">
+    <%= image_tag "promo2/header2.jpg" %>
+  </div>
+  <div class="left_content">
+    <%= image_tag "promo2/freeAll.png" %>
+      <p style="color:#FFFFFF;font-family:Arial, Helvetica, sans-serif;font-size:12px;float:left;margin-left:20%;margin-top:10px;">
+      <a href="http://big-tv.com/news/bigtv-bundling-with-bolt-super4g">Syarat & Ketentuan</a></p>
+  </div>
+  <div class="page-container">
+    <h2>Only This Month</h2>
+    <span class="plus">Sign Up Now!</span>
+    <% flash.each do |name, msg| %>
+      <% if msg.present? && msg.is_a?(String) %>
+        <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+          <a class="close" data-dismiss="alert">&#215;</a>
+          <%= content_tag :div, msg.html_safe, :id => "flash_#{name}" if (msg.is_a?(String))%>
+        </div>
+      <% end %>
+    <% end %>
+    <%= form_for @reg_promo, url:create_reg_promo_path, method: 'post', html: {class: "contact-us"} do |f| %>
+      <% if @reg_promo.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-block alert-danger fade in ">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> <%= pluralize(@job_applicant.errors.count, "error") %>
+            <% @reg_promo.errors.full_messages.each do |msg| %>
+            <diV>
+              <%= msg %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <%= f.hidden_field :subject, class: "form-control", value: "BIGTV BUNDLING with BOLT SUPER4G-2" %>
+      <%= f.text_field :name, class: "name ipt", required: true, placeholder: "Name" %>
+      <%= f.text_field :email, class: "email ipt", required_email: true, placeholder: "Emial" %>
+      <%= f.text_field :phone, class: "subject ipt", required: true, placeholder: "Phone" %>
+      <%= f.label :captcha %>
+      <%= recaptcha_tags %>
+      <button type="submit"><h2>SIGN UP</h2></button>
+    <% end %>
+  </div>
