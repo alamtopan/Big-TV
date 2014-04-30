@@ -55,8 +55,8 @@ BigTv::Application.routes.draw do
   get   '/lokasi',    to: 'publics#lokasi',            as: 'lokasi'
   get   '/reg',       to: 'publics#cara_berlangganan', as: 'cara_berlangganan'
   get   '/support',   to: 'publics#support',           as: 'support'
-  get   '/reg_promo', to: 'publics#reg_promo',         as: 'reg_promo'
-  get   '/reg_promo2', to: 'publics#reg_promo2',         as: 'reg_promo2'
+  get   '/bigtv_bundling_with_bolt_super4g_1', to: 'publics#reg_promo',         as: 'bigtv_bundling_with_bolt_super4g_1'
+  get   '/bigtv_bundling_with_bolt_super4g_2', to: 'publics#reg_promo2',         as: 'bigtv_bundling_with_bolt_super4g_2'
 
   get   '/pembayaran',        to: 'publics#pembayaran',        as: 'pembayaran'
   get   '/faq',               to: 'publics#faq',               as: 'faq'
