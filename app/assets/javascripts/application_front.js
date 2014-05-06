@@ -344,5 +344,5 @@ $(document).ready(function() {
 
 });
 
-setInterval(blinker, 1000);
+//setInterval(blinker, 1000);
 
