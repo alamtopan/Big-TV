@@ -13,7 +13,7 @@ time zone offset.
 var current="Winter is here!";	//-->enter what you want the script to display when the target date and time are reached, limit to 20 characters
 var year=2014;      //-->Enter the count down target date YEAR
 var month=6;        //-->Enter the count down target date MONTH
-var day=21;         //-->Enter the count down target date DAY
+var day=9;         //-->Enter the count down target date DAY
 var hour=12;        //-->Enter the count down target date HOUR (24 hour clock)
 var minute=60;      //-->Enter the count down target date MINUTE
 var tz=-5;          //-->Offset for your timezone in hours from UTC (see http://wwp.greenwichmeantime.com/index.htm to find the timezone offset for your location)
@@ -55,7 +55,7 @@ function countdown(yr,m,d,hr,min){
 		//document.getElementById('spacer1').style.display="none";
 		//document.getElementById('spacer2').style.display="none";
 		//document.getElementById('count2').style.display="none";
-		//document.getElementById('dday').innerHTML=dday;
+		document.getElementById('dday').innerHTML=dday;
 		document.getElementById('dhour').innerHTML=dhour;
 		document.getElementById('dmin').innerHTML=dmin;
 		document.getElementById('dsec').innerHTML=dsec;
@@ -64,7 +64,7 @@ function countdown(yr,m,d,hr,min){
 	}
 	else {
 		document.getElementById('count2').style.display="none";
-		//document.getElementById('dday').innerHTML=dday;
+		document.getElementById('dday').innerHTML=dday;
 		document.getElementById('dhour').innerHTML=dhour;
 		document.getElementById('dmin').innerHTML=dmin;
 		document.getElementById('dsec').innerHTML=dsec;
