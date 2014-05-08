@@ -26,6 +26,10 @@
       _gaq.push(['_setAccount', 'UA-47830911-1']);
       _gaq.push(['_trackPageview']);
 
+      <% if flash[:notice].present? %>
+        _gaq.push(['_trackEvent', 'Conversion', 'Order', 'Bundling big tv bolt'])
+      <% end %>
+      
       (function() {
          var ga = document.createElement('script'); 
          ga.type = 'text/javascript'; ga.async = true;
